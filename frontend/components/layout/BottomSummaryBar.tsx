@@ -186,8 +186,8 @@ export default function BottomSummaryBar({
         loading && "opacity-60",
       )}
     >
-      <div className="flex items-center gap-3">
-      <div className="flex min-w-0 flex-1 items-center gap-3 overflow-x-auto scrollbar-thin-dark">
+      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
         <button type="button" onClick={() => setExpanded((value) => !value)} className="flex shrink-0 items-center gap-2 text-left" title={expanded ? "Collapse engineering dock" : "Expand engineering dock"}>
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Engineering dock</span>
           <ChevronUp className={cn("size-3.5 text-primary transition-transform", !expanded && "rotate-180")} />
@@ -212,12 +212,12 @@ export default function BottomSummaryBar({
 
           return (
             <div key={key} className="flex items-center shrink-0">
-              {editor ? <button onClick={() => setExpanded(true)} title={`Expand ${label} analysis`}>{chip}<span className="block text-[8px] text-muted-foreground">{raw == null ? "UNAVAILABLE" : "PRELIMINARY"}</span></button> : href ? <Link href={href}>{chip}</Link> : chip}
+              {editor ? <button onClick={() => setExpanded(true)} title={`Expand ${label} analysis`}>{chip}</button> : href ? <Link href={href}>{chip}</Link> : chip}
             </div>
           );
         })}
       </div>
-      {onCreditsContainerChange && <div ref={onCreditsContainerChange} aria-label="Map source attribution" className="workspace-map-attribution max-w-[350px] shrink-0 border-l border-white/10 pl-3 text-[9px]" />}
+      {onCreditsContainerChange && <div hidden ref={onCreditsContainerChange} aria-label="Map source attribution" className="workspace-map-attribution min-w-0 basis-full text-[9px]" />}
       </div>
       {expanded && editor && project ? <EngineeringDockPanel key={dockTab} initialTab={dockTab} editor={editor} project={project}/> : expanded && (
         <div className="mt-3 grid grid-cols-4 gap-2 border-t border-white/10 pt-3">
@@ -229,3 +229,5 @@ export default function BottomSummaryBar({
     </div>
   );
 }
+
+

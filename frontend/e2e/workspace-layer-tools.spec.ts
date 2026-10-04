@@ -1,0 +1,34 @@
+import { expect, test } from "@playwright/test";
+
+test("layer isolation restores hidden state and bulk selection works", async ({ page }) => {
+  await page.setViewportSize({ width: 1626, height: 982 });
+  await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
+  await page.goto("/projects/5/workspace");
+  await expect(page.getByLabel("Search scene components")).toBeVisible({ timeout: 60000 });
+  await page.getByRole("button", { name: "Hide asphalt layer", exact: true }).click();
+  await page.getByRole("button", { name: "Isolate deck layer", exact: true }).click();
+  await page.getByRole("button", { name: "Exit isolation · restore visibility", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Show asphalt layer", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Hide piers layer", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Show all", exact: true }).click();
+  await page.getByLabel("Search scene components").fill("barrier");
+  await page.getByRole("button", { name: "barrier_left", exact: true }).click();
+  await page.getByRole("button", { name: "barrier_right", exact: true }).click({ modifiers: ["Shift"] });
+  await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
+  await page.getByText("Actions", { exact: true }).click();
+  await page.getByRole("button", { name: "Select matching", exact: true }).click();
+  await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Measure", exact: true }).click();
+  await page.getByRole("button", { name: "Slope", exact: false }).click();
+  await expect(page.getByRole("button", { name: "Slope", exact: false })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("button", { name: "Toggle measurement units", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Toggle measurement units", exact: true })).toHaveText("ft");
+  await page.keyboard.press("Escape");
+  await expect(page.getByLabel("Measurement tools")).toHaveCount(0);
+  await page.getByRole("button", { name: "Draw alignment", exact: true }).click();
+  await expect(page.getByLabel("Drawing tool options")).toBeVisible();
+  await page.getByLabel("Corridor width", { exact: true }).fill("42");
+  await expect(page.getByLabel("Corridor width", { exact: true })).toHaveValue("42");
+  await page.keyboard.press("Escape");
+  await expect(page.getByLabel("Drawing tool options")).toHaveCount(0);
+});

@@ -55,6 +55,7 @@ interface WorkspaceLayoutProps {
   /** Compact controls that sit over the map instead of consuming a second app bar. */
   toolRail?: ReactNode;
   mapToolbar?: ReactNode;
+  mapBottomControls?: ReactNode;
   mapCreditsContainer?: HTMLDivElement | null;
   rightPanel?: ReactNode;
   defaultFocus?: boolean;
@@ -68,6 +69,7 @@ export default function WorkspaceLayout({
   toolbar,
   toolRail,
   mapToolbar,
+  mapBottomControls,
   mapCreditsContainer,
   rightPanel,
   defaultFocus = false,
@@ -248,12 +250,13 @@ export default function WorkspaceLayout({
               </div>
             )}
             {mapToolbar && (
-              <div className="workspace-map-commandrow absolute left-1/2 top-3 z-40 w-max -translate-x-1/2 pointer-events-none">
-                <div ref={setLeftControlsContainer} className="absolute right-full top-0 mr-2 flex items-center gap-2 pointer-events-auto" />
-                <div className="pointer-events-auto">{!focusMode && mapToolbar}</div>
-                <div ref={setRightControlsContainer} className="absolute left-full top-0 ml-2 flex items-center gap-2 pointer-events-auto" />
+              <div className="workspace-map-commandrow absolute left-16 right-3 top-3 z-40 min-w-0 pointer-events-none">
+                <div ref={setLeftControlsContainer} className="absolute left-0 top-0 flex items-center gap-2 pointer-events-auto" />
+                <div className="workspace-main-tools pointer-events-none absolute top-0 w-max">{!focusMode && mapToolbar}</div>
+                <div ref={setRightControlsContainer} className="absolute right-0 top-0 flex items-center gap-2 pointer-events-auto" />
               </div>
             )}
+            {!focusMode && mapBottomControls && <div className="workspace-bottom-controls absolute bottom-10 right-3 z-40">{mapBottomControls}</div>}
 
             {!focusMode && !copilotPanelVisible && (
               <div className="absolute bottom-20 right-3 z-30 pointer-events-auto hidden md:block">

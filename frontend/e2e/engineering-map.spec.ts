@@ -14,7 +14,8 @@ test("project workspace exposes context, data and generation controls without cl
   await page.getByLabel("Search scene components").clear();
   await expect(page.getByText("Scale visual", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Visual reference — not for quantity takeoff.", { exact: true })).toHaveCount(0);
-  await page.getByRole("button", { name: /^Site data/ }).click();
+  await expect(page.getByRole("button", { name: /^Site data/ })).toHaveCount(0);
+  await page.evaluate(() => window.dispatchEvent(new Event("geoai:open-site-data")));
   await expect(page.getByRole("heading", { name: "Data & placement" })).toBeVisible();
   await page.screenshot({ path: "test-results/project-site-data.png" });
   await page.getByRole("button", { name: "Scene / Sun study", exact: true }).click();
@@ -87,6 +88,7 @@ test("terrain provenance is explicit and sun controls use editable timezone", as
   expect(projectRequests).toEqual([]);
   expect(errors).toEqual([]);
 });
+
 
 
 

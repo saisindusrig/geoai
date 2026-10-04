@@ -1,5 +1,5 @@
 "use client";
-import { Database, ChevronDown, X, ShieldCheck, RefreshCw, MapPin, Download, CheckCircle2 } from "lucide-react";
+import { X, ShieldCheck, RefreshCw, MapPin, Download, CheckCircle2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 import { api, formatApiErrorMessage } from "@/lib/api";
@@ -26,7 +26,7 @@ function label(value: string) { return value.replaceAll("_", " ").toLowerCase();
 export default function EngineeringEvidencePanel({ projectId, revisionId, origin, onPlacement }: { projectId: number; revisionId?: number; origin: { lng: number; lat: number; elevation_m: number; heading_deg: number }; onPlacement: (placement: Placement) => void }) {
   const [data, setData] = useState<Evidence | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const { open, show, close, toggle } = useWorkspacePanel("evidence");
+  const { open, show, close } = useWorkspacePanel("evidence");
   const [tab, setTab] = useState("Overview");
   const [sample, setSample] = useState<Sample | null>(null);
   const [placement, setPlacement] = useState<Placement | null>(null);
@@ -97,8 +97,7 @@ export default function EngineeringEvidencePanel({ projectId, revisionId, origin
     const link = document.createElement("a"); link.href = url; link.download = `project-${projectId}-survey-checklist.json`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return <WorkspaceMapControl side="left" fallbackClassName="absolute left-3 top-3 z-30 w-max text-xs">
-    <button className="flex items-center gap-2 rounded-full border border-white/15 bg-background/90 px-3 py-2 shadow-lg" onClick={() => { toggle(); if (!open) void refresh(); }} aria-expanded={open}><Database className="size-3.5 text-primary" />Site data<span className="workspace-site-readiness capitalize"> · {data ? label(data.readiness) : loading ? "Loading…" : "Unavailable"}</span><ChevronDown size={12} /></button>
-    {open && <section aria-label="Site data readiness" className={styles.panel} style={{ left: 0 }}>
+    {open && <section aria-label="Site data readiness" className={styles.panel} style={{ left: 0, top: 48 }}>
       <header className={styles.header}><div><p className={styles.eyebrow}>Site data readiness</p><h2 className={styles.title}>Data & placement</h2></div><button aria-label="Close site data" className={styles.button} onClick={close}><X size={15} /></button></header>
       <div role="tablist" aria-label="Site data sections" className={styles.tabs}>{["Overview", "Sources", "Placement"].map((name) => <button key={name} role="tab" aria-selected={tab === name} onClick={() => setTab(name)}>{name}</button>)}</div>
       <div className={styles.body}>
@@ -141,3 +140,5 @@ export default function EngineeringEvidencePanel({ projectId, revisionId, origin
     </section>}
   </WorkspaceMapControl>;
 }
+
+

@@ -177,7 +177,7 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
     if(s===5) {
       // Offset the model into the open right-hand area, away from the selector.
       const downstream=state.structuralView&&state.system===3;
-      targetLook.set(downstream?5:-6,state.system===1?2:1,state.system===0?5:0);
+      targetLook.set(downstream?5:-6,1,0);
     } else targetLook.set(s===7?-1:s===0||s===12?-5:-3,1,0);
     lookAt.current.lerp(targetLook, ease);
     camera.lookAt(lookAt.current);
@@ -195,13 +195,26 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
       const relief=s===1?THREE.MathUtils.lerp(1,.14,transition):s===2?THREE.MathUtils.lerp(.14,1,transition):1;
       ground.current.scale.y = THREE.MathUtils.lerp(ground.current.scale.y, relief, ease);
     }
-    const assembled = s < 4 ? 0 : s === 4 ? state.progress : 1;
+    const assembled = s === 0 ? 1 : s < 4 ? 0 : s === 4 ? state.progress : 1;
     const type = s === 5 ? state.system : 1;
     [road, bridge, pipe, dam].forEach((ref, i) => {
       if (!ref.current) return;
       const target = (s === 5 || s >= 4 || s === 0) && state.structure && i === type ? assembled : 0;
-      ref.current.scale.y = THREE.MathUtils.lerp(ref.current.scale.y, Math.max(.001, i === 1 && target > 0 ? 1 : target), ease);
-      ref.current.visible = ref.current.scale.y > .008;
+      // Crossfade infrastructure only; the terrain and site-view camera stay fixed.
+      const reveal = THREE.MathUtils.lerp(ref.current.userData.reveal ?? 0, target > 0 ? 1 : 0, state.reduced ? 1 : 1 - Math.exp(-Math.min(delta,.05)*7));
+      ref.current.userData.reveal = reveal;
+      ref.current.scale.y = 1;
+      ref.current.visible = reveal > .008;
+      ref.current.traverse(child => {
+        if (!(child instanceof THREE.Mesh)) return;
+        const materials = Array.isArray(child.material) ? child.material : [child.material];
+        materials.forEach(material => {
+          material.userData.baseOpacity ??= material.opacity;
+          material.transparent = true;
+          material.opacity = material.userData.baseOpacity * reveal;
+          material.depthWrite = reveal > .5;
+        });
+      });
     });
     if (bridgePiers.current) bridgePiers.current.children.forEach((pier, i) => {
       const rise = Math.max(.001, Math.min(1, (assembled-.08) * 3.6 - i * .09));

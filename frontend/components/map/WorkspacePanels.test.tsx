@@ -18,7 +18,7 @@ describe("site data panel", () => {
   it("explains missing evidence and prevents unsupported placement requests", async () => {
     vi.mocked(api.get).mockImplementation(async (path) => path.endsWith("/evidence") ? evidence("MISSING") : { placement: null });
     render(<EngineeringEvidencePanel projectId={5} revisionId={2} origin={origin} onPlacement={vi.fn()} />);
-    fireEvent.click(screen.getByRole("button", { name: /Site data/ }));
+    fireEvent(window, new Event("geoai:open-site-data"));
     await waitFor(() => expect(screen.queryByText("Checking project evidence…")).not.toBeInTheDocument());
     fireEvent.click(screen.getByRole("tab", { name: "Placement" }));
     expect(screen.getByRole("button", { name: "Place model on ground" })).toBeDisabled();
@@ -33,7 +33,7 @@ describe("site data panel", () => {
     vi.mocked(api.put).mockResolvedValue({ status: "VALID", anchor_elevation: 511 });
     const onPlacement = vi.fn();
     render(<EngineeringEvidencePanel projectId={5} revisionId={2} origin={origin} onPlacement={onPlacement} />);
-    fireEvent.click(screen.getByRole("button", { name: /Site data/ }));
+    fireEvent(window, new Event("geoai:open-site-data"));
     fireEvent.click(screen.getByRole("tab", { name: "Placement" }));
     await waitFor(() => expect(screen.getByRole("button", { name: "Resample ground & update" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Resample ground & update" }));
@@ -47,7 +47,7 @@ describe("site data panel", () => {
     vi.mocked(api.post).mockResolvedValue({ id: 11, status: "OUTSIDE_COVERAGE", elevation: null, failure_reason: "Outside accepted survey coverage" });
     const onPlacement = vi.fn();
     render(<EngineeringEvidencePanel projectId={5} revisionId={2} origin={origin} onPlacement={onPlacement} />);
-    fireEvent.click(screen.getByRole("button", { name: /Site data/ }));
+    fireEvent(window, new Event("geoai:open-site-data"));
     fireEvent.click(screen.getByRole("tab", { name: "Placement" }));
     await waitFor(() => expect(screen.getByRole("button", { name: "Place model on ground" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Place model on ground" }));
@@ -88,3 +88,4 @@ describe("scene and sunlight panel", () => {
     await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("Project settings loaded"));
   });
 });
+

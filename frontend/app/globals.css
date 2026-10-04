@@ -713,7 +713,8 @@ html {
     text-align: center;
   }
 
-  body:has(.auth-page) .desktop-only-notice {
+  body:has(.auth-page) .desktop-only-notice,
+  body:has(.geo-home) .desktop-only-notice {
     display: none;
   }
 }
@@ -792,6 +793,7 @@ html {
 }
 .engineering-workspace section[aria-label="Sun study"],
 .engineering-workspace section[aria-label="Site data readiness"] {
+  top: calc(100% + 10px);
   box-shadow: 0 24px 70px rgba(0, 0, 0, .5);
   scrollbar-width: thin;
   scrollbar-color: #42544c transparent;
@@ -810,6 +812,19 @@ html {
 .workspace-map-control > button { height: 40px; white-space: nowrap; }
 .workspace-map-commandrow { align-items: flex-start; }
 .workspace-map-commandrow > div { align-items: flex-start; }
+.workspace-main-tools { left: 50%; transform: translateX(-50%); }
+.workspace-commandbar > * { flex-shrink: 0; }
+.workspace-commandbar summary { white-space: nowrap; }
+.engineering-workspace .workspace-map-viewport > div .workspace-terrain-status { top: 112px; }
+.workspace-map-attribution { overflow-wrap: anywhere; }
+.app-canvas .engineering-workspace [aria-label="Inspector views"] > button {
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.app-canvas .engineering-workspace [aria-label="Inspector views"] > button[aria-selected="true"] {
+  border-bottom-color: var(--primary);
+}
 .workspace-map-attribution:empty { display: none; }
 .workspace-map-attribution .cesium-viewer-bottom {
   position: static !important;
@@ -829,6 +844,10 @@ html {
   .workspace-site-readiness { display: none; }
 }
 @container (max-width: 1000px) {
+  .workspace-main-tools { position: relative; left: 0; width: 100%; transform: none; translate: none; padding-top: 48px; }
+  .workspace-main-tools .workspace-commandbar { justify-content: center; }
+  .engineering-workspace section[aria-label="Sun study"],
+  .engineering-workspace section[aria-label="Site data readiness"] { top: calc(100% + 58px); }
   .workspace-map-commandrow { gap: 6px; }
   .workspace-commandbar { gap: 4px; }
   .workspace-commandbar > div > button { height: 36px; }

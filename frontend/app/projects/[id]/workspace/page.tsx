@@ -237,9 +237,9 @@ export default function WorkspacePage() {
           defaultFocus={false}
           mapCreditsContainer={mapCreditsContainer}
           toolRail={<WorkspaceToolRail editor={modelEditor} />}
+          mapBottomControls={<TransformOptions editor={modelEditor} />}
           mapToolbar={
-            <div className="workspace-commandbar relative flex items-start gap-1.5">
-              <TransformOptions editor={modelEditor} />
+            <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-start gap-1.5">
               <div className="relative">
                 <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Drawing and site tools" onClick={toggleTools}><Wrench className="size-4" /></Button>
                 {toolsOpen && (

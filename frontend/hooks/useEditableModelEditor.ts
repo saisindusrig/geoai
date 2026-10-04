@@ -503,7 +503,7 @@ export function useEditableModelEditor({
   },[project,scenarioId]);
 
   return {
-    document, baseRevision, revisions, selected, selectedIds, select, tool, setTool,
+    document, baseRevision, revisions, selected, selectedIds, select, selectMany: (ids: string[]) => setSelectedIds([...new Set(ids)].filter(id => document?.components.some(component => component.id === id))), tool, setTool,
     comparison, setComparison, revisionDocument,
     coordinateMode, setCoordinateMode, pivotMode, setPivotMode, rotationSnap, setRotationSnap, scaleSnap, setScaleSnap, editError, setEditError, saveError,
     snapMeters, setSnapMeters, dirty, saving, loading, aiPreview, impact,
