@@ -1,0 +1,32 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+alembic>=1.13
+geoalchemy2>=0.15
+psycopg2-binary>=2.9.10
+pydantic>=2.8
+pydantic-settings>=2.4
+shapely>=2.0.6
+pyproj>=3.7
+httpx>=0.27
+redis>=5.0
+arq>=0.26
+boto3>=1.34
+numpy>=2.0
+scipy>=1.14
+trimesh>=4.4
+reportlab>=4.2
+python-multipart>=0.0.9
+python-jose[cryptography]>=3.3
+geopandas>=1.0
+rasterio>=1.4
+fiona>=1.10
+laspy>=2.5
+ezdxf>=1.3
+Pillow>=10.0
+
+# Testing
+pytest>=8.0
+
+# Optional observability (initialized only when SENTRY_DSN is set)
+sentry-sdk>=2.0

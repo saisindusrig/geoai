@@ -1,0 +1,68 @@
+"use client";
+
+import { useMemo, useState, useEffect } from "react";
+import { Box, ChevronDown, Copy, Eye, EyeOff, Layers3, Lock, MousePointer2, ScanEye, Search, Trash2, Unlock, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
+import type { EditableModelComponent } from "@/lib/types";
+import { cn } from "@/lib/utils";
+
+export default function SceneLayersPanel({ editor, onInspect }: { editor: EditableModelEditor; onInspect: () => void }) {
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("All");
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const components = editor.document?.components;
+  useEffect(()=>{const id=editor.selectedIds.at(-1);if(id)document.getElementById(`layer-row-${id}`)?.scrollIntoView?.({block:"nearest"});},[editor.selectedIds]);
+  const groups = useMemo(() => {
+    const result = new Map<string, EditableModelComponent[]>();
+    for (const component of components ?? []) {
+      if (!`${component.name} ${component.category}`.toLowerCase().includes(query.trim().toLowerCase())) continue;
+      if (filter === "Visible" && !component.visible || filter === "Hidden" && component.visible || filter === "Locked" && !component.locked) continue;
+      const group = result.get(component.category) ?? [];
+      group.push(component);
+      result.set(component.category, group);
+    }
+    return [...result.entries()].map(([category, items]) => [category, items.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))] as const);
+  }, [components, filter, query]);
+  if (!editor.document) return null;
+  const doc = editor.document;
+  const visibleCount = doc.components.filter(component => component.visible).length;
+  const changeGroup = (ids: Set<string>, changes: Partial<EditableModelComponent>) => {
+    if (!doc.components.some(component => ids.has(component.id) && Object.entries(changes).some(([key, value]) => component[key as keyof EditableModelComponent] !== value))) return;
+    editor.commit({ ...doc, components: doc.components.map(component => ids.has(component.id) ? { ...component, ...changes } : component) });
+  };
+  const showAll = () => changeGroup(new Set(doc.components.map(component => component.id)), { visible: true });
+
+  return <div className="flex min-h-full flex-col" aria-label="Scene layer explorer">
+    <div className="sticky top-0 z-10 space-y-3 border-b border-white/10 bg-[#111a18]/95 px-3 py-3 backdrop-blur-xl">
+      <div className="flex items-center justify-between gap-2"><div><h3 className="text-sm font-semibold">Scene layers</h3><p className="mt-1 text-[10px] text-muted-foreground">{doc.components.length} objects · {visibleCount} visible · {doc.components.length - visibleCount} hidden</p></div><span className={cn("rounded-full px-2 py-1 text-[9px]", editor.dirty ? "bg-amber-400/10 text-amber-200" : "bg-primary/10 text-primary")}>{editor.dirty ? "Unsaved" : "Saved"}</span></div>
+      <div className="relative"><Search className="pointer-events-none absolute left-3 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" /><Input aria-label="Search scene components" placeholder="Find an object or layer…" value={query} onChange={event => setQuery(event.target.value)} className="h-9 border-white/10 bg-black/20 pl-9 pr-8 text-xs" />{query && <button aria-label="Clear layer search" onClick={() => setQuery("")} className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-muted-foreground"><X className="size-3" /></button>}</div>
+      <div className="flex items-center gap-1" aria-label="Filter scene objects">{["All", "Visible", "Hidden", "Locked"].map(value => <button key={value} aria-pressed={filter === value} onClick={() => setFilter(value)} className={cn("flex-1 rounded-lg px-2 py-1.5 text-[10px] transition", filter === value ? "bg-primary/15 font-semibold text-primary" : "text-muted-foreground hover:bg-white/5 hover:text-foreground")}>{value}</button>)}</div>
+      <div className="flex items-center justify-between gap-2 text-[10px]"><button className="flex items-center gap-1.5 text-muted-foreground hover:text-primary" onClick={showAll}><Eye className="size-3" />Show all</button><button className="text-muted-foreground hover:text-primary" onClick={() => setExpanded(Object.fromEntries(groups.map(([category]) => [category, false])))}>Collapse all</button></div>
+    </div>
+    <div className="flex-1 space-y-2 p-3">
+      {groups.length === 0 && <div className="flex flex-col items-center gap-2 py-8 text-center"><Search className="size-6 text-muted-foreground" /><p className="text-xs text-muted-foreground">No matching components.</p><button className="text-xs text-primary" onClick={() => { setQuery(""); setFilter("All"); }}>Reset filters</button></div>}
+      {groups.map(([category, items]) => {
+        const isOpen = query.trim().length > 0 || items.some(item=>editor.selectedIds.includes(item.id)) || (expanded[category] ?? items.length <= 6);
+        const ids = new Set(items.map(component => component.id));
+        const allHidden = items.every(component => !component.visible);
+        const allLocked = items.every(component => component.locked);
+        return <section key={category} className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]" aria-label={`${category} layer`}>
+          <div className="flex items-center gap-1 px-2 py-2">
+            <button className="flex min-w-0 flex-1 items-center gap-2 text-left" aria-label={`${isOpen ? "Collapse" : "Expand"} ${category}`} aria-expanded={isOpen} onClick={() => setExpanded(previous => ({ ...previous, [category]: !isOpen }))}><ChevronDown className={cn("size-3.5 shrink-0 text-muted-foreground transition-transform", !isOpen && "-rotate-90")} /><span className="grid size-7 shrink-0 place-items-center rounded-lg bg-white/5"><Layers3 className="size-3.5" style={{ color: items[0]?.material.color }} /></span><span className="truncate text-xs font-semibold capitalize">{category.replaceAll("_", " ")}</span><span className="ml-auto rounded-md bg-white/5 px-1.5 py-0.5 text-[9px] text-muted-foreground">{items.length}</span></button>
+            <button aria-label={`${allHidden ? "Show" : "Hide"} ${category} layer`} title={`${allHidden ? "Show" : "Hide"} layer`} className="rounded-md p-1.5 text-muted-foreground hover:bg-white/5 hover:text-primary" onClick={() => changeGroup(ids, { visible: allHidden })}>{allHidden ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}</button>
+            <button aria-label={`${allLocked ? "Unlock" : "Lock"} ${category} layer`} title={`${allLocked ? "Unlock" : "Lock"} layer`} className="rounded-md p-1.5 text-muted-foreground hover:bg-white/5 hover:text-primary" onClick={() => changeGroup(ids, { locked: !allLocked })}>{allLocked ? <Lock className="size-3.5 text-amber-200" /> : <Unlock className="size-3.5" />}</button>
+            <button aria-label={`Isolate ${category} layer`} title="Show only this layer" className="rounded-md p-1.5 text-muted-foreground hover:bg-white/5 hover:text-primary" onClick={() => editor.commit({ ...doc, components: doc.components.map(component => ({ ...component, visible: component.category === category })) })}><ScanEye className="size-3.5" /></button>
+          </div>
+          {isOpen && <div className="space-y-0.5 border-t border-white/5 p-1.5">{items.map(component => <div id={`layer-row-${component.id}`} key={component.id} className={cn("flex items-center gap-1 rounded-lg px-1.5 py-1", editor.selectedIds.includes(component.id) ? "bg-primary/10 ring-1 ring-inset ring-primary/30" : "hover:bg-white/[0.04]", !component.visible && "opacity-55")}>
+            <button className="flex min-w-0 flex-1 items-center gap-2 py-1.5 text-left text-[11px]" aria-pressed={editor.selectedIds.includes(component.id)} onClick={event => editor.select(component.id, event.ctrlKey || event.metaKey || event.shiftKey)} title="Select object · Ctrl or Shift for multi-select"><Box className="size-3.5 shrink-0 text-muted-foreground" /><span className="truncate">{component.name}</span></button>
+            <button aria-label={`${component.visible ? "Hide" : "Show"} ${component.name}`} title={component.visible ? "Hide object" : "Show object"} className="rounded-md p-1.5 text-muted-foreground hover:text-primary" onClick={() => editor.updateComponent(component.id, { visible: !component.visible })}>{component.visible ? <Eye className="size-3.5" /> : <EyeOff className="size-3.5" />}</button>
+            <button aria-label={`${component.locked ? "Unlock" : "Lock"} ${component.name}`} title={component.locked ? "Unlock object" : "Lock object"} className="rounded-md p-1.5 text-muted-foreground hover:text-primary" onClick={() => editor.updateComponent(component.id, { locked: !component.locked })}>{component.locked ? <Lock className="size-3.5 text-amber-200" /> : <Unlock className="size-3.5" />}</button>
+          </div>)}</div>}
+        </section>;
+      })}
+    </div>
+    <div className="sticky bottom-0 space-y-2 border-t border-white/10 bg-[#111a18]/95 p-3 backdrop-blur-xl"><p className="flex items-center gap-2 text-[10px] text-muted-foreground"><MousePointer2 className="size-3" />{editor.selectedIds.length ? `${editor.selectedIds.length} selected` : "Select an object · Ctrl-click for multiple"}</p><div className="flex gap-2"><Button size="sm" className="flex-1" disabled={!editor.selectedIds.length} onClick={onInspect}>Inspect selected</Button><Button size="icon" variant="secondary" className="size-8" aria-label="Duplicate selected objects" onClick={editor.duplicateSelected} disabled={!editor.selectedIds.length}><Copy className="size-3.5" /></Button><Button size="icon" variant="secondary" className="size-8 text-muted-foreground hover:text-red-300" aria-label="Delete selected objects" onClick={editor.deleteSelected} disabled={!editor.selectedIds.length}><Trash2 className="size-3.5" /></Button></div></div>
+  </div>;
+}

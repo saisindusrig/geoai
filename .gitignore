@@ -1,0 +1,57 @@
+# env / secrets
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/.pytest_cache/
+.pytest_cache/
+
+# local database / storage
+backend/*.db
+backend/dev.db
+backend/storage/
+
+# Cursor IDE artifacts
+.cursor/
+.cursor/video-frames*/
+
+# node
+node_modules/
+.next/
+out/
+frontend/public/cesium/
+frontend/test-results/
+frontend/playwright-report/
+
+# deploy / IDE
+.netlify/
+.DS_Store
+*.log
+
+# Regenerable tooling and verification output
+/backend/.venv-civicspan/
+.mypy_cache/
+.ruff_cache/
+.turbo/
+/frontend/.cache/
+/backend/.cache/
+/frontend/dist/
+/frontend/build/
+/backend/build/
+/backend/dist/
+/backend/htmlcov/
+/backend/.coverage
+/backend/.coverage.*
+/backend/coverage.xml
+/frontend/coverage/
+/backend/coverage/
+/frontend/playwright/.cache/
+
+# Local archive of the previous repository; never publish
+/.git-history-backup/

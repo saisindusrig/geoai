@@ -1,0 +1,28 @@
+name: Staging smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Staging API base URL
+        required: true
+
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - name: Install dependencies
+        working-directory: backend
+        run: pip install -r requirements.txt
+      - name: Production smoke test
+        working-directory: backend
+        run: python scripts/production_smoke.py --base-url "${{ inputs.base_url }}"
+        env:
+          STAGING_API_URL: ${{ inputs.base_url }}
