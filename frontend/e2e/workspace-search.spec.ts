@@ -1,0 +1,38 @@
+import { expect, test } from "@playwright/test";
+
+test("workspace search filters objects and handles place lookup", async ({ page }) => {
+  await page.setViewportSize({ width: 1714, height: 982 });
+  await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
+  await page.route("**/api/geocode?q=*", route => route.fulfill({ json: { results: [{ name: "Bengaluru test location", lat: 12.97, lng: 77.59, provider: "test" }] } }));
+  await page.goto("/projects/5/workspace");
+  await expect(page.getByLabel("Search scene components")).toBeVisible({ timeout: 60000 });
+  await expect(page.getByRole("button", { name: "Scene / Sun study", exact: true })).toBeVisible({ timeout: 60000 });
+  await page.getByRole("button", { name: "Search workspace", exact: true }).click();
+  const query = page.getByRole("textbox", { name: "Search workspace query" });
+  await query.fill("layer:barrier");
+  await expect(page.getByLabel("Search results").getByRole("button")).toHaveCount(2);
+  await query.press("ArrowDown");
+  await query.press("Enter");
+  await expect(page.getByRole("region", { name: "Workspace search" })).toHaveCount(0);
+  await expect(page.getByText("1 selected · Shift for range", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Search workspace", exact: true }).click();
+  await query.fill("is:selected");
+  await expect(page.getByLabel("Search results").getByRole("button")).toHaveCount(1);
+  await query.fill("no-such-object-xyz");
+  await expect(page.getByText(/No matching objects/)).toBeVisible();
+  await page.getByRole("button", { name: "Places", exact: true }).click();
+  await query.fill("100, 20");
+  await query.press("Enter");
+  await expect(page.getByRole("region", { name: "Workspace search" }).getByRole("alert")).toContainText("Latitude must");
+  await query.fill("Bengaluru");
+  await query.press("Enter");
+  await expect(page.getByLabel("Search results").getByRole("button")).toContainText("Bengaluru test location");
+  await page.screenshot({ path: "test-results/workspace-search-places.png" });
+  await query.press("Escape");
+  await expect(page.getByRole("region", { name: "Workspace search" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Search workspace", exact: true }).click();
+  await expect(page.getByLabel("Search results").getByRole("button")).toHaveCount(6);
+  await page.getByRole("button", { name: "Selected", exact: true }).click();
+  await expect(page.getByLabel("Search results").getByRole("button")).toHaveCount(1);
+  await page.screenshot({ path: "test-results/workspace-search-objects.png" });
+});

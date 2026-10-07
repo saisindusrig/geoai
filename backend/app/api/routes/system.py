@@ -28,7 +28,11 @@ async def _ai_provider_status() -> dict:
     ollama = await check_ollama_available()
 
     # Active = configured primary when reachable, else first fallback
-    if configured == "ollama" and ollama["available"]:
+    if configured == "nebius":
+        active = "nebius" if settings.NEBIUS_API_KEY else "unavailable"
+    elif configured == "auto" and settings.NEBIUS_API_KEY:
+        active = "nebius"
+    elif configured == "ollama" and ollama["available"]:
         active = "ollama"
     elif configured == "openai" and settings.OPENAI_API_KEY:
         active = "openai"
@@ -48,6 +52,8 @@ async def _ai_provider_status() -> dict:
         "active_provider": active,
         "mock_mode": active == "mock",
         "openai_configured": bool(settings.OPENAI_API_KEY),
+        "nebius_configured": bool(settings.NEBIUS_API_KEY),
+        "nebius_model": settings.NEBIUS_CHAT_MODEL,
         "anthropic_configured": bool(settings.ANTHROPIC_API_KEY),
         "gemini_configured": bool(settings.GEMINI_API_KEY),
         "gemini_implemented": False,

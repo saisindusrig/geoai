@@ -119,21 +119,21 @@ export async function createCesiumBasemapProvider(
   return cesiumUrlTemplateProvider(Cesium, providers.satellite_config);
 }
 
-/** Prefer Ion satellite imagery when configured; otherwise use the app's raster basemap. */
+/** Cesium imagery only: Ion satellite or Cesium's bundled world reference. */
 export async function loadCesiumBasemapProvider(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Cesium: any,
   basemap: MapBasemap,
   ionToken: string | null,
 ) {
-  if (ionToken && basemapFor3d(basemap) === "satellite") {
+  if (ionToken) {
     try {
       return await Cesium.IonImageryProvider.fromAssetId(2);
     } catch {
       // An expired or restricted Ion token must not leave the map blank.
     }
   }
-  return createCesiumBasemapProvider(Cesium, basemap, await fetchTileProviders());
+  return Cesium.TileMapServiceImageryProvider.fromUrl(Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"));
 }
 
 export function buildOsmStyle(

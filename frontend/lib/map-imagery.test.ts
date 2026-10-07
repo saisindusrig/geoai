@@ -1,46 +1,27 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-const apiMock = vi.hoisted(() => ({ get: vi.fn(), apiUrl: vi.fn((url: string) => `http://localhost:8000${url}`) }));
+const apiMock = vi.hoisted(() => ({ get: vi.fn(), apiUrl: vi.fn() }));
 vi.mock("@/lib/api", () => ({ api: { get: apiMock.get }, apiUrl: apiMock.apiUrl }));
-
 beforeEach(() => { vi.resetModules(); vi.clearAllMocks(); });
-
-const providers = {
-  satellite_config: { provider: "esri", max_zoom: 19, tile_size: 256, url_template: "https://server.arcgisonline.com/tile/{z}/{y}/{x}", attribution: "Esri World Imagery" },
-};
 function cesium() {
-  const urlProvider = vi.fn();
-  const ionProvider = vi.fn();
-  return { IonImageryProvider: { fromAssetId: ionProvider }, UrlTemplateImageryProvider: class { constructor(config: unknown) { urlProvider(config); } }, urlProvider, ionProvider };
+  return { IonImageryProvider: { fromAssetId: vi.fn() }, TileMapServiceImageryProvider: { fromUrl: vi.fn().mockResolvedValue({ reference: true }) }, buildModuleUrl: vi.fn((path: string) => `/cesium/${path}`) };
 }
-
-describe("Cesium basemap loading", () => {
-  it("loads configured satellite tiles without an Ion token", async () => {
-    apiMock.get.mockResolvedValue(providers);
-    const C = cesium();
-    const { loadCesiumBasemapProvider } = await import("./map-imagery");
+describe("Cesium-only imagery", () => {
+  it("uses bundled Cesium imagery without contacting Esri or tile providers", async () => {
+    const C = cesium(); const { loadCesiumBasemapProvider } = await import("./map-imagery");
     await loadCesiumBasemapProvider(C, "satellite", null);
-    expect(C.ionProvider).not.toHaveBeenCalled();
-    expect(C.urlProvider).toHaveBeenCalledWith(expect.objectContaining({ url: providers.satellite_config.url_template, credit: "Esri World Imagery" }));
-  });
-  it("prefers working Ion imagery", async () => {
-    const C = cesium(); C.ionProvider.mockResolvedValue({ ion: true });
-    const { loadCesiumBasemapProvider } = await import("./map-imagery");
-    expect(await loadCesiumBasemapProvider(C, "satellite", "configured")).toEqual({ ion: true });
+    expect(C.TileMapServiceImageryProvider.fromUrl).toHaveBeenCalledWith("/cesium/Assets/Textures/NaturalEarthII");
     expect(apiMock.get).not.toHaveBeenCalled();
   });
-  it("falls back when Ion authorization fails", async () => {
-    apiMock.get.mockResolvedValue(providers);
-    const C = cesium(); C.ionProvider.mockRejectedValue(new Error("Unauthorized"));
+  it("uses Ion when configured", async () => {
+    const C = cesium(); C.IonImageryProvider.fromAssetId.mockResolvedValue({ ion: true });
     const { loadCesiumBasemapProvider } = await import("./map-imagery");
-    await loadCesiumBasemapProvider(C, "satellite", "expired");
-    expect(C.urlProvider).toHaveBeenCalledOnce();
+    expect(await loadCesiumBasemapProvider(C, "satellite", "configured")).toEqual({ ion: true });
+    expect(C.TileMapServiceImageryProvider.fromUrl).not.toHaveBeenCalled();
   });
-  it("honors street selection even with an Ion token", async () => {
-    apiMock.get.mockResolvedValue(providers);
-    const C = cesium();
+  it("uses Cesium reference imagery if Ion fails", async () => {
+    const C = cesium(); C.IonImageryProvider.fromAssetId.mockRejectedValue(new Error("Unauthorized"));
     const { loadCesiumBasemapProvider } = await import("./map-imagery");
-    await loadCesiumBasemapProvider(C, "street", "configured");
-    expect(C.ionProvider).not.toHaveBeenCalled();
-    expect(C.urlProvider).toHaveBeenCalledWith(expect.objectContaining({ url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png" }));
+    expect(await loadCesiumBasemapProvider(C, "satellite", "expired")).toEqual({ reference: true });
+    expect(apiMock.get).not.toHaveBeenCalled();
   });
 });

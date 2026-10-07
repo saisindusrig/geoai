@@ -9,6 +9,9 @@ FOUNDATION_DEPTH_M = 2.0
 
 
 def generate(params: dict, design: dict) -> dict:
+    if params.get("building_spec"):
+        from app.services.design.planned_building import generate as generate_approved
+        return generate_approved(params["building_spec"])
     geom = design.get("geometry", {})
     builtup = float(geom.get("builtup_area_sqm") or params.get("builtup_area_sqm", 400))
     floors = int(geom.get("floors") or params.get("floors", 4))

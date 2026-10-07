@@ -41,6 +41,7 @@ frontend/playwright-report/
 .turbo/
 /frontend/.cache/
 /backend/.cache/
+/backend/.test-stage1-*/
 /frontend/dist/
 /frontend/build/
 /backend/build/

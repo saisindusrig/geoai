@@ -39,15 +39,21 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
       await page.goto("/dashboard");
       await expect(page.getByRole("heading", { name: "Your concepts", exact: true })).toBeVisible();
       await expect(page.getByLabel("Loading saved concepts")).toHaveCount(0);
-      for (const name of ["CONTINUE WORKING", "QUICK START", "Start a new concept"]) {
+      for (const name of ["Your concepts", "Start a new concept"]) {
         await expectInsideViewport(page.getByRole("heading", { name, exact: true }));
       }
       await expectInsideViewport(page.locator(".hub-toolbar").getByRole("link", { name: "New concept", exact: true }));
       await expectInsideViewport(page.getByRole("link", { name: "Open sandbox", exact: true }));
       if (populated) {
-        await expectInsideViewport(page.locator(".hub-featured").getByRole("heading", { name: "Latest bridge" }));
-        await expectInsideViewport(page.locator(".hub-featured").getByRole("link", { name: "Open workspace" }));
-        await expectInsideViewport(page.locator(".hub-recent").getByRole("heading", { name: "Latest bridge" }));
+        await expect(page.locator(".hub-featured")).toHaveCount(0);
+        await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
+        await expect(page.getByRole("heading", { name: "Latest bridge" })).toHaveCount(1);
+        await expectInsideViewport(page.getByRole("heading", { name: "Latest bridge" }));
+        await expectInsideViewport(page.locator(".hub-concept-card").first().getByRole("link", { name: "Open workspace" }));
+        await page.getByLabel("Filter by concept type").selectOption("bridge");
+        await expect(page.locator(".hub-concept-card")).toHaveCount(1);
+        await page.getByLabel("Filter by concept type").selectOption("all");
+        await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
       } else {
         await expectInsideViewport(page.getByRole("heading", { name: "No saved concepts yet" }));
       }

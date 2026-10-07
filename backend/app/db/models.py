@@ -136,6 +136,7 @@ class ModelRevision(Base):
     __tablename__ = "model_revisions"
     __table_args__ = (
         UniqueConstraint("design_scenario_id", "revision_number", name="uq_model_revision_number"),
+        UniqueConstraint("project_id", "id", name="uq_model_revision_project_id"),
     )
 
     id = Column(Integer, primary_key=True)
@@ -149,6 +150,25 @@ class ModelRevision(Base):
     created_at = Column(DateTime(timezone=True), default=utcnow, index=True)
 
     scenario = relationship("DesignScenario", back_populates="model_revisions")
+
+
+class BuildingPlan(Base):
+    """Immutable AI proposal; approval pins a single generation job."""
+    __tablename__ = "building_plans"
+    id = Column(Integer, primary_key=True)
+    project_id = Column(Integer, ForeignKey("projects.id"), nullable=False, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    parent_id = Column(Integer, ForeignKey("building_plans.id"), nullable=True)
+    prompt = Column(Text, nullable=False)
+    spec_json = Column(JSON, nullable=False)
+    context_json = Column(JSON, nullable=False)
+    context_hash = Column(String(64), nullable=False)
+    provider_model = Column(String(255), nullable=False)
+    scenario_id = Column(Integer, ForeignKey("design_scenarios.id"), nullable=True)
+    job_id = Column(String(64), nullable=True, unique=True)
+    approved_by = Column(Integer, ForeignKey("users.id"), nullable=True)
+    approved_at = Column(DateTime(timezone=True), nullable=True)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
 
 
 class QuantityEstimate(Base):
@@ -292,7 +312,9 @@ class ModelPlacement(Base):
     placement_state = Column(String(24), nullable=False, default="UNPLACED")
     anchor_longitude = Column(Float, nullable=False)
     anchor_latitude = Column(Float, nullable=False)
-    anchor_elevation = Column(Float, nullable=False, default=0)
+    anchor_elevation = Column(Float, nullable=True)
+    elevation_resolution = Column(String(24), nullable=False, default="UNKNOWN", server_default="UNKNOWN")
+    elevation_provenance_json = Column(JSON, nullable=True)
     anchor_vertical_reference_json = Column(JSON, nullable=True)
     anchor_heading_deg = Column(Float, nullable=False, default=0)
     elevation_offset = Column(Float, nullable=False, default=0)
@@ -521,3 +543,18 @@ class AuditLog(Base):
     ip_address = Column(String(64), nullable=True)
     user_agent = Column(String(512), nullable=True)
     created_at = Column(DateTime(timezone=True), default=utcnow, index=True)
+
+
+# Core tables are deliberate: foundation persistence has no behavioral ORM
+# services yet. Existing terrain/models remain the sole authority.
+from app.db.stage1_schema_v1 import register, install_guards
+from sqlalchemy import event
+
+STAGE1_TABLES = register(Base.metadata)
+
+
+@event.listens_for(Base.metadata, "after_create")
+def _stage1_guards(metadata, connection, **kwargs):
+    from sqlalchemy import inspect
+    if inspect(connection).has_table("site_selection_versions"):
+        install_guards(connection, STAGE1_TABLES)

@@ -451,9 +451,10 @@ def submit_design_generation(
     scenario_id: int,
     mode: str,
     user_id: int | None = None,
+    job_id: str | None = None,
 ) -> str:
     """Queue a design generation job (Arq worker when enabled, else in-process)."""
-    job_id = uuid.uuid4().hex
+    job_id = job_id or uuid.uuid4().hex
     update_job(
         job_id,
         stage="queued",

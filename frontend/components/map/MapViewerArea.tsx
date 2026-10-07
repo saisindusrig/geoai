@@ -1,8 +1,9 @@
 "use client";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
+import WorkspaceSearch from "@/components/map/WorkspaceSearch";
 
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Compass, Crosshair, Globe, LocateFixed, PanelLeft, Bot, ScanEye, SlidersHorizontal } from "lucide-react";
 import SiteSuggestionsPanel from "@/components/map/SiteSuggestionsPanel";
 import MapToolbarExtended from "@/components/map/MapToolbarExtended";
@@ -13,20 +14,16 @@ import { useWorkspaceMap } from "@/components/layout/WorkspaceMapContext";
 import { Button } from "@/components/ui/button";
 import MapToolbarToggle from "@/components/ui/map-toolbar-toggle";
 import { Input } from "@/components/ui/input";
-import { Tabs } from "@/components/ui/tabs";
 import { api, formatApiErrorMessage } from "@/lib/api";
 import { toast } from "@/lib/toast";
 import type { EditableModelDocument, GeoJSONFeature, GeoJSONGeometry, GeocodeResult, Project, SiteAnalysis } from "@/lib/types";
 import type { SiteSuggestion } from "@/lib/site-suggestions";
 import { generateSiteSuggestions } from "@/lib/site-suggestions";
 import { useProjectStore } from "@/stores/projectStore";
-import { basemapFor3d, fetchTileProviders, type MapBasemap } from "@/lib/map-imagery";
+import { basemapFor3d, type MapBasemap } from "@/lib/map-imagery";
 import MapStyleToggle from "@/components/ui/map-style-toggle";
-import { toolRequires2dMap } from "@/lib/map/workspace-map-tools";
-import { shouldMountCesiumView } from "@/lib/map-view-mode";
 import { cn } from "@/lib/utils";
 
-const MapView = dynamic(() => import("@/components/map/MapView"), { ssr: false });
 const CesiumView = dynamic(() => import("@/components/map/CesiumView"), { ssr: false });
 
 interface Props {
@@ -57,7 +54,6 @@ export default function MapViewerArea({
   onLocationChange,
   onGenerate,
   onAnalyze,
-  defaultView = "3d",
   showToolbar = true,
   showSuggestionsPanel = true,
   editor,
@@ -70,7 +66,8 @@ export default function MapViewerArea({
   const projectLat = project.center_lat ?? 12.9716;
   const projectLocationKey = `${project.id}:${projectLng}:${projectLat}:${project.location_name ?? ""}`;
 
-  const [view, setView] = useState<"2d" | "3d">(defaultView);
+  const view: "2d" | "3d" = "3d";
+  const pendingGeometry = useProjectStore(state => state.pendingSave);
   const [basemap, setBasemap] = useState<MapBasemap>("satellite");
   const [searchDraft, setSearchDraft] = useState<string | null>(null);
   const [searching, setSearching] = useState(false);
@@ -84,7 +81,6 @@ export default function MapViewerArea({
   const [fitRequest, setFitRequest] = useState(0);
   const [locationSearchOpen, setLocationSearchOpen] = useState(false);
   const {
-    activeTool,
     setSiteSuggestions,
     layers,
     surveyModeEnabled,
@@ -96,8 +92,6 @@ export default function MapViewerArea({
     mapRef,
     mapCursor,
   } = useProjectStore();
-  const viewBeforeDrawRef = useRef<"2d" | "3d" | null>(null);
-  const force3dRef = useRef(false);
   const { focusMode, toolsOpen, copilotOpen, onOpenTools, onOpenCopilot } = useWorkspaceMap();
 
   if (projectLocationKey !== locationSyncKey) {
@@ -107,15 +101,13 @@ export default function MapViewerArea({
   }
 
   useEffect(() => {
-    if (defaultView !== "3d") return;
+
     if (basemap === "terrain") {
       queueMicrotask(() => setBasemap("satellite"));
       useProjectStore.getState().setLayers({ satellite: true });
     }
-    void fetchTileProviders().then(() => {
-      useProjectStore.getState().setLayers({ terrain: true });
-    });
-  }, [basemap, defaultView]);
+    useProjectStore.getState().setLayers({ terrain: true });
+  }, [basemap]);
 
   const activeBasemap: MapBasemap =
     layers.satellite && basemap === "satellite" ? "satellite" : basemap;
@@ -158,12 +150,6 @@ export default function MapViewerArea({
       (f) => f.properties?.category === "waterway" || f.properties?.natural === "water",
     ) as GeoJSONFeature[];
   }, [analysis]);
-
-  const analysisFeatures = useMemo(() => {
-    const feats: GeoJSONFeature[] = [...roadFeatures];
-    if (buildingFeatures.length) feats.push(...buildingFeatures);
-    return feats;
-  }, [roadFeatures, buildingFeatures]);
 
   useEffect(() => {
     const onSaveProject = async () => {
@@ -257,60 +243,15 @@ export default function MapViewerArea({
     if (view === "3d" && mode === "terrain") return;
     setBasemap(mode);
     useProjectStore.getState().setLayers({ satellite: mode === "satellite" });
-    if (mode === "satellite" && view === "2d") {
-      const controls = useProjectStore.getState().mapRef;
-      const viewport = controls?.getViewport?.();
-      if (viewport && viewport.zoom < 16) {
-        controls?.flyToViewport?.({ ...viewport, zoom: 16 });
-      }
-    }
   };
 
-  const handleViewChange = useCallback((next: "2d" | "3d") => {
-    if (next === "3d" && toolRequires2dMap(activeTool)) return;
-    setView(next);
-    if (next === "3d") {
-      if (basemap === "terrain") {
-        setBasemap("satellite");
-        useProjectStore.getState().setLayers({ satellite: true });
-      }
-      void fetchTileProviders().then(() => {
-        useProjectStore.getState().setLayers({ terrain: true });
-      });
-    }
-  }, [activeTool, basemap]);
-
   useEffect(() => {
-    const onFit = () => setFitRequest((value) => value + 1);
-    const onToggleView = () => {
-      if (view === "2d" && toolRequires2dMap(activeTool)) {
-        // An explicit request for the 3D engineering view exits a transient
-        // drawing/suggestion mode rather than leaving the map trapped in 2D.
-        useProjectStore.getState().activateTool("select");
-        force3dRef.current = true;
-      }
-      if (view === "2d") {
-        if (basemap === "terrain") {
-          setBasemap("satellite");
-          useProjectStore.getState().setLayers({ satellite: true });
-        }
-        setView("3d");
-        setLocationSearchOpen(false);
-        void fetchTileProviders().then(() => useProjectStore.getState().setLayers({ terrain: true }));
-      } else {
-        handleViewChange("2d");
-      }
-    };
+    const onFit = () => setFitRequest(value => value + 1);
     const onLocationSearch = () => setLocationSearchOpen(true);
     window.addEventListener("geoai:fit-project", onFit);
-    window.addEventListener("geoai:toggle-map-view", onToggleView);
     window.addEventListener("geoai:open-location-search", onLocationSearch);
-    return () => {
-      window.removeEventListener("geoai:fit-project", onFit);
-      window.removeEventListener("geoai:toggle-map-view", onToggleView);
-      window.removeEventListener("geoai:open-location-search", onLocationSearch);
-    };
-  }, [activeTool, basemap, handleViewChange, view]);
+    return () => { window.removeEventListener("geoai:fit-project", onFit); window.removeEventListener("geoai:open-location-search", onLocationSearch); };
+  }, []);
 
   const handleUseMapCenter = async () => {
     const viewport = mapRef?.getViewport?.();
@@ -342,36 +283,6 @@ export default function MapViewerArea({
     },
     [onAlignmentDrawn],
   );
-
-  const onSuggestionApplied = useCallback(
-    (kind: "boundary" | "alignment", geometry: GeoJSONGeometry) => {
-      if (kind === "boundary") onBoundaryDrawn?.(geometry);
-      else onAlignmentDrawn?.(geometry);
-    },
-    [onBoundaryDrawn, onAlignmentDrawn],
-  );
-
-  // DrawingToolsToolbar drives projectStore tools that only MapView (2D) handles.
-  useEffect(() => {
-    if (toolRequires2dMap(activeTool)) {
-      if (force3dRef.current) {
-        force3dRef.current = false;
-        return;
-      }
-      setView((current) => {
-        if (current === "3d") {
-          viewBeforeDrawRef.current = "3d";
-          return "2d";
-        }
-        return current;
-      });
-      return;
-    }
-    if (activeTool === "select" && viewBeforeDrawRef.current === "3d") {
-      viewBeforeDrawRef.current = null;
-      setView("3d");
-    }
-  }, [activeTool]);
 
   return (
     <div
@@ -464,16 +375,6 @@ export default function MapViewerArea({
             )}
 
             <div className="pointer-events-auto panel-glass flex shrink-0 items-center gap-0.5 rounded-md px-1 py-1">
-              <Tabs
-                bare
-                compact
-                tabs={[
-                  { id: "2d", label: "2D" },
-                  { id: "3d", label: "3D" },
-                ]}
-                active={view}
-                onChange={(id) => handleViewChange(id as "2d" | "3d")}
-              />
               <MapToolbarExtended view={view} />
             </div>
 
@@ -528,13 +429,10 @@ export default function MapViewerArea({
       )}
 
       {!showToolbar && locationSearchOpen && (
-        <div className="absolute left-16 top-3 z-30 w-[340px] rounded-xl border border-white/10 bg-[#101410]/98 p-2 shadow-2xl backdrop-blur-md">
-          <div className="flex items-center gap-2"><LocateFixed className="size-4 text-primary" /><Input autoFocus value={search} onChange={(e) => setSearchDraft(e.target.value)} onKeyDown={(e) => e.key === "Enter" && void doSearch()} placeholder="Search location…" className="h-8 flex-1 border-0 bg-transparent text-xs focus:ring-0" /><Button size="sm" className="h-8 px-2" onClick={() => void doSearch()} disabled={searching}><Globe className="size-3.5" /></Button><Button variant="ghost" size="sm" className="h-8 px-2 text-[10px]" onClick={() => setLocationSearchOpen(false)}>Close</Button></div>
-          {results.length > 0 && <ul className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-white/10">{results.map((result, index) => <li key={`${result.name}-${index}`}><button type="button" onClick={() => { void pickResult(result); setLocationSearchOpen(false); }} className="w-full border-b border-white/10 px-3 py-2 text-left text-xs text-foreground-secondary last:border-0 hover:bg-primary/10">{result.name}<span className="ml-1 text-muted-foreground">({result.provider})</span></button></li>)}</ul>}
-        </div>
+        <WorkspaceSearch editor={editor} onClose={() => setLocationSearchOpen(false)} onNavigate={(lng, lat) => setMapCenterOverride([lng, lat])} />
       )}
 
-      {showSuggestionsPanel && view === "2d" && (
+      {showSuggestionsPanel && false && (
         <div className="absolute top-16 right-3 z-20 w-[220px] max-h-[calc(100%-6rem)] overflow-y-auto pointer-events-auto panel-glass rounded-lg p-2 hidden lg:block">
           <SiteSuggestionsPanel
             compact
@@ -581,7 +479,7 @@ export default function MapViewerArea({
         </div>
       )}
 
-      {view === "2d" && <ElevationProfileChart project={project} />}
+      {false && <ElevationProfileChart project={project} />}
       {view === "3d" && <Scene3DOverlay />}
 
       <div className="pointer-events-none absolute bottom-9 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/15 bg-background/85 px-3 py-1.5 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">
@@ -595,31 +493,15 @@ export default function MapViewerArea({
           filter: `brightness(${satelliteBrightness}%)`,
         }}
       >
-        {view === "2d" || !shouldMountCesiumView(view) ? (
-          <MapView
-            center={mapCenter}
-            zoom={15}
-            basemap={activeBasemap}
-            boundary={project.boundary_geojson}
-            alignment={project.alignment_geojson}
-            analysisFeatures={analysisFeatures}
-            projectType={project.project_type}
-            roadFeatures={roadFeatures}
-            buildingFeatures={buildingFeatures}
-            onBoundaryDrawn={onBoundaryDrawn}
-            onAlignmentDrawn={onAlignmentDrawn}
-            onSuggestionApplied={onSuggestionApplied}
-            hideFloatingTools
-          />
-        ) : (
+        {(
           <CesiumView
             key={project.id}
             projectId={project.id}
             center={mapCenter}
             terrainExaggeration={terrainExaggeration}
             basemap={basemapFor3d(activeBasemap)}
-            boundary={project.boundary_geojson}
-            alignment={project.alignment_geojson}
+            boundary={pendingGeometry?.kind === "boundary" ? pendingGeometry.geometry : project.boundary_geojson}
+            alignment={pendingGeometry?.kind === "alignment" ? pendingGeometry.geometry : project.alignment_geojson}
             modelUrl={modelUrl ?? null}
             excavationUrl={excavationUrl ?? null}
             useModelLayers={false}
@@ -654,3 +536,8 @@ export default function MapViewerArea({
     </div>
   );
 }
+
+
+
+
+

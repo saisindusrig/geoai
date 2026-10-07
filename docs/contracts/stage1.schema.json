@@ -1,0 +1,2536 @@
+{
+  "$defs": {
+    "Accuracy": {
+      "additionalProperties": false,
+      "properties": {
+        "horizontalRmseM": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Horizontalrmsem"
+        },
+        "verticalRmseM": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verticalrmsem"
+        },
+        "method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Method"
+        },
+        "validationRunId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validationrunid"
+        },
+        "independentCheckpointCount": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Independentcheckpointcount"
+        }
+      },
+      "title": "Accuracy",
+      "type": "object"
+    },
+    "ApprovalCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "proposalVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Proposalversionid",
+          "type": "string"
+        },
+        "proposalHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Proposalhash",
+          "type": "string"
+        },
+        "dependencyHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Dependencyhash",
+          "type": "string"
+        },
+        "validationHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Validationhash",
+          "type": "string"
+        },
+        "alternativeId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Alternativeid"
+        },
+        "acknowledgedAssumptionVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Acknowledgedassumptionversionids",
+          "type": "array"
+        },
+        "expectedModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Expectedmodelrevisionid"
+        }
+      },
+      "required": [
+        "proposalVersionId",
+        "proposalHash",
+        "dependencyHash",
+        "validationHash",
+        "alternativeId",
+        "acknowledgedAssumptionVersionIds",
+        "expectedModelRevisionId"
+      ],
+      "title": "ApprovalCommand",
+      "type": "object"
+    },
+    "AreaSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "AREA",
+          "title": "Kind",
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/$defs/Geometry"
+        }
+      },
+      "required": [
+        "kind",
+        "geometry"
+      ],
+      "title": "AreaSelection",
+      "type": "object"
+    },
+    "AssetCapability": {
+      "additionalProperties": false,
+      "properties": {
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "registryVersion": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Registryversion",
+          "type": "string"
+        },
+        "discussionSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Discussionsupport",
+          "type": "string"
+        },
+        "planningSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Planningsupport",
+          "type": "string"
+        },
+        "proposalSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Proposalsupport",
+          "type": "string"
+        },
+        "generationSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Generationsupport",
+          "type": "string"
+        },
+        "geometryValidationSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Geometryvalidationsupport",
+          "type": "string"
+        },
+        "engineeringAnalysisSupport": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "CONCEPT_ONLY",
+            "UNSUPPORTED"
+          ],
+          "title": "Engineeringanalysissupport",
+          "type": "string"
+        },
+        "siteSelectionTypes": {
+          "items": {
+            "enum": [
+              "AREA",
+              "ROUTE",
+              "CROSSING",
+              "POINT",
+              "ENDPOINTS"
+            ],
+            "type": "string"
+          },
+          "title": "Siteselectiontypes",
+          "type": "array"
+        },
+        "requiredInputs": {
+          "items": {
+            "$ref": "#/$defs/RequiredInput"
+          },
+          "title": "Requiredinputs",
+          "type": "array"
+        },
+        "optionalInputs": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Optionalinputs",
+          "type": "array"
+        },
+        "specificationSchemaId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Specificationschemaid"
+        },
+        "generatorId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generatorid"
+        },
+        "generatorVersion": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generatorversion"
+        },
+        "validatorIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Validatorids",
+          "type": "array"
+        },
+        "analysisCalculatorIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Analysiscalculatorids",
+          "type": "array"
+        },
+        "supportedOperations": {
+          "items": {
+            "enum": [
+              "DISCUSS",
+              "PLAN",
+              "PROPOSE",
+              "GENERATE",
+              "VALIDATE_GEOMETRY",
+              "ANALYZE"
+            ],
+            "type": "string"
+          },
+          "title": "Supportedoperations",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "assetType",
+        "registryVersion",
+        "discussionSupport",
+        "planningSupport",
+        "proposalSupport",
+        "generationSupport",
+        "geometryValidationSupport",
+        "engineeringAnalysisSupport",
+        "siteSelectionTypes"
+      ],
+      "title": "AssetCapability",
+      "type": "object"
+    },
+    "AssetRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "requestedAssetName": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Requestedassetname",
+          "type": "string"
+        },
+        "registryId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Registryid"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Requirements",
+          "type": "array"
+        },
+        "referencedObjects": {
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "maxItems": 1000,
+          "title": "Referencedobjects",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "assetType",
+        "requestedAssetName"
+      ],
+      "title": "AssetRequest",
+      "type": "object"
+    },
+    "AssumptionSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "AI_ASSUMPTION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "messageId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Messageid",
+          "type": "string"
+        },
+        "assumptionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assumptionid",
+          "type": "string"
+        },
+        "modelId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Modelid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "messageId",
+        "assumptionId",
+        "modelId"
+      ],
+      "title": "AssumptionSource",
+      "type": "object"
+    },
+    "CivilIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "QUESTION",
+            "SITE_QUERY",
+            "DESIGN_REQUEST",
+            "CHANGE_REQUEST",
+            "ANALYSIS_REQUEST",
+            "EXPLANATION_REQUEST",
+            "PROPOSAL_APPROVAL",
+            "GENERAL_DISCUSSION"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "domain": {
+          "enum": [
+            "CIVIL_INFRASTRUCTURE",
+            "GENERAL",
+            "UNRESOLVED"
+          ],
+          "title": "Domain",
+          "type": "string"
+        },
+        "assets": {
+          "items": {
+            "$ref": "#/$defs/AssetRequest"
+          },
+          "maxItems": 100,
+          "title": "Assets",
+          "type": "array"
+        },
+        "needsClarification": {
+          "title": "Needsclarification",
+          "type": "boolean"
+        },
+        "clarificationQuestion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clarificationquestion"
+        }
+      },
+      "required": [
+        "kind",
+        "domain",
+        "assets",
+        "needsClarification"
+      ],
+      "title": "CivilIntent",
+      "type": "object"
+    },
+    "CrossingSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "CROSSING",
+          "title": "Kind",
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "endpointA": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "endpointB": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "crossedFeatureRef": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crossedfeatureref"
+        },
+        "studyArea": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Geometry"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "kind",
+        "geometry",
+        "endpointA",
+        "endpointB"
+      ],
+      "title": "CrossingSelection",
+      "type": "object"
+    },
+    "Dependency": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "SELECTION",
+            "BOUNDARY",
+            "TERRAIN",
+            "PLACEMENT",
+            "MODEL",
+            "MEMORY",
+            "CONSTRAINT",
+            "SURVEY_EVIDENCE",
+            "RELATIONSHIP",
+            "GENERATOR",
+            "VALIDATOR"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "policy": {
+          "enum": [
+            "MUST_MATCH_CURRENT",
+            "PINNED_SNAPSHOT"
+          ],
+          "title": "Policy",
+          "type": "string"
+        },
+        "scope": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "version",
+        "contentHash",
+        "policy",
+        "scope"
+      ],
+      "title": "Dependency",
+      "type": "object"
+    },
+    "DependencyManifest": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "dependencies/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/Dependency"
+          },
+          "maxItems": 1000,
+          "title": "Entries",
+          "type": "array"
+        },
+        "hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "entries",
+        "hash"
+      ],
+      "title": "DependencyManifest",
+      "type": "object"
+    },
+    "DerivedSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "DERIVED",
+          "title": "Kind",
+          "type": "string"
+        },
+        "inputEvidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Inputevidenceids",
+          "type": "array"
+        },
+        "algorithmId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Algorithmid",
+          "type": "string"
+        },
+        "algorithmVersion": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Algorithmversion",
+          "type": "string"
+        },
+        "parametersHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Parametershash",
+          "type": "string"
+        },
+        "outputArtifactId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outputartifactid"
+        }
+      },
+      "required": [
+        "kind",
+        "inputEvidenceIds",
+        "algorithmId",
+        "algorithmVersion",
+        "parametersHash"
+      ],
+      "title": "DerivedSource",
+      "type": "object"
+    },
+    "EndpointsSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ENDPOINTS",
+          "title": "Kind",
+          "type": "string"
+        },
+        "endpointA": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "endpointB": {
+          "$ref": "#/$defs/Geometry"
+        }
+      },
+      "required": [
+        "kind",
+        "endpointA",
+        "endpointB"
+      ],
+      "title": "EndpointsSelection",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "sourceType": {
+          "$ref": "#/$defs/SourceKind"
+        },
+        "sourceId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourceid"
+        },
+        "datasetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Datasetid"
+        },
+        "datasetVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Datasetversionid"
+        },
+        "capturedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capturedat"
+        },
+        "retrievedAt": {
+          "format": "date-time",
+          "title": "Retrievedat",
+          "type": "string"
+        },
+        "validFrom": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validfrom"
+        },
+        "validTo": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validto"
+        },
+        "horizontalCrs": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+              "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedHorizontalCRS"
+            },
+            {
+              "$ref": "#/$defs/UnknownHorizontalCRS"
+            }
+          ],
+          "title": "Horizontalcrs"
+        },
+        "verticalReference": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedVerticalReference",
+              "UNKNOWN": "#/$defs/UnknownVerticalReference"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedVerticalReference"
+            },
+            {
+              "$ref": "#/$defs/UnknownVerticalReference"
+            }
+          ],
+          "title": "Verticalreference"
+        },
+        "accuracy": {
+          "$ref": "#/$defs/Accuracy"
+        },
+        "status": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED",
+            "FAILED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "source": {
+          "discriminator": {
+            "mapping": {
+              "AI_ASSUMPTION": "#/$defs/AssumptionSource",
+              "DERIVED": "#/$defs/DerivedSource",
+              "MEASURED": "#/$defs/MeasuredSource",
+              "PUBLIC_MAP": "#/$defs/PublicMapSource",
+              "SURVEY": "#/$defs/SurveySource",
+              "UNKNOWN": "#/$defs/UnknownSource",
+              "USER_PROVIDED": "#/$defs/UserSource"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/MeasuredSource"
+            },
+            {
+              "$ref": "#/$defs/SurveySource"
+            },
+            {
+              "$ref": "#/$defs/PublicMapSource"
+            },
+            {
+              "$ref": "#/$defs/UserSource"
+            },
+            {
+              "$ref": "#/$defs/DerivedSource"
+            },
+            {
+              "$ref": "#/$defs/AssumptionSource"
+            },
+            {
+              "$ref": "#/$defs/UnknownSource"
+            }
+          ],
+          "title": "Source"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "supersedesId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Supersedesid"
+        }
+      },
+      "required": [
+        "id",
+        "projectId",
+        "sourceType",
+        "retrievedAt",
+        "horizontalCrs",
+        "verticalReference",
+        "accuracy",
+        "status",
+        "source",
+        "contentHash"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____": {
+      "discriminator": {
+        "mapping": {
+          "AI_ASSUMPTION": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____",
+          "DERIVED": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____",
+          "MEASURED": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____",
+          "PUBLIC_MAP": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____",
+          "SURVEY": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____",
+          "UNKNOWN": "#/$defs/UnknownFact",
+          "USER_PROVIDED": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____"
+        },
+        "propertyName": "sourceKind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____"
+        },
+        {
+          "$ref": "#/$defs/UnknownFact"
+        }
+      ],
+      "title": "Fact[Annotated[float, FieldInfo(annotation=NoneType, required=True, metadata=[_PydanticGeneralMetadata(allow_inf_nan=False)])]]"
+    },
+    "Fact_str_": {
+      "discriminator": {
+        "mapping": {
+          "AI_ASSUMPTION": "#/$defs/KnownFact_str_",
+          "DERIVED": "#/$defs/KnownFact_str_",
+          "MEASURED": "#/$defs/KnownFact_str_",
+          "PUBLIC_MAP": "#/$defs/KnownFact_str_",
+          "SURVEY": "#/$defs/KnownFact_str_",
+          "UNKNOWN": "#/$defs/UnknownFact",
+          "USER_PROVIDED": "#/$defs/KnownFact_str_"
+        },
+        "propertyName": "sourceKind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/KnownFact_str_"
+        },
+        {
+          "$ref": "#/$defs/UnknownFact"
+        }
+      ],
+      "title": "Fact[str]"
+    },
+    "Geometry": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "Point",
+            "MultiPoint",
+            "LineString",
+            "Polygon",
+            "MultiPolygon"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "coordinates": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array"
+              },
+              "maxItems": 10000,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "items": {
+                "items": {
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "maxItems": 10000,
+                "minItems": 4,
+                "type": "array"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "items": {
+                "items": {
+                  "items": {
+                    "maxItems": 2,
+                    "minItems": 2,
+                    "prefixItems": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ],
+                    "type": "array"
+                  },
+                  "maxItems": 10000,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "maxItems": 100,
+                "minItems": 1,
+                "type": "array"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Coordinates"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "title": "Geometry",
+      "type": "object"
+    },
+    "KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "enum": [
+            "MEASURED",
+            "SURVEY",
+            "PUBLIC_MAP",
+            "USER_PROVIDED",
+            "DERIVED",
+            "AI_ASSUMPTION"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "use": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Use",
+          "type": "string"
+        },
+        "verification": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "evidenceIds",
+        "use",
+        "verification"
+      ],
+      "title": "KnownFact[Annotated[float, FieldInfo(annotation=NoneType, required=True, metadata=[_PydanticGeneralMetadata(allow_inf_nan=False)])]]",
+      "type": "object"
+    },
+    "KnownFact_str_": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "enum": [
+            "MEASURED",
+            "SURVEY",
+            "PUBLIC_MAP",
+            "USER_PROVIDED",
+            "DERIVED",
+            "AI_ASSUMPTION"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "use": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Use",
+          "type": "string"
+        },
+        "verification": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "evidenceIds",
+        "use",
+        "verification"
+      ],
+      "title": "KnownFact[str]",
+      "type": "object"
+    },
+    "MeasuredSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "MEASURED",
+          "title": "Kind",
+          "type": "string"
+        },
+        "measurementId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Measurementid",
+          "type": "string"
+        },
+        "instrument": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Instrument"
+        },
+        "operatorId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operatorid"
+        }
+      },
+      "required": [
+        "kind",
+        "measurementId"
+      ],
+      "title": "MeasuredSource",
+      "type": "object"
+    },
+    "MissingSiteInformation": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "profileVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Profileversionid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "SOIL_BEARING_CAPACITY",
+            "GROUNDWATER",
+            "UTILITIES",
+            "DESIGN_FLOOD_LEVEL",
+            "SURVEY_ACCURACY",
+            "OWNERSHIP",
+            "LOCAL_CODE",
+            "ELEVATION",
+            "OTHER"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARNING",
+            "CRITICAL"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "whyNeeded": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Whyneeded",
+          "type": "string"
+        },
+        "requiredFor": {
+          "items": {
+            "enum": [
+              "CONCEPT_LAYOUT",
+              "GEOMETRY_CHECK",
+              "FOUNDATION_ANALYSIS",
+              "HYDRAULIC_ANALYSIS",
+              "CONSTRUCTION_DOCUMENTATION"
+            ],
+            "type": "string"
+          },
+          "title": "Requiredfor",
+          "type": "array"
+        },
+        "blockingLevel": {
+          "enum": [
+            "NONE",
+            "CONCEPT",
+            "GEOMETRY",
+            "ENGINEERING"
+          ],
+          "title": "Blockinglevel",
+          "type": "string"
+        },
+        "resolutionMethod": {
+          "items": {
+            "enum": [
+              "USER_CONFIRMATION",
+              "SURVEY_UPLOAD",
+              "GEOTECH_REPORT",
+              "UTILITY_SURVEY",
+              "AUTHORITY_SOURCE",
+              "VALIDATED_CALCULATION"
+            ],
+            "type": "string"
+          },
+          "title": "Resolutionmethod",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "RESOLVED",
+            "NOT_APPLICABLE"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "resolutionEvidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Resolutionevidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "profileVersionId",
+        "type",
+        "severity",
+        "whyNeeded",
+        "requiredFor",
+        "blockingLevel",
+        "resolutionMethod",
+        "status"
+      ],
+      "title": "MissingSiteInformation",
+      "type": "object"
+    },
+    "ObjectRef": {
+      "additionalProperties": false,
+      "properties": {
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "objectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Objectid",
+          "type": "string"
+        },
+        "modelRevisionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Modelrevisionid",
+          "type": "string"
+        },
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "geometryHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Geometryhash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assetId",
+        "objectId",
+        "modelRevisionId",
+        "componentId",
+        "geometryHash"
+      ],
+      "title": "ObjectRef",
+      "type": "object"
+    },
+    "PointSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "POINT",
+          "title": "Kind",
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/$defs/Geometry"
+        }
+      },
+      "required": [
+        "kind",
+        "geometry"
+      ],
+      "title": "PointSelection",
+      "type": "object"
+    },
+    "ProposalCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "effect": {
+          "const": "PROPOSAL_ONLY",
+          "title": "Effect",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "DESIGN_REQUEST",
+            "CHANGE_REQUEST"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "request": {
+          "maxLength": 6000,
+          "minLength": 1,
+          "title": "Request",
+          "type": "string"
+        },
+        "objects": {
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "maxItems": 1000,
+          "title": "Objects",
+          "type": "array"
+        }
+      },
+      "required": [
+        "effect",
+        "kind",
+        "request",
+        "objects"
+      ],
+      "title": "ProposalCommand",
+      "type": "object"
+    },
+    "ProposalPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "proposal/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "siteProfileVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Siteprofileversionid",
+          "type": "string"
+        },
+        "inputMemoryVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Inputmemoryversionids",
+          "type": "array"
+        },
+        "assetSpecificationVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Assetspecificationversionids",
+          "type": "array"
+        },
+        "layoutGeometryRefs": {
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "title": "Layoutgeometryrefs",
+          "type": "array"
+        },
+        "assumptionVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Assumptionversionids",
+          "type": "array"
+        },
+        "alternativeIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Alternativeids",
+          "type": "array"
+        },
+        "sourceScenarioId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcescenarioid",
+          "type": "string"
+        },
+        "sourceModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sourcemodelrevisionid"
+        },
+        "dependencyManifestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Dependencymanifestid",
+          "type": "string"
+        },
+        "parentVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parentversionid"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "siteProfileVersionId",
+        "inputMemoryVersionIds",
+        "assetSpecificationVersionIds",
+        "layoutGeometryRefs",
+        "assumptionVersionIds",
+        "alternativeIds",
+        "sourceScenarioId",
+        "sourceModelRevisionId",
+        "dependencyManifestId",
+        "parentVersionId"
+      ],
+      "title": "ProposalPayload",
+      "type": "object"
+    },
+    "PublicMapSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "PUBLIC_MAP",
+          "title": "Kind",
+          "type": "string"
+        },
+        "provider": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Provider",
+          "type": "string"
+        },
+        "featureId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Featureid"
+        },
+        "sourceUrl": {
+          "maxLength": 2048,
+          "pattern": "^https?://",
+          "title": "Sourceurl",
+          "type": "string"
+        },
+        "license": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "License",
+          "type": "string"
+        },
+        "queryExtentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Queryextenthash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "provider",
+        "sourceUrl",
+        "license",
+        "queryExtentHash"
+      ],
+      "title": "PublicMapSource",
+      "type": "object"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "contentHash"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "RequiredInput": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "DISCUSS",
+            "PLAN",
+            "PROPOSE",
+            "GENERATE",
+            "VALIDATE_GEOMETRY",
+            "ANALYZE"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "field": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Field",
+          "type": "string"
+        },
+        "minimumEvidenceUse": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Minimumevidenceuse",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "field",
+        "minimumEvidenceUse"
+      ],
+      "title": "RequiredInput",
+      "type": "object"
+    },
+    "ResolvedHorizontalCRS": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "RESOLVED",
+          "title": "Status",
+          "type": "string"
+        },
+        "definition": {
+          "maxLength": 8192,
+          "minLength": 1,
+          "title": "Definition",
+          "type": "string"
+        },
+        "axisOrder": {
+          "const": "XY",
+          "title": "Axisorder",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "METRE",
+            "DEGREE"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "transformId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transformid"
+        }
+      },
+      "required": [
+        "status",
+        "definition",
+        "axisOrder",
+        "unit"
+      ],
+      "title": "ResolvedHorizontalCRS",
+      "type": "object"
+    },
+    "ResolvedVerticalReference": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "RESOLVED",
+          "title": "Status",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ORTHOMETRIC",
+            "ELLIPSOIDAL",
+            "LOCAL_DATUM"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "identifier": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Identifier",
+          "type": "string"
+        },
+        "unit": {
+          "const": "METRE",
+          "title": "Unit",
+          "type": "string"
+        },
+        "geoidModelVersion": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Geoidmodelversion"
+        }
+      },
+      "required": [
+        "status",
+        "kind",
+        "identifier",
+        "unit"
+      ],
+      "title": "ResolvedVerticalReference",
+      "type": "object"
+    },
+    "RouteSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ROUTE",
+          "title": "Kind",
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "corridorWidthM": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 10000,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Corridorwidthm"
+        }
+      },
+      "required": [
+        "kind",
+        "geometry"
+      ],
+      "title": "RouteSelection",
+      "type": "object"
+    },
+    "SelectionVersion": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "selectionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Selectionid",
+          "type": "string"
+        },
+        "projectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "selection": {
+          "discriminator": {
+            "mapping": {
+              "AREA": "#/$defs/AreaSelection",
+              "CROSSING": "#/$defs/CrossingSelection",
+              "ENDPOINTS": "#/$defs/EndpointsSelection",
+              "POINT": "#/$defs/PointSelection",
+              "ROUTE": "#/$defs/RouteSelection"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/AreaSelection"
+            },
+            {
+              "$ref": "#/$defs/RouteSelection"
+            },
+            {
+              "$ref": "#/$defs/CrossingSelection"
+            },
+            {
+              "$ref": "#/$defs/PointSelection"
+            },
+            {
+              "$ref": "#/$defs/EndpointsSelection"
+            }
+          ],
+          "title": "Selection"
+        },
+        "originalCrs": {
+          "$ref": "#/$defs/ResolvedHorizontalCRS"
+        },
+        "originalGeometry": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "canonicalCrs": {
+          "const": "EPSG:4326",
+          "title": "Canonicalcrs",
+          "type": "string"
+        },
+        "canonicalGeometry": {
+          "$ref": "#/$defs/Geometry"
+        },
+        "transformationEvidenceId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Transformationevidenceid",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "createdBy": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Createdby",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "selectionId",
+        "projectId",
+        "version",
+        "selection",
+        "originalCrs",
+        "originalGeometry",
+        "canonicalCrs",
+        "canonicalGeometry",
+        "transformationEvidenceId",
+        "contentHash",
+        "createdBy",
+        "createdAt"
+      ],
+      "title": "SelectionVersion",
+      "type": "object"
+    },
+    "SourceKind": {
+      "enum": [
+        "MEASURED",
+        "SURVEY",
+        "PUBLIC_MAP",
+        "USER_PROVIDED",
+        "DERIVED",
+        "AI_ASSUMPTION",
+        "UNKNOWN"
+      ],
+      "title": "SourceKind",
+      "type": "string"
+    },
+    "SurveySource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "SURVEY",
+          "title": "Kind",
+          "type": "string"
+        },
+        "surveyDatasetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Surveydatasetid",
+          "type": "string"
+        },
+        "sourceFileId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcefileid",
+          "type": "string"
+        },
+        "validationRunId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validationrunid"
+        }
+      },
+      "required": [
+        "kind",
+        "surveyDatasetId",
+        "sourceFileId"
+      ],
+      "title": "SurveySource",
+      "type": "object"
+    },
+    "UnknownFact": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "const": "UNKNOWN",
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "null"
+        },
+        "reason": {
+          "enum": [
+            "NOT_COLLECTED",
+            "UNAVAILABLE",
+            "OUTSIDE_COVERAGE",
+            "REFERENCE_UNRESOLVED",
+            "RETRIEVAL_FAILED",
+            "CONFLICTING_EVIDENCE"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "missingInformationIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Missinginformationids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "reason"
+      ],
+      "title": "UnknownFact",
+      "type": "object"
+    },
+    "UnknownHorizontalCRS": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "UNKNOWN",
+          "title": "Status",
+          "type": "string"
+        },
+        "definition": {
+          "default": null,
+          "title": "Definition",
+          "type": "null"
+        },
+        "axisOrder": {
+          "default": null,
+          "title": "Axisorder",
+          "type": "null"
+        },
+        "unit": {
+          "default": null,
+          "title": "Unit",
+          "type": "null"
+        },
+        "transformId": {
+          "default": null,
+          "title": "Transformid",
+          "type": "null"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "UnknownHorizontalCRS",
+      "type": "object"
+    },
+    "UnknownSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "UNKNOWN",
+          "title": "Kind",
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "NOT_COLLECTED",
+            "UNAVAILABLE",
+            "OUTSIDE_COVERAGE",
+            "REFERENCE_UNRESOLVED",
+            "RETRIEVAL_FAILED",
+            "CONFLICTING_EVIDENCE"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "failedOperationId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Failedoperationid"
+        }
+      },
+      "required": [
+        "kind",
+        "reason"
+      ],
+      "title": "UnknownSource",
+      "type": "object"
+    },
+    "UnknownVerticalReference": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "UNKNOWN",
+          "title": "Status",
+          "type": "string"
+        },
+        "kind": {
+          "default": null,
+          "title": "Kind",
+          "type": "null"
+        },
+        "identifier": {
+          "default": null,
+          "title": "Identifier",
+          "type": "null"
+        },
+        "unit": {
+          "default": null,
+          "title": "Unit",
+          "type": "null"
+        },
+        "geoidModelVersion": {
+          "default": null,
+          "title": "Geoidmodelversion",
+          "type": "null"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "UnknownVerticalReference",
+      "type": "object"
+    },
+    "UserSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "USER_PROVIDED",
+          "title": "Kind",
+          "type": "string"
+        },
+        "messageId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Messageid",
+          "type": "string"
+        },
+        "actorId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Actorid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "messageId",
+        "actorId"
+      ],
+      "title": "UserSource",
+      "type": "object"
+    },
+    "ValidationIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARNING",
+            "BLOCKER"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "componentIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Componentids",
+          "type": "array"
+        },
+        "fieldPaths": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Fieldpaths",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "remediation": {
+          "title": "Remediation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "componentIds",
+        "fieldPaths",
+        "evidenceIds",
+        "message",
+        "remediation"
+      ],
+      "title": "ValidationIssue",
+      "type": "object"
+    },
+    "ValidationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "level": {
+          "enum": [
+            "CONCEPT_VALIDATION",
+            "GEOMETRY_VALIDATION",
+            "ENGINEERING_ANALYSIS"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "validatorId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Validatorid",
+          "type": "string"
+        },
+        "validatorVersion": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Validatorversion",
+          "type": "string"
+        },
+        "inputHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Inputhash",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PASSED",
+            "FAILED",
+            "NOT_RUN",
+            "UNSUPPORTED",
+            "ERROR",
+            "STALE"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/ValidationIssue"
+          },
+          "maxItems": 1000,
+          "title": "Issues",
+          "type": "array"
+        },
+        "outputArtifactId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outputartifactid"
+        }
+      },
+      "required": [
+        "id",
+        "level",
+        "validatorId",
+        "validatorVersion",
+        "inputHash",
+        "status",
+        "issues"
+      ],
+      "title": "ValidationResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Export root; not an API request or stored aggregate.",
+  "properties": {
+    "numericFact": {
+      "$ref": "#/$defs/Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____"
+    },
+    "textFact": {
+      "$ref": "#/$defs/Fact_str_"
+    },
+    "horizontalCrs": {
+      "discriminator": {
+        "mapping": {
+          "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+          "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ResolvedHorizontalCRS"
+        },
+        {
+          "$ref": "#/$defs/UnknownHorizontalCRS"
+        }
+      ],
+      "title": "Horizontalcrs"
+    },
+    "verticalReference": {
+      "discriminator": {
+        "mapping": {
+          "RESOLVED": "#/$defs/ResolvedVerticalReference",
+          "UNKNOWN": "#/$defs/UnknownVerticalReference"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ResolvedVerticalReference"
+        },
+        {
+          "$ref": "#/$defs/UnknownVerticalReference"
+        }
+      ],
+      "title": "Verticalreference"
+    },
+    "reference": {
+      "$ref": "#/$defs/Ref"
+    },
+    "objectReference": {
+      "$ref": "#/$defs/ObjectRef"
+    },
+    "selection": {
+      "$ref": "#/$defs/SelectionVersion"
+    },
+    "evidence": {
+      "$ref": "#/$defs/Evidence"
+    },
+    "missingInformation": {
+      "$ref": "#/$defs/MissingSiteInformation"
+    },
+    "capability": {
+      "$ref": "#/$defs/AssetCapability"
+    },
+    "dependencies": {
+      "$ref": "#/$defs/DependencyManifest"
+    },
+    "validation": {
+      "$ref": "#/$defs/ValidationResult"
+    },
+    "proposal": {
+      "$ref": "#/$defs/ProposalPayload"
+    },
+    "approval": {
+      "$ref": "#/$defs/ApprovalCommand"
+    },
+    "proposalCommand": {
+      "$ref": "#/$defs/ProposalCommand"
+    },
+    "civilIntent": {
+      "$ref": "#/$defs/CivilIntent"
+    }
+  },
+  "required": [
+    "numericFact",
+    "textFact",
+    "horizontalCrs",
+    "verticalReference",
+    "reference",
+    "objectReference",
+    "selection",
+    "evidence",
+    "missingInformation",
+    "capability",
+    "dependencies",
+    "validation",
+    "proposal",
+    "approval",
+    "proposalCommand",
+    "civilIntent"
+  ],
+  "title": "FoundationContracts",
+  "type": "object"
+}

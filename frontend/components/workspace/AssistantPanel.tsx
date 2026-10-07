@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { api, apiUrl } from "@/lib/api";
 import { useProjectStore } from "@/stores/projectStore";
+import { assistantActionBoundary } from "@/lib/assistant-boundary";
 
 interface ChatEntry {
   role: "user" | "assistant";
@@ -25,8 +26,6 @@ interface AssistantPanelProps {
 
 export default function AssistantPanel({
   projectId,
-  onApplyParameters,
-  onRegenerate,
 }: AssistantPanelProps) {
   const [history, setHistory] = useState<ChatEntry[]>([
     {
@@ -53,10 +52,9 @@ export default function AssistantPanel({
       );
       setHistory((h) => [...h, { role: "assistant", text: res.reply }]);
       const action = res.action;
-      if (action?.type === "update_parameters" && action.parameters) {
-        onApplyParameters(action.parameters);
-      } else if (action?.type === "regenerate") {
-        onRegenerate(action.parameters ?? {});
+      const boundary = assistantActionBoundary(action);
+      if (boundary.effect !== "READ_ONLY") {
+        setHistory((h) => [...h, { role: "assistant", text: boundary.message! }]);
       } else if (action?.type === "show_layer" && action.layer === "excavation" && !layers.excavation) {
         toggleLayer("excavation");
       } else if (action?.type === "download" && action.export) {

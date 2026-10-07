@@ -27,6 +27,7 @@ class RateLimitRule:
 
 
 RATE_RULES = {
+    "building.plan": RateLimitRule("rl:building-plan", 6, 60, "Too many building planning requests. Please wait a moment."),
     "auth.login": RateLimitRule("rl:login", 20, 60, "Too many login attempts. Please wait and try again."),
     "auth.register": RateLimitRule("rl:register", 10, 3600, "Too many registration attempts. Please try again later."),
     "generation.start": RateLimitRule("rl:gen", 10, 60, "Too many generation requests. Please wait a moment."),

@@ -75,7 +75,7 @@ export default function CreativeDashboard() {
   const [assetQuery, setAssetQuery] = useState("");
   const [assetCategory, setAssetCategory] = useState("all");
   const [assetSheet, setAssetSheet] = useState(false);
-  const [featuredIndex, setFeaturedIndex] = useState(0);
+
   const [collapsed,setCollapsed] = useState(false);
   const [section,setSection] = useState<"overview"|"concepts"|"templates">("overview");
   const [recentOnly,setRecentOnly] = useState(false);
@@ -275,8 +275,6 @@ export default function CreativeDashboard() {
     }
   };
 
-  const recentProjects = useMemo(() => [...constructionProjects].sort((a,b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()).slice(0,3), [constructionProjects]);
-  const featured = recentProjects[featuredIndex % Math.max(1,recentProjects.length)];
   const showLibrary = section === "templates" || assetSheet;
 
   return (
@@ -285,19 +283,12 @@ export default function CreativeDashboard() {
       <div className="hub-main">
         <header className="hub-toolbar"><label className="hub-search"><Search size={16}/><input ref={searchRef} type="search" aria-label="Search concepts" placeholder="Search concepts..." value={query} onChange={event=>{setQuery(event.target.value); if(event.target.value) navigate("concepts");}}/><kbd>Ctrl K</kbd></label><div className="hub-toolbar-actions"><Link href={LOCAL_SANDBOX_PATH}><Box size={15}/>Open sandbox</Link><Link className="hub-primary" href="/projects/new"><Plus size={16}/>New concept</Link><Link href="/settings" title="Settings" aria-label="Open settings"><Settings size={17}/></Link></div></header>
         <div className={`hub-content ${section === "overview" ? "hub-command-center" : "hub-library-view"}`}>
-          <section className="hub-overview"><span className="hub-micro">WORKSPACE / {section.toUpperCase()}</span><h1>{section === "overview" ? "Your concepts" : section === "concepts" ? "Concepts" : "Infrastructure templates"}</h1><p>{section === "templates" ? "Choose an asset from the complete infrastructure library." : "Continue recent work or start a new infrastructure concept."}</p></section>
+          <section className="hub-overview"><span className="hub-micro">WORKSPACE / {section.toUpperCase()}</span><h1>{section === "overview" ? "Your concepts" : section === "concepts" ? "Concepts" : "Infrastructure templates"}</h1><p>{section === "templates" ? "Choose an asset from the complete infrastructure library." : "Your saved infrastructure work, together in one place."}</p></section>
           {section === "overview" && <>
-          <section className="hub-primary-grid">
-            <article className="hub-featured">
-              <div className="hub-featured-heading"><h2 className="hub-micro">CONTINUE WORKING</h2><div>{recentProjects.map((project,index)=><button key={project.id} aria-label={`Show recent project ${project.name}`} aria-pressed={featuredIndex % recentProjects.length === index} onClick={()=>setFeaturedIndex(index)}>{String(index+1).padStart(2,"0")}</button>)}</div></div>
-              {featured ? <><Link href={`/projects/${featured.id}/workspace`} className="hub-featured-preview">{isConstructionType(featured.project_type) ? <ConstructionPreview type={featured.project_type} className="h-full w-full"/> : <div className="hub-reference-preview"><Shapes size={60}/><span>{typeLabel(featured.project_type as ConstructionType)}</span></div>}<span className="hub-preview-caption">{typeLabel(featured.project_type as ConstructionType)} · TYPE PREVIEW</span></Link><div className="hub-featured-details"><div><h3>{featured.name}</h3><p><MapPinned size={12}/>{projectLocation(featured)}</p><small>Updated {relativeUpdate(featured.updated_at)} · {folders.find(f=>f.id===featured.folder_id)?.name ?? "Unfiled"}{featured.status && ` · ${featured.status.replaceAll("_"," ")}`}</small></div><Link href={`/projects/${featured.id}/workspace`}>Open workspace <ArrowRight size={15}/></Link><button aria-label={`Manage ${featured.name}`} onClick={()=>{navigate("concepts");setActiveMenu(featured.id);}}><MoreHorizontal size={18}/></button></div></> : <div className="hub-first-concept"><MapPinned size={36}/><h3>{projects === null ? "Loading recent work…" : "Create your first concept"}</h3><p>Choose an asset type and open the workspace.</p><Link href="/projects/new" className="hub-primary">New concept <ArrowRight size={15}/></Link></div>}
-            </article>
-            <aside className="hub-launch-panel"><h2 className="hub-micro">QUICK START</h2><div className="hub-quick-start"><Link href="/projects/new"><Plus size={21}/><div><h2>New site concept</h2><p>Start from a real project site.</p></div><ArrowRight size={15}/></Link><button onClick={()=>setAssetSheet(true)}><Shapes size={21}/><div><h2>Use template</h2><p>Start with an infrastructure workflow.</p></div><ArrowRight size={15}/></button><Link href={LOCAL_SANDBOX_PATH}><Box size={21}/><div><h2>3D Sandbox</h2><p>Experiment with geometry.</p></div><ArrowRight size={15}/></Link></div><div className="hub-workspace-info"><span className="hub-micro">YOUR WORKSPACE</span><strong>{projects === null ? "—" : constructionProjects.length} concepts <span> / {folders.length} folders</span></strong><p>Site-aware infrastructure planning</p></div></aside>
-          </section>
           <section className="hub-assets"><div className="hub-section-heading"><div><h2>Start a new concept</h2><p>Choose an infrastructure type.</p></div><button onClick={()=>setAssetSheet(true)}>More assets <ArrowRight size={13}/></button></div><div className="hub-asset-row">{QUICK_ASSETS.map(({type,title,category,icon:Icon},index)=><Link className={index === 5 ? "hub-wide-asset" : ""} key={type} href={`/projects/new?template=${type}`}><Icon size={24}/><div><h3>{title}</h3><span className="hub-micro">{category}</span></div></Link>)}<button onClick={()=>setAssetSheet(true)}><Shapes size={24}/><div><h3>More assets →</h3><span className="hub-micro">{ASSET_TYPES.length} assets</span></div></button></div></section>
           </>}
-          {section !== "templates" && <section id="hub-concepts" className={section === "overview" ? "hub-recent" : "hub-all-concepts"}><div className="hub-section-heading"><h2>{section === "overview" ? "Recent concepts" : "All concepts"} <span>{projects===null?"—":constructionProjects.length}</span></h2><button onClick={()=>{setQuery("");setTypeFilter("all");setFolderFilter("all");setRecentOnly(false);navigate("concepts");}}>View all <ArrowRight size={13}/></button></div>
-          <div className="hub-filters"><div className="hub-filter-tabs"><button aria-pressed={folderFilter==="all"&&!recentOnly} onClick={()=>{setFolderFilter("all");setRecentOnly(false);}}>All</button><button aria-pressed={recentOnly} onClick={()=>{setRecentOnly(true);setSort("recent");setFolderFilter("all");}}>Recent</button><button aria-pressed={folderFilter==="unfiled"} onClick={()=>{setFolderFilter("unfiled");setRecentOnly(false);}}>Unfiled</button></div><select aria-label="Filter by concept type" value={typeFilter} onChange={e=>setTypeFilter(e.target.value as "all"|ConstructionType)}><option value="all">All types</option>{ASSET_TYPES.map(asset=><option key={asset.id} value={asset.id}>{asset.name}</option>)}</select>{typeof folderFilter==="number"&&<button className="hub-folder-chip" onClick={()=>setFolderFilter("all")}>{folders.find(f=>f.id===folderFilter)?.name}<X size={12}/></button>}<label className="hub-sort">Sort <select aria-label="Sort concepts" value={sort} onChange={e=>setSort(e.target.value as SortOption)}><option value="recent">Recently updated</option><option value="name">Name A–Z</option></select></label></div>
+          {section !== "templates" && <section id="hub-concepts" className="hub-all-concepts" aria-label="Saved concepts">
+          <div className="hub-filters"><span className="hub-collection-count">{projects===null?"—":visibleProjects.length} concepts</span><div className="hub-filter-tabs"><button aria-pressed={folderFilter==="all"&&!recentOnly} onClick={()=>{setFolderFilter("all");setRecentOnly(false);}}>All</button><button aria-pressed={recentOnly} onClick={()=>{setRecentOnly(true);setSort("recent");setFolderFilter("all");}}>Recent</button><button aria-pressed={folderFilter==="unfiled"} onClick={()=>{setFolderFilter("unfiled");setRecentOnly(false);}}>Unfiled</button></div><select aria-label="Filter by concept type" value={typeFilter} onChange={e=>setTypeFilter(e.target.value as "all"|ConstructionType)}><option value="all">All types</option>{ASSET_TYPES.map(asset=><option key={asset.id} value={asset.id}>{asset.name}</option>)}</select>{typeof folderFilter==="number"&&<button className="hub-folder-chip" onClick={()=>setFolderFilter("all")}>{folders.find(f=>f.id===folderFilter)?.name}<X size={12}/></button>}<label className="hub-sort">Sort <select aria-label="Sort concepts" value={sort} onChange={e=>setSort(e.target.value as SortOption)}><option value="recent">Recently updated</option><option value="name">Name A–Z</option></select></label></div>
           {error && (
             <div className="mt-5 flex items-center justify-between rounded-xl border border-warning/25 bg-warning/10 px-4 py-3 text-sm text-warning-text">
               <span>{error}</span>
@@ -367,7 +358,7 @@ export default function CreativeDashboard() {
 
           {visibleProjects.length > 0 && (
             <div className="hub-concept-grid">
-              {(section === "overview" ? visibleProjects.slice(0,4) : recentOnly ? visibleProjects.slice(0,6) : visibleProjects).map((project) => {
+              {(recentOnly ? visibleProjects.slice(0,6) : visibleProjects).map((project) => {
                 const type = project.project_type as ConstructionType;
                 const folder = folders.find(
                   (item) => item.id === project.folder_id,

@@ -498,8 +498,8 @@ export function useEditableModelEditor({
     if (!project || !scenarioId) throw new Error("Open a saved project revision first.");
     const result = await api.get<ModelRevision>(`/api/projects/${project.id}/scenarios/${scenarioId}/model-revisions/${id}`);
     if (!result.document) throw new Error("Revision document is unavailable.");
-    const {placement} = await api.get<{placement:{longitude:number;latitude:number;elevation:number;offset:number;heading:number}|null}>(`/api/projects/${project.id}/engineering/placements/${id}`);
-    return placement ? { ...result.document, origin:{lng:placement.longitude,lat:placement.latitude,elevation_m:placement.elevation+placement.offset,heading_deg:placement.heading} } : result.document;
+    const {placement} = await api.get<{placement:{longitude:number;latitude:number;elevation:number|null;offset:number;heading:number}|null}>(`/api/projects/${project.id}/engineering/placements/${id}`);
+    return placement && placement.elevation !== null ? { ...result.document, origin:{lng:placement.longitude,lat:placement.latitude,elevation_m:placement.elevation+placement.offset,heading_deg:placement.heading} } : result.document;
   },[project,scenarioId]);
 
   return {

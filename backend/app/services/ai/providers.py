@@ -1,4 +1,4 @@
-"""LLM provider abstraction: Ollama / OpenAI / Anthropic / Mock.
+"""LLM provider abstraction: Nebius / Ollama / OpenAI / Anthropic / Mock.
 
 Design generation uses structured JSON via generate_design_json().
 Workspace copilot uses chat_completion() for free-form + JSON copilot replies.
@@ -13,10 +13,11 @@ import httpx
 
 from app.core.config import settings
 from app.services.ai.ollama_client import OllamaError, chat_completion as ollama_chat, parse_json_from_text
+from app.services.ai import nebius
 
 logger = logging.getLogger(__name__)
 
-ProviderName = Literal["ollama", "openai", "anthropic", "mock", "mock-fallback", "fallback"]
+ProviderName = Literal["nebius", "ollama", "openai", "anthropic", "mock", "mock-fallback", "fallback"]
 PLANNER_TIMEOUT_SECONDS = 45
 OPENAI_PLANNER_MODEL = "gpt-4o-mini"
 ANTHROPIC_PLANNER_MODEL = "claude-sonnet-4-20250514"
@@ -25,7 +26,7 @@ ANTHROPIC_PLANNER_MODEL = "claude-sonnet-4-20250514"
 def normalize_ai_provider() -> str:
     """Resolved primary provider from AI_PROVIDER env (defaults to mock when unset)."""
     raw = (settings.AI_PROVIDER or "mock").strip().lower()
-    if raw in ("ollama", "openai", "anthropic", "mock", "auto"):
+    if raw in ("nebius", "ollama", "openai", "anthropic", "mock", "auto"):
         return raw
     return "mock"
 
@@ -37,7 +38,9 @@ def _provider_chain() -> list[str]:
         return []
 
     if primary == "auto":
-        if settings.OPENAI_API_KEY:
+        if settings.NEBIUS_API_KEY:
+            primary = "nebius"
+        elif settings.OPENAI_API_KEY:
             primary = "openai"
         elif settings.ANTHROPIC_API_KEY:
             primary = "anthropic"
@@ -107,8 +110,12 @@ async def _ollama_generate_json(system: str, user: str) -> dict:
 async def chat_completion(system: str, user: str, *, json_mode: bool = False) -> tuple[str, str]:
     """Returns (text, provider_name). Tries providers in chain order."""
     last_error: Exception | None = None
+    if normalize_ai_provider() == "nebius":
+        return await nebius.completion(system, user, json_mode=json_mode), "nebius"
     for name in _provider_chain():
         try:
+            if name == "nebius":
+                return await nebius.completion(system, user, json_mode=json_mode), "nebius"
             if name == "ollama":
                 text = await ollama_chat(system, user, json_mode=json_mode)
                 return text, "ollama"
@@ -287,9 +294,13 @@ async def generate_plan_json(
 ) -> tuple[dict, str, str | None]:
     """Structured design-parameter JSON from LLM. Retries once; raises on total failure."""
     last_error: Exception | None = None
+    if normalize_ai_provider() == "nebius":
+        return await nebius.generate_json(system, user), "nebius", settings.NEBIUS_CHAT_MODEL
     for attempt in range(2):
         for name in _provider_chain():
             try:
+                if name == "nebius":
+                    return await nebius.generate_json(system, user), "nebius", settings.NEBIUS_CHAT_MODEL
                 if name == "ollama":
                     data = await asyncio.wait_for(
                         _ollama_generate_json(system, user),
@@ -321,8 +332,12 @@ async def generate_plan_json(
 
 async def generate_design_json(system: str, user: str, project_type: str, params: dict) -> tuple[dict, str]:
     """Returns (design_json, provider_name). Falls back to mock on any failure."""
+    if normalize_ai_provider() == "nebius":
+        return await nebius.generate_json(system, user), "nebius"
     for name in _provider_chain():
         try:
+            if name == "nebius":
+                return await nebius.generate_json(system, user), "nebius"
             if name == "ollama":
                 return await _ollama_generate_json(system, user), "ollama"
             if name == "openai":

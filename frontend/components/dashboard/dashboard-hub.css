@@ -45,3 +45,34 @@ html:has(.geo-dashboard-hub),body:has(.geo-dashboard-hub){height:100vh;overflow:
 .hub-workspace-info{flex-shrink:0}.hub-workspace-info p{display:none}.geo-dashboard-hub .hub-quick-start>:is(a,button){padding:10px 4px;min-height:52px}
 @media(min-width:1700px){.hub-command-center{grid-template-rows:76px minmax(320px,1fr) 126px 290px}}
 .hub-card-status{font-size:9px;color:#a2b492;text-transform:capitalize;white-space:nowrap}.hub-concept-card h3{min-width:0}.hub-recent .hub-concept-card .p-4>p:last-child{white-space:nowrap;overflow:hidden}
+
+/* Keep the featured preview at a deliberate size on wide or tall displays. */
+.hub-primary-grid{grid-template-columns:minmax(0,720px) minmax(300px,460px);justify-content:start}
+.hub-command-center{grid-template-rows:70px minmax(240px,320px) 116px 266px;align-content:start}
+@media(min-width:1700px){.hub-command-center{grid-template-rows:76px minmax(260px,340px) 126px 290px}}
+@media(max-height:800px){.hub-command-center{grid-template-rows:60px minmax(180px,240px) 100px 216px}}
+
+/* One project collection, with compact creation tools above it. */
+.hub-command-center{grid-template-rows:70px 116px minmax(0,1fr);gap:22px;align-content:stretch}
+.hub-command-center .hub-assets{border-block:1px solid var(--hub-line);padding:12px 0}
+.hub-command-center .hub-assets .hub-section-heading{margin-bottom:10px}
+.hub-command-center .hub-assets .hub-section-heading p{display:none}
+.hub-command-center .hub-asset-row{gap:8px}
+.hub-command-center .hub-asset-row>:is(a,button){height:58px;padding:10px 13px;background:transparent}
+.hub-command-center .hub-asset-row>:is(a,button):hover{background:#182114;border-color:#64754e}
+.hub-command-center .hub-asset-row svg{width:20px;height:20px}
+.hub-all-concepts{scrollbar-width:thin;scrollbar-color:#405033 transparent;overscroll-behavior:contain}
+.hub-all-concepts .hub-filters{position:sticky;top:0;z-index:10;background:var(--hub-bg);padding:0 0 14px;min-height:45px}
+.hub-collection-count{font-size:12px;color:#c2cdbb;margin-right:8px;white-space:nowrap}
+.hub-command-center .hub-all-concepts .hub-concept-grid{grid-template-columns:repeat(auto-fill,minmax(240px,300px));gap:18px;margin-top:20px;align-content:start;padding-bottom:16px}
+.hub-command-center .hub-concept-card{transition:border-color .18s,background .18s}
+.hub-command-center .hub-concept-card:hover{background:#151d13;border-color:#64754e}
+.hub-command-center .hub-concept-preview{aspect-ratio:16/10;height:auto;background:#0d1416}
+.hub-command-center .hub-concept-card .p-4{padding:16px}
+.hub-command-center .hub-concept-card h3{font-size:15px;font-weight:500}
+.hub-command-center .hub-concept-card .p-4>p{font-size:11px;line-height:1.5}
+.hub-command-center .hub-concept-card>div.flex{padding:11px 16px}
+.hub-command-center .hub-concept-card .text-primary{color:var(--hub-lime)}
+.hub-command-center .hub-concept-card .hub-card-status{font-size:9px;border:1px solid #3b4b31;padding:3px 5px}
+@media(min-width:1700px){.hub-command-center{grid-template-rows:76px 116px minmax(0,1fr);gap:24px}}
+@media(max-height:800px){.hub-command-center{grid-template-rows:60px 102px minmax(0,1fr);gap:16px}.hub-command-center .hub-assets{padding:8px 0}.hub-command-center .hub-asset-row>:is(a,button){height:52px}}

@@ -12,11 +12,12 @@ import WorkspaceLayout from "@/components/layout/WorkspaceLayout";
 import WorkspaceMapEngine from "@/components/map/WorkspaceMapEngine";
 import { ProfessionalModelPanel } from "@/components/model-editor/ProfessionalModelEditor";
 import WorkspaceToolRail from "@/components/workspace/WorkspaceToolRail";
+import BuildingAssistant from "@/components/workspace/BuildingAssistant";
 import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
 import ParameterForm from "@/components/workspace/ParameterForm";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Crosshair, Layers3, MapPinned, Search, Sparkles, Wrench } from "lucide-react";
+import { ChevronDown, Crosshair, Layers3, Search, Sparkles, Wrench } from "lucide-react";
 import TransformOptions from "@/components/model-editor/TransformOptions";
 import { useEditableModelEditor } from "@/hooks/useEditableModelEditor";
 import { useProjectData } from "@/hooks/useProjectData";
@@ -73,6 +74,13 @@ export default function WorkspacePage() {
   const { open: conceptOpen, toggle: toggleConcept, close: closeConcept } = useWorkspacePanel("generation");
   const { open: toolsOpen, toggle: toggleTools, close: closeTools } = useWorkspacePanel("drawing");
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
+  const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
+  const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
+    const job = await api.get<JobStatus>(`/api/jobs/${jobId}`);
+    if (scenarioId) localStorage.setItem(`project-${projectId}-scenario-id`, String(scenarioId));
+    setActiveJob(job);
+    if (job.status === "completed") await load({ silent: true });
+  };
 
   const generate = useCallback(
     async (
@@ -239,7 +247,11 @@ export default function WorkspacePage() {
           toolRail={<WorkspaceToolRail editor={modelEditor} />}
           mapBottomControls={<TransformOptions editor={modelEditor} />}
           mapToolbar={
-            <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-start gap-1.5">
+            <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
+              {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
+                <Button className="h-10 gap-2 rounded-xl" onClick={() => { setBuildingAssistantOpen(value => !value); closeConcept(); closeTools(); }}><Sparkles className="size-4" />AI Building Assistant</Button>
+                {buildingAssistantOpen && <BuildingAssistant projectId={projectId} boundaryKey={JSON.stringify(project.boundary_geojson ?? null)} revisionId={modelEditor.baseRevision?.id ?? null} dirty={modelEditor.dirty} generating={generating} onStarted={showBuildingJob} onClose={() => setBuildingAssistantOpen(false)} />}
+              </div>}
               <div className="relative">
                 <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Drawing and site tools" onClick={toggleTools}><Wrench className="size-4" /></Button>
                 {toolsOpen && (
@@ -252,13 +264,12 @@ export default function WorkspacePage() {
               <div className="flex items-center" title="Project layers">
                 <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="World context layers" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-scene-controls"))}><Layers3 className="size-4" /></Button>
               </div>
-              <div className="flex items-center">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Search location" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Toggle 2D / 3D view" onClick={() => window.dispatchEvent(new CustomEvent("geoai:toggle-map-view"))}><MapPinned className="size-4" /></Button>
+              <div className="flex items-center gap-2">
+                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="Search workspace" title="Search objects and places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
                 <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Fit project in view" onClick={() => window.dispatchEvent(new CustomEvent("geoai:fit-project"))}><Crosshair className="size-4" /></Button>
               </div>
               <div className="relative">
-                <Button disabled={!assetSupportsGeneration(project.project_type)} title={assetSupportsGeneration(project.project_type) ? "Generate concept" : "Site reference only; generation unavailable"} onClick={toggleConcept} className="workspace-generate-button h-10 gap-2 rounded-xl bg-primary/90 px-4 text-xs font-semibold shadow-md brightness-[0.94] hover:bg-primary/80">
+                <Button disabled={!assetSupportsGeneration(project.project_type)} title={assetSupportsGeneration(project.project_type) ? "Generate concept" : "Site reference only; generation unavailable"} onClick={toggleConcept} className="workspace-generate-button ml-1 h-10 gap-2.5 rounded-xl bg-primary/90 px-5 text-xs font-semibold shadow-md brightness-[0.94] hover:bg-primary/80">
                   <Sparkles className="size-4" /> Generate · {generationMode === "fast_preview" ? "Fast" : generationMode === "high_detail" ? "Detailed" : "Balanced"} <ChevronDown className="size-3.5" />
                 </Button>
                 {conceptOpen && (
@@ -339,3 +350,4 @@ export default function WorkspacePage() {
     </div>
   );
 }
+

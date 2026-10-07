@@ -81,6 +81,7 @@ from app.api.routes import (  # noqa: E402
     engineering,
     admin_usage,
     ai,
+    building_plans,
     audit,
     civicspan as geoai,
     auth,
@@ -128,4 +129,5 @@ app.include_router(audit.router)
 app.include_router(usage.router)
 app.include_router(admin_usage.router)
 app.include_router(ai.router)
+app.include_router(building_plans.router)
 app.include_router(geoai.router)

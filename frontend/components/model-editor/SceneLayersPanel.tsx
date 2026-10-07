@@ -65,6 +65,10 @@ export default function SceneLayersPanel({ editor }: { editor: EditableModelEdit
         ["Isolate selected", () => isolate(new Set(editor.selectedIds))],
       ] as const).map(([label, action]) => <button key={label} disabled={label.endsWith("selected") && !editor.selectedIds.length} className="block w-full px-2 py-2 text-left hover:bg-white/5 disabled:opacity-35" onClick={event => { action(); event.currentTarget.closest("details")?.removeAttribute("open"); }}>{label}</button>)}</div></details></div>
       {visibilityBeforeIsolation && <button className="text-[10px] text-primary" onClick={restoreVisibility}>Exit isolation · restore visibility</button>}
+      {doc.components.some(c => c.category === "room") && <div className="flex gap-3 text-[10px]">
+        <button className="text-primary" onClick={() => isolate(new Set(doc.components.filter(c => ["room", "wall", "door", "window", "slab"].includes(c.category)).map(c => c.id)))}>Architecture</button>
+        <button className="text-primary" onClick={() => isolate(new Set(doc.components.filter(c => ["column", "beam", "slab", "foundation"].includes(c.category)).map(c => c.id)))}>Structural frame</button>
+      </div>}
       {!!editor.selectedIds.length && <div className="flex items-center justify-between text-[10px] text-primary"><span>{editor.selectedIds.length} selected · Shift for range</span><button onClick={() => window.dispatchEvent(new CustomEvent("geoai:locate-component", { detail: editor.selectedIds[0] }))}>Locate</button></div>}
     </div>
     <div className="flex-1 space-y-2 p-3">

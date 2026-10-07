@@ -12,6 +12,11 @@ SUPPORTED_KINDS = {"box", "cylinder", "extrusion", "sweep", "asset_instance"}
 SUPPORTED_PROJECT_TYPES = {"bridge", "flyover", "building", "road", "pipeline", "dam"}
 
 LAYER_MATERIALS: dict[str, dict[str, Any]] = {
+    "wall": {"name": "Architectural wall", "color": "#E7DFD1", "roughness": 0.8, "metalness": 0.0},
+    "door": {"name": "Door", "color": "#93613E", "roughness": 0.7, "metalness": 0.0},
+    "window": {"name": "Window", "color": "#78BDCF", "roughness": 0.2, "metalness": 0.15},
+    "room": {"name": "Room floor finish", "color": "#CCC3AE", "roughness": 0.8, "metalness": 0.0},
+    "beam": {"name": "Concept beam", "color": "#8EACC7", "roughness": 0.8, "metalness": 0.0},
     "deck": {"name": "Structural concrete", "color": "#B8C0CC", "roughness": 0.78, "metalness": 0.0},
     "road": {"name": "Asphalt", "color": "#28313F", "roughness": 0.94, "metalness": 0.0},
     "asphalt": {"name": "Asphalt", "color": "#28313F", "roughness": 0.94, "metalness": 0.0},
@@ -77,7 +82,7 @@ def geometry_spec_to_document(project: Any, scenario: Any, geometry_spec: dict[s
                 "material": deepcopy(LAYER_MATERIALS.get(layer.lower(), {
                     "name": "Generated material", "color": "#94A3B8", "roughness": 0.75, "metalness": 0.0,
                 })),
-                "quantity": {"included": kind in {"box", "cylinder"}},
+                "quantity": {"included": kind in {"box", "cylinder"} and layer not in {"room", "wall", "door", "window"}},
             }
         )
 
@@ -182,6 +187,8 @@ def calculate_revision_impact(document: dict[str, Any]) -> dict[str, Any]:
     concrete = asphalt = excavation = steel = pipe_length = 0.0
     for obj in spec["objects"]:
         layer = str(obj.get("layer") or "").lower()
+        if layer in {"room", "wall", "door", "window"}:
+            continue
         if obj["kind"] == "box":
             volume = prod(float(v) for v in obj["size"])
         else:

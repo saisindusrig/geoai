@@ -61,7 +61,9 @@ def test_ai_chat_response_shape():
         body = sr.json()
         assert "message" in body
         assert isinstance(body["actions"], list)
-        assert body["actions"][0]["type"] == "update_parameters"
+        assert body["actions"] == []
+        assert body["action"] is None
+        assert any("PROPOSAL_REQUIRED" in warning for warning in body["warnings"])
         assert isinstance(body["warnings"], list)
         assert "disclaimer" in body
         assert body["provider"] == "ollama"

@@ -31,13 +31,13 @@ class Settings(BaseSettings):
     CESIUM_ION_WRITE_TOKEN: str = ""
     MAPBOX_TOKEN: str = ""
 
-    # AI — AI_PROVIDER selects primary: ollama | openai | anthropic | mock (auto)
+    # AI — AI_PROVIDER selects primary: nebius | ollama | openai | anthropic | mock (auto)
     AI_PROVIDER: str = "mock"
     OPENAI_API_KEY: str = ""
     ANTHROPIC_API_KEY: str = ""
     GEMINI_API_KEY: str = ""
 
-    # Nebius Token Factory - used by the GeoAI hackathon planner.
+    # Nebius Token Factory - building assistant, concept planner and optional main provider.
     NEBIUS_API_KEY: str = ""
     NEBIUS_TOKEN_FACTORY_BASE_URL: str = "https://api.tokenfactory.us-central1.nebius.com/v1"
     NEBIUS_CHAT_MODEL: str = "nvidia/nemotron-3-super-120b-a12b"

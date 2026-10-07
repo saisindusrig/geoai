@@ -110,6 +110,10 @@
 .geo-home .geo-nav{height:64px;margin-bottom:-64px;background:#080c0ae6;backdrop-filter:none}
 .geo-home .geo-nav-solid{background:#050805f5}
 .geo-nav nav{margin-left:0;gap:28px}.geo-launch{text-transform:uppercase;letter-spacing:.7px;border-radius:0}
+.geo-nav nav a{position:relative;padding:8px 0}
+.geo-nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--geo-lime);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.geo-nav nav a[aria-current=location]{color:var(--geo-lime)}
+.geo-nav nav a[aria-current=location]::after,.geo-nav nav a:hover::after{transform:scaleX(1)}
 .geo-launch:hover{transform:none}.geo-launch svg{transition:transform .2s}
 .geo-home .geo-chapter{scroll-margin-top:64px}
 .geo-home .geo-hero{min-height:760px;padding-top:clamp(140px,18vh,200px)}

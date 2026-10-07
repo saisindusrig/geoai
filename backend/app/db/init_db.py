@@ -131,7 +131,7 @@ def init_db() -> None:
     if IS_POSTGRES:
         # Create newly introduced tables before adding a foreign-key column on
         # an already-existing projects table.
-        Base.metadata.create_all(bind=engine)
+        Base.metadata.create_all(bind=engine, tables=[t for t in Base.metadata.sorted_tables if not t.info.get("stage1")])
         with engine.connect() as conn:
             conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis"))
             conn.commit()
@@ -155,7 +155,9 @@ def init_db() -> None:
                 conn.execute(text(col_sql))
             conn.commit()
     _migrate_sqlite_schema()
-    Base.metadata.create_all(bind=engine)
+    # Stage 1 foundation is installed by audited Alembic migrations, not an
+    # incidental application startup against an unversioned demo database.
+    Base.metadata.create_all(bind=engine, tables=[t for t in Base.metadata.sorted_tables if not t.info.get("stage1")])
 
     db: Session = SessionLocal()
     try:

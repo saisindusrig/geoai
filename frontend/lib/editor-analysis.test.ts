@@ -5,6 +5,12 @@ import {clipGeometry,clipPlanes} from "./editor-clipping";
 import type {EditableModelDocument} from "./types";
 const doc={components:[{id:"deck",name:"Deck",category:"deck",visible:true,locked:false,geometry:{kind:"box",size:[10,6,2]},transform:{position:[0,0,5],rotation_deg:[0,0,0],scale:[1,1,1]},material:{color:"#fff",roughness:1,metalness:0}}]} as EditableModelDocument;
 describe("non-destructive scene analysis",()=>{
+  it("does not calculate from an unknown placement elevation",async()=>{
+    const placement={longitude:0,latitude:0,elevation:null,offset:0,heading:0,status:"VALID",vertical_reference:{type:"ELLIPSOIDAL"}};
+    const stations=[{longitude:0,latitude:0,chainage_m:0,proposed_elevation_m:null,grade_percent:null}];
+    expect((await designProfile(doc,placement,stations))[0].proposed_elevation_m).toBeNull();
+    await expect(analyseSupports(doc,placement,async()=>{throw new Error("Must not sample");})).rejects.toThrow(/Resolve/);
+  });
   it("sections actual transformed geometry and leaves the document unchanged",()=>{const before=JSON.stringify(doc);const section=sectionGeometry(doc,0,0,0);expect(section.length).toBeGreaterThan(0);expect(section.flatMap(item=>item.points.map(point=>point[1]))).toContain(6);expect(JSON.stringify(doc)).toBe(before);expect(sectionGeometry(doc,0,20,0)).toEqual([]);});
   it("finds actual design top and preserves unknown outside geometry",()=>{expect(designElevationAt(doc,0,0)).toBeCloseTo(6);expect(designElevationAt(doc,50,50)).toBeNull();});
   it("clips triangles at the precise plane without changing source geometry",()=>{const source=new THREE.BoxGeometry(10,10,10);const count=source.getAttribute("position").count;const clipped=clipGeometry(source,new THREE.Matrix4(),clipPlanes({mode:"horizontal",value:1,size:10}));const positions=clipped.getAttribute("position");for(let index=0;index<positions.count;index++)expect(positions.getZ(index)).toBeGreaterThanOrEqual(1);expect(source.getAttribute("position").count).toBe(count);source.dispose();clipped.dispose();});

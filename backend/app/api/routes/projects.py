@@ -265,7 +265,7 @@ def delete_project(project_id: int, db: Session = Depends(get_db), user_id: int 
     # New engineering foreign keys retain provenance. Fail explicitly rather
     # than orphaning evidence on SQLite or surfacing a FK error on PostGIS.
     from app.db.models import Base
-    retained = ("terrain_datasets", "ground_samples", "model_placements", "survey_control_points", "survey_validation_runs",
+    retained = ("building_plans", "terrain_datasets", "ground_samples", "model_placements", "survey_control_points", "survey_validation_runs",
                 "engineering_analyses", "constraint_datasets", "engineering_audit_events", "saved_camera_views", "project_map_preferences")
     for name in retained:
         table = Base.metadata.tables[name]

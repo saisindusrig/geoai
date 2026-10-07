@@ -25,6 +25,7 @@ import { useWorkspaceMap } from "@/components/layout/WorkspaceMapContext";
 import { PanelResizeHandle } from "@/components/ui/panel-resize-handle";
 import { useVerticalSplitResize } from "@/hooks/usePointerResize";
 import { useProjectStore } from "@/stores/projectStore";
+import { assistantActionBoundary } from "@/lib/assistant-boundary";
 
 interface ChatEntry {
   role: "user" | "assistant";
@@ -99,10 +100,8 @@ function actionDescription(action: CopilotAction): string {
 export default function ModernAssistantPanel({
   projectId,
   design,
-  onApplyParameters,
   onRegenerate,
   onRunSiteAnalysis,
-  currentParameters,
 }: Props) {
   const [pendingActions, setPendingActions] = useState<CopilotAction[]>([]);
   const [history, setHistory] = useState<ChatEntry[]>([
@@ -146,10 +145,9 @@ export default function ModernAssistantPanel({
   };
 
   const confirmAction = async (action: CopilotAction) => {
-    if (action.type === "update_parameters") {
-      onApplyParameters(action.payload);
-    } else if (action.type === "generate_design") {
-      onRegenerate(currentParameters ?? action.payload ?? {});
+    const boundary = assistantActionBoundary(action);
+    if (boundary.effect !== "READ_ONLY") {
+      setHistory((h) => [...h, { role: "assistant", text: boundary.message! }]);
     } else if (action.type === "run_site_analysis" && onRunSiteAnalysis) {
       await onRunSiteAnalysis();
     } else if (action.type === "show_layer" && action.payload.layer === "excavation" && !layers.excavation) {
@@ -179,11 +177,13 @@ export default function ModernAssistantPanel({
         );
       });
 
-      const actions = result.actions?.length
+      const suggestedActions = result.actions?.length
         ? result.actions
         : result.action
           ? [result.action]
           : [];
+      const blocked = suggestedActions.map(assistantActionBoundary).filter((b) => b.effect !== "READ_ONLY");
+      const actions = suggestedActions.filter((a) => assistantActionBoundary(a).effect === "READ_ONLY");
 
       setHistory((h) =>
         h.map((entry, i) =>
@@ -194,7 +194,7 @@ export default function ModernAssistantPanel({
                 design: design ?? undefined,
                 cardType: inferCardType(fullReply || result.message || ""),
                 actions,
-                warnings: result.warnings,
+                warnings: [...(result.warnings ?? []), ...blocked.map((b) => b.message!)],
                 provider: result.provider,
               }
             : entry,

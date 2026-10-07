@@ -402,6 +402,9 @@ def put_placement(project_id: int, revision_id: int, payload: PlacementInput, db
     placement.height_reference = "TERRAIN" if sample else "ELLIPSOID"
     placement.anchor_longitude, placement.anchor_latitude = payload.longitude, payload.latitude
     placement.anchor_elevation = sample.elevation if sample else payload.elevation
+    placement.elevation_resolution = "RESOLVED"
+    placement.elevation_provenance_json = {"source": "ACCEPTED_SAMPLE" if sample else "USER_PROVIDED",
+                                         "ground_sample_id": sample.id if sample else None}
     placement.anchor_heading_deg = payload.heading_deg % 360
     placement.elevation_offset, placement.anchor_locked = payload.elevation_offset, payload.anchor_locked
     placement.anchor_vertical_reference_json = payload.vertical_reference
@@ -421,7 +424,9 @@ def get_placement(project_id: int, revision_id: int, db: Session = Depends(get_d
     if not row:
         return {"placement": None}
     return {"placement": {"mode": row.placement_mode, "status": row.placement_state, "longitude": row.anchor_longitude,
-        "latitude": row.anchor_latitude, "elevation": row.anchor_elevation, "offset": row.elevation_offset,
+        "latitude": row.anchor_latitude, "elevation": row.anchor_elevation if row.elevation_resolution == "RESOLVED" else None, "offset": row.elevation_offset,
+        "elevation_resolution": row.elevation_resolution, "elevation_provenance": row.elevation_provenance_json,
+        "legacy_display_elevation": row.anchor_elevation if row.elevation_resolution == "LEGACY_UNRESOLVED" else (row.elevation_provenance_json or {}).get("previous_value") if row.elevation_resolution == "UNKNOWN" else None,
         "heading": row.anchor_heading_deg, "locked": row.anchor_locked, "vertical_reference": row.anchor_vertical_reference_json,
         "terrain_version_id": row.terrain_version_id, "ground_sample_id": row.accepted_ground_sample_id}}
 

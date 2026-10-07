@@ -13,6 +13,7 @@ from app.core.project_catalog import project_type_family, asset_supports_generat
 from app.db.models import DesignScenario, GeneratedFile, ModelRevision, Project, QuantityEstimate, SiteAnalysis, User
 from app.services import jobs
 from app.services.ai import design_planner, providers, safety_guardrails
+from app.services.ai.building_plan import approved_for_scenario
 from app.services.ai.schemas import DesignOutput
 from app.services.calculations import boq, timeline
 from app.services.usage import enforce_usage_limit, record_usage_event
@@ -125,6 +126,16 @@ async def _resolve_design(
     user_id: int | None = None,
 ) -> tuple[dict, str, dict, dict]:
     """Returns (design, provider, planning_metadata, merged_params)."""
+    if params.get("building_spec"):
+        spec = params["building_spec"]
+        design = providers._mock_generate("building", params)
+        design["summary"] = spec["summary"]
+        design["assumptions"] = list(spec["assumptions"]) + ["Concept only; structural members require engineering validation.", "Missing survey elevation remains unknown."]
+        meta = {"planning_mode": "approved_plan", "llm_provider": "nebius", "llm_model": params.get("approved_building_model"),
+                "approved_building_plan_id": params["approved_building_plan_id"], "final_parameters": params,
+                "design_assumptions": design["assumptions"], "design_warnings": [], "missing_inputs": []}
+        design.update(ai_provider="nebius", planning=meta)
+        return design, "nebius", meta, params
     cached = get_cached(f"design:{cache_key}")
     if cached:
         logger.info("Using cached design layout for project %s", project.id)
@@ -341,6 +352,12 @@ async def run_design_generation(
     if not asset_supports_generation(project_type):
         raise ValueError("Engineering generation is unavailable for this reference asset.")
     family = project_type_family(project_type)
+    approved_plan = approved_for_scenario(db, project, scenario, job_id)
+    if approved_plan:
+        spec = approved_plan.spec_json
+        params.update(building_spec=spec, approved_building_model=approved_plan.provider_model,
+                      floors=spec["floors"], floor_height_m=spec["floor_height"],
+                      builtup_area_sqm=spec["footprint"]["width"] * spec["footprint"]["depth"])
     job_user_id = None
     if job_id:
         job = jobs.get_status(job_id)
@@ -578,11 +595,22 @@ async def run_design_generation(
         _stage(job_id, "saving_result", message="Saving result")
         jobs.ensure_not_cancelled(job_id)
         timer.start("database_save")
+        if approved_plan:
+            db.expire_all()
+            db.refresh(project)
+            approved_for_scenario(db, project, scenario, job_id)
         _apply_scenario_name(scenario, project, params, mode)
         scenario.design_output_json = design
         scenario.assumptions_json = design["assumptions"]
         scenario.status = "completed"
         model_document = geometry_spec_to_document(project, scenario, spec)
+        if approved_plan:
+            model_document["origin"] = dict(approved_plan.context_json["origin"])
+            # Numeric render origin is a local visual reference, never survey evidence.
+            model_document["origin"]["elevation_m"] = model_document["origin"].get("elevation_m") or 0
+            model_document["metadata"].update(building_plan_id=approved_plan.id,
+                                              elevation_known=approved_plan.context_json["origin"].get("elevation_m") is not None)
+            model_document["structural_layout"]["assumptions"] = design["assumptions"]
         revision = ModelRevision(
             project_id=project.id,
             design_scenario_id=scenario.id,
@@ -593,6 +621,13 @@ async def run_design_generation(
         )
         db.add(revision)
         db.flush()
+        if approved_plan and approved_plan.context_json.get("placement"):
+            from app.db.models import ModelPlacement
+            fields = dict(approved_plan.context_json["placement"])
+            fields["model_revision_id"] = revision.id
+            # Anchor stays fixed; new geometry needs fresh support/ground review.
+            fields["placement_state"] = "REVIEW_REQUIRED"
+            db.add(ModelPlacement(**fields))
         design["editable_model_revision_id"] = revision.id
         design["editable_model_revision_number"] = 1
         scenario.design_output_json = design

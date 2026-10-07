@@ -3,8 +3,7 @@ import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 
 import dynamic from "next/dynamic";
 import type { EditableModelDocument, GeoJSONGeometry, Project } from "@/lib/types";
-import { hasCompletedGlbModel, type ResolvedModelUrls } from "@/lib/model-url-resolution";
-import { shouldUseCesiumWorkspace } from "@/lib/map/workspace-engine";
+import { type ResolvedModelUrls } from "@/lib/model-url-resolution";
 import { getMapEngine } from "@/lib/map/providers";
 
 const MapViewerWorkspace = dynamic(() => import("@/components/map/MapViewerArea"), {
@@ -38,10 +37,7 @@ interface WorkspaceMapEngineProps {
 
 export default function WorkspaceMapEngine(props: WorkspaceMapEngineProps) {
   const configuredEngine = getMapEngine();
-  const hasCompletedGlb =
-    Boolean(props.modelUrl || props.excavationUrl) ||
-    (props.resolvedModels != null && hasCompletedGlbModel(props.resolvedModels));
-  const useCesium = shouldUseCesiumWorkspace(hasCompletedGlb, configuredEngine);
+  const useCesium = true;
 
   if (useCesium) {
     return (
@@ -81,3 +77,4 @@ export default function WorkspaceMapEngine(props: WorkspaceMapEngineProps) {
     </div>
   );
 }
+

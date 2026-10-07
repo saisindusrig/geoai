@@ -40,12 +40,12 @@ export function designElevationAt(doc: EditableModelDocument, east:number, north
 }
 
 export type GroundAnalysisSample = { status:string;elevation:number|null;source:string;terrain_version_id:number|null;vertical_reference:{type?:string}|null;failure_reason?:string };
-export type AnalysisPlacement = {longitude:number;latitude:number;elevation:number;offset:number;heading:number;status:string;vertical_reference:{type?:string}|null};
+export type AnalysisPlacement = {longitude:number;latitude:number;elevation:number|null;offset:number;heading:number;status:string;vertical_reference:{type?:string}|null};
 export async function sampleSection(doc:EditableModelDocument,placement:AnalysisPlacement,east:number,north:number,heading:number,halfWidth:number,interval:number,sample:(longitude:number,latitude:number)=>Promise<GroundAnalysisSample>){
   if(![east,north,heading,halfWidth,interval].every(Number.isFinite) || interval<=0 || halfWidth<0 || halfWidth*2/interval>1000)throw new Error("Choose a finite section extent and positive interval with at most 1,000 samples.");
-  if(placement.status!=="VALID" || placement.vertical_reference?.type!=="ELLIPSOIDAL")throw new Error("Section terrain requires a valid, resolved placement.");
+  if(placement.elevation===null || placement.status!=="VALID" || placement.vertical_reference?.type!=="ELLIPSOIDAL")throw new Error("Section terrain requires a valid, resolved placement.");
   const C=await import("cesium"),angle=placement.heading*Math.PI/180,sectionAngle=heading*Math.PI/180;
-  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation+placement.offset));
+  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation!+placement.offset));
   const inverse=C.Matrix4.inverse(frame,new C.Matrix4()),rows=[];
   for(let offset=-halfWidth;offset<=halfWidth;offset+=interval){
     const x=east+offset*Math.cos(sectionAngle),y=north+offset*Math.sin(sectionAngle);
@@ -59,13 +59,13 @@ export async function sampleSection(doc:EditableModelDocument,placement:Analysis
   return rows;
 }
 export async function designProfile<T extends {longitude:number;latitude:number;chainage_m:number;proposed_elevation_m:number|null;grade_percent:number|null}>(doc:EditableModelDocument,placement:AnalysisPlacement,stations:T[]){
-  if(placement.status!=="VALID" || placement.vertical_reference?.type!=="ELLIPSOIDAL")return stations.map(station=>({...station,proposed_elevation_m:null,grade_percent:null}));
+  if(placement.elevation===null || placement.status!=="VALID" || placement.vertical_reference?.type!=="ELLIPSOIDAL")return stations.map(station=>({...station,proposed_elevation_m:null,grade_percent:null}));
   const C=await import("cesium");
-  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation+placement.offset));
+  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation!+placement.offset));
   const inverse=C.Matrix4.inverse(frame,new C.Matrix4());
   const angle=placement.heading*Math.PI/180;
   const result=stations.map(station=>{
-    const point=C.Matrix4.multiplyByPoint(inverse,C.Cartesian3.fromDegrees(station.longitude,station.latitude,placement.elevation+placement.offset),new C.Cartesian3());
+    const point=C.Matrix4.multiplyByPoint(inverse,C.Cartesian3.fromDegrees(station.longitude,station.latitude,placement.elevation!+placement.offset),new C.Cartesian3());
     const east=point.x*Math.cos(angle)+point.y*Math.sin(angle),north=-point.x*Math.sin(angle)+point.y*Math.cos(angle);
     const top=designElevationAt(doc,east,north);
     const elevation=top===null?null:C.Cartographic.fromCartesian(C.Matrix4.multiplyByPoint(frame,new C.Cartesian3(point.x,point.y,top),new C.Cartesian3())).height;
@@ -77,9 +77,9 @@ export async function designProfile<T extends {longitude:number;latitude:number;
   });
 }
 export async function analyseSupports(doc:EditableModelDocument,placement:AnalysisPlacement,sample:(longitude:number,latitude:number)=>Promise<GroundAnalysisSample>) {
-  if(placement.status !== "VALID" || placement.vertical_reference?.type !== "ELLIPSOIDAL") throw new Error("Resolve and accept an ellipsoidal model placement before clearance analysis.");
+  if(placement.elevation===null || placement.status !== "VALID" || placement.vertical_reference?.type !== "ELLIPSOIDAL") throw new Error("Resolve and accept an ellipsoidal model placement before clearance analysis.");
   const C=await import("cesium");
-  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation+placement.offset));
+  const frame=C.Transforms.eastNorthUpToFixedFrame(C.Cartesian3.fromDegrees(placement.longitude,placement.latitude,placement.elevation!+placement.offset));
   const angle=placement.heading*Math.PI/180;
   const world=(x:number,y:number,z:number)=>C.Cartographic.fromCartesian(C.Matrix4.multiplyByPoint(frame,new C.Cartesian3(x*Math.cos(angle)-y*Math.sin(angle),x*Math.sin(angle)+y*Math.cos(angle),z),new C.Cartesian3()));
   const deckDoc={...doc,components:doc.components.filter(item=>item.visible && /deck/.test(item.category))};

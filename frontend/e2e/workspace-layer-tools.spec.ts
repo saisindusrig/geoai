@@ -26,6 +26,8 @@ test("layer isolation restores hidden state and bulk selection works", async ({ 
   await page.keyboard.press("Escape");
   await expect(page.getByLabel("Measurement tools")).toHaveCount(0);
   await page.getByRole("button", { name: "Draw alignment", exact: true }).click();
+  await expect(page.locator(".cesium-widget canvas")).toBeVisible();
+  await expect(page.locator(".maplibregl-map")).toHaveCount(0);
   await expect(page.getByLabel("Drawing tool options")).toBeVisible();
   await page.getByLabel("Corridor width", { exact: true }).fill("42");
   await expect(page.getByLabel("Corridor width", { exact: true })).toHaveValue("42");

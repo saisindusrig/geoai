@@ -11,6 +11,7 @@ from app.api.routes.projects import get_owned_project
 from app.core.security import get_current_user_id
 from app.db.session import get_db
 from app.services.ai.copilot import run_copilot
+from app.services.assistant.foundation import guard_assistant_response
 
 router = APIRouter(prefix="/api/projects/{project_id}/ai", tags=["ai"])
 
@@ -27,7 +28,7 @@ async def chat(
     user_id: int = Depends(get_current_user_id),
 ):
     project = get_owned_project(project_id, db, user_id)
-    return await run_copilot(db, project, payload.message)
+    return guard_assistant_response(await run_copilot(db, project, payload.message))
 
 
 @router.post("/chat/stream")
@@ -38,7 +39,7 @@ async def chat_stream(
     user_id: int = Depends(get_current_user_id),
 ):
     project = get_owned_project(project_id, db, user_id)
-    result = await run_copilot(db, project, payload.message)
+    result = guard_assistant_response(await run_copilot(db, project, payload.message))
     message = result.get("message") or result.get("reply") or ""
 
     def generate():

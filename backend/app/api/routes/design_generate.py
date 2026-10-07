@@ -41,6 +41,8 @@ async def generate_design(
     user: User = Depends(get_current_user),
 ):
     project = get_owned_project(project_id, db, user.id)
+    if any(key.startswith("approved_building") or key == "building_spec" for key in payload.parameters):
+        raise HTTPException(422, "Use the building plan approval endpoint to build an AI specification.")
     if not asset_supports_generation(project.project_type):
         raise HTTPException(422, "This asset is a site reference; engineering generation is not supported.")
     mode = payload.generation_mode if payload.generation_mode in (

@@ -28,7 +28,9 @@ def _resolve_engine():
             return engine, True
         except Exception as exc:  # pragma: no cover - env dependent
             logger.warning("PostgreSQL unavailable (%s); falling back to SQLite", type(exc).__name__)
-    engine = create_engine(SQLITE_URL, connect_args={"check_same_thread": False})
+    # Honor an explicitly configured SQLite database (including isolated test
+    # databases); only PostgreSQL failure falls back to the local demo file.
+    engine = create_engine(url if url.startswith("sqlite:") else SQLITE_URL, connect_args={"check_same_thread": False})
     return engine, False
 
 
