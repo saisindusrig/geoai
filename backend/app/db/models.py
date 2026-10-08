@@ -551,10 +551,15 @@ from app.db.stage1_schema_v1 import register, install_guards
 from sqlalchemy import event
 
 STAGE1_TABLES = register(Base.metadata)
+from app.db.stage1_workspace_schema import extend
+STAGE1_TABLES.update(extend(Base.metadata))
+from app.db.stage1_composition_schema import extend as extend_composition
+extend_composition(Base.metadata)
 
 
 @event.listens_for(Base.metadata, "after_create")
 def _stage1_guards(metadata, connection, **kwargs):
     from sqlalchemy import inspect
-    if inspect(connection).has_table("site_selection_versions"):
-        install_guards(connection, STAGE1_TABLES)
+    existing = set(inspect(connection).get_table_names())
+    if "site_selection_versions" in existing:
+        install_guards(connection, {name: table for name, table in STAGE1_TABLES.items() if name in existing})

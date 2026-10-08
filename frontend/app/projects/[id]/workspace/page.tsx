@@ -300,7 +300,7 @@ export default function WorkspacePage() {
                 Record<string, unknown> | undefined) ??
               null,
           }}
-          rightPanel={<ProfessionalModelPanel editor={modelEditor} />}
+          rightPanel={<ProfessionalModelPanel editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
           map={
             <WorkspaceMapEngine
               project={project}

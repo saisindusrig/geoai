@@ -269,9 +269,16 @@ class MeasuredSource(Contract):
 
 class SurveySource(Contract):
     kind: Literal["SURVEY"]
-    survey_dataset_id: Id
+    survey_dataset_id: Id | None = None
+    terrain_dataset_id: Id | None = None
     source_file_id: Id
     validation_run_id: Id | None = None
+
+    @model_validator(mode="after")
+    def dataset_required(self):
+        if not (self.survey_dataset_id or self.terrain_dataset_id):
+            raise ValueError("Survey evidence requires a dataset")
+        return self
 
 
 class PublicMapSource(Contract):
@@ -285,8 +292,15 @@ class PublicMapSource(Contract):
 
 class UserSource(Contract):
     kind: Literal["USER_PROVIDED"]
-    message_id: Id
+    message_id: Id | None = None
+    source_record_id: Id | None = None
     actor_id: Id
+
+    @model_validator(mode="after")
+    def source_required(self):
+        if not (self.message_id or self.source_record_id):
+            raise ValueError("User evidence requires a message or saved source record")
+        return self
 
 
 class DerivedSource(Contract):
@@ -389,6 +403,9 @@ class RequiredInput(Contract):
 
 class AssetCapability(Contract):
     asset_type: Id
+    asset_family: Id | None = None
+    display_name: str | None = None
+    component_kinds: list[Id] = Field(default_factory=list)
     registry_version: Id
     discussion_support: Level
     planning_support: Level
@@ -426,6 +443,7 @@ class AssetCapability(Contract):
 class AssetRequest(Contract):
     id: Id
     asset_type: Id  # Open registry identifier, never a building-only enum.
+    asset_family: Id | None = None
     requested_asset_name: Annotated[str, Field(min_length=1, max_length=255)]
     registry_id: Id | None = None
     requirements: Annotated[list[str], Field(max_length=100)] = Field(default_factory=list)

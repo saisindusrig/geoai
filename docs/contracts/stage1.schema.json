@@ -72,6 +72,152 @@
       "title": "Accuracy",
       "type": "object"
     },
+    "AlternativeView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ConceptAlternative"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "payload"
+      ],
+      "title": "AlternativeView",
+      "type": "object"
+    },
+    "ApplicableQuantity": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability": {
+          "enum": [
+            "APPLICABLE",
+            "NOT_APPLICABLE"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "fact": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Fact_Quantity_"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "applicability"
+      ],
+      "title": "ApplicableQuantity",
+      "type": "object"
+    },
+    "ApplicationApproval": {
+      "additionalProperties": false,
+      "properties": {
+        "proposalVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Proposalversionid",
+          "type": "string"
+        },
+        "proposalHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Proposalhash",
+          "type": "string"
+        },
+        "dependencyHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Dependencyhash",
+          "type": "string"
+        },
+        "validationHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Validationhash",
+          "type": "string"
+        },
+        "alternativeId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Alternativeid"
+        },
+        "acknowledgedAssumptionVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Acknowledgedassumptionversionids",
+          "type": "array"
+        },
+        "expectedModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Expectedmodelrevisionid"
+        },
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposalVersionId",
+        "proposalHash",
+        "dependencyHash",
+        "validationHash",
+        "alternativeId",
+        "acknowledgedAssumptionVersionIds",
+        "expectedModelRevisionId",
+        "clientRequestId"
+      ],
+      "title": "ApplicationApproval",
+      "type": "object"
+    },
     "ApprovalCommand": {
       "additionalProperties": false,
       "properties": {
@@ -429,6 +575,28 @@
       "title": "AssetRequest",
       "type": "object"
     },
+    "AssumptionPart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ASSUMPTION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "assumptionVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assumptionversionid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "assumptionVersionId"
+      ],
+      "title": "AssumptionPart",
+      "type": "object"
+    },
     "AssumptionSource": {
       "additionalProperties": false,
       "properties": {
@@ -463,6 +631,67 @@
         "modelId"
       ],
       "title": "AssumptionSource",
+      "type": "object"
+    },
+    "AttachmentPart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ATTACHMENT",
+          "title": "Kind",
+          "type": "string"
+        },
+        "attachmentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Attachmentid",
+          "type": "string"
+        },
+        "mediaType": {
+          "maxLength": 100,
+          "title": "Mediatype",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "attachmentId",
+        "mediaType",
+        "contentHash"
+      ],
+      "title": "AttachmentPart",
+      "type": "object"
+    },
+    "BuildingAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "BUILDING",
+          "title": "Kind",
+          "type": "string"
+        },
+        "height": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "storeys": {
+          "$ref": "#/$defs/Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____"
+        },
+        "use": {
+          "$ref": "#/$defs/Fact_str_"
+        }
+      },
+      "required": [
+        "kind",
+        "height",
+        "storeys",
+        "use"
+      ],
+      "title": "BuildingAttributes",
       "type": "object"
     },
     "CivilIntent": {
@@ -523,6 +752,382 @@
         "needsClarification"
       ],
       "title": "CivilIntent",
+      "type": "object"
+    },
+    "Clarification": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "Clarification",
+      "type": "object"
+    },
+    "ConceptAlternative": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "rationale"
+      ],
+      "title": "ConceptAlternative",
+      "type": "object"
+    },
+    "ConceptAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "requirements": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Requirements",
+          "type": "array"
+        }
+      },
+      "required": [
+        "assetType",
+        "name"
+      ],
+      "title": "ConceptAsset",
+      "type": "object"
+    },
+    "ConstraintSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "applicability": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Applicability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "contentHash",
+        "evidenceIds"
+      ],
+      "title": "ConstraintSnapshot",
+      "type": "object"
+    },
+    "ContextCollection": {
+      "additionalProperties": false,
+      "properties": {
+        "retrieval": {
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "FAILED",
+            "NOT_REQUESTED"
+          ],
+          "title": "Retrieval",
+          "type": "string"
+        },
+        "features": {
+          "items": {
+            "$ref": "#/$defs/ContextFeature"
+          },
+          "maxItems": 100,
+          "title": "Features",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "queryExtent": {
+          "$ref": "#/$defs/GeometryReference"
+        },
+        "truncated": {
+          "title": "Truncated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "retrieval",
+        "features",
+        "evidenceIds",
+        "queryExtent",
+        "truncated"
+      ],
+      "title": "ContextCollection",
+      "type": "object"
+    },
+    "ContextFeature": {
+      "additionalProperties": false,
+      "description": "Retained project context only; absence never means clearance.",
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ROAD",
+            "WATERWAY",
+            "BUILDING",
+            "UTILITY"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/$defs/Fact_GeometryReference_"
+        },
+        "name": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "attributes": {
+          "discriminator": {
+            "mapping": {
+              "BUILDING": "#/$defs/BuildingAttributes",
+              "ROAD": "#/$defs/RoadAttributes",
+              "UTILITY": "#/$defs/UtilityAttributes",
+              "WATERWAY": "#/$defs/WaterwayAttributes"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/RoadAttributes"
+            },
+            {
+              "$ref": "#/$defs/WaterwayAttributes"
+            },
+            {
+              "$ref": "#/$defs/BuildingAttributes"
+            },
+            {
+              "$ref": "#/$defs/UtilityAttributes"
+            }
+          ],
+          "title": "Attributes"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "geometry",
+        "name",
+        "attributes"
+      ],
+      "title": "ContextFeature",
+      "type": "object"
+    },
+    "ConversationInput": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "title": {
+          "default": "Project discussion",
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientRequestId"
+      ],
+      "title": "ConversationInput",
+      "type": "object"
+    },
+    "ConversationView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "createdBy": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Createdby",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "archivedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Archivedat"
+        },
+        "nextSequence": {
+          "title": "Nextsequence",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "projectId",
+        "title",
+        "createdBy",
+        "createdAt",
+        "archivedAt",
+        "nextSequence"
+      ],
+      "title": "ConversationView",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "NONE",
+            "UNKNOWN"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "coveredFraction": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Coveredfraction"
+        },
+        "checkedGeometryHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Checkedgeometryhash",
+          "type": "string"
+        },
+        "methodVersion": {
+          "title": "Methodversion",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "coveredFraction",
+        "checkedGeometryHash",
+        "methodVersion",
+        "evidenceIds"
+      ],
+      "title": "Coverage",
       "type": "object"
     },
     "CrossingSelection": {
@@ -729,6 +1334,106 @@
         "parametersHash"
       ],
       "title": "DerivedSource",
+      "type": "object"
+    },
+    "Dimensions": {
+      "additionalProperties": false,
+      "properties": {
+        "area": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "perimeter": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "routeLength": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "crossingSpan": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "boundingWidth": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "boundingDepth": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        },
+        "endpointDistance": {
+          "$ref": "#/$defs/ApplicableQuantity"
+        }
+      },
+      "required": [
+        "area",
+        "perimeter",
+        "routeLength",
+        "crossingSpan",
+        "boundingWidth",
+        "boundingDepth",
+        "endpointDistance"
+      ],
+      "title": "Dimensions",
+      "type": "object"
+    },
+    "ElevationSample": {
+      "additionalProperties": false,
+      "properties": {
+        "position": {
+          "$ref": "#/$defs/Position"
+        },
+        "chainageM": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Chainagem"
+        },
+        "elevation": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "verticalReference": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedVerticalReference",
+              "UNKNOWN": "#/$defs/UnknownVerticalReference"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedVerticalReference"
+            },
+            {
+              "$ref": "#/$defs/UnknownVerticalReference"
+            }
+          ],
+          "title": "Verticalreference"
+        },
+        "groundSampleId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Groundsampleid"
+        }
+      },
+      "required": [
+        "position",
+        "chainageM",
+        "elevation",
+        "verticalReference",
+        "groundSampleId"
+      ],
+      "title": "ElevationSample",
       "type": "object"
     },
     "EndpointsSelection": {
@@ -981,6 +1686,32 @@
       "title": "Evidence",
       "type": "object"
     },
+    "EvidencePart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "EVIDENCE",
+          "title": "Kind",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "evidenceIds"
+      ],
+      "title": "EvidencePart",
+      "type": "object"
+    },
     "Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____": {
       "discriminator": {
         "mapping": {
@@ -1004,19 +1735,64 @@
       ],
       "title": "Fact[Annotated[float, FieldInfo(annotation=NoneType, required=True, metadata=[_PydanticGeneralMetadata(allow_inf_nan=False)])]]"
     },
-    "Fact_str_": {
+    "Fact_GeometryReference_": {
       "discriminator": {
         "mapping": {
-          "AI_ASSUMPTION": "#/$defs/KnownFact_str_",
-          "DERIVED": "#/$defs/KnownFact_str_",
-          "MEASURED": "#/$defs/KnownFact_str_",
-          "PUBLIC_MAP": "#/$defs/KnownFact_str_",
-          "SURVEY": "#/$defs/KnownFact_str_",
+          "AI_ASSUMPTION": "#/$defs/KnownFact_GeometryReference_",
+          "DERIVED": "#/$defs/KnownFact_GeometryReference_",
+          "MEASURED": "#/$defs/KnownFact_GeometryReference_",
+          "PUBLIC_MAP": "#/$defs/KnownFact_GeometryReference_",
+          "SURVEY": "#/$defs/KnownFact_GeometryReference_",
           "UNKNOWN": "#/$defs/UnknownFact",
-          "USER_PROVIDED": "#/$defs/KnownFact_str_"
+          "USER_PROVIDED": "#/$defs/KnownFact_GeometryReference_"
         },
         "propertyName": "sourceKind"
       },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/KnownFact_GeometryReference_"
+        },
+        {
+          "$ref": "#/$defs/UnknownFact"
+        }
+      ],
+      "title": "Fact[GeometryReference]"
+    },
+    "Fact_Position_": {
+      "discriminator": {
+        "mapping": {
+          "AI_ASSUMPTION": "#/$defs/KnownFact_Position_",
+          "DERIVED": "#/$defs/KnownFact_Position_",
+          "MEASURED": "#/$defs/KnownFact_Position_",
+          "PUBLIC_MAP": "#/$defs/KnownFact_Position_",
+          "SURVEY": "#/$defs/KnownFact_Position_",
+          "UNKNOWN": "#/$defs/UnknownFact",
+          "USER_PROVIDED": "#/$defs/KnownFact_Position_"
+        },
+        "propertyName": "sourceKind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/KnownFact_Position_"
+        },
+        {
+          "$ref": "#/$defs/UnknownFact"
+        }
+      ],
+      "title": "Fact[Position]"
+    },
+    "Fact_Quantity_": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/KnownFact_Quantity_"
+        },
+        {
+          "$ref": "#/$defs/UnknownFact"
+        }
+      ],
+      "title": "Fact[Quantity]"
+    },
+    "Fact_str_": {
       "oneOf": [
         {
           "$ref": "#/$defs/KnownFact_str_"
@@ -1134,6 +1910,47 @@
       "title": "Geometry",
       "type": "object"
     },
+    "GeometryReference": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Hash",
+          "type": "string"
+        },
+        "horizontalCrs": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+              "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedHorizontalCRS"
+            },
+            {
+              "$ref": "#/$defs/UnknownHorizontalCRS"
+            }
+          ],
+          "title": "Horizontalcrs"
+        }
+      },
+      "required": [
+        "id",
+        "hash",
+        "horizontalCrs"
+      ],
+      "title": "GeometryReference",
+      "type": "object"
+    },
     "KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____": {
       "additionalProperties": false,
       "properties": {
@@ -1199,6 +2016,204 @@
         "verification"
       ],
       "title": "KnownFact[Annotated[float, FieldInfo(annotation=NoneType, required=True, metadata=[_PydanticGeneralMetadata(allow_inf_nan=False)])]]",
+      "type": "object"
+    },
+    "KnownFact_GeometryReference_": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "enum": [
+            "MEASURED",
+            "SURVEY",
+            "PUBLIC_MAP",
+            "USER_PROVIDED",
+            "DERIVED",
+            "AI_ASSUMPTION"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/GeometryReference"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "use": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Use",
+          "type": "string"
+        },
+        "verification": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "evidenceIds",
+        "use",
+        "verification"
+      ],
+      "title": "KnownFact[GeometryReference]",
+      "type": "object"
+    },
+    "KnownFact_Position_": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "enum": [
+            "MEASURED",
+            "SURVEY",
+            "PUBLIC_MAP",
+            "USER_PROVIDED",
+            "DERIVED",
+            "AI_ASSUMPTION"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/Position"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "use": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Use",
+          "type": "string"
+        },
+        "verification": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "evidenceIds",
+        "use",
+        "verification"
+      ],
+      "title": "KnownFact[Position]",
+      "type": "object"
+    },
+    "KnownFact_Quantity_": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceKind": {
+          "enum": [
+            "MEASURED",
+            "SURVEY",
+            "PUBLIC_MAP",
+            "USER_PROVIDED",
+            "DERIVED",
+            "AI_ASSUMPTION"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/Quantity"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "use": {
+          "enum": [
+            "CONTEXT_ONLY",
+            "CONCEPT",
+            "VALIDATED_INPUT"
+          ],
+          "title": "Use",
+          "type": "string"
+        },
+        "verification": {
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "CONFLICTED",
+            "EXPIRED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "value",
+        "evidenceIds",
+        "use",
+        "verification"
+      ],
+      "title": "KnownFact[Quantity]",
       "type": "object"
     },
     "KnownFact_str_": {
@@ -1314,6 +2329,648 @@
         "measurementId"
       ],
       "title": "MeasuredSource",
+      "type": "object"
+    },
+    "MemoryAction": {
+      "additionalProperties": false,
+      "properties": {
+        "expectedStatus": {
+          "default": "PROPOSED",
+          "enum": [
+            "PROPOSED",
+            "ACCEPTED",
+            "REJECTED",
+            "SUPERSEDED"
+          ],
+          "title": "Expectedstatus",
+          "type": "string"
+        }
+      },
+      "title": "MemoryAction",
+      "type": "object"
+    },
+    "MemoryInput": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "assetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetid"
+        },
+        "content": {
+          "discriminator": {
+            "mapping": {
+              "ASSUMPTION": "#/$defs/ProjectAssumption",
+              "DECISION": "#/$defs/ProjectDecision",
+              "PREFERENCE": "#/$defs/ProjectPreference",
+              "REQUIREMENT": "#/$defs/ProjectRequirement"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ProjectRequirement"
+            },
+            {
+              "$ref": "#/$defs/ProjectPreference"
+            },
+            {
+              "$ref": "#/$defs/ProjectDecision"
+            },
+            {
+              "$ref": "#/$defs/ProjectAssumption"
+            }
+          ],
+          "title": "Content"
+        },
+        "sourceMessageIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Sourcemessageids",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "content"
+      ],
+      "title": "MemoryInput",
+      "type": "object"
+    },
+    "MemoryRevisionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "assetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetid"
+        },
+        "content": {
+          "discriminator": {
+            "mapping": {
+              "ASSUMPTION": "#/$defs/ProjectAssumption",
+              "DECISION": "#/$defs/ProjectDecision",
+              "PREFERENCE": "#/$defs/ProjectPreference",
+              "REQUIREMENT": "#/$defs/ProjectRequirement"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ProjectRequirement"
+            },
+            {
+              "$ref": "#/$defs/ProjectPreference"
+            },
+            {
+              "$ref": "#/$defs/ProjectDecision"
+            },
+            {
+              "$ref": "#/$defs/ProjectAssumption"
+            }
+          ],
+          "title": "Content"
+        },
+        "sourceMessageIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Sourcemessageids",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "expectedVersion": {
+          "minimum": 1,
+          "title": "Expectedversion",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "content",
+        "expectedVersion"
+      ],
+      "title": "MemoryRevisionInput",
+      "type": "object"
+    },
+    "MemoryView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "versionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Versionid",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "projectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "assetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Assetid"
+        },
+        "status": {
+          "enum": [
+            "PROPOSED",
+            "ACCEPTED",
+            "REJECTED",
+            "SUPERSEDED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "supersedesVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Supersedesversionid"
+        },
+        "actorId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Actorid"
+        },
+        "content": {
+          "discriminator": {
+            "mapping": {
+              "ASSUMPTION": "#/$defs/ProjectAssumption",
+              "DECISION": "#/$defs/ProjectDecision",
+              "PREFERENCE": "#/$defs/ProjectPreference",
+              "REQUIREMENT": "#/$defs/ProjectRequirement"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ProjectRequirement"
+            },
+            {
+              "$ref": "#/$defs/ProjectPreference"
+            },
+            {
+              "$ref": "#/$defs/ProjectDecision"
+            },
+            {
+              "$ref": "#/$defs/ProjectAssumption"
+            }
+          ],
+          "title": "Content"
+        },
+        "sourceMessageIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Sourcemessageids",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "proposedBy": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Proposedby",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "acceptedBy": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Acceptedby"
+        },
+        "acceptedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Acceptedat"
+        }
+      },
+      "required": [
+        "id",
+        "versionId",
+        "version",
+        "projectId",
+        "assetId",
+        "status",
+        "contentHash",
+        "supersedesVersionId",
+        "actorId",
+        "content",
+        "sourceMessageIds",
+        "evidenceIds",
+        "proposedBy",
+        "createdAt",
+        "acceptedBy",
+        "acceptedAt"
+      ],
+      "title": "MemoryView",
+      "type": "object"
+    },
+    "MessageContext": {
+      "additionalProperties": false,
+      "properties": {
+        "selection": {
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "maxItems": 1000,
+          "title": "Selection",
+          "type": "array"
+        },
+        "siteSelectionVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Siteselectionversionid"
+        },
+        "siteProfileVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Siteprofileversionid"
+        },
+        "modelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Modelrevisionid"
+        },
+        "scenarioId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenarioid"
+        },
+        "proposalVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposalversionid"
+        },
+        "memoryVersionIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Memoryversionids",
+          "type": "array"
+        },
+        "editorDirty": {
+          "default": false,
+          "title": "Editordirty",
+          "type": "boolean"
+        }
+      },
+      "title": "MessageContext",
+      "type": "object"
+    },
+    "MessageInput": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "parts": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "ASSUMPTION": "#/$defs/AssumptionPart",
+                "ATTACHMENT": "#/$defs/AttachmentPart",
+                "EVIDENCE": "#/$defs/EvidencePart",
+                "PROPOSAL": "#/$defs/ProposalPart",
+                "QUESTION": "#/$defs/QuestionPart",
+                "TEXT": "#/$defs/TextPart"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/TextPart"
+              },
+              {
+                "$ref": "#/$defs/AttachmentPart"
+              },
+              {
+                "$ref": "#/$defs/ProposalPart"
+              },
+              {
+                "$ref": "#/$defs/QuestionPart"
+              },
+              {
+                "$ref": "#/$defs/EvidencePart"
+              },
+              {
+                "$ref": "#/$defs/AssumptionPart"
+              }
+            ]
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Parts",
+          "type": "array"
+        },
+        "context": {
+          "$ref": "#/$defs/SubmitContext"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "parts",
+        "context"
+      ],
+      "title": "MessageInput",
+      "type": "object"
+    },
+    "MessageView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "conversationId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Conversationid",
+          "type": "string"
+        },
+        "sequence": {
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "role": {
+          "enum": [
+            "USER",
+            "ASSISTANT",
+            "SYSTEM_EVENT"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "parts": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "ASSUMPTION": "#/$defs/AssumptionPart",
+                "ATTACHMENT": "#/$defs/AttachmentPart",
+                "EVIDENCE": "#/$defs/EvidencePart",
+                "PROPOSAL": "#/$defs/ProposalPart",
+                "QUESTION": "#/$defs/QuestionPart",
+                "TEXT": "#/$defs/TextPart"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/TextPart"
+              },
+              {
+                "$ref": "#/$defs/AttachmentPart"
+              },
+              {
+                "$ref": "#/$defs/ProposalPart"
+              },
+              {
+                "$ref": "#/$defs/QuestionPart"
+              },
+              {
+                "$ref": "#/$defs/EvidencePart"
+              },
+              {
+                "$ref": "#/$defs/AssumptionPart"
+              }
+            ]
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "context": {
+          "$ref": "#/$defs/MessageContext"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "clientRequestId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Clientrequestid"
+        },
+        "status": {
+          "enum": [
+            "COMPLETE",
+            "INTERRUPTED",
+            "FAILED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "run": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RunSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "conversationId",
+        "sequence",
+        "role",
+        "parts",
+        "context",
+        "createdAt",
+        "clientRequestId",
+        "status",
+        "run"
+      ],
+      "title": "MessageView",
       "type": "object"
     },
     "MissingSiteInformation": {
@@ -1434,6 +3091,31 @@
       "title": "MissingSiteInformation",
       "type": "object"
     },
+    "Nearby": {
+      "additionalProperties": false,
+      "properties": {
+        "roads": {
+          "$ref": "#/$defs/ContextCollection"
+        },
+        "waterways": {
+          "$ref": "#/$defs/ContextCollection"
+        },
+        "buildings": {
+          "$ref": "#/$defs/ContextCollection"
+        },
+        "utilities": {
+          "$ref": "#/$defs/ContextCollection"
+        }
+      },
+      "required": [
+        "roads",
+        "waterways",
+        "buildings",
+        "utilities"
+      ],
+      "title": "Nearby",
+      "type": "object"
+    },
     "ObjectRef": {
       "additionalProperties": false,
       "properties": {
@@ -1477,6 +3159,30 @@
       "title": "ObjectRef",
       "type": "object"
     },
+    "Orientation": {
+      "additionalProperties": false,
+      "properties": {
+        "azimuth": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "method": {
+          "enum": [
+            "PRINCIPAL_AXIS",
+            "ENDPOINT_BEARING",
+            "USER_AXIS",
+            "UNDEFINED"
+          ],
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "required": [
+        "azimuth",
+        "method"
+      ],
+      "title": "Orientation",
+      "type": "object"
+    },
     "PointSelection": {
       "additionalProperties": false,
       "properties": {
@@ -1494,6 +3200,312 @@
         "geometry"
       ],
       "title": "PointSelection",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "longitude": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitude",
+          "type": "number"
+        },
+        "latitude": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitude",
+          "type": "number"
+        }
+      },
+      "required": [
+        "longitude",
+        "latitude"
+      ],
+      "title": "Position",
+      "type": "object"
+    },
+    "ProfileInput": {
+      "additionalProperties": false,
+      "properties": {
+        "selectionVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Selectionversionid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "selectionVersionId"
+      ],
+      "title": "ProfileInput",
+      "type": "object"
+    },
+    "ProfileUnits": {
+      "additionalProperties": false,
+      "properties": {
+        "length": {
+          "const": "m",
+          "default": "m",
+          "title": "Length",
+          "type": "string"
+        },
+        "area": {
+          "const": "m2",
+          "default": "m2",
+          "title": "Area",
+          "type": "string"
+        },
+        "angle": {
+          "const": "deg",
+          "default": "deg",
+          "title": "Angle",
+          "type": "string"
+        },
+        "slope": {
+          "const": "percent",
+          "default": "percent",
+          "title": "Slope",
+          "type": "string"
+        }
+      },
+      "title": "ProfileUnits",
+      "type": "object"
+    },
+    "ProfileView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "selectionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Selectionid",
+          "type": "string"
+        },
+        "refreshState": {
+          "title": "Refreshstate",
+          "type": "string"
+        },
+        "jobId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Jobid"
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "current": {
+          "title": "Current",
+          "type": "boolean"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SiteProfileVersion"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "selectionId",
+        "refreshState",
+        "jobId",
+        "errorCode",
+        "current",
+        "version"
+      ],
+      "title": "ProfileView",
+      "type": "object"
+    },
+    "ProjectAssumption": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ASSUMPTION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "statement": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "impact": {
+          "maxLength": 2000,
+          "title": "Impact",
+          "type": "string"
+        },
+        "requiredVerification": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requiredverification"
+        },
+        "scope": {
+          "enum": [
+            "CONCEPT_ONLY",
+            "PROJECT"
+          ],
+          "title": "Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "statement",
+        "impact",
+        "scope"
+      ],
+      "title": "ProjectAssumption",
+      "type": "object"
+    },
+    "ProjectDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "DECISION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "statement": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 4000,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "selectedAlternativeId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selectedalternativeid"
+        }
+      },
+      "required": [
+        "kind",
+        "statement",
+        "rationale"
+      ],
+      "title": "ProjectDecision",
+      "type": "object"
+    },
+    "ProjectPreference": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "PREFERENCE",
+          "title": "Kind",
+          "type": "string"
+        },
+        "key": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH"
+          ],
+          "title": "Priority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "key",
+        "value",
+        "priority"
+      ],
+      "title": "ProjectPreference",
+      "type": "object"
+    },
+    "ProjectRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "REQUIREMENT",
+          "title": "Kind",
+          "type": "string"
+        },
+        "key": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "constraint": {
+          "$ref": "#/$defs/RequirementConstraint"
+        },
+        "hardness": {
+          "enum": [
+            "HARD",
+            "SOFT"
+          ],
+          "title": "Hardness",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "key",
+        "constraint",
+        "hardness"
+      ],
+      "title": "ProjectRequirement",
       "type": "object"
     },
     "ProposalCommand": {
@@ -1534,6 +3546,79 @@
         "objects"
       ],
       "title": "ProposalCommand",
+      "type": "object"
+    },
+    "ProposalContent": {
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/ProposalPayload"
+        },
+        "context": {
+          "$ref": "#/$defs/MessageContext"
+        },
+        "request": {
+          "$ref": "#/$defs/ProposalRequest"
+        },
+        "requestHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Requesthash",
+          "type": "string"
+        },
+        "preview": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TranslationPreview"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previewOnly": {
+          "const": true,
+          "title": "Previewonly",
+          "type": "boolean"
+        },
+        "validationId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Validationid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract",
+        "context",
+        "request",
+        "requestHash",
+        "preview",
+        "previewOnly",
+        "validationId"
+      ],
+      "title": "ProposalContent",
+      "type": "object"
+    },
+    "ProposalPart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "PROPOSAL",
+          "title": "Kind",
+          "type": "string"
+        },
+        "proposalVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Proposalversionid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "proposalVersionId"
+      ],
+      "title": "ProposalPart",
       "type": "object"
     },
     "ProposalPayload": {
@@ -1652,6 +3737,237 @@
       "title": "ProposalPayload",
       "type": "object"
     },
+    "ProposalRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "messageId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Messageid",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "assets": {
+          "items": {
+            "$ref": "#/$defs/ConceptAsset"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Assets",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Warnings",
+          "type": "array"
+        },
+        "translation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TranslationPreview"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "alternatives": {
+          "items": {
+            "$ref": "#/$defs/ConceptAlternative"
+          },
+          "maxItems": 5,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "parentVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parentversionid"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "messageId",
+        "title",
+        "rationale",
+        "assets"
+      ],
+      "title": "ProposalRequest",
+      "type": "object"
+    },
+    "ProposalView": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "proposalId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Proposalid",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "GENERATING",
+            "READY_FOR_REVIEW",
+            "HAS_ISSUES",
+            "APPROVED",
+            "STALE",
+            "REJECTED",
+            "BUILT"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "current": {
+          "title": "Current",
+          "type": "boolean"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "dependencyHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Dependencyhash",
+          "type": "string"
+        },
+        "validationHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Validationhash",
+          "type": "string"
+        },
+        "validation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ValidationResult"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "content": {
+          "$ref": "#/$defs/ProposalContent"
+        },
+        "alternatives": {
+          "items": {
+            "$ref": "#/$defs/AlternativeView"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "proposalId",
+        "version",
+        "status",
+        "current",
+        "contentHash",
+        "dependencyHash",
+        "validationHash",
+        "validation",
+        "content",
+        "alternatives"
+      ],
+      "title": "ProposalView",
+      "type": "object"
+    },
+    "ProviderResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "default": "",
+          "maxLength": 6000,
+          "title": "Text",
+          "type": "string"
+        },
+        "clarification": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Clarification"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "toolCalls": {
+          "items": {
+            "$ref": "#/$defs/ToolInvocation"
+          },
+          "maxItems": 8,
+          "title": "Toolcalls",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Evidenceids",
+          "type": "array"
+        }
+      },
+      "title": "ProviderResponse",
+      "type": "object"
+    },
     "PublicMapSource": {
       "additionalProperties": false,
       "properties": {
@@ -1708,6 +4024,159 @@
       "title": "PublicMapSource",
       "type": "object"
     },
+    "Quantity": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "m2",
+            "deg",
+            "percent"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Quantity",
+      "type": "object"
+    },
+    "QuestionPart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "QUESTION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "questionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Questionid",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 6000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "questionId",
+        "text",
+        "options"
+      ],
+      "title": "QuestionPart",
+      "type": "object"
+    },
+    "ReadinessOperation": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "title": "Operation",
+          "type": "string"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "operation",
+        "eligible",
+        "reasons"
+      ],
+      "title": "ReadinessOperation",
+      "type": "object"
+    },
+    "ReadinessView": {
+      "additionalProperties": false,
+      "properties": {
+        "siteDataState": {
+          "title": "Sitedatastate",
+          "type": "string"
+        },
+        "current": {
+          "title": "Current",
+          "type": "boolean"
+        },
+        "databaseMode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Databasemode"
+        },
+        "ruleSetVersion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rulesetversion"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Status"
+        },
+        "operations": {
+          "items": {
+            "$ref": "#/$defs/ReadinessOperation"
+          },
+          "title": "Operations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "siteDataState",
+        "current",
+        "operations"
+      ],
+      "title": "ReadinessView",
+      "type": "object"
+    },
     "Ref": {
       "additionalProperties": false,
       "properties": {
@@ -1734,6 +4203,54 @@
         "contentHash"
       ],
       "title": "Ref",
+      "type": "object"
+    },
+    "Relief": {
+      "additionalProperties": false,
+      "properties": {
+        "minElevation": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "maxElevation": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "meanSlope": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "maxSlope": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "slopeMethodVersion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Slopemethodversion"
+        },
+        "profileIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Profileids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "minElevation",
+        "maxElevation",
+        "meanSlope",
+        "maxSlope",
+        "slopeMethodVersion",
+        "profileIds"
+      ],
+      "title": "Relief",
       "type": "object"
     },
     "RequiredInput": {
@@ -1773,6 +4290,62 @@
         "minimumEvidenceUse"
       ],
       "title": "RequiredInput",
+      "type": "object"
+    },
+    "RequirementConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "operator": {
+          "enum": [
+            "EQ",
+            "MIN",
+            "MAX",
+            "IN"
+          ],
+          "title": "Operator",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        }
+      },
+      "required": [
+        "operator",
+        "value"
+      ],
+      "title": "RequirementConstraint",
       "type": "object"
     },
     "ResolvedHorizontalCRS": {
@@ -1878,6 +4451,49 @@
       "title": "ResolvedVerticalReference",
       "type": "object"
     },
+    "RetryCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientRequestId"
+      ],
+      "title": "RetryCommand",
+      "type": "object"
+    },
+    "RoadAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "ROAD",
+          "title": "Kind",
+          "type": "string"
+        },
+        "classification": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "width": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "access": {
+          "$ref": "#/$defs/Fact_str_"
+        }
+      },
+      "required": [
+        "kind",
+        "classification",
+        "width",
+        "access"
+      ],
+      "title": "RoadAttributes",
+      "type": "object"
+    },
     "RouteSelection": {
       "additionalProperties": false,
       "properties": {
@@ -1909,6 +4525,204 @@
         "geometry"
       ],
       "title": "RouteSelection",
+      "type": "object"
+    },
+    "RunSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Errorcode"
+        },
+        "messageId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Messageid",
+          "type": "string"
+        },
+        "conversationId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Conversationid",
+          "type": "string"
+        },
+        "progress": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Progress"
+        },
+        "capabilities": {
+          "items": {
+            "$ref": "#/$defs/AssetCapability"
+          },
+          "title": "Capabilities",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "errorCode",
+        "messageId",
+        "conversationId"
+      ],
+      "title": "RunSummary",
+      "type": "object"
+    },
+    "RuntimeContracts": {
+      "additionalProperties": false,
+      "properties": {
+        "proposalRequest": {
+          "$ref": "#/$defs/ProposalRequest"
+        },
+        "applicationApproval": {
+          "$ref": "#/$defs/ApplicationApproval"
+        },
+        "retry": {
+          "$ref": "#/$defs/RetryCommand"
+        },
+        "response": {
+          "$ref": "#/$defs/ProviderResponse"
+        },
+        "toolInvocation": {
+          "$ref": "#/$defs/ToolInvocation"
+        },
+        "intent": {
+          "$ref": "#/$defs/CivilIntent"
+        },
+        "proposalView": {
+          "$ref": "#/$defs/ProposalView"
+        }
+      },
+      "required": [
+        "proposalRequest",
+        "applicationApproval",
+        "retry",
+        "response",
+        "toolInvocation",
+        "intent",
+        "proposalView"
+      ],
+      "title": "RuntimeContracts",
+      "type": "object"
+    },
+    "SampleSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "requested": {
+          "title": "Requested",
+          "type": "integer"
+        },
+        "valid": {
+          "title": "Valid",
+          "type": "integer"
+        },
+        "failed": {
+          "title": "Failed",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "requested",
+        "valid",
+        "failed"
+      ],
+      "title": "SampleSummary",
+      "type": "object"
+    },
+    "SelectionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "selection": {
+          "discriminator": {
+            "mapping": {
+              "AREA": "#/$defs/AreaSelection",
+              "CROSSING": "#/$defs/CrossingSelection",
+              "ENDPOINTS": "#/$defs/EndpointsSelection",
+              "POINT": "#/$defs/PointSelection",
+              "ROUTE": "#/$defs/RouteSelection"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/AreaSelection"
+            },
+            {
+              "$ref": "#/$defs/RouteSelection"
+            },
+            {
+              "$ref": "#/$defs/CrossingSelection"
+            },
+            {
+              "$ref": "#/$defs/PointSelection"
+            },
+            {
+              "$ref": "#/$defs/EndpointsSelection"
+            }
+          ],
+          "title": "Selection"
+        },
+        "originalCrs": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+              "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedHorizontalCRS"
+            },
+            {
+              "$ref": "#/$defs/UnknownHorizontalCRS"
+            }
+          ],
+          "title": "Originalcrs"
+        },
+        "expectedVersion": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectedversion"
+        }
+      },
+      "required": [
+        "selection",
+        "originalCrs"
+      ],
+      "title": "SelectionInput",
       "type": "object"
     },
     "SelectionVersion": {
@@ -2022,6 +4836,235 @@
       "title": "SelectionVersion",
       "type": "object"
     },
+    "SiteProfileVersion": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "siteProfileId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Siteprofileid",
+          "type": "string"
+        },
+        "projectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "schemaVersion": {
+          "const": "site-profile/1",
+          "default": "site-profile/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "selectionVersion": {
+          "$ref": "#/$defs/Ref"
+        },
+        "boundarySnapshot": {
+          "$ref": "#/$defs/Fact_GeometryReference_"
+        },
+        "location": {
+          "$ref": "#/$defs/Fact_Position_"
+        },
+        "coordinateSystem": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+              "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedHorizontalCRS"
+            },
+            {
+              "$ref": "#/$defs/UnknownHorizontalCRS"
+            }
+          ],
+          "title": "Coordinatesystem"
+        },
+        "calculationCrs": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedHorizontalCRS",
+              "UNKNOWN": "#/$defs/UnknownHorizontalCRS"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedHorizontalCRS"
+            },
+            {
+              "$ref": "#/$defs/UnknownHorizontalCRS"
+            }
+          ],
+          "title": "Calculationcrs"
+        },
+        "verticalReference": {
+          "discriminator": {
+            "mapping": {
+              "RESOLVED": "#/$defs/ResolvedVerticalReference",
+              "UNKNOWN": "#/$defs/UnknownVerticalReference"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResolvedVerticalReference"
+            },
+            {
+              "$ref": "#/$defs/UnknownVerticalReference"
+            }
+          ],
+          "title": "Verticalreference"
+        },
+        "units": {
+          "$ref": "#/$defs/ProfileUnits"
+        },
+        "dimensions": {
+          "$ref": "#/$defs/Dimensions"
+        },
+        "orientation": {
+          "$ref": "#/$defs/Orientation"
+        },
+        "terrain": {
+          "$ref": "#/$defs/TerrainSummary"
+        },
+        "relief": {
+          "$ref": "#/$defs/Relief"
+        },
+        "nearby": {
+          "$ref": "#/$defs/Nearby"
+        },
+        "surveyDatasetRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceSnapshotRef"
+          },
+          "title": "Surveydatasetrefs",
+          "type": "array"
+        },
+        "constraints": {
+          "items": {
+            "$ref": "#/$defs/ConstraintSnapshot"
+          },
+          "title": "Constraints",
+          "type": "array"
+        },
+        "environmentalFacts": {
+          "items": {
+            "$ref": "#/$defs/Fact_str_"
+          },
+          "title": "Environmentalfacts",
+          "type": "array"
+        },
+        "planningFacts": {
+          "items": {
+            "$ref": "#/$defs/Fact_str_"
+          },
+          "title": "Planningfacts",
+          "type": "array"
+        },
+        "onSiteObjects": {
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "title": "Onsiteobjects",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "missingInformationIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Missinginformationids",
+          "type": "array"
+        },
+        "readinessAssessmentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Readinessassessmentid",
+          "type": "string"
+        },
+        "dependencyManifestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Dependencymanifestid",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "siteProfileId",
+        "projectId",
+        "version",
+        "contentHash",
+        "createdAt",
+        "selectionVersion",
+        "boundarySnapshot",
+        "location",
+        "coordinateSystem",
+        "calculationCrs",
+        "verticalReference",
+        "dimensions",
+        "orientation",
+        "terrain",
+        "relief",
+        "nearby",
+        "surveyDatasetRefs",
+        "constraints",
+        "environmentalFacts",
+        "planningFacts",
+        "onSiteObjects",
+        "evidenceIds",
+        "missingInformationIds",
+        "readinessAssessmentId",
+        "dependencyManifestId",
+        "limitations"
+      ],
+      "title": "SiteProfileVersion",
+      "type": "object"
+    },
     "SourceKind": {
       "enum": [
         "MEASURED",
@@ -2035,6 +5078,133 @@
       "title": "SourceKind",
       "type": "string"
     },
+    "SourceSnapshotRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Version"
+        },
+        "contentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contenthash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "contentHash"
+      ],
+      "title": "SourceSnapshotRef",
+      "type": "object"
+    },
+    "SubmitContext": {
+      "additionalProperties": false,
+      "description": "Browser sends stable object IDs; server resolves hashes from the pinned revision.",
+      "properties": {
+        "selectedObjectIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "title": "Selectedobjectids",
+          "type": "array"
+        },
+        "siteSelectionVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Siteselectionversionid"
+        },
+        "siteProfileVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Siteprofileversionid"
+        },
+        "modelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Modelrevisionid"
+        },
+        "scenarioId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenarioid"
+        },
+        "proposalVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposalversionid"
+        },
+        "editorDirty": {
+          "default": false,
+          "title": "Editordirty",
+          "type": "boolean"
+        }
+      },
+      "title": "SubmitContext",
+      "type": "object"
+    },
     "SurveySource": {
       "additionalProperties": false,
       "properties": {
@@ -2044,10 +5214,32 @@
           "type": "string"
         },
         "surveyDatasetId": {
-          "maxLength": 128,
-          "minLength": 1,
-          "title": "Surveydatasetid",
-          "type": "string"
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surveydatasetid"
+        },
+        "terrainDatasetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Terraindatasetid"
         },
         "sourceFileId": {
           "maxLength": 128,
@@ -2072,10 +5264,182 @@
       },
       "required": [
         "kind",
-        "surveyDatasetId",
         "sourceFileId"
       ],
       "title": "SurveySource",
+      "type": "object"
+    },
+    "TerrainSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "activeConfigurationRevision": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Activeconfigurationrevision"
+        },
+        "datasetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Datasetid"
+        },
+        "versionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Versionid"
+        },
+        "coverage": {
+          "$ref": "#/$defs/Coverage"
+        },
+        "sampleSetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Samplesetid"
+        },
+        "sampleSummary": {
+          "$ref": "#/$defs/SampleSummary"
+        }
+      },
+      "required": [
+        "activeConfigurationRevision",
+        "datasetId",
+        "versionId",
+        "coverage",
+        "sampleSetId",
+        "sampleSummary"
+      ],
+      "title": "TerrainSummary",
+      "type": "object"
+    },
+    "TextPart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "TEXT",
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 12000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "text"
+      ],
+      "title": "TextPart",
+      "type": "object"
+    },
+    "ToolInvocation": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "get_site_profile",
+            "get_site_readiness",
+            "get_active_terrain",
+            "sample_terrain",
+            "get_selected_objects",
+            "get_model_revision",
+            "get_project_requirements",
+            "query_nearby_context",
+            "get_checks",
+            "get_constraints",
+            "create_proposal",
+            "revise_proposal",
+            "validate_proposal"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "arguments": {
+          "default": "{}",
+          "maxLength": 18000,
+          "title": "Arguments",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "ToolInvocation",
+      "type": "object"
+    },
+    "TranslationPreview": {
+      "additionalProperties": false,
+      "properties": {
+        "objectIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Objectids",
+          "type": "array"
+        },
+        "coordinateSystem": {
+          "const": "LOCAL",
+          "default": "LOCAL",
+          "title": "Coordinatesystem",
+          "type": "string"
+        },
+        "deltaM": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Deltam",
+          "type": "array"
+        }
+      },
+      "required": [
+        "objectIds",
+        "deltaM"
+      ],
+      "title": "TranslationPreview",
       "type": "object"
     },
     "UnknownFact": {
@@ -2259,10 +5623,32 @@
           "type": "string"
         },
         "messageId": {
-          "maxLength": 128,
-          "minLength": 1,
-          "title": "Messageid",
-          "type": "string"
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Messageid"
+        },
+        "sourceRecordId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcerecordid"
         },
         "actorId": {
           "maxLength": 128,
@@ -2273,10 +5659,36 @@
       },
       "required": [
         "kind",
-        "messageId",
         "actorId"
       ],
       "title": "UserSource",
+      "type": "object"
+    },
+    "UtilityAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "UTILITY",
+          "title": "Kind",
+          "type": "string"
+        },
+        "service": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "depth": {
+          "$ref": "#/$defs/Fact_Quantity_"
+        },
+        "operator": {
+          "$ref": "#/$defs/Fact_str_"
+        }
+      },
+      "required": [
+        "kind",
+        "service",
+        "depth",
+        "operator"
+      ],
+      "title": "UtilityAttributes",
       "type": "object"
     },
     "ValidationIssue": {
@@ -2429,10 +5841,101 @@
       ],
       "title": "ValidationResult",
       "type": "object"
+    },
+    "WaterwayAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "WATERWAY",
+          "title": "Kind",
+          "type": "string"
+        },
+        "waterwayType": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "flowDirection": {
+          "$ref": "#/$defs/Fact_str_"
+        }
+      },
+      "required": [
+        "kind",
+        "waterwayType",
+        "flowDirection"
+      ],
+      "title": "WaterwayAttributes",
+      "type": "object"
+    },
+    "WorkspaceContracts": {
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/SiteProfileVersion"
+        },
+        "selectionInput": {
+          "$ref": "#/$defs/SelectionInput"
+        },
+        "profileInput": {
+          "$ref": "#/$defs/ProfileInput"
+        },
+        "messageContext": {
+          "$ref": "#/$defs/MessageContext"
+        },
+        "messageInput": {
+          "$ref": "#/$defs/MessageInput"
+        },
+        "conversationInput": {
+          "$ref": "#/$defs/ConversationInput"
+        },
+        "memoryInput": {
+          "$ref": "#/$defs/MemoryInput"
+        },
+        "memoryRevision": {
+          "$ref": "#/$defs/MemoryRevisionInput"
+        },
+        "memoryAction": {
+          "$ref": "#/$defs/MemoryAction"
+        },
+        "messageView": {
+          "$ref": "#/$defs/MessageView"
+        },
+        "conversationView": {
+          "$ref": "#/$defs/ConversationView"
+        },
+        "memoryView": {
+          "$ref": "#/$defs/MemoryView"
+        },
+        "profileView": {
+          "$ref": "#/$defs/ProfileView"
+        },
+        "readinessView": {
+          "$ref": "#/$defs/ReadinessView"
+        },
+        "elevationSample": {
+          "$ref": "#/$defs/ElevationSample"
+        }
+      },
+      "required": [
+        "profile",
+        "selectionInput",
+        "profileInput",
+        "messageContext",
+        "messageInput",
+        "conversationInput",
+        "memoryInput",
+        "memoryRevision",
+        "memoryAction",
+        "messageView",
+        "conversationView",
+        "memoryView",
+        "profileView",
+        "readinessView",
+        "elevationSample"
+      ],
+      "title": "WorkspaceContracts",
+      "type": "object"
     }
   },
   "additionalProperties": false,
-  "description": "Export root; not an API request or stored aggregate.",
   "properties": {
     "numericFact": {
       "$ref": "#/$defs/Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____"
@@ -2511,6 +6014,12 @@
     },
     "civilIntent": {
       "$ref": "#/$defs/CivilIntent"
+    },
+    "workspace": {
+      "$ref": "#/$defs/WorkspaceContracts"
+    },
+    "runtime": {
+      "$ref": "#/$defs/RuntimeContracts"
     }
   },
   "required": [
@@ -2529,8 +6038,10 @@
     "proposal",
     "approval",
     "proposalCommand",
-    "civilIntent"
+    "civilIntent",
+    "workspace",
+    "runtime"
   ],
-  "title": "FoundationContracts",
+  "title": "AllContracts",
   "type": "object"
 }

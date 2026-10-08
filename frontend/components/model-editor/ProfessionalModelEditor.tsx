@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SceneLayersPanel from "@/components/model-editor/SceneLayersPanel";
+import PersistentAssistant from "@/components/workspace/PersistentAssistant";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 
 import { compareDocuments } from "@/lib/revision-comparison";
@@ -173,7 +174,7 @@ function LayoutIntelligencePanel({ editor }: { editor: EditableModelEditor }) {
   </div>;
 }
 
-export function ProfessionalModelPanel({ editor }: { editor: EditableModelEditor }) {
+export function ProfessionalModelPanel({ editor, projectId, siteGeometry }: { editor: EditableModelEditor; projectId?: number; siteGeometry?: import("@/lib/types").GeoJSONGeometry | null }) {
   const [tab, setTabState] = useState("layers");
   useEffect(()=>{const inspect=()=>setTabState("properties");window.addEventListener("geoai:inspect-component",inspect);return()=>window.removeEventListener("geoai:inspect-component",inspect);},[]);
   const setTab = (next: string) => {
@@ -184,7 +185,7 @@ export function ProfessionalModelPanel({ editor }: { editor: EditableModelEditor
     <div className="shrink-0 border-b border-white/10 p-3">
       <div role="tablist" aria-label="Inspector views" className="grid grid-cols-5 gap-1">{TABS.map(({ id, label, icon: Icon }) => <button key={id} role="tab" id={`inspector-tab-${id}`} aria-controls={`inspector-panel-${id}`} aria-selected={activeTab === id} onClick={() => setTab(id)} className={cn("flex min-w-0 flex-col items-center gap-1 border-b-2 border-transparent px-1 py-2 text-[10px] transition", activeTab === id ? "border-primary font-semibold text-primary" : "text-muted-foreground hover:text-foreground")}><Icon className="size-3.5" />{label}</button>)}</div>
     </div>
-    <div role="tabpanel" id={`inspector-panel-${activeTab}`} aria-labelledby={`inspector-tab-${activeTab}`} className="min-h-0 flex-1 overflow-y-auto"><div className={activeTab === "layers" ? "" : "hidden"}>{editor.document ? <SceneLayersPanel editor={editor} /> : <EmptyEditor editor={editor} />}</div>{activeTab === "properties" && <PropertiesPanel editor={editor} />}{activeTab === "revisions" && <RevisionsPanel editor={editor} />}{activeTab === "layout" && <LayoutIntelligencePanel editor={editor} />}{activeTab === "copilot" && <CopilotPanel editor={editor} />}</div>
+    <div role="tabpanel" id={`inspector-panel-${activeTab}`} aria-labelledby={`inspector-tab-${activeTab}`} className="min-h-0 flex-1 overflow-y-auto"><div className={activeTab === "layers" ? "" : "hidden"}>{editor.document ? <SceneLayersPanel editor={editor} /> : <EmptyEditor editor={editor} />}</div>{activeTab === "properties" && <PropertiesPanel editor={editor} />}{activeTab === "revisions" && <RevisionsPanel editor={editor} />}{activeTab === "layout" && <LayoutIntelligencePanel editor={editor} />}{activeTab === "copilot" && (projectId ? <PersistentAssistant key={projectId} projectId={projectId} siteGeometry={siteGeometry} selectedIds={editor.selectedIds} revisionId={editor.baseRevision?.id ?? null} dirty={editor.dirty} /> : <CopilotPanel editor={editor} />)}</div>
   </div>;
 }
 

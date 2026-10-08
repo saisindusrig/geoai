@@ -130,4 +130,6 @@ app.include_router(usage.router)
 app.include_router(admin_usage.router)
 app.include_router(ai.router)
 app.include_router(building_plans.router)
+from app.api.routes import site_workspace
+app.include_router(site_workspace.router)
 app.include_router(geoai.router)

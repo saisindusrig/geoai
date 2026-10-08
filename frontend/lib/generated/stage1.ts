@@ -7,6 +7,29 @@ export type Accuracy = {
   "independentCheckpointCount"?: (number | null);
 };
 
+export type AlternativeView = {
+  "id": string;
+  "name": string;
+  "payload": ConceptAlternative;
+};
+
+export type ApplicableQuantity = {
+  "applicability": "APPLICABLE" | "NOT_APPLICABLE";
+  "fact"?: (Fact_Quantity_ | null);
+  "reason"?: (string | null);
+};
+
+export type ApplicationApproval = {
+  "proposalVersionId": string;
+  "proposalHash": string;
+  "dependencyHash": string;
+  "validationHash": string;
+  "alternativeId": (string | null);
+  "acknowledgedAssumptionVersionIds": Array<string>;
+  "expectedModelRevisionId": (string | null);
+  "clientRequestId": string;
+};
+
 export type ApprovalCommand = {
   "proposalVersionId": string;
   "proposalHash": string;
@@ -52,11 +75,30 @@ export type AssetRequest = {
   "referencedObjects"?: Array<ObjectRef>;
 };
 
+export type AssumptionPart = {
+  "kind": "ASSUMPTION";
+  "assumptionVersionId": string;
+};
+
 export type AssumptionSource = {
   "kind": "AI_ASSUMPTION";
   "messageId": string;
   "assumptionId": string;
   "modelId": string;
+};
+
+export type AttachmentPart = {
+  "kind": "ATTACHMENT";
+  "attachmentId": string;
+  "mediaType": string;
+  "contentHash": string;
+};
+
+export type BuildingAttributes = {
+  "kind": "BUILDING";
+  "height": Fact_Quantity_;
+  "storeys": Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____;
+  "use": Fact_str_;
 };
 
 export type CivilIntent = {
@@ -65,6 +107,69 @@ export type CivilIntent = {
   "assets": Array<AssetRequest>;
   "needsClarification": boolean;
   "clarificationQuestion"?: (string | null);
+};
+
+export type Clarification = {
+  "question": string;
+  "options"?: Array<string>;
+};
+
+export type ConceptAlternative = {
+  "name": string;
+  "rationale": string;
+};
+
+export type ConceptAsset = {
+  "assetType": string;
+  "name": string;
+  "requirements"?: Array<string>;
+};
+
+export type ConstraintSnapshot = {
+  "id": string;
+  "kind": string;
+  "contentHash": string;
+  "evidenceIds": Array<string>;
+  "applicability"?: "UNVERIFIED";
+};
+
+export type ContextCollection = {
+  "retrieval": "COMPLETE" | "PARTIAL" | "FAILED" | "NOT_REQUESTED";
+  "features": Array<ContextFeature>;
+  "evidenceIds": Array<string>;
+  "queryExtent": GeometryReference;
+  "truncated": boolean;
+};
+
+export type ContextFeature = {
+  "id": string;
+  "kind": "ROAD" | "WATERWAY" | "BUILDING" | "UTILITY";
+  "geometry": Fact_GeometryReference_;
+  "name": Fact_str_;
+  "attributes": (RoadAttributes | WaterwayAttributes | BuildingAttributes | UtilityAttributes);
+};
+
+export type ConversationInput = {
+  "clientRequestId": string;
+  "title"?: string;
+};
+
+export type ConversationView = {
+  "id": string;
+  "projectId": string;
+  "title": string;
+  "createdBy": string;
+  "createdAt": string;
+  "archivedAt": (string | null);
+  "nextSequence": number;
+};
+
+export type Coverage = {
+  "status": "FULL" | "PARTIAL" | "NONE" | "UNKNOWN";
+  "coveredFraction": (number | null);
+  "checkedGeometryHash": string;
+  "methodVersion": string;
+  "evidenceIds": Array<string>;
 };
 
 export type CrossingSelection = {
@@ -100,6 +205,24 @@ export type DerivedSource = {
   "outputArtifactId"?: (string | null);
 };
 
+export type Dimensions = {
+  "area": ApplicableQuantity;
+  "perimeter": ApplicableQuantity;
+  "routeLength": ApplicableQuantity;
+  "crossingSpan": ApplicableQuantity;
+  "boundingWidth": ApplicableQuantity;
+  "boundingDepth": ApplicableQuantity;
+  "endpointDistance": ApplicableQuantity;
+};
+
+export type ElevationSample = {
+  "position": Position;
+  "chainageM": (number | null);
+  "elevation": Fact_Quantity_;
+  "verticalReference": (ResolvedVerticalReference | UnknownVerticalReference);
+  "groundSampleId": (string | null);
+};
+
 export type EndpointsSelection = {
   "kind": "ENDPOINTS";
   "endpointA": Geometry;
@@ -126,7 +249,18 @@ export type Evidence = {
   "supersedesId"?: (string | null);
 };
 
+export type EvidencePart = {
+  "kind": "EVIDENCE";
+  "evidenceIds": Array<string>;
+};
+
 export type Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____ = (KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____ | UnknownFact);
+
+export type Fact_GeometryReference_ = (KnownFact_GeometryReference_ | UnknownFact);
+
+export type Fact_Position_ = (KnownFact_Position_ | UnknownFact);
+
+export type Fact_Quantity_ = (KnownFact_Quantity_ | UnknownFact);
 
 export type Fact_str_ = (KnownFact_str_ | UnknownFact);
 
@@ -135,10 +269,43 @@ export type Geometry = {
   "coordinates": ([number, number] | Array<[number, number]> | Array<Array<[number, number]>> | Array<Array<Array<[number, number]>>>);
 };
 
+export type GeometryReference = {
+  "id": string;
+  "hash": string;
+  "horizontalCrs": (ResolvedHorizontalCRS | UnknownHorizontalCRS);
+};
+
 export type KnownFact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____ = {
   "id": string;
   "sourceKind": "MEASURED" | "SURVEY" | "PUBLIC_MAP" | "USER_PROVIDED" | "DERIVED" | "AI_ASSUMPTION";
   "value": number;
+  "evidenceIds": Array<string>;
+  "use": "CONTEXT_ONLY" | "CONCEPT" | "VALIDATED_INPUT";
+  "verification": "UNVERIFIED" | "VERIFIED" | "CONFLICTED" | "EXPIRED";
+};
+
+export type KnownFact_GeometryReference_ = {
+  "id": string;
+  "sourceKind": "MEASURED" | "SURVEY" | "PUBLIC_MAP" | "USER_PROVIDED" | "DERIVED" | "AI_ASSUMPTION";
+  "value": GeometryReference;
+  "evidenceIds": Array<string>;
+  "use": "CONTEXT_ONLY" | "CONCEPT" | "VALIDATED_INPUT";
+  "verification": "UNVERIFIED" | "VERIFIED" | "CONFLICTED" | "EXPIRED";
+};
+
+export type KnownFact_Position_ = {
+  "id": string;
+  "sourceKind": "MEASURED" | "SURVEY" | "PUBLIC_MAP" | "USER_PROVIDED" | "DERIVED" | "AI_ASSUMPTION";
+  "value": Position;
+  "evidenceIds": Array<string>;
+  "use": "CONTEXT_ONLY" | "CONCEPT" | "VALIDATED_INPUT";
+  "verification": "UNVERIFIED" | "VERIFIED" | "CONFLICTED" | "EXPIRED";
+};
+
+export type KnownFact_Quantity_ = {
+  "id": string;
+  "sourceKind": "MEASURED" | "SURVEY" | "PUBLIC_MAP" | "USER_PROVIDED" | "DERIVED" | "AI_ASSUMPTION";
+  "value": Quantity;
   "evidenceIds": Array<string>;
   "use": "CONTEXT_ONLY" | "CONCEPT" | "VALIDATED_INPUT";
   "verification": "UNVERIFIED" | "VERIFIED" | "CONFLICTED" | "EXPIRED";
@@ -160,6 +327,76 @@ export type MeasuredSource = {
   "operatorId"?: (string | null);
 };
 
+export type MemoryAction = {
+  "expectedStatus"?: "PROPOSED" | "ACCEPTED" | "REJECTED" | "SUPERSEDED";
+};
+
+export type MemoryInput = {
+  "clientRequestId": string;
+  "assetId"?: (string | null);
+  "content": (ProjectRequirement | ProjectPreference | ProjectDecision | ProjectAssumption);
+  "sourceMessageIds"?: Array<string>;
+  "evidenceIds"?: Array<string>;
+};
+
+export type MemoryRevisionInput = {
+  "clientRequestId": string;
+  "assetId"?: (string | null);
+  "content": (ProjectRequirement | ProjectPreference | ProjectDecision | ProjectAssumption);
+  "sourceMessageIds"?: Array<string>;
+  "evidenceIds"?: Array<string>;
+  "expectedVersion": number;
+};
+
+export type MemoryView = {
+  "id": string;
+  "versionId": string;
+  "version": number;
+  "projectId": string;
+  "assetId": (string | null);
+  "status": "PROPOSED" | "ACCEPTED" | "REJECTED" | "SUPERSEDED";
+  "contentHash": string;
+  "supersedesVersionId": (string | null);
+  "actorId": (string | null);
+  "content": (ProjectRequirement | ProjectPreference | ProjectDecision | ProjectAssumption);
+  "sourceMessageIds": Array<string>;
+  "evidenceIds": Array<string>;
+  "proposedBy": string;
+  "createdAt": string;
+  "acceptedBy": (string | null);
+  "acceptedAt": (string | null);
+};
+
+export type MessageContext = {
+  "selection"?: Array<ObjectRef>;
+  "siteSelectionVersionId"?: (string | null);
+  "siteProfileVersionId"?: (string | null);
+  "modelRevisionId"?: (string | null);
+  "scenarioId"?: (string | null);
+  "proposalVersionId"?: (string | null);
+  "memoryVersionIds"?: Array<string>;
+  "editorDirty"?: boolean;
+};
+
+export type MessageInput = {
+  "clientRequestId": string;
+  "parts": Array<(TextPart | AttachmentPart | ProposalPart | QuestionPart | EvidencePart | AssumptionPart)>;
+  "context": SubmitContext;
+};
+
+export type MessageView = {
+  "id": string;
+  "conversationId": string;
+  "sequence": number;
+  "role": "USER" | "ASSISTANT" | "SYSTEM_EVENT";
+  "parts": Array<(TextPart | AttachmentPart | ProposalPart | QuestionPart | EvidencePart | AssumptionPart)>;
+  "context": MessageContext;
+  "createdAt": string;
+  "clientRequestId": (string | null);
+  "status": "COMPLETE" | "INTERRUPTED" | "FAILED";
+  "run": (RunSummary | null);
+};
+
 export type MissingSiteInformation = {
   "id": string;
   "profileVersionId": string;
@@ -173,6 +410,13 @@ export type MissingSiteInformation = {
   "resolutionEvidenceIds"?: Array<string>;
 };
 
+export type Nearby = {
+  "roads": ContextCollection;
+  "waterways": ContextCollection;
+  "buildings": ContextCollection;
+  "utilities": ContextCollection;
+};
+
 export type ObjectRef = {
   "assetId": string;
   "objectId": string;
@@ -181,9 +425,69 @@ export type ObjectRef = {
   "geometryHash": string;
 };
 
+export type Orientation = {
+  "azimuth": Fact_Quantity_;
+  "method": "PRINCIPAL_AXIS" | "ENDPOINT_BEARING" | "USER_AXIS" | "UNDEFINED";
+};
+
 export type PointSelection = {
   "kind": "POINT";
   "geometry": Geometry;
+};
+
+export type Position = {
+  "longitude": number;
+  "latitude": number;
+};
+
+export type ProfileInput = {
+  "selectionVersionId": string;
+};
+
+export type ProfileUnits = {
+  "length"?: "m";
+  "area"?: "m2";
+  "angle"?: "deg";
+  "slope"?: "percent";
+};
+
+export type ProfileView = {
+  "id": string;
+  "selectionId": string;
+  "refreshState": string;
+  "jobId": (string | null);
+  "errorCode": (string | null);
+  "current": boolean;
+  "version": (SiteProfileVersion | null);
+};
+
+export type ProjectAssumption = {
+  "kind": "ASSUMPTION";
+  "statement": string;
+  "impact": string;
+  "requiredVerification"?: (string | null);
+  "scope": "CONCEPT_ONLY" | "PROJECT";
+};
+
+export type ProjectDecision = {
+  "kind": "DECISION";
+  "statement": string;
+  "rationale": string;
+  "selectedAlternativeId"?: (string | null);
+};
+
+export type ProjectPreference = {
+  "kind": "PREFERENCE";
+  "key": string;
+  "value": string;
+  "priority": "LOW" | "NORMAL" | "HIGH";
+};
+
+export type ProjectRequirement = {
+  "kind": "REQUIREMENT";
+  "key": string;
+  "constraint": RequirementConstraint;
+  "hardness": "HARD" | "SOFT";
 };
 
 export type ProposalCommand = {
@@ -191,6 +495,21 @@ export type ProposalCommand = {
   "kind": "DESIGN_REQUEST" | "CHANGE_REQUEST";
   "request": string;
   "objects": Array<ObjectRef>;
+};
+
+export type ProposalContent = {
+  "contract": ProposalPayload;
+  "context": MessageContext;
+  "request": ProposalRequest;
+  "requestHash": string;
+  "preview": (TranslationPreview | null);
+  "previewOnly": true;
+  "validationId": string;
+};
+
+export type ProposalPart = {
+  "kind": "PROPOSAL";
+  "proposalVersionId": string;
 };
 
 export type ProposalPayload = {
@@ -207,6 +526,40 @@ export type ProposalPayload = {
   "parentVersionId": (string | null);
 };
 
+export type ProposalRequest = {
+  "clientRequestId": string;
+  "messageId": string;
+  "title": string;
+  "rationale": string;
+  "assets": Array<ConceptAsset>;
+  "assumptions"?: Array<string>;
+  "warnings"?: Array<string>;
+  "translation"?: (TranslationPreview | null);
+  "alternatives"?: Array<ConceptAlternative>;
+  "parentVersionId"?: (string | null);
+};
+
+export type ProposalView = {
+  "id": string;
+  "proposalId": string;
+  "version": number;
+  "status": "DRAFT" | "GENERATING" | "READY_FOR_REVIEW" | "HAS_ISSUES" | "APPROVED" | "STALE" | "REJECTED" | "BUILT";
+  "current": boolean;
+  "contentHash": string;
+  "dependencyHash": string;
+  "validationHash": string;
+  "validation": (ValidationResult | null);
+  "content": ProposalContent;
+  "alternatives": Array<AlternativeView>;
+};
+
+export type ProviderResponse = {
+  "text"?: string;
+  "clarification"?: (Clarification | null);
+  "toolCalls"?: Array<ToolInvocation>;
+  "evidenceIds"?: Array<string>;
+};
+
 export type PublicMapSource = {
   "kind": "PUBLIC_MAP";
   "provider": string;
@@ -216,16 +569,58 @@ export type PublicMapSource = {
   "queryExtentHash": string;
 };
 
+export type Quantity = {
+  "value": number;
+  "unit": "m" | "m2" | "deg" | "percent";
+};
+
+export type QuestionPart = {
+  "kind": "QUESTION";
+  "questionId": string;
+  "text": string;
+  "options": Array<string>;
+};
+
+export type ReadinessOperation = {
+  "operation": string;
+  "eligible": boolean;
+  "reasons": Array<string>;
+};
+
+export type ReadinessView = {
+  "siteDataState": string;
+  "current": boolean;
+  "databaseMode"?: (string | null);
+  "ruleSetVersion"?: (string | null);
+  "status"?: (string | null);
+  "operations": Array<ReadinessOperation>;
+};
+
 export type Ref = {
   "id": string;
   "version": number;
   "contentHash": string;
 };
 
+export type Relief = {
+  "minElevation": Fact_Quantity_;
+  "maxElevation": Fact_Quantity_;
+  "meanSlope": Fact_Quantity_;
+  "maxSlope": Fact_Quantity_;
+  "slopeMethodVersion": (string | null);
+  "profileIds": Array<string>;
+};
+
 export type RequiredInput = {
   "operation": "DISCUSS" | "PLAN" | "PROPOSE" | "GENERATE" | "VALIDATE_GEOMETRY" | "ANALYZE";
   "field": string;
   "minimumEvidenceUse": "CONTEXT_ONLY" | "CONCEPT" | "VALIDATED_INPUT";
+};
+
+export type RequirementConstraint = {
+  "operator": "EQ" | "MIN" | "MAX" | "IN";
+  "value": (string | number | boolean | Array<string>);
+  "unit"?: (string | null);
 };
 
 export type ResolvedHorizontalCRS = {
@@ -244,10 +639,53 @@ export type ResolvedVerticalReference = {
   "geoidModelVersion"?: (string | null);
 };
 
+export type RetryCommand = {
+  "clientRequestId": string;
+};
+
+export type RoadAttributes = {
+  "kind": "ROAD";
+  "classification": Fact_str_;
+  "width": Fact_Quantity_;
+  "access": Fact_str_;
+};
+
 export type RouteSelection = {
   "kind": "ROUTE";
   "geometry": Geometry;
   "corridorWidthM"?: (number | null);
+};
+
+export type RunSummary = {
+  "id": string;
+  "status": string;
+  "errorCode": (string | null);
+  "messageId": string;
+  "conversationId": string;
+  "progress"?: (string | null);
+  "capabilities"?: Array<AssetCapability>;
+};
+
+export type RuntimeContracts = {
+  "proposalRequest": ProposalRequest;
+  "applicationApproval": ApplicationApproval;
+  "retry": RetryCommand;
+  "response": ProviderResponse;
+  "toolInvocation": ToolInvocation;
+  "intent": CivilIntent;
+  "proposalView": ProposalView;
+};
+
+export type SampleSummary = {
+  "requested": number;
+  "valid": number;
+  "failed": number;
+};
+
+export type SelectionInput = {
+  "selection": (AreaSelection | RouteSelection | CrossingSelection | PointSelection | EndpointsSelection);
+  "originalCrs": (ResolvedHorizontalCRS | UnknownHorizontalCRS);
+  "expectedVersion"?: (number | null);
 };
 
 export type SelectionVersion = {
@@ -266,13 +704,87 @@ export type SelectionVersion = {
   "createdAt": string;
 };
 
+export type SiteProfileVersion = {
+  "id": string;
+  "siteProfileId": string;
+  "projectId": string;
+  "version": number;
+  "schemaVersion"?: "site-profile/1";
+  "contentHash": string;
+  "createdAt": string;
+  "selectionVersion": Ref;
+  "boundarySnapshot": Fact_GeometryReference_;
+  "location": Fact_Position_;
+  "coordinateSystem": (ResolvedHorizontalCRS | UnknownHorizontalCRS);
+  "calculationCrs": (ResolvedHorizontalCRS | UnknownHorizontalCRS);
+  "verticalReference": (ResolvedVerticalReference | UnknownVerticalReference);
+  "units"?: ProfileUnits;
+  "dimensions": Dimensions;
+  "orientation": Orientation;
+  "terrain": TerrainSummary;
+  "relief": Relief;
+  "nearby": Nearby;
+  "surveyDatasetRefs": Array<SourceSnapshotRef>;
+  "constraints": Array<ConstraintSnapshot>;
+  "environmentalFacts": Array<Fact_str_>;
+  "planningFacts": Array<Fact_str_>;
+  "onSiteObjects": Array<ObjectRef>;
+  "evidenceIds": Array<string>;
+  "missingInformationIds": Array<string>;
+  "readinessAssessmentId": string;
+  "dependencyManifestId": string;
+  "limitations": Array<string>;
+};
+
 export type SourceKind = "MEASURED" | "SURVEY" | "PUBLIC_MAP" | "USER_PROVIDED" | "DERIVED" | "AI_ASSUMPTION" | "UNKNOWN";
+
+export type SourceSnapshotRef = {
+  "id": string;
+  "version": (number | null);
+  "contentHash": string;
+};
+
+export type SubmitContext = {
+  "selectedObjectIds"?: Array<string>;
+  "siteSelectionVersionId"?: (string | null);
+  "siteProfileVersionId"?: (string | null);
+  "modelRevisionId"?: (string | null);
+  "scenarioId"?: (string | null);
+  "proposalVersionId"?: (string | null);
+  "editorDirty"?: boolean;
+};
 
 export type SurveySource = {
   "kind": "SURVEY";
-  "surveyDatasetId": string;
+  "surveyDatasetId"?: (string | null);
+  "terrainDatasetId"?: (string | null);
   "sourceFileId": string;
   "validationRunId"?: (string | null);
+};
+
+export type TerrainSummary = {
+  "activeConfigurationRevision": (number | null);
+  "datasetId": (string | null);
+  "versionId": (string | null);
+  "coverage": Coverage;
+  "sampleSetId": (string | null);
+  "sampleSummary": SampleSummary;
+};
+
+export type TextPart = {
+  "kind": "TEXT";
+  "text": string;
+};
+
+export type ToolInvocation = {
+  "name": "get_site_profile" | "get_site_readiness" | "get_active_terrain" | "sample_terrain" | "get_selected_objects" | "get_model_revision" | "get_project_requirements" | "query_nearby_context" | "get_checks" | "get_constraints" | "create_proposal" | "revise_proposal" | "validate_proposal";
+  "arguments"?: string;
+};
+
+export type TranslationPreview = {
+  "objectIds": Array<string>;
+  "coordinateSystem"?: "LOCAL";
+  "deltaM": [number, number, number];
 };
 
 export type UnknownFact = {
@@ -308,8 +820,16 @@ export type UnknownVerticalReference = {
 
 export type UserSource = {
   "kind": "USER_PROVIDED";
-  "messageId": string;
+  "messageId"?: (string | null);
+  "sourceRecordId"?: (string | null);
   "actorId": string;
+};
+
+export type UtilityAttributes = {
+  "kind": "UTILITY";
+  "service": Fact_str_;
+  "depth": Fact_Quantity_;
+  "operator": Fact_str_;
 };
 
 export type ValidationIssue = {
@@ -333,6 +853,30 @@ export type ValidationResult = {
   "outputArtifactId"?: (string | null);
 };
 
+export type WaterwayAttributes = {
+  "kind": "WATERWAY";
+  "waterwayType": Fact_str_;
+  "flowDirection": Fact_str_;
+};
+
+export type WorkspaceContracts = {
+  "profile": SiteProfileVersion;
+  "selectionInput": SelectionInput;
+  "profileInput": ProfileInput;
+  "messageContext": MessageContext;
+  "messageInput": MessageInput;
+  "conversationInput": ConversationInput;
+  "memoryInput": MemoryInput;
+  "memoryRevision": MemoryRevisionInput;
+  "memoryAction": MemoryAction;
+  "messageView": MessageView;
+  "conversationView": ConversationView;
+  "memoryView": MemoryView;
+  "profileView": ProfileView;
+  "readinessView": ReadinessView;
+  "elevationSample": ElevationSample;
+};
+
 export type FoundationContracts = {
   "numericFact": Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____;
   "textFact": Fact_str_;
@@ -350,4 +894,6 @@ export type FoundationContracts = {
   "approval": ApprovalCommand;
   "proposalCommand": ProposalCommand;
   "civilIntent": CivilIntent;
+  "workspace": WorkspaceContracts;
+  "runtime": RuntimeContracts;
 };

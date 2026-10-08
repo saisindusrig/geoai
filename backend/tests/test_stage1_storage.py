@@ -51,29 +51,33 @@ def test_existing_007_upgrade_preserves_data_and_elevation(tmp_path):
         sample = sa.Table("ground_samples",meta,autoload_with=c)
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc)
-        for i,value in enumerate([0,0,621.482,0,45],1):
+        for i,value in enumerate([0,0,621.482,0,45,0],1):
             c.execute(rev.insert().values(id=i,project_id=1,design_scenario_id=1,revision_number=i,
                 document_json={"metadata":{"elevation_known":False}} if i == 1 else {"keep":True}, source="manual_edit",created_at=now))
             c.execute(p.insert().values(id=i,project_id=1,model_revision_id=i,anchor_longitude=77,anchor_latitude=12,
                 anchor_elevation=value,placement_mode="GROUND_RELATIVE",height_reference="TERRAIN",placement_state="UNPLACED",
                 anchor_heading_deg=17,elevation_offset=3,anchor_locked=True,local_transform_json={"matrix":[1,2,3]},
                 legacy_placement=i==1,created_at=now,updated_at=now,
-                anchor_vertical_reference_json={"type":"ELLIPSOIDAL"} if i in (2,3) else None,
+                anchor_vertical_reference_json={"type":"ELLIPSOIDAL"} if i in (2,3,6) else None,
                 accepted_ground_sample_id=i if i in (2,3) else None))
             if i in (2,3):
                 c.execute(sample.insert().values(id=i,project_id=1,placement_id=i,longitude=77,latitude=12,elevation=value,
                     source="SURVEY",status="VALID",vertical_reference_json={"type":"ELLIPSOIDAL"},created_at=now))
+        c.execute(Base.metadata.tables['engineering_audit_events'].insert().values(
+            project_id=1,actor_user_id=1,action='placement.accepted',
+            after_json={'longitude':77,'latitude':12,'elevation':0,'vertical_reference':{'type':'ELLIPSOIDAL'}},
+            created_at=now))
     migrate(url)
     with engine.begin() as c:
         c.exec_driver_sql("PRAGMA foreign_keys=ON")
         assert c.exec_driver_sql("SELECT name FROM projects").scalar() == "Keep me"
-        assert c.exec_driver_sql("SELECT count(*) FROM model_revisions").scalar() == 5
+        assert c.exec_driver_sql("SELECT count(*) FROM model_revisions").scalar() == 6
         assert c.exec_driver_sql("SELECT count(*) FROM ground_samples").scalar() == 2
         rows = c.exec_driver_sql("SELECT anchor_elevation,elevation_resolution FROM model_placements ORDER BY id").all()
-        assert rows == [(None,"UNKNOWN"),(0,"RESOLVED"),(621.482,"RESOLVED"),(0,"LEGACY_UNRESOLVED"),(45,"LEGACY_UNRESOLVED")]
-        assert c.exec_driver_sql("SELECT count(*) FROM model_placements WHERE anchor_heading_deg=17 AND elevation_offset=3").scalar() == 5
+        assert rows == [(None,"UNKNOWN"),(0,"RESOLVED"),(621.482,"RESOLVED"),(0,"LEGACY_UNRESOLVED"),(45,"LEGACY_UNRESOLVED"),(0,"RESOLVED")]
+        assert c.exec_driver_sql("SELECT count(*) FROM model_placements WHERE anchor_heading_deg=17 AND elevation_offset=3").scalar() == 6
         assert '1, 2, 3' in c.exec_driver_sql("SELECT local_transform_json FROM model_placements WHERE id=1").scalar()
-        assert c.exec_driver_sql("SELECT count(*) FROM audit_logs WHERE action='placement.elevation_migrated'").scalar() == 5
+        assert c.exec_driver_sql("SELECT count(*) FROM audit_logs WHERE action='placement.elevation_migrated'").scalar() == 6
         assert not c.exec_driver_sql("PRAGMA foreign_key_check").all()
         assert set(STAGE1_TABLES) <= set(sa.inspect(c).get_table_names())
         columns={v['name']:v for v in sa.inspect(c).get_columns('model_placements')}
@@ -115,7 +119,7 @@ def test_sqlite_scope_and_immutable_constraints():
             with pytest.raises(sa.exc.IntegrityError,match='immutable'):
                 c.execute(statement)
             c.rollback()
-        assert len([n for n in sa.inspect(c).get_table_names() if n in STAGE1_TABLES])==28
+        assert len([n for n in sa.inspect(c).get_table_names() if n in STAGE1_TABLES])==29
 
 
 def test_foreign_project_nested_reference(db_session):

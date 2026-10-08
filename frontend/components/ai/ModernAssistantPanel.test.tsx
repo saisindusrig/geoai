@@ -26,3 +26,14 @@ it("rejects streamed model-changing actions while retaining the explicit manual 
   fireEvent.click(screen.getByRole("button", { name: "Regenerate" }));
   expect(regenerate).toHaveBeenCalledTimes(1);
 });
+
+it("keeps the existing read-only site analysis action available", async () => {
+  vi.mocked(streamChat).mockResolvedValue({ message: "I can inspect the site", actions: [{ type: "run_site_analysis", payload: {} }], warnings: [] });
+  const runSiteAnalysis = vi.fn().mockResolvedValue(undefined);
+  render(<ModernAssistantPanel projectId={1} onApplyParameters={vi.fn()} onRegenerate={vi.fn()} onRunSiteAnalysis={runSiteAnalysis} />);
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: "Inspect this site" } });
+  fireEvent.click(screen.getByRole("button", { name: "Send message" }));
+  await screen.findByText("I can inspect the site");
+  fireEvent.click(screen.getByRole("button", { name: "Apply this action" }));
+  expect(runSiteAnalysis).toHaveBeenCalledTimes(1);
+});

@@ -1,6 +1,6 @@
 # GeoAI Stage 1 implementation architecture
 
-Status: proposed implementation contract, reviewed 8 October 2026. This document does not claim these changes are implemented. Scope: persistent conversation, evidence-backed site understanding, generic proposals, and one complete building vertical slice. No new road, bridge, dam, or tunnel generators in this milestone.
+Status: implementation contract, reviewed 8 October 2026. Foundation Steps 1–5 and the Steps 6–9 conversation/concept-review batch are implemented; the new building execution vertical slice remains proposed. See `STAGE_1_FOUNDATION.md`, `STAGE_1_SITE_WORKSPACE.md` and `STAGE_1_ASSISTANT_RUNTIME.md` for delivered scope, verification and limitations, including the unsuccessful live provider check and unavailable generic execution adapter. Full Stage 1 is not complete. Overall scope: persistent conversation, evidence-backed site understanding, generic proposals, and one complete building vertical slice. No new road, bridge, dam, or tunnel generators in this milestone.
 
 ## 0. Repository integration and non-negotiable boundaries
 
@@ -20,6 +20,8 @@ Reuse these inspected implementation points:
 Important existing-schema issue: ModelPlacement.anchor_elevation is non-null with a zero default. Never interpret that legacy value as known ground. Add an explicit resolution state and make unknown elevation nullable after a provenance-aware backfill; preserve known zero and all legacy transforms. Render-only local z=0 is permitted as a local coordinate, never as an asserted geographic elevation.
 
 Architecture: one modular FastAPI application, existing workers and jobs, PostgreSQL/PostGIS production storage, typed services and an asset plugin registry. No additional microservices, graph database or vector database in Stage 1.
+
+Stage 1 foundation clarification: civil intent is generic and may contain multiple asset requests, including unregistered civil assets such as a cofferdam. The capability registry separates discussion, concept planning, proposal, 3D generation, geometry validation and engineering analysis. Discussion can be available where execution is unsupported. Building is the first specialist slice, not the Assistant's domain boundary. Foundation implementation notes and its conservative capability defaults are in `STAGE_1_FOUNDATION.md`.
 
 ## 1. Common contracts and SiteProfile
 

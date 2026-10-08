@@ -9,20 +9,30 @@ SELECTIONS = {
 }
 
 
-def capability(asset_type: str) -> AssetCapability:
+def capability(asset_type: str, registry=None) -> AssetCapability:
     """Foundation capabilities, NOT the later vertical-slice release claims.
 
     Unregistered names stay intact. Discussion eligibility is independent of
     execution. All Stage 1 proposal/generation adapters remain unimplemented.
     """
+    from app.core.asset_families import asset_definition, FAMILIES
+    from app.services.assistant.specialists import ADAPTERS
+    definition=asset_definition(asset_type)
+    adapter=(registry or ADAPTERS).resolve(asset_type)
+    operations=set(adapter.metadata.capabilities) if adapter else set()
     return AssetCapability(
-        asset_type=asset_type, registry_version="foundation/1",
-        discussion_support="FULL", planning_support="CONCEPT_ONLY",
-        proposal_support="CONCEPT_ONLY", generation_support="UNSUPPORTED",
-        geometry_validation_support="UNSUPPORTED", engineering_analysis_support="UNSUPPORTED",
-        site_selection_types=SELECTIONS.get(asset_type.upper(), []),
-        supported_operations=["DISCUSS"],
-        limitations=["Concept discussion only. Stage 1 execution adapters are not enabled."],
+        asset_type=asset_type, asset_family=definition["family"],display_name=definition["displayName"],component_kinds=definition["componentKinds"],registry_version="asset-families/1",
+        discussion_support="FULL", planning_support="FULL" if "PLAN" in operations else "CONCEPT_ONLY",
+        proposal_support="FULL" if "PROPOSE" in operations else "CONCEPT_ONLY", generation_support="FULL" if "GENERATE" in operations else "UNSUPPORTED",
+        geometry_validation_support="FULL" if "VALIDATE_GEOMETRY" in operations else "UNSUPPORTED", engineering_analysis_support="FULL" if "ANALYZE" in operations else "UNSUPPORTED",
+        site_selection_types=list(FAMILIES[definition["family"]].selection_kinds),
+        supported_operations=sorted({"DISCUSS"}|operations),
+        specification_schema_id=adapter.specification_schema.__name__ if adapter else None,
+        generator_id=adapter.metadata.id if adapter and "GENERATE" in operations else None,
+        generator_version=adapter.metadata.version if adapter and "GENERATE" in operations else None,
+        validator_ids=[adapter.metadata.id] if adapter and "VALIDATE_GEOMETRY" in operations else [],
+        analysis_calculator_ids=[adapter.metadata.id] if adapter and "ANALYZE" in operations else [],
+        limitations=["Concept discussion and proposals only; no specialist execution adapter is registered."] if not adapter else ["Only this adapter's declared operations are available; conceptual output is not engineering approval."],
     )
 
 
@@ -43,7 +53,7 @@ def guard_assistant_response(result: dict) -> dict:
     actions = result.get("actions") or ([result["action"]] if result.get("action") else [])
     safe, rejected = [], []
     for action in actions:
-        if isinstance(action, dict) and action.get("type") in {"show_layer", "download"}:
+        if isinstance(action, dict) and action.get("type") in {"show_layer", "download", "run_site_analysis"}:
             safe.append(action)
         else:
             rejected.append("PROPOSAL_REQUIRED: assistant actions cannot modify the model; proposal execution is not enabled.")

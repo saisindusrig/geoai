@@ -9,6 +9,7 @@ def backfill(connection):
     revisions = sa.Table("model_revisions", metadata, autoload_with=connection)
     samples = sa.Table("ground_samples", metadata, autoload_with=connection)
     audit = sa.Table("audit_logs", metadata, autoload_with=connection)
+    engineering_audit = sa.Table("engineering_audit_events", metadata, autoload_with=connection)
     for row in connection.execute(sa.select(placements)).mappings().all():
         if row["elevation_provenance_json"] is not None:
             continue
@@ -23,9 +24,15 @@ def backfill(connection):
             and sample["vertical_reference_json"] and sample["vertical_reference_json"] == row["anchor_vertical_reference_json"])
         # Explicitly accepted placement is evidence of a recorded altitude, NOT
         # a claim of survey accuracy or engineering readiness.
-        accepted = connection.execute(sa.select(audit.c.id).where(
-            audit.c.project_id == row["project_id"], audit.c.action == "placement.accepted",
-            audit.c.entity_id == str(row["id"]))).scalar()
+        accepted_events = connection.execute(sa.select(engineering_audit.c.after_json).where(
+            engineering_audit.c.project_id == row["project_id"],
+            engineering_audit.c.action == "placement.accepted")).scalars().all()
+        accepted = any(isinstance(event, dict) and
+            event.get("longitude") == row["anchor_longitude"] and
+            event.get("latitude") == row["anchor_latitude"] and
+            event.get("elevation") == value and
+            event.get("vertical_reference") == row["anchor_vertical_reference_json"]
+            for event in accepted_events)
         recorded = value is not None and bool(row["anchor_vertical_reference_json"]) and bool(accepted)
         explicit_unknown = revision.get("metadata", {}).get("elevation_known") is False
         if valid_sample or recorded:

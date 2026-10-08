@@ -39,6 +39,7 @@ class Settings(BaseSettings):
 
     # Nebius Token Factory - building assistant, concept planner and optional main provider.
     NEBIUS_API_KEY: str = ""
+    NEBIUS_BASE_URL: str = ""
     NEBIUS_TOKEN_FACTORY_BASE_URL: str = "https://api.tokenfactory.us-central1.nebius.com/v1"
     NEBIUS_CHAT_MODEL: str = "nvidia/nemotron-3-super-120b-a12b"
 
