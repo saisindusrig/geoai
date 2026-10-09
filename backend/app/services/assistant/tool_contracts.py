@@ -9,5 +9,5 @@ SCHEMAS.update(sample_terrain=TerrainArguments,query_nearby_context=NearbyArgume
 def envelope(status="OK",data=None,evidence=None,limitations=None,code=None,dependencies=None):
     return {"status":status,"data":data,"evidenceIds":evidence or [],"dependencyRefs":dependencies or [],"limitations":limitations or [],"errorCode":code}
 
-def describe_tools():
-    return [{"name":name,"argumentsSchema":schema.model_json_schema(by_alias=True)} for name,schema in SCHEMAS.items()]
+def describe_tools(names=None):
+    return [{"name":name,"argumentsSchema":schema.model_json_schema(by_alias=True)} for name,schema in SCHEMAS.items() if names is None or name in names]

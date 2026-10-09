@@ -103,12 +103,16 @@ class ProposalService:
         message = owned_row(db, "conversation_messages", project_id, request.message_id)
         context = message["context"]
         from app.services.assistant.policy import evaluate
-        if message["role"]!="USER" or evaluate(message)["allowedEffect"]!="PROPOSAL_ONLY":
+        policy=evaluate(message)
+        if message["role"]!="USER" or policy["allowedEffect"]!="PROPOSAL_ONLY":
             error(403,"READ_ONLY_POLICY","Questions and explanations cannot create proposals.")
         if not context.get("siteProfileVersionId") or not context.get("siteSelectionVersionId"):
             error(422, "SITE_PROFILE_REQUIRED", "Refresh the site and send a new message before proposing a concept.")
         if request.translation and not set(request.translation.object_ids) <= {r["objectId"] for r in context["selection"]}:
             error(422, "TARGET_NOT_ATTACHED", "A proposal may target only the objects attached to its source message.")
+        expected=policy["understanding"]["proposedTranslation"]
+        if expected and (not request.translation or request.translation.object_ids!=expected["objectIds"] or list(request.translation.delta_m)!=expected["deltaM"]):
+            error(422,"TRANSLATION_MISMATCH","The proposal must preserve the selected targets and requested distance/direction.")
         attached_profile=owned_row(db,"site_profile_versions",project_id,context["siteProfileVersionId"])
         profile_head=owned_row(db,"site_profiles",project_id,attached_profile["profile_id"])
         if profile_head["latest_version_id"]!=attached_profile["id"]:
@@ -185,6 +189,10 @@ class ProposalService:
         payload = {"contract": contract.model_dump(mode="json", by_alias=True), "context": context, "request": request_data,
             "requestHash": digest(request_data), "preview": request.translation.model_dump(mode="json", by_alias=True) if request.translation else None,
             "previewOnly": True, "validationId": identity(vid, "validation")}
+        # Concept relationships are versioned with the proposal, never applied to live composition by the LLM.
+        payload["planning"]={**policy["understanding"],"proposedAssets":request_data["assets"],
+            "assumptions":request_data["assumptions"],"constraints":[r["id"] for r in rows(db,"constraint_datasets",project_id)],
+            "acceptedMemoryVersionIds":context["memoryVersionIds"],"dependencyManifest":manifest}
         payload["assetProposals"] = asset_proposals(db, project_id, payload)
         insert(db, "design_proposal_versions", id=vid, project_id=project_id, proposal_id=pid, version=version,
             site_profile_version_id=context["siteProfileVersionId"], dependency_manifest_id=manifest_id, parent_version_id=request.parent_version_id,

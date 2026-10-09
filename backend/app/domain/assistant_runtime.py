@@ -95,6 +95,7 @@ class ProposalReference(Contract):
 
 
 class ProposalContent(Contract):
+    planning: dict | None = None
     asset_proposals: list[AssetProposal] = Field(default_factory=list)
     contract: ProposalPayload
     context: MessageContext

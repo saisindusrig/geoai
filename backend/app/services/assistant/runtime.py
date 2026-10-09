@@ -101,24 +101,35 @@ async def process(db,p,run_id,provider=None):
             classification_route=RoutingMetadata(intent=preliminary['intent']['kind'],requested_effect=preliminary["allowedEffect"],
                 asset_count=len(preliminary["intent"]["assets"]),asset_families=[a.get("assetFamily") or "CUSTOM" for a in preliminary["intent"]["assets"]],
                 retry_state=bool(run.get("retry_of_id")),engineering_sensitive=hints['engineering_sensitive'],uncertain=hints['uncertain'] or preliminary['intent']['needsClarification'])
-            intent=await structured(provider,CivilIntent,{"message":text_of(message)},SYSTEM+"\nClassify intent and enumerate separate civil assets. Do not execute anything.",metadata=classification_route,diagnostics=routing_diagnostics)
+            intent=await structured(provider,CivilIntent,{"message":text_of(message),"understanding":preliminary["understanding"]},SYSTEM+"\nClassify intent and enumerate separate civil assets. Do not execute anything.",metadata=classification_route,diagnostics=routing_diagnostics)
             policy=evaluate(message,intent)
             context=build_context(db,p,message,policy)
+            relevant_tools=policy["understanding"]["requiredTools"]
+            advertised_tools=describe_tools(relevant_tools)
             routing = RoutingMetadata(intent=policy["intent"]["kind"],requested_effect=policy["allowedEffect"],
                 asset_count=len(policy["intent"]["assets"]),asset_families=[a.get("assetFamily") or "CUSTOM" for a in policy["intent"]["assets"]],
-                context_size=len(compact(context).encode()),tool_requirement=hints['tool_requirement'] or policy["intent"]["kind"] in {"SITE_QUERY","DESIGN_REQUEST","CHANGE_REQUEST"},
+                context_size=len(compact(context).encode()),tool_requirement=bool(relevant_tools),
                 tool_count=hints['tool_count'],engineering_sensitive=hints['engineering_sensitive'],uncertain=hints['uncertain'] or policy['intent']['needsClarification'],
                 complexity="COMPLEX" if len(policy["intent"]["assets"])>1 else "SIMPLE",retry_state=bool(run.get("retry_of_id")) or bool(routing_diagnostics))
             update(db,"assistant_runs",p,run_id,status="RUNNING",context_snapshot={**run["context_snapshot"],"policy":policy})
             event(db,p,run_id,"READING_CONTEXT","Reading site…");db.commit()
-            outputs=[];proposal_ids=[];calls=0
+            outputs=[];proposal_ids=[];calls=0;cache={}
+            tc=ToolContext(p,run["context_snapshot"]["actorId"],run_id,message["id"],policy["allowedEffect"])
+            # Editing provenance must be read even if a model skips the required retrieval.
+            if policy["intent"]["kind"]=="CHANGE_REQUEST" and message["context"]["selection"]:
+                for name in ("get_selected_objects","get_model_revision"):
+                    result=execute(db,tc,name,{})
+                    cache[(name,compact({}))]=result
+                    outputs.append({"name":name,"result":result})
+                    calls+=1
+                    if result["status"]!="OK":raise AssistantProviderError("EDIT_CONTEXT_UNAVAILABLE")
             for turn in range(9):
-                response=await structured(provider,ProviderResponse,{"context":context,"tools":describe_tools(),"toolResults":outputs},metadata=routing,diagnostics=routing_diagnostics)
+                response=await structured(provider,ProviderResponse,{"context":context,"tools":advertised_tools,"toolResults":outputs},metadata=routing,diagnostics=routing_diagnostics)
                 if routing_diagnostics:routing=routing.model_copy(update={'retry_state':True})
                 if (len(response.tool_calls)>1 or bool(outputs and response.tool_calls)) and ModelRouter().route(routing).tier=='FAST':
                     routing=routing.model_copy(update={'complexity':'COMPLEX'})
                     routing_diagnostics.append({'event':'MODEL_ESCALATION','fromTier':'FAST','toTier':'PRIMARY','reason':'MULTIPLE_TOOLS'})
-                    response=await structured(provider,ProviderResponse,{"context":context,"tools":describe_tools(),"toolResults":outputs},metadata=routing,diagnostics=routing_diagnostics)
+                    response=await structured(provider,ProviderResponse,{"context":context,"tools":advertised_tools,"toolResults":outputs},metadata=routing,diagnostics=routing_diagnostics)
                 if response.tool_calls and not ModelRouter().route(routing).tool_calling_allowed:
                     raise AssistantProviderError("TOOL_POLICY_DENIED")
                 if not response.tool_calls:
@@ -129,19 +140,49 @@ async def process(db,p,run_id,provider=None):
                     try:arguments=json.loads(invocation.arguments)
                     except json.JSONDecodeError:raise AssistantProviderError("INVALID_TOOL_ARGUMENTS")
                     if not isinstance(arguments,dict):raise AssistantProviderError("INVALID_TOOL_ARGUMENTS")
+                    if invocation.name not in relevant_tools:raise AssistantProviderError("TOOL_POLICY_DENIED")
+                    key=(invocation.name,compact(arguments))
+                    if key in cache:
+                        # Frozen reads and idempotent identical proposal results only; never cross runs.
+                        continue
+                    if invocation.name in {"create_proposal","revise_proposal"} and proposal_ids:
+                        raise AssistantProviderError("PROPOSAL_ALREADY_CREATED")
                     event(db,p,run_id,"RUNNING",LABELS.get(invocation.name,"Reading site…"));db.commit()
-                    tc=ToolContext(p,run["context_snapshot"]["actorId"],run_id,message["id"],policy["allowedEffect"])
                     result=execute(db,tc,invocation.name,arguments)
+                    if result["status"]=="OK":cache[key]=result
                     outputs.append({"name":invocation.name,"result":result})
                     if len(outputs)>1:routing=routing.model_copy(update={'complexity':'COMPLEX'})
                     if result.get("data") and isinstance(result["data"],dict) and result["data"].get("proposalVersionId"):
                         proposal_ids.append(result["data"]["proposalVersionId"])
                     if len(compact(outputs).encode())>20000:raise AssistantProviderError("TOOL_RESULT_BUDGET")
             else:raise AssistantProviderError("TOOL_LIMIT")
+            # A useful conceptual plan must not disappear merely because the model stops before calling the proposal tool.
+            if policy["allowedEffect"]=="PROPOSAL_ONLY" and not proposal_ids and message["context"].get("siteProfileVersionId"):
+                assets=policy["intent"]["assets"]
+                if len(assets)<=20:
+                    arguments={"title":"GeoAI concept proposal","rationale":text_of(message)[:4000],
+                        "assets":[{"assetRequestId":a["id"],"assetType":a["assetType"],"name":a["requestedAssetName"],"requirements":a.get("requirements",[])[:30]} for a in assets]}
+                    translation=policy["understanding"]["proposedTranslation"]
+                    if translation:arguments["translation"]={k:translation[k] for k in ("objectIds","coordinateSystem","deltaM")}
+                    parent=message["context"].get("proposalVersionId")
+                    if parent:arguments["parentVersionId"]=parent
+                    if calls>=8:raise AssistantProviderError("TOOL_LIMIT")
+                    result=execute(db,tc,"revise_proposal" if parent else "create_proposal",arguments)
+                    if result["status"]=="OK":proposal_ids.append(result["data"]["proposalVersionId"])
+                    else:raise AssistantProviderError(result.get("errorCode") or "PROPOSAL_FAILED")
             parts=[]
-            if response.text:parts.append({"kind":"TEXT","text":response.text})
-            if response.clarification:
+            if response.text:
+                import re
+                text=re.sub(r"\b(?:Qwen(?:/[\w.-]+)?|Nebius|ModelRouter)\b","GeoAI",response.text,flags=re.I)
+                if text.lstrip().startswith(("{","[")):text="GeoAI prepared a response for review."
+                parts.append({"kind":"TEXT","text":text})
+            if policy["intent"]["needsClarification"]:
+                parts=[{"kind":"QUESTION","questionId":identity(run_id,"question"),"text":policy["intent"]["clarificationQuestion"],"options":[]}]
+            elif response.clarification and not proposal_ids:
                 parts.append({"kind":"QUESTION","questionId":identity(run_id,"question"),"text":response.clarification.question,"options":response.clarification.options})
+            if policy["allowedEffect"]=="PROPOSAL_ONLY" and not message["context"].get("siteProfileVersionId"):
+                parts=[{"kind":"TEXT","text":"I can discuss this preliminary concept. A saved site selection and refreshed site profile are needed to save a reviewable proposal. Terrain and engineering data remain unknown; dimensions and materials can be decided later."}]
+            if proposal_ids and not parts:parts=[{"kind":"TEXT","text":"Review the concept proposal. Geometry is unchanged; specialist generation and engineering analysis require supported modules."}]
             if policy["intent"]["kind"]=="ANALYSIS_REQUEST":
                 # Server-owned notice, independent of the model's presentation.
                 parts=[{"kind":"TEXT","text":"GeoAI does not have a validated structural analysis module for this request and cannot determine safe or unsafe. I can help identify the inputs and specialist checks needed."}]

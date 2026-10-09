@@ -10,8 +10,8 @@ def translation_from_request(text, selection, revision):
     match=re.search(r"\b(?:move|translate)\b.*?\b(\d+(?:\.\d+)?)\s*(mm|m|metres?|meters?)\s+(east|west|north|south|up|down)\b",text.lower())
     if not match or not selection or not revision:return None
     distance=float(match[1])/(1000 if match[2]=="mm" else 1)
-    # Existing model coordinates: X east, Y up, Z north. Geographic coordinates are never derived here.
-    vectors={"east":(1,0,0),"west":(-1,0,0),"north":(0,0,1),"south":(0,0,-1),"up":(0,1,0),"down":(0,-1,0)}
+    # Saved editable documents use ENU (frontend/lib/editor-transform.ts).
+    vectors={"east":(1,0,0),"west":(-1,0,0),"north":(0,1,0),"south":(0,-1,0),"up":(0,0,1),"down":(0,0,-1)}
     return {"objectIds":[r["objectId"] for r in selection],"coordinateSystem":"LOCAL",
             "deltaM":[distance*v for v in vectors[match[3]]],"sourceModelRevisionId":revision,
             "derivation":{"inputDistance":match[1],"inputUnit":match[2],"direction":match[3],"distanceM":distance}}
@@ -56,6 +56,6 @@ def understand(message, policy):
         "catalogueCandidates":[asset_definition(a["assetType"]) for a in assets][:20],
         "requiredTools":tools,"sourceModelRevisionId":context.get("modelRevisionId"),
         "siteSelectionVersionId":context.get("siteSelectionVersionId"),"siteProfileVersionId":context.get("siteProfileVersionId"),
-        "axisConvention":{"coordinateSystem":"LOCAL","x":"east","y":"up","z":"north","source":"model coordinate convention"},
+        "axisConvention":{"coordinateSystem":"LOCAL","x":"east","y":"north","z":"up","source":"saved editable document ENU convention"},
         "proposedTranslation":translation,"unknowns":{field:"UNKNOWN" for field in UNKNOWN_FIELDS},
         "assumptions":[],"expectedEffect":policy["allowedEffect"],"approvalRequired":policy["allowedEffect"]=="PROPOSAL_ONLY"}
