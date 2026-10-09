@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from math import prod
+from math import prod, cos, sin, radians
 import re
 from typing import Any
 from uuid import uuid4
@@ -171,11 +171,19 @@ def document_to_geometry_spec(document: dict[str, Any]) -> dict[str, Any]:
         elif kind in {"cylinder", "sweep"}:
             start = _vec3(geometry.get("start"), [0, 0, 0])
             end = _vec3(geometry.get("end"), [0, 0, 1])
+            def endpoint(point):
+                # Match the editor's XYZ Euler transform (Rx * Ry * Rz).
+                x,y,z = [point[i] * scale[i] for i in range(3)]
+                rx,ry,rz = [radians(v) for v in rotation]
+                x,y = x*cos(rz)-y*sin(rz), x*sin(rz)+y*cos(rz)
+                x,z = x*cos(ry)+z*sin(ry), -x*sin(ry)+z*cos(ry)
+                y,z = y*cos(rx)-z*sin(rx), y*sin(rx)+z*cos(rx)
+                return [x+position[0],y+position[1],z+position[2]]
             objects.append({
                 **common,
                 "kind": "cylinder",
-                "start": [start[i] * scale[i] + position[i] for i in range(3)],
-                "end": [end[i] * scale[i] + position[i] for i in range(3)],
+                "start": endpoint(start),
+                "end": endpoint(end),
                 "radius_m": float(geometry.get("radius_m") or 0.5) * max(scale[0], scale[1]),
             })
         # asset_instance is intentionally reference-only and is not included in calculated quantities.

@@ -1,5 +1,6 @@
 "use client";
 import MeasurementResult from "./MeasurementResult";
+import { cylinderFrame } from "@/lib/editor-transform";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 
 import {
@@ -288,7 +289,7 @@ export default function CesiumView({
       : mainSphere ?? excavSphere ?? (alignmentPoints.length ? Cesium.BoundingSphere.fromPoints(alignmentPoints) : null);
     // Legacy models and centerlines can be at ellipsoid height zero, beneath terrain.
     // Frame them from the terrain surface so the camera never flies underground.
-    if (sphere && !localSandbox) {
+    if (sphere && !localSandbox && !undergroundView) {
       const location = Cesium.Cartographic.fromCartesian(sphere.center);
       if (location) {
         const ground = viewer.scene.globe.getHeight(location);
@@ -322,7 +323,7 @@ export default function CesiumView({
       orientation: { heading: alignmentBearing(alignment ?? null), pitch: Cesium.Math.toRadians(-58) },
       duration: 0.9,
     });
-  }, [alignment, centerLat, centerLng, loaded, localSandbox, isBuildingModel]);
+  }, [alignment, centerLat, centerLng, loaded, localSandbox, isBuildingModel, undergroundView]);
 
   useEffect(() => {
     const onFit = () => fitProject();
@@ -443,20 +444,24 @@ export default function CesiumView({
             },
           });
         } else if (component.geometry.kind === "cylinder" || component.geometry.kind === "sweep") {
-          const start = component.geometry.start;
-          const end = component.geometry.end;
-          const localMid: [number, number, number] = [
-            component.transform.position[0] + (start[0] + end[0]) * 0.5,
-            component.transform.position[1] + (start[1] + end[1]) * 0.5,
-            component.transform.position[2] + (start[2] + end[2]) * 0.5,
-          ];
-          const length = Math.max(0.02, Math.hypot(end[0] - start[0], end[1] - start[1], end[2] - start[2]) * component.transform.scale[2]);
-          const radius = Math.max(0.01, component.geometry.radius_m * Math.max(component.transform.scale[0], component.transform.scale[1]));
+          const frame = cylinderFrame(component);
+          if (!Number.isFinite(frame.length) || frame.length < .001) continue;
+          const localMid = frame.center.toArray() as [number, number, number];
+          const worldStart = toWorld(frame.start.toArray() as [number, number, number]);
+          const worldEnd = toWorld(frame.end.toArray() as [number, number, number]);
+          const direction = Cesium.Cartesian3.normalize(Cesium.Cartesian3.subtract(worldEnd, worldStart, new Cesium.Cartesian3()), new Cesium.Cartesian3());
+          const axis = Cesium.Cartesian3.cross(Cesium.Cartesian3.UNIT_Z, direction, new Cesium.Cartesian3());
+          const dot = Math.max(-1, Math.min(1, direction.z));
+          const cylinderOrientation = Cesium.Cartesian3.magnitude(axis) > 1e-8
+            ? Cesium.Quaternion.fromAxisAngle(Cesium.Cartesian3.normalize(axis, axis), Math.acos(dot))
+            : Cesium.Quaternion.fromAxisAngle(Cesium.Cartesian3.UNIT_X, dot < 0 ? Math.PI : 0);
+          const length = Math.max(0.02, frame.length);
+          const radius = Math.max(0.01, frame.radius);
           ds.entities.add({
             id: `editable:${component.id}`,
             name: component.name,
             position: toWorld(localMid),
-            orientation,
+            orientation: cylinderOrientation,
             properties,
             cylinder: {
               shadows: Cesium.ShadowMode.ENABLED,
@@ -701,6 +706,7 @@ export default function CesiumView({
 
     const transparentOn = undergroundView;
     viewer.scene.globe.depthTestAgainstTerrain = !transparentOn;
+    viewer.scene.screenSpaceCameraController.enableCollisionDetection = !transparentOn;
     cesiumDevLog(
       "transparent",
       transparentOn ? "Transparent ON (globe translucency)" : "Transparent OFF (opaque globe)",
@@ -708,6 +714,9 @@ export default function CesiumView({
 
     if (transparentOn) {
       applyGlobeTranslucency(viewer, Cesium);
+      // Unknown-elevation models can be below terrain: its back face must not
+      // become an opaque ceiling when framing the saved reference plane.
+      viewer.scene.globe.translucency.backFaceAlpha = 0;
     } else {
       resetGlobeTranslucency(viewer);
       resetImageryAlpha(viewer);

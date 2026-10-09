@@ -6,11 +6,13 @@ from app.domain.site_workspace import MessageContext
 from app.domain.composition import AssetProposal
 from app.domain.building_specialist import BuildingSpec
 from app.domain.building_patch import BuildingPatch
+from app.domain.ai3d import AI3DDesign
 
 Text = Annotated[str, Field(min_length=1, max_length=4000)]
 
 
 class ConceptAsset(Contract):
+    ai3d_design: AI3DDesign | None = Field(default=None, alias="ai3dDesign")
     building_patch: "BuildingPatch | None" = None
     building_spec: BuildingSpec | None = None
     asset_request_id: Id | None = None

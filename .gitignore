@@ -69,3 +69,4 @@ frontend/playwright/.cache/
 # Local AI evaluation outputs; never commit provider responses or review notes.
 /backend/evals/results/
 /backend/evals/results*.zip
+/backend/live-results/

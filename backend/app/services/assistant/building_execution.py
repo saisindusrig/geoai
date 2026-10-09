@@ -23,7 +23,7 @@ def _build(db,project_id,version_id):
         if revision.document_json.get("metadata",{}).get("buildingProposalVersionId")==version_id:
             db.commit();return {"modelRevisionId":str(revision.id),"status":"BUILT"}
     for revision in db.query(ModelRevision).filter_by(project_id=project_id).all():
-        if revision.document_json.get("metadata",{}).get("buildingPatchProposalVersionId") == version_id:
+        if version_id in {revision.document_json.get("metadata",{}).get("buildingPatchProposalVersionId"),revision.document_json.get("metadata",{}).get("ai3dProposalVersionId")}:
             db.commit();return {"modelRevisionId":str(revision.id),"status":"BUILT"}
     svc=ProposalService();view=svc.assert_build_current(db,project_id,version_id)
     routing=ExecutionRouter().route_approved(db,project_id,version_id)
@@ -31,6 +31,9 @@ def _build(db,project_id,version_id):
     specification_ids = view["content"]["contract"]["assetSpecificationVersionIds"]
     if len(specification_ids) == 1:
         specification = owned_row(db,"asset_specification_versions",project_id,specification_ids[0])
+        if specification["payload"].get("ai3dDesign"):
+            from app.services.assistant.ai3d_executor import execute_approved
+            return execute_approved(db,project_id,version_id,view,specification)
         if specification["payload"].get("buildingPatch"):
             from app.services.assistant.building_patch_execution import execute
             return execute(db,project_id,version_id,view,specification)

@@ -76,7 +76,7 @@ def _execute(db,tc,message,name,args,execution_id):
     profile=owned_row(db,"site_profile_versions",p,c["siteProfileVersionId"]) if c.get("siteProfileVersionId") else None
     if name in {"create_proposal","revise_proposal"}:
         if tc.allowed_effect!="PROPOSAL_ONLY":return envelope("DENIED",code="READ_ONLY_POLICY")
-        if any(a.building_spec and a.building_spec.input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
+        if any((a.building_spec or a.ai3d_design) and (a.building_spec or a.ai3d_design).input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
             return envelope("DENIED",code="USER_SOURCE_UNVERIFIED",limitations=["Tool-proposed visualization dimensions require explicit preview assumptions; user/site provenance cannot be invented."])
         if name=="revise_proposal" and not args.parent_version_id:return envelope("DENIED",code="PARENT_REQUIRED")
         if args.parent_version_id:
@@ -119,7 +119,9 @@ def _execute(db,tc,message,name,args,execution_id):
     if not profile:return envelope("UNAVAILABLE",code="NO_SITE_PROFILE",limitations=["Refresh site facts before querying terrain or context."])
     value=profile["payload"]
     refs=[{"kind":"SITE_PROFILE","id":profile["id"],"contentHash":profile["content_hash"]}]
-    if name=="get_site_profile":return envelope(data=value,dependencies=refs)
+    if name=="get_site_profile":
+        from app.services.assistant.ai3d_validation import site_summary
+        return envelope(data={**value,"siteAnalysisSummary":site_summary(db,p,c)},dependencies=refs)
     if name=="get_site_readiness":return envelope(data=owned_row(db,"engineering_analyses",p,value["readinessAssessmentId"])["result_json"],dependencies=refs)
     if name=="get_active_terrain":return envelope(data=value["terrain"],dependencies=refs,limitations=["Terrain captured with this profile; no fallback activation."])
     if name=="sample_terrain":

@@ -39,6 +39,11 @@ def build_context(db, project_id, message, policy, budget=MAX_CONTEXT_BYTES):
     def optional(key,value):
         if len(compact({**required,key:value}).encode())<=budget:
             required[key]=value
+    from app.services.assistant.foundation import capability
+    optional("generic3DCapability", capability("AI3D_DESIGN").model_dump(mode="json",by_alias=True))
+    if profile:
+        from app.services.assistant.ai3d_validation import site_summary
+        optional("siteAnalysisSummary",site_summary(db,project_id,context))
     from app.services.assistant.composition import project_composition
     composition = project_composition(db, project_id)
     optional("composition", {"assets":composition["assets"][:100],"relationships":composition["relationships"][:100]})

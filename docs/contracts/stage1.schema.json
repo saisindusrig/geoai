@@ -1,5 +1,128 @@
 {
   "$defs": {
+    "AI3DDesign": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "ai-3d-design/1",
+          "default": "ai-3d-design/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "designId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Designid",
+          "type": "string"
+        },
+        "sourceModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcemodelrevisionid"
+        },
+        "siteSelection": {
+          "$ref": "#/$defs/Ref"
+        },
+        "coordinateFrame": {
+          "const": "LOCAL_ENU",
+          "default": "LOCAL_ENU",
+          "title": "Coordinateframe",
+          "type": "string"
+        },
+        "referencePlane": {
+          "const": "LOCAL_VISUAL_REFERENCE",
+          "default": "LOCAL_VISUAL_REFERENCE",
+          "title": "Referenceplane",
+          "type": "string"
+        },
+        "systems": {
+          "items": {
+            "$ref": "#/$defs/DesignSystem"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Systems",
+          "type": "array"
+        },
+        "objects": {
+          "items": {
+            "$ref": "#/$defs/DesignObject"
+          },
+          "maxItems": 250,
+          "minItems": 1,
+          "title": "Objects",
+          "type": "array"
+        },
+        "relationships": {
+          "items": {
+            "$ref": "#/$defs/DesignRelationship"
+          },
+          "maxItems": 100,
+          "title": "Relationships",
+          "type": "array"
+        },
+        "constraints": {
+          "items": {
+            "$ref": "#/$defs/DesignConstraint"
+          },
+          "maxItems": 100,
+          "title": "Constraints",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "$ref": "#/$defs/PreviewAssumption"
+          },
+          "maxItems": 20,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "terrainDependencies": {
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "maxItems": 10,
+          "title": "Terraindependencies",
+          "type": "array"
+        },
+        "inputSource": {
+          "enum": [
+            "USER_PROVIDED",
+            "PREVIEW_ASSUMPTION"
+          ],
+          "title": "Inputsource",
+          "type": "string"
+        }
+      },
+      "required": [
+        "designId",
+        "siteSelection",
+        "systems",
+        "objects",
+        "inputSource"
+      ],
+      "title": "AI3DDesign",
+      "type": "object"
+    },
     "Accuracy": {
       "additionalProperties": false,
       "properties": {
@@ -367,6 +490,130 @@
         "geometry"
       ],
       "title": "AreaSelection",
+      "type": "object"
+    },
+    "ArrayAlongPath": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "ARRAY_ALONG_PATH",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "templateRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Templateref",
+          "type": "string"
+        },
+        "spacingM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingm",
+          "type": "number"
+        },
+        "count": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "startChainageM": {
+          "default": 0,
+          "maximum": 2000,
+          "minimum": 0,
+          "title": "Startchainagem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "templateRef",
+        "spacingM",
+        "count"
+      ],
+      "title": "ArrayAlongPath",
+      "type": "object"
+    },
+    "ArrayOnGrid": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "ARRAY_ON_GRID",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "templateRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Templateref",
+          "type": "string"
+        },
+        "origin": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Origin",
+          "type": "array"
+        },
+        "rows": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Rows",
+          "type": "integer"
+        },
+        "columns": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Columns",
+          "type": "integer"
+        },
+        "spacingXM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingxm",
+          "type": "number"
+        },
+        "spacingYM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingym",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "templateRef",
+        "origin",
+        "rows",
+        "columns",
+        "spacingXM",
+        "spacingYM"
+      ],
+      "title": "ArrayOnGrid",
       "type": "object"
     },
     "AssetCapability": {
@@ -898,6 +1145,76 @@
       "title": "AttachmentPart",
       "type": "object"
     },
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "BOX",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "center": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Center",
+          "type": "array"
+        },
+        "size": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            },
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            },
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            }
+          ],
+          "title": "Size",
+          "type": "array"
+        },
+        "headingDeg": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Headingdeg",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "center",
+        "size"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
     "BuildingAttributes": {
       "additionalProperties": false,
       "properties": {
@@ -1229,6 +1546,49 @@
       "title": "BuildingSpec",
       "type": "object"
     },
+    "Channel": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "CHANNEL",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "widthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Widthm",
+          "type": "number"
+        },
+        "depthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Depthm",
+          "type": "number"
+        },
+        "thicknessM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Thicknessm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "widthM",
+        "depthM",
+        "thicknessM"
+      ],
+      "title": "Channel",
+      "type": "object"
+    },
     "CivilIntent": {
       "additionalProperties": false,
       "properties": {
@@ -1366,6 +1726,17 @@
     "ConceptAsset": {
       "additionalProperties": false,
       "properties": {
+        "ai3dDesign": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AI3DDesign"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "buildingPatch": {
           "anyOf": [
             {
@@ -1883,6 +2254,76 @@
       "title": "CrossingSelection",
       "type": "object"
     },
+    "Cylinder": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "CYLINDER",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "start": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Start",
+          "type": "array"
+        },
+        "end": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "End",
+          "type": "array"
+        },
+        "radiusM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Radiusm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "start",
+        "end",
+        "radiusM"
+      ],
+      "title": "Cylinder",
+      "type": "object"
+    },
     "Dependency": {
       "additionalProperties": false,
       "properties": {
@@ -2035,6 +2476,277 @@
         "parametersHash"
       ],
       "title": "DerivedSource",
+      "type": "object"
+    },
+    "DesignConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "WITHIN_AREA",
+            "START_AT",
+            "END_AT",
+            "FOLLOW_ROUTE",
+            "AVOID_AREA",
+            "AVOID_OBJECT",
+            "MIN_CLEARANCE",
+            "CONNECT_TO",
+            "OFFSET",
+            "ORIENTATION",
+            "MAX_FOOTPRINT"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "targetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetid",
+          "type": "string"
+        },
+        "referenceId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Referenceid"
+        },
+        "valueM": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Valuem"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "targetId"
+      ],
+      "title": "DesignConstraint",
+      "type": "object"
+    },
+    "DesignObject": {
+      "additionalProperties": false,
+      "properties": {
+        "objectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Objectid",
+          "type": "string"
+        },
+        "systemId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Systemid",
+          "type": "string"
+        },
+        "semanticType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Semantictype",
+          "type": "string"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "parameters": {
+          "discriminator": {
+            "mapping": {
+              "ARRAY_ALONG_PATH": "#/$defs/ArrayAlongPath",
+              "ARRAY_ON_GRID": "#/$defs/ArrayOnGrid",
+              "BOX": "#/$defs/Box",
+              "CHANNEL": "#/$defs/Channel",
+              "CYLINDER": "#/$defs/Cylinder",
+              "EXTRUDE": "#/$defs/Extrude",
+              "OFFSET": "#/$defs/Offset",
+              "PATH": "#/$defs/Path",
+              "PIPE": "#/$defs/Pipe",
+              "POINT": "#/$defs/Point",
+              "POLYGON": "#/$defs/Polygon",
+              "SURFACE": "#/$defs/Extrude",
+              "SWEEP": "#/$defs/Sweep"
+            },
+            "propertyName": "primitiveType"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Point"
+            },
+            {
+              "$ref": "#/$defs/Path"
+            },
+            {
+              "$ref": "#/$defs/Polygon"
+            },
+            {
+              "$ref": "#/$defs/Box"
+            },
+            {
+              "$ref": "#/$defs/Cylinder"
+            },
+            {
+              "$ref": "#/$defs/Extrude"
+            },
+            {
+              "$ref": "#/$defs/Sweep"
+            },
+            {
+              "$ref": "#/$defs/Pipe"
+            },
+            {
+              "$ref": "#/$defs/Channel"
+            },
+            {
+              "$ref": "#/$defs/Offset"
+            },
+            {
+              "$ref": "#/$defs/ArrayAlongPath"
+            },
+            {
+              "$ref": "#/$defs/ArrayOnGrid"
+            }
+          ],
+          "title": "Parameters"
+        },
+        "parentId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parentid"
+        },
+        "templateOnly": {
+          "default": false,
+          "title": "Templateonly",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "objectId",
+        "systemId",
+        "semanticType",
+        "role",
+        "parameters"
+      ],
+      "title": "DesignObject",
+      "type": "object"
+    },
+    "DesignRelationship": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "CONNECTS_TO",
+            "SERVES",
+            "SUPPLIES",
+            "CROSSES",
+            "FOLLOWS",
+            "AVOIDS",
+            "CONTAINS",
+            "ADJACENT_TO",
+            "ABOVE",
+            "BELOW",
+            "SUPPORTED_BY",
+            "DRAINS_TO",
+            "ALIGNS_WITH",
+            "OFFSET_FROM"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "fromId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Fromid",
+          "type": "string"
+        },
+        "toId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Toid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "fromId",
+        "toId"
+      ],
+      "title": "DesignRelationship",
+      "type": "object"
+    },
+    "DesignSystem": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "semanticType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Semantictype",
+          "type": "string"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "assetType",
+        "semanticType",
+        "role"
+      ],
+      "title": "DesignSystem",
       "type": "object"
     },
     "DimensionPatch": {
@@ -2445,6 +3157,38 @@
         "evidenceIds"
       ],
       "title": "EvidencePart",
+      "type": "object"
+    },
+    "Extrude": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "enum": [
+            "EXTRUDE",
+            "SURFACE"
+          ],
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "polygonRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Polygonref",
+          "type": "string"
+        },
+        "heightM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Heightm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "polygonRef",
+        "heightM"
+      ],
+      "title": "Extrude",
       "type": "object"
     },
     "Fact_Annotated_float__FieldInfo_annotation_NoneType__required_True__metadata___PydanticGeneralMetadata_allow_inf_nan_False_____": {
@@ -4143,6 +4887,35 @@
       "title": "ObjectRef",
       "type": "object"
     },
+    "Offset": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "OFFSET",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "distanceM": {
+          "maximum": 2000,
+          "minimum": -2000,
+          "title": "Distancem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "distanceM"
+      ],
+      "title": "Offset",
+      "type": "object"
+    },
     "Opening": {
       "additionalProperties": false,
       "properties": {
@@ -4307,6 +5080,118 @@
       "title": "PatchProposal",
       "type": "object"
     },
+    "Path": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "PATH",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 50,
+          "minItems": 2,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "points"
+      ],
+      "title": "Path",
+      "type": "object"
+    },
+    "Pipe": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "PIPE",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "radiusM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Radiusm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "radiusM"
+      ],
+      "title": "Pipe",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "POINT",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "position": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Position",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "position"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
     "PointSelection": {
       "additionalProperties": false,
       "properties": {
@@ -4324,6 +5209,50 @@
         "geometry"
       ],
       "title": "PointSelection",
+      "type": "object"
+    },
+    "Polygon": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "POLYGON",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 50,
+          "minItems": 4,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "points"
+      ],
+      "title": "Polygon",
       "type": "object"
     },
     "Position": {
@@ -6757,6 +7686,42 @@
         "sourceFileId"
       ],
       "title": "SurveySource",
+      "type": "object"
+    },
+    "Sweep": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "SWEEP",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "widthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Widthm",
+          "type": "number"
+        },
+        "thicknessM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Thicknessm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "widthM",
+        "thicknessM"
+      ],
+      "title": "Sweep",
       "type": "object"
     },
     "TerrainSummary": {

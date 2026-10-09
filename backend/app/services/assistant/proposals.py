@@ -28,9 +28,9 @@ def asset_proposals(db, project_id, payload):
             asset_type=asset["assetType"], asset_family=cap.asset_family, display_name=asset["name"],
             requirements=asset.get("requirements", []), assumptions=payload["request"].get("assumptions", []), constraint_ids=constraints,
             specification_ref={"id":sid,"version":spec["version"],"contentHash":spec["content_hash"]}, capabilities=cap,
-            warnings=payload["request"].get("warnings", []), blockers=[] if asset.get("buildingSpec") or asset.get("buildingPatch") else ["A supported typed specialist specification is required before generation."],
+            warnings=payload["request"].get("warnings", []), blockers=[] if asset.get("buildingSpec") or asset.get("ai3dDesign") or asset.get("buildingPatch") else ["A supported typed specialist specification is required before generation."],
             dependency_refs=[r["id"] for r in edges if spec["asset_id"] in (r["from_asset_id"],r["to_asset_id"])],
-            generation_eligible=bool(asset.get("buildingSpec") or asset.get("buildingPatch")) and "GENERATE" in cap.supported_operations).model_dump(mode="json", by_alias=True))
+            generation_eligible=bool(asset.get("buildingSpec") or asset.get("ai3dDesign") or asset.get("buildingPatch")) and "GENERATE" in cap.supported_operations).model_dump(mode="json", by_alias=True))
     return result
 
 
@@ -92,11 +92,12 @@ class ProposalService:
         # Preview assumptions use the existing visible, acknowledged proposal-memory mechanism.
         assumptions=list(request.assumptions)
         for asset in request.assets:
+            if sum(x is not None for x in (asset.building_spec,asset.building_patch,asset.ai3d_design))>1:error(422,"AMBIGUOUS_SPECIFICATION","Use one typed specification per asset.")
             if asset.building_patch:
                 for statement in asset.building_patch.assumptions:
                     if statement not in assumptions: assumptions.append(statement)
-            if asset.building_spec:
-                for item in asset.building_spec.assumptions:
+            if asset.building_spec or asset.ai3d_design:
+                for item in (asset.building_spec or asset.ai3d_design).assumptions:
                     statement=f"PREVIEW_ASSUMPTION ({asset.name}): {item.field} = {item.value}. {item.reason}"
                     if statement not in assumptions:assumptions.append(statement)
         if len(assumptions)>20:error(422,"ASSUMPTION_LIMIT","Limit the proposal to twenty explicit assumptions.")
@@ -194,6 +195,13 @@ class ProposalService:
                 spec_version=1
                 insert(db, "asset_instances", id=aid, project_id=project_id, asset_type=asset.asset_type, name=asset.name)
             spec = {"schemaVersion": "civil-concept/1", **asset.model_dump(mode="json", by_alias=True), "executable": False}
+            if asset.ai3d_design:
+                if len(request.assets)!=1 or asset.asset_type!="AI3D_DESIGN":error(422,"INVALID_GENERIC_DESIGN_REQUEST","Represent all systems in one AI3D_DESIGN asset.")
+                from app.services.assistant.ai3d_validation import validate_saved_design
+                summary,result=validate_saved_design(db,project_id,context,asset.ai3d_design)
+                spec.update(schemaVersion="ai-3d-design/1",executable=True,specialistValidation=result,
+                    provenance={"proposalId":pid,"proposalVersionId":vid,"proposalVersion":version,"sourceModelRevisionId":context.get("modelRevisionId"),
+                        "siteSelectionVersionId":context["siteSelectionVersionId"],"siteProfileVersionId":context["siteProfileVersionId"]})
             if asset.building_spec:
                 from app.services.assistant.specialists import ADAPTERS
                 adapter=ADAPTERS.resolve(asset.asset_type)
@@ -251,7 +259,7 @@ class ProposalService:
             insert(db,"proposal_alternatives",id=aid,project_id=project_id,proposal_version_id=vid,name=alternative.name,payload=value,content_hash=digest(value))
         self.transition(db,project_id,vid,"GENERATING")
         issues = [{"code":"CONCEPT_ONLY", "severity":"WARNING", "componentIds":[], "fieldPaths":[], "evidenceIds":[],
-            "message":"Concept review only. A typed Building patch may execute after approval; engineering analysis remains unavailable." if any(a.building_patch for a in request.assets) else "Concept review only. Typed Building V1 geometry may be generated after approval; engineering analysis remains unavailable." if any(a.building_spec for a in request.assets) else "Concept review only. A supported typed specialist specification is required for geometry generation; engineering analysis remains unavailable.","remediation":"Use a validated specialist workflow before engineering or construction."}]
+            "message":"Concept review only. A typed Building patch may execute after approval; engineering analysis remains unavailable." if any(a.building_patch for a in request.assets) else "Preliminary generic 3D layout; geometry validation only, no engineering approval." if any(a.ai3d_design for a in request.assets) else "Concept review only. Typed Building V1 geometry may be generated after approval; engineering analysis remains unavailable." if any(a.building_spec for a in request.assets) else "Concept review only. A supported typed specialist specification is required for geometry generation; engineering analysis remains unavailable.","remediation":"Use a validated specialist workflow before engineering or construction."}]
         if context["editorDirty"]:
             issues.append({**issues[0],"code":"UNSAVED_MODEL", "severity":"BLOCKER", "message":"The source message captured unsaved editor changes.","remediation":"Save the model and submit a new proposal request."})
         validation=ValidationResult(id=identity(vid,"validation"),level="CONCEPT_VALIDATION",validator_id="civil-concept-contract",validator_version="1",

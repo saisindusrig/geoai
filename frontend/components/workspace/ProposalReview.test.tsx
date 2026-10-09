@@ -85,3 +85,24 @@ it("summarizes a typed opening patch and blocks application with unsaved edits",
   fireEvent.click(screen.getByRole("button", { name: "Apply approved building patch" }));
   expect(await screen.findByRole("status")).toHaveTextContent("Building patch saved as revision 10");
 });
+
+it("reviews a generic composition and requires saved state before generation", async () => {
+  const fixture = await api.get<object>("fixture");
+  vi.mocked(api.get).mockResolvedValue({ ...fixture, status: "APPROVED", content: {
+    ...(fixture as { content: object }).content,
+    request: { title: "Pedestrian bridge", rationale: "Primitive composition", assets: [{ name: "Bridge", assetType: "AI3D_DESIGN", ai3dDesign: {
+      systems: [{ id: "bridge", role: "PEDESTRIAN_BRIDGE" }], objects: [{ objectId: "deck", systemId: "bridge", role: "DECK", parameters: { primitiveType: "SWEEP" } }],
+      assumptions: [{ field: "deck width", value: "4 m", reason: "Preview only" }], unknowns: ["soil", "designLoads"],
+    } }] }, assetProposals: [{ assetRequestId: "A01", displayName: "Bridge", assetFamily: "CUSTOM", generationEligible: true, blockers: [] }],
+  } });
+  const { rerender } = render(<ProposalReview projectId={1} versionId="pv" dirty />);
+  fireEvent.click(await screen.findByRole("button", { name: "Review proposal" }));
+  expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("PEDESTRIAN BRIDGE");
+  expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("deck width = 4 m");
+  expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("soil, designLoads");
+  expect(screen.getByRole("button", { name: "Approve & Generate 3D" })).toBeDisabled();
+  rerender(<ProposalReview projectId={1} versionId="pv" dirty={false} />);
+  vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "11" });
+  fireEvent.click(screen.getByRole("button", { name: "Approve & Generate 3D" }));
+  expect(await screen.findByRole("status")).toHaveTextContent("Generic 3D concept saved as revision 11");
+});

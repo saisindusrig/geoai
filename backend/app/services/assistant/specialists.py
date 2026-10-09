@@ -47,6 +47,8 @@ class AdapterRegistry:
 ADAPTERS=AdapterRegistry()
 from app.services.assistant.building_specialist import BuildingAdapter
 ADAPTERS.register(BuildingAdapter())
+from app.services.assistant.ai3d_executor import Generic3DExecutor
+ADAPTERS.register(Generic3DExecutor())
 
 
 def route_assets(assets: list[dict], registry=ADAPTERS):

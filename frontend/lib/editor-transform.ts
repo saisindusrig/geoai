@@ -19,6 +19,15 @@ export function transformMatrix(transform: EditableModelComponent["transform"]) 
     new THREE.Quaternion().setFromEuler(new THREE.Euler(...transform.rotation_deg.map(THREE.MathUtils.degToRad) as [number, number, number])),
     new THREE.Vector3(...transform.scale));
 }
+/** Resolve endpoint geometry through the same saved transform used by the editor. */
+export function cylinderFrame(component: EditableModelComponent) {
+  if (component.geometry.kind !== "cylinder" && component.geometry.kind !== "sweep") throw new Error("Cylinder geometry required");
+  const matrix = transformMatrix(component.transform);
+  const start = new THREE.Vector3(...component.geometry.start).applyMatrix4(matrix);
+  const end = new THREE.Vector3(...component.geometry.end).applyMatrix4(matrix);
+  return { start, end, center: start.clone().add(end).multiplyScalar(.5), length: start.distanceTo(end),
+    radius: component.geometry.radius_m * Math.max(component.transform.scale[0], component.transform.scale[1]) };
+}
 export function transformPivot(components: EditableModelComponent[], pivot: TransformSettings["pivot"]) {
   if (!components.length) return new THREE.Vector3();
   if (pivot !== "median") return new THREE.Vector3(...components[0].transform.position);

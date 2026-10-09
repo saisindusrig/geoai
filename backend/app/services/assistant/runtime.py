@@ -151,6 +151,9 @@ async def process(db,p,run_id,provider=None):
                         from collections import Counter
                         expected=Counter(a["assetType"].upper() for a in policy["intent"]["assets"])
                         proposed=Counter(str(a.get("assetType","")).upper() for a in arguments.get("assets",[]) if isinstance(a,dict))
+                        generic=[a for a in arguments.get("assets",[]) if isinstance(a,dict) and a.get("ai3dDesign")]
+                        if len(generic)==1 and len(arguments["assets"])==1 and generic[0].get("assetType")=="AI3D_DESIGN":
+                            proposed=Counter(str(system.get("assetType","")).upper() for system in generic[0]["ai3dDesign"].get("systems",[]) if isinstance(system,dict))
                         if expected!=proposed:raise AssistantProviderError("ASSET_DECOMPOSITION_MISMATCH")
                     event(db,p,run_id,"RUNNING",LABELS.get(invocation.name,"Reading site…"));db.commit()
                     result=execute(db,tc,invocation.name,arguments)

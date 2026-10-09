@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
 import * as THREE from "three";
-import { applyTransformDelta, cameraLease, defaultTransformSettings, snap } from "./editor-transform";
+import { applyTransformDelta, cameraLease, defaultTransformSettings, snap, cylinderFrame } from "./editor-transform";
 import type { EditableModelComponent } from "./types";
 
 const component = (id: string, position: [number,number,number], locked = false) => ({ id, locked, transform: { position, rotation_deg: [0,0,0], scale: [1,1,1] } }) as EditableModelComponent;
+it("resolves horizontal pipe endpoints with saved translation, rotation and scale", () => {
+  const pipe = { ...component("pipe", [3,4,5]), geometry: { kind: "cylinder", start: [0,0,0], end: [10,0,0], radius_m: .2 } } as EditableModelComponent;
+  pipe.transform.rotation_deg = [0,0,90]; pipe.transform.scale = [2,2,2];
+  const frame = cylinderFrame(pipe);
+  expect(frame.start.toArray()).toEqual([3,4,5]);
+  expect(frame.end.x).toBeCloseTo(3); expect(frame.end.y).toBeCloseTo(24); expect(frame.end.z).toBeCloseTo(5);
+  expect(frame.length).toBeCloseTo(20); expect(frame.radius).toBeCloseTo(.4);
+});
 describe("engineering transform math", () => {
   it.each([0,1,2])("constrains translation to axis %i and respects snap", index => {
     const axis = new THREE.Vector3().setComponent(index,1);
