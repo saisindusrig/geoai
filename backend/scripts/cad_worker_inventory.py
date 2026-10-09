@@ -8,6 +8,7 @@ import platform
 import sys
 import argparse
 import subprocess
+import os
 
 
 def inventory():
@@ -58,8 +59,17 @@ if __name__ == "__main__":
                 name = item["path"]
                 if not (name.endswith(".so") or ".so." in name):
                     continue
-                check = subprocess.run(["ldd",str(dist.locate_file(name))],capture_output=True,text=True,timeout=10)
-                linkage.append({"package":package["name"],"path":name,"returnCode":check.returncode,"output":check.stdout+check.stderr})
+                native_path = Path(dist.locate_file(name)).resolve()
+                # auditwheel bundles dependency libraries in <package>.libs.
+                # Their loaders establish sibling lookup when imported; ldd on
+                # an individual bundled library needs that same explicit path.
+                search_paths = [str(native_path.parent)] if native_path.parent.name.endswith(".libs") else []
+                env = dict(os.environ)
+                env.pop("LD_LIBRARY_PATH", None)
+                if search_paths:
+                    env["LD_LIBRARY_PATH"] = os.pathsep.join(search_paths)
+                check = subprocess.run(["ldd",str(native_path)],capture_output=True,text=True,timeout=10,env=env)
+                linkage.append({"package":package["name"],"path":name,"searchPaths":search_paths,"returnCode":check.returncode,"output":check.stdout+check.stderr})
         result["linkage"] = linkage
         print(json.dumps(result,indent=2))
         if not linkage or any("not found" in item["output"] or item["returnCode"] != 0 for item in linkage):
