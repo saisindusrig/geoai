@@ -67,10 +67,12 @@ describe("scene and sunlight panel", () => {
     const { viewer, Cesium } = scene();
     render(<SunStudyControls viewer={viewer as unknown as import("cesium").Viewer} Cesium={Cesium as unknown as typeof import("cesium")} longitude={77} latitude={12} buildingsAvailable terrainAvailable />);
     fireEvent.click(screen.getByRole("button", { name: "Scene / Sun study" }));
-    fireEvent.click(screen.getByRole("button", { name: /Sun study.*Track/ }));
+    fireEvent.click(screen.getByRole("tab", { name: "Sun" }));
+    fireEvent.click(screen.getByRole("button", { name: "Enable sun lighting & shadows" }));
     expect(viewer.scene.globe).toMatchObject({ enableLighting: true });
     expect(viewer).toMatchObject({ shadows: true });
     expect(viewer.scene.verticalExaggeration).toBe(2);
+    fireEvent.click(screen.getByRole("tab", { name: "Sun" }));
     fireEvent.click(screen.getByRole("button", { name: "Play day" }));
     expect(viewer.clock.shouldAnimate).toBe(true);
     fireEvent.click(screen.getByRole("button", { name: "Pause" }));
@@ -82,10 +84,11 @@ describe("scene and sunlight panel", () => {
     vi.mocked(api.get).mockRejectedValueOnce(new Error("Connection lost")).mockResolvedValue({ preferences: null });
     const { viewer, Cesium } = scene();
     render(<SunStudyControls viewer={viewer as unknown as import("cesium").Viewer} Cesium={Cesium as unknown as typeof import("cesium")} longitude={77} latitude={12} projectId={5} buildingsAvailable terrainAvailable />);
-    fireEvent.click(screen.getByRole("button", { name: "Scene / Sun study" }));
+    fireEvent(window, new Event("geoai:open-scene-controls"));
     expect(await screen.findByRole("alert")).toHaveTextContent("Connection lost");
     fireEvent.click(screen.getByRole("button", { name: "Retry settings" }));
-    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("Project settings loaded"));
+    await waitFor(() => expect(api.get).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(screen.queryByRole("alert")).not.toBeInTheDocument());
   });
 });
 

@@ -1,19 +1,8 @@
-"""One execution interface. Production registry intentionally has no new adapters."""
-from dataclasses import dataclass
+"""One server-owned execution interface with explicitly registered specialists."""
+from app.domain.specialist_metadata import AdapterMetadata
 from typing import Protocol, Any
 from pydantic import BaseModel
 from app.core.asset_families import FAMILIES, asset_definition
-
-
-@dataclass(frozen=True)
-class AdapterMetadata:
-    id: str
-    version: str
-    asset_family: str
-    supported_asset_types: frozenset[str]
-    capabilities: frozenset[str]
-    specification_schema_version: str
-    patch_operations: frozenset[str] = frozenset()
 
 
 class SpecialistAdapter(Protocol):
@@ -56,6 +45,10 @@ class AdapterRegistry:
 
 
 ADAPTERS=AdapterRegistry()
+from app.services.assistant.building_specialist import BuildingAdapter
+ADAPTERS.register(BuildingAdapter())
+from app.services.assistant.road_specialist import RoadAdapter
+ADAPTERS.register(RoadAdapter())
 
 
 def route_assets(assets: list[dict], registry=ADAPTERS):

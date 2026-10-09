@@ -191,7 +191,13 @@ def test_audit_logged_on_rate_update():
     client.delete(f"/api/admin/rates/{created['id']}", headers=headers)
 
 
-def test_generation_started_and_cancel_audit():
+def test_generation_started_and_cancel_audit(monkeypatch):
+    # This audit test uses persistent dev storage. Prior suite runs must not
+    # consume its daily generation allowance; quota behavior has its own tests.
+    from app.services import usage
+    current_usage = usage._current_usage
+    monkeypatch.setattr(usage, "_current_usage", lambda db, user, key, project_id:
+        0 if key == "max_generations_per_day" else current_usage(db, user, key, project_id))
     _ensure_user(15, "gen15@test.com", "Gen User", ROLE_USER)
     headers = _auth(15)
     project = client.post(

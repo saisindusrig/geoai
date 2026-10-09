@@ -791,7 +791,7 @@ html {
   outline: 2px solid var(--primary);
   outline-offset: 3px;
 }
-.engineering-workspace section[aria-label="Sun study"],
+.engineering-workspace section[aria-label="Sun study"]:not([data-workspace-popup="scene"]),
 .engineering-workspace section[aria-label="Site data readiness"] {
   top: calc(100% + 10px);
   box-shadow: 0 24px 70px rgba(0, 0, 0, .5);
@@ -846,7 +846,7 @@ html {
 @container (max-width: 1000px) {
   .workspace-main-tools { position: relative; left: 0; width: 100%; transform: none; translate: none; padding-top: 48px; }
   .workspace-main-tools .workspace-commandbar { justify-content: center; }
-  .engineering-workspace section[aria-label="Sun study"],
+  .engineering-workspace section[aria-label="Sun study"]:not([data-workspace-popup="scene"]),
   .engineering-workspace section[aria-label="Site data readiness"] { top: calc(100% + 58px); }
   .workspace-map-commandrow { gap: 6px; }
   .workspace-commandbar { gap: 4px; }
@@ -862,3 +862,4 @@ html {
   .workspace-map-control > button { padding-inline: 8px; gap: 4px; }
   .workspace-map-control > button > svg { width: 12px; }
 }
+

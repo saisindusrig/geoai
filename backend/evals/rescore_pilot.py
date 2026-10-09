@@ -17,8 +17,9 @@ def rescore_pilot(source,destination):
     cases=[next(c for c in all_cases if c.id==key) for key in original_summary['case_ids']]
     assert original_summary['evaluation_configuration']==redact(config.model_dump())
     assert original_summary['dataset_hash']==hashlib.sha256(json.dumps([c.model_dump() for c in cases],sort_keys=True).encode()).hexdigest()
-    from app.services.assistant.prompts import SYSTEM
-    assert original_summary['system_instructions']==redact(SYSTEM)
+    # Historical replay uses the archived prompt, not today's production instructions.
+    frozen_instructions=original_summary['system_instructions']
+    assert isinstance(frozen_instructions,str) and frozen_instructions.strip()
     aliases=[m['model'] for m in original_summary['models']]
     assert aliases==['qwen','kimi'] and len(cases)==5
     snapshots={str(p.resolve()):hashlib.sha256(p.read_bytes()).hexdigest() for p in source.rglob('*') if p.is_file()}
@@ -35,7 +36,7 @@ def rescore_pilot(source,destination):
                 'corrected_hard_failures':row['scoring']['hard_failures'],
                 'effect_mismatches':row['scoring'].get('effect_mismatches',[]),
                 'reasoning':row['rescore_reasons'],'category_deltas':row.get('category_deltas',{})})
-    summary=write_reports(destination,config,cases,results)
+    summary=write_reports(destination,config,cases,results,system_instructions=frozen_instructions)
     metrics=[]
     for alias,rows in results.items():
         metrics.append({'model':alias,'total_score':sum(r['scoring']['score'] for r in rows),

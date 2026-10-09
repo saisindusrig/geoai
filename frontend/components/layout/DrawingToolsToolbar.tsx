@@ -68,7 +68,7 @@ function ToolbarButton({
 
 function ToolGroup({ children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-1.5 shrink-0 rounded-lg border border-[rgba(148,163,184,0.08)] bg-black/10 px-1 py-0.5">
+    <div className="flex items-center gap-1.5 shrink-0 py-0.5">
       <div className="flex items-center gap-1">{children}</div>
     </div>
   );
@@ -296,7 +296,7 @@ export default function DrawingToolsToolbar({
   };
 
   return (
-    <div className="flex min-w-0 flex-nowrap items-center gap-2 overflow-x-auto">
+    <div className="flex min-w-0 flex-wrap items-center justify-center gap-3">
       <ToolGroup label="Select">
         <ToolbarButton
           label="Select"
@@ -417,7 +417,7 @@ export default function DrawingToolsToolbar({
       </ToolGroup>}
 
       {activeTool === "draw-corridor" && (
-        <div className="flex items-center gap-1.5 shrink-0 ml-1 rounded-lg border border-[rgba(148,163,184,0.14)] bg-background-secondary/90 px-2 py-0.5">
+        <div className="flex items-center gap-1.5 shrink-0 ml-1 py-0.5">
           <span className="text-[10px] text-muted-foreground">Width m</span>
           <Input
             type="number"
@@ -473,3 +473,4 @@ export default function DrawingToolsToolbar({
     </div>
   );
 }
+

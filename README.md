@@ -1,12 +1,8 @@
-# GeoAI / CivicSpan
+# GeoAI
 
-> **Hackathon focus:** CivicSpan is a site-aware pedestrian bridge concept studio. Select two endpoints on a map, describe the bridge, and NVIDIA Nemotron on Nebius produces a constrained, editable BridgeSpec that the app renders procedurally in 3D.
+GeoAI is a workspace for planning civil and infrastructure concepts. Create a project from the dashboard by entering its name; new projects start unclassified and open directly in the workspace. The Core Assistant V1 supports grounded planning and approval-gated proposals. Accepted Building Specialist V1 and Building Patch V1 flows provide bounded, editable building concepts and typed component edits through the existing proposal, revision, and workspace systems.
 
-> **Demo path:** start the backend with `NEBIUS_API_KEY` configured, then open the frontend home page. Set two points, create a concept, toggle construction stages, and ask for a natural-language modification. The original platform modules remain in the repository but are no longer the primary demo flow.
-
-> **Lean demo setup:** use `backend/requirements-civicspan.txt` and run `uvicorn civicspan_app:app --reload`. This intentionally avoids the old survey/PostGIS/Fiona dependency stack. Use the full `app.main:app` entry point for CivicSpan together with the survey and platform routes. Both entry points provide authentication and use the shared CORS configuration (`NEXT_PUBLIC_APP_URL`, `CORS_ALLOWED_ORIGINS`, and `CORS_ALLOW_NETLIFY`).
-
-A preliminary planning platform for civil and infrastructure projects: pick a real-world site, define boundaries and alignments, run site analysis, generate AI-assisted **concept** designs, and produce deterministic BOQ, cost, timeline, and export packages.
+The repository also includes site analysis, survey/terrain workflows, deterministic BOQ, cost, timeline and export services, plus a separately runnable CivicSpan bridge demo. All generated design output is conceptual and capability-gated.
 
 > **IMPORTANT DISCLAIMER**  
 > All designs, quantities, costs, and schedules are **preliminary planning outputs only**. They are NOT final structural drawings, NOT legal construction approvals, and NOT a substitute for licensed engineers, surveyors, and authority sign-off.
@@ -26,8 +22,9 @@ Repository: [saisindusrig/geoai](https://github.com/saisindusrig/geoai).
 
 ## Features
 
-- Landing, dashboard, new project wizard
+- Landing, dashboard, and direct new-project creation (name → create → workspace)
 - Project workspace with map + 3D + AI design studio
+- Core Assistant V1, Building Specialist V1, and Building Patch V1
 - Site analysis, BOQ/estimate, cost analysis, scenarios, timeline
 - Reports with PDF / CSV / GeoJSON / DXF export
 - Survey-grade mode: imports, CRS, GCP validation, accuracy tiers, mesh export
@@ -91,7 +88,7 @@ pytest -q civicspan_tests
 python scripts/production_smoke.py --base-url https://api.example.com
 ```
 
-Covers health, demo project, validation, calculators, auth, usage limits, deployment config, job reliability, and PDF export.
+Covers health, demo project, validation, calculators, auth, usage limits, deployment config, job reliability, PDF export, assistant safety, proposal approval/revisions, Building generation and patches, terrain provenance, and workspace flows. Run `pytest -q tests` and `pytest -q civicspan_tests` separately because both directories contain a module named `test_civicspan.py`.
 
 ## Project structure
 

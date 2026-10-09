@@ -51,7 +51,7 @@ def test_capability_registry_all_operations():
         assert actual.discussion_support == "FULL"
         assert actual.planning_support == actual.proposal_support == "CONCEPT_ONLY"
         assert actual.generation_support == "UNSUPPORTED"
-    assert ADAPTERS.resolve("building") is None
+    assert ADAPTERS.resolve("building").metadata.id=="building-concept"
 
 
 def test_adapter_lookup_rejects_wrong_family_and_type():

@@ -11,6 +11,7 @@ COUNTS={"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,
 
 
 def decompose(text):
+    objective=text
     text=text.lower()
     matches=[]
     for phrase,asset_type in sorted(ALIASES.items(),key=lambda item:len(item[0]),reverse=True):
@@ -27,5 +28,5 @@ def decompose(text):
             if len(result)==100:return result
             result.append({"id":f"A{len(result)+1:02d}","assetType":asset_type,"assetFamily":definition["family"],
                 "requestedAssetName":f"{definition['displayName']} {i+1}" if count>1 else definition["displayName"],
-                "requirements":["Assumption: two approach roads; confirm the quantity and connections."] if assumed else []})
+                "requirements":(["Assumption: two approach roads; confirm the quantity and connections."] if assumed else [])+["User objective: "+objective[:3900]]})
     return result or [{"id":"A01","assetType":"UNREGISTERED_CIVIL_ASSET","assetFamily":"CUSTOM","requestedAssetName":text[:255] or "Civil project"}]

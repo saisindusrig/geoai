@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SceneLayersPanel from "@/components/model-editor/SceneLayersPanel";
+import ComponentIdentity from "@/components/model-editor/ComponentIdentity";
 import PersistentAssistant from "@/components/workspace/PersistentAssistant";
 import EmptyProjectStarter from "@/components/workspace/EmptyProjectStarter";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
@@ -47,6 +48,7 @@ function PropertiesPanel({ editor }: { editor: EditableModelEditor }) {
   const boxGeometry = component.geometry.kind === "box" || component.geometry.kind === "extrusion" ? component.geometry : null;
   return (
     <div className="space-y-4 p-3">
+      <ComponentIdentity component={component} document={editor.document} />
       <p className="text-[10px] text-muted-foreground">LOCAL ENU · Pivot {editor.pivotMode} · {editor.selectedIds.length} selected · {editor.document?.components.filter(item => editor.selectedIds.includes(item.id) && item.locked).length} locked</p>
       {component.locked && <p role="status" className="text-xs text-amber-200">OBJECT LOCKED · Unlock to edit.</p>}
       <div className="space-y-1"><p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Selected component</p><Input value={component.name} disabled={component.locked} onChange={(event) => editor.updateComponent(component.id, { name: event.target.value })} /></div>

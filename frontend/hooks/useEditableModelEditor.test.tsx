@@ -23,6 +23,31 @@ beforeEach(() => {
 });
 
 describe("local sandbox editor", () => {
+  it("clears selection when a commit hides or removes an object", async () => {
+    const { result } = renderHook(() => useEditableModelEditor({ project, scenario, localSandbox: false, onSaved }));
+    await waitFor(() => expect(result.current.document).not.toBeNull());
+    const id = initial.components[0].id;
+    act(() => result.current.select(id));
+    act(() => result.current.updateComponent(id, { visible: false }));
+    expect(result.current.selectedIds).toEqual([]);
+    act(() => result.current.undo());
+    act(() => result.current.select(id));
+    act(() => result.current.commit({ ...result.current.document!, components: [] }));
+    expect(result.current.selectedIds).toEqual([]);
+  });
+
+  it("keeps the draft and source revision intact when a remote save fails", async () => {
+    const { result } = renderHook(() => useEditableModelEditor({ project, scenario, localSandbox: false, onSaved }));
+    await waitFor(() => expect(result.current.document).not.toBeNull());
+    act(() => result.current.updateComponent(initial.components[0].id, { name: "Edited column" }));
+    const draft = result.current.document;
+    mocks.post.mockRejectedValue(new Error("Save unavailable"));
+    await act(async () => { await expect(result.current.save()).rejects.toThrow("Save unavailable"); });
+    expect(result.current.document).toEqual(draft);
+    expect(result.current.baseRevision?.id).toBe(1);
+    expect(result.current.dirty).toBe(true);
+    expect(result.current.saveError).toBe("Save unavailable");
+  });
   const sandbox = localSandboxProject();
   const open = () => renderHook(() => useEditableModelEditor({ project: sandbox, scenario: null, localSandbox: true, onSaved }), { wrapper });
 

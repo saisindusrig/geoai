@@ -3,8 +3,11 @@
 /* eslint-disable react-hooks/immutability -- Cesium Viewer is an external imperative engine; effects intentionally update its clock and renderer. */
 
 import { useEffect, useRef, useState } from "react";
+import CameraGizmo from "./CameraGizmo";
+import { createPortal } from "react-dom";
+import { useWorkspaceMap } from "@/components/layout/WorkspaceMapContext";
 
-import { Sun, X, Layers3, Camera, Activity, Globe2, ShieldCheck, Play, Pause, RotateCcw } from "lucide-react";
+import { Sun, X, Layers3, Camera, Activity, Globe2, Play, Pause, RotateCcw } from "lucide-react";
 
 import type { Viewer } from "cesium";
 
@@ -26,21 +29,31 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
 
 }) {
 
+  const { rightControlsContainer } = useWorkspaceMap();
+  const panelContainer = rightControlsContainer?.closest(".workspace-map-viewport");
   const layers = useProjectStore((state) => state.layers);
   const toggleLayer = useProjectStore((state) => state.toggleLayer);
-  const { open, show, close, toggle } = useWorkspacePanel("scene");
+  const { open, close, toggle } = useWorkspacePanel("scene");
   const [tab, setTab] = useState("Scene");
   useEffect(() => {
-    const openControls = () => { setTab("Scene"); show(); };
+    if (!open) return;
+    const dismiss = (event: PointerEvent) => {
+      if (!(event.target instanceof Element) || !event.target.closest('[data-workspace-popup="scene"], [aria-label="Scene / Sun study"]')) close();
+    };
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, [open, close]);
+  useEffect(() => {
+    const openControls = () => { setTab("Scene"); toggle(); };
     window.addEventListener("geoai:open-scene-controls", openControls);
     return () => window.removeEventListener("geoai:open-scene-controls", openControls);
-  }, [show]);
+  }, [toggle]);
 
   const [preferences, setPreferences] = useState<EngineeringMapPreferences>(() => ({ preset: "ENGINEERING", quality: "BALANCED", shadows: "OFF", utc: new Date().toISOString(), timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }));
 
   const [ready, setReady] = useState(!projectId);
 
-  const [saveStatus, setSaveStatus] = useState(projectId ? "Loading settings…" : "Session settings");
+  const [, setSaveStatus] = useState(projectId ? "Loading settings…" : "Session settings");
   const [retry, setRetry] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -198,17 +211,15 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
   const displayTime = localDateTimeValue(playing && readout ? readout.utc : preferences.utc, preferences.timeZone);
   const minute = Number(displayTime.slice(11, 13)) * 60 + Number(displayTime.slice(14, 16));
   return <WorkspaceMapControl side="right" fallbackClassName="absolute right-3 top-3 z-30 w-max text-xs">
-    <button className="flex items-center gap-2 rounded-full border border-white/15 bg-background/90 px-4 py-2.5 font-medium shadow-lg" onClick={toggle} aria-expanded={open}><Sun className="size-4 text-primary" />Scene / Sun study</button>
-    {open && <section aria-label="Sun study" className={styles.panel} style={{ right: 0 }}>
-      <header className={styles.header}><div><p className={styles.eyebrow}>Environment</p><h2 className={styles.title}>Scene & sunlight</h2></div><button aria-label="Close sun study" className={styles.button} onClick={close}><X size={15} /></button></header>
+    {panelContainer && createPortal(<CameraGizmo viewer={viewer} Cesium={Cesium} longitude={longitude} latitude={latitude} />, panelContainer)}
+    {!projectId && <button className="flex items-center gap-2 rounded-full border border-white/15 bg-background/90 px-4 py-2.5 font-medium shadow-lg" onClick={toggle} aria-expanded={open}><Sun className="size-4 text-primary" />Scene / Sun study</button>}
+    {open && createPortal(<section data-workspace-popup="scene" aria-label="Sun study" className={`${styles.panel} ${styles.scenePanel}`}>
+      <header className={styles.header}><div><h2 className={styles.title}>Scene & sunlight</h2></div><button aria-label="Close sun study" className={styles.button} onClick={close}><X size={15} /></button></header>
       <div role="tablist" aria-label="Environment controls" className={styles.tabs}>{[["Scene", Layers3], ["Sun", Sun], ["Views", Camera]].map(([name, Icon]) => { const LabelIcon = Icon as typeof Sun; return <button key={String(name)} role="tab" aria-selected={tab === name} onClick={() => setTab(String(name))}><LabelIcon size={14} />{String(name)}</button>; })}</div>
       <div className={styles.body}>
         {error && <div role="alert" className={styles.notice}>{error} <button className={styles.link} onClick={() => { setError(null); setRetry((n) => n + 1); }}>Retry settings</button></div>}
         {tab === "Scene" && <>
-          <div><p className={`${styles.eyebrow} mb-2`}>Look & feel</p><div className={styles.grid}>{([["ENGINEERING", "Engineering", Activity, "Even light · clear geometry"], ["REALISTIC", "Realistic", Globe2, "Sunlight · soft shadows"], ["SUN_STUDY", "Sun study", Sun, "Track daily shadows"], ["SURVEY_QA", "Survey review", ShieldCheck, "Neutral light · site evidence"]] as const).map(([value, title, Icon, subtitle]) => <button key={value} aria-pressed={preferences.preset === value} onClick={() => selectPreset(value)} className={styles.preset}><Icon size={16} className="text-primary" /><span className="font-semibold">{title}</span><span className={styles.muted}>{subtitle}</span></button>)}</div></div>
-          <div className={styles.card}><p className={styles.eyebrow}>Map layers</p>{([['terrain', 'Terrain elevation'], ['tiles3d', 'Global 3D buildings'], ['buildings', 'Building footprints'], ['roads', 'Road network']] as const).map(([key, label]) => <label className={styles.row} key={key}><span>{label}{key === 'terrain' && <span className={`block ${styles.muted}`}>{!layers.terrain ? 'Off · flat globe' : terrainAvailable ? 'Elevation loaded' : 'Unavailable or loading'}</span>}{key === 'tiles3d' && <span className={`block ${styles.muted}`}>{!layers.tiles3d ? 'Off' : !layers.terrain ? 'Paused · enable terrain' : buildingsAvailable ? 'Buildings loaded' : 'Unavailable or loading'}</span>}</span><input type="checkbox" aria-label={label} checked={layers[key]} onChange={() => { if (key === "tiles3d" && !layers.tiles3d) useProjectStore.getState().setLayers({ terrain: true }); toggleLayer(key); }} /></label>)}</div>
-          <div className={styles.grid}><label className={styles.field}>Render quality<select aria-label="Scene quality" className={styles.input} value={preferences.quality} onChange={(e) => change("quality", e.target.value as EngineeringMapPreferences["quality"])}><option value="PERFORMANCE">Fast</option><option value="BALANCED">Balanced</option><option value="HIGH_DETAIL">High detail</option></select></label><label className={styles.field}>Shadows<select aria-label="Shadow quality" className={styles.input} value={preferences.shadows} onChange={(e) => change("shadows", e.target.value as EngineeringMapPreferences["shadows"])}><option value="OFF">Off</option><option value="BALANCED">Soft</option><option value="HIGH">High detail</option></select></label></div>
-          {preferences.preset === "SURVEY_QA" && projectId && <button className={styles.button} onClick={() => window.dispatchEvent(new Event("geoai:open-site-data"))}>Review site evidence</button>}
+          <div><p className={`${styles.eyebrow} mb-2`}>Look &amp; feel</p><div className={styles.grid}>{([["ENGINEERING", "Engineering", Activity], ["REALISTIC", "Realistic", Globe2]] as const).map(([value, title, Icon]) => <button key={value} aria-pressed={preferences.preset === value} onClick={() => selectPreset(value)} className={styles.preset}><Icon size={16} className="text-primary" /><span className="font-semibold">{title}</span></button>)}</div></div><div className={styles.card}><p className={styles.eyebrow}>Map layers</p>{([['terrain', 'Terrain elevation'], ['tiles3d', 'Global 3D buildings']] as const).map(([key, label]) => <label className={styles.row} key={key}><span>{label}{key === 'terrain' && <span className={`block ${styles.muted}`}>{!layers.terrain ? 'Off · flat globe' : terrainAvailable ? 'Elevation loaded' : 'Unavailable or loading'}</span>}{key === 'tiles3d' && <span className={`block ${styles.muted}`}>{!layers.tiles3d ? 'Off' : !layers.terrain ? 'Paused · enable terrain' : buildingsAvailable ? 'Buildings loaded' : 'Unavailable or loading'}</span>}</span><input type="checkbox" aria-label={label} checked={layers[key]} onChange={() => { if (key === "tiles3d" && !layers.tiles3d) useProjectStore.getState().setLayers({ terrain: true }); toggleLayer(key); }} /></label>)}</div>
           <a href="/settings/api-keys" className={styles.link}>Manage world data connection</a>
         </>}
         {tab === "Sun" && <>
@@ -219,12 +230,16 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
           <div className="flex gap-2"><button className={styles.primary} onClick={() => { if (playing) { change("utc", Cesium.JulianDate.toIso8601(viewer.clock.currentTime)); setPlaying(false); } else { selectPreset("SUN_STUDY"); setPlaying(true); } }}>{playing ? <Pause size={14} /> : <Play size={14} />}{playing ? "Pause" : "Play day"}</button><button className={styles.button} onClick={() => { change("utc", new Date().toISOString()); setPlaying(false); }}><RotateCcw size={13} />Now</button><select aria-label="Sun playback speed" className={`${styles.input} flex-1`} value={speed} onChange={(e) => setSpeed(Number(e.target.value))}>{[1, 60, 600, 3600].map((s) => <option key={s} value={s}>{s}× speed</option>)}</select></div>
           <label className={styles.field}>Timezone<input aria-label="Sun timezone" className={styles.input} value={zoneDraft} onChange={(e) => setZoneDraft(e.target.value)} onBlur={() => { try { new Intl.DateTimeFormat("en", { timeZone: zoneDraft }); change("timeZone", zoneDraft); setError(null); } catch { setError("Enter a timezone such as Asia/Kolkata or Europe/London."); } }} /></label>
           <div className={styles.grid}>{[["March · equinox", "03-20"], ["June · solstice", "06-21"], ["September · equinox", "09-22"], ["December · solstice", "12-21"]].map(([label, day]) => <button key={day} className={styles.button} onClick={() => setTime(`${displayTime.slice(0, 4)}-${day}T12:00`)}>{label}</button>)}</div>
-          <details className={styles.details}><summary>Advanced · UTC time</summary><input aria-label="Sun UTC time" className={`${styles.input} mt-3`} defaultValue={preferences.utc} key={preferences.utc} onBlur={(e) => { const date = new Date(e.target.value); if (Number.isFinite(date.getTime()) && /(?:Z|[+-]\d\d:\d\d)$/.test(e.target.value)) { change("utc", date.toISOString()); setPlaying(false); setError(null); } else setError("UTC time requires Z or an explicit offset."); }} /></details>
           <p className={styles.muted}>Shadow coverage is partial. Terrain {terrainAvailable ? "loaded" : "unavailable"} · buildings {buildingsAvailable ? "loaded" : "unavailable"}. Trees and weather are not included.</p>
         </>}
         {tab === "Views" && <CameraViewControls viewer={viewer} Cesium={Cesium} projectId={projectId} longitude={longitude} latitude={latitude} />}
       </div>
-      <footer className={styles.footer}><span role="status">{saveStatus}</span><span>{playing ? "Sun playback running" : "Live scene"}</span></footer>
-    </section>}
+    </section>, panelContainer ?? document.body)}
   </WorkspaceMapControl>;
 }
+
+
+
+
+
+

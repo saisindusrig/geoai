@@ -1,4 +1,4 @@
-"""Capability and command gates; no providers, geometry writers or jobs."""
+"""Capability and command gates; catalogue entries never confer engineering authority."""
 from app.domain.stage1 import AssetCapability, Operation, ProposalCommand
 
 SELECTIONS = {
@@ -10,10 +10,10 @@ SELECTIONS = {
 
 
 def capability(asset_type: str, registry=None) -> AssetCapability:
-    """Foundation capabilities, NOT the later vertical-slice release claims.
+    """Only explicit registered operations confer execution capability.
 
-    Unregistered names stay intact. Discussion eligibility is independent of
-    execution. All Stage 1 proposal/generation adapters remain unimplemented.
+    Unregistered names stay intact. Discussion eligibility remains independent
+    of execution; conceptual geometry is not engineering analysis.
     """
     from app.core.asset_families import asset_definition, FAMILIES
     from app.services.assistant.specialists import ADAPTERS
@@ -27,12 +27,15 @@ def capability(asset_type: str, registry=None) -> AssetCapability:
         geometry_validation_support="FULL" if "VALIDATE_GEOMETRY" in operations else "UNSUPPORTED", engineering_analysis_support="FULL" if "ANALYZE" in operations else "UNSUPPORTED",
         site_selection_types=list(FAMILIES[definition["family"]].selection_kinds),
         supported_operations=sorted({"DISCUSS"}|operations),
+        specialist_capabilities=["ROAD_CONCEPT_PROPOSAL", "ROAD_SPEC_VALIDATION", "ROAD_CHAINAGE"] if adapter and adapter.metadata.id=="road-concept" else [],
+        patch_capabilities=["BUILDING_PATCH_MOVE_COMPONENT", "BUILDING_PATCH_ROTATE_COMPONENT", "BUILDING_PATCH_OPENING"] if adapter and adapter.metadata.id=="building-concept" else [],
         specification_schema_id=adapter.specification_schema.__name__ if adapter else None,
         generator_id=adapter.metadata.id if adapter and "GENERATE" in operations else None,
         generator_version=adapter.metadata.version if adapter and "GENERATE" in operations else None,
         validator_ids=[adapter.metadata.id] if adapter and "VALIDATE_GEOMETRY" in operations else [],
         analysis_calculator_ids=[adapter.metadata.id] if adapter and "ANALYZE" in operations else [],
-        limitations=["Concept discussion and proposals only; no specialist execution adapter is registered."] if not adapter else ["Only this adapter's declared operations are available; conceptual output is not engineering approval."],
+        limitations=["Concept discussion and proposals only; no specialist execution adapter is registered."] if not adapter else ["Only this adapter's declared operations are available; conceptual output is not engineering approval.",
+            "Building V1: rectangular typed concepts only. No foundations, structural analysis, code compliance, MEP, rebar or BOQ." if adapter.metadata.id=="building-concept" else "Refer to this specialist's typed input schema."],
     )
 
 

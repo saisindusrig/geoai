@@ -134,6 +134,7 @@ def test_full_pilot_rescore_audit_preserves_sources(tmp_path,monkeypatch):
     monkeypatch.setattr(NebiusProvider,'complete',forbidden)
     snapshots={p:p.read_bytes() for p in SOURCE.rglob('*') if p.is_file()}
     audit=rescore_pilot(SOURCE,tmp_path/'rescored')
+    assert json.loads((tmp_path/'rescored'/'summary.json').read_text())['system_instructions']==json.loads((SOURCE/'summary.json').read_text())['system_instructions']
     assert audit['new_provider_requests']==0
     assert all(path.read_bytes()==content for path,content in snapshots.items())
     assert {m['model']:m['average_score'] for m in audit['models']}=={'qwen':66,'kimi':39}

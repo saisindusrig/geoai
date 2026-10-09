@@ -253,7 +253,7 @@ export default function MapViewerArea({
   };
 
   useEffect(() => {
-    const onLocationSearch = () => setLocationSearchOpen(true);
+    const onLocationSearch = () => setLocationSearchOpen(previous => !previous);
     window.addEventListener("geoai:open-location-search", onLocationSearch);
     return () => { window.removeEventListener("geoai:open-location-search", onLocationSearch); };
   }, []);
@@ -434,7 +434,7 @@ export default function MapViewerArea({
       )}
 
       {!showToolbar && locationSearchOpen && (
-        <WorkspaceSearch editor={editor} onClose={() => setLocationSearchOpen(false)} onNavigate={(lng, lat) => setMapCenterOverride([lng, lat])} />
+        <WorkspaceSearch onClose={() => setLocationSearchOpen(false)} onNavigate={(lng, lat) => setMapCenterOverride([lng, lat])} />
       )}
 
       {showSuggestionsPanel && false && (
@@ -540,6 +540,8 @@ export default function MapViewerArea({
     </div>
   );
 }
+
+
 
 
 

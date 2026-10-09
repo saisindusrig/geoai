@@ -55,7 +55,7 @@ def summarize(results):
         "production_configuration_changed":False}
 
 
-def write_reports(output, config, cases, results, *, existing_run=False):
+def write_reports(output, config, cases, results, *, existing_run=False, system_instructions=None):
     output.mkdir(parents=True,exist_ok=existing_run)
     summary=summarize(results)
     summary["evaluation_configuration"]=config.model_dump()
@@ -63,7 +63,7 @@ def write_reports(output, config, cases, results, *, existing_run=False):
     summary["sampling"]={"temperature":0.1,"seed":None,"note":"Existing Nebius transport; seed not assumed supported."}
     from .runner import SYSTEM
     import hashlib
-    summary["system_instructions"]=SYSTEM
+    summary["system_instructions"]=SYSTEM if system_instructions is None else system_instructions
     summary["dataset_hash"]=hashlib.sha256(json.dumps([c.model_dump() for c in cases],sort_keys=True).encode()).hexdigest()
     (output/"summary.json").write_text(json.dumps(redact(summary),indent=2),encoding="utf-8")
     lines=["# GeoAI evaluation", "", "Visible responses only. Automatic scores are behavioral proxies; review prose, assumptions, and clarification usefulness before choosing a model.", ""]

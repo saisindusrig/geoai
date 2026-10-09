@@ -116,6 +116,12 @@ def save_revision(
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
+    return persist_revision(project_id, scenario_id, payload, db, user)
+
+
+def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True, lineage_updates=None):
+    from app.services.assistant.storage import lock_project
+    lock_project(db, project_id)
     project = get_owned_project(project_id, db, user.id)
     scenario = _scenario(db, project_id, scenario_id)
     latest = _latest(db, scenario_id)
@@ -157,6 +163,29 @@ def save_revision(
     db.flush()
 
     if latest:
+        # Identity follows retained objects across snapshots. Trust persisted
+        # lineage, never client-submitted provenance or newly introduced IDs.
+        from app.services.assistant.storage import table, insert, identity
+        import sqlalchemy as sa
+        lineage_table = table("model_object_lineage")
+        retained = {component["id"] for component in payload.document["components"]}
+        previous = db.execute(sa.select(lineage_table).where(
+            lineage_table.c.project_id == project_id,
+            lineage_table.c.model_revision_id == latest.id,
+        )).mappings().all()
+        for lineage in previous:
+            if lineage["object_id"] not in retained:
+                continue
+            fields = {key: deepcopy(lineage[key]) for key in (
+                "asset_id", "proposal_version_id", "specification_version_id",
+                "object_id", "component_id", "generator_id", "generator_version", "payload",
+            )}
+            fields["payload"].setdefault("generationModelRevisionId", latest.id)
+            fields["payload"]["previousModelRevisionId"] = latest.id
+            if lineage_updates and lineage["object_id"] in lineage_updates:
+                fields["payload"]["patchProvenance"] = {**lineage_updates[lineage["object_id"]], "resultingModelRevisionId":revision.id}
+            insert(db, "model_object_lineage", id=identity(revision.id, lineage["object_id"]),
+                   project_id=project_id, model_revision_id=revision.id, **fields)
         previous_placement = db.query(ModelPlacement).filter_by(project_id=project_id, model_revision_id=latest.id).one_or_none()
         if previous_placement:
             origin_changed = latest.document_json.get("origin") != payload.document.get("origin")
@@ -203,8 +232,11 @@ def save_revision(
     design["editable_model_revision_id"] = revision.id
     design["editable_model_revision_number"] = revision_number
     scenario.design_output_json = design
-    db.commit()
-    db.refresh(revision)
+    if commit:
+        db.commit()
+        db.refresh(revision)
+    else:
+        db.flush()
     return {**revision_out(revision), "impact": impact, "model_url": file_url, "layout_validation": layout_validation}
 
 

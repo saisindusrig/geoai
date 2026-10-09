@@ -3,7 +3,6 @@
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import BottomSummaryBar from "@/components/layout/BottomSummaryBar";
-import DrawingToolsToolbar from "@/components/layout/DrawingToolsToolbar";
 import {
   ProjectError,
   ProjectLoading,
@@ -17,7 +16,7 @@ import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
 import ParameterForm from "@/components/workspace/ParameterForm";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Layers3, Search, Sparkles, Wrench } from "lucide-react";
+import { ChevronDown, Sun, Search, Sparkles } from "lucide-react";
 import { useEditableModelEditor } from "@/hooks/useEditableModelEditor";
 import { useProjectData } from "@/hooks/useProjectData";
 import { useActiveJobPolling } from "@/hooks/useActiveJobPolling";
@@ -71,7 +70,7 @@ export default function WorkspacePage() {
   const [generationMode, setGenerationMode] =
     useState<GenerationMode>("balanced");
   const { open: conceptOpen, toggle: toggleConcept, close: closeConcept } = useWorkspacePanel("generation");
-  const { open: toolsOpen, toggle: toggleTools, close: closeTools } = useWorkspacePanel("drawing");
+
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
   const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
@@ -247,23 +246,14 @@ export default function WorkspacePage() {
           mapToolbar={
             <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
               {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
-                <Button className="h-10 gap-2 rounded-xl" onClick={() => { setBuildingAssistantOpen(value => !value); closeConcept(); closeTools(); }}><Sparkles className="size-4" />AI Building Assistant</Button>
+                <Button className="h-10 gap-2 rounded-xl" onClick={() => { setBuildingAssistantOpen(value => !value); closeConcept(); }}><Sparkles className="size-4" />AI Building Assistant</Button>
                 {buildingAssistantOpen && <BuildingAssistant projectId={projectId} boundaryKey={JSON.stringify(project.boundary_geojson ?? null)} revisionId={modelEditor.baseRevision?.id ?? null} dirty={modelEditor.dirty} generating={generating} onStarted={showBuildingJob} onClose={() => setBuildingAssistantOpen(false)} />}
               </div>}
-              <div className="relative">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Drawing and site tools" onClick={toggleTools}><Wrench className="size-4" /></Button>
-                {toolsOpen && (
-                  <section className="absolute left-0 top-12 w-[500px] max-w-[calc(100vw-6rem)] rounded-xl border border-white/10 bg-background-secondary/95 p-2.5 shadow-md backdrop-blur-md" aria-label="Drawing and site tools">
-                    <div className="mb-2 flex items-center justify-between gap-3"><p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">Site & drawing tools <span className="ml-2 normal-case font-normal tracking-normal text-muted-foreground">Boundary · alignment · snap · measure</span></p><Button variant="ghost" size="sm" className="h-6 px-1.5 text-[10px]" onClick={closeTools}>Close</Button></div>
-                    <DrawingToolsToolbar projectType={project.project_type} boundary={project.boundary_geojson} alignment={project.alignment_geojson} onSaveBoundary={saveBoundary} onSaveAlignment={saveAlignment} onGenerate={assetSupportsGeneration(project.project_type) ? (mode) => generate(pendingParams ?? (scenario?.input_parameters_json as Record<string, unknown>) ?? {}, mode ?? generationMode) : undefined} onAnalyze={analyzeSite} generating={generating} generationMode={generationMode} onGenerationModeChange={setGenerationMode} />
-                  </section>
-                )}
-              </div>
-              <div className="flex items-center" title="Project layers">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="World context layers" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-scene-controls"))}><Layers3 className="size-4" /></Button>
+              <div className="flex items-center" title="Scene / Sun study">
+                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="Scene / Sun study" title="Scene / Sun study" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-scene-controls"))}><Sun className="size-4" /></Button>
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="Search workspace" title="Search objects and places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
+                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" data-workspace-popup="search" aria-label="Search workspace" title="Search places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
               </div>
               <div className="relative">
                 <Button disabled={!assetSupportsGeneration(project.project_type)} title={assetSupportsGeneration(project.project_type) ? "Generate concept" : "Site reference only; generation unavailable"} onClick={toggleConcept} className="workspace-generate-button ml-1 h-10 gap-2.5 rounded-xl bg-primary/90 px-5 text-xs font-semibold shadow-md brightness-[0.94] hover:bg-primary/80">
@@ -328,7 +318,7 @@ export default function WorkspacePage() {
               onSelectComponent={(id, additive) => {
                 modelEditor.select(id, additive);
                 if (id) {
-                  closeTools();
+                 
                   closeConcept();
                 }
               }}
@@ -347,4 +337,9 @@ export default function WorkspacePage() {
     </div>
   );
 }
+
+
+
+
+
 

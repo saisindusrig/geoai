@@ -6,15 +6,21 @@ frontend/.env.local
 
 # python
 __pycache__/
-*.pyc
-.venv/
-venv/
-backend/.pytest_cache/
+*.py[cod]
+.venv*/
+venv*/
+.pytest_cache/
+coverage/
+.coverage
+.coverage.*
+htmlcov/
 .pytest_cache/
 
 # local database / storage
 backend/*.db
 backend/dev.db
+backend/*.sqlite
+backend/*.sqlite3
 backend/storage/
 
 # Cursor IDE artifacts
@@ -28,6 +34,7 @@ out/
 frontend/public/cesium/
 frontend/test-results/
 frontend/playwright-report/
+frontend/playwright/.cache/
 
 # deploy / IDE
 .netlify/

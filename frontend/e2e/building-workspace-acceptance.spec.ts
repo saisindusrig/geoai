@@ -1,0 +1,61 @@
+import { expect, test } from "@playwright/test";
+
+// Seed with backend/scripts/create_building_workspace_fixture.py first.
+// Every model read/save below uses the real backend, not route fixtures.
+const projectId = process.env.BUILDING_ACCEPTANCE_PROJECT_ID;
+test.skip(!projectId, "Requires a dedicated deterministic Building acceptance project");
+test("generated building selection, edit, save, reload, compare and layers", async ({ page }) => {
+  await page.setViewportSize({ width: 1626, height: 982 });
+  await page.goto(`/projects/${projectId}/workspace`);
+  await expect(page.getByLabel("Search scene components")).toBeVisible({ timeout: 60000 });
+  await expect(page.locator(".cesium-widget canvas")).toBeVisible();
+  await page.getByRole("tabpanel", { name: "Layers", exact: true }).getByText("Actions", { exact: true }).click();
+  await page.getByRole("button", { name: "Select matching", exact: true }).click();
+  await page.getByRole("tab", { name: "Inspect", exact: true }).click();
+  await expect(page.getByText(/^LOCAL ENU.*34 selected/)).toBeVisible();
+  await expect(page.getByText("Elevation unknown · local visual reference only", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("Component identity")).toContainText("REVIEW_REQUIRED");
+  await page.getByRole("button", { name: "Frame selection", exact: true }).click();
+  await page.screenshot({ path: "test-results/building-workspace-accepted.png" });
+  const select = async (name: string, kind: string) => {
+    await page.getByRole("tab", { name: "Layers", exact: true }).click();
+    await page.getByLabel("Search scene components").fill(name);
+    await page.getByRole("button", { name, exact: true }).click();
+    await page.getByRole("tab", { name: "Inspect", exact: true }).click();
+    await expect(page.getByLabel("Component identity")).toContainText(kind);
+    await expect(page.getByLabel("Component identity")).toContainText("office-01");
+  };
+  await select("entry", "OPENING");
+  await select("window", "OPENING");
+  await select("room-0-0", "ROOM");
+  await select("slab-0", "SLAB");
+  await select("b0-0", "BEAM");
+  await select("partition-0-end", "WALL");
+  await select("c0-0", "COLUMN");
+  await select("b0-0", "BEAM");
+  const east = page.getByLabel("Position · metres East", { exact: true });
+  const before = Number(await east.inputValue());
+  await east.fill(String(before + .1));
+  await east.press("Tab");
+  await expect(east).toHaveValue(String(before + .1));
+  const saved = page.waitForResponse(response => /model-revisions$/.test(response.url()) && response.request().method() === "POST");
+  await page.getByRole("button", { name: "Save", exact: true }).click();
+  const response = await saved;
+  expect(response.ok(), await response.text()).toBeTruthy();
+  expect((await response.json()).source).toBe("manual_edit");
+  await page.reload();
+  await expect(page.getByLabel("Search scene components")).toBeVisible();
+  await select("b0-0", "BEAM");
+  await expect(east).toHaveValue(String(before + .1));
+  await page.getByRole("tab", { name: "History", exact: true }).click();
+  await page.getByRole("button", { name: "Compare", exact: true }).click();
+  await expect(page.getByText("0 added · 0 removed · 1 modified", { exact: true })).toBeVisible();
+  await page.getByRole("tab", { name: "Layers", exact: true }).click();
+  await page.getByLabel("Search scene components").fill("");
+  await page.getByRole("button", { name: "Hide beam layer", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Show beam layer", exact: true })).toBeVisible();
+  await page.getByRole("tab", { name: "Inspect", exact: true }).click();
+  await expect(page.getByText("Select a component", { exact: true })).toBeVisible();
+  await page.getByRole("tab", { name: "Layers", exact: true }).click();
+  await page.getByRole("button", { name: "Show beam layer", exact: true }).click();
+});

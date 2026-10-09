@@ -462,6 +462,7 @@ export interface EditableModelComponent {
   };
   material: { name: string; color: string; roughness: number; metalness: number };
   quantity?: { included?: boolean };
+  metadata?: Record<string, unknown>;
 }
 
 export interface EditableModelDocument {
@@ -473,7 +474,7 @@ export interface EditableModelDocument {
   origin: { lng: number; lat: number; elevation_m: number; heading_deg: number };
   generator_parameters: Record<string, unknown>;
   components: EditableModelComponent[];
-  metadata: { source: string; frame: "local_enu_meters" };
+  metadata: { source: string; frame: "local_enu_meters"; [key: string]: unknown };
   structural_layout?: StructuralLayoutMetadata;
 }
 

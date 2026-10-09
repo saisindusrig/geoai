@@ -182,7 +182,7 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
       })}>Load older messages</Button>}
       {messages.map(message => <article key={message.id} className="space-y-1 rounded border border-border bg-muted/30 p-3">
         <p className="text-[10px] text-muted-foreground">{message.role === "USER" ? "You" : message.role === "ASSISTANT" ? "Assistant" : "Project event"}</p>
-        {message.parts.map((part, i) => part.kind === "PROPOSAL" ? <ProposalReview key={i} projectId={projectId} versionId={part.proposalVersionId} /> : part.kind === "EVIDENCE" ? <div key={i}>{part.evidenceIds.map(id => <button key={id} className="block underline" onClick={() => void execute(async () => {
+        {message.parts.map((part, i) => part.kind === "PROPOSAL" ? <ProposalReview key={i} projectId={projectId} versionId={part.proposalVersionId} dirty={dirty} /> : part.kind === "EVIDENCE" ? <div key={i}>{part.evidenceIds.map(id => <button key={id} className="block underline" onClick={() => void execute(async () => {
           setSource(await api.get(`${base}/site-evidence/${id}`));
         })}>View source {id}</button>)}</div> : <div key={i} className="whitespace-pre-wrap break-words">{part.kind === "TEXT" || part.kind === "QUESTION" ? part.text : part.kind === "ATTACHMENT" ? `Attachment: ${part.attachmentId}` : `Assumption: ${part.assumptionVersionId}`}
           {part.kind === "QUESTION" && part.options.map(option => <Button key={option} size="sm" variant="secondary" onClick={() => setInput(option)}>{option}</Button>)}

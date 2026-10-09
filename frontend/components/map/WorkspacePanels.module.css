@@ -54,3 +54,36 @@
 @media (max-width: 700px) {
   .panel { position: fixed; left: 12px !important; right: 12px !important; top: 112px; width: auto; max-height: calc(100dvh - 160px); }
 }
+
+/* Compact scene controls centered over the workspace. */
+.scenePanel {
+  position: absolute;
+  left: auto;
+  right: 12px;
+  top: auto;
+  bottom: 56px;
+  transform: none;
+  width: min(360px, calc(100% - 24px));
+  max-height: calc(100% - 112px);
+  z-index: 60;
+  border-radius: 12px;
+}
+.scenePanel .header { padding: 12px 16px 10px; }
+.scenePanel .title { margin: 0; font-size: 17px; }
+.scenePanel .tabs { padding: 0 12px 10px; }
+.scenePanel .body { padding: 12px 16px; gap: 12px; }
+.scenePanel .preset { display: flex; align-items: center; gap: 8px; padding: 9px 10px; }
+.scenePanel .card { border: 0; background: transparent; padding: 0; }
+.scenePanel .row { padding: 8px 0; }
+.scenePanel .input { padding: 7px 9px; }
+.scenePanel .qualityControl { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px; }
+@media(max-width:700px) {
+  .scenePanel { right: 8px; bottom: 56px; width: min(360px, calc(100% - 16px)); max-height: calc(100% - 104px); }
+}
+
+
+
+.engineering-workspace .scenePanel { right: 12px; bottom: 56px; left: auto; top: auto; transform: none; width: min(360px, calc(100% - 24px)); max-height: calc(100% - 112px); }
+@media(max-width:700px) { .engineering-workspace .scenePanel { right: 8px; bottom: 56px; width: min(360px, calc(100% - 16px)); max-height: calc(100% - 104px); } }
+.engineering-workspace section.scenePanel { top: auto !important; right: 12px !important; bottom: 56px !important; left: auto !important; transform: none !important; }
+@media(max-width:700px) { .engineering-workspace section.scenePanel { right: 8px !important; bottom: 56px !important; width: min(360px, calc(100% - 16px)); max-height: calc(100% - 104px); } }

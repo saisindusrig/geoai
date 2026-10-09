@@ -28,9 +28,9 @@ def asset_proposals(db, project_id, payload):
             asset_type=asset["assetType"], asset_family=cap.asset_family, display_name=asset["name"],
             requirements=asset.get("requirements", []), assumptions=payload["request"].get("assumptions", []), constraint_ids=constraints,
             specification_ref={"id":sid,"version":spec["version"],"contentHash":spec["content_hash"]}, capabilities=cap,
-            warnings=payload["request"].get("warnings", []), blockers=["Specialist generation is unavailable for this concept specification."],
+            warnings=payload["request"].get("warnings", []), blockers=[] if asset.get("buildingSpec") or asset.get("roadSpec") or asset.get("buildingPatch") else ["A supported typed specialist specification is required before generation."],
             dependency_refs=[r["id"] for r in edges if spec["asset_id"] in (r["from_asset_id"],r["to_asset_id"])],
-            generation_eligible=False).model_dump(mode="json", by_alias=True))
+            generation_eligible=bool(asset.get("buildingSpec") or asset.get("roadSpec") or asset.get("buildingPatch")) and "GENERATE" in cap.supported_operations).model_dump(mode="json", by_alias=True))
     return result
 
 
@@ -89,6 +89,18 @@ class ProposalService:
 
     def create(self, db, project_id, actor_id, request):
         lock_project(db, project_id)
+        # Preview assumptions use the existing visible, acknowledged proposal-memory mechanism.
+        assumptions=list(request.assumptions)
+        for asset in request.assets:
+            if asset.building_patch:
+                for statement in asset.building_patch.assumptions:
+                    if statement not in assumptions: assumptions.append(statement)
+            if asset.building_spec or asset.road_spec:
+                for item in (asset.building_spec or asset.road_spec).assumptions:
+                    statement=f"PREVIEW_ASSUMPTION ({asset.name}): {item.field} = {item.value}. {item.reason}"
+                    if statement not in assumptions:assumptions.append(statement)
+        if len(assumptions)>20:error(422,"ASSUMPTION_LIMIT","Limit the proposal to twenty explicit assumptions.")
+        request=request.model_copy(update={"assumptions":assumptions})
         request_data = request.model_dump(mode="json", by_alias=True)
         for asset in request_data["assets"]:
             if asset.get("assetRequestId") is None: asset.pop("assetRequestId", None)
@@ -111,7 +123,7 @@ class ProposalService:
         if request.translation and not set(request.translation.object_ids) <= {r["objectId"] for r in context["selection"]}:
             error(422, "TARGET_NOT_ATTACHED", "A proposal may target only the objects attached to its source message.")
         expected=policy["understanding"]["proposedTranslation"]
-        if expected and (not request.translation or request.translation.object_ids!=expected["objectIds"] or list(request.translation.delta_m)!=expected["deltaM"]):
+        if expected and not any(a.building_patch for a in request.assets) and (not request.translation or request.translation.object_ids!=expected["objectIds"] or list(request.translation.delta_m)!=expected["deltaM"]):
             error(422,"TRANSLATION_MISMATCH","The proposal must preserve the selected targets and requested distance/direction.")
         attached_profile=owned_row(db,"site_profile_versions",project_id,context["siteProfileVersionId"])
         profile_head=owned_row(db,"site_profiles",project_id,attached_profile["profile_id"])
@@ -150,6 +162,29 @@ class ProposalService:
         parent_specs=[owned_row(db,"asset_specification_versions",project_id,sid) for sid in parent["payload"]["contract"]["assetSpecificationVersionIds"]] if parent else []
         for i, asset in enumerate(request.assets):
             aid, sid = identity(vid, "asset", i), identity(vid, "spec", i)
+            if asset.building_patch:
+                if asset.building_spec or len(request.assets) != 1 or context["editorDirty"]:
+                    error(422,"INVALID_PATCH_REQUEST","One saved-state patch asset per proposal is supported.")
+                patch = asset.building_patch
+                if patch.source_model_revision_id != context.get("modelRevisionId") or not context["selection"] or {op.target_component_id for op in patch.operations} != {ref["objectId"] for ref in context["selection"]}:
+                    error(422,"TARGET_NOT_ATTACHED","Patch must preserve the exact single attached target and saved revision.")
+                from app.services.assistant.building_patch import BuildingPatchValidator
+                preview = BuildingPatchValidator().preview(db, project_id, patch)
+                if expected:
+                    op = patch.operations[0].parameters
+                    delta = [float(v)/(1000 if op.unit == "mm" else 1) for v in op.delta] if op.operation_type == "MOVE_COMPONENT" else None
+                    if delta != expected["deltaM"]: error(422,"TRANSLATION_MISMATCH","Preserve the user's exact unit-normalized movement.")
+                aid = patch.asset_id
+                source_asset = owned_row(db,"asset_instances",project_id,aid)
+                if source_asset["asset_type"] != asset.asset_type: error(422,"TARGET_BUILDING_MISMATCH","Asset type must match persisted lineage.")
+                spec_table = table("asset_specification_versions")
+                spec_version = (db.execute(sa.select(sa.func.max(spec_table.c.version)).where(spec_table.c.asset_id==aid)).scalar() or 0)+1
+                spec = {"schemaVersion":"building-patch/1",**asset.model_dump(mode="json",by_alias=True),"executable":True,
+                    "patchPreview":preview["summary"],"affectedComponentIds":preview["affectedComponentIds"]}
+                insert(db,"asset_specification_versions",id=sid,project_id=project_id,asset_id=aid,version=spec_version,
+                    schema_id="building-patch",schema_version="1",payload=spec,content_hash=digest(spec))
+                specification_ids.append(sid);proposal_asset_ids.append(aid)
+                continue
             previous=next((s for s in parent_specs if s["payload"].get("assetType")==asset.asset_type and s["payload"].get("name")==asset.name),None)
             if previous:
                 aid=previous["asset_id"]
@@ -159,6 +194,21 @@ class ProposalService:
                 spec_version=1
                 insert(db, "asset_instances", id=aid, project_id=project_id, asset_type=asset.asset_type, name=asset.name)
             spec = {"schemaVersion": "civil-concept/1", **asset.model_dump(mode="json", by_alias=True), "executable": False}
+            if sum(x is not None for x in (asset.building_spec, asset.road_spec, asset.building_patch)) > 1:
+                error(422,"AMBIGUOUS_SPECIALIST_SPEC","Provide one typed specification per asset.")
+            if asset.building_spec or asset.road_spec:
+                from app.services.assistant.specialists import ADAPTERS
+                adapter=ADAPTERS.resolve(asset.asset_type)
+                typed=asset.building_spec or asset.road_spec
+                if not adapter or not isinstance(typed,adapter.specification_schema):error(422,"GENERATION_UNAVAILABLE","Typed specification must match the registered asset adapter.")
+                result=adapter.validate_specification(typed)
+                if result["issues"]:error(422,"INVALID_ROAD_SPEC" if asset.road_spec else "INVALID_BUILDING_SPEC",result)
+                if asset.road_spec:
+                    from app.services.assistant.road_context import validate_road_context
+                    validate_road_context(db,project_id,context,typed)
+                spec.update(schemaVersion=typed.schema_version,executable=True,specialistValidation=result,
+                    provenance={"proposalId":pid,"proposalVersionId":vid,"proposalVersion":version,"sourceModelRevisionId":context.get("modelRevisionId"),
+                        "siteSelectionVersionId":context["siteSelectionVersionId"],"siteProfileVersionId":context["siteProfileVersionId"]})
             insert(db, "asset_specification_versions", id=sid, project_id=project_id, asset_id=aid, version=spec_version,
                 schema_id="civil-concept", schema_version="1", payload=spec, content_hash=digest(spec))
             specification_ids.append(sid)
@@ -189,6 +239,8 @@ class ProposalService:
         payload = {"contract": contract.model_dump(mode="json", by_alias=True), "context": context, "request": request_data,
             "requestHash": digest(request_data), "preview": request.translation.model_dump(mode="json", by_alias=True) if request.translation else None,
             "previewOnly": True, "validationId": identity(vid, "validation")}
+        if any(a.building_patch for a in request.assets):
+            payload["patchPreview"] = {**preview["summary"],"affectedComponentIds":preview["affectedComponentIds"]}
         # Concept relationships are versioned with the proposal, never applied to live composition by the LLM.
         payload["planning"]={**policy["understanding"],"proposedAssets":request_data["assets"],
             "assumptions":request_data["assumptions"],"constraints":[r["id"] for r in rows(db,"constraint_datasets",project_id)],
@@ -205,7 +257,7 @@ class ProposalService:
             insert(db,"proposal_alternatives",id=aid,project_id=project_id,proposal_version_id=vid,name=alternative.name,payload=value,content_hash=digest(value))
         self.transition(db,project_id,vid,"GENERATING")
         issues = [{"code":"CONCEPT_ONLY", "severity":"WARNING", "componentIds":[], "fieldPaths":[], "evidenceIds":[],
-            "message":"Concept review only. Geometry generation and engineering analysis are not enabled.","remediation":"Use a validated specialist workflow before engineering or construction."}]
+            "message":"Concept review only. A typed Building patch may execute after approval; engineering analysis remains unavailable." if any(a.building_patch for a in request.assets) else "Concept review only. Typed Road V1 planar geometry may be generated after approval; engineering analysis remains unavailable." if any(a.road_spec for a in request.assets) else "Concept review only. Typed Building V1 geometry may be generated after approval; engineering analysis remains unavailable." if any(a.building_spec for a in request.assets) else "Concept review only. A supported typed specialist specification is required for geometry generation; engineering analysis remains unavailable.","remediation":"Use a validated specialist workflow before engineering or construction."}]
         if context["editorDirty"]:
             issues.append({**issues[0],"code":"UNSAVED_MODEL", "severity":"BLOCKER", "message":"The source message captured unsaved editor changes.","remediation":"Save the model and submit a new proposal request."})
         validation=ValidationResult(id=identity(vid,"validation"),level="CONCEPT_VALIDATION",validator_id="civil-concept-contract",validator_version="1",
@@ -273,10 +325,8 @@ class ProposalService:
         return self.read(db,project_id,version_id)
 
     def build(self,db,project_id,version_id):
-        lock_project(db,project_id)
-        self.assert_build_current(db,project_id,version_id)
-        # No generic generator is registered in this batch. Repeated calls create no jobs/revisions.
-        error(409,"GENERATION_UNAVAILABLE","This concept has no execution adapter. Approval does not generate geometry.")
+        from app.services.assistant.building_execution import build
+        return build(db,project_id,version_id)
 
     def assert_build_current(self,db,project_id,version_id,expected_model_revision_id=None):
         """Mandatory worker gate for both start and commit; caller holds the project lock.

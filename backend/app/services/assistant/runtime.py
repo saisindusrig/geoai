@@ -147,6 +147,11 @@ async def process(db,p,run_id,provider=None):
                         continue
                     if invocation.name in {"create_proposal","revise_proposal"} and proposal_ids:
                         raise AssistantProviderError("PROPOSAL_ALREADY_CREATED")
+                    if invocation.name in {"create_proposal","revise_proposal"} and policy["intent"]["kind"]=="DESIGN_REQUEST":
+                        from collections import Counter
+                        expected=Counter(a["assetType"].upper() for a in policy["intent"]["assets"])
+                        proposed=Counter(str(a.get("assetType","")).upper() for a in arguments.get("assets",[]) if isinstance(a,dict))
+                        if expected!=proposed:raise AssistantProviderError("ASSET_DECOMPOSITION_MISMATCH")
                     event(db,p,run_id,"RUNNING",LABELS.get(invocation.name,"Reading site…"));db.commit()
                     result=execute(db,tc,invocation.name,arguments)
                     if result["status"]=="OK":cache[key]=result
@@ -174,6 +179,8 @@ async def process(db,p,run_id,provider=None):
             if response.text:
                 import re
                 text=re.sub(r"\b(?:Qwen(?:/[\w.-]+)?|Nebius|ModelRouter)\b","GeoAI",response.text,flags=re.I)
+                if re.search(r"\b(?:I|we|GeoAI) (?:have |has |successfully )?(?:moved|generated|deleted|modified|translated|built)\b(?!\s+(?:a |the )?(?:proposal|plan|concept)\b)",text,re.I):
+                    raise AssistantProviderError("UNAUTHORIZED_MUTATION_CLAIM")
                 if text.lstrip().startswith(("{","[")):text="GeoAI prepared a response for review."
                 parts.append({"kind":"TEXT","text":text})
             if policy["intent"]["needsClarification"]:

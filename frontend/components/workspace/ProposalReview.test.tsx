@@ -49,3 +49,39 @@ it("reviews per-asset families and blockers without offering generation", async 
   expect(screen.getAllByText("Generation: Unavailable")).toHaveLength(2);
   expect(screen.queryByRole("button", { name: /build|generate/i })).not.toBeInTheDocument();
 });
+
+it("generates only an approved eligible building and reports its saved revision", async () => {
+  const fixture = await api.get<object>("fixture");
+  vi.mocked(api.get).mockResolvedValue({ ...fixture, status: "APPROVED", content: {
+    ...(fixture as { content: object }).content,
+    assetProposals: [{ assetRequestId: "A01", displayName: "Office", assetFamily: "BUILDING", proposalState: "CONCEPT_REVIEW", generationEligible: true, blockers: [] }],
+  } });
+  vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "9" });
+  render(<ProposalReview projectId={1} versionId="pv" />);
+  fireEvent.click(await screen.findByRole("button", { name: "Review proposal" }));
+  fireEvent.click(screen.getByRole("button", { name: "Generate building concept" }));
+  await waitFor(() => expect(api.post).toHaveBeenCalledWith("/api/projects/1/proposals/versions/pv/build", {}));
+  expect(await screen.findByRole("status")).toHaveTextContent("revision 9");
+});
+
+it("summarizes a typed opening patch and blocks application with unsaved edits", async () => {
+  const fixture = await api.get<object>("fixture");
+  vi.mocked(api.get).mockResolvedValue({ ...fixture, status: "APPROVED", content: {
+    ...(fixture as { content: object }).content,
+    request: { title: "Widen window", rationale: "Requested width", assets: [{ name: "Office", assetType: "OFFICE_BUILDING", buildingPatch: {
+      sourceModelRevisionId: "7", operations: [{ targetComponentId: "office:window", parameters: { operationType: "RESIZE_OPENING", width: 1.5 } }],
+    } }] },
+    patchPreview: { hostWallId: "east-wall", previousOpening: { width: 1, offset: 2 }, proposedOpening: { width: 1.5, offset: 2 }, affectedComponentIds: ["office:window"] },
+    assetProposals: [{ assetRequestId: "A01", displayName: "Office", assetFamily: "BUILDING", generationEligible: true, blockers: [] }],
+  } });
+  const { rerender } = render(<ProposalReview projectId={1} versionId="pv" dirty />);
+  fireEvent.click(await screen.findByRole("button", { name: "Review proposal" }));
+  expect(screen.getByText(/Width: 1 m → 1.5 m/)).toBeInTheDocument();
+  expect(screen.getByText("Host wall: east-wall")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Apply approved building patch" })).toBeDisabled();
+  expect(api.post).not.toHaveBeenCalled();
+  rerender(<ProposalReview projectId={1} versionId="pv" dirty={false} />);
+  vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "10" });
+  fireEvent.click(screen.getByRole("button", { name: "Apply approved building patch" }));
+  expect(await screen.findByRole("status")).toHaveTextContent("Building patch saved as revision 10");
+});

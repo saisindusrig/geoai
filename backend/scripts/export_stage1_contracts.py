@@ -28,7 +28,14 @@ def render(schema):
     kind = schema.get("type")
     if kind == "object":
         required = schema.get("required", [])
-        return "{\n" + "\n".join(f'  {json.dumps(k)}{"" if k in required else "?"}: {render(v)};' for k, v in schema.get("properties", {}).items()) + "\n}"
+        properties = schema.get("properties", {})
+        if not properties:
+            additional = schema.get("additionalProperties", True)
+            if additional is False:
+                return "Record<string, never>"
+            value_type = render(additional) if isinstance(additional, dict) else "unknown"
+            return f"Record<string, {value_type}>"
+        return "{\n" + "\n".join(f'  {json.dumps(k)}{"" if k in required else "?"}: {render(v)};' for k, v in properties.items()) + "\n}"
     if kind == "array":
         if "prefixItems" in schema:
             return "[" + ", ".join(render(x) for x in schema["prefixItems"]) + "]"

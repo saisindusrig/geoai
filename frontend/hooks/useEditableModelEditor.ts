@@ -235,6 +235,7 @@ export function useEditableModelEditor({
     if (document) undoRef.current.push(clone(document));
     if (undoRef.current.length > 60) undoRef.current.shift();
     setDocument(next);
+    setSelectedIds(ids => ids.filter(id => next.components.some(component => component.id === id && component.visible)));
     redoRef.current = [];
     setDirty(true);
     if (localSandbox && !saveBlocked.current) setLocalSaveStatus("saving");

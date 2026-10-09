@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Box, Copy, Download, Eye, EyeOff, Grid3X3, LocateFixed, Lock, Map, MousePointer2, Move3D, Plus, Redo2, RotateCw, Save, Scale3D, Search, Trash2, Undo2, Unlock, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ComponentIdentity from "@/components/model-editor/ComponentIdentity";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 import type { EditableModelComponent, Project, StructuralElementType } from "@/lib/types";
 import { COMPONENT_SIZES, emptySandboxDocument, parseSandboxPayload, sandboxPayload, SANDBOX_LAYOUT_KEY, type SandboxPayload } from "@/lib/local-sandbox";
@@ -41,6 +42,7 @@ function Inspector({ component, editor }: { component: EditableModelComponent; e
   const update = (changes: Partial<EditableModelComponent>) => editor.updateComponent(component.id, changes);
   const geometry = component.geometry;
   return <div className="space-y-4 p-3">
+    <ComponentIdentity component={component} document={editor.document} />
     <div className="flex items-center justify-between"><p className="text-[10px] font-semibold uppercase tracking-widest text-primary">Properties</p><span className="text-[10px] text-muted-foreground">{component.category.replaceAll("_", " ")}</span></div>
     <label className="block space-y-1 text-[10px] text-muted-foreground"><span>Name</span><input aria-label="Component name" className="h-9 w-full rounded-sm border border-border bg-background px-2 text-xs text-foreground" value={component.name} disabled={component.locked} onChange={(e) => update({ name: e.target.value })} /></label>
     {component.locked && <p className="text-xs text-muted-foreground">Unlock this component to edit it.</p>}

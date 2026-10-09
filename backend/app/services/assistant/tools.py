@@ -76,6 +76,8 @@ def _execute(db,tc,message,name,args,execution_id):
     profile=owned_row(db,"site_profile_versions",p,c["siteProfileVersionId"]) if c.get("siteProfileVersionId") else None
     if name in {"create_proposal","revise_proposal"}:
         if tc.allowed_effect!="PROPOSAL_ONLY":return envelope("DENIED",code="READ_ONLY_POLICY")
+        if any((a.building_spec or a.road_spec) and (a.building_spec or a.road_spec).input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
+            return envelope("DENIED",code="USER_SOURCE_UNVERIFIED",limitations=["Tool-proposed visualization dimensions require explicit preview assumptions; user/site provenance cannot be invented."])
         if name=="revise_proposal" and not args.parent_version_id:return envelope("DENIED",code="PARENT_REQUIRED")
         if args.parent_version_id:
             parent=owned_row(db,"design_proposal_versions",p,args.parent_version_id)
@@ -95,7 +97,17 @@ def _execute(db,tc,message,name,args,execution_id):
         model=owned_row(db,"model_revisions",p,c["modelRevisionId"])
         selected={r["objectId"] for r in c["selection"]}
         components=[r for r in model["document_json"].get("components",[]) if str(r["id"]) in selected][:100]
-        return envelope(data={"id":str(model["id"]),"components":components},limitations=["Only attached saved objects are included."])
+        grounding=[]
+        for component in components:
+            original=next((r for r in rows(db,"model_object_lineage",p) if r["model_revision_id"]==model["id"] and r["object_id"]==component["id"]),None)
+            if original:
+                spec=owned_row(db,"asset_specification_versions",p,original["specification_version_id"])
+                asset=owned_row(db,"asset_instances",p,original["asset_id"])
+                grounding.append({"targetComponentId":component["id"],"expectedComponentHash":digest(component),"assetId":original["asset_id"],
+                    "assetType":asset["asset_type"],"buildingId":component.get("metadata",{}).get("buildingId"),
+                    "sourceModelRevisionId":str(model["id"]),"sourceSpecificationVersionId":spec["id"],"sourceSpecificationHash":spec["content_hash"],
+                    "openingDefinitions":spec["payload"].get("buildingSpec",{}).get("openings",[])})
+        return envelope(data={"id":str(model["id"]),"components":components,"patchGrounding":grounding},limitations=["Only attached saved objects are included; patch geometry may have additional host dependencies."])
     if name=="get_project_requirements":
         return envelope(data=[owned_row(db,"project_memory_versions",p,mid)["payload"] for mid in c["memoryVersionIds"]])
     if name=="get_constraints":

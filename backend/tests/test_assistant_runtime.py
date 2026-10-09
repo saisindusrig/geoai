@@ -142,12 +142,12 @@ def test_provider_reply_and_frozen_retry(site_db):
 
 
 def test_schema_repair_and_tool_loop_limit(site_db):
-    msg,rid=message(site_db);queue_run(site_db,1,1,rid)
+    msg,rid=message(site_db,"What objects are selected?",True);queue_run(site_db,1,1,rid)
     intent=evaluate(msg)["intent"]
     tool={"toolCalls":[{"name":"get_selected_objects","arguments":"{}"}]}
     asyncio.run(process(site_db,1,rid,FixtureProvider([{"invalid":True},intent,*([tool]*9)])))
     assert owned_row(site_db,"assistant_runs",1,rid)["error_code"]=="TOOL_LIMIT"
-    assert len(rows(site_db,"assistant_tool_executions",1))==8
+    assert len(rows(site_db,"assistant_tool_executions",1))==1
 
 
 @pytest.mark.parametrize("code",["MISSING_KEY","MISSING_MODEL","UNREACHABLE","TIMEOUT","RATE_LIMITED","PROVIDER_ERROR"])

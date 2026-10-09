@@ -4,11 +4,17 @@ from pydantic import Field
 from app.domain.stage1 import Contract, Id, Digest, CivilIntent, ApprovalCommand, Finite, ProposalPayload, ValidationResult, ProposalStatus
 from app.domain.site_workspace import MessageContext
 from app.domain.composition import AssetProposal
+from app.domain.building_specialist import BuildingSpec
+from app.domain.building_patch import BuildingPatch
+from app.domain.road_specialist import RoadSpec
 
 Text = Annotated[str, Field(min_length=1, max_length=4000)]
 
 
 class ConceptAsset(Contract):
+    road_spec: RoadSpec | None = None
+    building_patch: "BuildingPatch | None" = None
+    building_spec: BuildingSpec | None = None
     asset_request_id: Id | None = None
     asset_type: Id
     name: Annotated[str, Field(min_length=1, max_length=255)]
@@ -95,6 +101,7 @@ class ProposalReference(Contract):
 
 
 class ProposalContent(Contract):
+    patch_preview: dict | None = None
     planning: dict | None = None
     asset_proposals: list[AssetProposal] = Field(default_factory=list)
     contract: ProposalPayload

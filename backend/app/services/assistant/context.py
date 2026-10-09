@@ -12,10 +12,13 @@ def compact(value):
 
 def build_context(db, project_id, message, policy, budget=MAX_CONTEXT_BYTES):
     context=message["context"]
+    # Understanding references reuse the authoritative policy/selection arrays instead of duplicating them.
+    context_policy={**policy,"understanding":{k:v for k,v in policy.get("understanding",{}).items()
+        if k not in {"assets","capabilityRequirements","referencedObjects"}}}
     profile=owned_row(db,"site_profile_versions",project_id,context["siteProfileVersionId"])["payload"] if context.get("siteProfileVersionId") else None
     memories=[owned_row(db,"project_memory_versions",project_id,mid) for mid in context["memoryVersionIds"]]
     # Never truncate hard requirements or attached references to make room for old conversation.
-    required={"currentMessage":message["parts"],"policy":policy,"capturedSelection":context["selection"],
+    required={"currentMessage":message["parts"],"policy":context_policy,"capturedSelection":context["selection"],
         "frozenContext":context,"site":None if not profile else {k:profile[k] for k in ("id","dimensions","relief","terrain") if k in profile},
         "siteUnknown":None if profile else "UNAVAILABLE: no site profile attached; request a site refresh",
         "acceptedMemory":[{"id":m["id"],"content":m["payload"]} for m in memories],

@@ -7,6 +7,16 @@ export type Accuracy = {
   "independentCheckpointCount"?: (number | null);
 };
 
+export type AddOpening = {
+  "operationType": "ADD_OPENING";
+  "openingId": string;
+  "kind": "door" | "window";
+  "offsetM": number;
+  "width": number;
+  "height": number;
+  "sillM"?: number;
+};
+
 export type AlternativeView = {
   "id": string;
   "name": string;
@@ -66,6 +76,8 @@ export type AssetCapability = {
   "validatorIds"?: Array<string>;
   "analysisCalculatorIds"?: Array<string>;
   "supportedOperations"?: Array<"DISCUSS" | "PLAN" | "PROPOSE" | "GENERATE" | "VALIDATE_GEOMETRY" | "ANALYZE">;
+  "patchCapabilities"?: Array<string>;
+  "specialistCapabilities"?: Array<string>;
   "limitations"?: Array<string>;
 };
 
@@ -123,6 +135,45 @@ export type BuildingAttributes = {
   "use": Fact_str_;
 };
 
+export type BuildingPatch = {
+  "schemaVersion"?: "building-patch/1";
+  "buildingId": string;
+  "assetId": string;
+  "sourceModelRevisionId": string;
+  "sourceSpecificationVersionId": string;
+  "sourceSpecificationHash": string;
+  "operations": Array<BuildingPatchOperation>;
+  "assumptions"?: Array<string>;
+};
+
+export type BuildingPatchOperation = {
+  "operationId": string;
+  "targetComponentId": string;
+  "expectedComponentHash": string;
+  "parameters": (MoveComponent | RotateComponent | ResizeOpening | MoveOpening | AddOpening | RemoveOpening);
+};
+
+export type BuildingSpec = {
+  "schemaVersion"?: "building-concept/1";
+  "buildingId": string;
+  "name": string;
+  "footprint": Array<[number, number]>;
+  "orientation"?: number;
+  "floors": number;
+  "floorHeight": number;
+  "slabThickness": number;
+  "spaces": Array<Room>;
+  "walls": Array<Wall>;
+  "openings"?: Array<Opening>;
+  "columns"?: Array<ConceptColumn>;
+  "beams"?: Array<ConceptBeam>;
+  "constraints"?: Array<string>;
+  "assumptions"?: Array<PreviewAssumption>;
+  "inputSource": "USER_PROVIDED" | "PREVIEW_ASSUMPTION";
+  "unknowns"?: Record<string, "UNKNOWN" | "UNAVAILABLE" | "UNVALIDATED">;
+  "requestedFeatures"?: Array<"ARCHITECTURAL_CONCEPT" | "STRUCTURAL_CONCEPT">;
+};
+
 export type CivilIntent = {
   "kind": "QUESTION" | "SITE_QUERY" | "DESIGN_REQUEST" | "CHANGE_REQUEST" | "ANALYSIS_REQUEST" | "EXPLANATION_REQUEST" | "PROPOSAL_APPROVAL" | "GENERAL_DISCUSSION";
   "domain": "CIVIL_INFRASTRUCTURE" | "GENERAL" | "UNRESOLVED";
@@ -149,10 +200,28 @@ export type ConceptAlternative = {
 };
 
 export type ConceptAsset = {
+  "roadSpec"?: (RoadSpec | null);
+  "buildingPatch"?: (BuildingPatch | null);
+  "buildingSpec"?: (BuildingSpec | null);
   "assetRequestId"?: (string | null);
   "assetType": string;
   "name": string;
   "requirements"?: Array<string>;
+};
+
+export type ConceptBeam = {
+  "start": [number, number];
+  "end": [number, number];
+  "width"?: number;
+  "depth"?: number;
+  "id": string;
+};
+
+export type ConceptColumn = {
+  "x": number;
+  "y": number;
+  "size"?: number;
+  "id": string;
 };
 
 export type ConstraintSnapshot = {
@@ -446,6 +515,17 @@ export type MissingSiteInformation = {
   "resolutionEvidenceIds"?: Array<string>;
 };
 
+export type MoveComponent = {
+  "operationType": "MOVE_COMPONENT";
+  "delta": [number, number, number];
+  "unit"?: "m" | "mm";
+};
+
+export type MoveOpening = {
+  "operationType": "MOVE_OPENING";
+  "offsetM": number;
+};
+
 export type Nearby = {
   "roads": ContextCollection;
   "waterways": ContextCollection;
@@ -478,6 +558,16 @@ export type ObjectRef = {
   "geometryHash": string;
 };
 
+export type Opening = {
+  "id": string;
+  "wall_id": string;
+  "kind": "door" | "window";
+  "offset": number;
+  "width": number;
+  "height": number;
+  "sill": number;
+};
+
 export type Orientation = {
   "azimuth": Fact_Quantity_;
   "method": "PRINCIPAL_AXIS" | "ENDPOINT_BEARING" | "USER_AXIS" | "UNDEFINED";
@@ -500,6 +590,13 @@ export type PointSelection = {
 export type Position = {
   "longitude": number;
   "latitude": number;
+};
+
+export type PreviewAssumption = {
+  "field": string;
+  "value": string;
+  "reason": string;
+  "source"?: "PREVIEW_ASSUMPTION";
 };
 
 export type ProfileInput = {
@@ -566,6 +663,8 @@ export type ProposalCommand = {
 };
 
 export type ProposalContent = {
+  "patchPreview"?: (Record<string, unknown> | null);
+  "planning"?: (Record<string, unknown> | null);
   "assetProposals"?: Array<AssetProposal>;
   "contract": ProposalPayload;
   "context": MessageContext;
@@ -689,6 +788,10 @@ export type Relief = {
   "profileIds": Array<string>;
 };
 
+export type RemoveOpening = {
+  "operationType": "REMOVE_OPENING";
+};
+
 export type RemovePatch = {
   "operation": "REMOVE_COMPONENT";
 };
@@ -703,6 +806,11 @@ export type RequirementConstraint = {
   "operator": "EQ" | "MIN" | "MAX" | "IN";
   "value": (string | number | boolean | Array<string>);
   "unit"?: (string | null);
+};
+
+export type ResizeOpening = {
+  "operationType": "RESIZE_OPENING";
+  "width": number;
 };
 
 export type ResolvedHorizontalCRS = {
@@ -730,6 +838,56 @@ export type RoadAttributes = {
   "classification": Fact_str_;
   "width": Fact_Quantity_;
   "access": Fact_str_;
+};
+
+export type RoadCrossSection = {
+  "carriagewayWidthM": number;
+  "laneCount"?: (number | null);
+  "laneWidthM"?: (number | null);
+  "shoulderLeftM"?: number;
+  "shoulderRightM"?: number;
+  "medianWidthM"?: number;
+  "vergeLeftM"?: number;
+  "vergeRightM"?: number;
+  "surfaceThicknessM": number;
+};
+
+export type RoadPoint = {
+  "id": string;
+  "position": [number, number];
+};
+
+export type RoadSpec = {
+  "schemaVersion"?: "road-concept/1";
+  "roadId": string;
+  "name": string;
+  "routeReference": Ref;
+  "sourceModelRevisionId"?: (string | null);
+  "coordinateSystem"?: "LOCAL_ENU";
+  "alignment": Array<RoadPoint>;
+  "crossSection": RoadCrossSection;
+  "inputSource": "USER_PROVIDED" | "PREVIEW_ASSUMPTION";
+  "assumptions"?: Array<PreviewAssumption>;
+  "constraints"?: Array<string>;
+  "terrainRequired"?: boolean;
+  "referencePlane"?: "LOCAL_VISUAL_REFERENCE";
+  "requestedFeatures"?: Array<"ROAD_CONCEPT">;
+  "unknowns"?: Record<string, "UNKNOWN" | "UNAVAILABLE" | "UNVALIDATED">;
+};
+
+export type Room = {
+  "x": number;
+  "y": number;
+  "width": number;
+  "depth": number;
+  "id": string;
+  "name": string;
+  "floor": number;
+};
+
+export type RotateComponent = {
+  "operationType": "ROTATE_COMPONENT";
+  "angleDeg": number;
 };
 
 export type RotatePatch = {
@@ -951,6 +1109,14 @@ export type ValidationResult = {
   "status": "PASSED" | "FAILED" | "NOT_RUN" | "UNSUPPORTED" | "ERROR" | "STALE";
   "issues": Array<ValidationIssue>;
   "outputArtifactId"?: (string | null);
+};
+
+export type Wall = {
+  "id": string;
+  "floor": number;
+  "start": [number, number];
+  "end": [number, number];
+  "thickness"?: number;
 };
 
 export type WaterwayAttributes = {

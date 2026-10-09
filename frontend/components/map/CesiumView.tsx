@@ -1,4 +1,5 @@
 "use client";
+import MeasurementResult from "./MeasurementResult";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 
 import {
@@ -143,6 +144,7 @@ export default function CesiumView({
   const measurePointsRef = useRef<[number, number, number][]>([]);
   const measurementSamples = useRef<MeasurementPoint[]>([]);
   const measurementRequest = useRef(0);
+  const measurementQueue = useRef<Promise<void>>(Promise.resolve());
   const handlerRef = useRef<CesiumInputHandler | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const modelsRef = useRef<{ main: any; excav: any }>({ main: null, excav: null });
@@ -1276,17 +1278,22 @@ export default function CesiumView({
       if (store.activeTool.startsWith("draw-") || store.activeTool.startsWith("edit-")) return;
 
       if (scene3dMeasureTool !== "none") {
-        const measurementSequence = ++measurementRequest.current;
+        const measurementSequence = measurementRequest.current;
         const props = picked?.id?.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
         const design = !!props.editableComponentId;
         const ray = viewer.camera.getPickRay(click.position);
-        const point = (viewer.scene.pickPositionSupported ? viewer.scene.pickPosition(click.position) : null)
+        let depthPoint = null;
+        try { if (viewer.scene.pickPositionSupported) depthPoint = viewer.scene.pickPosition(click.position); } catch { /* Fall back to terrain ray picking. */ }
+        const point = depthPoint
           ?? (ray ? viewer.scene.globe.pick(ray, viewer.scene) : null)
           ?? viewer.camera.pickEllipsoid(click.position, Cesium.Ellipsoid.WGS84);
         if (!point) { store.setScene3dMeasureReadout("UNKNOWN · Surface could not be picked."); return; }
+        viewer.entities.add({ id: `measurement-point-${Date.now()}-${Math.random()}`, position: point, point: { pixelSize: 9, color: Cesium.Color.YELLOW, outlineColor: Cesium.Color.BLACK, outlineWidth: 2, disableDepthTestDistance: Number.POSITIVE_INFINITY } });
+        viewer.scene.requestRender();
         const carto = Cesium.Cartographic.fromCartesian(point);
         const longitude = Cesium.Math.toDegrees(carto.longitude), latitude = Cesium.Math.toDegrees(carto.latitude);
-        void (async () => {
+        measurementQueue.current = measurementQueue.current.catch(() => {}).then(async () => {
+          if (measurementSequence !== measurementRequest.current || viewer.isDestroyed()) return;
           const designResolved=acceptedPlacement?.elevation!=null && acceptedPlacement?.status==="VALID" && acceptedPlacement.vertical_reference?.type==="ELLIPSOIDAL";
           let sample: MeasurementPoint = { longitude,latitude,elevation:design ? designResolved ? carto.height : null : !(viewer.terrainProvider instanceof Cesium.EllipsoidTerrainProvider) ? carto.height : null,
             source:design ? String(picked.id.name ?? "Design geometry") : "World Terrain", dataset:null,version:null,
@@ -1307,7 +1314,7 @@ export default function CesiumView({
           const rows = Object.entries(values).map(([key,value])=>`${key.replaceAll("_"," ")}: ${format(value,key.endsWith("percent") ? "%" : key.endsWith("deg") ? "°" : key.endsWith("m2") ? "m²" : "m")}`);
           store.setScene3dMeasureReadout(`${measurementClassification(points)} · ${rows.length ? rows.join(" · ") : "Pick the next point"}\n${points.map(item=>`${item.source} · dataset ${item.dataset ?? "unavailable"} · version ${item.version ?? "unavailable"} · ${item.horizontalReference} / ${item.verticalReference} · ${item.status}`).join("\n")}${scene3dMeasureTool === "area" ? "\nLocal tangent-plane area · click more vertices; Escape to finish/reset" : ""}`);
           if (scene3dMeasureTool === "height" || scene3dMeasureTool !== "area" && points.length >= 2) measurementSamples.current = [];
-        })();
+        }).catch(() => { if (measurementSequence === measurementRequest.current) store.setScene3dMeasureReadout("Could not measure this surface. Try another point."); });
         return;
       }
       if (!picked?.id) {
@@ -1359,6 +1366,8 @@ export default function CesiumView({
   }, [loaded, scene3dMeasureTool, measureUnit, alignment, projectTerrain, projectId, terrainEpoch, editableModel, acceptedPlacement]);
 
   useEffect(() => {
+    const viewer = viewerRef.current;
+    if (viewer && !viewer.isDestroyed()) viewer.entities.values.filter((entity: import("cesium").Entity) => entity.id.startsWith("measurement-point-")).forEach((entity: import("cesium").Entity) => viewer.entities.remove(entity));
     measurePointsRef.current = [];
     measurementSamples.current = [];
     measurementRequest.current++;
@@ -1372,7 +1381,7 @@ export default function CesiumView({
       </div>
     );
   }
-  return <>{measurementReadout && <div role="status" aria-label="Measurement result" className="absolute bottom-16 left-16 z-30 max-w-lg whitespace-pre-line rounded-sm border border-white/10 bg-background/95 p-3 text-[10px]">{measurementReadout}</div>}{transformReadout && <p role="status" className="pointer-events-none absolute bottom-16 left-16 z-30 rounded-sm border border-white/10 bg-background/95 px-3 py-2 font-mono text-xs">{transformReadout}</p>}{loaded && !layers.terrain && layers.tiles3d && <div role="status" className="absolute left-16 top-14 z-20 rounded-lg border border-white/15 bg-background/95 px-3 py-2 text-xs"><span>Global buildings paused on flat ground.</span><button className="ml-3 text-primary underline" onClick={() => useProjectStore.getState().setLayers({ terrain: true })}>Restore terrain & buildings</button></div>}{loaded && <SunStudyControls key={placementProjectId ?? "local"} viewer={viewerRef.current} Cesium={cesiumRef.current} longitude={centerLng} latitude={centerLat} projectId={localSandbox ? undefined : placementProjectId} buildingsAvailable={photorealisticTilesOn && buildingStatus === "READY" || scene3dLayers.buildings && buildingFeatures.length > 0} terrainAvailable={layers.terrain && (terrainStatus.includes("VISUAL REFERENCE") || terrainStatus.startsWith("PROJECT TERRAIN"))} />}<div ref={containerRef} style={{ position: "absolute", inset: 0 }} />{!localSandbox && editableModel && <EngineeringEvidencePanel key={`${editableModel.project_id}:${modelRevisionId ?? "unsaved"}`} projectId={editableModel.project_id} revisionId={modelRevisionId} origin={editableModel.origin} onPlacement={setAcceptedPlacement} />}{buildingStatus && photorealisticTilesOn && buildingStatus !== "READY" && <p role="alert" className="absolute left-16 top-24 rounded-xl border border-white/15 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">Context buildings unavailable: {buildingStatus === "MISSING_TOKEN" ? "configure world data" : "provider could not load"}</p>}{localSandbox && loaded && layers.terrain && <details className="workspace-terrain-status absolute left-16 top-14 z-20 max-w-[330px] rounded-xl border border-white/15 bg-background/95 text-[10px] shadow-lg"><summary role="status" className="cursor-pointer px-3 py-2 text-muted-foreground">{terrainStatus}</summary><div className="space-y-2 border-t border-white/10 px-3 py-3 text-xs leading-relaxed text-muted-foreground"><p>{terrainDetail}</p><p>Elevation scale: {terrainExaggeration}× · source resolution: not reported</p><button className="text-primary underline" onClick={() => setTerrainRetry((n) => n + 1)}>Reload elevation</button><a href="/settings/api-keys" className="block text-primary underline">World data connection</a></div></details>}{localSandbox && loaded && <p className="pointer-events-none absolute left-3 top-3 rounded-sm border border-white/10 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground">Origin {centerLat.toFixed(6)}, {centerLng.toFixed(6)}{!sandboxHasImagery && " · Loading map imagery…"}</p>}{imageryError && <p role="alert" className="absolute left-3 top-12 rounded-sm border border-amber-400/30 bg-background/95 px-3 py-2 text-xs text-amber-200">{imageryError}</p>}</>;
+  return <>{measurementReadout && <MeasurementResult readout={measurementReadout} mode={scene3dMeasureTool} onClear={() => useProjectStore.getState().setScene3dMeasureReadout(null)} />}{transformReadout && <p role="status" className="pointer-events-none absolute bottom-16 left-16 z-30 rounded-sm border border-white/10 bg-background/95 px-3 py-2 font-mono text-xs">{transformReadout}</p>}{loaded && !layers.terrain && layers.tiles3d && <div role="status" className="absolute left-16 top-14 z-20 rounded-lg border border-white/15 bg-background/95 px-3 py-2 text-xs"><span>Global buildings paused on flat ground.</span><button className="ml-3 text-primary underline" onClick={() => useProjectStore.getState().setLayers({ terrain: true })}>Restore terrain & buildings</button></div>}{loaded && <SunStudyControls key={placementProjectId ?? "local"} viewer={viewerRef.current} Cesium={cesiumRef.current} longitude={centerLng} latitude={centerLat} projectId={localSandbox ? undefined : placementProjectId} buildingsAvailable={photorealisticTilesOn && buildingStatus === "READY" || scene3dLayers.buildings && buildingFeatures.length > 0} terrainAvailable={layers.terrain && (terrainStatus.includes("VISUAL REFERENCE") || terrainStatus.startsWith("PROJECT TERRAIN"))} />}<div ref={containerRef} style={{ position: "absolute", inset: 0 }} />{!localSandbox && editableModel && <EngineeringEvidencePanel key={`${editableModel.project_id}:${modelRevisionId ?? "unsaved"}`} projectId={editableModel.project_id} revisionId={modelRevisionId} origin={editableModel.origin} onPlacement={setAcceptedPlacement} />}{buildingStatus && photorealisticTilesOn && buildingStatus !== "READY" && <p role="alert" className="absolute left-16 top-24 rounded-xl border border-white/15 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">Context buildings unavailable: {buildingStatus === "MISSING_TOKEN" ? "configure world data" : "provider could not load"}</p>}{localSandbox && loaded && layers.terrain && <details className="workspace-terrain-status absolute left-16 top-14 z-20 max-w-[330px] rounded-xl border border-white/15 bg-background/95 text-[10px] shadow-lg"><summary role="status" className="cursor-pointer px-3 py-2 text-muted-foreground">{terrainStatus}</summary><div className="space-y-2 border-t border-white/10 px-3 py-3 text-xs leading-relaxed text-muted-foreground"><p>{terrainDetail}</p><p>Elevation scale: {terrainExaggeration}× · source resolution: not reported</p><button className="text-primary underline" onClick={() => setTerrainRetry((n) => n + 1)}>Reload elevation</button><a href="/settings/api-keys" className="block text-primary underline">World data connection</a></div></details>}{localSandbox && loaded && <p className="pointer-events-none absolute left-3 top-3 rounded-sm border border-white/10 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground">Origin {centerLat.toFixed(6)}, {centerLng.toFixed(6)}{!sandboxHasImagery && " · Loading map imagery…"}</p>}{imageryError && <p role="alert" className="absolute left-3 top-12 rounded-sm border border-amber-400/30 bg-background/95 px-3 py-2 text-xs text-amber-200">{imageryError}</p>}</>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1385,6 +1394,9 @@ function computePipeShape(Cesium: any, radius: number) {
   }
   return shape;
 }
+
+
+
 
 
 

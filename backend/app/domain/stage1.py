@@ -422,6 +422,8 @@ class AssetCapability(Contract):
     validator_ids: Ids = Field(default_factory=list)
     analysis_calculator_ids: Ids = Field(default_factory=list)
     supported_operations: list[Operation] = Field(default_factory=list)
+    patch_capabilities: Ids = Field(default_factory=list)
+    specialist_capabilities: Ids = Field(default_factory=list)
     limitations: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
