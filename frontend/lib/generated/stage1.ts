@@ -77,7 +77,6 @@ export type AssetCapability = {
   "analysisCalculatorIds"?: Array<string>;
   "supportedOperations"?: Array<"DISCUSS" | "PLAN" | "PROPOSE" | "GENERATE" | "VALIDATE_GEOMETRY" | "ANALYZE">;
   "patchCapabilities"?: Array<string>;
-  "specialistCapabilities"?: Array<string>;
   "limitations"?: Array<string>;
 };
 
@@ -200,7 +199,6 @@ export type ConceptAlternative = {
 };
 
 export type ConceptAsset = {
-  "roadSpec"?: (RoadSpec | null);
   "buildingPatch"?: (BuildingPatch | null);
   "buildingSpec"?: (BuildingSpec | null);
   "assetRequestId"?: (string | null);
@@ -838,41 +836,6 @@ export type RoadAttributes = {
   "classification": Fact_str_;
   "width": Fact_Quantity_;
   "access": Fact_str_;
-};
-
-export type RoadCrossSection = {
-  "carriagewayWidthM": number;
-  "laneCount"?: (number | null);
-  "laneWidthM"?: (number | null);
-  "shoulderLeftM"?: number;
-  "shoulderRightM"?: number;
-  "medianWidthM"?: number;
-  "vergeLeftM"?: number;
-  "vergeRightM"?: number;
-  "surfaceThicknessM": number;
-};
-
-export type RoadPoint = {
-  "id": string;
-  "position": [number, number];
-};
-
-export type RoadSpec = {
-  "schemaVersion"?: "road-concept/1";
-  "roadId": string;
-  "name": string;
-  "routeReference": Ref;
-  "sourceModelRevisionId"?: (string | null);
-  "coordinateSystem"?: "LOCAL_ENU";
-  "alignment": Array<RoadPoint>;
-  "crossSection": RoadCrossSection;
-  "inputSource": "USER_PROVIDED" | "PREVIEW_ASSUMPTION";
-  "assumptions"?: Array<PreviewAssumption>;
-  "constraints"?: Array<string>;
-  "terrainRequired"?: boolean;
-  "referencePlane"?: "LOCAL_VISUAL_REFERENCE";
-  "requestedFeatures"?: Array<"ROAD_CONCEPT">;
-  "unknowns"?: Record<string, "UNKNOWN" | "UNAVAILABLE" | "UNVALIDATED">;
 };
 
 export type Room = {

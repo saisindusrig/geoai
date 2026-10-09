@@ -76,7 +76,7 @@ def _execute(db,tc,message,name,args,execution_id):
     profile=owned_row(db,"site_profile_versions",p,c["siteProfileVersionId"]) if c.get("siteProfileVersionId") else None
     if name in {"create_proposal","revise_proposal"}:
         if tc.allowed_effect!="PROPOSAL_ONLY":return envelope("DENIED",code="READ_ONLY_POLICY")
-        if any((a.building_spec or a.road_spec) and (a.building_spec or a.road_spec).input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
+        if any(a.building_spec and a.building_spec.input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
             return envelope("DENIED",code="USER_SOURCE_UNVERIFIED",limitations=["Tool-proposed visualization dimensions require explicit preview assumptions; user/site provenance cannot be invented."])
         if name=="revise_proposal" and not args.parent_version_id:return envelope("DENIED",code="PARENT_REQUIRED")
         if args.parent_version_id:

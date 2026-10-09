@@ -27,7 +27,6 @@ def capability(asset_type: str, registry=None) -> AssetCapability:
         geometry_validation_support="FULL" if "VALIDATE_GEOMETRY" in operations else "UNSUPPORTED", engineering_analysis_support="FULL" if "ANALYZE" in operations else "UNSUPPORTED",
         site_selection_types=list(FAMILIES[definition["family"]].selection_kinds),
         supported_operations=sorted({"DISCUSS"}|operations),
-        specialist_capabilities=["ROAD_CONCEPT_PROPOSAL", "ROAD_SPEC_VALIDATION", "ROAD_CHAINAGE"] if adapter and adapter.metadata.id=="road-concept" else [],
         patch_capabilities=["BUILDING_PATCH_MOVE_COMPONENT", "BUILDING_PATCH_ROTATE_COMPONENT", "BUILDING_PATCH_OPENING"] if adapter and adapter.metadata.id=="building-concept" else [],
         specification_schema_id=adapter.specification_schema.__name__ if adapter else None,
         generator_id=adapter.metadata.id if adapter and "GENERATE" in operations else None,

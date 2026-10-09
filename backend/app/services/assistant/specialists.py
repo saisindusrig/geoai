@@ -47,8 +47,6 @@ class AdapterRegistry:
 ADAPTERS=AdapterRegistry()
 from app.services.assistant.building_specialist import BuildingAdapter
 ADAPTERS.register(BuildingAdapter())
-from app.services.assistant.road_specialist import RoadAdapter
-ADAPTERS.register(RoadAdapter())
 
 
 def route_assets(assets: list[dict], registry=ADAPTERS):

@@ -28,9 +28,4 @@ Opening width/height and offsetM/sillM are metres. Missing width or along-wall o
 Wall movement, room movement, floor height, structural sizing and dependent redesign are unavailable. Explain the limitation without issuing unsupported patches.
 Each operation requires operationId, targetComponentId, expectedComponentHash and typed parameters with operationType. BuildingPatch requires schemaVersion building-patch/1, buildingId, assetId, sourceModelRevisionId, sourceSpecificationVersionId and sourceSpecificationHash.
 Opening edits reject a previously modified host group in V1. Keep unknown engineering properties unknown; patch approval is conceptual review only.
-Road V1 uses roadSpec with ordered local ENU control points tied to the exact saved routeReference (id/version/contentHash), sourceModelRevisionId and an explicit crossSection.
-Use get_site_profile and get_model_revision to ground route and frame. Copy roadGrounding from tools; do not invent local route coordinates.
-Only ROAD and ACCESS_ROAD generate planar straight segments. Lane count times lane width must equal carriageway width. Shoulders, median and verges require explicit dimensions. Surface thickness is visual, not pavement design.
-Missing width is a blocking question for generation. Tool-submitted roadSpec uses PREVIEW_ASSUMPTION and visible assumptions. Chainage is backend-derived.
-No terrain routing, intersections, pavement, traffic, hydraulic, safety or compliance design. Explain that avoiding steep terrain cannot be validated in Road V1. Road patches are unavailable.
 """
