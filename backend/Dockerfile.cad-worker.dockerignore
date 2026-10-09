@@ -1,0 +1,17 @@
+# Keep credentials, local databases, native caches and generated output out of
+# the CAD build context. This ignore file applies only to this Dockerfile.
+.env
+.env.*
+.venv
+.cad-proof-deps
+.cad-proof-output
+__pycache__
+**/__pycache__
+.pytest_cache
+*.db
+*.db-*
+storage
+storage-cad-private
+live-results
+evals/results
+*.log
