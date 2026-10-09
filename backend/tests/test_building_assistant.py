@@ -128,7 +128,9 @@ def test_nebius_missing_key_timeout_and_invalid_json(monkeypatch):
     with pytest.raises(nebius.NebiusError, match="Configure"):
         asyncio.run(nebius.completion("system", "request"))
     monkeypatch.setattr(settings, "NEBIUS_API_KEY", "test-only")
-    monkeypatch.setattr(httpx.AsyncClient, "post", AsyncMock(side_effect=httpx.ReadTimeout("timeout")))
+    original = httpx.AsyncClient
+    def timeout_handler(request): raise httpx.ReadTimeout("timeout", request=request)
+    monkeypatch.setattr(httpx, "AsyncClient", lambda **kwargs: original(transport=httpx.MockTransport(timeout_handler), **kwargs))
     with pytest.raises(nebius.NebiusError, match="timed out"):
         asyncio.run(nebius.completion("system", "request"))
     monkeypatch.setattr(nebius, "completion", AsyncMock(return_value="not json"))

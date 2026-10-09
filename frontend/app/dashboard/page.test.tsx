@@ -1,225 +1,156 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-vi.mock("next/link", () => ({
-  default: ({
-    href,
-    children,
-    ...rest
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => (
-    <a href={href} {...rest}>
-      {children}
-    </a>
-  ),
-}));
-
-vi.mock("@/components/dashboard/ConstructionPreview", () => ({
-  default: ({ type }: { type: string }) => (
-    <div data-testid={`preview-${type}`} />
-  ),
-}));
-
-vi.mock("@/lib/api", () => ({
-  api: {
-    get: vi.fn(async (url: string) => {
-      if (url === "/api/projects") return [];
-      if (url === "/api/projects/summaries") return [];
-      return [];
-    }),
-    post: vi.fn(),
-    put: vi.fn(),
-    delete: vi.fn(),
-  },
-  ApiError: class ApiError extends Error {
-    status: number;
-    constructor(message: string, status = 500) {
-      super(message);
-      this.status = status;
-    }
-  },
-  authRequired: vi.fn(() => false),
-  getAuthToken: vi.fn(() => null),
-}));
-
+const { push, redirect } = vi.hoisted(() => ({ push: vi.fn(), redirect: vi.fn() }));
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push }), redirect }));
+vi.mock("next/link", () => ({ default: ({ href, children, ...rest }: { href: string; children: React.ReactNode }) => <a href={href} {...rest}>{children}</a> }));
+vi.mock("@/components/dashboard/ConstructionPreview", () => ({ default: () => <div /> }));
+vi.mock("@/lib/api", () => ({ api: { get: vi.fn(), post: vi.fn(), put: vi.fn(), delete: vi.fn() }, authRequired: () => false, getAuthToken: () => null, ApiError: class extends Error {} }));
 import DashboardPage from "@/app/dashboard/page";
+import NewProjectPage from "@/app/projects/new/page";
 import { api } from "@/lib/api";
-import { LOCAL_SANDBOX_PATH } from "@/lib/local-sandbox";
 
-afterEach(() => {
-  cleanup();
-  vi.clearAllMocks();
+afterEach(() => { cleanup(); vi.clearAllMocks(); window.history.replaceState({}, "", "/dashboard"); });
+beforeEach(() => { vi.mocked(api.get).mockResolvedValue([]); vi.mocked(api.post).mockResolvedValue({ id: 42 }); });
+async function openDialog() {
+  render(<DashboardPage />);
+  await screen.findByText("No projects yet");
+  const trigger = screen.getAllByRole("button", { name: "New Project" })[0];
+  await userEvent.click(trigger);
+  return { trigger, dialog: screen.getByRole("dialog", { name: "New project" }) };
+}
+
+it("validates and trims folder names and prevents duplicate folder requests", async () => {
+  let resolve!: (value: unknown) => void;
+  vi.mocked(api.post).mockImplementation(() => new Promise(r => { resolve = r; }));
+  render(<DashboardPage />);
+  await screen.findByText("No projects yet");
+  await userEvent.click(screen.getByRole("button", { name: "New folder" }));
+  const dialog = screen.getByRole("dialog", { name: "Create folder" });
+  const input = within(dialog).getByRole("textbox", { name: "Folder name" });
+  fireEvent.change(input, { target: { value: "   " } });
+  fireEvent.submit(input.closest("form")!);
+  expect(api.post).not.toHaveBeenCalled();
+  fireEvent.change(input, { target: { value: "  Planning  " } });
+  fireEvent.submit(input.closest("form")!); fireEvent.submit(input.closest("form")!);
+  expect(api.post).toHaveBeenCalledTimes(1);
+  expect(api.post).toHaveBeenCalledWith("/api/project-folders", { name: "Planning" });
+  expect(within(dialog).getByRole("button", { name: "Close folder dialog" })).toBeDisabled();
+  resolve({ id: 7, name: "Planning" });
+  await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
 });
 
-describe("DashboardPage", () => {
-  it("renders the empty command center and global actions", async () => {
-    vi.mocked(api.get).mockImplementation(async () => []);
-    render(<DashboardPage />);
-
-    expect(
-      await screen.findByText(/No saved concepts yet/i),
-    ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Your concepts" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Start a new concept/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "QUICK START" })).toBeInTheDocument();
-    for (const link of screen.getAllByRole("link", { name: /^New concept$/i })) {
-      expect(link).toHaveAttribute("href", "/projects/new");
-    }
-    expect(screen.getByRole("link", { name: /Open sandbox/i })).toHaveAttribute("href", LOCAL_SANDBOX_PATH);
-    expect(api.get).toHaveBeenCalledWith("/api/projects");
-    expect(api.get).toHaveBeenCalledWith("/api/project-folders");
+it("restores focus to the folder trigger when Escape closes the dialog", async () => {
+  render(<DashboardPage />); await screen.findByText("No projects yet");
+  const trigger = screen.getByRole("button", { name: "New folder" });
+  await userEvent.click(trigger); await userEvent.keyboard("{Escape}");
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(trigger).toHaveFocus();
+});
+describe("name-only project entry", () => {
+  it("opens a compact dialog with only a project name", async () => {
+    const { dialog } = await openDialog();
+    expect(within(dialog).getAllByRole("textbox")).toHaveLength(1);
+    expect(within(dialog).getByRole("textbox", { name: "Project name" })).toHaveFocus();
+    expect(within(dialog).queryByRole("combobox")).not.toBeInTheDocument();
+    expect(screen.queryByText("Infrastructure templates")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /More assets/i })).not.toBeInTheDocument();
+    expect(within(dialog).getByRole("button", { name: "Create Project" })).toBeDisabled();
   });
-
-  it("offers compact asset shortcuts and a separate searchable catalogue", async () => {
-    vi.mocked(api.get).mockResolvedValue([]);
-    render(<DashboardPage />);
-    await screen.findByText("No saved concepts yet");
-    for (const name of ["Bridge", "Road", "Pipeline", "Dam", "Building"]) {
-      expect(screen.getByRole("link", { name: new RegExp(`^${name} `) })).toHaveAttribute("href", `/projects/new?template=${name.toLowerCase()}`);
-    }
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    const user = userEvent.setup();
-    await user.click(screen.getByRole("button", { name: /^More assets$/i }));
-    const library = within(screen.getByRole("dialog", { name: "All assets" }));
-    const search = library.getByRole("textbox", { name: "Search asset library" });
-    await user.type(search, "no-such-asset-xyz");
-    expect(library.getByText(/No matching assets/)).toBeInTheDocument();
-    await user.clear(search);
-    expect(library.getAllByRole("link").length).toBeGreaterThan(5);
-    await user.click(library.getByRole("button", { name: "Close asset library" }));
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  it("trims the name and Enter opens the workspace directly", async () => {
+    const { dialog } = await openDialog();
+    await userEvent.type(within(dialog).getByRole("textbox"), "  River junction  {Enter}");
+    await waitFor(() => expect(push).toHaveBeenCalledWith("/projects/42/workspace"));
+    expect(api.post).toHaveBeenCalledWith("/api/projects", { name: "River junction" });
+    expect(api.post).toHaveBeenCalledTimes(1);
   });
-
-  it("combines type and folder filters for saved concepts", async () => {
-    vi.mocked(api.get).mockImplementation(async (url: string) => {
-      if (url === "/api/projects") {
-        return [
-          {
-            id: 1,
-            name: "River dam",
-            project_type: "dam",
-            folder_id: 7,
-            status: "draft",
-            units: "metric",
-            center_lat: 12,
-            center_lng: 77,
-            location_name: "Site",
-            boundary_geojson: null,
-            alignment_geojson: null,
-            created_at: "2026-09-22T00:00:00Z",
-            updated_at: "2026-09-22T00:00:00Z",
-            disclaimer: "",
-          },
-          {
-            id: 2,
-            name: "Town road",
-            project_type: "road",
-            folder_id: null,
-            status: "draft",
-            units: "metric",
-            center_lat: 12,
-            center_lng: 77,
-            location_name: "Town",
-            boundary_geojson: null,
-            alignment_geojson: null,
-            created_at: "2026-09-22T00:00:00Z",
-            updated_at: "2026-09-22T00:00:00Z",
-            disclaimer: "",
-          },
-        ];
-      }
-      if (url === "/api/project-folders") {
-        return [
-          {
-            id: 7,
-            name: "Water studies",
-            color: "sage",
-            created_at: "",
-            updated_at: "",
-          },
-        ];
-      }
-      return [];
-    });
-    render(<DashboardPage />);
-    const user = userEvent.setup();
-    await screen.findByRole("button", { name: "Show recent project River dam" });
-    await user.click(screen.getByRole("button", { name: "View all" }));
-    expect(screen.getByRole("heading", { name: "Concepts" })).toBeInTheDocument();
-    expect(screen.getByText("River dam")).toBeInTheDocument();
-    expect(screen.getByText("Town road")).toBeInTheDocument();
-    await user.selectOptions(screen.getByRole("combobox", { name: "Filter by concept type" }), "dam");
-    expect(screen.getByText("River dam")).toBeInTheDocument();
-    expect(screen.queryByText("Town road")).not.toBeInTheDocument();
-
-    await user.click(screen.getByRole("button", { name: "Water studies" }));
-    expect(screen.getByText("River dam")).toBeInTheDocument();
-    expect(screen.queryByText("Town road")).not.toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Unfiled" }));
-    expect(
-      await screen.findByText(/No matching concepts/i),
-    ).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Clear filters" }));
-    await user.click(screen.getByRole("button", { name: "Unfiled" }));
-    expect(screen.getByText("Town road")).toBeInTheDocument();
-    expect(screen.queryByText("River dam")).not.toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Water studies" }));
-    expect(screen.getByText("River dam")).toBeInTheDocument();
-    expect(screen.queryByText("Town road")).not.toBeInTheDocument();
+  it("requires a non-whitespace name and keeps the length limit", async () => {
+    const { dialog } = await openDialog();
+    const input = within(dialog).getByRole("textbox");
+    expect(input).toHaveAttribute("maxlength", "255");
+    await userEvent.type(input, "   ");
+    expect(within(dialog).getByRole("button", { name: "Create Project" })).toBeDisabled();
+    fireEvent.submit(dialog); expect(api.post).not.toHaveBeenCalled();
   });
-
-  it("features the most recently updated project with its location and workspace route", async () => {
-    vi.mocked(api.get).mockImplementation(async (url: string) => url === "/api/projects" ? [
-      { id: 1, name: "Older concept", project_type: "road", location_name: "Town", updated_at: "2026-09-01T00:00:00Z" },
-      { id: 2, name: "Latest bridge", project_type: "bridge", location_name: "River crossing", updated_at: "2026-10-01T00:00:00Z" },
-    ] : []);
-    render(<DashboardPage />);
-    const heading = await screen.findByRole("heading", { name: "CONTINUE WORKING" });
-    const featured = within(heading.closest("article")!);
-    expect(await featured.findByRole("heading", { name: "Latest bridge" })).toBeInTheDocument();
-    expect(featured.getByText("River crossing")).toBeInTheDocument();
-    expect(featured.getByRole("link", { name: "Open workspace" })).toHaveAttribute("href", "/projects/2/workspace");
-    expect(featured.queryByText("Older concept")).not.toBeInTheDocument();
+  it("Escape closes and returns focus to the primary action", async () => {
+    const { trigger } = await openDialog();
+    await userEvent.keyboard("{Escape}");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument(); expect(trigger).toHaveFocus();
   });
-
-  it("reports API failures, allows retry, and keeps new-concept actions available", async () => {
-    vi.mocked(api.get).mockRejectedValue(new Error("Offline"));
-    render(<DashboardPage />);
-    expect(await screen.findByText(/Saved concepts are unavailable/)).toBeInTheDocument();
-    expect(screen.queryByText("No saved concepts yet")).not.toBeInTheDocument();
-    for (const link of screen.getAllByRole("link", { name: "New concept" })) {
-      expect(link).toHaveAttribute("href", "/projects/new");
-    }
-    vi.mocked(api.get).mockResolvedValue([]);
-    await userEvent.setup().click(screen.getByRole("button", { name: "Retry" }));
-    expect(await screen.findByText("No saved concepts yet")).toBeInTheDocument();
-    expect(screen.queryByText(/Saved concepts are unavailable/)).not.toBeInTheDocument();
+  it("keeps the project name focused when global search is requested inside the dialog", async () => {
+    const { dialog } = await openDialog();
+    await userEvent.keyboard("{Control>}k{/Control}");
+    expect(within(dialog).getByRole("textbox", { name: "Project name" })).toHaveFocus();
   });
-
-  it("creates a personal folder", async () => {
-    vi.mocked(api.get).mockImplementation(async () => []);
-    vi.mocked(api.post).mockResolvedValue({
-      id: 9,
-      name: "October studies",
-      color: "sage",
-      created_at: "",
-      updated_at: "",
-    });
+  it("Cancel closes without creating a project", async () => {
+    const { dialog, trigger } = await openDialog();
+    await userEvent.click(within(dialog).getByRole("button", { name: "Cancel" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument(); expect(trigger).toHaveFocus(); expect(api.post).not.toHaveBeenCalled();
+  });
+  it("preserves entered name and displays failed requests in the dialog", async () => {
+    vi.mocked(api.post).mockRejectedValueOnce(new Error("Backend unavailable"));
+    const { dialog } = await openDialog();
+    await userEvent.type(within(dialog).getByRole("textbox"), "Bridge study{Enter}");
+    expect(await screen.findByRole("alert")).toHaveTextContent("Backend unavailable");
+    expect(within(dialog).getByRole("textbox")).toHaveValue("Bridge study"); expect(push).not.toHaveBeenCalled();
+  });
+  it("prevents duplicate submissions while the API request is pending", async () => {
+    let resolve!: (value: unknown) => void;
+    vi.mocked(api.post).mockImplementation(() => new Promise(r => { resolve = r; }));
+    const { dialog } = await openDialog();
+    fireEvent.change(within(dialog).getByRole("textbox"), { target: { value: "Study" } });
+    fireEvent.submit(dialog); fireEvent.submit(dialog);
+    expect(api.post).toHaveBeenCalledTimes(1); expect(within(dialog).getByRole("button", { name: "Creating…" })).toBeDisabled();
+    resolve({ id: 42 }); await waitFor(() => expect(push).toHaveBeenCalled());
+  });
+  it("keeps Tab within the dialog", async () => {
+    const { dialog } = await openDialog();
+    const input = within(dialog).getByRole("textbox");
+    await userEvent.keyboard("{Shift>}{Tab}{/Shift}");
+    expect(within(dialog).getByRole("button", { name: "Cancel" })).toHaveFocus();
+    await userEvent.keyboard("{Tab}"); expect(input).toHaveFocus();
+  });
+  it("uses the same dialog for the compatibility creation URL", async () => {
+    NewProjectPage(); expect(redirect).toHaveBeenCalledWith("/dashboard?newProject=1");
+    window.history.replaceState({}, "", "/dashboard?newProject=1&template=bridge");
     render(<DashboardPage />);
-    const user = userEvent.setup();
-    await user.click(
-      await screen.findByRole("button", { name: /New folder/i }),
-    );
-    await user.type(screen.getByLabelText("Folder name"), "October studies");
-    await user.click(screen.getByRole("button", { name: "Create folder" }));
-    expect(api.post).toHaveBeenCalledWith("/api/project-folders", {
-      name: "October studies",
-    });
-    expect(
-      await screen.findByRole("button", { name: /^October studies$/ }),
-    ).toBeInTheDocument();
+    expect(await screen.findByRole("dialog", { name: "New project" })).toBeInTheDocument();
+    expect(screen.queryByLabelText(/asset type/i)).not.toBeInTheDocument();
+  });
+});
+
+describe("compact project dashboard", () => {
+  const projects = [
+    { id: 1, name: "Old road", project_type: "road", location_name: "Town", folder_id: null, updated_at: "2026-09-01T00:00:00Z" },
+    { id: 2, name: "Latest study", project_type: "unclassified", location_name: "River", folder_id: 7, updated_at: "2026-10-01T00:00:00Z" },
+  ];
+  it("continues the latest project and preserves workspace links", async () => {
+    vi.mocked(api.get).mockImplementation(async url => url === "/api/projects" ? projects : []);
+    render(<DashboardPage />);
+    const continued = within(screen.getByRole("region", { name: "Continue working" }));
+    expect(await continued.findByText("Latest study")).toBeInTheDocument();
+    expect(continued.getByRole("link", { name: "Open workspace" })).toHaveAttribute("href", "/projects/2/workspace");
+    expect(screen.getByRole("heading", { name: "Recent projects" })).toBeInTheDocument();
+  });
+  it("preserves project search and folder filtering", async () => {
+    vi.mocked(api.get).mockImplementation(async url => url === "/api/projects" ? projects : [{ id: 7, name: "Water studies" }]);
+    render(<DashboardPage />);
+    await screen.findByRole("button", { name: "Project options for Old road" });
+    await userEvent.click(screen.getByRole("button", { name: "Water studies" }));
+    expect(screen.queryByRole("button", { name: "Project options for Old road" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Project options for Latest study" })).toBeInTheDocument();
+    await userEvent.type(screen.getByRole("searchbox", { name: "Search projects" }), "missing-project");
+    expect(screen.getByText("No matching projects")).toBeInTheDocument();
+    await userEvent.click(within(screen.getByRole("navigation", { name: "Dashboard navigation" })).getByRole("button", { name: "Overview" }));
+    expect(screen.getByRole("searchbox", { name: "Search projects" })).toHaveValue("");
+    expect(screen.getByRole("button", { name: "Project options for Old road" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Project options for Latest study" })).toBeInTheDocument();
+  });
+  it("reports load errors without showing a false empty state", async () => {
+    vi.mocked(api.get).mockRejectedValue(new Error("Offline")); render(<DashboardPage />);
+    expect(await screen.findByText(/Saved projects are unavailable/)).toBeInTheDocument();
+    expect(screen.queryByText("No projects yet")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "New Project" })).toBeInTheDocument();
   });
 });

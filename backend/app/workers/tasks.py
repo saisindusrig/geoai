@@ -51,3 +51,5 @@ class WorkerSettings:
     functions = [generate_design_task]
     redis_settings = RedisSettings.from_dsn(settings.REDIS_URL)
     job_timeout = settings.GENERATION_JOB_TIMEOUT_SECONDS + 30
+    health_check_key = "geoai:worker:health"
+    health_check_interval = 30

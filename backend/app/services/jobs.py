@@ -74,7 +74,7 @@ def _get_redis():
     try:
         import redis
 
-        client = redis.Redis.from_url(settings.REDIS_URL, socket_connect_timeout=2)
+        client = redis.Redis.from_url(settings.REDIS_URL, socket_connect_timeout=2, socket_timeout=2)
         client.ping()
         _redis = client
         logger.info("Job store: Redis")

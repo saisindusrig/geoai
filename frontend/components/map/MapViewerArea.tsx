@@ -68,6 +68,8 @@ export default function MapViewerArea({
 
   const view: "2d" | "3d" = "3d";
   const pendingGeometry = useProjectStore(state => state.pendingSave);
+  const drawnBoundary = useProjectStore(state => state.drawnBoundary);
+  const drawnAlignment = useProjectStore(state => state.drawnAlignment);
   const [basemap, setBasemap] = useState<MapBasemap>("satellite");
   const [searchDraft, setSearchDraft] = useState<string | null>(null);
   const [searching, setSearching] = useState(false);
@@ -78,7 +80,6 @@ export default function MapViewerArea({
   const [satelliteBrightness, setSatelliteBrightness] = useState(100);
   const [overlayOpacity, setOverlayOpacity] = useState(85);
   const [terrainExaggeration, setTerrainExaggeration] = useState(1);
-  const [fitRequest, setFitRequest] = useState(0);
   const [locationSearchOpen, setLocationSearchOpen] = useState(false);
   const {
     setSiteSuggestions,
@@ -153,17 +154,23 @@ export default function MapViewerArea({
 
   useEffect(() => {
     const onSaveProject = async () => {
-      const { pendingSave } = useProjectStore.getState();
+      const { pendingSave, drawnBoundary, drawnAlignment } = useProjectStore.getState();
+      const boundaryDraft = drawnBoundary ?? (pendingSave?.kind === "boundary" ? pendingSave.geometry : null);
+      const alignmentDraft = drawnAlignment ?? (pendingSave?.kind === "alignment" ? pendingSave.geometry : null);
       try {
-        if (pendingSave) {
-          const body =
-            pendingSave.kind === "boundary"
-              ? { boundary_geojson: pendingSave.geometry }
-              : { alignment_geojson: pendingSave.geometry };
+        if (boundaryDraft || alignmentDraft) {
+          const body = {
+            ...(boundaryDraft ? { boundary_geojson: boundaryDraft } : {}),
+            ...(alignmentDraft ? { alignment_geojson: alignmentDraft } : {}),
+          };
           await api.put(`/api/projects/${project.id}`, body);
-          useProjectStore.getState().setPendingSave(null);
-          if (pendingSave.kind === "boundary") await onBoundaryDrawn?.(pendingSave.geometry);
-          else await onAlignmentDrawn?.(pendingSave.geometry);
+          if (boundaryDraft) await onBoundaryDrawn?.(boundaryDraft);
+          if (alignmentDraft) await onAlignmentDrawn?.(alignmentDraft);
+          useProjectStore.setState(state => ({
+            pendingSave: state.pendingSave === pendingSave ? null : state.pendingSave,
+            drawnBoundary: state.drawnBoundary === drawnBoundary ? null : state.drawnBoundary,
+            drawnAlignment: state.drawnAlignment === drawnAlignment ? null : state.drawnAlignment,
+          }));
           toast("Project geometry saved", { variant: "success" });
           return;
         }
@@ -246,11 +253,9 @@ export default function MapViewerArea({
   };
 
   useEffect(() => {
-    const onFit = () => setFitRequest(value => value + 1);
     const onLocationSearch = () => setLocationSearchOpen(true);
-    window.addEventListener("geoai:fit-project", onFit);
     window.addEventListener("geoai:open-location-search", onLocationSearch);
-    return () => { window.removeEventListener("geoai:fit-project", onFit); window.removeEventListener("geoai:open-location-search", onLocationSearch); };
+    return () => { window.removeEventListener("geoai:open-location-search", onLocationSearch); };
   }, []);
 
   const handleUseMapCenter = async () => {
@@ -500,8 +505,8 @@ export default function MapViewerArea({
             center={mapCenter}
             terrainExaggeration={terrainExaggeration}
             basemap={basemapFor3d(activeBasemap)}
-            boundary={pendingGeometry?.kind === "boundary" ? pendingGeometry.geometry : project.boundary_geojson}
-            alignment={pendingGeometry?.kind === "alignment" ? pendingGeometry.geometry : project.alignment_geojson}
+            boundary={pendingGeometry?.kind === "boundary" ? pendingGeometry.geometry : drawnBoundary ?? project.boundary_geojson}
+            alignment={pendingGeometry?.kind === "alignment" ? pendingGeometry.geometry : drawnAlignment ?? project.alignment_geojson}
             modelUrl={modelUrl ?? null}
             excavationUrl={excavationUrl ?? null}
             useModelLayers={false}
@@ -516,12 +521,11 @@ export default function MapViewerArea({
             modelRevisionId={modelRevisionId}
             selectedComponentIds={selectedComponentIds}
             onSelectComponent={onSelectComponent}
-            fitRequest={fitRequest}
           />
         )}
       </div>
 
-      {view === "3d" && !modelUrl && !excavationUrl && !editableModel && (
+      {view === "3d" && !modelUrl && !excavationUrl && !editableModel && !drawnAlignment && !project.alignment_geojson && (
         <div className="pointer-events-none absolute inset-x-4 bottom-24 z-10 flex justify-center">
           <div className="max-w-md rounded-2xl border border-border bg-[rgba(5,7,10,0.72)] px-4 py-3 text-center shadow-lg backdrop-blur-xl">
             <p className="text-sm font-semibold text-foreground">Draw an alignment or generate a concept</p>

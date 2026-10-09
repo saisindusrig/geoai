@@ -12,7 +12,29 @@ TRANSITIONS = {"DRAFT": {"GENERATING"}, "GENERATING": {"READY_FOR_REVIEW", "HAS_
     "APPROVED": {"BUILT", "STALE"}, "STALE": set(), "REJECTED": set(), "BUILT": set()}
 
 
-def dependencies(db, project_id, context, proposal_asset_ids=()):
+def asset_proposals(db, project_id, payload):
+    """Read compatibility view; legacy immutable payloads and hashes stay intact."""
+    from app.domain.composition import AssetProposal
+    from app.services.assistant.foundation import capability
+    from app.services.assistant.composition import project_composition
+    edges = project_composition(db, project_id)["relationships"]
+    constraints = [r["id"] for r in rows(db, "constraint_datasets", project_id)]
+    result = []
+    for i, sid in enumerate(payload["contract"]["assetSpecificationVersionIds"]):
+        spec = owned_row(db, "asset_specification_versions", project_id, sid)
+        asset = payload["request"]["assets"][i]
+        cap = capability(asset["assetType"])
+        result.append(AssetProposal(asset_request_id=asset.get("assetRequestId") or f"A{i+1:02d}", asset_id=spec["asset_id"],
+            asset_type=asset["assetType"], asset_family=cap.asset_family, display_name=asset["name"],
+            requirements=asset.get("requirements", []), assumptions=payload["request"].get("assumptions", []), constraint_ids=constraints,
+            specification_ref={"id":sid,"version":spec["version"],"contentHash":spec["content_hash"]}, capabilities=cap,
+            warnings=payload["request"].get("warnings", []), blockers=["Specialist generation is unavailable for this concept specification."],
+            dependency_refs=[r["id"] for r in edges if spec["asset_id"] in (r["from_asset_id"],r["to_asset_id"])],
+            generation_eligible=False).model_dump(mode="json", by_alias=True))
+    return result
+
+
+def dependencies(db, project_id, context, proposal_asset_ids=(), include_relationships=True):
     """Scope model comparisons to attached objects; never include viewport/UI state."""
     db.expire_all()
     project = db.get(Project, project_id)
@@ -47,6 +69,10 @@ def dependencies(db, project_id, context, proposal_asset_ids=()):
         ("SURVEY_EVIDENCE", "site-facts", facts), ("MODEL", "model", model_value),
         ("PLACEMENT", "placement", placement_value), ("MEMORY", "memory", sorted(memory, key=lambda m:m["id"])),
         ("CONSTRAINT", "constraints", rows(db, "constraint_datasets", project_id))]
+    if include_relationships:
+        from app.services.assistant.composition import project_composition
+        edges = [r for r in project_composition(db, project_id)["relationships"] if r["from_asset_id"] in assets or r["to_asset_id"] in assets]
+        data.append(("RELATIONSHIP", "composition", sorted(edges, key=lambda r: r["relationship_id"])))
     entries = [{"kind": kind, "id": key, "version": digest(value), "contentHash": digest(value),
         "policy": "MUST_MATCH_CURRENT", "scope": "PROJECT" if not assets else ",".join(sorted(assets))[:128]} for kind,key,value in data]
     return DependencyManifest(schema_version="dependencies/1", entries=entries, hash=digest(entries)).model_dump(mode="json", by_alias=True)
@@ -64,6 +90,8 @@ class ProposalService:
     def create(self, db, project_id, actor_id, request):
         lock_project(db, project_id)
         request_data = request.model_dump(mode="json", by_alias=True)
+        for asset in request_data["assets"]:
+            if asset.get("assetRequestId") is None: asset.pop("assetRequestId", None)
         reject_secrets(request_data)
         vid = identity("proposal-version", project_id, actor_id, request.client_request_id)
         existing = db.execute(sa.select(table("design_proposal_versions")).where(table("design_proposal_versions").c.id == vid)).mappings().first()
@@ -157,6 +185,7 @@ class ProposalService:
         payload = {"contract": contract.model_dump(mode="json", by_alias=True), "context": context, "request": request_data,
             "requestHash": digest(request_data), "preview": request.translation.model_dump(mode="json", by_alias=True) if request.translation else None,
             "previewOnly": True, "validationId": identity(vid, "validation")}
+        payload["assetProposals"] = asset_proposals(db, project_id, payload)
         insert(db, "design_proposal_versions", id=vid, project_id=project_id, proposal_id=pid, version=version,
             site_profile_version_id=context["siteProfileVersionId"], dependency_manifest_id=manifest_id, parent_version_id=request.parent_version_id,
             source_model_revision_id=int(context["modelRevisionId"]) if context.get("modelRevisionId") else None, payload=payload, content_hash=digest(payload))
@@ -189,16 +218,18 @@ class ProposalService:
         state=owned_row(db,"proposal_version_states",project_id,identity(version_id,"state"))
         manifest=owned_row(db,"dependency_manifests",project_id,row["dependency_manifest_id"])["payload"]
         assets=[owned_row(db,"asset_specification_versions",project_id,sid)["asset_id"] for sid in row["payload"]["contract"]["assetSpecificationVersionIds"]]
-        current=dependencies(db,project_id,row["payload"]["context"],assets)["hash"]==manifest["hash"]
+        current=dependencies(db,project_id,row["payload"]["context"],assets,include_relationships=any(e["kind"]=="RELATIONSHIP" for e in manifest["entries"]))["hash"]==manifest["hash"]
         t=table("design_proposal_versions")
         latest=db.execute(sa.select(sa.func.max(t.c.version)).where(t.c.project_id==project_id,t.c.proposal_id==row["proposal_id"])).scalar()
         current=current and row["version"]==latest
         validation=db.query(EngineeringAnalysis).filter_by(project_id=project_id,analysis_type="PROPOSAL_CONCEPT").all()
         validation=next((r.result_json for r in validation if r.result_json.get("id")==row["payload"]["validationId"]),None)
         status="STALE" if not current and state["status"] in {"READY_FOR_REVIEW","APPROVED","HAS_ISSUES"} else state["status"]
+        content = dict(row["payload"])
+        if "assetProposals" not in content: content["assetProposals"] = asset_proposals(db, project_id, content)
         return {"id":row["id"],"proposalId":row["proposal_id"],"version":row["version"],"status":status,"current":current,
             "contentHash":row["content_hash"],"dependencyHash":manifest["hash"],"validationHash":digest(validation),"validation":validation,
-            "content":row["payload"],"alternatives":[{k:r[k] for k in ("id","name","payload")} for r in rows(db,"proposal_alternatives",project_id) if r["proposal_version_id"]==version_id]}
+            "content":content,"alternatives":[{k:r[k] for k in ("id","name","payload")} for r in rows(db,"proposal_alternatives",project_id) if r["proposal_version_id"]==version_id]}
 
     def approve(self,db,project_id,actor_id,command):
         lock_project(db,project_id)

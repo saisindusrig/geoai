@@ -12,23 +12,22 @@ async function dismissNavDrawer(page: import("@playwright/test").Page) {
 }
 
 test.describe("Critical path", () => {
-  test("register → login → create project → workspace → estimate", async ({ page }) => {
+  test("create project → empty workspace → estimate", async ({ page }) => {
     const projectName = `E2E Project ${unique}`;
 
     await page.goto("/dashboard");
     await expect(page).toHaveURL(/\/dashboard/, { timeout: 30_000 });
     await dismissNavDrawer(page);
 
-    await page.goto("/projects/new");
-    await dismissNavDrawer(page);
+    await page.getByRole("button", { name: "New Project", exact: true }).first().click();
     await page.getByLabel(/Project name/i).fill(projectName);
     await expect(page.getByRole("button", { name: /Create Project/i })).toBeVisible({ timeout: 30_000 });
     await page.getByRole("button", { name: /Create Project/i }).click();
 
     await expect(page).toHaveURL(/\/projects\/\d+\/workspace/, { timeout: 30_000 });
-    await expect(page.getByText(/AI Studio|Studio|Workspace/i).first()).toBeVisible({
-      timeout: 30_000,
-    });
+    await expect(page.getByRole("region", { name: "Empty project starter" })).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText("Start anywhere.")).toBeVisible();
+    await page.screenshot({ path: ".cache/empty-project-workspace.png" });
 
     const workspaceUrl = page.url();
     const projectBase = workspaceUrl.replace(/\/workspace.*/, "");

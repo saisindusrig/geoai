@@ -19,6 +19,9 @@ SQLITE_URL = f"sqlite:///{BACKEND_DIR / 'dev.db'}"
 
 def _resolve_engine():
     url = settings.DATABASE_URL
+    production = settings.ENVIRONMENT.lower() in {"production", "prod"}
+    if production and not url.startswith("postgresql"):
+        raise RuntimeError("Production requires configured PostgreSQL; SQLite is local/demo only.")
     if url.startswith("postgresql"):
         try:
             engine = create_engine(url, pool_pre_ping=True, connect_args={"connect_timeout": 3})
@@ -27,6 +30,8 @@ def _resolve_engine():
             logger.info("Connected to PostgreSQL")
             return engine, True
         except Exception as exc:  # pragma: no cover - env dependent
+            if production:
+                raise RuntimeError("Production PostgreSQL is unavailable; startup stopped.") from None
             logger.warning("PostgreSQL unavailable (%s); falling back to SQLite", type(exc).__name__)
     # Honor an explicitly configured SQLite database (including isolated test
     # databases); only PostgreSQL failure falls back to the local demo file.

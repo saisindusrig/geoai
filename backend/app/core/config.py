@@ -40,8 +40,11 @@ class Settings(BaseSettings):
     # Nebius Token Factory - building assistant, concept planner and optional main provider.
     NEBIUS_API_KEY: str = ""
     NEBIUS_BASE_URL: str = ""
-    NEBIUS_TOKEN_FACTORY_BASE_URL: str = "https://api.tokenfactory.us-central1.nebius.com/v1"
+    NEBIUS_TOKEN_FACTORY_BASE_URL: str = "https://api.tokenfactory.nebius.com/v1"
+    NEBIUS_TIMEOUT_SECONDS: float = 25
     NEBIUS_CHAT_MODEL: str = "nvidia/nemotron-3-super-120b-a12b"
+    NEBIUS_FAST_MODEL: str = ""
+    NEBIUS_PRIMARY_MODEL: str = ""
 
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_MODEL: str = "llama3.2"
@@ -49,13 +52,14 @@ class Settings(BaseSettings):
 
     APP_SECRET: str = "dev-secret-change-me"
     AUTH_REQUIRE_JWT: bool = False
+    ACCESS_TOKEN_TTL_SECONDS: int = 3600
     DEV_MOCK_USER_ROLE: str = "admin"
     ENVIRONMENT: str = "development"
     NEXT_PUBLIC_APP_URL: str = "http://localhost:3000"
     # Comma-separated extra browser origins (custom domains, staging URLs).
     CORS_ALLOWED_ORIGINS: str = ""
     # Allow https://*.netlify.app (production + preview deploys).
-    CORS_ALLOW_NETLIFY: bool = True
+    CORS_ALLOW_NETLIFY: bool = False
 
     GENERATION_JOB_TIMEOUT_SECONDS: int = 300
 

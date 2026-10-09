@@ -1,0 +1,185 @@
+[
+  {
+    "id": "fast_explanation_001",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "Why does GeoAI say my site is not engineering ready?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null,
+        "readiness": "PARTIAL"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [],
+      "missing_information": [
+        "geotechnical data",
+        "survey elevation"
+      ]
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "EXPLANATION_REQUEST",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "fast_asset_intent_001",
+    "category": "ASSET_UNDERSTANDING",
+    "userMessage": "I want to add a pedestrian bridge.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        }
+      ],
+      "evaluation_scope": "Identify the single requested asset and capability limits; no proposal or geometry is requested in this intent-recognition case."
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "fast_selection_001",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "What objects do I currently have selected?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P03",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A",
+            "modelRevisionId": "revision-A"
+          },
+          {
+            "objectId": "P04",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A",
+            "modelRevisionId": "revision-A"
+          },
+          {
+            "objectId": "P05",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A",
+            "modelRevisionId": "revision-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen selection; do not invent additional objects."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "QUESTION",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_selected_objects"
+      ],
+      "allowed_tools": [
+        "get_selected_objects"
+      ],
+      "missing_data": [],
+      "facts": {
+        "selected_object_ids": "P03,P04,P05",
+        "selected_object_count": 3
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  }
+]

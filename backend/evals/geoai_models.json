@@ -1,0 +1,69 @@
+{
+  "version": "geoai-eval/1",
+  "max_output_tokens": 3500,
+  "timeout": 25.0,
+  "max_rounds": 3,
+  "repairs": 1,
+  "candidates": [
+    {
+      "key": "qwen",
+      "display_name": "Qwen3.5-397B-A17B",
+      "model_id": "Qwen/Qwen3.5-397B-A17B",
+      "verified": true,
+      "availability": "AVAILABLE",
+      "availability_note": "Exact requested model name verified by provider catalogue (separator/case normalization only).",
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_source": null
+    },
+    {
+      "key": "glm",
+      "display_name": "GLM-5.3",
+      "model_id": "zai-org/GLM-5.3",
+      "verified": true,
+      "availability": "AVAILABLE",
+      "availability_note": "Exact requested model name verified by provider catalogue (separator/case normalization only).",
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_source": null
+    },
+    {
+      "key": "nemotron",
+      "display_name": "Nemotron 3.5 Lightning",
+      "model_id": "nvidia/Nemotron-3_5-Lightning",
+      "verified": true,
+      "availability": "AVAILABLE",
+      "availability_note": "Exact requested model name verified by provider catalogue (separator/case normalization only).",
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_source": null
+    },
+    {
+      "key": "kimi",
+      "display_name": "Kimi-K3",
+      "model_id": "moonshotai/Kimi-K3",
+      "verified": true,
+      "availability": "AVAILABLE",
+      "availability_note": "Exact requested model name verified by provider catalogue (separator/case normalization only).",
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_source": null
+    },
+    {
+      "key": "cheap",
+      "display_name": "Qwen3-30B-A3B-Instruct-2507",
+      "model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "verified": true,
+      "availability": "AVAILABLE",
+      "availability_note": "Exact requested model name verified by provider catalogue (separator/case normalization only).",
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_source": null
+    }
+  ],
+  "catalogue_verification": {
+    "status": "VERIFIED_CATALOGUE",
+    "checked_at": "2026-10-08T16:41:16.805346+00:00",
+    "httpStatus": 200
+  }
+}

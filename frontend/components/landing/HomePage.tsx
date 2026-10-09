@@ -2,17 +2,16 @@
 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { ArrowDown, ArrowUpRight, Check, Eye, Layers, Pause, Play, Settings2 } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { appEntryPath } from "@/lib/auth-routes";
 import type { TerrainState } from "./EngineeringTerrain";
 import TechnicalOverview from "./TechnicalOverview";
 import TransformationStory, { SiteProfile } from "./TransformationStory";
-import { approachEarthwork } from "./engineeringSite";
 import "./engineering-home.css";
 
 const Terrain = dynamic(() => import("./EngineeringTerrain"), { ssr:false, loading:()=> <div className="geo-loading">INITIALIZING TERRAIN <span/></div> });
-const chapterNames = ["Earth", "Map", "Topography", "Alignment", "Structure", "Systems", "Data", "Workspace", "Intelligence", "Verification", "Transformation", "Questions", "Your next project"];
+const chapterNames = ["Site", "Workflow", "Infrastructure", "Design basis", "Your next project"];
 const systems = [
   { name:"Road", code:"RD", title:"Find the natural line.", description:"A corridor that follows the land. Explore grades, curves and preliminary cut-and-fill relationships.", length:"340 m", slope:"−1.24–2.84%", extra:"Continuous vertical profile" },
   { name:"Bridge", code:"BR", title:"Connect across the valley.", description:"A conceptual deck and pier system spans the crossing. Inspect its relationship to the terrain below.", length:"200 m", slope:"2.0%", extra:"4 pier bents" },
@@ -33,9 +32,6 @@ const faqs = [
 function Brand() { return <span className="geo-brand"><svg width="27" height="29" viewBox="0 0 27 29" fill="none" aria-hidden="true"><path d="M2 23 13.5 3 25 23H2Z M8 23l5.5-10L19 23 M2 23l11.5 4L25 23" stroke="currentColor" strokeWidth="1.3"/></svg>GeoAI<span className="geo-brand-dot"/></span>; }
 function Eyebrow({ n, children }: { n: string; children: React.ReactNode }) { return <p className="geo-eyebrow"><span>{n}</span><i/>{children}</p>; }
 function Launch({ small = false, label = "Launch GeoAI" }: { small?: boolean; label?: string }) { return <Link href={appEntryPath("/projects/new")} className={`geo-launch ${small ? "geo-launch-small" : ""}`}>{label} <ArrowUpRight size={small?16:20}/></Link>; }
-function Profile({ detailed = false }: { detailed?: boolean }) { return <SiteProfile detailed={detailed}/>; }
-const earthwork = approachEarthwork();
-
 export default function HomePage() {
   const root = useRef<HTMLDivElement>(null);
   const pointer = useRef({x:0,y:0});
@@ -44,14 +40,11 @@ export default function HomePage() {
   const [pageHidden, setPageHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [chapter, setChapter] = useState({ stage:0, progress:0, storytelling:false });
-  const [system,setSystem] = useState(1);
-  const [structuralView,setStructuralView] = useState(false);
+  const [system,setSystem] = useState(3);
+  const [structuralView,setStructuralView] = useState(true);
 
   const [paused,setPaused] = useState(false);
   const [reduced,setReduced] = useState(false);
-  const [topDown,setTopDown] = useState(false);
-  const [layers,setLayers] = useState({terrain:true,structure:true,alignment:true,hydrology:true});
-  const [settings,setSettings] = useState(false);
   useEffect(()=> {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setReduced(media.matches); sync(); media.addEventListener("change", sync);
@@ -63,6 +56,7 @@ export default function HomePage() {
     document.addEventListener("visibilitychange", syncVisibility);
     const container = root.current; if (!container) return;
     let frame = 0;
+    let previousStage = -1;
     let sections: HTMLElement[] = [];
     const cacheSections = () => { sections = Array.from(container.querySelectorAll<HTMLElement>("[data-chapter]")).filter(s=>s.offsetHeight>0); };
     const update = () => {
@@ -75,6 +69,8 @@ export default function HomePage() {
       const rect=current.getBoundingClientRect();
       const position=storytelling ? {stage:2,progress:1} : {stage:Number(current.dataset.chapter),progress:Math.max(0,Math.min(1,(container.clientHeight*.5-(rect.top-y))/current.offsetHeight))};
       const {stage}=position, progress=Math.round(position.progress*1000)/1000;
+      if (stage === 5 && previousStage !== 5) { setSystem(3); setStructuralView(true); }
+      previousStage = stage;
       setChapter(old=>old.stage===stage && old.progress===progress && old.storytelling===storytelling ? old : {stage,progress,storytelling});
     };
     const scroll = () => { if (!frame) frame = requestAnimationFrame(update); };
@@ -83,10 +79,12 @@ export default function HomePage() {
     container.addEventListener("scroll",scroll,{passive:true}); window.addEventListener("resize",resize); update();
     return ()=> {mobile.removeEventListener("change",syncMobile); document.removeEventListener("visibilitychange",syncVisibility); media.removeEventListener("change",sync); container.removeEventListener("scroll",scroll); window.removeEventListener("resize",resize); cancelAnimationFrame(frame);};
   },[]);
-  const sceneState: TerrainState = {...chapter,stage:chapter.storytelling?[0,2,3,4,6,12][workflow]:chapter.stage,progress:chapter.storytelling?1:chapter.progress,storytelling:false,system,structuralView:chapter.stage===5&&structuralView,topDown:chapter.stage===7&&topDown,terrain:chapter.stage!==7||layers.terrain,structure:chapter.storytelling?workflow>=3:chapter.stage!==7||layers.structure,alignment:chapter.storytelling?workflow>=2:chapter.stage!==7||layers.alignment,hydrology:chapter.stage!==7||layers.hydrology,paused:paused||compact||pageHidden||(!chapter.storytelling&&[8,9,10,11].includes(chapter.stage)),reduced};
+  const technicalScene = !chapter.storytelling && chapter.stage === 9;
+  const sceneState: TerrainState = {...chapter,stage:chapter.storytelling?[0,2,3,4,6,12][workflow]:technicalScene?5:chapter.stage,progress:chapter.storytelling?1:chapter.progress,storytelling:false,system:technicalScene?0:system,structuralView:technicalScene||(chapter.stage===5&&structuralView),topDown:false,terrain:true,structure:chapter.storytelling?workflow>=3:true,alignment:chapter.storytelling?workflow>=2:true,hydrology:true,paused:paused||compact||pageHidden||(!chapter.storytelling&&[8,10,11].includes(chapter.stage)),reduced};
   const selected = systems[system];
+  const chapterIndex = chapter.storytelling ? 1 : ({ 0: 0, 5: 2, 9: 3, 12: 4 } as Record<number, number>)[chapter.stage] ?? 0;
   return <div ref={root} className="geo-home" data-motion-paused={paused||reduced} data-active-scene={chapter.stage} onPointerMove={e=>{pointer.current={x:e.clientX/window.innerWidth-.5,y:e.clientY/window.innerHeight-.5};}}>
-    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="GeoAI home"><Brand/></a><nav aria-label="Homepage"><a href="#design-basis">Product</a><a href="#projects">Systems</a><a href="#how-it-works">How it works</a><a href="#faq">Technical clarity</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
+    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="GeoAI home"><Brand/></a><nav aria-label="Homepage"><a href="#how-it-works">Workflow</a><a href="#projects">Infrastructure</a><a href="#design-basis">Design basis</a><a href="#faq">Technical details</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
     <div className="geo-journey">
       <div className="geo-persistent-scene" aria-hidden="true"><Terrain state={sceneState} pointer={pointer}/><div className={`geo-scene-shade ${chapter.stage===5 || chapter.stage===7 ? "geo-shade-light" : ""}`}/><div className="geo-scene-grain"/></div>
 
@@ -103,14 +101,13 @@ export default function HomePage() {
       <section id="projects" data-chapter="5" className="geo-chapter geo-explorer"><div className="geo-section-top"><Eyebrow n="02">INFRASTRUCTURE EXPLORER</Eyebrow><span>ONE SITE. FOUR WAYS FORWARD.</span></div><h2>ONE TERRAIN.<br/>MULTIPLE SYSTEMS.</h2><div className="geo-structural-view"><span>INSPECT THE MODEL</span><div><button aria-pressed={!structuralView} onClick={()=>setStructuralView(false)}>Site view</button><button aria-pressed={structuralView} onClick={()=>setStructuralView(true)}>Structural view ↗</button></div><p>{["SHOULDERS / BARRIERS / DRAINAGE","GIRDERS / CROSS-BRACING / FOUNDATIONS","JOINTS / SADDLES / VALVE STATIONS","SPILLWAYS / CREST / DOWNSTREAM FACE"][system]}</p></div><div className="geo-system-tabs" role="tablist" aria-label="Infrastructure system">{systems.map((s,i)=><button key={s.name} role="tab" id={`system-${i}`} aria-controls="system-panel" aria-selected={i===system} tabIndex={i===system?0:-1} onClick={()=>setSystem(i)} onKeyDown={e=>{if(["ArrowRight","ArrowLeft","Home","End"].includes(e.key)){e.preventDefault();const next=e.key==="Home"?0:e.key==="End"?3:(i+(e.key==="ArrowRight"?1:3))%4;setSystem(next);document.getElementById(`system-${next}`)?.focus();}}}><small>0{i+1} / {s.code}</small>{s.name}<ArrowUpRight size={21}/></button>)}</div><div className="geo-system-panel" id="system-panel" role="tabpanel" aria-labelledby={`system-${system}`}><h3>{selected.title}</h3><p>{selected.description}</p><dl className="geo-small-data"><div><dt>Alignment</dt><dd>{selected.length}</dd></div><div><dt>Design basis</dt><dd>Illustrative</dd></div><div><dt>Grade</dt><dd>{selected.slope}</dd></div></dl><span className="geo-generated"><Check size={13}/> CONCEPT GENERATED</span><small>{selected.extra} · Illustrative values</small></div><div className="geo-explorer-profile">{system===3?<><span className="geo-tag">UPSTREAM WATER LEVEL / DEMO</span><strong>RL 619.5 m</strong><p>Tapered section · valley-side contact<br/>Hydraulics and stability not verified.</p></>:<SiteProfile kind={system===0?"road":system===2?"pipeline":"bridge"}/>}</div></section>
 
 
-      <section id="platform" data-chapter="7" className="geo-chapter geo-workspace-section"><div className="geo-section-top"><Eyebrow n="03">THE ENGINEERING WORKSPACE</Eyebrow><span>FROM EXPLORATION TO INSPECTION</span></div><h2>THE CONCEPT IS<br/><em>JUST THE BEGINNING.</em></h2><div className="geo-workspace"><div className="geo-workspace-bar"><Brand/><span className="geo-project-title">Valley crossing / Concept A—01 <small>DEMONSTRATION</small></span><div className="geo-view-toggle"><button onClick={()=>setTopDown(true)} aria-pressed={topDown}>2D</button><button onClick={()=>setTopDown(false)} aria-pressed={!topDown}>3D</button></div><button aria-label="Preview display settings" aria-expanded={settings} onClick={()=>setSettings(!settings)}><Settings2 size={16}/></button>{settings&&<div className="geo-preview-settings"><strong>Preview display</strong><button onClick={()=>setPaused(!paused)}>{paused?"Resume":"Pause"} camera movement</button><p>This is an interactive product illustration.</p></div>}</div><div className="geo-workspace-body"><aside className="geo-workspace-layers"><h3><Layers size={13}/> PROJECT LAYERS</h3>{([["Terrain","terrain"],["Alignment","alignment"],["Road & bridge","structure"],["Hydrology","hydrology"]] as const).map(([name,key])=><button key={key} aria-pressed={layers[key]} onClick={()=>setLayers(old=>({...old,[key]:!old[key]}))}><span className="geo-layer-swatch"/><span>{name}</span><Eye size={12}/></button>)}<div className="geo-empty-layers"><span>Restrictions <small>NOT LOADED</small></span><span>Utilities <small>NOT LOADED</small></span></div><p>Toggle each loaded layer to inspect the crossing.</p></aside><div className="geo-workspace-view"><span className="geo-tag">{topDown?"PLAN VIEW":"PERSPECTIVE"} / CONCEPT A—01</span><div className="geo-workspace-callouts"><span>01 / SELECT + REFINE</span><span>02 / CHECK TERRAIN RELATIONSHIPS</span><span>03 / COMPARE REVISIONS</span></div><span className="geo-view-axis">Y ↑<br/>└ X →</span></div><aside className="geo-workspace-data"><h3>ENGINEERING DATA</h3><p className="geo-source-note">TERRAIN SOURCE<br/>Synthetic demonstration site</p>{[["Length","200 m"],["Elevation Δ","+4 m"],["Slope","2.0%"],["Deck area","1,920 m²"],["Approach cut",earthwork.cut.toLocaleString()+" m³"],["Approach fill",earthwork.fill.toLocaleString()+" m³"],["Pier bents","4"],["Material estimate","Preliminary"]].map(([k,v])=><div key={k}><span>{k}</span><strong>{v}</strong></div>)}<span className="geo-tag">PRELIMINARY / DEMO</span></aside></div><div className="geo-workspace-bottom"><span>LONGITUDINAL SECTION<br/><small>Concept alignment · A—A</small></span><Profile/><Link href={appEntryPath("/projects/new")}>Open GeoAI <ArrowUpRight size={15}/></Link></div></div></section>
-
       <TechnicalOverview faqs={faqs}/>
 
       <section data-chapter="12" className="geo-chapter geo-final"><Eyebrow n="05">YOUR NEXT PROJECT STARTS HERE</Eyebrow><h2>START WITH<br/><em>THE SITE.</em></h2><p>Create an infrastructure concept against real terrain.</p><Launch/><span className="geo-final-caption">MAPS · TERRAIN · AI · 3D · ENGINEERING QUANTITIES</span>{chapter.stage===12&&<div className="geo-survey-label geo-final-label"><span>CONCEPT A—01 / COMPLETE</span><strong>READY FOR EXPLORATION ↗</strong></div>}</section>
       <footer className="geo-footer geo-opaque"><div><a href="#earth" aria-label="Back to GeoAI home"><Brand/></a><p>Infrastructure concept planning.</p></div><nav aria-label="Footer"><a href="#design-basis">Product</a><a href="#how-it-works">Workflow</a><a href="#faq">Technical clarity</a></nav><div className="geo-footer-bottom"><span>© {new Date().getFullYear()} GeoAI</span><span>Concept outputs require professional verification before construction.</span><a href="#earth">BACK TO TOP ↑</a></div></footer>
     </div>
-    <div className="geo-chapter-indicator"><span>{String(chapter.stage+1).padStart(2,"0")}</span><i/><span>{chapterNames[chapter.stage]}</span></div>
+    <div className="geo-chapter-indicator"><span>{String(chapterIndex+1).padStart(2,"0")}</span><i/><span>{chapterNames[chapterIndex]}</span></div>
     <button className="geo-motion-toggle" onClick={()=>setPaused(!paused)} aria-label={paused?"Resume ambient motion":"Pause ambient motion"}>{paused?<Play size={12}/>:<Pause size={12}/>}<span>{paused?"MOTION PAUSED":"LIVE PERSPECTIVE"}</span></button>
   </div>;
 }
+

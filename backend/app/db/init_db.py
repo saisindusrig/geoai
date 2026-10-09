@@ -128,6 +128,12 @@ def _seed_dev_user(db: Session) -> None:
 
 
 def init_db() -> None:
+    if settings.ENVIRONMENT.lower() in {"production", "prod"}:
+        from app.core.infrastructure import database_status
+        status = database_status()
+        if status["status"] != "AVAILABLE" or status["schema"] != "CURRENT" or not status["postgis"]:
+            raise RuntimeError("Production database/PostGIS/schema is not ready; run audited Alembic migrations before startup.")
+        return
     if IS_POSTGRES:
         # Create newly introduced tables before adding a foreign-key column on
         # an already-existing projects table.

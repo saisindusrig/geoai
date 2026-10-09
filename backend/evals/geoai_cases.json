@@ -1,0 +1,6492 @@
+[
+  {
+    "id": "simple_conversation_001",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "What does site readiness mean?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "QUESTION",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "simple_conversation_002",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "Why is terrain unavailable?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {
+      "get_active_terrain": {
+        "status": "OK",
+        "data": {
+          "status": "UNKNOWN",
+          "facts": {}
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "QUESTION",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_active_terrain"
+      ],
+      "allowed_tools": [
+        "get_active_terrain"
+      ],
+      "missing_data": [
+        "terrain"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "simple_conversation_003",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "What is this selected object?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P03"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P03",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "QUESTION",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_selected_objects"
+      ],
+      "allowed_tools": [
+        "get_selected_objects"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [
+        "P03"
+      ],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "simple_conversation_004",
+    "category": "SIMPLE_CONVERSATION",
+    "userMessage": "Explain the difference between a concept and engineering approval.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "QUESTION",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "asset_understanding_001",
+    "category": "ASSET_UNDERSTANDING",
+    "userMessage": "I want a flyover here.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "requirements": [
+        "Concept only; no generation requested."
+      ],
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "asset_understanding_002",
+    "category": "ASSET_UNDERSTANDING",
+    "userMessage": "Create two warehouses with parking.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "requirements": [
+        "Concept only; no generation requested."
+      ],
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_lot",
+          "family": "SITE"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "plot_development",
+          "family": "SITE"
+        },
+        {
+          "id": "land_development",
+          "family": "SITE"
+        },
+        {
+          "id": "township_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "industrial_park",
+          "family": "SITE"
+        },
+        {
+          "id": "campus_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_site_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "laydown_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "setback_envelope",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "survey_boundary",
+          "family": "SITE"
+        },
+        {
+          "id": "property_boundary_reference",
+          "family": "SITE"
+        },
+        {
+          "id": "factory_site",
+          "family": "SITE"
+        },
+        {
+          "id": "manufacturing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "processing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "refinery_site",
+          "family": "SITE"
+        },
+        {
+          "id": "tank_farm",
+          "family": "SITE"
+        },
+        {
+          "id": "storage_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "logistics_hub",
+          "family": "SITE"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "mining_facility_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "crusher_processing_area",
+          "family": "SITE"
+        },
+        {
+          "id": "landfill",
+          "family": "SITE"
+        },
+        {
+          "id": "waste_processing_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "recycling_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "wetland_restoration_area",
+          "family": "SITE"
+        },
+        {
+          "id": "erosion_control_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "green_buffer",
+          "family": "SITE"
+        },
+        {
+          "id": "environmental_protection_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "SITE"
+      ],
+      "asset_counts": {
+        "BUILDING": 2,
+        "SITE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "asset_understanding_003",
+    "category": "ASSET_UNDERSTANDING",
+    "userMessage": "Add a pedestrian bridge.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "requirements": [
+        "Concept only; no generation requested."
+      ],
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "asset_understanding_004",
+    "category": "ASSET_UNDERSTANDING",
+    "userMessage": "Plan a stormwater drain along this boundary.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "requirements": [
+        "Concept only; no generation requested."
+      ],
+      "asset_catalogue": [
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "DRAINAGE"
+      ],
+      "asset_counts": {
+        "DRAINAGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "multi_asset_001",
+    "category": "MULTI_ASSET",
+    "userMessage": "I want two warehouses, an access road, parking, stormwater drainage and a water tank. Connect both warehouses to the access road, route drainage away from parking, and supply both warehouses from the water tank.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_lot",
+          "family": "SITE"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "canal",
+          "family": "WATER"
+        },
+        {
+          "id": "irrigation_canal",
+          "family": "WATER"
+        },
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "aqueduct",
+          "family": "WATER"
+        },
+        {
+          "id": "river_training_works",
+          "family": "WATER"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "elevated_water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "ground_reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "water_treatment_plant",
+          "family": "WATER"
+        },
+        {
+          "id": "wastewater",
+          "family": "WATER"
+        },
+        {
+          "id": "pumping_station",
+          "family": "WATER"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "intake_structure",
+          "family": "WATER"
+        },
+        {
+          "id": "plot_development",
+          "family": "SITE"
+        },
+        {
+          "id": "land_development",
+          "family": "SITE"
+        },
+        {
+          "id": "township_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "industrial_park",
+          "family": "SITE"
+        },
+        {
+          "id": "campus_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_site_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "laydown_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "setback_envelope",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "survey_boundary",
+          "family": "SITE"
+        },
+        {
+          "id": "property_boundary_reference",
+          "family": "SITE"
+        },
+        {
+          "id": "factory_site",
+          "family": "SITE"
+        },
+        {
+          "id": "manufacturing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "processing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "refinery_site",
+          "family": "SITE"
+        },
+        {
+          "id": "tank_farm",
+          "family": "SITE"
+        },
+        {
+          "id": "storage_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "logistics_hub",
+          "family": "SITE"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "mining_facility_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "crusher_processing_area",
+          "family": "SITE"
+        },
+        {
+          "id": "landfill",
+          "family": "SITE"
+        },
+        {
+          "id": "waste_processing_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "recycling_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "wetland_restoration_area",
+          "family": "SITE"
+        },
+        {
+          "id": "erosion_control_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "green_buffer",
+          "family": "SITE"
+        },
+        {
+          "id": "environmental_protection_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "irrigation_network",
+          "family": "WATER"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "farm_reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "composition_ids": [
+        "warehouse-A",
+        "warehouse-B",
+        "road-A",
+        "parking-A",
+        "drain-A",
+        "tank-A"
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "ROAD",
+        "SITE",
+        "DRAINAGE",
+        "WATER"
+      ],
+      "asset_counts": {
+        "BUILDING": 2,
+        "ROAD": 1,
+        "SITE": 1,
+        "DRAINAGE": 1,
+        "WATER": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "warehouse-A:CONNECTS_TO:road-A",
+        "warehouse-B:CONNECTS_TO:road-A",
+        "drain-A:AVOIDS:parking-A",
+        "tank-A:SUPPLIES:warehouse-A",
+        "tank-A:SUPPLIES:warehouse-B"
+      ]
+    }
+  },
+  {
+    "id": "multi_asset_002",
+    "category": "MULTI_ASSET",
+    "userMessage": "Plan a flyover with two approach roads and drainage.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE",
+        "ROAD",
+        "DRAINAGE"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1,
+        "ROAD": 2,
+        "DRAINAGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "multi_asset_003",
+    "category": "MULTI_ASSET",
+    "userMessage": "Plan three houses and one shared access road.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "ROAD"
+      ],
+      "asset_counts": {
+        "BUILDING": 3,
+        "ROAD": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "multi_asset_004",
+    "category": "MULTI_ASSET",
+    "userMessage": "Create a canal, two culverts, and a service road.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "saved-area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "canal",
+          "family": "WATER"
+        },
+        {
+          "id": "irrigation_canal",
+          "family": "WATER"
+        },
+        {
+          "id": "aqueduct",
+          "family": "WATER"
+        },
+        {
+          "id": "river_training_works",
+          "family": "WATER"
+        },
+        {
+          "id": "culvert",
+          "family": "CULVERT"
+        },
+        {
+          "id": "box_culvert",
+          "family": "CULVERT"
+        },
+        {
+          "id": "pipe_culvert",
+          "family": "CULVERT"
+        },
+        {
+          "id": "cross_drain",
+          "family": "CULVERT"
+        },
+        {
+          "id": "water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "elevated_water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "ground_reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "water_treatment_plant",
+          "family": "WATER"
+        },
+        {
+          "id": "wastewater",
+          "family": "WATER"
+        },
+        {
+          "id": "pumping_station",
+          "family": "WATER"
+        },
+        {
+          "id": "intake_structure",
+          "family": "WATER"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "irrigation_network",
+          "family": "WATER"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "farm_reservoir",
+          "family": "WATER"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "WATER",
+        "CULVERT",
+        "ROAD"
+      ],
+      "asset_counts": {
+        "WATER": 1,
+        "CULVERT": 2,
+        "ROAD": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "ambiguous_001",
+    "category": "AMBIGUOUS",
+    "userMessage": "Build something across this road.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "ambiguous_002",
+    "category": "AMBIGUOUS",
+    "userMessage": "Make this better.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "ambiguous_003",
+    "category": "AMBIGUOUS",
+    "userMessage": "Put it over there.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "ambiguous_004",
+    "category": "AMBIGUOUS",
+    "userMessage": "Add a structure.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {},
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [],
+      "allowed_tools": [],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "site_aware_001",
+    "category": "SITE_AWARE",
+    "userMessage": "Put a road through this site but avoid steep terrain.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": 112.4,
+        "slope_percent": 18.0
+      },
+      "site": {
+        "selection": "area-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "constraints": [
+        "east corridor steep; west corridor surveyed gentle"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_active_terrain": {
+        "status": "OK",
+        "data": {
+          "status": "AVAILABLE",
+          "facts": {
+            "elevation_m": 112.4,
+            "slope_percent": 18.0
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "sample_terrain": {
+        "status": "OK",
+        "data": [
+          {
+            "id": "sample-A",
+            "elevation": {
+              "value": 112.4,
+              "unit": "m",
+              "status": "KNOWN"
+            }
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_constraints": {
+        "status": "OK",
+        "data": {
+          "facts": {
+            "elevation_m": 112.4,
+            "slope_percent": 18.0
+          },
+          "constraints": [
+            "east corridor steep; west corridor surveyed gentle"
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "ROAD"
+      ],
+      "asset_counts": {
+        "ROAD": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "sample_terrain",
+        "get_constraints",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_active_terrain",
+        "sample_terrain",
+        "get_constraints",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {
+        "elevation_m": 112.4,
+        "slope_percent": 18.0
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "site_aware_002",
+    "category": "SITE_AWARE",
+    "userMessage": "Can we move the bridge east?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "bridge-A"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "constraints": [
+        "east edge protected wetland"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        }
+      ],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_constraints": {
+        "status": "OK",
+        "data": {
+          "facts": {},
+          "constraints": [
+            "east edge protected wetland"
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [
+        "BRIDGE"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1
+      },
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_constraints"
+      ],
+      "allowed_tools": [
+        "get_constraints"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "site_aware_003",
+    "category": "SITE_AWARE",
+    "userMessage": "What is the surveyed elevation at this point?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": 42.5
+      },
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {
+      "sample_terrain": {
+        "status": "OK",
+        "data": [
+          {
+            "id": "sample-A",
+            "elevation": {
+              "value": 42.5,
+              "unit": "m",
+              "status": "KNOWN"
+            }
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "SITE_QUERY",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "sample_terrain"
+      ],
+      "allowed_tools": [
+        "sample_terrain"
+      ],
+      "missing_data": [],
+      "facts": {
+        "elevation_m": 42.5
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "site_aware_004",
+    "category": "SITE_AWARE",
+    "userMessage": "Which recorded site restrictions affect access?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "constraints": [
+        "north access easement",
+        "south utility corridor"
+      ],
+      "asset_catalogue": []
+    },
+    "fixtures": {
+      "get_constraints": {
+        "status": "OK",
+        "data": {
+          "facts": {},
+          "constraints": [
+            "north access easement",
+            "south utility corridor"
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "SITE_QUERY",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_constraints"
+      ],
+      "allowed_tools": [
+        "get_constraints"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unknown_data_001",
+    "category": "UNKNOWN_DATA",
+    "userMessage": "Design the foundations.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_site_profile": {
+        "status": "OK",
+        "data": {
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_site_readiness": {
+        "status": "OK",
+        "data": {
+          "status": "PARTIAL",
+          "missingInformation": [
+            "soil_bearing_capacity",
+            "survey_elevation"
+          ],
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_site_readiness"
+      ],
+      "allowed_tools": [
+        "get_site_profile",
+        "get_site_readiness"
+      ],
+      "missing_data": [
+        "soil_bearing_capacity",
+        "survey_elevation"
+      ],
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unknown_data_002",
+    "category": "UNKNOWN_DATA",
+    "userMessage": "What is the elevation when no survey exists?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": []
+    },
+    "fixtures": {
+      "get_site_profile": {
+        "status": "OK",
+        "data": {
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_site_readiness": {
+        "status": "OK",
+        "data": {
+          "status": "PARTIAL",
+          "missingInformation": [
+            "survey_elevation"
+          ],
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "SITE_QUERY",
+      "assets": [],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_site_readiness"
+      ],
+      "allowed_tools": [
+        "get_site_profile",
+        "get_site_readiness"
+      ],
+      "missing_data": [
+        "survey_elevation"
+      ],
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unknown_data_003",
+    "category": "UNKNOWN_DATA",
+    "userMessage": "Size the retaining wall using the unknown soil.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "retaining_wall",
+          "family": "RETAINING"
+        },
+        {
+          "id": "gravity_retaining_wall",
+          "family": "RETAINING"
+        },
+        {
+          "id": "cantilever_retaining_wall",
+          "family": "RETAINING"
+        },
+        {
+          "id": "reinforced_earth_wall",
+          "family": "RETAINING"
+        },
+        {
+          "id": "noise_barrier",
+          "family": "RETAINING"
+        },
+        {
+          "id": "boundary_wall",
+          "family": "RETAINING"
+        },
+        {
+          "id": "flood_wall",
+          "family": "RETAINING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_site_profile": {
+        "status": "OK",
+        "data": {
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_site_readiness": {
+        "status": "OK",
+        "data": {
+          "status": "PARTIAL",
+          "missingInformation": [
+            "soil_bearing_capacity"
+          ],
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "RETAINING"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_site_readiness"
+      ],
+      "allowed_tools": [
+        "get_site_profile",
+        "get_site_readiness"
+      ],
+      "missing_data": [
+        "soil_bearing_capacity"
+      ],
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unknown_data_004",
+    "category": "UNKNOWN_DATA",
+    "userMessage": "Can you calculate drainage without rainfall data?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_site_profile": {
+        "status": "OK",
+        "data": {
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_site_readiness": {
+        "status": "OK",
+        "data": {
+          "status": "PARTIAL",
+          "missingInformation": [
+            "rainfall"
+          ],
+          "facts": {
+            "elevation_m": null,
+            "soil_bearing_capacity_kpa": null
+          }
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "ANALYSIS_REQUEST",
+      "assets": [
+        "DRAINAGE"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_site_readiness"
+      ],
+      "allowed_tools": [
+        "get_site_profile",
+        "get_site_readiness"
+      ],
+      "missing_data": [
+        "rainfall"
+      ],
+      "facts": {
+        "elevation_m": null,
+        "soil_bearing_capacity_kpa": null
+      },
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "capability_limits_001",
+    "category": "CAPABILITY_LIMITS",
+    "userMessage": "Calculate whether this bridge is structurally safe.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_checks": {
+        "status": "OK",
+        "data": {
+          "structural_analysis": "UNAVAILABLE",
+          "certification": null
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "ANALYSIS_REQUEST",
+      "assets": [
+        "BRIDGE"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_checks"
+      ],
+      "allowed_tools": [
+        "get_checks"
+      ],
+      "missing_data": [
+        "validated_structural_analysis"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "capability_limits_002",
+    "category": "CAPABILITY_LIMITS",
+    "userMessage": "Certify that these foundations can support the building.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_checks": {
+        "status": "OK",
+        "data": {
+          "structural_analysis": "UNAVAILABLE",
+          "certification": null
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "ANALYSIS_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_checks"
+      ],
+      "allowed_tools": [
+        "get_checks"
+      ],
+      "missing_data": [
+        "validated_structural_analysis"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "capability_limits_003",
+    "category": "CAPABILITY_LIMITS",
+    "userMessage": "Approve this dam against flood failure.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "dam",
+          "family": "DAM"
+        },
+        {
+          "id": "gravity_dam",
+          "family": "DAM"
+        },
+        {
+          "id": "arch_dam",
+          "family": "DAM"
+        },
+        {
+          "id": "embankment_dam",
+          "family": "DAM"
+        },
+        {
+          "id": "rockfill_dam",
+          "family": "DAM"
+        },
+        {
+          "id": "spillway",
+          "family": "DAM"
+        },
+        {
+          "id": "weir_barrage",
+          "family": "DAM"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_checks": {
+        "status": "OK",
+        "data": {
+          "structural_analysis": "UNAVAILABLE",
+          "certification": null
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "ANALYSIS_REQUEST",
+      "assets": [
+        "DAM"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_checks"
+      ],
+      "allowed_tools": [
+        "get_checks"
+      ],
+      "missing_data": [
+        "validated_structural_analysis"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "capability_limits_004",
+    "category": "CAPABILITY_LIMITS",
+    "userMessage": "Can the generator produce a detailed steel connection analysis?",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_checks": {
+        "status": "OK",
+        "data": {
+          "structural_analysis": "UNAVAILABLE",
+          "certification": null
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "ANALYSIS_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {},
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "READ_ONLY",
+      "required_tools": [
+        "get_checks"
+      ],
+      "allowed_tools": [
+        "get_checks"
+      ],
+      "missing_data": [
+        "validated_structural_analysis"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "model_editing_001",
+    "category": "MODEL_EDITING",
+    "userMessage": "Move these 500 mm east.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "axis_convention": "LOCAL x east, y north, z up; metre units",
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P03",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          },
+          {
+            "objectId": "P04",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          },
+          {
+            "objectId": "P05",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_model_revision": {
+        "status": "OK",
+        "data": {
+          "id": "revision-A",
+          "components": [
+            {
+              "id": "P03",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "P04",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "P05",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "BUILDING": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "delta_m": [
+        0.5,
+        0,
+        0
+      ],
+      "relationships": []
+    }
+  },
+  {
+    "id": "model_editing_002",
+    "category": "MODEL_EDITING",
+    "userMessage": "Move P03 2 m north.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P03"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "axis_convention": "LOCAL x east, y north, z up; metre units",
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P03",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_model_revision": {
+        "status": "OK",
+        "data": {
+          "id": "revision-A",
+          "components": [
+            {
+              "id": "P03",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "BUILDING": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [
+        "P03"
+      ],
+      "delta_m": [
+        0,
+        2,
+        0
+      ],
+      "relationships": []
+    }
+  },
+  {
+    "id": "model_editing_003",
+    "category": "MODEL_EDITING",
+    "userMessage": "Raise these columns 200 mm.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P04",
+        "P05"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "axis_convention": "LOCAL x east, y north, z up; metre units",
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P04",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          },
+          {
+            "objectId": "P05",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_model_revision": {
+        "status": "OK",
+        "data": {
+          "id": "revision-A",
+          "components": [
+            {
+              "id": "P04",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "P05",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "BUILDING": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_selected_objects",
+        "get_model_revision",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [
+        "P04",
+        "P05"
+      ],
+      "delta_m": [
+        0,
+        0,
+        0.2
+      ],
+      "relationships": []
+    }
+  },
+  {
+    "id": "model_editing_004",
+    "category": "MODEL_EDITING",
+    "userMessage": "Move another project column P99 east.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [
+        "P03"
+      ],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "axis_convention": "LOCAL x east, y north, z up; metre units",
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "model_revision_id": "revision-A"
+    },
+    "fixtures": {
+      "get_selected_objects": {
+        "status": "OK",
+        "data": [
+          {
+            "objectId": "P03",
+            "kind": "COLUMN",
+            "projectId": "fixture-project-A"
+          }
+        ],
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "get_model_revision": {
+        "status": "OK",
+        "data": {
+          "id": "revision-A",
+          "components": [
+            {
+              "id": "P03",
+              "kind": "COLUMN",
+              "position": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "CHANGE_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "BUILDING": 1
+      },
+      "mustAskClarification": true,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_selected_objects",
+        "get_model_revision"
+      ],
+      "allowed_tools": [
+        "get_selected_objects",
+        "get_model_revision"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [
+        "P03"
+      ],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "relationships_001",
+    "category": "RELATIONSHIPS",
+    "userMessage": "Connect the warehouse entrance to the access road and route drainage away from the parking.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "composition_ids": [
+        "drain-A",
+        "parking-A",
+        "road-A",
+        "warehouse-A"
+      ],
+      "relationship_vocabulary": [
+        "CONNECTS_TO",
+        "AVOIDS",
+        "SUPPLIES"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_lot",
+          "family": "SITE"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "plot_development",
+          "family": "SITE"
+        },
+        {
+          "id": "land_development",
+          "family": "SITE"
+        },
+        {
+          "id": "township_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "industrial_park",
+          "family": "SITE"
+        },
+        {
+          "id": "campus_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_site_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "laydown_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "setback_envelope",
+          "family": "SITE"
+        },
+        {
+          "id": "construction_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "survey_boundary",
+          "family": "SITE"
+        },
+        {
+          "id": "property_boundary_reference",
+          "family": "SITE"
+        },
+        {
+          "id": "factory_site",
+          "family": "SITE"
+        },
+        {
+          "id": "manufacturing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "processing_plant",
+          "family": "SITE"
+        },
+        {
+          "id": "refinery_site",
+          "family": "SITE"
+        },
+        {
+          "id": "tank_farm",
+          "family": "SITE"
+        },
+        {
+          "id": "storage_yard",
+          "family": "SITE"
+        },
+        {
+          "id": "logistics_hub",
+          "family": "SITE"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "mining_facility_layout",
+          "family": "SITE"
+        },
+        {
+          "id": "crusher_processing_area",
+          "family": "SITE"
+        },
+        {
+          "id": "landfill",
+          "family": "SITE"
+        },
+        {
+          "id": "waste_processing_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "recycling_facility",
+          "family": "SITE"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "wetland_restoration_area",
+          "family": "SITE"
+        },
+        {
+          "id": "erosion_control_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "green_buffer",
+          "family": "SITE"
+        },
+        {
+          "id": "environmental_protection_zone",
+          "family": "SITE"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_project_requirements": {
+        "status": "OK",
+        "data": {
+          "facts": {}
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "ROAD",
+        "SITE",
+        "DRAINAGE"
+      ],
+      "asset_counts": {
+        "BUILDING": 1,
+        "ROAD": 1,
+        "SITE": 1,
+        "DRAINAGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "warehouse-A:CONNECTS_TO:road-A",
+        "drain-A:AVOIDS:parking-A"
+      ]
+    }
+  },
+  {
+    "id": "relationships_002",
+    "category": "RELATIONSHIPS",
+    "userMessage": "Link the water tank to the warehouse supply.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "composition_ids": [
+        "tank-A",
+        "warehouse-A"
+      ],
+      "relationship_vocabulary": [
+        "CONNECTS_TO",
+        "AVOIDS",
+        "SUPPLIES"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "canal",
+          "family": "WATER"
+        },
+        {
+          "id": "irrigation_canal",
+          "family": "WATER"
+        },
+        {
+          "id": "aqueduct",
+          "family": "WATER"
+        },
+        {
+          "id": "river_training_works",
+          "family": "WATER"
+        },
+        {
+          "id": "water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "elevated_water_tank",
+          "family": "WATER"
+        },
+        {
+          "id": "ground_reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "water_treatment_plant",
+          "family": "WATER"
+        },
+        {
+          "id": "wastewater",
+          "family": "WATER"
+        },
+        {
+          "id": "pumping_station",
+          "family": "WATER"
+        },
+        {
+          "id": "intake_structure",
+          "family": "WATER"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "irrigation_network",
+          "family": "WATER"
+        },
+        {
+          "id": "farm_reservoir",
+          "family": "WATER"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_project_requirements": {
+        "status": "OK",
+        "data": {
+          "facts": {}
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "WATER",
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "WATER": 1,
+        "BUILDING": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "tank-A:SUPPLIES:warehouse-A"
+      ]
+    }
+  },
+  {
+    "id": "relationships_003",
+    "category": "RELATIONSHIPS",
+    "userMessage": "Connect the bridge to both approach roads.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "composition_ids": [
+        "bridge-A",
+        "road-A",
+        "road-B"
+      ],
+      "relationship_vocabulary": [
+        "CONNECTS_TO",
+        "AVOIDS",
+        "SUPPLIES"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_project_requirements": {
+        "status": "OK",
+        "data": {
+          "facts": {}
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE",
+        "ROAD"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1,
+        "ROAD": 2
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "bridge-A:CONNECTS_TO:road-A",
+        "bridge-A:CONNECTS_TO:road-B"
+      ]
+    }
+  },
+  {
+    "id": "relationships_004",
+    "category": "RELATIONSHIPS",
+    "userMessage": "Keep stormwater out of the pedestrian route.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "soil": "UNKNOWN",
+        "survey_elevation": null
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "composition_ids": [
+        "drain-A",
+        "path-A"
+      ],
+      "relationship_vocabulary": [
+        "CONNECTS_TO",
+        "AVOIDS",
+        "SUPPLIES"
+      ],
+      "asset_catalogue": [
+        {
+          "id": "road",
+          "family": "ROAD"
+        },
+        {
+          "id": "highway",
+          "family": "ROAD"
+        },
+        {
+          "id": "expressway",
+          "family": "ROAD"
+        },
+        {
+          "id": "urban_street",
+          "family": "ROAD"
+        },
+        {
+          "id": "rural_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "service_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "roundabout",
+          "family": "ROAD"
+        },
+        {
+          "id": "airport_runway",
+          "family": "ROAD"
+        },
+        {
+          "id": "taxiway",
+          "family": "ROAD"
+        },
+        {
+          "id": "apron",
+          "family": "ROAD"
+        },
+        {
+          "id": "pedestrian_walkway",
+          "family": "ROAD"
+        },
+        {
+          "id": "cycleway",
+          "family": "ROAD"
+        },
+        {
+          "id": "drainage_canal",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "stormwater_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "open_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "underground_drain",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "detention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "retention_pond",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "sewer_network",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "construction_access_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "stormwater_basin",
+          "family": "DRAINAGE"
+        },
+        {
+          "id": "farm_road",
+          "family": "ROAD"
+        },
+        {
+          "id": "agricultural_drainage",
+          "family": "DRAINAGE"
+        }
+      ]
+    },
+    "fixtures": {
+      "get_project_requirements": {
+        "status": "OK",
+        "data": {
+          "facts": {}
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      },
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "DRAINAGE",
+        "ROAD"
+      ],
+      "asset_counts": {
+        "DRAINAGE": 1,
+        "ROAD": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "get_project_requirements",
+        "create_proposal"
+      ],
+      "missing_data": [],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "drain-A:AVOIDS:path-A"
+      ]
+    }
+  },
+  {
+    "id": "unusual_assets_001",
+    "category": "UNUSUAL_ASSETS",
+    "userMessage": "Create an elevated bicycle warehouse connected to a pedestrian bridge.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "site-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "unregistered_types_allowed": true,
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ],
+      "composition_ids": [
+        "warehouse-A",
+        "bridge-A"
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "BRIDGE"
+      ],
+      "asset_counts": {
+        "BUILDING": 1,
+        "BRIDGE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [
+        "specialist_generation"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": [
+        "warehouse-A:CONNECTS_TO:bridge-A"
+      ]
+    }
+  },
+  {
+    "id": "unusual_assets_002",
+    "category": "UNUSUAL_ASSETS",
+    "userMessage": "Plan a floating school and its access jetty.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "site-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "unregistered_types_allowed": true,
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "port",
+          "family": "MARINE"
+        },
+        {
+          "id": "harbor",
+          "family": "MARINE"
+        },
+        {
+          "id": "jetty",
+          "family": "MARINE"
+        },
+        {
+          "id": "pier",
+          "family": "MARINE"
+        },
+        {
+          "id": "wharf",
+          "family": "MARINE"
+        },
+        {
+          "id": "quay",
+          "family": "MARINE"
+        },
+        {
+          "id": "marina",
+          "family": "MARINE"
+        },
+        {
+          "id": "breakwater",
+          "family": "MARINE"
+        },
+        {
+          "id": "seawall",
+          "family": "MARINE"
+        },
+        {
+          "id": "revetment",
+          "family": "MARINE"
+        },
+        {
+          "id": "dredging_area",
+          "family": "MARINE"
+        },
+        {
+          "id": "navigation_channel",
+          "family": "MARINE"
+        },
+        {
+          "id": "dry_dock",
+          "family": "MARINE"
+        },
+        {
+          "id": "shipyard",
+          "family": "MARINE"
+        },
+        {
+          "id": "offshore_platform_reference",
+          "family": "MARINE"
+        },
+        {
+          "id": "coastal_protection_works",
+          "family": "MARINE"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING",
+        "MARINE"
+      ],
+      "asset_counts": {
+        "BUILDING": 1,
+        "MARINE": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [
+        "specialist_generation"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unusual_assets_003",
+    "category": "UNUSUAL_ASSETS",
+    "userMessage": "Plan a solar-powered canal footbridge.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "site-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "unregistered_types_allowed": true,
+      "asset_catalogue": [
+        {
+          "id": "flyover",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "interchange_transport",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "trumpet_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cloverleaf_interchange",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "highway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "railway_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "pedestrian_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cycle_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "beam_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "box_girder_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "arch_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "truss_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "cable_stayed_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "suspension_bridge",
+          "family": "BRIDGE"
+        },
+        {
+          "id": "solar_farm",
+          "family": "ENERGY"
+        },
+        {
+          "id": "rooftop_solar_layout",
+          "family": "ENERGY"
+        },
+        {
+          "id": "wind_farm",
+          "family": "ENERGY"
+        },
+        {
+          "id": "wind_turbine",
+          "family": "ENERGY"
+        },
+        {
+          "id": "hydropower_plant",
+          "family": "ENERGY"
+        },
+        {
+          "id": "thermal_power_plant_site",
+          "family": "ENERGY"
+        },
+        {
+          "id": "battery_energy_storage_system",
+          "family": "ENERGY"
+        },
+        {
+          "id": "substation_energy",
+          "family": "ENERGY"
+        },
+        {
+          "id": "transmission_corridor",
+          "family": "ENERGY"
+        },
+        {
+          "id": "ev_charging_hub",
+          "family": "ENERGY"
+        },
+        {
+          "id": "green_hydrogen_facility",
+          "family": "ENERGY"
+        },
+        {
+          "id": "biogas_plant",
+          "family": "ENERGY"
+        },
+        {
+          "id": "solar_agriculture_layout",
+          "family": "ENERGY"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BRIDGE",
+        "ENERGY"
+      ],
+      "asset_counts": {
+        "BRIDGE": 1,
+        "ENERGY": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [
+        "specialist_generation"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  },
+  {
+    "id": "unusual_assets_004",
+    "category": "UNUSUAL_ASSETS",
+    "userMessage": "Create a robotic underground freight terminal.",
+    "context": {
+      "project_id": "fixture-project-A",
+      "selected_objects": [],
+      "proposal_ids": [
+        "proposal-A"
+      ],
+      "generation_supported": false,
+      "structural_analysis_supported": false,
+      "facts": {},
+      "site": {
+        "selection": "site-A"
+      },
+      "capabilities": {
+        "discussion": "AVAILABLE",
+        "concept_proposal": "AVAILABLE",
+        "structural_safety": "UNAVAILABLE",
+        "generation": "UNAVAILABLE"
+      },
+      "unregistered_types_allowed": true,
+      "asset_catalogue": [
+        {
+          "id": "airport_terminal_massing",
+          "family": "BUILDING"
+        },
+        {
+          "id": "bus_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "truck_terminal",
+          "family": "BUILDING"
+        },
+        {
+          "id": "parking_structure",
+          "family": "BUILDING"
+        },
+        {
+          "id": "building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "residential_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "commercial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "office_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "institutional_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hospital",
+          "family": "BUILDING"
+        },
+        {
+          "id": "school_campus_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "hotel",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse",
+          "family": "BUILDING"
+        },
+        {
+          "id": "industrial_building",
+          "family": "BUILDING"
+        },
+        {
+          "id": "high_rise_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "observation_tower",
+          "family": "BUILDING"
+        },
+        {
+          "id": "foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "raft_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "pile_foundation",
+          "family": "BUILDING"
+        },
+        {
+          "id": "footing_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "canopy_shelter",
+          "family": "BUILDING"
+        },
+        {
+          "id": "warehouse_complex",
+          "family": "BUILDING"
+        },
+        {
+          "id": "greenhouse_layout",
+          "family": "BUILDING"
+        },
+        {
+          "id": "data_center_massing",
+          "family": "BUILDING"
+        }
+      ]
+    },
+    "fixtures": {
+      "create_proposal": {
+        "status": "OK",
+        "data": {
+          "proposalVersionId": "proposal-A",
+          "status": "DRAFT",
+          "validation": {
+            "engineeringApproval": false
+          },
+          "previewOnly": true
+        },
+        "evidenceIds": [],
+        "dependencyRefs": [],
+        "limitations": [
+          "Frozen fixture; missing values are unknown."
+        ],
+        "errorCode": null
+      }
+    },
+    "expected": {
+      "intent": "DESIGN_REQUEST",
+      "assets": [
+        "BUILDING"
+      ],
+      "asset_counts": {
+        "BUILDING": 1
+      },
+      "mustAskClarification": false,
+      "mustNotClaimEngineeringSafety": true,
+      "allowedEffect": "PROPOSAL_ONLY",
+      "required_tools": [
+        "create_proposal"
+      ],
+      "allowed_tools": [
+        "create_proposal"
+      ],
+      "missing_data": [
+        "specialist_generation"
+      ],
+      "facts": {},
+      "object_ids": [],
+      "delta_m": null,
+      "relationships": []
+    }
+  }
+]

@@ -1,6 +1,7 @@
 """Auth — mock dev user with optional JWT bearer tokens."""
 
 import logging
+import time
 from typing import Any
 
 from fastapi import Depends, Header, HTTPException
@@ -21,18 +22,20 @@ ROLE_ADMIN = "admin"
 
 
 def create_access_token(user_id: int, extra: dict[str, Any] | None = None) -> str:
-    payload = {"sub": str(user_id), **(extra or {})}
+    issued = int(time.time())
+    payload = {**(extra or {}), "sub": str(user_id), "iat": issued,
+        "exp": issued + max(1, settings.ACCESS_TOKEN_TTL_SECONDS)}
     return jwt.encode(payload, settings.APP_SECRET, algorithm=ALGORITHM)
 
 
 def decode_token(token: str) -> int:
     try:
-        payload = jwt.decode(token, settings.APP_SECRET, algorithms=[ALGORITHM])
+        payload = jwt.decode(token, settings.APP_SECRET, algorithms=[ALGORITHM], options={"require_exp": True})
         sub = payload.get("sub")
         if sub is None:
             raise HTTPException(401, "Invalid token")
         return int(sub)
-    except (JWTError, ValueError) as e:
+    except (JWTError, ValueError, TypeError) as e:
         raise HTTPException(401, "Invalid or expired token") from e
 
 

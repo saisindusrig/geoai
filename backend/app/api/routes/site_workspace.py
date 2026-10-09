@@ -29,6 +29,25 @@ def scope(project_id:int,db:Session=Depends(get_db),actor:int=Depends(get_curren
     return db,actor
 
 
+from app.domain.composition import RelationshipInput, PatchProposal
+from app.services.assistant.composition import project_composition, save_relationship, check_patch
+
+
+@router.get("/composition")
+def get_composition(project_id:int,access=Depends(scope)):
+    return project_composition(access[0],project_id)
+
+
+@router.post("/composition/relationships")
+def create_relationship(project_id:int,body:RelationshipInput,access=Depends(scope)):
+    return save_relationship(access[0],project_id,body)
+
+
+@router.post("/composition/patch-preflight")
+def patch_preflight(project_id:int,body:PatchProposal,access=Depends(scope)):
+    return check_patch(access[0],project_id,body)
+
+
 @router.post("/site-selections")
 def create_selection(project_id:int,body:SelectionInput,access=Depends(scope)):
     db,actor=access

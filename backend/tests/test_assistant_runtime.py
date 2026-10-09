@@ -206,7 +206,7 @@ def test_missing_selection_clarifies(site_db):
     assert policy["intent"]["needsClarification"] and policy["allowedEffect"]=="READ_ONLY"
 
 
-@pytest.mark.parametrize("status,body,expected",[(429,{},"RATE_LIMITED"),(500,{},"PROVIDER_ERROR"),(200,{"choices":[]},"INVALID_RESPONSE"),
+@pytest.mark.parametrize("status,body,expected",[(429,{},"RATE_LIMITED"),(500,{},"UNAVAILABLE"),(200,{"choices":[]},"INVALID_RESPONSE"),
     (200,{"choices":[{"message":{"content":"not json"}}]},"INVALID_RESPONSE")])
 def test_transport_errors(monkeypatch,status,body,expected):
     import httpx
@@ -220,7 +220,7 @@ def test_transport_errors(monkeypatch,status,body,expected):
     assert e.value.code==expected
 
 
-@pytest.mark.parametrize("field,expected",[("NEBIUS_API_KEY","MISSING_KEY"),("NEBIUS_CHAT_MODEL","MISSING_MODEL")])
+@pytest.mark.parametrize("field,expected",[("NEBIUS_API_KEY","MISSING_CONFIGURATION"),("NEBIUS_CHAT_MODEL","MISSING_CONFIGURATION")])
 def test_missing_configuration(monkeypatch,field,expected):
     from app.core.config import settings
     from app.services.ai.nebius import assistant_json

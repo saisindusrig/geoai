@@ -319,6 +319,41 @@
           "title": "Assettype",
           "type": "string"
         },
+        "assetFamily": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetfamily"
+        },
+        "displayName": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Displayname"
+        },
+        "componentKinds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Componentkinds",
+          "type": "array"
+        },
         "registryVersion": {
           "maxLength": 128,
           "minLength": 1,
@@ -515,6 +550,119 @@
       "title": "AssetCapability",
       "type": "object"
     },
+    "AssetProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "assetRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetrequestid",
+          "type": "string"
+        },
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "assetFamily": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetfamily",
+          "type": "string"
+        },
+        "displayName": {
+          "title": "Displayname",
+          "type": "string"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Requirements",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "constraintIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Constraintids",
+          "type": "array"
+        },
+        "specificationRef": {
+          "$ref": "#/$defs/Ref"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/AssetCapability"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blockers",
+          "type": "array"
+        },
+        "dependencyRefs": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Dependencyrefs",
+          "type": "array"
+        },
+        "proposalState": {
+          "const": "CONCEPT_REVIEW",
+          "default": "CONCEPT_REVIEW",
+          "title": "Proposalstate",
+          "type": "string"
+        },
+        "generationEligible": {
+          "default": false,
+          "title": "Generationeligible",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "assetRequestId",
+        "assetId",
+        "assetType",
+        "assetFamily",
+        "displayName",
+        "requirements",
+        "assumptions",
+        "constraintIds",
+        "specificationRef",
+        "capabilities",
+        "warnings",
+        "blockers",
+        "dependencyRefs"
+      ],
+      "title": "AssetProposal",
+      "type": "object"
+    },
     "AssetRequest": {
       "additionalProperties": false,
       "properties": {
@@ -529,6 +677,20 @@
           "minLength": 1,
           "title": "Assettype",
           "type": "string"
+        },
+        "assetFamily": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetfamily"
         },
         "requestedAssetName": {
           "maxLength": 255,
@@ -780,6 +942,31 @@
       "title": "Clarification",
       "type": "object"
     },
+    "CompositionContracts": {
+      "additionalProperties": false,
+      "properties": {
+        "relationship": {
+          "$ref": "#/$defs/RelationshipInput"
+        },
+        "assetProposal": {
+          "$ref": "#/$defs/AssetProposal"
+        },
+        "patch": {
+          "$ref": "#/$defs/PatchProposal"
+        },
+        "lineage": {
+          "$ref": "#/$defs/ObjectLineage"
+        }
+      },
+      "required": [
+        "relationship",
+        "assetProposal",
+        "patch",
+        "lineage"
+      ],
+      "title": "CompositionContracts",
+      "type": "object"
+    },
     "ConceptAlternative": {
       "additionalProperties": false,
       "properties": {
@@ -806,6 +993,20 @@
     "ConceptAsset": {
       "additionalProperties": false,
       "properties": {
+        "assetRequestId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetrequestid"
+        },
         "assetType": {
           "maxLength": 128,
           "minLength": 1,
@@ -1334,6 +1535,40 @@
         "parametersHash"
       ],
       "title": "DerivedSource",
+      "type": "object"
+    },
+    "DimensionPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "SET_DIMENSION",
+          "title": "Operation",
+          "type": "string"
+        },
+        "dimension": {
+          "enum": [
+            "WIDTH",
+            "HEIGHT",
+            "LENGTH",
+            "THICKNESS",
+            "DIAMETER"
+          ],
+          "title": "Dimension",
+          "type": "string"
+        },
+        "valueM": {
+          "exclusiveMinimum": 0,
+          "maximum": 100000,
+          "title": "Valuem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "operation",
+        "dimension",
+        "valueM"
+      ],
+      "title": "DimensionPatch",
       "type": "object"
     },
     "Dimensions": {
@@ -3116,6 +3351,185 @@
       "title": "Nearby",
       "type": "object"
     },
+    "ObjectLineage": {
+      "additionalProperties": false,
+      "properties": {
+        "objectId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Objectid",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "MANUAL",
+            "GENERATED"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "assetId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetid"
+        },
+        "assetType": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assettype"
+        },
+        "assetFamily": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assetfamily"
+        },
+        "componentKind": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Componentkind"
+        },
+        "specificationComponentId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Specificationcomponentid"
+        },
+        "proposalId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposalid"
+        },
+        "proposalVersionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposalversionid"
+        },
+        "approvalId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Approvalid"
+        },
+        "generatorId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generatorid"
+        },
+        "generatorVersion": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generatorversion"
+        },
+        "createdInRevisionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Createdinrevisionid",
+          "type": "string"
+        },
+        "lastModifiedInRevisionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Lastmodifiedinrevisionid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "objectId",
+        "origin",
+        "createdInRevisionId",
+        "lastModifiedInRevisionId"
+      ],
+      "title": "ObjectLineage",
+      "type": "object"
+    },
     "ObjectRef": {
       "additionalProperties": false,
       "properties": {
@@ -3181,6 +3595,88 @@
         "method"
       ],
       "title": "Orientation",
+      "type": "object"
+    },
+    "PatchProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "baseModelRevisionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Basemodelrevisionid",
+          "type": "string"
+        },
+        "targetComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetcomponentid",
+          "type": "string"
+        },
+        "expectedComponentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Expectedcomponenthash",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "parameters": {
+          "discriminator": {
+            "mapping": {
+              "ADD_COMPONENT": "#/$defs/SpecificationPatch",
+              "REMOVE_COMPONENT": "#/$defs/RemovePatch",
+              "REPLACE_COMPONENT": "#/$defs/SpecificationPatch",
+              "ROTATE_COMPONENT": "#/$defs/RotatePatch",
+              "SET_DIMENSION": "#/$defs/DimensionPatch",
+              "SET_PROPERTY": "#/$defs/PropertyPatch",
+              "TRANSLATE_COMPONENT": "#/$defs/TranslatePatch"
+            },
+            "propertyName": "operation"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/TranslatePatch"
+            },
+            {
+              "$ref": "#/$defs/RotatePatch"
+            },
+            {
+              "$ref": "#/$defs/DimensionPatch"
+            },
+            {
+              "$ref": "#/$defs/PropertyPatch"
+            },
+            {
+              "$ref": "#/$defs/SpecificationPatch"
+            },
+            {
+              "$ref": "#/$defs/RemovePatch"
+            }
+          ],
+          "title": "Parameters"
+        },
+        "affectedComponentIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Affectedcomponentids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "baseModelRevisionId",
+        "targetComponentId",
+        "expectedComponentHash",
+        "assetType",
+        "parameters"
+      ],
+      "title": "PatchProposal",
       "type": "object"
     },
     "PointSelection": {
@@ -3508,6 +4004,38 @@
       "title": "ProjectRequirement",
       "type": "object"
     },
+    "PropertyPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "SET_PROPERTY",
+          "title": "Operation",
+          "type": "string"
+        },
+        "property": {
+          "enum": [
+            "NAME",
+            "MATERIAL",
+            "CLASSIFICATION"
+          ],
+          "title": "Property",
+          "type": "string"
+        },
+        "value": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "property",
+        "value"
+      ],
+      "title": "PropertyPatch",
+      "type": "object"
+    },
     "ProposalCommand": {
       "additionalProperties": false,
       "properties": {
@@ -3551,6 +4079,13 @@
     "ProposalContent": {
       "additionalProperties": false,
       "properties": {
+        "assetProposals": {
+          "items": {
+            "$ref": "#/$defs/AssetProposal"
+          },
+          "title": "Assetproposals",
+          "type": "array"
+        },
         "contract": {
           "$ref": "#/$defs/ProposalPayload"
         },
@@ -4205,6 +4740,81 @@
       "title": "Ref",
       "type": "object"
     },
+    "RelationshipInput": {
+      "additionalProperties": false,
+      "properties": {
+        "clientRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Clientrequestid",
+          "type": "string"
+        },
+        "fromAssetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Fromassetid",
+          "type": "string"
+        },
+        "toAssetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Toassetid",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "CONNECTS_TO",
+            "CROSSES",
+            "SUPPORTED_BY",
+            "HOSTED_BY",
+            "SERVES",
+            "DRAINS_TO",
+            "ALIGNS_WITH",
+            "DEPENDS_ON",
+            "ADJACENT_TO",
+            "PART_OF",
+            "INTERSECTS"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "relationshipId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relationshipid"
+        },
+        "expectedVersion": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectedversion"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "fromAssetId",
+        "toAssetId",
+        "kind"
+      ],
+      "title": "RelationshipInput",
+      "type": "object"
+    },
     "Relief": {
       "additionalProperties": false,
       "properties": {
@@ -4251,6 +4861,21 @@
         "profileIds"
       ],
       "title": "Relief",
+      "type": "object"
+    },
+    "RemovePatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "REMOVE_COMPONENT",
+          "title": "Operation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation"
+      ],
+      "title": "RemovePatch",
       "type": "object"
     },
     "RequiredInput": {
@@ -4492,6 +5117,38 @@
         "access"
       ],
       "title": "RoadAttributes",
+      "type": "object"
+    },
+    "RotatePatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "ROTATE_COMPONENT",
+          "title": "Operation",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "angleDegrees": {
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Angledegrees",
+          "type": "number"
+        }
+      },
+      "required": [
+        "operation",
+        "axis",
+        "angleDegrees"
+      ],
+      "title": "RotatePatch",
       "type": "object"
     },
     "RouteSelection": {
@@ -5112,6 +5769,38 @@
       "title": "SourceSnapshotRef",
       "type": "object"
     },
+    "SpecificationPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "REPLACE_COMPONENT",
+            "ADD_COMPONENT"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "specificationVersionId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Specificationversionid",
+          "type": "string"
+        },
+        "specificationComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Specificationcomponentid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "specificationVersionId",
+        "specificationComponentId"
+      ],
+      "title": "SpecificationPatch",
+      "type": "object"
+    },
     "SubmitContext": {
       "additionalProperties": false,
       "description": "Browser sends stable object IDs; server resolves hashes from the pinned revision.",
@@ -5395,6 +6084,45 @@
         "name"
       ],
       "title": "ToolInvocation",
+      "type": "object"
+    },
+    "TranslatePatch": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "TRANSLATE_COMPONENT",
+          "title": "Operation",
+          "type": "string"
+        },
+        "deltaM": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Deltam",
+          "type": "array"
+        },
+        "coordinateSystem": {
+          "const": "LOCAL",
+          "default": "LOCAL",
+          "title": "Coordinatesystem",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "deltaM"
+      ],
+      "title": "TranslatePatch",
       "type": "object"
     },
     "TranslationPreview": {
@@ -6020,6 +6748,9 @@
     },
     "runtime": {
       "$ref": "#/$defs/RuntimeContracts"
+    },
+    "composition": {
+      "$ref": "#/$defs/CompositionContracts"
     }
   },
   "required": [
@@ -6040,7 +6771,8 @@
     "proposalCommand",
     "civilIntent",
     "workspace",
-    "runtime"
+    "runtime",
+    "composition"
   ],
   "title": "AllContracts",
   "type": "object"

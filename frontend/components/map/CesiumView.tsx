@@ -124,6 +124,8 @@ export default function CesiumView({
 }: CesiumViewProps) {
   const { creditsContainer } = useWorkspaceMap();
   const drawingTool = useProjectStore(state => state.activeTool);
+  const onSelectComponentRef = useRef(onSelectComponent);
+  useEffect(() => { onSelectComponentRef.current = onSelectComponent; }, [onSelectComponent]);
   const containerRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const viewerRef = useRef<any>(null);
@@ -279,9 +281,20 @@ export default function CesiumView({
     const alignmentPoints = alignment?.type === "LineString"
       ? Cesium.Cartesian3.fromDegreesArray((alignment.coordinates as [number, number][]).flat())
       : [];
-    const sphere = (localSandbox || isBuildingModel) && sandboxBounds.current ? sandboxBounds.current : points.length
+    let sphere = (localSandbox || isBuildingModel) && sandboxBounds.current ? sandboxBounds.current : points.length
       ? Cesium.BoundingSphere.fromPoints(points)
       : mainSphere ?? excavSphere ?? (alignmentPoints.length ? Cesium.BoundingSphere.fromPoints(alignmentPoints) : null);
+    // Legacy models and centerlines can be at ellipsoid height zero, beneath terrain.
+    // Frame them from the terrain surface so the camera never flies underground.
+    if (sphere && !localSandbox) {
+      const location = Cesium.Cartographic.fromCartesian(sphere.center);
+      if (location) {
+        const ground = viewer.scene.globe.getHeight(location);
+        if (Number.isFinite(ground) && location.height < ground) {
+          sphere = new Cesium.BoundingSphere(Cesium.Cartesian3.fromRadians(location.longitude, location.latitude, ground), sphere.radius);
+        }
+      } else sphere = null;
+    }
     if (sphere) {
       const flight = ++sandboxFlightGeneration.current;
       if (localSandbox) {
@@ -308,6 +321,12 @@ export default function CesiumView({
       duration: 0.9,
     });
   }, [alignment, centerLat, centerLng, loaded, localSandbox, isBuildingModel]);
+
+  useEffect(() => {
+    const onFit = () => fitProject();
+    window.addEventListener("geoai:fit-project", onFit);
+    return () => window.removeEventListener("geoai:fit-project", onFit);
+  }, [fitProject]);
 
   useEffect(() => {
     basemapRef.current = basemap;
@@ -1060,8 +1079,7 @@ export default function CesiumView({
     designMeshVisibility,
     terrainEpoch,
     modelOpacity,
-    editor,
-  editableModel,
+    editableModel,
     acceptedPlacement,
     displayElevation,
   ]);
@@ -1125,8 +1143,7 @@ export default function CesiumView({
     terrainEpoch,
     cesiumTool,
     modelUrl,
-    editor,
-  editableModel,
+    editableModel,
     acceptedPlacement,
     displayElevation,
   ]);
@@ -1204,7 +1221,7 @@ export default function CesiumView({
     let dragging: number | null = null;
     const pick = (position: { x: number; y: number }): [number, number] | null => {
       const ray = viewer.camera.getPickRay(position);
-      const world = ray && viewer.scene.globe.pick(ray, viewer.scene);
+      const world = ray && viewer.scene.globe.pick(ray, viewer.scene) || viewer.camera.pickEllipsoid(position, C.Ellipsoid.WGS84);
       if (!world) return null;
       const cartographic = C.Cartographic.fromCartesian(world);
       return [C.Math.toDegrees(cartographic.longitude), C.Math.toDegrees(cartographic.latitude)];
@@ -1226,8 +1243,7 @@ export default function CesiumView({
       else if (points.length >= 2 && !polygon) geometry = verticesToLine(points);
       if (!geometry) return;
       const kind = polygon || drawingTool === "draw-rectangle" || drawingTool === "draw-corridor" ? "boundary" : "alignment";
-      useProjectStore.getState().setPendingSave({ kind, geometry });
-      useProjectStore.getState().setActiveTool("select");
+      useProjectStore.getState().finishDrawing({ kind, geometry });
     };
     redraw();
     handler.setInputAction((click: { position: { x: number; y: number } }) => { if (editing) return; const point = pick(click.position); if (point) { points = [...points, point]; redraw(); } }, C.ScreenSpaceEventType.LEFT_CLICK);
@@ -1237,8 +1253,9 @@ export default function CesiumView({
     handler.setInputAction(() => { dragging = null; viewer.scene.screenSpaceCameraController.enableInputs = true; }, C.ScreenSpaceEventType.LEFT_UP);
     const keyboard = (event: KeyboardEvent) => { if (event.target instanceof HTMLElement && event.target.closest("input,textarea,select")) return; if (event.key === "Enter") finish(); };
     window.addEventListener("keydown", keyboard);
+    window.addEventListener("geoai:finish-drawing", finish);
     const unsubscribe = useProjectStore.subscribe((state, previous) => { if (state.drawVertices.length < previous.drawVertices.length && state.activeTool === drawingTool) { points = state.drawVertices; redraw(); } });
-    return () => { unsubscribe(); window.removeEventListener("keydown", keyboard); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.scene.screenSpaceCameraController.enableInputs = true; viewer.dataSources.remove(source, true); } };
+    return () => { unsubscribe(); window.removeEventListener("keydown", keyboard); window.removeEventListener("geoai:finish-drawing", finish); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.scene.screenSpaceCameraController.enableInputs = true; viewer.dataSources.remove(source, true); } };
   }, [loaded, drawingTool, boundary, alignment]);
 
   // Pick + measure
@@ -1263,7 +1280,9 @@ export default function CesiumView({
         const props = picked?.id?.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
         const design = !!props.editableComponentId;
         const ray = viewer.camera.getPickRay(click.position);
-        const point = design && viewer.scene.pickPositionSupported ? viewer.scene.pickPosition(click.position) : ray ? viewer.scene.globe.pick(ray,viewer.scene) : null;
+        const point = (viewer.scene.pickPositionSupported ? viewer.scene.pickPosition(click.position) : null)
+          ?? (ray ? viewer.scene.globe.pick(ray, viewer.scene) : null)
+          ?? viewer.camera.pickEllipsoid(click.position, Cesium.Ellipsoid.WGS84);
         if (!point) { store.setScene3dMeasureReadout("UNKNOWN · Surface could not be picked."); return; }
         const carto = Cesium.Cartographic.fromCartesian(point);
         const longitude = Cesium.Math.toDegrees(carto.longitude), latitude = Cesium.Math.toDegrees(carto.latitude);
@@ -1292,7 +1311,7 @@ export default function CesiumView({
         return;
       }
       if (!picked?.id) {
-        onSelectComponent?.(null);
+        onSelectComponentRef.current?.(null);
         store.setSelectedObject3d(null);
         return;
       }
@@ -1300,7 +1319,7 @@ export default function CesiumView({
       const entity = picked.id;
       const props = entity.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
       if (props.editableComponentId) {
-        onSelectComponent?.(String(props.editableComponentId));
+        onSelectComponentRef.current?.(String(props.editableComponentId));
         viewer.selectedEntity = entity;
         return;
       }
@@ -1324,7 +1343,7 @@ export default function CesiumView({
     const additivePick = (click: { position: { x: number; y: number } }) => {
       const entity = viewer.scene.pick(click.position)?.id;
       const props = entity?.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
-      if (props.editableComponentId) onSelectComponent?.(String(props.editableComponentId), true);
+      if (props.editableComponentId) onSelectComponentRef.current?.(String(props.editableComponentId), true);
     };
     handler.setInputAction(additivePick, Cesium.ScreenSpaceEventType.LEFT_CLICK, Cesium.KeyboardEventModifier.SHIFT);
     handler.setInputAction(additivePick, Cesium.ScreenSpaceEventType.LEFT_CLICK, Cesium.KeyboardEventModifier.CTRL);
@@ -1337,7 +1356,7 @@ export default function CesiumView({
       measurementRequest.current++;
       destroyInputHandler(handler);
     };
-  }, [loaded, scene3dMeasureTool, measureUnit, alignment, onSelectComponent, projectTerrain, projectId, terrainEpoch, editableModel, acceptedPlacement]);
+  }, [loaded, scene3dMeasureTool, measureUnit, alignment, projectTerrain, projectId, terrainEpoch, editableModel, acceptedPlacement]);
 
   useEffect(() => {
     measurePointsRef.current = [];

@@ -88,7 +88,7 @@ def _get_s3():
         kwargs: dict = {
             "aws_access_key_id": settings.S3_ACCESS_KEY,
             "aws_secret_access_key": settings.S3_SECRET_KEY,
-            "config": Config(signature_version="s3v4"),
+            "config": Config(signature_version="s3v4", connect_timeout=3, read_timeout=3, retries={"max_attempts":0}),
         }
         if settings.S3_ENDPOINT:
             kwargs["endpoint_url"] = settings.S3_ENDPOINT

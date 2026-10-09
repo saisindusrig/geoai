@@ -32,3 +32,20 @@ it("shows approval failures without claiming success", async () => {
   fireEvent.click(screen.getByRole("button", { name: "Approve proposal" }));
   expect(await screen.findByRole("alert")).toHaveTextContent("STALE_PROPOSAL");
 });
+
+it("reviews per-asset families and blockers without offering generation", async () => {
+  const fixture = await api.get<object>("fixture");
+  vi.mocked(api.get).mockResolvedValue({ ...fixture, content: {
+    ...(fixture as { content: object }).content,
+    assetProposals: [
+      { assetRequestId: "A01", displayName: "Building A", assetFamily: "BUILDING", proposalState: "CONCEPT_REVIEW", generationEligible: false, blockers: ["Building specialist unavailable"] },
+      { assetRequestId: "A02", displayName: "Bridge A", assetFamily: "BRIDGE", proposalState: "CONCEPT_REVIEW", generationEligible: false, blockers: ["Bridge specialist unavailable"] },
+    ],
+  } });
+  render(<ProposalReview projectId={1} versionId="pv" />);
+  fireEvent.click(await screen.findByRole("button", { name: "Review proposal" }));
+  expect(screen.getByText(/Building A · BUILDING/)).toBeInTheDocument();
+  expect(screen.getByText(/Bridge A · BRIDGE/)).toBeInTheDocument();
+  expect(screen.getAllByText("Generation: Unavailable")).toHaveLength(2);
+  expect(screen.queryByRole("button", { name: /build|generate/i })).not.toBeInTheDocument();
+});

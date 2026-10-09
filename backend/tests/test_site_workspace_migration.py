@@ -24,7 +24,7 @@ def test_009_upgrade_preserves_foundation_payloads(tmp_path):
         c.exec_driver_sql("INSERT INTO conversation_messages(id,project_id,conversation_id,sequence,role,parts,context,client_request_id) VALUES ('m',1,'c',1,'USER','[{\"kind\":\"TEXT\",\"text\":\"Keep this\"}]','{}','old')")
     migrate(url)
     with engine.begin() as c:
-        assert c.exec_driver_sql("SELECT version_num FROM alembic_version").scalar()=="010"
+        assert c.exec_driver_sql("SELECT version_num FROM alembic_version").scalar()=="011"
         assert c.exec_driver_sql("SELECT parts FROM conversation_messages WHERE id='m'").scalar()=='[{"kind":"TEXT","text":"Keep this"}]'
         assert c.exec_driver_sql("SELECT latest_version_id FROM site_profiles WHERE id='p'").scalar() is None
         c.exec_driver_sql("INSERT INTO site_sample_sets(id,project_id,profile_id,payload,content_hash) VALUES ('samples',1,'p','{}','hash')")

@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Request
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
@@ -17,7 +17,7 @@ router = APIRouter(prefix="/api/projects", tags=["projects"])
 
 class ProjectCreate(BaseModel):
     name: str = Field(min_length=1, max_length=255)
-    project_type: str
+    project_type: str = "unclassified"
     units: str = "metric"
     location_name: str = ""
     center_lat: float | None = Field(default=None, ge=-90, le=90)
@@ -25,6 +25,11 @@ class ProjectCreate(BaseModel):
     boundary_geojson: dict[str, Any] | None = None
     alignment_geojson: dict[str, Any] | None = None
     folder_id: int | None = None
+
+    @field_validator("name", mode="before")
+    @classmethod
+    def trim_name(cls, value):
+        return value.strip() if isinstance(value, str) else value
 
 
 class ProjectUpdate(BaseModel):
@@ -98,7 +103,7 @@ def create_project(
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
-    if payload.project_type not in PROJECT_TYPES:
+    if payload.project_type != "unclassified" and payload.project_type not in PROJECT_TYPES:
         raise HTTPException(422, f"project_type must be one of {sorted(PROJECT_TYPES)}")
     if payload.units not in UNIT_OPTIONS:
         raise HTTPException(422, f"units must be one of {sorted(UNIT_OPTIONS)}")
@@ -116,6 +121,22 @@ def create_project(
     db.refresh(project)
     record_usage_event(db, user_id=user.id, event_type="project.create", project_id=project.id)
     return project
+
+
+@router.get("/{project_id}/workspace-state")
+def workspace_state(project_id:int,db:Session=Depends(get_db),user_id:int=Depends(get_current_user_id)):
+    """Read-only starter eligibility; no asset classification or setup is required."""
+    from app.db.models import Base
+    from sqlalchemy import select
+    project=get_owned_project(project_id,db,user_id)
+    populated = bool(project.boundary_geojson or project.alignment_geojson or project.location_name or
+        project.center_lat is not None or project.center_lng is not None)
+    for name in ("asset_instances","design_proposals","model_revisions","design_scenarios","survey_datasets",
+        "terrain_datasets","engineering_layers","site_selections","site_profiles","site_analyses","generated_files","conversation_messages"):
+        if populated: break
+        table=Base.metadata.tables[name]
+        populated = db.execute(select(table.c.id).where(table.c.project_id==project_id).limit(1)).first() is not None
+    return {"isEmpty":not populated}
 
 
 @router.get("", response_model=list[ProjectOut])

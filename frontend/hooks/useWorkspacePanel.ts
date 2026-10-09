@@ -16,12 +16,15 @@ export function useWorkspacePanel(name: string) {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+    const onOpen = () => show();
+    window.addEventListener(`geoai:open-${name}`, onOpen);
     window.addEventListener("geoai:workspace-panel", onPanel);
     window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("geoai:workspace-panel", onPanel);
       window.removeEventListener("keydown", onKey);
+      window.removeEventListener(`geoai:open-${name}`, onOpen);
     };
-  }, [name]);
+  }, [name, show]);
   return { open, show, close: () => setOpen(false), toggle: () => open ? setOpen(false) : show() };
 }

@@ -70,6 +70,8 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
   const boundary = useRef<THREE.Group>(null);
   const nodes = useRef<THREE.Group>(null);
   const settleUntil = useRef(0);
+  const assemblyProgress = useRef(1);
+  const ambientTime = useRef(0);
   const introStart = useRef<number | null>(null);
   const finalStart = useRef<number | null>(null);
   const lookAt = useRef(new THREE.Vector3(-3, 0, 0));
@@ -153,14 +155,16 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
     });
     return { geo, river, bridgeRoad, groundRoad, roadShoulder, roadEdges, bridgeEdges, roadLine, line, railA, railB, pipeGeo, alt, edge, damBody, reservoir, waterBoundary, mat };
   }, []);
-  useEffect(() => { settleUntil.current = performance.now() + 2200; invalidate(); }, [state, invalidate]);
+  useEffect(() => { settleUntil.current = performance.now() + 4200; invalidate(); }, [state, invalidate]);
   useEffect(() => () => { Object.values(resources).forEach(item => { if (Array.isArray(item)) item.forEach(g => g.dispose()); else item.dispose(); }); }, [resources]);
 
   useFrame(({ camera, clock }, delta) => {
     if (introStart.current === null) introStart.current = clock.elapsedTime;
     const elapsed = clock.elapsedTime - introStart.current;
-    const intro = state.reduced ? 1 : Math.min(1, elapsed / 2);
-    const ease = state.reduced ? 1 : 1 - Math.exp(-Math.min(delta, .05) * 4);
+    const intro = state.reduced ? 1 : smooth01(Math.min(1, elapsed / 2));
+    const frameDelta = Math.min(delta, .1);
+    const ease = state.reduced ? 1 : 1 - Math.exp(-frameDelta * 2.8);
+    if (!state.reduced && !state.paused) ambientTime.current += frameDelta;
     const s = state.stage;
     const poses: Record<number,number[]>={0:[12,11,17,47],1:[0,70,.1,27],2:[14,34,24,34],3:[9,18,17,42],4:[3,9,24,43],5:[12,17,20,47],6:[1,14,28,44],7:[17,19,24,43],12:[16,15,24,47]};
     // Elevated broadside views keep the full corridor visible above foreground
@@ -171,7 +175,7 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
     const previous=state.storytelling?(poses[Math.max(0,s-1)]??current):current;
     const transition=state.storytelling?smooth01(state.progress/.42):1;
     const [x,y,z,fov]=current.map((v,i)=>THREE.MathUtils.lerp(previous[i],v,transition));
-    const drift = state.reduced || state.paused ? 0 : Math.sin(clock.elapsedTime * .1) * .16;
+    const drift = state.reduced || state.paused ? 0 : Math.sin(ambientTime.current * .1) * .16;
     targetCamera.set(x + (state.reduced ? 0 : pointer.current.x * .45) + drift, y, z + (state.reduced ? 0 : pointer.current.y * .3));
     camera.position.lerp(targetCamera, ease);
     if(s===5) {
@@ -195,25 +199,33 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
       const relief=s===1?THREE.MathUtils.lerp(1,.14,transition):s===2?THREE.MathUtils.lerp(.14,1,transition):1;
       ground.current.scale.y = THREE.MathUtils.lerp(ground.current.scale.y, relief, ease);
     }
-    const assembled = s === 0 ? 1 : s < 4 ? 0 : s === 4 ? state.progress : 1;
+    const assemblyTarget = s === 0 ? 1 : s < 4 ? 0 : s === 4 ? state.progress : 1;
+    assemblyProgress.current = state.reduced ? assemblyTarget : THREE.MathUtils.lerp(assemblyProgress.current, assemblyTarget, ease);
+    const assembled = assemblyProgress.current;
     const type = s === 5 ? state.system : 1;
     [road, bridge, pipe, dam].forEach((ref, i) => {
       if (!ref.current) return;
       const target = (s === 5 || s >= 4 || s === 0) && state.structure && i === type ? assembled : 0;
       // Crossfade infrastructure only; the terrain and site-view camera stay fixed.
-      const reveal = THREE.MathUtils.lerp(ref.current.userData.reveal ?? 0, target > 0 ? 1 : 0, state.reduced ? 1 : 1 - Math.exp(-Math.min(delta,.05)*7));
+      const reveal = THREE.MathUtils.lerp(ref.current.userData.reveal ?? 0, target > 0 ? 1 : 0, state.reduced ? 1 : 1 - Math.exp(-frameDelta * 3.8));
       ref.current.userData.reveal = reveal;
       ref.current.scale.y = 1;
       ref.current.visible = reveal > .008;
-      ref.current.traverse(child => {
-        if (!(child instanceof THREE.Mesh)) return;
-        const materials = Array.isArray(child.material) ? child.material : [child.material];
-        materials.forEach(material => {
-          material.userData.baseOpacity ??= material.opacity;
-          material.transparent = true;
-          material.opacity = material.userData.baseOpacity * reveal;
-          material.depthWrite = reveal > .5;
+      // Cache model materials once, avoiding a full scene traversal every frame.
+      if (!ref.current.userData.fadeMaterials) {
+        const fadeMaterials = new Set<THREE.Material>();
+        ref.current.traverse(child => {
+          if (child instanceof THREE.Mesh) {
+            (Array.isArray(child.material) ? child.material : [child.material]).forEach(material => fadeMaterials.add(material));
+          }
         });
+        ref.current.userData.fadeMaterials = Array.from(fadeMaterials);
+      }
+      (ref.current.userData.fadeMaterials as THREE.Material[]).forEach(material => {
+        material.userData.baseOpacity ??= material.opacity;
+        material.transparent = true;
+        material.opacity = material.userData.baseOpacity * reveal;
+        material.depthWrite = reveal > .5;
       });
     });
     if (bridgePiers.current) bridgePiers.current.children.forEach((pier, i) => {
@@ -299,3 +311,5 @@ export default function EngineeringTerrain({ state, pointer }: { state: TerrainS
   const fallback = <div className="geo-scene-fallback"><svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{Array.from({length:35},(_,i)=><path key={i} d={`M0 ${350+i*14} Q250 ${60+i*20} 490 ${300+i*12} T900 ${200+i*18} T1500 ${100+i*20}`} fill="none" stroke="#718164" strokeOpacity=".4"/>)}<path d="M0 700 Q450 600 780 470 T1400 500" fill="none" stroke="#c8ff32" strokeWidth="2"/></svg><span>Illustrative terrain · 3D view unavailable</span></div>;
   return <SceneBoundary fallback={fallback}><Canvas frameloop="demand" dpr={[1,1.5]} camera={{ position:[15,12.5,18], fov:47, near:.1, far:100 }} gl={{ antialias:true, alpha:true, powerPreference:"high-performance" }} fallback={fallback}><Landscape state={state} pointer={pointer}/></Canvas></SceneBoundary>;
 }
+
+

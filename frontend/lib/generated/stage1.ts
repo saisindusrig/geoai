@@ -47,6 +47,9 @@ export type AreaSelection = {
 
 export type AssetCapability = {
   "assetType": string;
+  "assetFamily"?: (string | null);
+  "displayName"?: (string | null);
+  "componentKinds"?: Array<string>;
   "registryVersion": string;
   "discussionSupport": "FULL" | "PARTIAL" | "CONCEPT_ONLY" | "UNSUPPORTED";
   "planningSupport": "FULL" | "PARTIAL" | "CONCEPT_ONLY" | "UNSUPPORTED";
@@ -66,9 +69,28 @@ export type AssetCapability = {
   "limitations"?: Array<string>;
 };
 
+export type AssetProposal = {
+  "assetRequestId": string;
+  "assetId": string;
+  "assetType": string;
+  "assetFamily": string;
+  "displayName": string;
+  "requirements": Array<string>;
+  "assumptions": Array<string>;
+  "constraintIds": Array<string>;
+  "specificationRef": Ref;
+  "capabilities": AssetCapability;
+  "warnings": Array<string>;
+  "blockers": Array<string>;
+  "dependencyRefs": Array<string>;
+  "proposalState"?: "CONCEPT_REVIEW";
+  "generationEligible"?: boolean;
+};
+
 export type AssetRequest = {
   "id": string;
   "assetType": string;
+  "assetFamily"?: (string | null);
   "requestedAssetName": string;
   "registryId"?: (string | null);
   "requirements"?: Array<string>;
@@ -114,12 +136,20 @@ export type Clarification = {
   "options"?: Array<string>;
 };
 
+export type CompositionContracts = {
+  "relationship": RelationshipInput;
+  "assetProposal": AssetProposal;
+  "patch": PatchProposal;
+  "lineage": ObjectLineage;
+};
+
 export type ConceptAlternative = {
   "name": string;
   "rationale": string;
 };
 
 export type ConceptAsset = {
+  "assetRequestId"?: (string | null);
   "assetType": string;
   "name": string;
   "requirements"?: Array<string>;
@@ -203,6 +233,12 @@ export type DerivedSource = {
   "algorithmVersion": string;
   "parametersHash": string;
   "outputArtifactId"?: (string | null);
+};
+
+export type DimensionPatch = {
+  "operation": "SET_DIMENSION";
+  "dimension": "WIDTH" | "HEIGHT" | "LENGTH" | "THICKNESS" | "DIAMETER";
+  "valueM": number;
 };
 
 export type Dimensions = {
@@ -417,6 +453,23 @@ export type Nearby = {
   "utilities": ContextCollection;
 };
 
+export type ObjectLineage = {
+  "objectId": string;
+  "origin": "MANUAL" | "GENERATED";
+  "assetId"?: (string | null);
+  "assetType"?: (string | null);
+  "assetFamily"?: (string | null);
+  "componentKind"?: (string | null);
+  "specificationComponentId"?: (string | null);
+  "proposalId"?: (string | null);
+  "proposalVersionId"?: (string | null);
+  "approvalId"?: (string | null);
+  "generatorId"?: (string | null);
+  "generatorVersion"?: (string | null);
+  "createdInRevisionId": string;
+  "lastModifiedInRevisionId": string;
+};
+
 export type ObjectRef = {
   "assetId": string;
   "objectId": string;
@@ -428,6 +481,15 @@ export type ObjectRef = {
 export type Orientation = {
   "azimuth": Fact_Quantity_;
   "method": "PRINCIPAL_AXIS" | "ENDPOINT_BEARING" | "USER_AXIS" | "UNDEFINED";
+};
+
+export type PatchProposal = {
+  "baseModelRevisionId": string;
+  "targetComponentId": string;
+  "expectedComponentHash": string;
+  "assetType": string;
+  "parameters": (TranslatePatch | RotatePatch | DimensionPatch | PropertyPatch | SpecificationPatch | RemovePatch);
+  "affectedComponentIds"?: Array<string>;
 };
 
 export type PointSelection = {
@@ -490,6 +552,12 @@ export type ProjectRequirement = {
   "hardness": "HARD" | "SOFT";
 };
 
+export type PropertyPatch = {
+  "operation": "SET_PROPERTY";
+  "property": "NAME" | "MATERIAL" | "CLASSIFICATION";
+  "value": string;
+};
+
 export type ProposalCommand = {
   "effect": "PROPOSAL_ONLY";
   "kind": "DESIGN_REQUEST" | "CHANGE_REQUEST";
@@ -498,6 +566,7 @@ export type ProposalCommand = {
 };
 
 export type ProposalContent = {
+  "assetProposals"?: Array<AssetProposal>;
   "contract": ProposalPayload;
   "context": MessageContext;
   "request": ProposalRequest;
@@ -602,6 +671,15 @@ export type Ref = {
   "contentHash": string;
 };
 
+export type RelationshipInput = {
+  "clientRequestId": string;
+  "fromAssetId": string;
+  "toAssetId": string;
+  "kind": "CONNECTS_TO" | "CROSSES" | "SUPPORTED_BY" | "HOSTED_BY" | "SERVES" | "DRAINS_TO" | "ALIGNS_WITH" | "DEPENDS_ON" | "ADJACENT_TO" | "PART_OF" | "INTERSECTS";
+  "relationshipId"?: (string | null);
+  "expectedVersion"?: (number | null);
+};
+
 export type Relief = {
   "minElevation": Fact_Quantity_;
   "maxElevation": Fact_Quantity_;
@@ -609,6 +687,10 @@ export type Relief = {
   "maxSlope": Fact_Quantity_;
   "slopeMethodVersion": (string | null);
   "profileIds": Array<string>;
+};
+
+export type RemovePatch = {
+  "operation": "REMOVE_COMPONENT";
 };
 
 export type RequiredInput = {
@@ -648,6 +730,12 @@ export type RoadAttributes = {
   "classification": Fact_str_;
   "width": Fact_Quantity_;
   "access": Fact_str_;
+};
+
+export type RotatePatch = {
+  "operation": "ROTATE_COMPONENT";
+  "axis": "X" | "Y" | "Z";
+  "angleDegrees": number;
 };
 
 export type RouteSelection = {
@@ -744,6 +832,12 @@ export type SourceSnapshotRef = {
   "contentHash": string;
 };
 
+export type SpecificationPatch = {
+  "operation": "REPLACE_COMPONENT" | "ADD_COMPONENT";
+  "specificationVersionId": string;
+  "specificationComponentId": string;
+};
+
 export type SubmitContext = {
   "selectedObjectIds"?: Array<string>;
   "siteSelectionVersionId"?: (string | null);
@@ -779,6 +873,12 @@ export type TextPart = {
 export type ToolInvocation = {
   "name": "get_site_profile" | "get_site_readiness" | "get_active_terrain" | "sample_terrain" | "get_selected_objects" | "get_model_revision" | "get_project_requirements" | "query_nearby_context" | "get_checks" | "get_constraints" | "create_proposal" | "revise_proposal" | "validate_proposal";
   "arguments"?: string;
+};
+
+export type TranslatePatch = {
+  "operation": "TRANSLATE_COMPONENT";
+  "deltaM": [number, number, number];
+  "coordinateSystem"?: "LOCAL";
 };
 
 export type TranslationPreview = {
@@ -896,4 +996,5 @@ export type FoundationContracts = {
   "civilIntent": CivilIntent;
   "workspace": WorkspaceContracts;
   "runtime": RuntimeContracts;
+  "composition": CompositionContracts;
 };

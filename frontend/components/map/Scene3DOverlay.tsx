@@ -2,11 +2,9 @@
 
 import Scene3DLayerPanel from "@/components/map/Scene3DLayerPanel";
 import ObjectDetailsPanel from "@/components/map/ObjectDetailsPanel";
-import { useProjectStore } from "@/stores/projectStore";
 
 /** Floating 3D scene chrome: layer panel (left), object inspector (right). */
 export default function Scene3DOverlay() {
-  const scene3dMeasureReadout = useProjectStore((s) => s.scene3dMeasureReadout);
 
   return (
     <>
@@ -18,11 +16,6 @@ export default function Scene3DOverlay() {
         <ObjectDetailsPanel />
       </div>
 
-      {scene3dMeasureReadout && (
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 pointer-events-none panel-glass rounded-md px-3 py-1.5 text-xs font-data text-accent">
-          {scene3dMeasureReadout}
-        </div>
-      )}
     </>
   );
 }

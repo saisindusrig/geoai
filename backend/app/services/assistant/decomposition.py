@@ -5,7 +5,8 @@ from app.core.asset_families import asset_definition
 
 ALIASES={key.replace("_"," "):key.upper() for key in ASSET_DEFINITIONS}
 ALIASES.update({"approach road":"APPROACH_ROAD","drainage":"DRAINAGE","stormwater drainage":"DRAINAGE","utility crossing":"UTILITY_CROSSING",
-    "parking":"PARKING_LOT","grading":"SITE_GRADING","cofferdam":"COFFERDAM","building":"BUILDING","bridge":"BRIDGE"})
+    "parking":"PARKING","grading":"SITE_GRADING","cofferdam":"COFFERDAM","building":"BUILDING","bridge":"BRIDGE",
+    "skywalk":"PEDESTRIAN_BRIDGE"})
 COUNTS={"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10}
 
 

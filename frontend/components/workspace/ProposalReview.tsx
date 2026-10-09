@@ -43,6 +43,11 @@ export default function ProposalReview({ projectId, versionId }: { projectId: nu
       {reviewed && <>
         <p>{proposal.content.request.rationale}</p>
         {proposal.content.request.assets.map((a, i) => <p key={i}>{a.name} · {a.assetType}: {a.requirements?.join("; ") || "Concept requirements to be confirmed"}</p>)}
+        {proposal.content.assetProposals?.map(a => <div key={a.assetRequestId} className="rounded border border-border p-2">
+          <p>{a.displayName} · {a.assetFamily} · {a.proposalState}</p>
+          <p>Generation: {a.generationEligible ? "Eligible for specialist review" : "Unavailable"}</p>
+          {a.blockers.map((b, i) => <p key={i}>{b}</p>)}
+        </div>)}
         {proposal.status !== "REJECTED" && proposal.content.preview && <div aria-label="Temporary proposal preview" className="border border-dashed border-amber-500 p-2 text-amber-300">
           <p>PREVIEW ONLY · saved model unchanged</p>
           <p>Translate {proposal.content.preview.objectIds.join(", ")} · Local XYZ {proposal.content.preview.deltaM.join(", ")} m</p>

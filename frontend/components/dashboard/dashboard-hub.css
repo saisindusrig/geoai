@@ -76,3 +76,11 @@ html:has(.geo-dashboard-hub),body:has(.geo-dashboard-hub){height:100vh;overflow:
 .hub-command-center .hub-concept-card .hub-card-status{font-size:9px;border:1px solid #3b4b31;padding:3px 5px}
 @media(min-width:1700px){.hub-command-center{grid-template-rows:76px 116px minmax(0,1fr);gap:24px}}
 @media(max-height:800px){.hub-command-center{grid-template-rows:60px 102px minmax(0,1fr);gap:16px}.hub-command-center .hub-assets{padding:8px 0}.hub-command-center .hub-asset-row>:is(a,button){height:52px}}
+
+/* Compact project entry replaces the asset shortcuts without changing the shell. */
+.hub-command-center{grid-template-rows:auto auto minmax(0,1fr)!important}
+.hub-continue{border:1px solid var(--hub-line);border-radius:12px;padding:16px}
+.hub-continue h2{font-size:13px;margin-bottom:10px}
+.hub-continue>div{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hub-continue span,.hub-continue p{font-size:12px;color:var(--hub-muted)}
+.hub-continue a{margin-left:auto;display:inline-flex;align-items:center;gap:8px;color:var(--hub-lime);font-size:12px}

@@ -56,7 +56,7 @@ class Project(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     folder_id = Column(Integer, ForeignKey("project_folders.id", ondelete="SET NULL"), nullable=True, index=True)
     name = Column(String(255), nullable=False)
-    project_type = Column(String(50), nullable=False)  # flyover|building|pipeline|road|...
+    project_type = Column(String(50), nullable=False, default="unclassified")  # Neutral workspace or legacy asset classification.
     status = Column(String(50), default="draft", nullable=False)
     units = Column(String(20), default="metric", nullable=False)
     location_name = Column(String(500), default="")

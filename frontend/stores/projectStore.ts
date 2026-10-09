@@ -154,6 +154,7 @@ interface ProjectState {
   clearDrawVertices: () => void;
   pendingSave: PendingSave | null;
   setPendingSave: (p: PendingSave | null) => void;
+  finishDrawing: (p: PendingSave) => void;
   editVertices: [number, number][];
   editSnapshot: [number, number][];
   setEditVertices: (v: [number, number][]) => void;
@@ -221,13 +222,12 @@ interface ProjectState {
 
 export const useProjectStore = create<ProjectState>((set) => ({
   project: null,
-  setProject: (project) => set({ project }),
+  setProject: (project) => set((state) => state.project?.id === project?.id ? { project } : { project, drawnBoundary: null, drawnAlignment: null, pendingSave: null, activeTool: "select", drawVertices: [], scene3dMeasureTool: "none" }),
   activeTool: "select",
   setActiveTool: (activeTool) =>
     set((s) => ({
       activeTool,
       drawVertices: activeTool === s.activeTool ? s.drawVertices : [],
-      pendingSave: null,
       toolHint: activeTool === s.activeTool ? s.toolHint : null,
     })),
   activateTool: (activeTool, hint) =>
@@ -242,7 +242,6 @@ export const useProjectStore = create<ProjectState>((set) => ({
         activeTool,
         toolHint: nextHint,
         drawVertices: [],
-        pendingSave: null,
         corridorWidthM,
       };
     }),
@@ -259,6 +258,8 @@ export const useProjectStore = create<ProjectState>((set) => ({
   clearDrawVertices: () => set({ drawVertices: [] }),
   pendingSave: null,
   setPendingSave: (pendingSave) => set({ pendingSave }),
+  finishDrawing: (pendingSave) => set({ pendingSave, activeTool: "select", drawVertices: [], toolHint: null,
+    ...(pendingSave.kind === "boundary" ? { drawnBoundary: pendingSave.geometry } : { drawnAlignment: pendingSave.geometry }) }),
   editVertices: [],
   editSnapshot: [],
   setEditVertices: (editVertices) => set({ editVertices }),

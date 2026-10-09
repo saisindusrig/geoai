@@ -4,10 +4,6 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
-  Building2,
-  Route,
-  Network,
-  Droplets,
   Box,
   Clock3,
   Folder,
@@ -22,6 +18,7 @@ import {
   X,
 } from "lucide-react";
 import DashboardSidebar from "./DashboardSidebar";
+import NewProjectDialog from "./NewProjectDialog";
 import "./dashboard-hub.css";
 import ConstructionPreview from "@/components/dashboard/ConstructionPreview";
 import { api } from "@/lib/api";
@@ -30,21 +27,12 @@ import {
   CONSTRUCTION_TYPES,
   type ConstructionType,
 } from "@/lib/construction";
-import { ASSET_CATEGORIES, ASSET_TYPES, assetDefinition, searchAssets } from "@/lib/asset-types";
+import { assetDefinition } from "@/lib/asset-types";
 import type { Project, ProjectFolder } from "@/lib/types";
 import { LOCAL_SANDBOX_PATH } from "@/lib/local-sandbox";
 
 type FolderFilter = "all" | "unfiled" | number;
 type SortOption = "recent" | "name";
-
-const QUICK_ASSETS = [
-  {type: "bridge", title: "Bridge", category: "Transport", icon: Route},
-  {type: "road", title: "Road", category: "Transport", icon: Route},
-  {type: "pipeline", title: "Pipeline", category: "Utilities", icon: Network},
-  {type: "dam", title: "Dam", category: "Water", icon: Droplets},
-  {type: "building", title: "Building", category: "Structure", icon: Building2},
-  {type: "flyover", title: "Flyover", category: "Transport", icon: Route},
-];
 
 function isConstructionType(value: string): value is ConstructionType {
   return CONSTRUCTION_TYPES.includes(value as ConstructionType);
@@ -72,18 +60,16 @@ function typeLabel(type: ConstructionType) {
 
 export default function CreativeDashboard() {
   const searchRef = useRef<HTMLInputElement>(null);
-  const [assetQuery, setAssetQuery] = useState("");
-  const [assetCategory, setAssetCategory] = useState("all");
-  const [assetSheet, setAssetSheet] = useState(false);
+  const newProjectButton = useRef<HTMLButtonElement>(null);
+  const [newProjectOpen, setNewProjectOpen] = useState(false);
 
   const [collapsed,setCollapsed] = useState(false);
-  const [section,setSection] = useState<"overview"|"concepts"|"templates">("overview");
+  const [section,setSection] = useState<"overview"|"concepts">("overview");
   const [recentOnly,setRecentOnly] = useState(false);
 
   const [projects, setProjects] = useState<Project[] | null>(null);
   const [folders, setFolders] = useState<ProjectFolder[]>([]);
   const [query, setQuery] = useState("");
-  const [typeFilter, setTypeFilter] = useState<"all" | ConstructionType>("all");
   const [folderFilter, setFolderFilter] = useState<FolderFilter>("all");
   const [sort, setSort] = useState<SortOption>("recent");
   const [error, setError] = useState<string | null>(null);
@@ -95,12 +81,29 @@ export default function CreativeDashboard() {
   const [folderName, setFolderName] = useState("");
   const [folderError, setFolderError] = useState<string | null>(null);
   const [savingFolder, setSavingFolder] = useState(false);
+  const folderSubmitting = useRef(false);
+  const folderReturnFocus = useRef<HTMLElement | null>(null);
 
-  const navigate = (target:"overview"|"concepts"|"templates") => { setSection(target); setActiveMenu(null); };
-  useEffect(()=>{const key=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();searchRef.current?.focus();}if(event.key==="Escape"){setActiveMenu(null);setAssetSheet(false);setFolderDialog(null);}};window.addEventListener("keydown",key);return()=>window.removeEventListener("keydown",key);},[]);
+  const navigate = (target:"overview"|"concepts") => { setSection(target); setActiveMenu(null); if(target === "overview") { setQuery(""); setFolderFilter("all"); setRecentOnly(false); setSort("recent"); } };
   useEffect(() => {
-    if (!assetSheet && !folderDialog) return;
-    const previous = document.activeElement as HTMLElement | null;
+    const key = (event: KeyboardEvent) => {
+      if (event.defaultPrevented) return;
+      const dialog = (event.target instanceof HTMLElement ? event.target.closest('[role="dialog"]') : null) ?? document.querySelector('[role="dialog"]');
+      if (dialog) {
+        if (event.key === "Escape" && dialog.getAttribute("aria-labelledby") === "folder-dialog-title" && !folderSubmitting.current) {
+          event.preventDefault(); setFolderDialog(null);
+        }
+        return;
+      }
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") { event.preventDefault(); searchRef.current?.focus(); }
+      if (event.key === "Escape") { setActiveMenu(null); setFolderDialog(null); }
+    };
+    window.addEventListener("keydown", key);
+    return () => window.removeEventListener("keydown", key);
+  }, []);
+  useEffect(() => {
+    if (!folderDialog) return;
+    const previous = folderReturnFocus.current;
     const trapFocus = (event: KeyboardEvent) => {
       if (event.key !== "Tab") return;
       const dialog = document.querySelector<HTMLElement>('[role="dialog"]');
@@ -113,7 +116,7 @@ export default function CreativeDashboard() {
     };
     window.addEventListener("keydown", trapFocus);
     return () => { window.removeEventListener("keydown", trapFocus); previous?.focus(); };
-  }, [assetSheet, folderDialog]);
+  }, [folderDialog]);
 
   const load = useCallback(async () => {
     try {
@@ -128,7 +131,7 @@ export default function CreativeDashboard() {
       setProjects([]);
       setFolders([]);
       setError(
-        "Saved concepts are unavailable while the local backend is offline. You can still start a new concept.",
+        "Saved projects are unavailable. You can retry or create a new project when the backend is available.",
       );
     }
   }, []);
@@ -157,9 +160,6 @@ export default function CreativeDashboard() {
   const visibleProjects = useMemo(() => {
     const search = query.trim().toLowerCase();
     return constructionProjects
-      .filter((project) =>
-        typeFilter === "all" ? true : project.project_type === typeFilter,
-      )
       .filter((project) => {
         if (folderFilter === "all") return true;
         if (folderFilter === "unfiled") return project.folder_id == null;
@@ -177,10 +177,10 @@ export default function CreativeDashboard() {
           ? a.name.localeCompare(b.name)
           : new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
       );
-  }, [constructionProjects, folderFilter, query, sort, typeFilter]);
+  }, [constructionProjects, folderFilter, query, sort]);
 
   const hasActiveFilter =
-    Boolean(query.trim()) || typeFilter !== "all" || folderFilter !== "all";
+    Boolean(query.trim()) || folderFilter !== "all";
 
   const moveProject = async (project: Project, folderId: number | null) => {
     setActiveMenu(null);
@@ -214,6 +214,7 @@ export default function CreativeDashboard() {
   };
 
   const openFolderDialog = (folder?: ProjectFolder) => {
+    folderReturnFocus.current = document.activeElement as HTMLElement | null;
     setFolderError(null);
     setFolderName(folder?.name ?? "");
     setFolderDialog(folder ? { kind: "rename", folder } : { kind: "create" });
@@ -221,13 +222,15 @@ export default function CreativeDashboard() {
 
   const saveFolder = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!folderDialog) return;
+    const trimmedName = folderName.trim();
+    if (!folderDialog || !trimmedName || trimmedName.length > 80 || folderSubmitting.current) return;
+    folderSubmitting.current = true;
     setFolderError(null);
     setSavingFolder(true);
     try {
       if (folderDialog.kind === "create") {
         const folder = await api.post<ProjectFolder>("/api/project-folders", {
-          name: folderName,
+          name: trimmedName,
         });
         setFolders((current) =>
           [...current, folder].sort((a, b) => a.name.localeCompare(b.name)),
@@ -235,7 +238,7 @@ export default function CreativeDashboard() {
       } else {
         const folder = await api.put<ProjectFolder>(
           `/api/project-folders/${folderDialog.folder.id}`,
-          { name: folderName },
+          { name: trimmedName },
         );
         setFolders((current) =>
           current
@@ -247,6 +250,7 @@ export default function CreativeDashboard() {
     } catch {
       setFolderError("That folder name is unavailable. Try another name.");
     } finally {
+      folderSubmitting.current = false;
       setSavingFolder(false);
     }
   };
@@ -275,20 +279,29 @@ export default function CreativeDashboard() {
     }
   };
 
-  const showLibrary = section === "templates" || assetSheet;
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("newProject");
+    if (requested !== "1") return;
+    const timer = window.setTimeout(() => {
+      setNewProjectOpen(true);
+      const url = new URL(window.location.href);
+      url.searchParams.delete("newProject");
+      window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+  const latestProject = useMemo(() => [...(projects ?? [])].sort((a,b) => new Date(b.updated_at).getTime()-new Date(a.updated_at).getTime())[0], [projects]);
 
   return (
     <div className={`geo-dashboard-hub ${collapsed?"hub-collapsed":""}`}>
       <DashboardSidebar folders={folders} selected={folderFilter} collapsed={collapsed} onCollapse={()=>setCollapsed(!collapsed)} onFolder={id=>{setFolderFilter(id);setRecentOnly(false);navigate("concepts");}} onManage={openFolderDialog} onNavigate={navigate} section={section}/>
       <div className="hub-main">
-        <header className="hub-toolbar"><label className="hub-search"><Search size={16}/><input ref={searchRef} type="search" aria-label="Search concepts" placeholder="Search concepts..." value={query} onChange={event=>{setQuery(event.target.value); if(event.target.value) navigate("concepts");}}/><kbd>Ctrl K</kbd></label><div className="hub-toolbar-actions"><Link href={LOCAL_SANDBOX_PATH}><Box size={15}/>Open sandbox</Link><Link className="hub-primary" href="/projects/new"><Plus size={16}/>New concept</Link><Link href="/settings" title="Settings" aria-label="Open settings"><Settings size={17}/></Link></div></header>
+        <header className="hub-toolbar"><label className="hub-search"><Search size={16}/><input ref={searchRef} type="search" aria-label="Search projects" placeholder="Search projects..." value={query} onChange={event=>{setQuery(event.target.value); if(event.target.value) navigate("concepts");}}/><kbd>Ctrl K</kbd></label><div className="hub-toolbar-actions"><Link href={LOCAL_SANDBOX_PATH}><Box size={15}/>Open sandbox</Link><button ref={newProjectButton} className="hub-primary" onClick={() => setNewProjectOpen(true)}><Plus size={16}/>New Project</button><Link href="/settings" title="Settings" aria-label="Open settings"><Settings size={17}/></Link></div></header>
         <div className={`hub-content ${section === "overview" ? "hub-command-center" : "hub-library-view"}`}>
-          <section className="hub-overview"><span className="hub-micro">WORKSPACE / {section.toUpperCase()}</span><h1>{section === "overview" ? "Your concepts" : section === "concepts" ? "Concepts" : "Infrastructure templates"}</h1><p>{section === "templates" ? "Choose an asset from the complete infrastructure library." : "Your saved infrastructure work, together in one place."}</p></section>
-          {section === "overview" && <>
-          <section className="hub-assets"><div className="hub-section-heading"><div><h2>Start a new concept</h2><p>Choose an infrastructure type.</p></div><button onClick={()=>setAssetSheet(true)}>More assets <ArrowRight size={13}/></button></div><div className="hub-asset-row">{QUICK_ASSETS.map(({type,title,category,icon:Icon},index)=><Link className={index === 5 ? "hub-wide-asset" : ""} key={type} href={`/projects/new?template=${type}`}><Icon size={24}/><div><h3>{title}</h3><span className="hub-micro">{category}</span></div></Link>)}<button onClick={()=>setAssetSheet(true)}><Shapes size={24}/><div><h3>More assets →</h3><span className="hub-micro">{ASSET_TYPES.length} assets</span></div></button></div></section>
-          </>}
-          {section !== "templates" && <section id="hub-concepts" className="hub-all-concepts" aria-label="Saved concepts">
-          <div className="hub-filters"><span className="hub-collection-count">{projects===null?"—":visibleProjects.length} concepts</span><div className="hub-filter-tabs"><button aria-pressed={folderFilter==="all"&&!recentOnly} onClick={()=>{setFolderFilter("all");setRecentOnly(false);}}>All</button><button aria-pressed={recentOnly} onClick={()=>{setRecentOnly(true);setSort("recent");setFolderFilter("all");}}>Recent</button><button aria-pressed={folderFilter==="unfiled"} onClick={()=>{setFolderFilter("unfiled");setRecentOnly(false);}}>Unfiled</button></div><select aria-label="Filter by concept type" value={typeFilter} onChange={e=>setTypeFilter(e.target.value as "all"|ConstructionType)}><option value="all">All types</option>{ASSET_TYPES.map(asset=><option key={asset.id} value={asset.id}>{asset.name}</option>)}</select>{typeof folderFilter==="number"&&<button className="hub-folder-chip" onClick={()=>setFolderFilter("all")}>{folders.find(f=>f.id===folderFilter)?.name}<X size={12}/></button>}<label className="hub-sort">Sort <select aria-label="Sort concepts" value={sort} onChange={e=>setSort(e.target.value as SortOption)}><option value="recent">Recently updated</option><option value="name">Name A–Z</option></select></label></div>
+          <section className="hub-overview"><span className="hub-micro">WORKSPACE / {section.toUpperCase()}</span><h1>{section === "overview" ? "Your projects" : "Projects"}</h1><p>{"Your saved infrastructure work, together in one place."}</p></section>
+          {section === "overview" && <section className="hub-continue" aria-label="Continue working"><h2>Continue working</h2>{latestProject ? <div><strong>{latestProject.name}</strong><span>{projectLocation(latestProject)}</span><Link href={`/projects/${latestProject.id}/workspace`}>Open workspace <ArrowRight size={14}/></Link></div> : <p>Name a project, open the workspace, and start anywhere.</p>}</section>}
+          <section id="hub-concepts" className="hub-all-concepts" aria-label="Saved projects"><h2 className="mb-3 text-sm font-semibold">{section === "overview" ? "Recent projects" : "Projects"}</h2>
+          <div className="hub-filters"><span className="hub-collection-count">{projects===null?"—":visibleProjects.length} projects</span><div className="hub-filter-tabs"><button aria-pressed={folderFilter==="all"&&!recentOnly} onClick={()=>{setFolderFilter("all");setRecentOnly(false);}}>All</button><button aria-pressed={recentOnly} onClick={()=>{setRecentOnly(true);setSort("recent");setFolderFilter("all");}}>Recent</button><button aria-pressed={folderFilter==="unfiled"} onClick={()=>{setFolderFilter("unfiled");setRecentOnly(false);}}>Unfiled</button></div>{typeof folderFilter==="number"&&<button className="hub-folder-chip" onClick={()=>setFolderFilter("all")}>{folders.find(f=>f.id===folderFilter)?.name}<X size={12}/></button>}<label className="hub-sort">Sort <select aria-label="Sort concepts" value={sort} onChange={e=>setSort(e.target.value as SortOption)}><option value="recent">Recently updated</option><option value="name">Name A–Z</option></select></label></div>
           {error && (
             <div className="mt-5 flex items-center justify-between rounded-xl border border-warning/25 bg-warning/10 px-4 py-3 text-sm text-warning-text">
               <span>{error}</span>
@@ -325,20 +338,19 @@ export default function CreativeDashboard() {
               )}
               <h3 className="mt-3 font-semibold text-foreground">
                 {hasActiveFilter
-                  ? "No matching concepts"
-                  : "No saved concepts yet"}
+                  ? "No matching projects"
+                  : "No projects yet"}
               </h3>
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted-foreground">
                 {hasActiveFilter
-                  ? "Adjust the search, type, or folder filters to see other saved workspaces."
-                  : "Start from a location, create a concept, and save it here when you are ready to return."}
+                  ? "Adjust the search or folder filters to see other saved projects."
+                  : "Create a project with a name. Select a site and discuss your ideas inside the workspace."}
               </p>
               {hasActiveFilter ? (
                 <button
                   type="button"
                   onClick={() => {
                     setQuery("");
-                    setTypeFilter("all");
                     setFolderFilter("all");
                   }}
                   className="mt-5 inline-flex rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/45"
@@ -346,19 +358,14 @@ export default function CreativeDashboard() {
                   Clear filters
                 </button>
               ) : (
-                <Link
-                  href="/projects/new"
-                  className="mt-5 inline-flex rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
-                >
-                  New concept
-                </Link>
+                <button onClick={() => setNewProjectOpen(true)} className="mt-5 inline-flex rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">New Project</button>
               )}
             </div>
           )}
 
           {visibleProjects.length > 0 && (
             <div className="hub-concept-grid">
-              {(recentOnly ? visibleProjects.slice(0,6) : visibleProjects).map((project) => {
+              {(recentOnly || section === "overview" ? visibleProjects.slice(0,6) : visibleProjects).map((project) => {
                 const type = project.project_type as ConstructionType;
                 const folder = folders.find(
                   (item) => item.id === project.folder_id,
@@ -450,7 +457,7 @@ export default function CreativeDashboard() {
                           className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-xs text-destructive transition hover:bg-destructive/10"
                         >
                           <Trash2 className="size-3.5" />
-                          Delete concept
+                          Delete project
                         </button>
                       </div>
                     )}
@@ -460,11 +467,10 @@ export default function CreativeDashboard() {
             </div>
           )}
 
-          </section>}
-          {section === "templates" && <AssetLibrary query={assetQuery} category={assetCategory} onQuery={setAssetQuery} onCategory={setAssetCategory}/>}
+          </section>
         </div>
       </div>
-      {assetSheet && showLibrary && <div className="hub-sheet-backdrop" onClick={()=>setAssetSheet(false)}><section className="hub-asset-sheet" role="dialog" aria-modal="true" aria-labelledby="asset-sheet-title" onClick={e=>e.stopPropagation()}><header><h2 id="asset-sheet-title">All assets</h2><button autoFocus onClick={()=>setAssetSheet(false)} aria-label="Close asset library"><X size={20}/></button></header><AssetLibrary query={assetQuery} category={assetCategory} onQuery={setAssetQuery} onCategory={setAssetCategory}/></section></div>}
+      {newProjectOpen && <NewProjectDialog onClose={() => setNewProjectOpen(false)} returnFocus={() => newProjectButton.current?.focus()} />}
       {folderDialog && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-8"
@@ -492,6 +498,7 @@ export default function CreativeDashboard() {
               </div>
               <button
                 type="button"
+                disabled={savingFolder}
                 onClick={() => setFolderDialog(null)}
                 aria-label="Close folder dialog"
                 className="rounded-lg p-1.5 text-muted-foreground hover:bg-surface-hover hover:text-foreground"
@@ -503,6 +510,8 @@ export default function CreativeDashboard() {
               Folder name
               <input
                 autoFocus
+                required
+                disabled={savingFolder}
                 value={folderName}
                 onChange={(event) => setFolderName(event.target.value)}
                 maxLength={80}
@@ -510,12 +519,13 @@ export default function CreativeDashboard() {
               />
             </label>
             {folderError && (
-              <p className="mt-3 text-xs text-destructive">{folderError}</p>
+              <p role="alert" className="mt-3 text-xs text-destructive">{folderError}</p>
             )}
             <div className="mt-6 flex items-center justify-between">
               {folderDialog.kind === "rename" ? (
                 <button
                   type="button"
+                  disabled={savingFolder}
                   onClick={() => void deleteFolder(folderDialog.folder)}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-destructive hover:underline"
                 >
@@ -541,9 +551,4 @@ export default function CreativeDashboard() {
       )}
     </div>
   );
-}
-
-function AssetLibrary({query,category,onQuery,onCategory}:{query:string;category:string;onQuery:(value:string)=>void;onCategory:(value:string)=>void}) {
-  const assets = searchAssets(query,category);
-  return <div className="hub-asset-library"><div className="hub-asset-controls"><label><Search size={16}/><input aria-label="Search asset library" placeholder="Search assets…" value={query} onChange={e=>onQuery(e.target.value)}/></label><select aria-label="Asset category" value={category} onChange={e=>onCategory(e.target.value)}><option value="all">All categories</option>{ASSET_CATEGORIES.map(item=><option key={item.id} value={item.id}>{item.label}</option>)}</select></div><div className="hub-full-assets">{assets.map(asset=>asset.status === "planned" ? <div key={asset.id} className="hub-planned-asset"><strong>{asset.name}</strong><small>Planned</small></div> : <Link key={asset.id} href={`/projects/new?template=${encodeURIComponent(asset.id)}`}><strong>{asset.name}<ArrowRight size={13}/></strong><small>{ASSET_CATEGORIES.find(c=>c.id===asset.category)?.label} · {asset.maturity.toLowerCase()}</small></Link>)}{!assets.length && <p>No matching assets. Try another search.</p>}</div></div>;
 }

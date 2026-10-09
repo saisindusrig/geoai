@@ -27,7 +27,7 @@ def test_alembic_upgrade_head_sqlite(tmp_path):
     engine = create_engine(url)
     with engine.connect() as conn:
         version = conn.execute(text("SELECT version_num FROM alembic_version")).scalar()
-        assert version == "010"
+        assert version == "011"
         for table in ("terrain_dataset_versions", "model_placements", "ground_samples", "survey_validation_runs", "engineering_analyses", "engineering_audit_events"):
             assert conn.execute(text("SELECT name FROM sqlite_master WHERE type='table' AND name=:name"), {"name": table}).scalar() == table
 
@@ -64,4 +64,4 @@ def test_alembic_upgrade_head_sqlite(tmp_path):
         inspector = inspect(conn)
         columns = {c["name"] for c in inspector.get_columns("building_plans")}
         assert {"spec_json", "context_hash", "approved_at", "job_id", "scenario_id"}.issubset(columns)
-        assert conn.execute(text("SELECT version_num FROM alembic_version")).scalar() == "010"
+        assert conn.execute(text("SELECT version_num FROM alembic_version")).scalar() == "011"

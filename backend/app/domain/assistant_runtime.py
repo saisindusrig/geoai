@@ -3,11 +3,13 @@ from typing import Annotated, Literal
 from pydantic import Field
 from app.domain.stage1 import Contract, Id, Digest, CivilIntent, ApprovalCommand, Finite, ProposalPayload, ValidationResult, ProposalStatus
 from app.domain.site_workspace import MessageContext
+from app.domain.composition import AssetProposal
 
 Text = Annotated[str, Field(min_length=1, max_length=4000)]
 
 
 class ConceptAsset(Contract):
+    asset_request_id: Id | None = None
     asset_type: Id
     name: Annotated[str, Field(min_length=1, max_length=255)]
     requirements: Annotated[list[Text], Field(max_length=30)] = Field(default_factory=list)
@@ -93,6 +95,7 @@ class ProposalReference(Contract):
 
 
 class ProposalContent(Contract):
+    asset_proposals: list[AssetProposal] = Field(default_factory=list)
     contract: ProposalPayload
     context: MessageContext
     request: ProposalRequest

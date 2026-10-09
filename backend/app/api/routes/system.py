@@ -79,16 +79,21 @@ def _map_provider_status() -> dict:
 
 @router.get("/status")
 async def system_status():
-    postgis = IS_POSTGRES
+    from app.core.infrastructure import dependency_status
+    dependencies = dependency_status()
+    postgis = dependencies["database"]["postgis"]
+    ai = await _ai_provider_status()
+    ai["assistant"] = dependencies["ai"]
     return {
-        "database_type": "postgresql" if postgis else "sqlite",
+        "database_type": dependencies["database"]["backend"],
+        "dependencies": dependencies,
         "postgis_available": postgis,
-        "database_mode_label": "Full survey mode (PostGIS)" if postgis else "Limited GIS mode (SQLite)",
-        "redis_available": _redis_available(),
-        "job_store": "redis" if _redis_available() else "in_memory",
-        "storage_mode": _storage_mode(),
+        "database_mode_label": "Full survey mode (PostGIS)" if postgis else "Limited GIS mode (SQLite)" if dependencies["database"]["backend"]=="sqlite" else "PostGIS unavailable",
+        "redis_available": dependencies["redis"]["status"]=="AVAILABLE",
+        "job_store": "redis" if dependencies["redis"]["status"]=="AVAILABLE" else "in_memory",
+        "storage_mode": dependencies["storage"]["mode"],
         "survey_mode_available": postgis,
-        "ai": await _ai_provider_status(),
+        "ai": ai,
         "maps": _map_provider_status(),
         "observability": {
             "structured_request_logging": True,
@@ -96,6 +101,6 @@ async def system_status():
             "sentry_enabled": sentry_enabled(),
             "sentry_configured": bool(settings.SENTRY_DSN),
         },
-        "production": production_readiness(),
+        "production": production_readiness(dependencies),
         "disclaimer": DISCLAIMER,
     }

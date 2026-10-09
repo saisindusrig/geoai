@@ -36,6 +36,9 @@ def build_context(db, project_id, message, policy, budget=MAX_CONTEXT_BYTES):
     def optional(key,value):
         if len(compact({**required,key:value}).encode())<=budget:
             required[key]=value
+    from app.services.assistant.composition import project_composition
+    composition = project_composition(db, project_id)
+    optional("composition", {"assets":composition["assets"][:100],"relationships":composition["relationships"][:100]})
     if context.get("modelRevisionId"):
         model=owned_row(db,"model_revisions",project_id,context["modelRevisionId"])
         selected={r["objectId"] for r in context["selection"]}

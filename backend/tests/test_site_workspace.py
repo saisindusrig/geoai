@@ -241,10 +241,10 @@ def api_client(site_db,monkeypatch):
     from app.main import app
     from app.db.session import get_db
     from app.core.security import get_current_user_id
-    async def unavailable(*args):
+    async def unavailable(*args, **kwargs):
         from app.services.ai.nebius import AssistantProviderError
         raise AssistantProviderError("MISSING_KEY")
-    monkeypatch.setattr("app.services.assistant.runtime.assistant_json",unavailable)
+    monkeypatch.setattr("app.services.ai.nebius.assistant_json",unavailable)
     app.dependency_overrides[get_db]=lambda:site_db
     app.dependency_overrides[get_current_user_id]=lambda:1
     client=TestClient(app)

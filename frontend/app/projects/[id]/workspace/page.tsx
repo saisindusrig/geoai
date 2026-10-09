@@ -17,8 +17,7 @@ import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
 import ParameterForm from "@/components/workspace/ParameterForm";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Crosshair, Layers3, Search, Sparkles, Wrench } from "lucide-react";
-import TransformOptions from "@/components/model-editor/TransformOptions";
+import { ChevronDown, Layers3, Search, Sparkles, Wrench } from "lucide-react";
 import { useEditableModelEditor } from "@/hooks/useEditableModelEditor";
 import { useProjectData } from "@/hooks/useProjectData";
 import { useActiveJobPolling } from "@/hooks/useActiveJobPolling";
@@ -245,7 +244,6 @@ export default function WorkspacePage() {
           defaultFocus={false}
           mapCreditsContainer={mapCreditsContainer}
           toolRail={<WorkspaceToolRail editor={modelEditor} />}
-          mapBottomControls={<TransformOptions editor={modelEditor} />}
           mapToolbar={
             <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
               {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
@@ -266,7 +264,6 @@ export default function WorkspacePage() {
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="Search workspace" title="Search objects and places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" title="Fit project in view" onClick={() => window.dispatchEvent(new CustomEvent("geoai:fit-project"))}><Crosshair className="size-4" /></Button>
               </div>
               <div className="relative">
                 <Button disabled={!assetSupportsGeneration(project.project_type)} title={assetSupportsGeneration(project.project_type) ? "Generate concept" : "Site reference only; generation unavailable"} onClick={toggleConcept} className="workspace-generate-button ml-1 h-10 gap-2.5 rounded-xl bg-primary/90 px-5 text-xs font-semibold shadow-md brightness-[0.94] hover:bg-primary/80">

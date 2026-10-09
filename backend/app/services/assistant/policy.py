@@ -18,11 +18,12 @@ def text_of(message):
 def classify(message):
     text=text_of(message).lower().strip()
     if re.search(r"\b(approve|approval|accept (the |this )?proposal)\b",text):kind="PROPOSAL_APPROVAL"
-    elif re.search(r"\b(safe|safety|structural analysis|analy[sz]e|capacity)\b",text):kind="ANALYSIS_REQUEST"
+    elif re.search(r"\b(safe|safely|safety|structural analysis|analy[sz]e|capacity)\b",text):kind="ANALYSIS_REQUEST"
     elif re.match(r"(why|explain)\b",text):kind="EXPLANATION_REQUEST"
+    elif re.fullmatch(r"what is (site |engineering )?readiness\??",text):kind="QUESTION"
     elif re.search(r"\b(slope|elevation|terrain|utilities|soil|flood|readiness)\b",text) and ("?" in text or re.match(r"(what|show|is|are|get)",text)):kind="SITE_QUERY"
     elif re.match(r"(move|raise|lower|translate|change|revise|rotate|resize|remove|delete)\b",text):kind="CHANGE_REQUEST"
-    elif re.search(r"\b(build|create|design|plan|want|propose)\b",text) and "?" not in text:kind="DESIGN_REQUEST"
+    elif re.search(r"\b(build|create|design|plan|want|propose|put|add)\b",text) and "?" not in text:kind="DESIGN_REQUEST"
     elif "?" in text or re.match(r"(what|where|how|can|could|would|is|are)\b",text):kind="QUESTION"
     else:kind="GENERAL_DISCUSSION"
     assets=decompose(text)
@@ -36,12 +37,17 @@ def evaluate(message, proposed_intent=None):
     # Model classification may enrich asset names but cannot escalate a read-only request.
     attached={r["objectId"] for r in message["context"]["selection"]}
     if proposed_intent is not None and proposed_intent.kind==intent.kind and all(r.object_id in attached for a in proposed_intent.assets for r in a.referenced_objects):
-        intent=proposed_intent.model_copy(update={"needs_clarification":intent.needs_clarification or proposed_intent.needs_clarification})
+        # Model enrichment cannot replace deterministic quantities or turn conceptual planning into a questionnaire.
+        if intent.assets[0].asset_type=="UNREGISTERED_CIVIL_ASSET":
+            intent=intent.model_copy(update={"assets":proposed_intent.assets})
     intent=intent.model_copy(update={"assets":[a.model_copy(update={"asset_family":asset_definition(a.asset_type)["family"]}) for a in intent.assets]})
     effect="APPROVAL_UI_REQUIRED" if intent.kind=="PROPOSAL_APPROVAL" else "PROPOSAL_ONLY" if intent.kind in {"DESIGN_REQUEST","CHANGE_REQUEST"} and not intent.needs_clarification else "READ_ONLY"
     operation={"DESIGN_REQUEST":"PROPOSE","CHANGE_REQUEST":"PROPOSE","ANALYSIS_REQUEST":"ANALYZE","SITE_QUERY":"DISCUSS"}.get(intent.kind,"DISCUSS")
-    return {"intent":intent.model_dump(mode="json",by_alias=True),"allowedEffect":effect,"requestedOperation":operation,
+    result={"intent":intent.model_dump(mode="json",by_alias=True),"allowedEffect":effect,"requestedOperation":operation,
         "targetObjects":message["context"]["selection"],"proposalReference":message["context"].get("proposalVersionId"),
         "capabilities":[capability(a.asset_type).model_dump(mode="json",by_alias=True) for a in intent.assets],
         "limitations":["Only conceptual planning is available; no validated structural safety conclusion or geometry execution is available.",
             "Unknown or unavailable evidence does not establish absence. Approval requires the application review control."]}
+    from app.services.assistant.understanding import understand
+    result["understanding"]=understand(message,result)
+    return result

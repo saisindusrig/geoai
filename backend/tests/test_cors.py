@@ -15,8 +15,10 @@ def test_build_cors_origins_includes_app_url(monkeypatch):
     assert "http://localhost:3000" in origins
 
 
-def test_netlify_origin_regex_matches_deploy_urls():
+def test_netlify_origin_regex_matches_deploy_urls(monkeypatch):
     import re
+    from app.core.config import settings
+    monkeypatch.setattr(settings,"CORS_ALLOW_NETLIFY",True)
 
     pattern = build_cors_origin_regex()
     assert pattern is not None
@@ -25,10 +27,14 @@ def test_netlify_origin_regex_matches_deploy_urls():
     assert compiled.fullmatch("https://deploy-preview-42--flourishing-mochi-432285.netlify.app")
 
 
-def test_cors_preflight_for_netlify_origin():
+def test_cors_preflight_for_netlify_origin(monkeypatch):
     from fastapi.testclient import TestClient
-
-    from app.main import app
+    from fastapi import FastAPI
+    from fastapi.middleware.cors import CORSMiddleware
+    from app.core.config import settings
+    monkeypatch.setattr(settings,"CORS_ALLOW_NETLIFY",True)
+    app = FastAPI()
+    app.add_middleware(CORSMiddleware,allow_origins=build_cors_origins(),allow_origin_regex=build_cors_origin_regex(),allow_methods=["*"],allow_headers=["*"],allow_credentials=True)
 
     client = TestClient(app)
     response = client.options(

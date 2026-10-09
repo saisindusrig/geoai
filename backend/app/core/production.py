@@ -89,24 +89,39 @@ def collect_production_warnings() -> list[dict]:
             )
         )
 
-    if not settings.CESIUM_ION_TOKEN:
+    if not settings.CESIUM_ION_READ_TOKEN:
         warnings.append(
             _warning(
                 "cesium_ion_missing",
-                "CESIUM_ION_TOKEN is not set — Cesium world terrain/imagery may be limited.",
+                "CESIUM_ION_READ_TOKEN is not set — Cesium world terrain/imagery may be limited.",
             )
         )
 
     return warnings
 
 
-def production_readiness() -> dict:
+def production_readiness(dependencies=None) -> dict:
+    from app.core.infrastructure import dependency_status
+    dependencies = dependencies if dependencies is not None else dependency_status()
     warnings = collect_production_warnings()
+    requirements = {
+        "database":dependencies["database"]["status"]=="AVAILABLE" and dependencies["database"]["backend"]=="postgresql" and dependencies["database"]["schema"]=="CURRENT",
+        "postgis":dependencies["database"]["postgis"],
+        "redis":dependencies["redis"]["status"]=="AVAILABLE",
+        "worker":dependencies["worker"]["status"]=="AVAILABLE",
+        "storage":dependencies["storage"]["status"]=="AVAILABLE",
+        "ai":dependencies["ai"]["status"]=="AVAILABLE",
+        "cesium":dependencies["cesium"]["status"]=="CONFIGURED",
+    }
+    for name, ready in requirements.items():
+        if not ready:
+            warnings.append(_warning(f"{name}_not_ready",f"Production dependency {name} is unavailable or unverified.",severity="critical" if _is_production() else "warning"))
     critical = [w for w in warnings if w.get("severity") == "critical"]
     auth_required = settings.AUTH_REQUIRE_JWT
     ownership_enforced = auth_required
     auth_ready = auth_required or not _is_production()
-    deployment_ready = len(critical) == 0 and auth_ready
+    ready = all(requirements.values()) and auth_required and settings.APP_SECRET not in DEV_SECRETS and len(critical)==0
+    deployment_ready = ready
     return {
         "environment": settings.ENVIRONMENT,
         "auth_required": auth_required,
@@ -130,7 +145,8 @@ def production_readiness() -> dict:
         "warnings": warnings,
         "warning_count": len(warnings),
         "critical_count": len(critical),
-        "production_ready": len(critical) == 0,
+        "dependencies": dependencies,
+        "production_ready": ready,
         "deployment_ready": deployment_ready,
     }
 

@@ -1,0 +1,11 @@
+{
+  "version": "geoai-pilot/1",
+  "case_ids": ["multi_asset_001", "unknown_data_001", "site_aware_001", "model_editing_001", "unusual_assets_001"],
+  "primary_aliases": ["qwen", "glm", "nemotron", "kimi"],
+  "optional_alias": "cheap",
+  "automatic_execution": false,
+  "primary_evaluations": 20,
+  "primary_max_completion_requests": 120,
+  "with_optional_evaluations": 25,
+  "with_optional_max_completion_requests": 150
+}

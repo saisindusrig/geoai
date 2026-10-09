@@ -42,6 +42,8 @@ frontend/playwright-report/
 /frontend/.cache/
 /backend/.cache/
 /backend/.test-stage1-*/
+/backend/.test-cleanup-*/
+/backend/.test-*/
 /frontend/dist/
 /frontend/build/
 /backend/build/
@@ -56,3 +58,7 @@ frontend/playwright-report/
 
 # Local archive of the previous repository; never publish
 /.git-history-backup/
+
+# Local AI evaluation outputs; never commit provider responses or review notes.
+/backend/evals/results/
+/backend/evals/results*.zip
