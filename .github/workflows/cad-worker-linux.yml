@@ -1,0 +1,61 @@
+name: Isolated CAD worker Linux verification
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'backend/app/experimental/**'
+      - 'backend/tests/test_cad*'
+      - 'backend/tests/test_bim_foundation.py'
+      - 'backend/tests/test_ai3d_v1.py'
+      - 'backend/tests/test_building*.py'
+      - 'backend/tests/test_model_revisions.py'
+      - 'backend/app/domain/*.py'
+      - 'backend/app/services/assistant/bim_foundation.py'
+      - 'backend/tests/fixtures/cad-windows-3b2a.json'
+      - 'backend/scripts/*cad*'
+      - 'backend/Dockerfile.cad-worker*'
+      - 'backend/requirements*.txt'
+      - '.github/workflows/cad-worker-linux.yml'
+permissions:
+  contents: read
+concurrency:
+  group: cad-linux-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build minimal runtime and verification image
+        run: |
+          docker build --target runtime -f backend/Dockerfile.cad-worker -t geoai-cad-runtime .
+          docker build --target verification -f backend/Dockerfile.cad-worker -t geoai-cad-verify .
+          mkdir -p cad-results
+          docker image inspect geoai-cad-runtime > cad-results/image.json
+      - name: Headless runtime smoke without network or credentials
+        run: |
+          docker run --rm --network none --read-only --tmpfs /tmp:size=128m --cpus=2 --memory=3g --pids-limit=96 --cap-drop ALL --security-opt no-new-privileges geoai-cad-runtime > cad-results/runtime.json
+      - name: Linux fixtures, resource isolation and regression boundaries
+        run: |
+          docker create --name cad-verification --network none --cpus=2 --memory=3g --pids-limit=96 --cap-drop ALL --security-opt no-new-privileges geoai-cad-verify
+          docker start --attach cad-verification
+          test "$(docker inspect cad-verification --format '{{.State.ExitCode}}')" = 0
+      - name: Native linkage, inventory and Windows tolerance comparison
+        run: |
+          docker run --name cad-metrics --network none --cpus=2 --memory=3g --pids-limit=96 --cap-drop ALL --security-opt no-new-privileges geoai-cad-verify sh -ec '
+            python scripts/verify_cad_worker.py --compare windows-reference.json --output /verification/linux.json
+            python scripts/cad_worker_inventory.py --check-linkage > /verification/inventory.json
+            pip freeze > /verification/resolved-packages.txt
+            dpkg-query -W > /verification/system-packages.txt
+          '
+      - name: Collect verification evidence
+        if: always()
+        run: |
+          docker cp cad-verification:/verification/. cad-results/ || true
+          docker cp cad-metrics:/verification/. cad-results/ || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cad-linux-verification
+          path: cad-results/

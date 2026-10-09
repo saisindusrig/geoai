@@ -1,0 +1,26 @@
+# Repository-root context, explicit source/test/notice allowlist only.
+**
+!backend
+!backend/app
+!backend/app/**
+!backend/tests
+!backend/tests/**
+!backend/cad-notices
+!backend/cad-notices/**
+!backend/scripts
+!backend/scripts/verify_cad_worker.py
+!backend/scripts/cad_worker_inventory.py
+!backend/scripts/run_cad_regressions.py
+!backend/scripts/run_cad_proof.py
+!backend/requirements.txt
+!backend/requirements-cad-worker.txt
+!docs
+!docs/contracts
+!docs/contracts/bim-project.schema.json
+**/__pycache__
+**/.pytest_cache
+**/.env
+**/.env.*
+**/*.db
+**/*.db-*
+**/*.log
