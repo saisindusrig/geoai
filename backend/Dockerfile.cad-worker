@@ -2,11 +2,11 @@
 FROM python:3.13.6-slim-bookworm AS runtime
 WORKDIR /worker
 RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libxrender1 libxext6 libsm6 libgomp1 && rm -rf /var/lib/apt/lists/*
-COPY requirements-cad-worker.txt ./
+COPY backend/requirements-cad-worker.txt ./
 RUN pip install --no-cache-dir -r requirements-cad-worker.txt
-COPY app ./app
-COPY scripts/verify_cad_worker.py scripts/cad_worker_inventory.py ./scripts/
-COPY cad-notices ./cad-notices/
+COPY backend/app ./app
+COPY backend/scripts/verify_cad_worker.py backend/scripts/cad_worker_inventory.py ./scripts/
+COPY backend/cad-notices ./cad-notices/
 ENV PYTHONPATH=/worker
 RUN useradd --create-home cadworker
 USER cadworker
@@ -18,11 +18,12 @@ CMD ["python", "scripts/verify_cad_worker.py"]
 FROM runtime AS verification
 USER root
 ENV DATABASE_URL=sqlite:////tmp/cad-verification.db LOCAL_STORAGE_DIR=/tmp/cad-storage
-COPY requirements.txt ./
+COPY backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt -r requirements-cad-worker.txt && pip check
-COPY tests ./tests
-COPY scripts/run_cad_regressions.py ./scripts/
-COPY tests/fixtures/cad-windows-3b2a.json /worker/windows-reference.json
+COPY backend/tests ./tests
+COPY backend/scripts/run_cad_regressions.py backend/scripts/run_cad_proof.py ./scripts/
+COPY backend/tests/fixtures/cad-windows-3b2a.json /worker/windows-reference.json
+COPY docs/contracts/bim-project.schema.json /docs/contracts/bim-project.schema.json
 RUN mkdir /verification && chown cadworker /verification
 USER cadworker
 CMD ["python", "scripts/run_cad_regressions.py", "tests/test_cad_proof.py", "tests/test_cad_integration.py", "tests/test_cad_worker_deployment.py", "tests/test_bim_foundation.py", "tests/test_ai3d_v1.py", "tests/test_building_specialist_v1.py", "tests/test_building_patch_v1.py", "tests/test_model_revisions.py", "-q", "--basetemp=/tmp/cad-pytest", "--junitxml=/verification/tests.xml"]

@@ -29,8 +29,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build minimal runtime and verification image
         run: |
-          docker build --target runtime -f backend/Dockerfile.cad-worker -t geoai-cad-runtime backend
-          docker build --target verification -f backend/Dockerfile.cad-worker -t geoai-cad-verify backend
+          docker build --target runtime -f backend/Dockerfile.cad-worker -t geoai-cad-runtime .
+          docker build --target verification -f backend/Dockerfile.cad-worker -t geoai-cad-verify .
           mkdir -p cad-results
           docker image inspect geoai-cad-runtime > cad-results/image.json
       - name: Headless runtime smoke without network or credentials

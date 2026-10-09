@@ -139,8 +139,8 @@ the artifact catalog only after complete validation.
 Build and run from the repository root:
 
 ```sh
-docker build --target runtime -f backend/Dockerfile.cad-worker -t geoai-cad-runtime backend
-docker build --target verification -f backend/Dockerfile.cad-worker -t geoai-cad-verify backend
+docker build --target runtime -f backend/Dockerfile.cad-worker -t geoai-cad-runtime .
+docker build --target verification -f backend/Dockerfile.cad-worker -t geoai-cad-verify .
 docker run --rm --network none --read-only --tmpfs /tmp:size=128m --cpus=2 --memory=3g --pids-limit=96 --cap-drop ALL --security-opt no-new-privileges geoai-cad-runtime
 docker run --rm --network none --cpus=2 --memory=3g --pids-limit=96 --cap-drop ALL --security-opt no-new-privileges geoai-cad-verify
 ```

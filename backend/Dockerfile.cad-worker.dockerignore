@@ -1,17 +1,26 @@
-# Keep credentials, local databases, native caches and generated output out of
-# the CAD build context. This ignore file applies only to this Dockerfile.
-.env
-.env.*
-.venv
-.cad-proof-deps
-.cad-proof-output
-__pycache__
+# Repository-root context, explicit source/test/notice allowlist only.
+**
+!backend
+!backend/app
+!backend/app/**
+!backend/tests
+!backend/tests/**
+!backend/cad-notices
+!backend/cad-notices/**
+!backend/scripts
+!backend/scripts/verify_cad_worker.py
+!backend/scripts/cad_worker_inventory.py
+!backend/scripts/run_cad_regressions.py
+!backend/scripts/run_cad_proof.py
+!backend/requirements.txt
+!backend/requirements-cad-worker.txt
+!docs
+!docs/contracts
+!docs/contracts/bim-project.schema.json
 **/__pycache__
-.pytest_cache
-*.db
-*.db-*
-storage
-storage-cad-private
-live-results
-evals/results
-*.log
+**/.pytest_cache
+**/.env
+**/.env.*
+**/*.db
+**/*.db-*
+**/*.log
