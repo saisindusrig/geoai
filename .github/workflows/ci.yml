@@ -83,10 +83,20 @@ jobs:
         working-directory: backend
         run: |
           uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+          api_pid=$!
           for i in $(seq 1 30); do
-            curl -sf http://127.0.0.1:8000/api/system/health && break
+            if curl --fail --silent http://127.0.0.1:8000/api/health >/dev/null; then
+              echo "API is ready"
+              exit 0
+            fi
+            if ! kill -0 "$api_pid" 2>/dev/null; then
+              echo "::error::API process stopped before becoming ready"
+              exit 1
+            fi
             sleep 2
           done
+          echo "::error::API did not become ready within 60 seconds"
+          exit 1
       - name: Run Playwright E2E
         run: npm run test:e2e
         env:
