@@ -2,6 +2,8 @@ import { expect, test } from "@playwright/test";
 const api=process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
 
 for (const width of [1440,1920]) test(`boundary drawing, validation, retry and reversible editing at ${width}px`, async ({ page }) => {
+  // Multiple reloads and canvas gestures run on software WebGL in Linux CI.
+  test.slow();
   await page.setViewportSize({width,height:1000});
   const errors:string[]=[]; page.on("pageerror", e => errors.push(e.message));
   await page.route("**/api/geocode/map-runtime-config", r => r.fulfill({json:{cesium_ion_token:null,google_maps_api_key:null}}));

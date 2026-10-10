@@ -4,6 +4,8 @@ const projectId = process.env.PLATFORM_ACCEPTANCE_PROJECT_ID;
 test.skip(!projectId, "Requires the offline create_platform_workspace_fixture.py project");
 
 test("review and approve one platform, then edit, save, reload and compare", async ({ page }) => {
+  // Approval, two desktop canvas workflows and persistence share this test.
+  test.slow();
   const errors:string[]=[]; page.on("pageerror", e=>errors.push(e.message));
   await page.setViewportSize({ width: 1626, height: 982 });
   await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
