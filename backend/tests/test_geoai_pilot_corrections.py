@@ -106,6 +106,7 @@ def test_site_readiness_alias_is_scoped_to_received_tool():
 
 
 @pytest.mark.parametrize('alias',['qwen','kimi'])
+@pytest.mark.skipif(not SOURCE.exists(), reason="Local evaluation outputs are not committed")
 def test_saved_pilot_offline_no_provider_calls(alias,monkeypatch):
     from app.services.ai.provider import NebiusProvider
     async def forbidden(*args,**kwargs):raise AssertionError('No provider requests')
@@ -127,6 +128,7 @@ def test_saved_pilot_offline_no_provider_calls(alias,monkeypatch):
         assert edit['scoring']['effect_mismatches']
 
 
+@pytest.mark.skipif(not SOURCE.exists(), reason="Local evaluation outputs are not committed")
 def test_full_pilot_rescore_audit_preserves_sources(tmp_path,monkeypatch):
     from app.services.ai.provider import NebiusProvider
     from evals.rescore_pilot import rescore_pilot

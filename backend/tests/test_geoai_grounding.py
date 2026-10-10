@@ -85,6 +85,7 @@ def test_assertion_distinct_from_assumption():
 
 
 @pytest.mark.parametrize('alias,expected', [('qwen',95),('kimi',95)])
+@pytest.mark.skipif(not SOURCE.exists(), reason="Local evaluation outputs are not committed")
 def test_saved_smoke_offline_scoring(alias,expected):
     original=json.loads((SOURCE/(alias+'.json')).read_text())[0]
     before=deepcopy(original)
@@ -97,6 +98,7 @@ def test_saved_smoke_offline_scoring(alias,expected):
     assert row['rescore_paid_requests']==0
 
 
+@pytest.mark.skipif(not SOURCE.exists(), reason="Local evaluation outputs are not committed")
 def test_offline_rescore_preserves_files_and_invalid_outputs(tmp_path,monkeypatch):
     from app.services.ai.provider import NebiusProvider
     async def forbidden(*args,**kwargs):raise AssertionError('No provider calls authorized')

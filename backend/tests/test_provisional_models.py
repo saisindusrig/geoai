@@ -41,7 +41,7 @@ def test_unset_fast_uses_primary_not_legacy_chat(aliases,monkeypatch):
 def test_provisional_primary_config_and_configurable_alias(tmp_path):
     from dotenv import dotenv_values
     repo=Path(__file__).parents[2]
-    assert dotenv_values(repo/'.env')['NEBIUS_PRIMARY_MODEL']=='Qwen/Qwen3.5-397B-A17B'
+    assert dotenv_values(repo/'.env.example')['NEBIUS_PRIMARY_MODEL']=='Qwen/Qwen3.5-397B-A17B'
     path=tmp_path/'env';path.write_text('NEBIUS_PRIMARY_MODEL=other-provider-model\nNEBIUS_FAST_MODEL=other-fast-model\n')
     config=Settings(_env_file=path)
     assert config.NEBIUS_PRIMARY_MODEL=='other-provider-model' and config.NEBIUS_FAST_MODEL=='other-fast-model'
