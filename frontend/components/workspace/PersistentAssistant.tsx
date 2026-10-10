@@ -129,7 +129,7 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
         // Validate the captured geometry on retry too; never silently rebind context.
         if (!profile?.current || !profile.version) throw new Error("Site changed. Save the boundary and Refresh site before sending a new request.");
         const saved = await api.get<SelectionVersion>(`${base}/site-selections/${profile.selectionId}/versions/${profile.version.selectionVersion.version}`);
-        if (saved.id !== body.context.siteSelectionVersionId || JSON.stringify(saved.canonicalGeometry) !== JSON.stringify(frozenSite.current)) {
+        if (saved.id !== body.context.siteSelectionVersionId || saved.canonicalGeometry.type !== frozenSite.current.type || JSON.stringify(saved.canonicalGeometry.coordinates) !== JSON.stringify(frozenSite.current.coordinates)) {
           throw new Error("Site changed. Save the boundary and Refresh site before sending a new request.");
         }
       }

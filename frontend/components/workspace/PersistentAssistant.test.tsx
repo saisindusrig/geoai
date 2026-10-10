@@ -47,7 +47,8 @@ describe("persistent project Assistant", () => {
   it("keeps the saved selection/profile pair without creating a selection on send", async () => {
     const geometry = { type: "Polygon" as const, coordinates: [[[77,12],[77.002,12],[77.002,12.001],[77,12]]] };
     const originalGet = vi.mocked(api.get).getMockImplementation()!;
-    vi.mocked(api.get).mockImplementation(async path => path.includes("/site-selections/") ? { id: "sv1", canonicalGeometry: geometry } : originalGet(path));
+    // Object key order is not geometric identity; coordinates and type are.
+    vi.mocked(api.get).mockImplementation(async path => path.includes("/site-selections/") ? { id: "sv1", canonicalGeometry: { coordinates: geometry.coordinates, type: geometry.type } } : originalGet(path));
     render(<PersistentAssistant {...props} siteGeometry={geometry} />); await ready();
     fireEvent.change(screen.getByRole("textbox", { name: "Project message" }), { target: { value: "Create a 5 m x 3 m industrial maintenance platform" } });
     fireEvent.click(screen.getByRole("button", { name: "Send message" }));
