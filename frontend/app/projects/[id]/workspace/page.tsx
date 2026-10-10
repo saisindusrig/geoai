@@ -69,6 +69,8 @@ export default function WorkspacePage() {
   const generationMode: GenerationMode = "balanced";
 
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
+  const activeTool = useProjectStore(state => state.activeTool);
+  const measuring = useProjectStore(state => state.scene3dMeasureTool !== "none");
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
   const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
     const job = await api.get<JobStatus>(`/api/jobs/${jobId}`);
@@ -266,7 +268,7 @@ export default function WorkspacePage() {
                 Record<string, unknown> | undefined) ??
               null,
           }}
-          rightPanel={<ProfessionalModelPanel editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
+          rightPanel={<ProfessionalModelPanel showStarter={false} editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
           map={
             <>
               <WorkspaceMapEngine
@@ -303,7 +305,7 @@ export default function WorkspacePage() {
                 <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,30rem)] -translate-x-1/2">
                   <EmptyProjectStarter
                     projectId={projectId}
-                    active
+                    active={activeTool === "select" && !measuring && !modelEditor.loading && !modelEditor.document}
                     hasSite={Boolean(
                       project.boundary_geojson ||
                       project.alignment_geojson ||

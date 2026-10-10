@@ -5,15 +5,46 @@ import EmptyProjectStarter from "./EmptyProjectStarter";
 
 vi.mock("@/lib/api", () => ({ api: { get: vi.fn() } }));
 afterEach(() => { cleanup(); vi.resetAllMocks(); });
-it("offers optional actions for an empty project without blocking the workspace", async () => {
+it.each([["Ask GeoAI", "geoai:open-copilot"], ["Draw / select site", "geoai:open-drawing"]])("opens %s without blocking the workspace", async (label, event) => {
   vi.mocked(api.get).mockResolvedValue({ isEmpty: true });
-  const ask=vi.fn(),draw=vi.fn();window.addEventListener("geoai:open-copilot",ask);window.addEventListener("geoai:open-drawing",draw);
+  const action=vi.fn();window.addEventListener(event,action);
   render(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Existing model tools</p></EmptyProjectStarter>);
   expect(await screen.findByText("Start anywhere.")).toBeInTheDocument();
   expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-  fireEvent.click(screen.getByRole("button",{name:"Ask GeoAI"}));fireEvent.click(screen.getByRole("button",{name:"Draw / select site"}));
-  expect(ask).toHaveBeenCalledTimes(1);expect(draw).toHaveBeenCalledTimes(1);
-  window.removeEventListener("geoai:open-copilot",ask);window.removeEventListener("geoai:open-drawing",draw);
+  expect(screen.getByText("Existing model tools")).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button",{name:label}));
+  expect(action).toHaveBeenCalledTimes(1);
+  expect(screen.queryByRole("region", { name: "Empty project starter" })).not.toBeInTheDocument();
+  window.removeEventListener(event,action);
+});
+
+it("hides first-run actions while a map tool is active and allows dismissal", async () => {
+  vi.mocked(api.get).mockResolvedValue({isEmpty:true});
+  const view=render(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Existing tools</p></EmptyProjectStarter>);
+  await screen.findByText("Start anywhere.");
+  view.rerender(<EmptyProjectStarter projectId={1} active={false} hasSite={false}><p>Existing tools</p></EmptyProjectStarter>);
+  expect(screen.queryByText("Start anywhere.")).not.toBeInTheDocument();
+  view.rerender(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Existing tools</p></EmptyProjectStarter>);
+  await screen.findByText("Start anywhere.");
+  fireEvent.click(screen.getByRole("button", {name:"Dismiss first-run actions"}));
+  expect(screen.queryByText("Start anywhere.")).not.toBeInTheDocument();
+  expect(screen.getByText("Existing tools")).toBeInTheDocument();
+});
+
+it("does not reuse an empty result for another project", async () => {
+  vi.mocked(api.get).mockResolvedValueOnce({isEmpty:true}).mockImplementationOnce(() => new Promise(() => {}));
+  const view=render(<EmptyProjectStarter projectId={1} active hasSite={false}>{null}</EmptyProjectStarter>);
+  await screen.findByText("Start anywhere.");
+  view.rerender(<EmptyProjectStarter projectId={2} active hasSite={false}>{null}</EmptyProjectStarter>);
+  expect(screen.queryByText("Start anywhere.")).not.toBeInTheDocument();
+});
+
+it("keeps tools available if eligibility cannot be loaded", async () => {
+  vi.mocked(api.get).mockRejectedValue(new Error("Unavailable"));
+  render(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Existing tools</p></EmptyProjectStarter>);
+  await waitFor(()=>expect(api.get).toHaveBeenCalled());
+  expect(screen.queryByText("Start anywhere.")).not.toBeInTheDocument();
+  expect(screen.getByText("Existing tools")).toBeInTheDocument();
 });
 it("preserves populated workspace content", async () => {
   vi.mocked(api.get).mockResolvedValue({ isEmpty:false });

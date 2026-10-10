@@ -1,6 +1,7 @@
 "use client";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 import WorkspaceSearch from "@/components/map/WorkspaceSearch";
+import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -80,7 +81,7 @@ export default function MapViewerArea({
   const [satelliteBrightness, setSatelliteBrightness] = useState(100);
   const [overlayOpacity, setOverlayOpacity] = useState(85);
   const [terrainExaggeration, setTerrainExaggeration] = useState(1);
-  const [locationSearchOpen, setLocationSearchOpen] = useState(false);
+  const { open: locationSearchOpen, close: closeLocationSearch, toggle: toggleLocationSearch } = useWorkspacePanel("search");
   const {
     setSiteSuggestions,
     layers,
@@ -253,10 +254,10 @@ export default function MapViewerArea({
   };
 
   useEffect(() => {
-    const onLocationSearch = () => setLocationSearchOpen(previous => !previous);
+    const onLocationSearch = () => toggleLocationSearch();
     window.addEventListener("geoai:open-location-search", onLocationSearch);
     return () => { window.removeEventListener("geoai:open-location-search", onLocationSearch); };
-  }, []);
+  }, [toggleLocationSearch]);
 
   const handleUseMapCenter = async () => {
     const viewport = mapRef?.getViewport?.();
@@ -434,7 +435,7 @@ export default function MapViewerArea({
       )}
 
       {!showToolbar && locationSearchOpen && (
-        <WorkspaceSearch onClose={() => setLocationSearchOpen(false)} onNavigate={(lng, lat) => setMapCenterOverride([lng, lat])} />
+        <WorkspaceSearch onClose={closeLocationSearch} onNavigate={(lng, lat) => setMapCenterOverride([lng, lat])} />
       )}
 
       {showSuggestionsPanel && false && (
