@@ -12,7 +12,7 @@ export default function EmptyProjectStarter({ projectId, active, hasSite, childr
     return () => { live = false; };
   }, [projectId, active, hasSite]);
   if (!projectId || hasSite || !empty) return children;
-  return <section aria-label="Empty project starter" className="space-y-3 p-3">
+  return <section aria-label="Empty project starter" className="pointer-events-auto space-y-3 rounded-xl border border-border bg-background/95 p-4 shadow-lg backdrop-blur-md">
     <p className="text-sm font-medium">Start anywhere.</p>
     <p className="text-xs leading-relaxed text-muted-foreground">Describe what you want to build, select a site on the map, draw an area or route, or import site information.</p>
     <div className="flex flex-wrap gap-2">
