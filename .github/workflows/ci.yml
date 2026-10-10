@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, master]
   pull_request:
-    branches: [main, master, codex/improve-project-showcase]
+    branches: [main, master, codex/improve-project-showcase, fix/ci-api-readiness-20261010]
 
 jobs:
   backend:
@@ -103,9 +103,23 @@ jobs:
           done
           echo "::error::API did not become ready within 60 seconds"
           exit 1
+      - name: Seed offline platform proposal
+        working-directory: backend
+        run: |
+          python scripts/create_platform_workspace_fixture.py > platform-fixture.json
+          python -c "import json; print('PLATFORM_ACCEPTANCE_PROJECT_ID=' + str(json.load(open('platform-fixture.json'))['projectId']))" >> "$GITHUB_ENV"
       - name: Run Playwright E2E
         run: npm run test:e2e
         env:
           NEXT_PUBLIC_API_URL: http://127.0.0.1:8000
           NEXT_PUBLIC_AUTH_REQUIRE_JWT: "false"
           PLAYWRIGHT_SKIP_WEBSERVER: "false"
+      - name: Upload platform acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: platform-acceptance-evidence
+          path: |
+            frontend/test-results/platform-*.png
+            frontend/test-results/**/test-failed-*.png
+            frontend/test-results/**/error-context.md
