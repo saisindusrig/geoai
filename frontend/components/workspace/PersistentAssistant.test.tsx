@@ -9,10 +9,11 @@ let messages: object[];
 let items: object[];
 let failSend: boolean;
 let postBodies: unknown[];
+let messagePostGate: Promise<void> | undefined;
 afterEach(cleanup);
 
 beforeEach(() => {
-  vi.resetAllMocks(); messages = []; items = []; failSend = false; postBodies = [];
+  vi.resetAllMocks(); messages = []; items = []; failSend = false; postBodies = []; messagePostGate = undefined;
   vi.mocked(api.get).mockImplementation(async path => {
     if (path.endsWith("/conversations")) return { conversations: [{ id: "c1", title: "Project discussion" }] };
     if (path.includes("/messages")) return { messages, nextBefore: null };
@@ -25,6 +26,7 @@ beforeEach(() => {
     if (path.endsWith("/messages")) {
       postBodies.push(body);
       if (failSend) throw new Error("Network unavailable");
+      await messagePostGate;
       const sent = body as { parts: object[]; context: { selectedObjectIds: string[]; modelRevisionId: string } };
       messages = [{ id: "m1", role: "USER", parts: sent.parts, context: { ...sent.context, selection: sent.context.selectedObjectIds.map(objectId => ({ objectId })) }, run: { status: "WAITING_FOR_INPUT", errorCode: "ORCHESTRATION_NOT_ENABLED" } }];
       return { messageId: "m1", runId: "r1" };
@@ -70,13 +72,23 @@ describe("persistent project Assistant", () => {
     expect(screen.getByText("Captured: old-pier · revision 6")).toBeInTheDocument();
   });
   it("persists a message and reloads it from the server", async () => {
+    let releasePost!: () => void;
+    messagePostGate = new Promise<void>(resolve => { releasePost = resolve; });
     const view = render(<PersistentAssistant {...props} />); await ready();
     fireEvent.change(screen.getByRole("textbox", { name: "Project message" }), { target: { value: "Could the road move west?" } });
     fireEvent.click(screen.getByRole("button", { name: "Send message" }));
-    await screen.findByText("Could the road move west?");
-    expect(screen.getByText("Saved before AI processing was enabled")).toBeInTheDocument();
+    // The draft already contains this text; it must not count as persistence.
+    expect(await screen.findByText("Could the road move west?")).toBe(screen.getByRole("textbox", { name: "Project message" }));
+    expect(screen.getByRole("button", { name: "Saving…" })).toBeDisabled();
+    expect(screen.queryByRole("article")).not.toBeInTheDocument();
+    releasePost();
+    const savedArticle = await screen.findByRole("article");
+    expect(within(savedArticle).getByText("Could the road move west?")).toBeInTheDocument();
+    expect(await within(savedArticle).findByText("Saved before AI processing was enabled")).toBeInTheDocument();
     view.unmount(); render(<PersistentAssistant {...props} />);
-    await screen.findByText("Could the road move west?");
+    const reloadedArticle = await screen.findByRole("article");
+    expect(within(reloadedArticle).getByText("Could the road move west?")).toBeInTheDocument();
+    expect(await within(reloadedArticle).findByText("Saved before AI processing was enabled")).toBeInTheDocument();
     expect(api.post).toHaveBeenCalledTimes(1);
     expect(api.post).not.toHaveBeenCalledWith(expect.stringContaining("/ai/chat"), expect.anything());
   });
