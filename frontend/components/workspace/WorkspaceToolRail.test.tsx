@@ -15,12 +15,34 @@ function makeEditor(locked = false) {
 beforeEach(() => useProjectStore.setState({ activeTool: "select", scene3dMeasureTool: "none", project: null, drawnBoundary: null, drawnAlignment: null, drawVertices: [] }));
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
+it("starts site drawing from the first-run action and leaves measurement mode", () => {
+  const editor = makeEditor();
+  render(<WorkspaceToolRail editor={editor} />);
+  fireEvent.click(screen.getByRole("button", {name:"Measure"}));
+  act(() => window.dispatchEvent(new CustomEvent("geoai:open-drawing")));
+  expect(useProjectStore.getState().activeTool).toBe("draw-polygon");
+  expect(useProjectStore.getState().scene3dMeasureTool).toBe("none");
+  expect(screen.getByLabelText("Drawing tool options")).toBeInTheDocument();
+  expect(screen.queryByLabelText("Measurement tools")).not.toBeInTheDocument();
+  expect(editor.setTool).toHaveBeenLastCalledWith("select");
+});
+
 it("draws an alignment as a line rather than replacing the site boundary", () => {
   render(<WorkspaceToolRail editor={makeEditor()} />);
   fireEvent.click(screen.getByRole("button", { name: "Draw alignment" }));
   expect(useProjectStore.getState().activeTool).toBe("draw-line");
   expect(screen.getByRole("button", { name: "Edit site boundary" })).toBeDisabled();
   expect(screen.getByRole("button", { name: "Edit alignment" })).toBeDisabled();
+});
+
+it("cancels drawing with Escape while a drawing option has focus", () => {
+  render(<WorkspaceToolRail editor={makeEditor()} />);
+  fireEvent.click(screen.getByRole("button", {name:"Draw alignment"}));
+  const smoothing = screen.getByRole("checkbox", {name:"Smooth curve through points"});
+  smoothing.focus();
+  fireEvent.keyDown(smoothing, {key:"Escape"});
+  expect(useProjectStore.getState().activeTool).toBe("select");
+  expect(screen.queryByLabelText("Drawing tool options")).not.toBeInTheDocument();
 });
 
 it("prevents editing locked selections through buttons and keyboard shortcuts", () => {

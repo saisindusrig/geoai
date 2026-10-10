@@ -12,6 +12,7 @@ import WorkspaceMapEngine from "@/components/map/WorkspaceMapEngine";
 import { ProfessionalModelPanel } from "@/components/model-editor/ProfessionalModelEditor";
 import WorkspaceToolRail from "@/components/workspace/WorkspaceToolRail";
 import BuildingAssistant from "@/components/workspace/BuildingAssistant";
+import EmptyProjectStarter from "@/components/workspace/EmptyProjectStarter";
 import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
 import { Button } from "@/components/ui/button";
@@ -68,6 +69,8 @@ export default function WorkspacePage() {
   const generationMode: GenerationMode = "balanced";
 
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
+  const activeTool = useProjectStore(state => state.activeTool);
+  const measuring = useProjectStore(state => state.scene3dMeasureTool !== "none");
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
   const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
     const job = await api.get<JobStatus>(`/api/jobs/${jobId}`);
@@ -265,38 +268,57 @@ export default function WorkspacePage() {
                 Record<string, unknown> | undefined) ??
               null,
           }}
-          rightPanel={<ProfessionalModelPanel editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
+          rightPanel={<ProfessionalModelPanel showStarter={false} editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
           map={
-            <WorkspaceMapEngine
-              project={project}
-              modelUrl={liveModelUrl}
-              excavationUrl={excavationFile?.file_url}
-              resolvedModels={resolvedModels}
-              onBoundaryDrawn={saveBoundary}
-              onAlignmentDrawn={saveAlignment}
-              onLocationChange={saveLocation}
-              onGenerate={() =>
-                generate(
-                  pendingParams ??
-                    (scenario?.input_parameters_json as Record<
-                      string,
-                      unknown
-                    >) ??
-                    {},
-                )
-              }
-              onAnalyze={analyzeSite}
-              onGenerationCompleted={load}
-              onCancelJob={cancelJob}
-              cancellingJob={cancelling}
-              editor={modelEditor}
-              editableModel={modelEditor.document}
-              modelRevisionId={modelEditor.baseRevision?.id}
-              selectedComponentIds={modelEditor.selectedIds}
-              onSelectComponent={(id, additive) => {
-                modelEditor.select(id, additive);
-              }}
-            />
+            <>
+              <WorkspaceMapEngine
+                project={project}
+                modelUrl={liveModelUrl}
+                excavationUrl={excavationFile?.file_url}
+                resolvedModels={resolvedModels}
+                onBoundaryDrawn={saveBoundary}
+                onAlignmentDrawn={saveAlignment}
+                onLocationChange={saveLocation}
+                onGenerate={() =>
+                  generate(
+                    pendingParams ??
+                      (scenario?.input_parameters_json as Record<
+                        string,
+                        unknown
+                      >) ??
+                      {},
+                  )
+                }
+                onAnalyze={analyzeSite}
+                onGenerationCompleted={load}
+                onCancelJob={cancelJob}
+                cancellingJob={cancelling}
+                editor={modelEditor}
+                editableModel={modelEditor.document}
+                modelRevisionId={modelEditor.baseRevision?.id}
+                selectedComponentIds={modelEditor.selectedIds}
+                onSelectComponent={(id, additive) => {
+                  modelEditor.select(id, additive);
+                }}
+              />
+              {!isPublicDemo && (
+                <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,30rem)] -translate-x-1/2">
+                  <EmptyProjectStarter
+                    projectId={projectId}
+                    active={activeTool === "select" && !measuring && !modelEditor.loading && !modelEditor.document}
+                    hasSite={Boolean(
+                      project.boundary_geojson ||
+                      project.alignment_geojson ||
+                      project.location_name ||
+                      project.center_lat !== null ||
+                      project.center_lng !== null
+                    )}
+                  >
+                    {null}
+                  </EmptyProjectStarter>
+                </div>
+              )}
+            </>
           }
         />
         <BottomSummaryBar
