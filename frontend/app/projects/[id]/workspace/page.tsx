@@ -270,50 +270,50 @@ export default function WorkspacePage() {
           map={
             <>
               <WorkspaceMapEngine
-              project={project}
-              modelUrl={liveModelUrl}
-              excavationUrl={excavationFile?.file_url}
-              resolvedModels={resolvedModels}
-              onBoundaryDrawn={saveBoundary}
-              onAlignmentDrawn={saveAlignment}
-              onLocationChange={saveLocation}
-              onGenerate={() =>
-                generate(
-                  pendingParams ??
-                    (scenario?.input_parameters_json as Record<
-                      string,
-                      unknown
-                    >) ??
-                    {},
-                )
-              }
-              onAnalyze={analyzeSite}
-              onGenerationCompleted={load}
-              onCancelJob={cancelJob}
-              cancellingJob={cancelling}
-              editor={modelEditor}
-              editableModel={modelEditor.document}
-              modelRevisionId={modelEditor.baseRevision?.id}
-              selectedComponentIds={modelEditor.selectedIds}
-              onSelectComponent={(id, additive) => {
-                modelEditor.select(id, additive);
-              }}
+                project={project}
+                modelUrl={liveModelUrl}
+                excavationUrl={excavationFile?.file_url}
+                resolvedModels={resolvedModels}
+                onBoundaryDrawn={saveBoundary}
+                onAlignmentDrawn={saveAlignment}
+                onLocationChange={saveLocation}
+                onGenerate={() =>
+                  generate(
+                    pendingParams ??
+                      (scenario?.input_parameters_json as Record<
+                        string,
+                        unknown
+                      >) ??
+                      {},
+                  )
+                }
+                onAnalyze={analyzeSite}
+                onGenerationCompleted={load}
+                onCancelJob={cancelJob}
+                cancellingJob={cancelling}
+                editor={modelEditor}
+                editableModel={modelEditor.document}
+                modelRevisionId={modelEditor.baseRevision?.id}
+                selectedComponentIds={modelEditor.selectedIds}
+                onSelectComponent={(id, additive) => {
+                  modelEditor.select(id, additive);
+                }}
               />
               {!isPublicDemo && (
                 <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,30rem)] -translate-x-1/2">
-                    <EmptyProjectStarter
-                      projectId={projectId}
-                      active
-                      hasSite={Boolean(
-                        project.boundary_geojson ||
-                        project.alignment_geojson ||
-                        project.location_name ||
-                        project.center_lat !== null ||
-                        project.center_lng !== null
-                      )}
-                    >
-                      {null}
-                    </EmptyProjectStarter>
+                  <EmptyProjectStarter
+                    projectId={projectId}
+                    active
+                    hasSite={Boolean(
+                      project.boundary_geojson ||
+                      project.alignment_geojson ||
+                      project.location_name ||
+                      project.center_lat !== null ||
+                      project.center_lng !== null
+                    )}
+                  >
+                    {null}
+                  </EmptyProjectStarter>
                 </div>
               )}
             </>
