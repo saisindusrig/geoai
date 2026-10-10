@@ -253,3 +253,10 @@ def accept_memory(project_id:int,item_id:str,version:int,body:MemoryAction,acces
 @router.post("/memory/{item_id}/versions/{version}/reject",response_model=MemoryView)
 def reject_memory(project_id:int,item_id:str,version:int,body:MemoryAction,access=Depends(scope)):
     return memory.transition(access[0],project_id,access[1],item_id,version,"reject",body.expected_status)
+
+
+@router.get("/assistant/offline-platform")
+def offline_platform_mode(project_id: int, access=Depends(scope)):
+    from app.services.assistant.offline_platform import enabled, LABEL, EXAMPLE
+    active = enabled()
+    return {"enabled": active, "label": LABEL if active else None, "example": EXAMPLE if active else None}

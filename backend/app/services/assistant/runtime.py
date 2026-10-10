@@ -92,14 +92,16 @@ async def structured(provider: AIProvider,schema,payload,system=SYSTEM,metadata=
 
 
 async def process(db,p,run_id,provider=None):
-    provider=provider or NebiusProvider()
-    if not hasattr(provider,"complete"): provider=FixtureProvider(provider)
+    if provider is not None and not hasattr(provider,"complete"): provider=FixtureProvider(provider)
     lock_project(db,p);run=owned_row(db,"assistant_runs",p,run_id)
     if run["status"]!="QUEUED":db.commit();return
     update(db,"assistant_runs",p,run_id,status="CLASSIFYING")
     event(db,p,run_id,"CLASSIFYING","Reading request…");db.commit()
     message=owned_row(db,"conversation_messages",p,run["message_id"])
     try:
+        if provider is None:
+            from app.services.assistant.offline_platform import provider_for_request
+            provider = provider_for_request(db, p, message) or NebiusProvider()
         async with asyncio.timeout(FLOW_TIMEOUT_SECONDS):
             preliminary=evaluate(message)
             from app.services.assistant.context_preflight import assert_current_model
@@ -174,7 +176,7 @@ async def process(db,p,run_id,provider=None):
                     if len(compact(outputs).encode())>20000:raise AssistantProviderError("TOOL_RESULT_BUDGET")
             else:raise AssistantProviderError("TOOL_LIMIT")
             # A useful conceptual plan must not disappear merely because the model stops before calling the proposal tool.
-            if policy["allowedEffect"]=="PROPOSAL_ONLY" and not proposal_ids and message["context"].get("siteProfileVersionId"):
+            if not getattr(provider, "disable_proposal_fallback", False) and policy["allowedEffect"]=="PROPOSAL_ONLY" and not proposal_ids and message["context"].get("siteProfileVersionId"):
                 assets=policy["intent"]["assets"]
                 if len(assets)<=20:
                     arguments={"title":"GeoAI concept proposal","rationale":text_of(message)[:4000],

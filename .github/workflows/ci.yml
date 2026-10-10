@@ -60,6 +60,7 @@ jobs:
     env:
       DATABASE_URL: sqlite:///./e2e.db
       AI_PROVIDER: mock
+      GEOAI_OFFLINE_PLATFORM_DEMO: "true"
       GEOAI_EXPERIMENTAL_CAD: "false"
       GEOAI_EXPERIMENTAL_BIM_AUTHORING: "false"
     defaults:

@@ -115,6 +115,7 @@ def fixture_review(project_id: int, body: FixtureInput, db=Depends(get_db), user
         client_request_id=body.request_id, parts=[{"kind":"TEXT", "text":"Create an experimental CAD support frame concept for explicit review."}],
         context={"siteProfileVersionId":profile["id"], "siteSelectionVersionId":profile["selection_version_id"],
             "modelRevisionId":str(base.id), "scenarioId":str(body.scenario_id), "selectedObjectIds":[]}), orchestrate=False)
+    from app.experimental.cad_workspace import create_review
     return create_review(db, project_id=project_id, user_id=user_id, request_id=body.request_id, message_id=message["messageId"], bim=model, mapping=mapping)
 
 

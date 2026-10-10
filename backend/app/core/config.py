@@ -45,6 +45,8 @@ class Settings(BaseSettings):
 
     # AI — AI_PROVIDER selects primary: nebius | ollama | openai | anthropic | mock (auto)
     AI_PROVIDER: str = "mock"
+    # Explicit local template mode; never overrides a production provider.
+    GEOAI_OFFLINE_PLATFORM_DEMO: bool = False
     OPENAI_API_KEY: str = ""
     ANTHROPIC_API_KEY: str = ""
     GEMINI_API_KEY: str = ""
