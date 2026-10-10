@@ -301,7 +301,6 @@ export default function WorkspacePage() {
               />
               {!isPublicDemo && (
                 <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,30rem)] -translate-x-1/2">
-                  <div className="pointer-events-auto rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-md">
                     <EmptyProjectStarter
                       projectId={projectId}
                       active
@@ -315,7 +314,6 @@ export default function WorkspacePage() {
                     >
                       {null}
                     </EmptyProjectStarter>
-                  </div>
                 </div>
               )}
             </>
