@@ -17,8 +17,8 @@ class Generic3DExecutor:
     def requirements_to_specification(self,requirements,context):return AI3DDesign.model_validate(requirements)
     def validate_specification(self,specification):return AI3DDesignValidator().validate(specification)
     def generate_preview(self,specification):return self.generate(specification)
-    def generate(self,specification):
-        validation=self.validate_specification(specification)
+    def generate(self,specification,summary=None):
+        validation=AI3DDesignValidator().validate(specification,summary)
         if validation["issues"]:raise ValueError("INVALID_AI3D_DESIGN")
         return compile_geometry(specification)[0]
     def validate_geometry(self,geometry,specification):
@@ -34,7 +34,7 @@ def execute_approved(db,project_id,version_id,view,row):
     spec=AI3DDesign.model_validate(row["payload"]["ai3dDesign"])
     context=view["content"]["context"]
     summary,validation=validate_saved_design(db,project_id,context,spec)
-    try:geometry=Generic3DExecutor().generate(spec)
+    try:geometry=Generic3DExecutor().generate(spec,summary)
     except Exception:error(422,"GENERIC_GENERATION_FAILED","The complete design could not be built; no revision was created.")
     source=spec.source_model_revision_id
     base=db.get(ModelRevision,int(source)) if source else None
