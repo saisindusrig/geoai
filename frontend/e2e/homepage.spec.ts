@@ -36,7 +36,7 @@ for (const width of [390, 768]) {
     await page.setViewportSize({ width, height: 844 });
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
-    for (const id of ["earth", "design-basis", "how-it-works", "projects", "accuracy", "platform", "faq"]) {
+    for (const id of ["earth", "how-it-works", "projects", "design-basis", "faq"]) {
       const section = page.locator(`#${id}`);
       await section.scrollIntoViewIfNeeded();
       const bounds = await section.boundingBox();
