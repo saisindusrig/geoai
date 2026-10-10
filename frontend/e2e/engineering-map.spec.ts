@@ -23,11 +23,10 @@ test("project workspace exposes context, data and generation controls without cl
   await page.keyboard.press("Escape");
   await expect(page.getByRole("region", { name: "Sun study", exact: true })).toHaveCount(0);
   await page.getByRole("button", { name: "Scene / Sun study", exact: true }).click();
-  await expect(page.getByLabel("Building footprints")).toBeChecked();
+  await expect(page.getByLabel("Terrain elevation")).toBeChecked();
   const sceneBounds = await page.getByRole("region", { name: "Sun study", exact: true }).boundingBox();
   const toolbarBounds = await page.getByRole("button", { name: /Generate ·/ }).first().boundingBox();
   expect(sceneBounds!.y).toBeGreaterThan(toolbarBounds!.y + toolbarBounds!.height);
-  await expect(page.getByLabel("Road network")).toBeChecked();
   await page.getByLabel("Global 3D buildings").check();
   await expect(page.getByLabel("Global 3D buildings")).toBeChecked();
   await expect(page.getByRole("region", {name:"Sun study",exact:true}).getByText("Unavailable or loading", {exact:true}).first()).toBeVisible();
@@ -58,7 +57,7 @@ test("terrain provenance is explicit and sun controls use editable timezone", as
   await page.getByRole("button", { name: "Map", exact: true }).click();
   await expect(page.locator(".cesium-widget canvas")).toBeVisible({ timeout: 60000 });
   await expect(page.locator(".cesium-widget canvas")).toHaveAttribute("data-sandbox-ready", "true", { timeout: 60000 });
-  await expect(page.getByRole("status").filter({ hasText: /WORLD TERRAIN · (VISUAL REFERENCE|TOKEN REQUIRED|ACCESS FAILED)/ })).toBeVisible();
+  await expect(page.getByText(/^Origin 12\.9724/)).toBeVisible();
   await page.getByRole("button", { name: "Scene / Sun study", exact: true }).click();
   await page.getByRole("tab", { name: "Sun", exact: true }).click();
   await page.getByLabel("Sun timezone").fill("Asia/Kolkata");

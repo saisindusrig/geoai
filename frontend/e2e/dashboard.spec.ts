@@ -37,12 +37,12 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
       await page.route("**/api/projects", route => route.fulfill({ json: populated ? projects : [] }));
       await page.route("**/api/project-folders", route => route.fulfill({ json: [] }));
       await page.goto("/dashboard");
-      await expect(page.getByRole("heading", { name: "Your concepts", exact: true })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Your projects", exact: true })).toBeVisible();
       await expect(page.getByLabel("Loading saved concepts")).toHaveCount(0);
-      for (const name of ["Your concepts", "Start a new concept"]) {
+      for (const name of ["Your projects", "Recent projects"]) {
         await expectInsideViewport(page.getByRole("heading", { name, exact: true }));
       }
-      await expectInsideViewport(page.locator(".hub-toolbar").getByRole("link", { name: "New concept", exact: true }));
+      await expectInsideViewport(page.locator(".hub-toolbar").getByRole("button", { name: "New Project", exact: true }));
       await expectInsideViewport(page.getByRole("link", { name: "Open sandbox", exact: true }));
       if (populated) {
         await expect(page.locator(".hub-featured")).toHaveCount(0);
@@ -55,7 +55,7 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
         await page.getByLabel("Filter by concept type").selectOption("all");
         await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
       } else {
-        await expectInsideViewport(page.getByRole("heading", { name: "No saved concepts yet" }));
+        await expectInsideViewport(page.getByRole("heading", { name: "No projects yet" }));
       }
       const dimensions = await page.evaluate(() => ({
         height: window.innerHeight,

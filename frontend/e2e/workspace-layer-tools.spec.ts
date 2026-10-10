@@ -15,7 +15,7 @@ test("layer isolation restores hidden state and bulk selection works", async ({ 
   await page.getByRole("button", { name: "barrier_left", exact: true }).click();
   await page.getByRole("button", { name: "barrier_right", exact: true }).click({ modifiers: ["Shift"] });
   await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
-  await page.getByText("Actions", { exact: true }).click();
+  await page.getByRole("tabpanel", { name: "Layers", exact: true }).getByText("Actions", { exact: true }).click();
   await page.getByRole("button", { name: "Select matching", exact: true }).click();
   await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Measure", exact: true }).click();

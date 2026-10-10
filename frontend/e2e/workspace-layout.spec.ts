@@ -14,14 +14,8 @@ for(const width of [1478,1280,1024])test(`workspace controls fit without overlap
   await expect(page.getByText("Model on context ground · visual preview, not a saved survey placement",{exact:true})).toHaveCount(0);
   await expect(page.getByLabel("Map source attribution")).toBeHidden();
   const viewport=await page.locator(".workspace-map-viewport").boundingBox();
-  const bottom=await page.locator(".workspace-bottom-controls").boundingBox();
-  expect(bottom!.x+bottom!.width).toBeGreaterThan(viewport!.x+viewport!.width-30);
-  expect(bottom!.y).toBeGreaterThan(viewport!.y+viewport!.height*.75);
-  if(width>1024){
-    await page.locator(".workspace-bottom-controls summary").click();
-    await expect(page.getByLabel("Transform coordinates")).toBeVisible();
-    await page.locator(".workspace-bottom-controls summary").click();
-  }
+  expect(viewport).not.toBeNull();
+  await expect(page.locator(".workspace-bottom-controls")).toHaveCount(0);
   const tabs=page.getByRole("tablist",{name:"Inspector views"});
   await expect(tabs.getByRole("tab",{name:"Layers",exact:true})).toHaveCSS("background-color","rgba(0, 0, 0, 0)");
   await expect(tabs.getByRole("tab",{name:"Layers",exact:true})).toHaveCSS("box-shadow","none");
