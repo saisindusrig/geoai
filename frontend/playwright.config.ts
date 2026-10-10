@@ -16,7 +16,7 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], channel: process.env.PLAYWRIGHT_CHANNEL } }],
-  webServer: process.env.PLAYWRIGHT_SKIP_WEBSERVER
+  webServer: process.env.PLAYWRIGHT_SKIP_WEBSERVER === "true"
     ? undefined
     : {
         command: "npm run dev",

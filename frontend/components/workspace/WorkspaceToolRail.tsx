@@ -93,9 +93,10 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
 
   useEffect(() => {
     const shortcut = (event: KeyboardEvent) => {
-      if (event.defaultPrevented || event.target instanceof HTMLElement && event.target.closest("input, textarea, select, [contenteditable]:not([contenteditable=false]), [role=dialog]")) return;
+      if (event.defaultPrevented) return;
       const key = event.key.toLowerCase();
       if (key === "escape") { resetTools(); return; }
+      if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, [contenteditable]:not([contenteditable=false]), [role=dialog]")) return;
       if (event.ctrlKey || event.metaKey) {
         if (key === "z") {
           event.preventDefault();
@@ -125,6 +126,18 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
     if (item.mapTool) { activateTool(item.mapTool); setSurveyOpen(item.mapTool !== "select"); }
     else if (item.editorTool) editor.setTool(item.editorTool);
   };
+
+  useEffect(() => {
+    const startDrawing = () => {
+      setMeasureOpen(false);
+      setSurveyOpen(true);
+      useProjectStore.getState().setScene3dMeasureTool("none");
+      activateTool("draw-polygon");
+      editor.setTool("select");
+    };
+    window.addEventListener("geoai:open-drawing", startDrawing);
+    return () => window.removeEventListener("geoai:open-drawing", startDrawing);
+  }, [activateTool, editor]);
 
   return (
     <>

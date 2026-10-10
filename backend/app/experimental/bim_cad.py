@@ -13,7 +13,6 @@ from pydantic import Field
 from app.domain.stage1 import Contract, Id
 from app.domain.bim import BIMProject, GeometryDefinition
 from app.services.assistant.bim_foundation import validate_foundation, propagate_parameters
-from app.experimental import cad_geometry as cad
 
 
 class CADRecipe(Contract):
@@ -56,10 +55,12 @@ def metre_parameters(parameters):
 def require(values, keys):
     if set(values) != set(keys):
         raise ValueError("UNSUPPORTED_CAD_PARAMETERS")
+    from app.experimental import cad_geometry as cad
     cad.positive(*values.values())
 
 
 def compile_component(model, component, recipe):
+    from app.experimental import cad_geometry as cad
     params = metre_parameters(component.parameters)
     section_id = component.geometry.cross_section_id
     section = next((s for s in model.cross_sections if s.id == section_id), None)

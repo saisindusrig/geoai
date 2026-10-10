@@ -15,7 +15,7 @@ test("layer isolation restores hidden state and bulk selection works", async ({ 
   await page.getByRole("button", { name: "barrier_left", exact: true }).click();
   await page.getByRole("button", { name: "barrier_right", exact: true }).click({ modifiers: ["Shift"] });
   await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
-  await page.getByText("Actions", { exact: true }).click();
+  await page.getByRole("tabpanel", { name: "Layers", exact: true }).getByText("Actions", { exact: true }).click();
   await page.getByRole("button", { name: "Select matching", exact: true }).click();
   await expect(page.getByText("2 selected · Shift for range", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Measure", exact: true }).click();
@@ -29,8 +29,11 @@ test("layer isolation restores hidden state and bulk selection works", async ({ 
   await expect(page.locator(".cesium-widget canvas")).toBeVisible();
   await expect(page.locator(".maplibregl-map")).toHaveCount(0);
   await expect(page.getByLabel("Drawing tool options")).toBeVisible();
-  await page.getByLabel("Corridor width", { exact: true }).fill("42");
-  await expect(page.getByLabel("Corridor width", { exact: true })).toHaveValue("42");
+  const smoothing = page.getByLabel("Smooth curve through points", { exact: true });
+  await smoothing.check();
+  await expect(smoothing).toBeChecked();
+  await smoothing.uncheck();
+  await expect(smoothing).not.toBeChecked();
   await page.keyboard.press("Escape");
   await expect(page.getByLabel("Drawing tool options")).toHaveCount(0);
 });

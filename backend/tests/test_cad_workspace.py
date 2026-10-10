@@ -2,6 +2,9 @@
 import copy
 import pytest
 from fastapi import HTTPException
+
+pytest.importorskip("OCP", reason="Install requirements-cad-proof.txt in an isolated environment")
+
 from test_site_workspace import site_db
 from test_assistant_runtime import message, approval
 from app.db.models import Project, ModelRevision, DesignScenario

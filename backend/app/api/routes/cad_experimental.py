@@ -5,7 +5,6 @@ from pydantic import BaseModel, ConfigDict, Field
 from app.core.security import get_current_user_id
 from app.db.session import get_db
 from app.experimental.cad_capability import require_cad
-from app.experimental.cad_workspace import create_review, execute_review
 from app.experimental.cad_artifacts import retrieve
 from app.domain.assistant_runtime import ApplicationApproval
 from app.services.assistant.proposals import ProposalService
@@ -127,6 +126,7 @@ def capability(project_id: int, db=Depends(get_db), user_id=Depends(get_current_
 
 @router.post("/reviews")
 def review(project_id: int, body: ReviewInput, db=Depends(get_db), user_id=Depends(get_current_user_id)):
+    from app.experimental.cad_workspace import create_review
     return create_review(db, project_id=project_id, user_id=user_id, **body.model_dump())
 
 
@@ -142,6 +142,7 @@ def approve(project_id: int, body: ApplicationApproval, db=Depends(get_db), user
 @router.post("/reviews/{version_id}/execute")
 async def execute(project_id: int, version_id: str, db=Depends(get_db), user_id=Depends(get_current_user_id)):
     # The bounded supervisor runs in a thread; native code runs only in its child.
+    from app.experimental.cad_workspace import execute_review
     return await asyncio.to_thread(execute_review, db, project_id=project_id, user_id=user_id, version_id=version_id)
 
 

@@ -24,10 +24,13 @@ async function expectInsideViewport(locator: Locator) {
   const bounds = await locator.boundingBox();
   expect(bounds).not.toBeNull();
   const viewport = locator.page().viewportSize()!;
-  expect(bounds!.x).toBeGreaterThanOrEqual(0);
-  expect(bounds!.y).toBeGreaterThanOrEqual(0);
-  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width);
-  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(viewport.height);
+  // Fractional CSS positions are rounded differently by headless Chromium.
+  // A 1px tolerance still catches meaningful overflow or clipped controls.
+  const tolerance = 1;
+  expect(bounds!.x).toBeGreaterThanOrEqual(-tolerance);
+  expect(bounds!.y).toBeGreaterThanOrEqual(-tolerance);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width + tolerance);
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(viewport.height + tolerance);
 }
 
 for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 1080 }]) {
@@ -37,25 +40,32 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
       await page.route("**/api/projects", route => route.fulfill({ json: populated ? projects : [] }));
       await page.route("**/api/project-folders", route => route.fulfill({ json: [] }));
       await page.goto("/dashboard");
-      await expect(page.getByRole("heading", { name: "Your concepts", exact: true })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Your projects", exact: true })).toBeVisible();
       await expect(page.getByLabel("Loading saved concepts")).toHaveCount(0);
-      for (const name of ["Your concepts", "Start a new concept"]) {
+      for (const name of ["Your projects", "Recent projects"]) {
         await expectInsideViewport(page.getByRole("heading", { name, exact: true }));
       }
-      await expectInsideViewport(page.locator(".hub-toolbar").getByRole("link", { name: "New concept", exact: true }));
+      await expectInsideViewport(page.locator(".hub-toolbar").getByRole("button", { name: "New Project", exact: true }));
       await expectInsideViewport(page.getByRole("link", { name: "Open sandbox", exact: true }));
       if (populated) {
         await expect(page.locator(".hub-featured")).toHaveCount(0);
-        await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
+        // Overview intentionally shows six recent projects; the library retains all work.
+        await expect(page.locator(".hub-concept-card")).toHaveCount(6);
         await expect(page.getByRole("heading", { name: "Latest bridge" })).toHaveCount(1);
         await expectInsideViewport(page.getByRole("heading", { name: "Latest bridge" }));
         await expectInsideViewport(page.locator(".hub-concept-card").first().getByRole("link", { name: "Open workspace" }));
-        await page.getByLabel("Filter by concept type").selectOption("bridge");
-        await expect(page.locator(".hub-concept-card")).toHaveCount(1);
-        await page.getByLabel("Filter by concept type").selectOption("all");
+        const navigation = page.getByRole("navigation", {name:"Dashboard navigation"});
+        await navigation.getByRole("button", {name:"Projects", exact:true}).click();
         await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
+        const search = page.getByRole("searchbox", {name:"Search projects"});
+        await search.fill("bridge");
+        await expect(page.locator(".hub-concept-card")).toHaveCount(1);
+        await search.clear();
+        await expect(page.locator(".hub-concept-card")).toHaveCount(projects.length);
+        await navigation.getByRole("button", {name:"Overview", exact:true}).click();
+        await expect(page.locator(".hub-concept-card")).toHaveCount(6);
       } else {
-        await expectInsideViewport(page.getByRole("heading", { name: "No saved concepts yet" }));
+        await expectInsideViewport(page.getByRole("heading", { name: "No projects yet" }));
       }
       const dimensions = await page.evaluate(() => ({
         height: window.innerHeight,

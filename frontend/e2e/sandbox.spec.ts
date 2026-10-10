@@ -19,6 +19,7 @@ test("sandbox placement, edits, undo, save, map, and backup round trip", async (
   const errors: string[] = [];
   page.on("request", (request) => { if (/\/api\/projects\/999999/.test(request.url())) projectRequests.push(request.url()); });
   page.on("pageerror", (error) => errors.push(error.message));
+  await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
   await page.goto(route);
   await expect(page.getByText("Build your first layout")).toBeVisible();
   await expect(page.getByRole("button", { name: /^Generate/ })).toHaveCount(0);
@@ -42,9 +43,10 @@ test("sandbox placement, edits, undo, save, map, and backup round trip", async (
   await expect(page.getByRole("button", { name: "building 1", exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "road 2", exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Undo", exact: true })).toBeDisabled();
-  const satelliteTile = page.waitForResponse((response) => /(?:\/MapServer\/tile\/|\/api\/tiles\/satellite\/|\.virtualearth\.net\/tiles\/|\/assets\/2\/)/.test(response.url()) && response.status() === 200);
+  // With no Ion token, the actual provider is Cesium's bundled world imagery.
+  const basemapTile = page.waitForResponse((response) => /\/cesium\/Assets\/Textures\/NaturalEarthII\/.*\.(?:jpg|png)/i.test(response.url()) && response.status() === 200);
   await page.getByRole("button", { name: "Map", exact: true }).click();
-  await satelliteTile;
+  await basemapTile;
   await expect(page.locator(".cesium-widget canvas")).toBeVisible({ timeout: 60000 });
   await expect(page.locator(".cesium-widget canvas")).toHaveAttribute("data-sandbox-ready", "true", { timeout: 60000 });
   await page.getByRole("button", { name: "building 1", exact: true }).click();

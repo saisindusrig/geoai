@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import UserMenu from "@/components/layout/UserMenu";
 
@@ -17,6 +17,7 @@ import { authRequired, getAuthToken } from "@/lib/api";
 
 describe("UserMenu", () => {
   afterEach(() => {
+    cleanup();
     vi.clearAllMocks();
     vi.mocked(authRequired).mockReturnValue(true);
     vi.mocked(getAuthToken).mockReturnValue(null);
