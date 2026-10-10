@@ -13,8 +13,10 @@ async def main(env_file=None):
         from app.services.ai.nebius_config import use_env_file
         use_env_file(env_file)
     try:
-        result=await assistant_json('Return exactly the JSON object {"ok":true}. This is a connectivity test.',{"connectivityCheck":True})
-        print(json.dumps({"status":"STRUCTURED_CONNECTIVITY_OK" if result=={"ok":True} else "INVALID_RESPONSE","diagnostics":assistant_diagnostics()},sort_keys=True))
+        from app.services.ai.provider import ModelRouter, RoutingMetadata
+        route=ModelRouter().route(RoutingMetadata(intent='CLASSIFY'))
+        result=await assistant_json('Return exactly the JSON object {"ok":true}. This is a connectivity test.',{"connectivityCheck":True},model=route.model,max_output_tokens=route.max_output_tokens,timeout=route.timeout)
+        print(json.dumps({"status":"STRUCTURED_CONNECTIVITY_OK" if result=={"ok":True} else "INVALID_RESPONSE","diagnostics":assistant_diagnostics(model=route.model)},sort_keys=True))
     except AssistantProviderError as exc:
         print(json.dumps({"status":exc.code,"diagnostics":exc.diagnostics},sort_keys=True))
 

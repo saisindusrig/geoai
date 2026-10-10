@@ -14,6 +14,10 @@ from app.services.assistant.conversations import reject_secrets
 from app.services.assistant.policy import evaluate, text_of
 from app.services.assistant.context import build_context, compact
 from app.services.assistant.tools import ToolContext, execute, describe_tools, LABELS
+from app.services.assistant.tool_boundary import validate_calls
+from app.services.assistant.decomposition_compatibility import require_compatible
+
+FLOW_TIMEOUT_SECONDS = 120
 
 ACTIVE={"QUEUED","CLASSIFYING","READING_CONTEXT","RUNNING","PROPOSING","VALIDATING"}
 from app.services.assistant.prompts import SYSTEM
@@ -53,6 +57,8 @@ def recover(db,p,run):
 def retry_run(db,p,actor,run_id,key):
     original=owned_row(db,"assistant_runs",p,run_id);recover(db,p,original)
     lock_project(db,p);original=owned_row(db,"assistant_runs",p,run_id)
+    if original['error_code']=='CONTEXT_REFRESH_REQUIRED':
+        error(409,'CONTEXT_REFRESH_REQUIRED','Refresh the selection and send a new request with the current saved revision.')
     rid=identity(run_id,"retry",key)
     t=table("assistant_runs")
     existing=db.execute(sa.select(t.c.id).where(t.c.id==rid,t.c.project_id==p)).scalar()
@@ -94,14 +100,23 @@ async def process(db,p,run_id,provider=None):
     event(db,p,run_id,"CLASSIFYING","Reading request…");db.commit()
     message=owned_row(db,"conversation_messages",p,run["message_id"])
     try:
-        async with asyncio.timeout(120):
+        async with asyncio.timeout(FLOW_TIMEOUT_SECONDS):
             preliminary=evaluate(message)
+            from app.services.assistant.context_preflight import assert_current_model
+            if not run.get('retry_of_id') and preliminary['intent']['kind'] in {'DESIGN_REQUEST','CHANGE_REQUEST'}:
+                assert_current_model(db,p,message['context'])
             hints=request_routing_hints(text_of(message))
             routing_diagnostics=[]
+            selection_kind=None
+            if message['context'].get('siteSelectionVersionId'):
+                selection_kind=owned_row(db,'site_selection_versions',p,message['context']['siteSelectionVersionId'])['selection_payload']['selection']['kind']
             classification_route=RoutingMetadata(intent=preliminary['intent']['kind'],requested_effect=preliminary["allowedEffect"],
                 asset_count=len(preliminary["intent"]["assets"]),asset_families=[a.get("assetFamily") or "CUSTOM" for a in preliminary["intent"]["assets"]],
                 retry_state=bool(run.get("retry_of_id")),engineering_sensitive=hints['engineering_sensitive'],uncertain=hints['uncertain'] or preliminary['intent']['needsClarification'])
-            intent=await structured(provider,CivilIntent,{"message":text_of(message),"understanding":preliminary["understanding"]},SYSTEM+"\nClassify intent and enumerate separate civil assets. Do not execute anything.",metadata=classification_route,diagnostics=routing_diagnostics)
+            intent=await structured(provider,CivilIntent,{"message":text_of(message),"understanding":preliminary["understanding"],
+                'availableSelection':{'kind':selection_kind,'selectedComponentCount':len(message['context']['selection'])}},SYSTEM+"\nClassify intent and enumerate separate civil assets. Do not execute anything.",metadata=classification_route,diagnostics=routing_diagnostics)
+            from app.services.assistant.clarification import suppress_intent, redundant
+            intent=suppress_intent(intent,selection_kind,len(message['context']['selection']),routing_diagnostics)
             policy=evaluate(message,intent)
             context=build_context(db,p,message,policy)
             relevant_tools=policy["understanding"]["requiredTools"]
@@ -134,12 +149,11 @@ async def process(db,p,run_id,provider=None):
                     raise AssistantProviderError("TOOL_POLICY_DENIED")
                 if not response.tool_calls:
                     break
-                for invocation in response.tool_calls:
+                if calls+len(response.tool_calls)>8:raise AssistantProviderError('TOOL_LIMIT')
+                validated_calls=await validate_calls(response,relevant_tools,provider,context,routing,routing_diagnostics)
+                for invocation,arguments in validated_calls:
                     calls+=1
                     if calls>8:raise AssistantProviderError("TOOL_LIMIT")
-                    try:arguments=json.loads(invocation.arguments)
-                    except json.JSONDecodeError:raise AssistantProviderError("INVALID_TOOL_ARGUMENTS")
-                    if not isinstance(arguments,dict):raise AssistantProviderError("INVALID_TOOL_ARGUMENTS")
                     if invocation.name not in relevant_tools:raise AssistantProviderError("TOOL_POLICY_DENIED")
                     key=(invocation.name,compact(arguments))
                     if key in cache:
@@ -147,14 +161,9 @@ async def process(db,p,run_id,provider=None):
                         continue
                     if invocation.name in {"create_proposal","revise_proposal"} and proposal_ids:
                         raise AssistantProviderError("PROPOSAL_ALREADY_CREATED")
-                    if invocation.name in {"create_proposal","revise_proposal"} and policy["intent"]["kind"]=="DESIGN_REQUEST":
-                        from collections import Counter
-                        expected=Counter(a["assetType"].upper() for a in policy["intent"]["assets"])
-                        proposed=Counter(str(a.get("assetType","")).upper() for a in arguments.get("assets",[]) if isinstance(a,dict))
-                        generic=[a for a in arguments.get("assets",[]) if isinstance(a,dict) and a.get("ai3dDesign")]
-                        if len(generic)==1 and len(arguments["assets"])==1 and generic[0].get("assetType")=="AI3D_DESIGN":
-                            proposed=Counter(str(system.get("assetType","")).upper() for system in generic[0]["ai3dDesign"].get("systems",[]) if isinstance(system,dict))
-                        if expected!=proposed:raise AssistantProviderError("ASSET_DECOMPOSITION_MISMATCH")
+                    if invocation.name in {"create_proposal","revise_proposal"}:
+                        from app.services.assistant.design_flow import prepare_proposal
+                        arguments=await prepare_proposal(db,p,message,arguments,policy,provider,routing,routing_diagnostics)
                     event(db,p,run_id,"RUNNING",LABELS.get(invocation.name,"Reading site…"));db.commit()
                     result=execute(db,tc,invocation.name,arguments)
                     if result["status"]=="OK":cache[key]=result
@@ -188,7 +197,7 @@ async def process(db,p,run_id,provider=None):
                 parts.append({"kind":"TEXT","text":text})
             if policy["intent"]["needsClarification"]:
                 parts=[{"kind":"QUESTION","questionId":identity(run_id,"question"),"text":policy["intent"]["clarificationQuestion"],"options":[]}]
-            elif response.clarification and not proposal_ids:
+            elif response.clarification and not proposal_ids and not redundant(response.clarification.question,selection_kind,len(message['context']['selection'])):
                 parts.append({"kind":"QUESTION","questionId":identity(run_id,"question"),"text":response.clarification.question,"options":response.clarification.options})
             if policy["allowedEffect"]=="PROPOSAL_ONLY" and not message["context"].get("siteProfileVersionId"):
                 parts=[{"kind":"TEXT","text":"I can discuss this preliminary concept. A saved site selection and refreshed site profile are needed to save a reviewable proposal. Terrain and engineering data remain unknown; dimensions and materials can be decided later."}]
@@ -199,8 +208,9 @@ async def process(db,p,run_id,provider=None):
             if policy["allowedEffect"]=="APPROVAL_UI_REQUIRED":
                 parts=[{"kind":"TEXT","text":"Review the exact proposal version and use Approve proposal. A chat message cannot approve or build it."}]
             parts.extend({"kind":"PROPOSAL","proposalVersionId":vid} for vid in dict.fromkeys(proposal_ids))
-            for eid in response.evidence_ids:owned_row(db,"site_evidence",p,eid)
-            if response.evidence_ids:parts.append({"kind":"EVIDENCE","evidenceIds":response.evidence_ids})
+            from app.services.assistant.reference_context import resolve_evidence
+            evidence_ids=resolve_evidence(db,p,message['context'],response.evidence_ids,outputs,routing_diagnostics)
+            if evidence_ids:parts.append({"kind":"EVIDENCE","evidenceIds":evidence_ids})
             if not parts:raise AssistantProviderError("INVALID_RESPONSE")
             reject_secrets(parts)
             lock_project(db,p)
@@ -219,7 +229,7 @@ async def process(db,p,run_id,provider=None):
         if owned_row(db,"assistant_runs",p,run_id)["status"] in ACTIVE:
             current=owned_row(db,'assistant_runs',p,run_id)
             update(db,"assistant_runs",p,run_id,status="FAILED",error_code=code,context_snapshot={**current['context_snapshot'],'modelRoutingDiagnostics':locals().get('routing_diagnostics',[])})
-            event(db,p,run_id,"FAILED","Assistant processing failed. Your message remains saved.",code)
+            event(db,p,run_id,"FAILED","Saved model context changed. Refresh your selection and send a new request." if code=='CONTEXT_REFRESH_REQUIRED' else "Assistant processing failed. Your message remains saved.",code)
         db.commit()
 
 

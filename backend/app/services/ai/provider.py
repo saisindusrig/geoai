@@ -50,7 +50,9 @@ class ModelRouter:
         tier = "PRIMARY" if primary else "FAST"
         primary_model=settings.NEBIUS_PRIMARY_MODEL.strip() or settings.NEBIUS_CHAT_MODEL
         model = primary_model if primary else settings.NEBIUS_FAST_MODEL.strip()
-        return ModelRoute("nebius", model, tier, metadata.tool_requirement, 3500 if primary else 2000, 25)
+        timeout = settings.NEBIUS_PRIMARY_COMPLETION_TIMEOUT_SECONDS if primary else settings.NEBIUS_TIMEOUT_SECONDS
+        if not 0 < timeout <= 120: raise ValueError("INVALID_COMPLETION_TIMEOUT")
+        return ModelRoute("nebius", model, tier, metadata.tool_requirement, 3500 if primary else 2000, timeout)
 
 
 def request_routing_hints(text):

@@ -42,11 +42,11 @@ export default function NewProjectDialog({ onClose, returnFocus }: { onClose: ()
     } catch (reason) { setError(reason instanceof Error ? reason.message : "Project could not be created. Please retry."); }
     finally { submitting.current = false; setBusy(false); }
   };
-  return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-    <form ref={dialog} role="dialog" aria-modal="true" aria-labelledby="new-project-title" aria-busy={busy} onSubmit={create} className="w-full max-w-sm rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-lg)]">
+  return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onMouseDown={event => { if (event.target === event.currentTarget && !busy) onClose(); }}>
+    <form ref={dialog} role="dialog" aria-modal="true" aria-labelledby="new-project-title" aria-busy={busy} onSubmit={create} onMouseDown={event => event.stopPropagation()} className="w-full max-w-sm rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-lg)]">
       <h2 id="new-project-title" className="font-semibold text-foreground">New project</h2>
       <label className="mt-5 block text-sm text-foreground-secondary">Project name
-        <input ref={nameInput} required maxLength={255} disabled={busy} value={name} onChange={e => setName(e.target.value)} className="mt-2 h-10 w-full rounded-xl border border-border bg-background px-3 text-foreground outline-none focus:border-primary" />
+        <input ref={nameInput} required maxLength={255} disabled={busy} value={name} onChange={e => setName(e.target.value)} className="mt-2 h-10 w-full rounded-xl border border-border bg-background px-3 text-foreground outline-none focus:border-foreground/40 focus-visible:ring-0" />
       </label>
       {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
       <div className="mt-6 flex justify-end gap-3">

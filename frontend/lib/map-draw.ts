@@ -29,6 +29,30 @@ export function verticesToLine(vertices: [number, number][]): GeoJSONGeometry {
   return { type: "LineString", coordinates: vertices };
 }
 
+/** Draw a smooth Catmull–Rom curve through the alignment's placed control points. */
+export function verticesToSmoothLine(vertices: [number, number][], samplesPerSegment = 8): GeoJSONGeometry {
+  if (vertices.length < 3) return verticesToLine(vertices);
+  const points: [number, number][] = [];
+  for (let segment = 0; segment < vertices.length - 1; segment++) {
+    const p0 = vertices[Math.max(0, segment - 1)];
+    const p1 = vertices[segment];
+    const p2 = vertices[segment + 1];
+    const p3 = vertices[Math.min(vertices.length - 1, segment + 2)];
+    for (let sample = 0; sample < samplesPerSegment; sample++) {
+      const t = sample / samplesPerSegment;
+      const t2 = t * t;
+      const t3 = t2 * t;
+      points.push([0, 1].map(axis => 0.5 * (
+        2 * p1[axis] + (-p0[axis] + p2[axis]) * t +
+        (2 * p0[axis] - 5 * p1[axis] + 4 * p2[axis] - p3[axis]) * t2 +
+        (-p0[axis] + 3 * p1[axis] - 3 * p2[axis] + p3[axis]) * t3
+      )) as [number, number]);
+    }
+  }
+  points.push(vertices.at(-1)!);
+  return verticesToLine(points);
+}
+
 /** Rectangle from two opposite corners. */
 export function rectangleFromCorners(a: [number, number], b: [number, number]): GeoJSONGeometry {
   const ring: [number, number][] = [

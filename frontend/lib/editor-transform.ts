@@ -36,6 +36,7 @@ export function transformPivot(components: EditableModelComponent[], pivot: Tran
 /** All deltas use document ENU coordinates; the viewport converts ECEF axes here. */
 export function applyTransformDelta(components: EditableModelComponent[], settings: TransformSettings, axis: THREE.Vector3, amount: number, translation?: THREE.Vector3) {
   const editable = components.filter(component => !component.locked);
+  if (settings.mode === "scale" && editable.some(component => component.geometry?.kind === "cad_mesh")) throw new Error("CAD shape changes require reviewed parametric regeneration; only rigid transforms are supported.");
   const pivot = transformPivot(editable, settings.pivot);
   const angle = snap(amount, settings.rotationSnap) * Math.PI / 180;
   const factor = snap(amount, settings.scaleSnap);

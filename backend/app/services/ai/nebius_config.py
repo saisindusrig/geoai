@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 from app.core.config import settings, REPO_DIR, BACKEND_DIR
 
 DEFAULT_BASE_URL = "https://api.tokenfactory.nebius.com/v1"
+_explicit_env_sources = {}
 
 
 def normalize_key(value):
@@ -62,6 +63,7 @@ def use_env_file(path):
     for name in ('NEBIUS_API_KEY','NEBIUS_BASE_URL','NEBIUS_TOKEN_FACTORY_BASE_URL','NEBIUS_CHAT_MODEL','NEBIUS_TIMEOUT_SECONDS'):
         if name in values:
             setattr(settings,name,float(values[name]) if name=='NEBIUS_TIMEOUT_SECONDS' else values[name] or '')
+            _explicit_env_sources[name]=path.resolve()
 
 
 def safe_loading_diagnostics():
@@ -75,8 +77,25 @@ def safe_loading_diagnostics():
         normalized=True
     except ValueError:
         base=urlsplit('');normalized=False
+    backend=dotenv_values(BACKEND_DIR/'.env',interpolate=False) if (BACKEND_DIR/'.env').exists() else {}
+    def source(name):
+        value=getattr(settings,name)
+        explicit=_explicit_env_sources.get(name)
+        if explicit and explicit.is_file() and dotenv_values(explicit,interpolate=False).get(name)==value:
+            return 'explicit env file: '+str(explicit)
+        if name=='NEBIUS_API_KEY' and settings.ENVIRONMENT.lower()=='development':
+            for label,values in [('backend .env',backend),('repository .env',root)]:
+                if values.get(name) and values[name]==value:return label
+        if os.environ.get(name)==value and name in os.environ:return 'process environment'
+        for label,values in [('backend .env',backend),('repository .env',root)]:
+            if name in values and values[name]==value:return label
+        if value==settings.__class__.model_fields[name].default:return 'settings default'
+        return 'programmatic override'
     return {'keyConfigured':bool(effective),'keyLength':len(effective),'processKeyPresent':bool(os.environ.get('NEBIUS_API_KEY')),
+        'keySource':source('NEBIUS_API_KEY'),'primaryModelSource':source('NEBIUS_PRIMARY_MODEL'),
+        'baseSource':source('NEBIUS_BASE_URL' if settings.NEBIUS_BASE_URL.strip() else 'NEBIUS_TOKEN_FACTORY_BASE_URL'),
+        'baseUrl':config.base_url if normalized else None,'primaryModel':settings.NEBIUS_PRIMARY_MODEL.strip() or settings.NEBIUS_CHAT_MODEL.strip(),
         'repoEnvExists':(REPO_DIR/'.env').exists(),'backendEnvExists':(BACKEND_DIR/'.env').exists(),
         'repoKeyMatchesEffective':bool(root_key) and root_key==effective,'normalizationValid':normalized,
         'baseHost':base.hostname,'basePath':base.path,
-        'precedence':'explicit diagnostic env-file > process env > backend/.env > repository .env > defaults'}
+        'precedence':'explicit override > local development file credential > process env > backend/.env > repository .env > defaults; production uses process env first'}

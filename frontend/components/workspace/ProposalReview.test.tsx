@@ -90,6 +90,7 @@ it("reviews a generic composition and requires saved state before generation", a
   const fixture = await api.get<object>("fixture");
   vi.mocked(api.get).mockResolvedValue({ ...fixture, status: "APPROVED", content: {
     ...(fixture as { content: object }).content,
+    aiChosenPreviewParameters: [{ objectId: "pier", parameter: "radiusM", value: 0.4, unit: "m", source: "PREVIEW_ASSUMPTION" }],
     request: { title: "Pedestrian bridge", rationale: "Primitive composition", assets: [{ name: "Bridge", assetType: "AI3D_DESIGN", ai3dDesign: {
       systems: [{ id: "bridge", role: "PEDESTRIAN_BRIDGE" }], objects: [{ objectId: "deck", systemId: "bridge", role: "DECK", parameters: { primitiveType: "SWEEP" } }],
       assumptions: [{ field: "deck width", value: "4 m", reason: "Preview only" }], unknowns: ["soil", "designLoads"],
@@ -100,6 +101,8 @@ it("reviews a generic composition and requires saved state before generation", a
   expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("PEDESTRIAN BRIDGE");
   expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("deck width = 4 m");
   expect(screen.getByLabelText("Generic 3D design summary")).toHaveTextContent("soil, designLoads");
+  expect(screen.getByLabelText("AI-chosen preview parameters")).toHaveTextContent("radiusM: 0.4 m");
+  expect(screen.getByLabelText("AI-chosen preview parameters")).toHaveTextContent("PREVIEW_ASSUMPTION");
   expect(screen.getByRole("button", { name: "Approve & Generate 3D" })).toBeDisabled();
   rerender(<ProposalReview projectId={1} versionId="pv" dirty={false} />);
   vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "11" });

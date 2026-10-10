@@ -14,9 +14,8 @@ import WorkspaceToolRail from "@/components/workspace/WorkspaceToolRail";
 import BuildingAssistant from "@/components/workspace/BuildingAssistant";
 import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
-import ParameterForm from "@/components/workspace/ParameterForm";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Sun, Search, Sparkles } from "lucide-react";
+import { Sun, Search, Sparkles } from "lucide-react";
 import { useEditableModelEditor } from "@/hooks/useEditableModelEditor";
 import { useProjectData } from "@/hooks/useProjectData";
 import { useActiveJobPolling } from "@/hooks/useActiveJobPolling";
@@ -30,7 +29,6 @@ import {
 import { toast, toastPromise } from "@/lib/toast";
 import type { GeoJSONGeometry, GenerationMode, JobStatus } from "@/lib/types";
 import { useProjectStore } from "@/stores/projectStore";
-import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 
 export default function WorkspacePage() {
   const params = useParams<{ id: string }>();
@@ -67,9 +65,7 @@ export default function WorkspacePage() {
     string,
     unknown
   > | null>(null);
-  const [generationMode, setGenerationMode] =
-    useState<GenerationMode>("balanced");
-  const { open: conceptOpen, toggle: toggleConcept, close: closeConcept } = useWorkspacePanel("generation");
+  const generationMode: GenerationMode = "balanced";
 
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
@@ -204,7 +200,7 @@ export default function WorkspacePage() {
 
   useEffect(() => {
     if (!isLocalSandbox || !project) return;
-    useProjectStore.getState().setLayers({ projectModel: true, terrain: true, satellite: true });
+    useProjectStore.getState().setLayers({ projectModel: true, satellite: true });
     useProjectStore.getState().setScene3dLayers({ flyover: true });
   }, [isLocalSandbox, project]);
 
@@ -246,32 +242,14 @@ export default function WorkspacePage() {
           mapToolbar={
             <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
               {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
-                <Button className="h-10 gap-2 rounded-xl" onClick={() => { setBuildingAssistantOpen(value => !value); closeConcept(); }}><Sparkles className="size-4" />AI Building Assistant</Button>
+                <Button className="h-10 gap-2 rounded-xl" onClick={() => setBuildingAssistantOpen(value => !value)}><Sparkles className="size-4" />AI Building Assistant</Button>
                 {buildingAssistantOpen && <BuildingAssistant projectId={projectId} boundaryKey={JSON.stringify(project.boundary_geojson ?? null)} revisionId={modelEditor.baseRevision?.id ?? null} dirty={modelEditor.dirty} generating={generating} onStarted={showBuildingJob} onClose={() => setBuildingAssistantOpen(false)} />}
               </div>}
               <div className="flex items-center" title="Scene / Sun study">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" aria-label="Scene / Sun study" title="Scene / Sun study" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-scene-controls"))}><Sun className="size-4" /></Button>
+                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-border hover:bg-white/10 hover:text-foreground" aria-label="Scene / Sun study" title="Scene / Sun study" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-scene-controls"))}><Sun className="size-4" /></Button>
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-white/15 hover:bg-white/10 hover:text-foreground" data-workspace-popup="search" aria-label="Search workspace" title="Search places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
-              </div>
-              <div className="relative">
-                <Button disabled={!assetSupportsGeneration(project.project_type)} title={assetSupportsGeneration(project.project_type) ? "Generate concept" : "Site reference only; generation unavailable"} onClick={toggleConcept} className="workspace-generate-button ml-1 h-10 gap-2.5 rounded-xl bg-primary/90 px-5 text-xs font-semibold shadow-md brightness-[0.94] hover:bg-primary/80">
-                  <Sparkles className="size-4" /> Generate · {generationMode === "fast_preview" ? "Fast" : generationMode === "high_detail" ? "Detailed" : "Balanced"} <ChevronDown className="size-3.5" />
-                </Button>
-                {conceptOpen && (
-                  <section className="absolute right-0 top-12 w-[320px] rounded-2xl border border-white/15 bg-background/95 p-4 shadow-2xl backdrop-blur-xl" aria-label="Generate concept">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">Generate concept</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Create a preliminary {project.project_type} model using the current site and engineering parameters.</p>
-                    <label className="mt-4 block text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Mode
-                      <select value={generationMode} onChange={(event) => setGenerationMode(event.target.value as GenerationMode)} className="mt-1.5 h-9 w-full rounded-sm border border-border bg-background px-2 text-xs text-foreground outline-none">
-                        <option value="fast_preview">Fast</option><option value="balanced">Balanced</option><option value="high_detail">Detailed</option>
-                      </select>
-                    </label>
-                    <div className="mt-4 border-t border-white/10 pt-3"><p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Engineering parameters</p><ParameterForm compact projectType={project.project_type} initialValues={pendingParams ?? (scenario?.input_parameters_json as Record<string, unknown> | null)} generating={generating} onGenerate={(parameters) => { closeConcept(); generate(parameters, generationMode); }} /></div>
-                    <div className="mt-3 flex justify-end"><Button variant="ghost" size="sm" onClick={closeConcept}>Cancel</Button></div>
-                  </section>
-                )}
+                <Button variant="ghost" size="icon" className="size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-border hover:bg-white/10 hover:text-foreground" data-workspace-popup="search" aria-label="Search workspace" title="Search places" onClick={() => window.dispatchEvent(new CustomEvent("geoai:open-location-search"))}><Search className="size-4" /></Button>
               </div>
             </div>
           }
@@ -317,10 +295,6 @@ export default function WorkspacePage() {
               selectedComponentIds={modelEditor.selectedIds}
               onSelectComponent={(id, additive) => {
                 modelEditor.select(id, additive);
-                if (id) {
-                 
-                  closeConcept();
-                }
               }}
             />
           }

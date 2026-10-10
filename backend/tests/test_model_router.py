@@ -20,7 +20,7 @@ def test_routing_metadata(metadata,tier,monkeypatch):
     assert route.tier==tier and route.provider=="nebius"
     assert route.model==('fixture-fast' if tier=='FAST' else 'fixture-primary')
     assert route.tool_calling_allowed==metadata.get("tool_requirement",False)
-    assert route.timeout<=25 and route.max_output_tokens<=3500
+    assert route.timeout==(settings.NEBIUS_PRIMARY_COMPLETION_TIMEOUT_SECONDS if tier=='PRIMARY' else settings.NEBIUS_TIMEOUT_SECONDS) and route.max_output_tokens<=3500
 
 
 @pytest.mark.parametrize("effect",["GENERATE","CALCULATE"])

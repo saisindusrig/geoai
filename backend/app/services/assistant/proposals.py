@@ -243,6 +243,8 @@ class ProposalService:
             "previewOnly": True, "validationId": identity(vid, "validation")}
         if any(a.building_patch for a in request.assets):
             payload["patchPreview"] = {**preview["summary"],"affectedComponentIds":preview["affectedComponentIds"]}
+        from app.services.assistant.preview_parameters import preview_parameters
+        payload['aiChosenPreviewParameters']=[entry for asset in request_data['assets'] if asset.get('ai3dDesign') for entry in preview_parameters(asset['ai3dDesign'])]
         # Concept relationships are versioned with the proposal, never applied to live composition by the LLM.
         payload["planning"]={**policy["understanding"],"proposedAssets":request_data["assets"],
             "assumptions":request_data["assumptions"],"constraints":[r["id"] for r in rows(db,"constraint_datasets",project_id)],

@@ -84,7 +84,7 @@ export default function HomePage() {
   const selected = systems[system];
   const chapterIndex = chapter.storytelling ? 1 : ({ 0: 0, 5: 2, 9: 3, 12: 4 } as Record<number, number>)[chapter.stage] ?? 0;
   return <div ref={root} className="geo-home" data-motion-paused={paused||reduced} data-active-scene={chapter.stage} onPointerMove={e=>{pointer.current={x:e.clientX/window.innerWidth-.5,y:e.clientY/window.innerHeight-.5};}}>
-    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="GeoAI home"><Brand/></a><nav aria-label="Homepage"><a href="#how-it-works">Workflow</a><a href="#projects">Infrastructure</a><a href="#design-basis">Design basis</a><a href="#faq">Technical details</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
+    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="GeoAI home"><Brand/></a><nav aria-label="Homepage"><a href="#how-it-works">Workflow</a><a href="#projects">Infrastructure</a><a href="#design-basis">Design basis</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
     <div className="geo-journey">
       <div className="geo-persistent-scene" aria-hidden="true"><Terrain state={sceneState} pointer={pointer}/><div className={`geo-scene-shade ${chapter.stage===5 || chapter.stage===7 ? "geo-shade-light" : ""}`}/><div className="geo-scene-grain"/></div>
 
@@ -104,7 +104,14 @@ export default function HomePage() {
       <TechnicalOverview faqs={faqs}/>
 
       <section data-chapter="12" className="geo-chapter geo-final"><Eyebrow n="05">YOUR NEXT PROJECT STARTS HERE</Eyebrow><h2>START WITH<br/><em>THE SITE.</em></h2><p>Create an infrastructure concept against real terrain.</p><Launch/><span className="geo-final-caption">MAPS · TERRAIN · AI · 3D · ENGINEERING QUANTITIES</span>{chapter.stage===12&&<div className="geo-survey-label geo-final-label"><span>CONCEPT A—01 / COMPLETE</span><strong>READY FOR EXPLORATION ↗</strong></div>}</section>
-      <footer className="geo-footer geo-opaque"><div><a href="#earth" aria-label="Back to GeoAI home"><Brand/></a><p>Infrastructure concept planning.</p></div><nav aria-label="Footer"><a href="#design-basis">Product</a><a href="#how-it-works">Workflow</a><a href="#faq">Technical clarity</a></nav><div className="geo-footer-bottom"><span>© {new Date().getFullYear()} GeoAI</span><span>Concept outputs require professional verification before construction.</span><a href="#earth">BACK TO TOP ↑</a></div></footer>
+      <footer className="geo-footer geo-opaque">
+        <div className="geo-footer-main">
+          <div className="geo-footer-brand"><a href="#earth" aria-label="Back to GeoAI home"><Brand/></a><p>From real terrain to considered infrastructure.</p><span className="geo-footer-systems">Roads · Bridges · Pipelines · Dams</span></div>
+          <nav className="geo-footer-links" aria-label="Footer"><span className="geo-footer-label">Explore GeoAI</span><a href="#how-it-works">Workflow <ArrowUpRight size={14}/></a><a href="#projects">Infrastructure <ArrowUpRight size={14}/></a><a href="#design-basis">Design basis <ArrowUpRight size={14}/></a></nav>
+          <div className="geo-footer-workspace"><span className="geo-footer-label">Your next project</span><p>Plan, inspect and refine in one 3D workspace.</p><Launch small label="Start a project"/></div>
+        </div>
+        <div className="geo-footer-bottom"><span>© {new Date().getFullYear()} GeoAI</span><span className="geo-footer-note">Concept outputs require professional verification before construction.</span><a href="#earth" className="geo-footer-top">Back to top <ArrowUpRight size={15}/></a></div>
+      </footer>
     </div>
     <div className="geo-chapter-indicator"><span>{String(chapterIndex+1).padStart(2,"0")}</span><i/><span>{chapterNames[chapterIndex]}</span></div>
     <button className="geo-motion-toggle" onClick={()=>setPaused(!paused)} aria-label={paused?"Resume ambient motion":"Pause ambient motion"}>{paused?<Play size={12}/>:<Pause size={12}/>}<span>{paused?"MOTION PAUSED":"LIVE PERSPECTIVE"}</span></button>

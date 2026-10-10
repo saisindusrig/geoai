@@ -119,7 +119,7 @@ def save_revision(
     return persist_revision(project_id, scenario_id, payload, db, user)
 
 
-def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True, lineage_updates=None):
+def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True, lineage_updates=None, cad_publication=False):
     from app.services.assistant.storage import lock_project
     lock_project(db, project_id)
     project = get_owned_project(project_id, db, user.id)
@@ -142,6 +142,10 @@ def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True,
     )
     if errors:
         raise HTTPException(422, detail={"message": "Model validation failed", "errors": errors})
+    has_cad = any(c.get("geometry", {}).get("kind") == "cad_mesh" for c in payload.document["components"])
+    if has_cad or latest and any(c.get("geometry", {}).get("kind") == "cad_mesh" for c in latest.document_json.get("components", [])):
+        from app.experimental.cad_revision import validate_references
+        validate_references(db, project_id=project_id, user_id=user.id, document=payload.document, base=latest, publication=cad_publication)
     layout_validation = validate_layout(payload.document)
     if not layout_validation["passed"]:
         raise HTTPException(422, detail={"message": "Structural layout rule validation failed", "violations": layout_validation["violations"]})
@@ -211,6 +215,9 @@ def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True,
     db.add(estimate)
 
     spec = document_to_geometry_spec(payload.document)
+    # CAD meshes are fetched through authorized private references by the editor.
+    # The ordinary export contains only non-CAD objects; no private mesh bytes
+    # or B-reps enter its legacy file URL.
     glb = generate_glb(spec, quality="final")
     file_url = save_file(
         f"projects/{project_id}/scenario_{scenario_id}/revision_{revision_number}/model.glb",

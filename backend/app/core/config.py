@@ -7,6 +7,18 @@ REPO_DIR = BACKEND_DIR.parent
 
 
 class Settings(BaseSettings):
+    @classmethod
+    def settings_customise_sources(cls, settings_cls, init_settings, env_settings, dotenv_settings, file_secret_settings):
+        def local_nebius_credential():
+            # Local .env is the credential authority. Deployment environments
+            # retain standard process-env precedence; other settings are untouched.
+            env_values = env_settings()
+            file_values = dotenv_settings()
+            environment = init_settings().get("ENVIRONMENT", env_values.get("ENVIRONMENT", file_values.get("ENVIRONMENT", "development")))
+            key = file_values.get("NEBIUS_API_KEY")
+            return {"NEBIUS_API_KEY": key} if str(environment).lower() == "development" and key and str(key).strip() else {}
+        return init_settings, local_nebius_credential, env_settings, dotenv_settings, file_secret_settings
+
     model_config = SettingsConfigDict(
         env_file=(REPO_DIR / ".env", BACKEND_DIR / ".env"),
         env_file_encoding="utf-8",
@@ -42,6 +54,7 @@ class Settings(BaseSettings):
     NEBIUS_BASE_URL: str = ""
     NEBIUS_TOKEN_FACTORY_BASE_URL: str = "https://api.tokenfactory.nebius.com/v1"
     NEBIUS_TIMEOUT_SECONDS: float = 25
+    NEBIUS_PRIMARY_COMPLETION_TIMEOUT_SECONDS: float = 45
     NEBIUS_CHAT_MODEL: str = "nvidia/nemotron-3-super-120b-a12b"
     NEBIUS_FAST_MODEL: str = ""
     NEBIUS_PRIMARY_MODEL: str = ""

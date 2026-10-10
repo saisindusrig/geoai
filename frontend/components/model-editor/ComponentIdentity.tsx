@@ -6,6 +6,14 @@ export default function ComponentIdentity({ component, document }: { component: 
   const patch = component.metadata?.patchProvenance as Record<string, unknown> | undefined;
   const fields = [
     ["Component ID", component.id],
+    ["BIM component", component.metadata?.componentId],
+    ["Assembly", component.metadata?.assemblyId],
+    ["CAD geometry", component.metadata?.geometryStatus],
+    ["Design", component.metadata?.designId],
+    ["Design version", component.metadata?.designVersion],
+    ["Material", component.metadata?.materialId],
+    ["Engineering", component.metadata?.engineeringStatus],
+    ["CAD proposal", component.metadata?.cadProposalVersionId],
     ["Kind", component.metadata?.componentKind],
     ["Role", component.metadata?.componentRole],
     ["Asset", component.metadata?.assetId],
@@ -29,5 +37,12 @@ export default function ComponentIdentity({ component, document }: { component: 
     {document && document.origin.elevation_m == null && <p>Elevation unknown · local visual reference only</p>}
     {fields.filter(([, value]) => typeof value === "string" || typeof value === "number").map(([label, value]) =>
       <div key={String(label)}><dt className="text-muted-foreground">{String(label)}</dt><dd className="break-all">{String(value)}</dd></div>)}
+    {component.geometry?.kind === "cad_mesh" && <>
+      <dt className="text-muted-foreground">Authoritative component parameters</dt>
+      <dd>{Object.entries((component.metadata?.parameters ?? {}) as Record<string, number>).map(([name,value]) => <p key={name}>{name}: {value} m</p>)}</dd>
+      <dt className="text-muted-foreground">Preview assumptions</dt>
+      <dd>{((component.metadata?.previewAssumptions ?? []) as string[]).map(statement => <p key={statement}>{statement}</p>)}</dd>
+      <dd>Rigid transforms only. Shape/material edits require reviewed parametric regeneration.</dd>
+    </>}
   </dl>;
 }

@@ -133,3 +133,5 @@ app.include_router(building_plans.router)
 from app.api.routes import site_workspace
 app.include_router(site_workspace.router)
 app.include_router(geoai.router)
+from app.api.routes import cad_experimental
+app.include_router(cad_experimental.router)

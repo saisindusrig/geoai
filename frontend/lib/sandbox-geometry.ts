@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import type { EditableModelComponent } from "@/lib/types";
+import { cadBufferGeometry } from "@/lib/cad-mesh";
 
 /** Component meshes retain the document's east/north/up axes. */
 export function componentObject(component: EditableModelComponent): THREE.Group {
@@ -11,7 +12,9 @@ export function componentObject(component: EditableModelComponent): THREE.Group 
   const geometry = component.geometry;
   const material = new THREE.MeshStandardMaterial({ color: component.material.color, roughness: component.material.roughness, metalness: component.material.metalness });
   let mesh: THREE.Mesh;
-  if (geometry.kind === "box" || geometry.kind === "extrusion") {
+  if (geometry.kind === "cad_mesh") {
+    mesh = new THREE.Mesh(cadBufferGeometry(geometry), material);
+  } else if (geometry.kind === "box" || geometry.kind === "extrusion") {
     mesh = new THREE.Mesh(new THREE.BoxGeometry(...geometry.size), material);
   } else if (geometry.kind === "cylinder" || geometry.kind === "sweep") {
     const start = new THREE.Vector3().fromArray(geometry.start);

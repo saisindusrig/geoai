@@ -1,0 +1,58 @@
+import { expect, test } from "@playwright/test";
+
+test.skip(process.env.LIVE_AI3D_V2_WORKSPACE !== "1", "Explicit one-time live acceptance only; edits project 578");
+
+test("fresh live bridge uses the real editable workspace", async ({ page }) => {
+  await page.setViewportSize({ width: 1626, height: 982 });
+  await page.goto("/projects/578/workspace");
+  await expect(page.getByLabel("Search scene components")).toBeVisible({ timeout: 60000 });
+  const select = async () => {
+    await page.getByRole("tab", { name: "Layers", exact: true }).click();
+    await page.getByLabel("Search scene components").fill("deck-001");
+    await page.getByRole("button", { name: "deck-001", exact: true }).click();
+    await page.getByRole("tab", { name: "Inspect", exact: true }).click();
+  };
+  await select();
+  const identity = page.getByLabel("Component identity");
+  await expect(identity).toContainText("pedestrian-bridge-001");
+  await expect(identity).toContainText("bridge-deck");
+  await expect(identity).toContainText("BOX");
+  await expect(identity).toContainText("e4b7999a-8c24-5326-a216-f89446c3ff3a");
+  await expect(identity).toContainText("Elevation unknown");
+  await page.getByRole("button", { name: "Engineering dock", exact: true }).click();
+  await page.getByRole("tab", { name: "SECTION", exact: true }).click();
+  await page.getByRole("checkbox", { name: "Underground view", exact: true }).check();
+  await page.getByRole("button", { name: "Engineering dock", exact: true }).click();
+  await page.getByRole("button", { name: "Frame selection", exact: true }).click();
+  await page.waitForTimeout(1800);
+  await expect(page.locator(".cesium-widget canvas")).toBeVisible();
+  await expect(page.locator(".cesium-widget-errorPanel")).toHaveCount(0);
+  await page.screenshot({ path: "test-results/live-ai3d-v2-before.png" });
+  const east = page.getByLabel("Position · metres East", { exact: true });
+  await expect(east).toHaveValue("0");
+  await east.fill("0.1"); await east.press("Tab");
+  const saved = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
+  await page.getByRole("button", { name: "Save", exact: true }).click();
+  const response = await saved;
+  expect(response.ok(), await response.text()).toBeTruthy();
+  await page.reload(); await select();
+  await expect(east).toHaveValue("0.1");
+  await expect(identity).toContainText("pedestrian-bridge-001");
+  await page.getByRole("tab", { name: "History", exact: true }).click();
+  await page.getByRole("button", { name: "Compare", exact: true }).click();
+  await expect(page.getByText("0 added · 0 removed · 1 modified", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Close compare", exact: true }).click();
+  await page.getByRole("tab", { name: "Layers", exact: true }).click();
+  await page.getByLabel("Search scene components").fill("");
+  await page.getByRole("button", { name: "Hide deck layer", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Show deck layer", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Show deck layer", exact: true }).click();
+  await select();
+  await page.getByRole("button", { name: "Engineering dock", exact: true }).click();
+  await page.getByRole("tab", { name: "SECTION", exact: true }).click();
+  await page.getByRole("checkbox", { name: "Underground view", exact: true }).check();
+  await page.getByRole("button", { name: "Engineering dock", exact: true }).click();
+  await page.getByRole("button", { name: "Frame selection", exact: true }).click();
+  await page.waitForTimeout(1800);
+  await page.screenshot({ path: "test-results/live-ai3d-v2-accepted.png" });
+});

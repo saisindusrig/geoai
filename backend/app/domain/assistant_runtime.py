@@ -1,6 +1,6 @@
 """Typed, bounded commands for the civil assistant; no executable model code."""
 from typing import Annotated, Literal
-from pydantic import Field
+from pydantic import Field, field_validator
 from app.domain.stage1 import Contract, Id, Digest, CivilIntent, ApprovalCommand, Finite, ProposalPayload, ValidationResult, ProposalStatus
 from app.domain.site_workspace import MessageContext
 from app.domain.composition import AssetProposal
@@ -57,7 +57,15 @@ class ToolInvocation(Contract):
     name: Literal["get_site_profile", "get_site_readiness", "get_active_terrain", "sample_terrain",
         "get_selected_objects", "get_model_revision", "get_project_requirements", "query_nearby_context",
         "get_checks", "get_constraints", "create_proposal", "revise_proposal", "validate_proposal"]
-    arguments: Annotated[str, Field(max_length=18000)] = "{}"
+    arguments: Annotated[str, Field(max_length=18000)] | dict = "{}"
+
+    @field_validator('arguments')
+    @classmethod
+    def bound_object_arguments(cls,value):
+        import json
+        if isinstance(value,dict) and len(json.dumps(value,separators=(',',':'))) > 18000:
+            raise ValueError('Tool arguments exceed the bounded payload size')
+        return value
 
 
 class Clarification(Contract):
@@ -101,6 +109,7 @@ class ProposalReference(Contract):
 
 
 class ProposalContent(Contract):
+    ai_chosen_preview_parameters: list[dict] = Field(default_factory=list)
     patch_preview: dict | None = None
     planning: dict | None = None
     asset_proposals: list[AssetProposal] = Field(default_factory=list)

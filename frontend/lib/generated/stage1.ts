@@ -785,6 +785,7 @@ export type ProposalCommand = {
 };
 
 export type ProposalContent = {
+  "aiChosenPreviewParameters"?: Array<Record<string, unknown>>;
   "patchPreview"?: (Record<string, unknown> | null);
   "planning"?: (Record<string, unknown> | null);
   "assetProposals"?: Array<AssetProposal>;
@@ -1124,7 +1125,7 @@ export type TextPart = {
 
 export type ToolInvocation = {
   "name": "get_site_profile" | "get_site_readiness" | "get_active_terrain" | "sample_terrain" | "get_selected_objects" | "get_model_revision" | "get_project_requirements" | "query_nearby_context" | "get_checks" | "get_constraints" | "create_proposal" | "revise_proposal" | "validate_proposal";
-  "arguments"?: string;
+  "arguments"?: (string | Record<string, unknown>);
 };
 
 export type TranslatePatch = {

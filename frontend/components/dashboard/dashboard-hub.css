@@ -84,3 +84,4 @@ html:has(.geo-dashboard-hub),body:has(.geo-dashboard-hub){height:100vh;overflow:
 .hub-continue>div{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .hub-continue span,.hub-continue p{font-size:12px;color:var(--hub-muted)}
 .hub-continue a{margin-left:auto;display:inline-flex;align-items:center;gap:8px;color:var(--hub-lime);font-size:12px}
+.geo-dashboard-hub form[aria-labelledby="new-project-title"] input:focus-visible{outline:1px solid var(--foreground-secondary);outline-offset:2px}

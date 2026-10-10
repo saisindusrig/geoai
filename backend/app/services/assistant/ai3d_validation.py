@@ -24,8 +24,11 @@ def site_summary(db, project_id, context):
               "heading_deg":placement.anchor_heading_deg if placement else 0,"elevation_m":placement.anchor_elevation if placement else None}
     local = local_plot({"origin":origin,"boundary":geometry})
     profile = owned_row(db,"site_profile_versions",project_id,context["siteProfileVersionId"])
+    project=db.get(Project,project_id)
+    project_local=local_plot({'origin':origin,'boundary':project.boundary_geojson}) if project.boundary_geojson else None
     return {"selectionReference":{"id":selected["id"],"version":selected["version"],"contentHash":selected["content_hash"]},
             "selectionKind":selection["kind"],"localGeometry":local.__geo_interface__,"coordinateFrame":"LOCAL_ENU","origin":origin,
+            'projectBoundaryLocal':project_local.__geo_interface__ if project_local is not None else None,
             "frameSource":"SAVED_MODEL_PLACEMENT" if placement else "SELECTED_GEOMETRY_CENTROID",
             "referencePlane":"LOCAL_VISUAL_REFERENCE","sourceModelRevisionId":context.get("modelRevisionId"),
             "profileReference":{"id":profile["id"],"version":profile["version"],"contentHash":profile["content_hash"]},
@@ -60,7 +63,10 @@ class AI3DDesignValidator:
         for index,constraint in enumerate(spec.constraints):
             code=None; kind=constraint.kind; target=resolved.get(constraint.target_id); reference=resolved.get(constraint.reference_id)
             solids=[raw for raw in geometry["objects"] if raw["semantic"]["sourceObjectId"]==constraint.target_id or raw["semantic"]["systemId"]==constraint.target_id]
-            if constraint.target_id not in known: code="UNRESOLVED_CONSTRAINT_TARGET"
+            from app.services.assistant.selection_context import CONSTRAINTS
+            if summary and kind in {'WITHIN_AREA','FOLLOW_ROUTE','START_AT','END_AT','AVOID_AREA'} and kind not in CONSTRAINTS.get(summary['selectionKind'],[]):
+                code='CONSTRAINT_NOT_APPLICABLE'
+            elif constraint.target_id not in known: code="UNRESOLVED_CONSTRAINT_TARGET"
             elif kind=="WITHIN_AREA":
                 if not summary or summary["selectionKind"]!="AREA":code="AREA_CONTEXT_REQUIRED"
                 elif not solids or any(not shape(summary["localGeometry"]).buffer(1e-7).covers(footprint(raw)) for raw in solids):code="OUTSIDE_SELECTED_AREA"
@@ -73,6 +79,9 @@ class AI3DDesignValidator:
             elif kind in {"START_AT","END_AT"}:
                 if not target or target["kind"] not in {"PATH","OFFSET"} or not reference or reference["kind"]!="POINT":code="INVALID_ENDPOINT_REFERENCE"
                 elif math.dist(target["reference"][0 if kind=="START_AT" else -1],reference["reference"])>.001:code="ENDPOINT_MISMATCH"
+                elif summary and summary['selectionKind'] in {'ROUTE','ENDPOINTS','CROSSING'}:
+                    saved=list(shape(summary['localGeometry']).coords)[0 if kind=='START_AT' else -1]
+                    if math.dist(reference['reference'][:2],saved[:2])>.001:code='SAVED_ENDPOINT_MISMATCH'
             elif kind=="AVOID_AREA":
                 if not reference or reference["kind"]!="POLYGON" or not solids:code="INVALID_AVOID_REFERENCE"
                 elif any(footprint(raw).intersects(Polygon([p[:2] for p in reference["reference"]])) for raw in solids):code="AVOID_AREA_VIOLATION"

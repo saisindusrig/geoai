@@ -1,5 +1,7 @@
 "use client";
 import MeasurementResult from "./MeasurementResult";
+import { loadCadMeshes } from "@/lib/cad-mesh";
+import { loadCesiumRuntime } from "@/lib/cesium-runtime";
 import { cylinderFrame } from "@/lib/editor-transform";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
 
@@ -25,7 +27,7 @@ import {
   type PhotorealisticTileState,
 } from "@/lib/cesium-photorealistic-tiles";
 import { lineLengthM } from "@/lib/geo";
-import { corridorFromLine, geometryToVertices, rectangleFromCorners, verticesToLine, verticesToPolygon } from "@/lib/map-draw";
+import { corridorFromLine, geometryToVertices, rectangleFromCorners, verticesToLine, verticesToPolygon, verticesToSmoothLine } from "@/lib/map-draw";
 import {
   fetchMapRuntimeConfig,
   loadCesiumBasemapProvider,
@@ -158,6 +160,7 @@ export default function CesiumView({
   const [error, setError] = useState("");
   const [analysisClip, setAnalysisClip] = useState<AnalysisClip>({ mode: "off", value: 0, size: 50 });
   const [transformReadout, setTransformReadout] = useState<string | null>(null);
+  const [cadMeshError, setCadMeshError] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
   /** Bumped after terrain provider switches so clamped entities re-bind to the globe. */
   const [terrainEpoch, setTerrainEpoch] = useState(0);
@@ -367,8 +370,12 @@ export default function CesiumView({
       // Accepted engineering coordinates and the document are never modified.
       const ground = 0;
       if (cancelled) return;
-      if (localSandbox || editor) {
+      if (localSandbox || editor || editableModel.components.some(c => c.geometry.kind === "cad_mesh")) {
         const renderedDocument = editor?.comparison?.current ?? (localSandbox ? editableModel : { ...editableModel, origin: { lng, lat, elevation_m: elevation, heading_deg: documentHeading } });
+        await loadCadMeshes(renderedDocument);
+        if (editor?.comparison) await loadCadMeshes(editor.comparison.previous);
+        if (cancelled) return;
+        setCadMeshError(null);
         const preview = buildSandboxMapPrimitives(Cesium, ds.entities, renderedDocument, selectedComponentIds, ground, analysisClip);
         sandboxCollection = preview.collection;
         sandboxBounds.current = preview.bounds;
@@ -396,7 +403,7 @@ export default function CesiumView({
           viewer.camera.flyToBoundingSphere(preview.bounds, { offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-58), Math.max(preview.bounds.radius * 3.2, 80)), duration: 0.9, complete: () => { if (flight === sandboxFlightGeneration.current) sandboxCameraReady.current = true; }, cancel: () => { if (flight === sandboxFlightGeneration.current) sandboxCameraReady.current = false; } });
         }
         removePostRender = viewer.scene.postRender.addEventListener(() => {
-          if (cancelled || (preview.bounds && !sandboxCameraReady.current)) return;
+          if (cancelled || (localSandbox && preview.bounds && !sandboxCameraReady.current)) return;
           for (let i = 0; i < preview.collection.length; i++) if (!preview.collection.get(i).ready) return;
           viewer.scene.canvas.dataset.sandboxReady = "true";
           removePostRender?.(); removePostRender = null;
@@ -501,7 +508,7 @@ export default function CesiumView({
         }
       }
       viewer.scene.requestRender();
-    })();
+    })().catch((failure: unknown) => { if (!cancelled) setCadMeshError(failure instanceof Error ? failure.message : "CAD geometry could not load."); });
     return () => {
       cancelled = true;
       disposeTransform?.();
@@ -547,7 +554,7 @@ export default function CesiumView({
           link.href = "/cesium/Widgets/widgets.css";
           document.head.appendChild(link);
         }
-        const Cesium = await import("cesium");
+        const Cesium = await loadCesiumRuntime();
         if (cancelled || !containerRef.current || viewerRef.current) return;
         cesiumRef.current = Cesium;
 
@@ -1240,7 +1247,9 @@ export default function CesiumView({
     const redraw = () => {
       source.entities.removeAll();
       points.forEach((point, index) => source.entities.add({ id: `draw-handle-${index}`, position: C.Cartesian3.fromDegrees(...point), point: { pixelSize: 9, color: C.Color.YELLOW, outlineColor: C.Color.BLACK, outlineWidth: 1, heightReference: C.HeightReference.CLAMP_TO_GROUND, disableDepthTestDistance: Number.POSITIVE_INFINITY } }));
-      if (points.length > 1) source.entities.add({ polyline: { positions: C.Cartesian3.fromDegreesArray(points.flat()), width: 3, material: C.Color.YELLOW, clampToGround: true } });
+      const smooth = drawingTool === "draw-line" && useProjectStore.getState().smoothAlignment;
+      const preview = smooth ? geometryToVertices(verticesToSmoothLine(points)) : points;
+      if (preview.length > 1) source.entities.add({ polyline: { positions: C.Cartesian3.fromDegreesArray(preview.flat()), width: 3, material: C.Color.YELLOW, clampToGround: true } });
       useProjectStore.getState().setDrawVertices(points);
       viewer.scene.requestRender();
     };
@@ -1251,7 +1260,7 @@ export default function CesiumView({
       if (polygon && points.length >= 3) geometry = verticesToPolygon(points);
       else if (drawingTool === "draw-rectangle" && points.length >= 2) geometry = rectangleFromCorners(points[0], points.at(-1)!);
       else if (drawingTool === "draw-corridor" && points.length >= 2) geometry = corridorFromLine(points, useProjectStore.getState().corridorWidthM);
-      else if (points.length >= 2 && !polygon) geometry = verticesToLine(points);
+      else if (points.length >= 2 && !polygon) geometry = drawingTool === "draw-line" && useProjectStore.getState().smoothAlignment ? verticesToSmoothLine(points) : verticesToLine(points);
       if (!geometry) return;
       const kind = polygon || drawingTool === "draw-rectangle" || drawingTool === "draw-corridor" ? "boundary" : "alignment";
       useProjectStore.getState().finishDrawing({ kind, geometry });
@@ -1265,7 +1274,10 @@ export default function CesiumView({
     const keyboard = (event: KeyboardEvent) => { if (event.target instanceof HTMLElement && event.target.closest("input,textarea,select")) return; if (event.key === "Enter") finish(); };
     window.addEventListener("keydown", keyboard);
     window.addEventListener("geoai:finish-drawing", finish);
-    const unsubscribe = useProjectStore.subscribe((state, previous) => { if (state.drawVertices.length < previous.drawVertices.length && state.activeTool === drawingTool) { points = state.drawVertices; redraw(); } });
+    const unsubscribe = useProjectStore.subscribe((state, previous) => {
+      if (state.drawVertices.length < previous.drawVertices.length && state.activeTool === drawingTool) points = state.drawVertices;
+      if (state.activeTool === drawingTool && (state.drawVertices.length < previous.drawVertices.length || state.smoothAlignment !== previous.smoothAlignment)) redraw();
+    });
     return () => { unsubscribe(); window.removeEventListener("keydown", keyboard); window.removeEventListener("geoai:finish-drawing", finish); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.scene.screenSpaceCameraController.enableInputs = true; viewer.dataSources.remove(source, true); } };
   }, [loaded, drawingTool, boundary, alignment]);
 
@@ -1390,7 +1402,7 @@ export default function CesiumView({
       </div>
     );
   }
-  return <>{measurementReadout && <MeasurementResult readout={measurementReadout} mode={scene3dMeasureTool} onClear={() => useProjectStore.getState().setScene3dMeasureReadout(null)} />}{transformReadout && <p role="status" className="pointer-events-none absolute bottom-16 left-16 z-30 rounded-sm border border-white/10 bg-background/95 px-3 py-2 font-mono text-xs">{transformReadout}</p>}{loaded && !layers.terrain && layers.tiles3d && <div role="status" className="absolute left-16 top-14 z-20 rounded-lg border border-white/15 bg-background/95 px-3 py-2 text-xs"><span>Global buildings paused on flat ground.</span><button className="ml-3 text-primary underline" onClick={() => useProjectStore.getState().setLayers({ terrain: true })}>Restore terrain & buildings</button></div>}{loaded && <SunStudyControls key={placementProjectId ?? "local"} viewer={viewerRef.current} Cesium={cesiumRef.current} longitude={centerLng} latitude={centerLat} projectId={localSandbox ? undefined : placementProjectId} buildingsAvailable={photorealisticTilesOn && buildingStatus === "READY" || scene3dLayers.buildings && buildingFeatures.length > 0} terrainAvailable={layers.terrain && (terrainStatus.includes("VISUAL REFERENCE") || terrainStatus.startsWith("PROJECT TERRAIN"))} />}<div ref={containerRef} style={{ position: "absolute", inset: 0 }} />{!localSandbox && editableModel && <EngineeringEvidencePanel key={`${editableModel.project_id}:${modelRevisionId ?? "unsaved"}`} projectId={editableModel.project_id} revisionId={modelRevisionId} origin={editableModel.origin} onPlacement={setAcceptedPlacement} />}{buildingStatus && photorealisticTilesOn && buildingStatus !== "READY" && <p role="alert" className="absolute left-16 top-24 rounded-xl border border-white/15 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">Context buildings unavailable: {buildingStatus === "MISSING_TOKEN" ? "configure world data" : "provider could not load"}</p>}{localSandbox && loaded && layers.terrain && <details className="workspace-terrain-status absolute left-16 top-14 z-20 max-w-[330px] rounded-xl border border-white/15 bg-background/95 text-[10px] shadow-lg"><summary role="status" className="cursor-pointer px-3 py-2 text-muted-foreground">{terrainStatus}</summary><div className="space-y-2 border-t border-white/10 px-3 py-3 text-xs leading-relaxed text-muted-foreground"><p>{terrainDetail}</p><p>Elevation scale: {terrainExaggeration}× · source resolution: not reported</p><button className="text-primary underline" onClick={() => setTerrainRetry((n) => n + 1)}>Reload elevation</button><a href="/settings/api-keys" className="block text-primary underline">World data connection</a></div></details>}{localSandbox && loaded && <p className="pointer-events-none absolute left-3 top-3 rounded-sm border border-white/10 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground">Origin {centerLat.toFixed(6)}, {centerLng.toFixed(6)}{!sandboxHasImagery && " · Loading map imagery…"}</p>}{imageryError && <p role="alert" className="absolute left-3 top-12 rounded-sm border border-amber-400/30 bg-background/95 px-3 py-2 text-xs text-amber-200">{imageryError}</p>}</>;
+  return <>{cadMeshError && <p role="alert" className="absolute left-16 top-20 z-30 rounded border border-red-400 bg-background p-3 text-xs">{cadMeshError}</p>}{measurementReadout && <MeasurementResult readout={measurementReadout} mode={scene3dMeasureTool} onClear={() => useProjectStore.getState().setScene3dMeasureReadout(null)} />}{transformReadout && <p role="status" className="pointer-events-none absolute bottom-16 left-16 z-30 rounded-sm border border-white/10 bg-background/95 px-3 py-2 font-mono text-xs">{transformReadout}</p>}{loaded && !layers.terrain && layers.tiles3d && <div role="status" className="absolute left-16 top-14 z-20 rounded-lg border border-white/15 bg-background/95 px-3 py-2 text-xs"><span>Global buildings paused on flat ground.</span><button className="ml-3 text-primary underline" onClick={() => useProjectStore.getState().setLayers({ terrain: true })}>Restore terrain & buildings</button></div>}{loaded && <SunStudyControls key={placementProjectId ?? "local"} viewer={viewerRef.current} Cesium={cesiumRef.current} longitude={centerLng} latitude={centerLat} projectId={localSandbox ? undefined : placementProjectId} buildingsAvailable={photorealisticTilesOn && buildingStatus === "READY" || scene3dLayers.buildings && buildingFeatures.length > 0} terrainAvailable={layers.terrain && (terrainStatus.includes("VISUAL REFERENCE") || terrainStatus.startsWith("PROJECT TERRAIN"))} />}<div ref={containerRef} style={{ position: "absolute", inset: 0 }} />{!localSandbox && editableModel && <EngineeringEvidencePanel key={`${editableModel.project_id}:${modelRevisionId ?? "unsaved"}`} projectId={editableModel.project_id} revisionId={modelRevisionId} origin={editableModel.origin} onPlacement={setAcceptedPlacement} />}{buildingStatus && photorealisticTilesOn && buildingStatus !== "READY" && <p role="alert" className="absolute left-16 top-24 rounded-xl border border-white/15 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">Context buildings unavailable: {buildingStatus === "MISSING_TOKEN" ? "configure world data" : "provider could not load"}</p>}{localSandbox && loaded && layers.terrain && <details className="workspace-terrain-status absolute left-16 top-14 z-20 max-w-[330px] rounded-xl border border-white/15 bg-background/95 text-[10px] shadow-lg"><summary role="status" className="cursor-pointer px-3 py-2 text-muted-foreground">{terrainStatus}</summary><div className="space-y-2 border-t border-white/10 px-3 py-3 text-xs leading-relaxed text-muted-foreground"><p>{terrainDetail}</p><p>Elevation scale: {terrainExaggeration}× · source resolution: not reported</p><button className="text-primary underline" onClick={() => setTerrainRetry((n) => n + 1)}>Reload elevation</button><a href="/settings/api-keys" className="block text-primary underline">World data connection</a></div></details>}{localSandbox && loaded && <p className="pointer-events-none absolute left-3 top-3 rounded-sm border border-white/10 bg-background/90 px-3 py-2 text-[10px] text-muted-foreground">Origin {centerLat.toFixed(6)}, {centerLng.toFixed(6)}{!sandboxHasImagery && " · Loading map imagery…"}</p>}{imageryError && <p role="alert" className="absolute left-3 top-12 rounded-sm border border-amber-400/30 bg-background/95 px-3 py-2 text-xs text-amber-200">{imageryError}</p>}</>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

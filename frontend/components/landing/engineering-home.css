@@ -242,7 +242,7 @@
 .geo-home :is(.geo-design-basis,.geo-ai,.geo-trust,.geo-faq) .geo-eyebrow{margin-bottom:22px!important}
 
 /* A quiet editorial introduction beside interactive technical answers. */
-.geo-home .geo-technical-overview{min-height:0;padding:100px 6%;background:transparent;border-block:1px solid #a4b69230;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8%}
+.geo-home .geo-technical-overview{min-height:0;padding:20px 6% 100px;background:transparent;border-block:1px solid #a4b69230;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8%}
 .geo-technical-header{position:relative;overflow:hidden;align-self:start;padding-bottom:60px}
 .geo-technical-header .geo-eyebrow{margin-bottom:30px!important}
 .geo-technical-header h2{font-size:clamp(36px,3.7vw,62px);line-height:1.06;letter-spacing:-2px}
@@ -253,7 +253,7 @@
 .geo-clarity-lines span{display:block;height:14px;border-top:1px solid #a4b69245;animation:geo-contour-drift 7s ease-in-out infinite alternate}
 .geo-clarity-lines span:nth-child(2){animation-delay:-1s;margin-left:20px}.geo-clarity-lines span:nth-child(3){animation-delay:-2s;margin-left:40px;border-color:var(--geo-lime)}.geo-clarity-lines span:nth-child(4){animation-delay:-3s;margin-left:20px}.geo-clarity-lines span:nth-child(5){animation-delay:-4s}
 @keyframes geo-contour-drift{from{transform:translateX(-12px)}to{transform:translateX(18px)}}
-.geo-technical-faq{min-width:0;scroll-margin-top:100px}
+.geo-technical-faq{min-width:0;scroll-margin-top:20px}
 .geo-technical-faq-heading{display:flex;justify-content:space-between;gap:16px;padding-bottom:20px;font:9px var(--font-mono);letter-spacing:1.2px;color:#93a184}
 .geo-technical-faq-heading>span:last-child{color:#687b5b}
 .geo-technical-faq .geo-faq-list{display:flex;flex-direction:column}
@@ -271,7 +271,7 @@
 .geo-technical-faq .geo-faq-answer[data-open=true]{opacity:1}
 .geo-technical-overview :is(button,a):focus-visible{outline:2px solid var(--geo-lime);outline-offset:4px}
 @media(max-width:1050px){
- .geo-home .geo-technical-overview{gap:5%;padding:80px 6%;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+ .geo-home .geo-technical-overview{gap:5%;padding:20px 6% 80px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
  .geo-technical-header h2{font-size:36px;letter-spacing:-1.4px}.geo-technical-header .geo-eyebrow{font-size:8px!important;letter-spacing:.5px}
  .geo-technical-faq .geo-faq-list button{font-size:14px;padding-inline:10px}.geo-technical-faq .geo-faq-list button>span:first-child{gap:12px}
  .geo-technical-faq .geo-faq-list p{padding-left:32px;padding-right:35px}
@@ -288,3 +288,30 @@
 .geo-home[data-active-scene="9"] .geo-technical-faq{background:#070d08a3;backdrop-filter:blur(5px);padding:24px;border:1px solid #a4b69225;border-radius:3px}
 .geo-home[data-active-scene="9"] .geo-technical-header{text-shadow:0 2px 18px #0009}
 @media(max-width:700px){.geo-home[data-active-scene="9"] .geo-technical-faq{padding:16px 10px}}
+
+/* Homepage footer: product navigation and a compact workspace entry. */
+.geo-home .geo-footer{display:block;padding:24px 6% 44px;background:#080e0b;border-top:1px solid #a4b78430}
+.geo-footer-main{display:grid;grid-template-columns:1.4fr .8fr 1fr;gap:8%;align-items:start}
+.geo-footer-brand .geo-brand{font-size:29px}
+.geo-home .geo-footer-brand p{max-width:280px;margin-top:10px;font-size:13px;line-height:1.5;color:#b1bbae}
+.geo-footer-systems{display:block;margin-top:10px;font:10px var(--font-mono);color:#82907b;line-height:1.5}
+.geo-footer-label{display:block;font:9px var(--font-mono);letter-spacing:1.4px;text-transform:uppercase;color:#89967e;margin-bottom:10px}
+.geo-home .geo-footer-links{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:0}
+.geo-footer-links a{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px 0;border-bottom:1px solid #a4b78420;font-size:12px;color:#d0d7c9;transition:color .2s}
+.geo-footer-links a svg{color:#859577;transition:transform .2s}
+.geo-footer-links a:hover svg{transform:translate(2px,-2px);color:var(--geo-lime)}
+.geo-home .geo-footer-workspace p{font-size:13px;line-height:1.5;margin:0 0 12px;max-width:240px;color:#b1bbae}
+.geo-footer-workspace .geo-launch{font-size:10px;padding:13px 16px;gap:28px}
+.geo-home .geo-footer-bottom{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin-top:20px;padding-top:12px;border-top:1px solid #a4b78425;font:10px var(--font-mono);line-height:1.5;color:#8e9d86;letter-spacing:0}
+.geo-home .geo-footer-note{text-align:center;font-family:var(--font-inter),Arial,sans-serif;font-size:11px}
+.geo-footer-top{display:inline-flex;align-items:center;gap:12px;text-transform:uppercase;font-size:9px;white-space:nowrap;color:#c7d2bf!important}
+.geo-footer-top:hover{color:var(--geo-lime)!important}
+@media(max-width:760px){
+ .geo-home .geo-footer{padding:24px 6% 48px}
+ .geo-footer-main{grid-template-columns:1fr 1fr;gap:20px 24px}
+ .geo-footer-brand{grid-column:1/-1}
+ .geo-home .geo-footer-brand p{max-width:100%}
+ .geo-home .geo-footer-bottom{grid-template-columns:1fr auto;gap:12px;margin-top:20px}
+ .geo-home .geo-footer-bottom>.geo-footer-note{grid-column:1/-1;grid-row:2;width:auto;max-width:none;order:0;text-align:left}
+}
+@media(max-width:420px){.geo-footer-main{grid-template-columns:1fr}.geo-footer-brand{grid-column:auto}.geo-footer-workspace{margin-top:4px}}

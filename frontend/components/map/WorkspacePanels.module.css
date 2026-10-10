@@ -72,6 +72,15 @@
 .scenePanel .title { margin: 0; font-size: 17px; }
 .scenePanel .tabs { padding: 0 12px 10px; }
 .scenePanel .body { padding: 12px 16px; gap: 12px; }
+.scenePanel .hero { padding: 10px 12px; }
+.scenePanel .hero > div:first-child { margin-bottom: 6px; }
+.scenePanel .hero > p { margin-top: 6px; }
+.scenePanel .metrics { gap: 8px; }
+.scenePanel .metrics strong { font-size: 21px; }
+.scenePanel .body:has(input[type="range"]) { gap: 9px; padding-top: 10px; padding-bottom: 10px; }
+.scenePanel .body:has(input[type="range"]) .field { gap: 4px; }
+.scenePanel .body:has(input[type="range"]) .button,
+.scenePanel .body:has(input[type="range"]) .primary { padding: 7px 10px; }
 .scenePanel .preset { display: flex; align-items: center; gap: 8px; padding: 9px 10px; }
 .scenePanel .card { border: 0; background: transparent; padding: 0; }
 .scenePanel .row { padding: 8px 0; }

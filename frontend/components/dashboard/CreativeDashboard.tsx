@@ -282,13 +282,10 @@ export default function CreativeDashboard() {
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("newProject");
     if (requested !== "1") return;
-    const timer = window.setTimeout(() => {
-      setNewProjectOpen(true);
-      const url = new URL(window.location.href);
-      url.searchParams.delete("newProject");
-      window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
-    }, 0);
-    return () => window.clearTimeout(timer);
+    queueMicrotask(() => setNewProjectOpen(true));
+    const url = new URL(window.location.href);
+    url.searchParams.delete("newProject");
+    window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
   }, []);
   const latestProject = useMemo(() => [...(projects ?? [])].sort((a,b) => new Date(b.updated_at).getTime()-new Date(a.updated_at).getTime())[0], [projects]);
 

@@ -8,7 +8,7 @@ import re
 from typing import Any
 from uuid import uuid4
 
-SUPPORTED_KINDS = {"box", "cylinder", "extrusion", "sweep", "asset_instance"}
+SUPPORTED_KINDS = {"box", "cylinder", "extrusion", "sweep", "asset_instance", "cad_mesh"}
 SUPPORTED_PROJECT_TYPES = {"bridge", "flyover", "building", "road", "pipeline", "dam"}
 
 LAYER_MATERIALS: dict[str, dict[str, Any]] = {

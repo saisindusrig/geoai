@@ -66,6 +66,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
   const activateTool = useProjectStore(state => state.activateTool);
   const measureMode = useProjectStore(state => state.scene3dMeasureTool);
   const vertices = useProjectStore(state => state.drawVertices);
+  const smoothAlignment = useProjectStore(state => state.smoothAlignment);
   const unit = useProjectStore(state => state.measureUnit);
   const boundary = useProjectStore(state => state.drawnBoundary ?? state.project?.boundary_geojson);
   const alignment = useProjectStore(state => state.drawnAlignment ?? state.project?.alignment_geojson);
@@ -153,6 +154,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
       {surveyOpen && drawing && <div aria-label="Drawing tool options" className="absolute left-20 top-44 z-40 w-52 space-y-2 border border-border bg-background-secondary p-3 shadow-xl">
         <p className="text-xs font-semibold">{surveyTools.find(item => item.mapTool === activeTool)?.label}</p>
         <p className="text-[10px] text-muted-foreground">{activeTool.startsWith("edit-") ? "Drag vertices. Press Enter to finish, then Save to keep your changes." : "Click to place vertices. Press Enter or double-click to finish, then Save."}</p>
+        {activeTool === "draw-line" && <label className="flex cursor-pointer items-center gap-2 border border-border px-2 py-1.5 text-[10px] text-muted-foreground"><input type="checkbox" checked={smoothAlignment} onChange={event => useProjectStore.getState().setSmoothAlignment(event.target.checked)} />Smooth curve through points</label>}
         {!activeTool.startsWith("edit-") && <div className="flex items-center justify-between text-[10px]"><span>{vertices.length} vertices</span><button type="button" disabled={!vertices.length} className="text-primary disabled:opacity-35" onClick={() => useProjectStore.getState().popDrawVertex()}>Undo vertex</button></div>}
         <button type="button" disabled={vertices.length < (activeTool === "draw-polygon" || activeTool === "edit-boundary" ? 3 : 2)} className="block w-full border border-primary/30 bg-primary/15 px-2 py-1.5 text-xs text-primary disabled:opacity-35" onClick={() => window.dispatchEvent(new CustomEvent("geoai:finish-drawing"))}>Finish drawing</button>
         <button type="button" className="text-[10px] text-muted-foreground" onClick={resetTools}>Cancel drawing · Esc</button>

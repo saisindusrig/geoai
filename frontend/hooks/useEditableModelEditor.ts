@@ -248,6 +248,7 @@ export function useEditableModelEditor({
     const next = clone(document);
     const component = next.components.find((item) => item.id === id);
     if (!component) return;
+    if (component.geometry.kind === "cad_mesh" && (changes.geometry || changes.metadata || changes.material || (changes.transform && changes.transform.scale.some(v => v !== 1)))) { setEditError("CAD supports rigid transforms only. Parameter/material edits require reviewed regeneration."); return; }
     if (component.locked && Object.keys(changes).some(key => key !== "locked" && key !== "visible")) { setEditError("OBJECT LOCKED · Unlock to edit."); return; }
     if (changes.transform && (!changes.transform.position.every(Number.isFinite) || !changes.transform.rotation_deg.every(Number.isFinite) || !changes.transform.scale.every(value => Number.isFinite(value) && value > 0))) { setEditError("Transform values must be finite; scale must be greater than zero."); return; }
     setEditError(null);
@@ -262,6 +263,7 @@ export function useEditableModelEditor({
     for (const patch of changes) {
       const component = next.components.find((c) => c.id === patch.id);
       if (!component || component.locked) continue;
+      if (component.geometry.kind === "cad_mesh" && patch.transform.scale.some(v => v !== 1)) { setEditError("CAD scaling requires reviewed parametric regeneration."); return; }
       if (!patch.transform.position.every(Number.isFinite) || !patch.transform.rotation_deg.every(Number.isFinite) || !patch.transform.scale.every((n) => Number.isFinite(n) && n > 0)) continue;
       if (JSON.stringify(component.transform) !== JSON.stringify(patch.transform)) { component.transform = clone(patch.transform); changed = true; }
     }
@@ -292,6 +294,7 @@ export function useEditableModelEditor({
 
   const transformSelected = useCallback((kind: "rotate" | "scale", amount: number) => {
     if (!document || !selectedIds.length) return;
+    if (kind === "scale" && document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD scaling requires reviewed parametric regeneration."); return; }
     const next = clone(document);
     for (const component of next.components) {
       if (!selectedIds.includes(component.id) || component.locked) continue;
@@ -334,6 +337,7 @@ export function useEditableModelEditor({
 
   const duplicateSelected = useCallback(() => {
     if (!document || !selectedIds.length) return;
+    if (document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD duplication requires a reviewed BIM assembly proposal."); return; }
     const next = clone(document);
     const copies = next.components.filter((c) => selectedIds.includes(c.id) && !c.locked).map((component) => ({
       ...clone(component),
@@ -349,6 +353,7 @@ export function useEditableModelEditor({
 
   const deleteSelected = useCallback(() => {
     if (!document || !selectedIds.length) return;
+    if (document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD deletion requires a reviewed BIM assembly proposal; hide components instead."); return; }
     const next = clone(document);
     next.components = next.components.filter((item) => !selectedIds.includes(item.id) || item.locked);
     if (next.components.length === document.components.length) return;

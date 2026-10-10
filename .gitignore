@@ -70,3 +70,7 @@ frontend/playwright/.cache/
 /backend/evals/results/
 /backend/evals/results*.zip
 /backend/live-results/
+
+# Isolated CAD kernel evaluation dependencies and regenerable artifacts
+/backend/.cad-proof-deps/
+/backend/.cad-proof-output/

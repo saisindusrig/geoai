@@ -1,0 +1,1282 @@
+{
+  "$defs": {
+    "ArrayAlongPath": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "ARRAY_ALONG_PATH",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "templateRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Templateref",
+          "type": "string"
+        },
+        "spacingM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingm",
+          "type": "number"
+        },
+        "count": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "startChainageM": {
+          "default": 0,
+          "maximum": 2000,
+          "minimum": 0,
+          "title": "Startchainagem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "templateRef",
+        "spacingM",
+        "count"
+      ],
+      "title": "ArrayAlongPath",
+      "type": "object"
+    },
+    "ArrayOnGrid": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "ARRAY_ON_GRID",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "templateRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Templateref",
+          "type": "string"
+        },
+        "origin": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Origin",
+          "type": "array"
+        },
+        "rows": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Rows",
+          "type": "integer"
+        },
+        "columns": {
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Columns",
+          "type": "integer"
+        },
+        "spacingXM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingxm",
+          "type": "number"
+        },
+        "spacingYM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Spacingym",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "templateRef",
+        "origin",
+        "rows",
+        "columns",
+        "spacingXM",
+        "spacingYM"
+      ],
+      "title": "ArrayOnGrid",
+      "type": "object"
+    },
+    "Assembly": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "componentIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Componentids",
+          "type": "array"
+        },
+        "placement": {
+          "$ref": "#/$defs/Placement"
+        }
+      },
+      "required": [
+        "id",
+        "assetId",
+        "role",
+        "componentIds"
+      ],
+      "title": "Assembly",
+      "type": "object"
+    },
+    "BIMAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "assemblyIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Assemblyids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "assetType",
+        "assemblyIds"
+      ],
+      "title": "BIMAsset",
+      "type": "object"
+    },
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "BOX",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "center": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Center",
+          "type": "array"
+        },
+        "size": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            },
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            },
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "type": "number"
+            }
+          ],
+          "title": "Size",
+          "type": "array"
+        },
+        "headingDeg": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Headingdeg",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "center",
+        "size"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
+    "Channel": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "CHANNEL",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "widthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Widthm",
+          "type": "number"
+        },
+        "depthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Depthm",
+          "type": "number"
+        },
+        "thicknessM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Thicknessm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "widthM",
+        "depthM",
+        "thicknessM"
+      ],
+      "title": "Channel",
+      "type": "object"
+    },
+    "Component": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "assemblyId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assemblyid",
+          "type": "string"
+        },
+        "componentType": {
+          "enum": [
+            "BEAM",
+            "GIRDER",
+            "SLAB",
+            "DECK",
+            "COLUMN",
+            "PIER",
+            "WALL",
+            "PILE",
+            "PILE_CAP",
+            "BEARING",
+            "JOINT",
+            "RAILING",
+            "BARRIER",
+            "BRACING",
+            "PLATE",
+            "CONNECTOR",
+            "REINFORCEMENT"
+          ],
+          "title": "Componenttype",
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 30,
+          "title": "Parameters",
+          "type": "array"
+        },
+        "placement": {
+          "$ref": "#/$defs/Placement"
+        },
+        "materialId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Materialid",
+          "type": "string"
+        },
+        "relationshipIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Relationshipids",
+          "type": "array"
+        },
+        "dependencyIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Dependencyids",
+          "type": "array"
+        },
+        "geometry": {
+          "$ref": "#/$defs/GeometryDefinition"
+        },
+        "provenance": {
+          "$ref": "#/$defs/SourceProvenance"
+        },
+        "validationStatus": {
+          "default": "UNVALIDATED",
+          "enum": [
+            "UNVALIDATED",
+            "PARAMETRIC_VALID"
+          ],
+          "title": "Validationstatus",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "assetId",
+        "assemblyId",
+        "componentType",
+        "parameters",
+        "placement",
+        "materialId",
+        "geometry",
+        "provenance"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "Connection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "fromComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Fromcomponentid",
+          "type": "string"
+        },
+        "toComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Tocomponentid",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "SUPPORTED_BY",
+            "CONNECTS_TO",
+            "ADJACENT_TO"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "engineeringVerification": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringverification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "fromComponentId",
+        "toComponentId",
+        "kind"
+      ],
+      "title": "Connection",
+      "type": "object"
+    },
+    "Constraint": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "parameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Parameterid",
+          "type": "string"
+        },
+        "minimum": {
+          "title": "Minimum",
+          "type": "number"
+        },
+        "maximum": {
+          "title": "Maximum",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "componentId",
+        "parameterId",
+        "minimum",
+        "maximum"
+      ],
+      "title": "Constraint",
+      "type": "object"
+    },
+    "CrossSection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "profile": {
+          "enum": [
+            "RECTANGLE",
+            "CIRCLE",
+            "I",
+            "CUSTOM"
+          ],
+          "title": "Profile",
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 20,
+          "title": "Parameters",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "profile",
+        "parameters"
+      ],
+      "title": "CrossSection",
+      "type": "object"
+    },
+    "Cylinder": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "CYLINDER",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "start": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Start",
+          "type": "array"
+        },
+        "end": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "End",
+          "type": "array"
+        },
+        "radiusM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Radiusm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "start",
+        "end",
+        "radiusM"
+      ],
+      "title": "Cylinder",
+      "type": "object"
+    },
+    "Dependency": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcecomponentid",
+          "type": "string"
+        },
+        "sourceParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourceparameterid",
+          "type": "string"
+        },
+        "targetComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetcomponentid",
+          "type": "string"
+        },
+        "targetParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetparameterid",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "COPY",
+            "UNRESOLVED"
+          ],
+          "title": "Operation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceComponentId",
+        "sourceParameterId",
+        "targetComponentId",
+        "targetParameterId",
+        "operation"
+      ],
+      "title": "Dependency",
+      "type": "object"
+    },
+    "Extrude": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "enum": [
+            "EXTRUDE",
+            "SURFACE"
+          ],
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "polygonRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Polygonref",
+          "type": "string"
+        },
+        "heightM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Heightm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "polygonRef",
+        "heightM"
+      ],
+      "title": "Extrude",
+      "type": "object"
+    },
+    "GeometryDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "primitive": {
+          "discriminator": {
+            "mapping": {
+              "ARRAY_ALONG_PATH": "#/$defs/ArrayAlongPath",
+              "ARRAY_ON_GRID": "#/$defs/ArrayOnGrid",
+              "BOX": "#/$defs/Box",
+              "CHANNEL": "#/$defs/Channel",
+              "CYLINDER": "#/$defs/Cylinder",
+              "EXTRUDE": "#/$defs/Extrude",
+              "OFFSET": "#/$defs/Offset",
+              "PATH": "#/$defs/Path",
+              "PIPE": "#/$defs/Pipe",
+              "POINT": "#/$defs/Point",
+              "POLYGON": "#/$defs/Polygon",
+              "SURFACE": "#/$defs/Extrude",
+              "SWEEP": "#/$defs/Sweep"
+            },
+            "propertyName": "primitiveType"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Point"
+            },
+            {
+              "$ref": "#/$defs/Path"
+            },
+            {
+              "$ref": "#/$defs/Polygon"
+            },
+            {
+              "$ref": "#/$defs/Box"
+            },
+            {
+              "$ref": "#/$defs/Cylinder"
+            },
+            {
+              "$ref": "#/$defs/Extrude"
+            },
+            {
+              "$ref": "#/$defs/Sweep"
+            },
+            {
+              "$ref": "#/$defs/Pipe"
+            },
+            {
+              "$ref": "#/$defs/Channel"
+            },
+            {
+              "$ref": "#/$defs/Offset"
+            },
+            {
+              "$ref": "#/$defs/ArrayAlongPath"
+            },
+            {
+              "$ref": "#/$defs/ArrayOnGrid"
+            }
+          ],
+          "title": "Primitive"
+        },
+        "crossSectionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crosssectionid"
+        }
+      },
+      "required": [
+        "primitive"
+      ],
+      "title": "GeometryDefinition",
+      "type": "object"
+    },
+    "Material": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "CONCRETE",
+            "STEEL",
+            "TIMBER",
+            "ASPHALT",
+            "OTHER",
+            "UNKNOWN"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "engineeringVerification": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringverification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "category"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "Offset": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "OFFSET",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "distanceM": {
+          "maximum": 2000,
+          "minimum": -2000,
+          "title": "Distancem",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "distanceM"
+      ],
+      "title": "Offset",
+      "type": "object"
+    },
+    "Parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "value": {
+          "maximum": 2000,
+          "minimum": -2000,
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "deg",
+            "count",
+            "ratio"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "value",
+        "unit"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    },
+    "Path": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "PATH",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 50,
+          "minItems": 2,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "points"
+      ],
+      "title": "Path",
+      "type": "object"
+    },
+    "Pipe": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "PIPE",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "radiusM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Radiusm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "radiusM"
+      ],
+      "title": "Pipe",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "coordinateFrame": {
+          "const": "ASSEMBLY_LOCAL",
+          "default": "ASSEMBLY_LOCAL",
+          "title": "Coordinateframe",
+          "type": "string"
+        },
+        "origin": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Origin",
+          "type": "array"
+        },
+        "headingDeg": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Headingdeg",
+          "type": "number"
+        }
+      },
+      "title": "Placement",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "POINT",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "position": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Position",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "position"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
+    "Polygon": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "POLYGON",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              },
+              {
+                "maximum": 2000,
+                "minimum": -2000,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "maxItems": 50,
+          "minItems": 4,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "points"
+      ],
+      "title": "Polygon",
+      "type": "object"
+    },
+    "SourceProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "designId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Designid",
+          "type": "string"
+        },
+        "designVersion": {
+          "minimum": 1,
+          "title": "Designversion",
+          "type": "integer"
+        },
+        "sourceModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcemodelrevisionid"
+        },
+        "sourceKind": {
+          "enum": [
+            "USER_PROVIDED",
+            "PREVIEW_ASSUMPTION",
+            "UNKNOWN"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "designId",
+        "designVersion",
+        "sourceKind"
+      ],
+      "title": "SourceProvenance",
+      "type": "object"
+    },
+    "Sweep": {
+      "additionalProperties": false,
+      "properties": {
+        "primitiveType": {
+          "const": "SWEEP",
+          "title": "Primitivetype",
+          "type": "string"
+        },
+        "pathRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Pathref",
+          "type": "string"
+        },
+        "widthM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Widthm",
+          "type": "number"
+        },
+        "thicknessM": {
+          "exclusiveMinimum": 0,
+          "maximum": 500,
+          "title": "Thicknessm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "primitiveType",
+        "pathRef",
+        "widthM",
+        "thicknessM"
+      ],
+      "title": "Sweep",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "bim-project/1",
+      "default": "bim-project/1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "assets": {
+      "items": {
+        "$ref": "#/$defs/BIMAsset"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Assets",
+      "type": "array"
+    },
+    "assemblies": {
+      "items": {
+        "$ref": "#/$defs/Assembly"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Assemblies",
+      "type": "array"
+    },
+    "components": {
+      "items": {
+        "$ref": "#/$defs/Component"
+      },
+      "maxItems": 250,
+      "minItems": 1,
+      "title": "Components",
+      "type": "array"
+    },
+    "materials": {
+      "items": {
+        "$ref": "#/$defs/Material"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "title": "Materials",
+      "type": "array"
+    },
+    "crossSections": {
+      "items": {
+        "$ref": "#/$defs/CrossSection"
+      },
+      "maxItems": 50,
+      "title": "Crosssections",
+      "type": "array"
+    },
+    "connections": {
+      "items": {
+        "$ref": "#/$defs/Connection"
+      },
+      "maxItems": 250,
+      "title": "Connections",
+      "type": "array"
+    },
+    "constraints": {
+      "items": {
+        "$ref": "#/$defs/Constraint"
+      },
+      "maxItems": 250,
+      "title": "Constraints",
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "$ref": "#/$defs/Dependency"
+      },
+      "maxItems": 250,
+      "title": "Dependencies",
+      "type": "array"
+    },
+    "unknowns": {
+      "items": {
+        "maxLength": 128,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Unknowns",
+      "type": "array"
+    },
+    "engineeringStatus": {
+      "const": "UNVERIFIED",
+      "default": "UNVERIFIED",
+      "title": "Engineeringstatus",
+      "type": "string"
+    }
+  },
+  "required": [
+    "assets",
+    "assemblies",
+    "components",
+    "materials"
+  ],
+  "title": "BIMProject",
+  "type": "object"
+}

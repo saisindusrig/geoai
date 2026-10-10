@@ -76,6 +76,10 @@ def _execute(db,tc,message,name,args,execution_id):
     profile=owned_row(db,"site_profile_versions",p,c["siteProfileVersionId"]) if c.get("siteProfileVersionId") else None
     if name in {"create_proposal","revise_proposal"}:
         if tc.allowed_effect!="PROPOSAL_ONLY":return envelope("DENIED",code="READ_ONLY_POLICY")
+        from app.domain.assistant_design_input import GenericProposalArguments
+        if isinstance(args,GenericProposalArguments):
+            from app.services.assistant.design_flow import normalize_proposal
+            args=ProposalToolArguments.model_validate(normalize_proposal(db,p,message,args.model_dump(mode='json',by_alias=True)))
         if any((a.building_spec or a.ai3d_design) and (a.building_spec or a.ai3d_design).input_source!="PREVIEW_ASSUMPTION" for a in args.assets):
             return envelope("DENIED",code="USER_SOURCE_UNVERIFIED",limitations=["Tool-proposed visualization dimensions require explicit preview assumptions; user/site provenance cannot be invented."])
         if name=="revise_proposal" and not args.parent_version_id:return envelope("DENIED",code="PARENT_REQUIRED")

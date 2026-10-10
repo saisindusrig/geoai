@@ -1,0 +1,1009 @@
+{
+  "$defs": {
+    "AssemblyExpansion": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "bim-assembly-expansion/1",
+          "default": "bim-assembly-expansion/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "planHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Planhash",
+          "type": "string"
+        },
+        "assemblyId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assemblyid",
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/AuthoredComponent"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Components",
+          "type": "array"
+        }
+      },
+      "required": [
+        "planHash",
+        "assemblyId",
+        "components"
+      ],
+      "title": "AssemblyExpansion",
+      "type": "object"
+    },
+    "AssemblyPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "bim-assembly-plan/1",
+          "default": "bim-assembly-plan/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "intentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Intenthash",
+          "type": "string"
+        },
+        "assets": {
+          "items": {
+            "$ref": "#/$defs/PlannedAsset"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Assets",
+          "type": "array"
+        },
+        "assemblies": {
+          "items": {
+            "$ref": "#/$defs/PlannedAssembly"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Assemblies",
+          "type": "array"
+        },
+        "materials": {
+          "items": {
+            "$ref": "#/$defs/Material"
+          },
+          "maxItems": 30,
+          "minItems": 1,
+          "title": "Materials",
+          "type": "array"
+        },
+        "crossSections": {
+          "items": {
+            "$ref": "#/$defs/CrossSection"
+          },
+          "maxItems": 30,
+          "title": "Crosssections",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intentHash",
+        "assets",
+        "assemblies",
+        "materials"
+      ],
+      "title": "AssemblyPlan",
+      "type": "object"
+    },
+    "AssemblyRelationships": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "bim-assembly-relationships/1",
+          "default": "bim-assembly-relationships/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "planHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Planhash",
+          "type": "string"
+        },
+        "connections": {
+          "items": {
+            "$ref": "#/$defs/ConnectionIntent"
+          },
+          "maxItems": 128,
+          "title": "Connections",
+          "type": "array"
+        },
+        "clearances": {
+          "items": {
+            "$ref": "#/$defs/ClearanceIntent"
+          },
+          "maxItems": 64,
+          "title": "Clearances",
+          "type": "array"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/Dependency"
+          },
+          "maxItems": 128,
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "constraints": {
+          "items": {
+            "$ref": "#/$defs/Constraint"
+          },
+          "maxItems": 128,
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "planHash",
+        "connections",
+        "clearances"
+      ],
+      "title": "AssemblyRelationships",
+      "type": "object"
+    },
+    "AuthoredComponent": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "groupId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Groupid",
+          "type": "string"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "componentType": {
+          "enum": [
+            "BEAM",
+            "GIRDER",
+            "SLAB",
+            "DECK",
+            "COLUMN",
+            "PIER",
+            "WALL",
+            "PILE",
+            "PILE_CAP",
+            "BEARING",
+            "JOINT",
+            "RAILING",
+            "BARRIER",
+            "BRACING",
+            "PLATE",
+            "CONNECTOR",
+            "REINFORCEMENT"
+          ],
+          "title": "Componenttype",
+          "type": "string"
+        },
+        "materialId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Materialid",
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 9,
+          "minItems": 1,
+          "title": "Parameters",
+          "type": "array"
+        },
+        "crossSectionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crosssectionid"
+        },
+        "placement": {
+          "$ref": "#/$defs/Placement"
+        },
+        "recipe": {
+          "$ref": "#/$defs/CADRecipe"
+        }
+      },
+      "required": [
+        "id",
+        "groupId",
+        "role",
+        "componentType",
+        "materialId",
+        "parameters",
+        "recipe"
+      ],
+      "title": "AuthoredComponent",
+      "type": "object"
+    },
+    "AuthoringIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "bim-authoring-intent/1",
+          "default": "bim-authoring-intent/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "requestedStructure": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Requestedstructure",
+          "type": "string"
+        },
+        "systems": {
+          "items": {
+            "$ref": "#/$defs/SystemRequest"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Systems",
+          "type": "array"
+        },
+        "requestedFeatures": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Requestedfeatures",
+          "type": "array"
+        },
+        "requestedSelectionRef": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requestedselectionref"
+        },
+        "requestedObjectRefs": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Requestedobjectrefs",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "$ref": "#/$defs/UnknownCondition"
+          },
+          "maxItems": 30,
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "requestedStructure",
+        "systems"
+      ],
+      "title": "AuthoringIntent",
+      "type": "object"
+    },
+    "CADRecipe": {
+      "additionalProperties": false,
+      "properties": {
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "PROFILE_EXTRUSION",
+            "CIRCULAR_COLUMN",
+            "RECTANGULAR_OPENING",
+            "CIRCULAR_HOLE",
+            "RECTANGULAR_LOFT"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "orientation": {
+          "default": "VERTICAL",
+          "enum": [
+            "VERTICAL",
+            "HORIZONTAL"
+          ],
+          "title": "Orientation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "componentId",
+        "operation"
+      ],
+      "title": "CADRecipe",
+      "type": "object"
+    },
+    "ClearanceIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "componentIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 64,
+          "minItems": 2,
+          "title": "Componentids",
+          "type": "array"
+        },
+        "status": {
+          "const": "UNRESOLVED",
+          "default": "UNRESOLVED",
+          "title": "Status",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "componentIds",
+        "explanation"
+      ],
+      "title": "ClearanceIntent",
+      "type": "object"
+    },
+    "ConnectionIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "fromComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Fromcomponentid",
+          "type": "string"
+        },
+        "toComponentId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tocomponentid"
+        },
+        "externalSupport": {
+          "anyOf": [
+            {
+              "const": "UNKNOWN_FOUNDATION",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Externalsupport"
+        },
+        "kind": {
+          "enum": [
+            "SUPPORTED_BY",
+            "CONNECTS_TO",
+            "ADJACENT_TO"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "const": "UNRESOLVED",
+          "default": "UNRESOLVED",
+          "title": "Status",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "fromComponentId",
+        "kind",
+        "explanation"
+      ],
+      "title": "ConnectionIntent",
+      "type": "object"
+    },
+    "Constraint": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "parameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Parameterid",
+          "type": "string"
+        },
+        "minimum": {
+          "title": "Minimum",
+          "type": "number"
+        },
+        "maximum": {
+          "title": "Maximum",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "componentId",
+        "parameterId",
+        "minimum",
+        "maximum"
+      ],
+      "title": "Constraint",
+      "type": "object"
+    },
+    "CrossSection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "profile": {
+          "enum": [
+            "RECTANGLE",
+            "CIRCLE",
+            "I",
+            "CUSTOM"
+          ],
+          "title": "Profile",
+          "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/Parameter"
+          },
+          "maxItems": 20,
+          "title": "Parameters",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "profile",
+        "parameters"
+      ],
+      "title": "CrossSection",
+      "type": "object"
+    },
+    "Dependency": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcecomponentid",
+          "type": "string"
+        },
+        "sourceParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourceparameterid",
+          "type": "string"
+        },
+        "targetComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetcomponentid",
+          "type": "string"
+        },
+        "targetParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetparameterid",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "COPY",
+            "UNRESOLVED"
+          ],
+          "title": "Operation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceComponentId",
+        "sourceParameterId",
+        "targetComponentId",
+        "targetParameterId",
+        "operation"
+      ],
+      "title": "Dependency",
+      "type": "object"
+    },
+    "Material": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "CONCRETE",
+            "STEEL",
+            "TIMBER",
+            "ASPHALT",
+            "OTHER",
+            "UNKNOWN"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "engineeringVerification": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringverification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "category"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "Parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "value": {
+          "maximum": 2000,
+          "minimum": -2000,
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "deg",
+            "count",
+            "ratio"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "value",
+        "unit"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "coordinateFrame": {
+          "const": "ASSEMBLY_LOCAL",
+          "default": "ASSEMBLY_LOCAL",
+          "title": "Coordinateframe",
+          "type": "string"
+        },
+        "origin": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Origin",
+          "type": "array"
+        },
+        "headingDeg": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Headingdeg",
+          "type": "number"
+        }
+      },
+      "title": "Placement",
+      "type": "object"
+    },
+    "PlannedAssembly": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "parentId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parentid"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "placement": {
+          "$ref": "#/$defs/Placement"
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/PlannedGroup"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Groups",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "assetId",
+        "role",
+        "groups"
+      ],
+      "title": "PlannedAssembly",
+      "type": "object"
+    },
+    "PlannedAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "systemRequestId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Systemrequestid",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "systemRequestId",
+        "assetType",
+        "name"
+      ],
+      "title": "PlannedAsset",
+      "type": "object"
+    },
+    "PlannedGroup": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "componentType": {
+          "enum": [
+            "BEAM",
+            "GIRDER",
+            "SLAB",
+            "DECK",
+            "COLUMN",
+            "PIER",
+            "WALL",
+            "PILE",
+            "PILE_CAP",
+            "BEARING",
+            "JOINT",
+            "RAILING",
+            "BARRIER",
+            "BRACING",
+            "PLATE",
+            "CONNECTOR",
+            "REINFORCEMENT"
+          ],
+          "title": "Componenttype",
+          "type": "string"
+        },
+        "count": {
+          "maximum": 8,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "componentType",
+        "count"
+      ],
+      "title": "PlannedGroup",
+      "type": "object"
+    },
+    "SystemRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "assetType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assettype",
+          "type": "string"
+        },
+        "purpose": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Purpose",
+          "type": "string"
+        },
+        "compatibleSelectionKinds": {
+          "items": {
+            "enum": [
+              "AREA",
+              "ROUTE",
+              "CROSSING",
+              "ENDPOINTS",
+              "POINT"
+            ],
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "title": "Compatibleselectionkinds",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "assetType",
+        "purpose",
+        "compatibleSelectionKinds"
+      ],
+      "title": "SystemRequest",
+      "type": "object"
+    },
+    "UnknownCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "domain": {
+          "enum": [
+            "TERRAIN",
+            "SOIL",
+            "LOADS",
+            "FOUNDATION",
+            "CLEARANCE",
+            "CODE",
+            "OTHER"
+          ],
+          "title": "Domain",
+          "type": "string"
+        },
+        "status": {
+          "const": "UNKNOWN",
+          "default": "UNKNOWN",
+          "title": "Status",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "domain",
+        "explanation"
+      ],
+      "title": "UnknownCondition",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "bim-authoring/1",
+      "default": "bim-authoring/1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "intent": {
+      "$ref": "#/$defs/AuthoringIntent"
+    },
+    "plan": {
+      "$ref": "#/$defs/AssemblyPlan"
+    },
+    "expansions": {
+      "items": {
+        "$ref": "#/$defs/AssemblyExpansion"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "title": "Expansions",
+      "type": "array"
+    },
+    "relationships": {
+      "$ref": "#/$defs/AssemblyRelationships"
+    }
+  },
+  "required": [
+    "intent",
+    "plan",
+    "expansions",
+    "relationships"
+  ],
+  "title": "AuthoringBundle",
+  "type": "object"
+}

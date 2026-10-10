@@ -5666,6 +5666,14 @@
     "ProposalContent": {
       "additionalProperties": false,
       "properties": {
+        "aiChosenPreviewParameters": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Aichosenpreviewparameters",
+          "type": "array"
+        },
         "patchPreview": {
           "anyOf": [
             {
@@ -7840,10 +7848,18 @@
           "type": "string"
         },
         "arguments": {
+          "anyOf": [
+            {
+              "maxLength": 18000,
+              "type": "string"
+            },
+            {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          ],
           "default": "{}",
-          "maxLength": 18000,
-          "title": "Arguments",
-          "type": "string"
+          "title": "Arguments"
         }
       },
       "required": [

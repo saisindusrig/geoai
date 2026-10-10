@@ -42,6 +42,14 @@ async function ready() {
 }
 
 describe("persistent project Assistant", () => {
+  it("requires a fresh message for stale model context instead of retrying", async () => {
+    messages = [{ id: "m", role: "USER", context: { selection: [], modelRevisionId: "6" }, parts: [{ kind: "TEXT", text: "Create a walkway" }],
+      run: { id: "r", status: "FAILED", errorCode: "CONTEXT_REFRESH_REQUIRED" } }];
+    render(<PersistentAssistant {...props} />); await ready();
+    expect(screen.getByRole("alert")).toHaveTextContent("Refresh your selection and send a new message");
+    expect(screen.queryByRole("button", { name: "Retry assistant" })).not.toBeInTheDocument();
+    expect(api.post).not.toHaveBeenCalled();
+  });
   it("loads an assistant reply and clarification after reload", async () => {
     messages = [{ id: "reply", role: "ASSISTANT", context: { selection: [] }, parts: [{ kind: "TEXT", text: "I can help plan a retaining wall concept." }, { kind: "QUESTION", questionId: "q", text: "Which side is retained?", options: ["East side"] }], run: null }];
     const view = render(<PersistentAssistant {...props} />); await ready();

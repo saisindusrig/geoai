@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GeoAI Phase 4C live acceptance</title>
+<style>
+body{font:15px/1.6 system-ui,sans-serif;color:#20252a;background:#fafafa;margin:0}main{max-width:1080px;margin:40px auto;padding:0 24px 50px}h1{font-size:28px;margin-bottom:8px}h2{font-size:19px;margin-top:32px}p{max-width:900px}.status{border-left:4px solid #8b352d;padding:12px 18px;background:#fff}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;background:#fff;font-size:14px}th,td{text-align:left;vertical-align:top;padding:11px 12px;border-bottom:1px solid #d8dcdf}th{font-weight:600;background:#eef0f1}small{color:#565f66}a{color:#245678}.facts{display:flex;gap:32px;flex-wrap:wrap;margin:24px 0}.facts strong{display:block;font-size:23px}code{font-size:13px}
+</style></head><body><main>
+<h1>GeoAI · Phase 4C live Qwen acceptance</h1>
+<small>One authorized scenario · 10 October 2026 · Isolated actor/project 490001</small>
+<p class="status"><strong>FAIL — UNDERSTAND exhausted its permitted retry.</strong><br>Both responses hit the fixed 3,500-output-token cap. No valid checkpoint or proposal was saved. Orchestration safety controls held; no unauthorized effects occurred.</p>
+<div class="facts"><div><strong>2 / 12</strong>Paid requests used</div><div><strong>14,322 / 480,000</strong>Reported input tokens</div><div><strong>7,000 / 42,000</strong>Reported output tokens</div><div><strong>0</strong>Model mutations</div></div>
+<h2>Per-stage completion</h2>
+<div class="scroll"><table><thead><tr><th>Stage</th><th>Requests / retries</th><th>Strict schema and validation</th><th>Checkpoint / result</th></tr></thead><tbody>
+<tr><td>UNDERSTAND</td><td>2 requests / 1 retry</td><td>Not reached: both outputs rejected by truncation gate</td><td>No valid checkpoint · FAILED / OUTPUT_TRUNCATED</td></tr>
+<tr><td>PLAN</td><td>0</td><td>Not run</td><td>No plan saved</td></tr>
+<tr><td>EXPAND assembly 1</td><td>0</td><td>Not run</td><td>No assembly identity validated</td></tr>
+<tr><td>EXPAND assembly 2</td><td>0</td><td>Not run</td><td>No assembly identity validated</td></tr>
+<tr><td>EXPAND assembly 3</td><td>0</td><td>Not run</td><td>No assembly identity validated</td></tr>
+<tr><td>RELATE / VALIDATE</td><td>0</td><td>Not run</td><td>No relationship or dependency validated</td></tr>
+<tr><td>REVIEW</td><td>0</td><td>Not run</td><td>No saved proposal</td></tr>
+</tbody></table></div>
+<h2>Paid request evidence</h2>
+<div class="scroll"><table><thead><tr><th>Request</th><th>Model / timeout</th><th>Input tokens</th><th>Output tokens</th><th>Provider latency</th><th>Finish / result</th></tr></thead><tbody>
+<tr><td>1 · UNDERSTAND</td><td>Qwen/Qwen3.5-397B-A17B · 45 s</td><td>7,143</td><td>3,500</td><td>25.281 s</td><td>HTTP 200 · length · RETRYABLE</td></tr>
+<tr><td>2 · UNDERSTAND repair</td><td>Qwen/Qwen3.5-397B-A17B · 45 s</td><td>7,179</td><td>3,500</td><td>24.976 s</td><td>HTTP 200 · length · FAILED</td></tr>
+</tbody></table></div>
+<p><small>Source: safe local live-evidence ledger and private run metadata, 09:06–09:07 local time (Asia/Calcutta). Token counts are provider-reported. Provider latency excludes application startup. No provider-reported monetary cost was captured; cost remains unverified.</small></p>
+<h2>Outcome and safeguards</h2>
+<p>Transport-successful responses: <strong>2</strong>. Authoring-successful responses: <strong>0</strong>. Truncations: <strong>2</strong>. Timeouts: <strong>0</strong>. Validated object counts and stage checkpoints: <strong>0</strong>. Saved proposals, approvals and CAD artifact publications: <strong>0</strong>.</p>
+<p>ModelRevision count remained <strong>1</strong>; the source document hash is unchanged. No CAD Build, automatic approval, production change, model substitution or increased token/timeout limit occurred. The synthetic site retained unknown terrain, soil, loads and survey elevation.</p>
+<h2>Failure classification</h2>
+<p><strong>Observed:</strong> model-output truncation at the approved cap, before strict schema validation. <strong>Unproven:</strong> a schema-design incompatibility, or whether reasoning versus structured response verbosity consumed the output budget. <strong>Backend integration:</strong> no safety or terminal-stop failure observed; later stages remain untested.</p>
+<p>Next work should inspect token demand and duplicated context offline. Any prompt/configuration change must be reviewed and tested offline before a separately authorized paid test. The remaining global request allowance does not permit another attempt after this terminal stage failure.</p>
+<p><a href="LIVE_BIM_AUTHORING_ACCEPTANCE_4C.md">Detailed report, limitations and file inventory</a></p>
+</main></body></html>

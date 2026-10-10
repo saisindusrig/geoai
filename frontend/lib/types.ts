@@ -445,7 +445,8 @@ export interface DesignOutput {
 export type EditableGeometry =
   | { kind: "box" | "extrusion"; size: [number, number, number] }
   | { kind: "cylinder" | "sweep"; start: [number, number, number]; end: [number, number, number]; radius_m: number }
-  | { kind: "asset_instance"; asset_url: string };
+  | { kind: "asset_instance"; asset_url: string }
+  | { kind: "cad_mesh"; catalog_id: number; mesh_hash: string; brep_hash: string; definition_hash: string; bounds_m: number[] };
 
 export interface EditableModelComponent {
   id: string;

@@ -84,6 +84,11 @@ export default function ProposalReview({ projectId, versionId, dirty = false }: 
         </div>}
         {generic && <div aria-label="Generic 3D design summary" className="rounded border border-border p-2">
           <p>GeoAI understood · preliminary 3D layout</p>
+          {!!proposal.content.aiChosenPreviewParameters?.length && <div aria-label="AI-chosen preview parameters">
+            <p>AI-chosen preview parameters · PREVIEW_ASSUMPTION</p>
+            <p>Conceptual values for review. Local visual Z is not survey elevation.</p>
+            {proposal.content.aiChosenPreviewParameters.map((entry, i) => <p key={i}>{String(entry.objectId)} · {String(entry.parameter)}: {Array.isArray(entry.value) ? entry.value.join(" × ") : String(entry.value)} {String(entry.unit ?? "")}</p>)}
+          </div>}
           {generic.systems.map(system => <div key={system.id}><p>{system.role.replaceAll("_", " ")}</p><p>{generic.objects.filter(object => object.systemId === system.id && !object.templateOnly && !["POINT", "PATH", "POLYGON", "OFFSET"].includes(object.parameters.primitiveType)).map(objectSummary).join("; ")}</p></div>)}
           <p>Site: saved selection · local engineering frame</p>
           <p>Elevation and terrain placement are unvalidated. Local Z is a visual reference.</p>

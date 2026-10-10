@@ -46,16 +46,22 @@ class CapturedProvider(NebiusProvider):
         super().__init__(usage_sink={})
     async def complete(self, system, payload, route):
         if route.model!=MODEL or route.tier!="PRIMARY": raise RuntimeError("MODEL_GUARD")
-        if len(self.result["completions"])>=20: raise RuntimeError("REQUEST_BUDGET")
+        if len(self.result["completions"])>=36: raise RuntimeError("REQUEST_BUDGET")
         entry={"requestNumber":len(self.result["completions"])+1,"model":route.model,
-            "schema":payload["schema"].get("title"),"repairAttempt":bool(payload.get("repair")),
+            "schema":payload["schema"].get("title"),"repairAttempt":bool(payload.get("repair") or payload.get('toolArgumentRepair') or payload.get('designRepair')),
             "maxOutputTokens":route.max_output_tokens,"status":"STARTED"}
+        entry["toolResultsSeen"]=safe(payload.get("toolResults",[]))
+        entry.update(ordinaryRepair=bool(payload.get('repair')), nestedRepair=bool(payload.get('toolArgumentRepair')), designRepair=bool(payload.get('designRepair')),
+            phase='DESIGN_VALIDATION_REPAIR' if payload.get('designRepair') else 'NESTED_ARGUMENT_REPAIR' if payload.get('toolArgumentRepair') else 'CLASSIFICATION' if entry['schema']=='CivilIntent' else 'ASSISTANT_RESPONSE',
+            timeoutSeconds=route.timeout)
         self.result["completions"].append(entry)
         save(self.path,self.result)
         start=time.monotonic(); before=len(self.metadata_sink); previous=dict(self.usage_sink)
         try:
             value=await super().complete(system,payload,route)
-            schema=CivilIntent if entry["schema"]=="CivilIntent" else ProviderResponse
+            from app.services.assistant.tool_contracts import SCHEMAS
+            from app.domain.assistant_design_input import DesignIntent
+            schema=DesignIntent if payload.get('designRepair') else SCHEMAS[payload['intendedTool']] if payload.get('toolArgumentRepair') else CivilIntent if entry["schema"]=="CivilIntent" else ProviderResponse
             try:
                 parsed=schema.model_validate(value)
                 entry.update(structuredValid=True,visibleStructuredResponse=safe(parsed.model_dump(mode="json",by_alias=True)))
@@ -70,8 +76,13 @@ class CapturedProvider(NebiusProvider):
         finally:
             entry["latencySeconds"]=round(time.monotonic()-start,3)
             entry["providerMetadata"]=safe(self.metadata_sink[before:])
-            entry["inputTokens"]=(self.usage_sink["prompt_tokens"]-previous.get("prompt_tokens",0)) if self.usage_sink.get("prompt_tokens") is not None else None
-            entry["outputTokens"]=(self.usage_sink["completion_tokens"]-previous.get("completion_tokens",0)) if self.usage_sink.get("completion_tokens") is not None else None
+            metadata=entry['providerMetadata'][-1] if entry['providerMetadata'] else {}
+            entry.update(httpStatus=metadata.get('http_status'), finishReason=metadata.get('finish_reason'),
+                outputLimitReached=metadata.get('max_output_tokens_reached'), timeout=entry.get('errorCode')=='TIMEOUT')
+            entry["repairOutcome"]=("VALID" if entry.get("structuredValid") else "FAILED") if entry["repairAttempt"] else "NOT_ATTEMPTED"
+            usage_received=self.usage_sink!=previous
+            entry["inputTokens"]=(self.usage_sink["prompt_tokens"]-previous.get("prompt_tokens",0)) if usage_received and self.usage_sink.get("prompt_tokens") is not None else None
+            entry["outputTokens"]=(self.usage_sink["completion_tokens"]-previous.get("completion_tokens",0)) if usage_received and self.usage_sink.get("completion_tokens") is not None else None
             save(self.path,self.result)
 
 async def main():

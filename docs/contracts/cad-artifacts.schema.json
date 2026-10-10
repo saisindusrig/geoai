@@ -1,0 +1,694 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "byteLength": {
+          "exclusiveMinimum": 0,
+          "maximum": 32000000,
+          "title": "Bytelength",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "BREP",
+            "MESH"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sha256",
+        "byteLength",
+        "kind"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Connection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "fromComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Fromcomponentid",
+          "type": "string"
+        },
+        "toComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Tocomponentid",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "SUPPORTED_BY",
+            "CONNECTS_TO",
+            "ADJACENT_TO"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "engineeringVerification": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringverification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "fromComponentId",
+        "toComponentId",
+        "kind"
+      ],
+      "title": "Connection",
+      "type": "object"
+    },
+    "Definition": {
+      "additionalProperties": false,
+      "properties": {
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "assetId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assetid",
+          "type": "string"
+        },
+        "assemblyId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Assemblyid",
+          "type": "string"
+        },
+        "componentType": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componenttype",
+          "type": "string"
+        },
+        "material": {
+          "$ref": "#/$defs/Material"
+        },
+        "recipe": {
+          "$ref": "#/$defs/Recipe"
+        },
+        "placement": {
+          "$ref": "#/$defs/Placement"
+        },
+        "assemblyPlacement": {
+          "$ref": "#/$defs/Placement"
+        },
+        "dependencyIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Dependencyids",
+          "type": "array"
+        },
+        "relationshipIds": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 250,
+          "title": "Relationshipids",
+          "type": "array"
+        },
+        "provenance": {
+          "$ref": "#/$defs/SourceProvenance"
+        },
+        "units": {
+          "const": "m",
+          "default": "m",
+          "title": "Units",
+          "type": "string"
+        },
+        "frame": {
+          "const": "PROJECT_LOCAL_VISUAL_REFERENCE",
+          "default": "PROJECT_LOCAL_VISUAL_REFERENCE",
+          "title": "Frame",
+          "type": "string"
+        }
+      },
+      "required": [
+        "componentId",
+        "assetId",
+        "assemblyId",
+        "componentType",
+        "material",
+        "recipe",
+        "placement",
+        "assemblyPlacement",
+        "dependencyIds",
+        "relationshipIds",
+        "provenance"
+      ],
+      "title": "Definition",
+      "type": "object"
+    },
+    "Dependency": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcecomponentid",
+          "type": "string"
+        },
+        "sourceParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourceparameterid",
+          "type": "string"
+        },
+        "targetComponentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetcomponentid",
+          "type": "string"
+        },
+        "targetParameterId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Targetparameterid",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "COPY",
+            "UNRESOLVED"
+          ],
+          "title": "Operation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceComponentId",
+        "sourceParameterId",
+        "targetComponentId",
+        "targetParameterId",
+        "operation"
+      ],
+      "title": "Dependency",
+      "type": "object"
+    },
+    "Geometry": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "cad-geometry/1",
+          "default": "cad-geometry/1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "definitions": {
+          "items": {
+            "$ref": "#/$defs/Definition"
+          },
+          "maxItems": 250,
+          "minItems": 1,
+          "title": "Definitions",
+          "type": "array"
+        },
+        "dependencies": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Dependency"
+          },
+          "maxItems": 250,
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "connections": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Connection"
+          },
+          "maxItems": 250,
+          "title": "Connections",
+          "type": "array"
+        },
+        "compilerVersion": {
+          "const": "cad-compiler/1",
+          "default": "cad-compiler/1",
+          "title": "Compilerversion",
+          "type": "string"
+        },
+        "kernel": {
+          "const": "cadquery-ocp/8.0.1.1.0",
+          "default": "cadquery-ocp/8.0.1.1.0",
+          "title": "Kernel",
+          "type": "string"
+        },
+        "mesherVersion": {
+          "const": "cad-mesh/1:0.002m:0.2rad",
+          "default": "cad-mesh/1:0.002m:0.2rad",
+          "title": "Mesherversion",
+          "type": "string"
+        },
+        "engineeringQuantities": {
+          "const": "UNAVAILABLE",
+          "default": "UNAVAILABLE",
+          "title": "Engineeringquantities",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "definitions"
+      ],
+      "title": "Geometry",
+      "type": "object"
+    },
+    "Material": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "CONCRETE",
+            "STEEL",
+            "TIMBER",
+            "ASPHALT",
+            "OTHER",
+            "UNKNOWN"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "engineeringVerification": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringverification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "category"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "coordinateFrame": {
+          "const": "ASSEMBLY_LOCAL",
+          "default": "ASSEMBLY_LOCAL",
+          "title": "Coordinateframe",
+          "type": "string"
+        },
+        "origin": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            },
+            {
+              "maximum": 2000,
+              "minimum": -2000,
+              "type": "number"
+            }
+          ],
+          "title": "Origin",
+          "type": "array"
+        },
+        "headingDeg": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Headingdeg",
+          "type": "number"
+        }
+      },
+      "title": "Placement",
+      "type": "object"
+    },
+    "Recipe": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "const": "cad-recipe/1",
+          "default": "cad-recipe/1",
+          "title": "Version",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "PROFILE_EXTRUSION",
+            "CIRCULAR_COLUMN",
+            "RECTANGULAR_OPENING",
+            "CIRCULAR_HOLE",
+            "RECTANGULAR_LOFT"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "orientation": {
+          "default": "VERTICAL",
+          "enum": [
+            "VERTICAL",
+            "HORIZONTAL"
+          ],
+          "title": "Orientation",
+          "type": "string"
+        },
+        "profile": {
+          "anyOf": [
+            {
+              "enum": [
+                "RECTANGLE",
+                "I",
+                "CIRCLE"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Profile"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "maximum": 500,
+            "minimum": 0.0001,
+            "type": "number"
+          },
+          "maxProperties": 9,
+          "minProperties": 1,
+          "propertyNames": {
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "units": {
+          "const": "m",
+          "default": "m",
+          "title": "Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "parameters"
+      ],
+      "title": "Recipe",
+      "type": "object"
+    },
+    "Result": {
+      "additionalProperties": false,
+      "properties": {
+        "componentId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Componentid",
+          "type": "string"
+        },
+        "definitionHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Definitionhash",
+          "type": "string"
+        },
+        "brep": {
+          "$ref": "#/$defs/Artifact"
+        },
+        "mesh": {
+          "$ref": "#/$defs/Artifact"
+        },
+        "dimensionsM": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 500,
+              "minimum": 0.0001,
+              "type": "number"
+            },
+            {
+              "maximum": 500,
+              "minimum": 0.0001,
+              "type": "number"
+            },
+            {
+              "maximum": 500,
+              "minimum": 0.0001,
+              "type": "number"
+            }
+          ],
+          "title": "Dimensionsm",
+          "type": "array"
+        },
+        "volumeM3": {
+          "exclusiveMinimum": 0,
+          "maximum": 125000000,
+          "title": "Volumem3",
+          "type": "number"
+        },
+        "boundsM": {
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Boundsm",
+          "type": "array"
+        },
+        "solidCount": {
+          "const": 1,
+          "default": 1,
+          "title": "Solidcount",
+          "type": "integer"
+        },
+        "geometryValid": {
+          "const": true,
+          "default": true,
+          "title": "Geometryvalid",
+          "type": "boolean"
+        },
+        "engineeringStatus": {
+          "const": "UNVERIFIED",
+          "default": "UNVERIFIED",
+          "title": "Engineeringstatus",
+          "type": "string"
+        }
+      },
+      "required": [
+        "componentId",
+        "definitionHash",
+        "brep",
+        "mesh",
+        "dimensionsM",
+        "volumeM3",
+        "boundsM"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "projectId": {
+          "exclusiveMinimum": 0,
+          "title": "Projectid",
+          "type": "integer"
+        },
+        "revisionId": {
+          "exclusiveMinimum": 0,
+          "title": "Revisionid",
+          "type": "integer"
+        },
+        "revisionDocumentHash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Revisiondocumenthash",
+          "type": "string"
+        },
+        "designId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Designid",
+          "type": "string"
+        },
+        "designVersion": {
+          "exclusiveMinimum": 0,
+          "title": "Designversion",
+          "type": "integer"
+        },
+        "sourceModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sourcemodelrevisionid"
+        }
+      },
+      "required": [
+        "projectId",
+        "revisionId",
+        "revisionDocumentHash",
+        "designId",
+        "designVersion",
+        "sourceModelRevisionId"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "SourceProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "designId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Designid",
+          "type": "string"
+        },
+        "designVersion": {
+          "minimum": 1,
+          "title": "Designversion",
+          "type": "integer"
+        },
+        "sourceModelRevisionId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcemodelrevisionid"
+        },
+        "sourceKind": {
+          "enum": [
+            "USER_PROVIDED",
+            "PREVIEW_ASSUMPTION",
+            "UNKNOWN"
+          ],
+          "title": "Sourcekind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "designId",
+        "designVersion",
+        "sourceKind"
+      ],
+      "title": "SourceProvenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "cad-artifacts/1",
+      "default": "cad-artifacts/1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "geometry": {
+      "$ref": "#/$defs/Geometry"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/$defs/Result"
+      },
+      "maxItems": 250,
+      "minItems": 1,
+      "title": "Results",
+      "type": "array"
+    }
+  },
+  "required": [
+    "geometry",
+    "results"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

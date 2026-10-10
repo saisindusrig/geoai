@@ -149,6 +149,8 @@ interface ProjectState {
   setDrawnAlignment: (g: GeoJSONGeometry | null) => void;
   drawVertices: [number, number][];
   setDrawVertices: (v: [number, number][]) => void;
+  smoothAlignment: boolean;
+  setSmoothAlignment: (enabled: boolean) => void;
   pushDrawVertex: (v: [number, number]) => void;
   popDrawVertex: () => void;
   clearDrawVertices: () => void;
@@ -253,6 +255,8 @@ export const useProjectStore = create<ProjectState>((set) => ({
   setDrawnAlignment: (drawnAlignment) => set({ drawnAlignment }),
   drawVertices: [],
   setDrawVertices: (drawVertices) => set({ drawVertices }),
+  smoothAlignment: false,
+  setSmoothAlignment: (smoothAlignment) => set({ smoothAlignment }),
   pushDrawVertex: (v) => set((s) => ({ drawVertices: [...s.drawVertices, v] })),
   popDrawVertex: () => set((s) => ({ drawVertices: s.drawVertices.slice(0, -1) })),
   clearDrawVertices: () => set({ drawVertices: [] }),
@@ -287,8 +291,8 @@ export const useProjectStore = create<ProjectState>((set) => ({
     satellite: false,
     roads: true,
     buildings: true,
-    terrain: true,
-    tiles3d: true,
+    terrain: false,
+    tiles3d: false,
     projectModel: true,
     excavation: true,
     utilities: true,
