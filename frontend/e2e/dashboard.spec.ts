@@ -24,10 +24,13 @@ async function expectInsideViewport(locator: Locator) {
   const bounds = await locator.boundingBox();
   expect(bounds).not.toBeNull();
   const viewport = locator.page().viewportSize()!;
-  expect(bounds!.x).toBeGreaterThanOrEqual(0);
-  expect(bounds!.y).toBeGreaterThanOrEqual(0);
-  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width);
-  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(viewport.height);
+  // Fractional CSS positions are rounded differently by headless Chromium.
+  // A 1px tolerance still catches meaningful overflow or clipped controls.
+  const tolerance = 1;
+  expect(bounds!.x).toBeGreaterThanOrEqual(-tolerance);
+  expect(bounds!.y).toBeGreaterThanOrEqual(-tolerance);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width + tolerance);
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(viewport.height + tolerance);
 }
 
 for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 1080 }]) {
