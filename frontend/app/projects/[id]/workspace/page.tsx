@@ -12,6 +12,7 @@ import WorkspaceMapEngine from "@/components/map/WorkspaceMapEngine";
 import { ProfessionalModelPanel } from "@/components/model-editor/ProfessionalModelEditor";
 import WorkspaceToolRail from "@/components/workspace/WorkspaceToolRail";
 import BuildingAssistant from "@/components/workspace/BuildingAssistant";
+import EmptyProjectStarter from "@/components/workspace/EmptyProjectStarter";
 import SandboxWorkspace from "@/components/sandbox/SandboxWorkspace";
 import { assetSupportsGeneration } from "@/lib/asset-types";
 import { Button } from "@/components/ui/button";
@@ -267,7 +268,8 @@ export default function WorkspacePage() {
           }}
           rightPanel={<ProfessionalModelPanel editor={modelEditor} projectId={!isPublicDemo && !isLocalSandbox ? projectId : undefined} siteGeometry={project.boundary_geojson ?? project.alignment_geojson ?? (project.center_lng !== null && project.center_lat !== null ? { type: "Point", coordinates: [project.center_lng, project.center_lat] } : null)} />}
           map={
-            <WorkspaceMapEngine
+            <>
+              <WorkspaceMapEngine
               project={project}
               modelUrl={liveModelUrl}
               excavationUrl={excavationFile?.file_url}
@@ -296,7 +298,27 @@ export default function WorkspacePage() {
               onSelectComponent={(id, additive) => {
                 modelEditor.select(id, additive);
               }}
-            />
+              />
+              {!isPublicDemo && (
+                <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,30rem)] -translate-x-1/2">
+                  <div className="pointer-events-auto rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-md">
+                    <EmptyProjectStarter
+                      projectId={projectId}
+                      active
+                      hasSite={Boolean(
+                        project.boundary_geojson ||
+                        project.alignment_geojson ||
+                        project.location_name ||
+                        project.center_lat !== null ||
+                        project.center_lng !== null
+                      )}
+                    >
+                      {null}
+                    </EmptyProjectStarter>
+                  </div>
+                </div>
+              )}
+            </>
           }
         />
         <BottomSummaryBar
