@@ -82,7 +82,7 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
       active.release(); canvas.style.cursor = "";
       if (canvas.hasPointerCapture(active.pointer)) canvas.releasePointerCapture(active.pointer);
       if (!viewer.isDestroyed()) viewer.scene.requestRender();
-      if (cancel) feedback(null);
+      feedback(null);
     }
   };
   const down = (event: PointerEvent) => {

@@ -1,12 +1,13 @@
 import { StrictMode, type ReactNode } from "react";
-import { act, renderHook, waitFor } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { useEditableModelEditor } from "./useEditableModelEditor";
 import { documentFromGeometrySpec } from "@/lib/editable-model";
 import type { DesignScenario, Project } from "@/lib/types";
 import { localSandboxProject, SANDBOX_LAYOUT_KEY } from "@/lib/local-sandbox";
 
 const mocks = vi.hoisted(() => ({ get: vi.fn(), getOptional: vi.fn(), post: vi.fn() }));
+afterEach(cleanup);
 vi.mock("@/lib/api", () => ({ api: mocks }));
 
 const project = { id: 7, project_type: "building", center_lat: 13, center_lng: 77 } as Project;
@@ -23,6 +24,18 @@ beforeEach(() => {
 });
 
 describe("local sandbox editor", () => {
+  it("ignores hidden/unknown picks and keeps site-save events separate from model saves", async () => {
+    const { result } = renderHook(() => useEditableModelEditor({ project, scenario, localSandbox:false,onSaved }));
+    await waitFor(() => expect(result.current.document).not.toBeNull());
+    const id=initial.components[0].id;
+    act(()=>result.current.select(id));
+    act(()=>result.current.updateComponent(id,{visible:false}));
+    act(()=>result.current.select(id)); act(()=>result.current.select("unknown",true));
+    expect(result.current.selectedIds).toEqual([]);
+    await act(async()=>{window.dispatchEvent(new CustomEvent("geoai:save-project"));});
+    expect(mocks.post).not.toHaveBeenCalled();
+    expect(result.current.dirty).toBe(true);
+  });
   it("clears selection when a commit hides or removes an object", async () => {
     const { result } = renderHook(() => useEditableModelEditor({ project, scenario, localSandbox: false, onSaved }));
     await waitFor(() => expect(result.current.document).not.toBeNull());

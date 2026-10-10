@@ -4,6 +4,9 @@ const projectId = process.env.PLATFORM_ACCEPTANCE_PROJECT_ID;
 test.skip(!projectId, "Requires the offline create_platform_workspace_fixture.py project");
 
 test("review and approve one platform, then edit, save, reload and compare", async ({ page }) => {
+  // Approval, two desktop canvas workflows and persistence share this test.
+  test.slow();
+  const errors:string[]=[]; page.on("pageerror", e=>errors.push(e.message));
   await page.setViewportSize({ width: 1626, height: 982 });
   await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
   await page.goto(`/projects/${projectId}/workspace`);
@@ -36,13 +39,66 @@ test("review and approve one platform, then edit, save, reload and compare", asy
     await page.getByRole("tab", { name: "Inspect", exact: true }).click();
   };
   await selectDeck();
+  const deckRow=page.getByRole("button",{name:"platform-deck",exact:true,includeHidden:true}).locator("..");
+  const deckId=(await deckRow.getAttribute("id"))!.slice("layer-row-".length);
+  const canvas=page.locator(".cesium-widget canvas");
+  const east = page.getByLabel("Position · metres East", { exact: true });
+  for(const width of [1440,1920]) {
+    await page.setViewportSize({width,height:1000});
+    await expect.poll(async()=>!!JSON.parse(await canvas.getAttribute("data-component-pick-points")||"{}")[deckId]).toBe(true);
+    await page.getByRole("button",{name:"Frame selection",exact:true}).click();
+    await expect(canvas).toHaveAttribute("data-sandbox-ready","true");
+    await page.waitForTimeout(1200);
+    const points=JSON.parse((await canvas.getAttribute("data-component-pick-points"))!);
+    const b=(await canvas.boundingBox())!, p=points[deckId];
+    await page.getByRole("button",{name:"Clear selection",exact:true}).click();
+    await page.mouse.click(b.x+p.x,b.y+p.y);
+    await expect(east).toHaveValue("0");
+    await expect(deckRow.getByRole("button",{name:"platform-deck",exact:true,includeHidden:true})).toHaveAttribute("aria-pressed","true");
+    // The saved construction-zone polygon surrounds the platform at this zoom.
+    // Picking it keeps editable selection and does not open a context inspector.
+    await page.mouse.click(b.x+p.x+130,b.y+p.y+100);
+    await expect(east).toHaveValue("0");
+    await page.keyboard.down("Shift"); await page.mouse.click(b.x+p.x,b.y+p.y); await page.keyboard.up("Shift");
+    await expect(east).toHaveCount(0);
+    await page.keyboard.down("Control"); await page.mouse.click(b.x+p.x,b.y+p.y); await page.keyboard.up("Control");
+    await expect(east).toHaveValue("0");
+    await page.getByRole("button",{name:"Move selection",exact:true}).click();
+    await expect(canvas).toHaveAttribute("data-transform-ready","true");
+    const drag=async()=> {
+      await expect.poll(async()=>!!JSON.parse(await canvas.getAttribute("data-transform-handles")||"{}").X).toBe(true);
+      const handles=JSON.parse((await canvas.getAttribute("data-transform-handles"))!), h=handles.X, pivot=handles.pivot;
+      const dx=h.x-pivot.x,dy=h.y-pivot.y,length=Math.hypot(dx,dy);
+      await page.mouse.move(b.x+h.x,b.y+h.y); await page.mouse.down();
+      await page.mouse.move(b.x+h.x+dx/length*45,b.y+h.y+dy/length*45,{steps:8});
+      await expect(canvas).toHaveAttribute("data-transform-camera-enabled","false");
+    };
+    await drag(); await page.keyboard.press("Escape"); await page.mouse.up(); await expect(east).toHaveValue("0");
+    await page.getByRole("button",{name:"Move selection",exact:true}).click();
+    await drag(); await page.mouse.up(); await expect(east).not.toHaveValue("0");
+    await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue("0");
+    await page.getByRole("button",{name:"Move east one step",exact:true}).click(); await expect(east).not.toHaveValue("0");
+    await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue("0");
+    await page.screenshot({path:`test-results/platform-selection-${width}.png`});
+    // Lock/visibility are real draft edits; undo them so the final comparison
+    // still contains only the deliberately saved translation.
+    await page.getByRole("tab",{name:"Layers",exact:true}).click();
+    await page.getByRole("button",{name:"Lock platform-deck",exact:true}).click();
+    await expect(page.getByRole("button",{name:"Move selection",exact:true})).toBeDisabled();
+    await expect(canvas).not.toHaveAttribute("data-transform-ready","true");
+    await page.getByRole("button",{name:"Undo",exact:true}).click();
+    await page.getByRole("button",{name:"Hide platform-deck",exact:true}).click();
+    await expect(deckRow.getByRole("button",{name:"platform-deck",exact:true})).toHaveAttribute("aria-pressed","false");
+    await expect(page.getByRole("button",{name:"Move selection",exact:true})).toBeDisabled();
+    await page.getByRole("button",{name:"Undo",exact:true}).click();
+    await selectDeck();
+  }
   await expect(page.getByLabel("Component identity")).toContainText("industrial-platform-5x3");
   await page.getByRole("button", { name: "Frame selection", exact: true }).click();
-  const east = page.getByLabel("Position · metres East", { exact: true });
   await expect(east).toHaveValue("0");
   await east.fill("0.25"); await east.press("Tab");
   const saved = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
-  await page.getByRole("button", { name: "Save", exact: true }).click();
+  await page.getByRole("button", { name: "Save 3D model revision", exact: true }).click();
   const saveResponse = await saved;
   expect(saveResponse.ok(), await saveResponse.text()).toBeTruthy();
   const revision = await saveResponse.json();
@@ -62,4 +118,5 @@ test("review and approve one platform, then edit, save, reload and compare", asy
   await expect(page.locator(".cesium-widget canvas")).toBeVisible();
   await expect(page.locator(".cesium-widget-errorPanel")).toHaveCount(0);
   await page.screenshot({ path: "test-results/platform-workspace-accepted.png" });
+  expect(errors).toEqual([]);
 });

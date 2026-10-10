@@ -70,10 +70,12 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
   const unit = useProjectStore(state => state.measureUnit);
   const boundary = useProjectStore(state => state.drawnBoundary ?? state.project?.boundary_geojson);
   const alignment = useProjectStore(state => state.drawnAlignment ?? state.project?.alignment_geojson);
-  const hasEditableSelection = Boolean(editor.document?.components.some(component => editor.selectedIds.includes(component.id) && !component.locked));
-  const selectionHint = editor.selectedIds.length ? "Unlock a selected object to edit it" : "Select an editable object first";
+  const hasEditableSelection = !editor.comparison && Boolean(editor.document?.components.some(component => editor.selectedIds.includes(component.id) && component.visible !== false && !component.locked && component.geometry?.kind !== "asset_instance"));
+  const selectionHint = editor.comparison ? "Close revision comparison before editing" : editor.selectedIds.length ? "Select visible editable geometry; unlock locked objects first" : "Select an editable object first";
+  const cadScaleBlocked = Boolean(editor.document?.components.some(c => editor.selectedIds.includes(c.id) && c.geometry?.kind === "cad_mesh"));
   const drawing = activeTool.startsWith("draw-") || activeTool.startsWith("edit-");
   const pendingSave = useProjectStore(state => state.pendingSave);
+  const stepMeters = editor.snapMeters || 0.1;
 
   const resetTools = () => {
     setMeasureOpen(false);
@@ -95,7 +97,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
     const shortcut = (event: KeyboardEvent) => {
       if (event.defaultPrevented) return;
       const key = event.key.toLowerCase();
-      if (key === "escape") { resetTools(); return; }
+      if (key === "escape") { if (!useProjectStore.getState().geometrySaving) useProjectStore.getState().cancelDrawing(); resetTools(); return; }
       if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, [contenteditable]:not([contenteditable=false]), [role=dialog]")) return;
       if (event.ctrlKey || event.metaKey) {
         if (key === "z") {
@@ -110,7 +112,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
       if (event.altKey || event.repeat) return;
       const mode = ({ v: "select", g: "translate", r: "rotate", s: "scale" } as const)[key as "v" | "g" | "r" | "s"];
       if (mode) {
-        if (mode !== "select" && !hasEditableSelection) return;
+        if (mode !== "select" && !hasEditableSelection || mode === "scale" && cadScaleBlocked) return;
         event.preventDefault(); resetTools(); editor.setTool(mode);
       }
       if (key === "delete" && hasEditableSelection && !drawing && measureMode === "none") { event.preventDefault(); editor.deleteSelected(); }
@@ -145,7 +147,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
         <div role="group" aria-label="Object editing" className="col-span-2 grid grid-cols-2 gap-1"><span className="col-span-2 py-1 text-center text-[8px] uppercase tracking-wider text-muted-foreground">Edit</span>
           {editTools.map(item => <RailButton key={item.id} item={item} onClick={() => activate(item)}
             active={measureMode === "none" && activeTool === "select" && item.editorTool === editor.tool}
-            disabled={item.id !== "select" && !hasEditableSelection} disabledReason={selectionHint} />)}
+            disabled={item.id !== "select" && !hasEditableSelection || item.id === "scale" && cadScaleBlocked} disabledReason={item.id === "scale" && cadScaleBlocked ? "CAD scaling requires reviewed parametric regeneration" : selectionHint} />)}
         </div>
         <span aria-hidden="true" className="col-span-2 my-1 h-px w-full bg-white/10" />
         <div role="group" aria-label="Site geometry" className="col-span-2 grid grid-cols-2 gap-1"><span className="col-span-2 py-1 text-center text-[8px] uppercase tracking-wider text-muted-foreground">Site</span>
@@ -166,13 +168,19 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
       </aside>
       {surveyOpen && drawing && <div aria-label="Drawing tool options" className="absolute left-20 top-44 z-40 w-52 space-y-2 border border-border bg-background-secondary p-3 shadow-xl">
         <p className="text-xs font-semibold">{surveyTools.find(item => item.mapTool === activeTool)?.label}</p>
-        <p className="text-[10px] text-muted-foreground">{activeTool.startsWith("edit-") ? "Drag vertices. Press Enter to finish, then Save to keep your changes." : "Click to place vertices. Press Enter or double-click to finish, then Save."}</p>
+        <p className="text-[10px] text-muted-foreground">{activeTool.startsWith("edit-") ? "Drag yellow handles. Pan/zoom elsewhere. Enter finishes; Save boundary confirms." : "Click to place vertices. Enter or Finish drawing completes the shape; then confirm Save boundary. Esc cancels."}</p>
+        <p className="text-[10px] text-muted-foreground">Approximate map positions · ground elevation unknown.</p>
         {activeTool === "draw-line" && <label className="flex cursor-pointer items-center gap-2 border border-border px-2 py-1.5 text-[10px] text-muted-foreground"><input type="checkbox" checked={smoothAlignment} onChange={event => useProjectStore.getState().setSmoothAlignment(event.target.checked)} />Smooth curve through points</label>}
         {!activeTool.startsWith("edit-") && <div className="flex items-center justify-between text-[10px]"><span>{vertices.length} vertices</span><button type="button" disabled={!vertices.length} className="text-primary disabled:opacity-35" onClick={() => useProjectStore.getState().popDrawVertex()}>Undo vertex</button></div>}
         <button type="button" disabled={vertices.length < (activeTool === "draw-polygon" || activeTool === "edit-boundary" ? 3 : 2)} className="block w-full border border-primary/30 bg-primary/15 px-2 py-1.5 text-xs text-primary disabled:opacity-35" onClick={() => window.dispatchEvent(new CustomEvent("geoai:finish-drawing"))}>Finish drawing</button>
-        <button type="button" className="text-[10px] text-muted-foreground" onClick={resetTools}>Cancel drawing · Esc</button>
+        <button type="button" className="text-[10px] text-muted-foreground" onClick={() => { useProjectStore.getState().cancelDrawing(); resetTools(); }}>Cancel drawing · Esc</button>
       </div>}
-      {pendingSave && !drawing && measureMode === "none" && <p role="status" className="absolute left-20 top-44 z-40 w-52 border border-primary/25 bg-background-secondary p-3 text-xs">{pendingSave.kind === "boundary" ? "Site boundary" : "Alignment"} ready. Use Save to keep your changes.</p>}
+      {!drawing && !pendingSave && measureMode === "none" && editor.selectedIds.length > 0 && <div role="status" className="absolute left-20 top-44 z-40 w-52 space-y-2 border border-primary/25 bg-background-secondary p-3 text-xs">
+        <p>{editor.selectedIds.length} selected · {editor.tool === "translate" ? "Move" : editor.tool}</p>
+        <p className="text-[10px] text-muted-foreground">Shift/Ctrl-click adds or removes. Click empty ground to clear. Map context keeps your selection.</p>
+        {hasEditableSelection ? <><p className="text-[10px]">Move: drag coloured axis handles, Esc cancels, Undo reverts. Step {stepMeters} m · conceptual local ENU.</p><div className="flex gap-2"><button onClick={() => editor.nudgeSelected(0, -stepMeters)} aria-label="Move west one step">E−</button><button onClick={() => editor.nudgeSelected(0, stepMeters)} aria-label="Move east one step">E+</button><button onClick={() => editor.nudgeSelected(1, stepMeters)} aria-label="Move north one step">N+</button></div></> : <p>Transforms unavailable: {selectionHint}.</p>}
+        <button onClick={() => editor.select(null)}>Clear selection</button>
+      </div>}
       {measureOpen && measureMode !== "none" && <div aria-label="Measurement tools" className="absolute left-20 top-44 z-40 w-52 space-y-1 rounded-sm border border-border bg-background-secondary p-2 shadow-xl">
         <div className="flex items-center justify-between px-2 py-1 text-xs"><strong>Measure</strong><button type="button" aria-label="Toggle measurement units" className="text-primary" onClick={() => useProjectStore.getState().toggleMeasureUnit()}>{unit}</button></div>
         {measurements.map(([mode, label, hint]) => <button type="button" key={mode} aria-pressed={measureMode === mode} className={cn("block w-full px-2 py-1.5 text-left text-xs hover:bg-primary/10", measureMode === mode && "bg-primary/10 text-primary")} onClick={() => { editor.setTool("select"); activateTool("select"); useProjectStore.getState().setScene3dMeasureTool(mode); }}>{label}<span className="mt-0.5 block text-[9px] text-muted-foreground">{hint}</span></button>)}

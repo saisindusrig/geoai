@@ -385,7 +385,7 @@ export default function DashboardShell({
                         variant="ghost"
                         size="sm"
                         className="h-8 gap-1.5 px-2 text-[11px] text-muted-foreground hover:bg-surface-hover hover:text-foreground"
-                        title="Save project geometry"
+                        title="Save site geometry"
                         onClick={() =>
                           window.dispatchEvent(
                             new CustomEvent("geoai:save-project"),
@@ -393,7 +393,7 @@ export default function DashboardShell({
                         }
                       >
                         <Save className="h-3.5 w-3.5" />
-                        Save
+                        Save site geometry
                       </Button>
                       <Link href={`/projects/${projectId}/report`}>
                         <Button

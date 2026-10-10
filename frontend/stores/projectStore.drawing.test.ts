@@ -32,3 +32,12 @@ it("clears draft geometry when opening a different project", () => {
   store.setProject({ id: 6 } as Project);
   expect(useProjectStore.getState()).toMatchObject({ pendingSave: null, drawnAlignment: null, drawnBoundary: null, activeTool: "select" });
 });
+
+it("cancels edited boundary drafts without changing saved site data", () => {
+  const store=useProjectStore.getState();
+  store.setProject({id:5,boundary_geojson:polygon} as Project);
+  store.finishDrawing({kind:"boundary",geometry:{...polygon,coordinates:[[[0,0],[1,0],[1,1],[0,0]]]}});
+  store.activateTool("edit-boundary"); store.cancelDrawing();
+  expect(useProjectStore.getState()).toMatchObject({pendingSave:null,drawnBoundary:null,activeTool:"select"});
+  expect(useProjectStore.getState().project?.boundary_geojson).toEqual(polygon);
+});

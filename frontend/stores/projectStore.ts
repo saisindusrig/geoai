@@ -157,6 +157,9 @@ interface ProjectState {
   pendingSave: PendingSave | null;
   setPendingSave: (p: PendingSave | null) => void;
   finishDrawing: (p: PendingSave) => void;
+  cancelDrawing: () => void;
+  drawingError: string | null;
+  geometrySaving: boolean;
   editVertices: [number, number][];
   editSnapshot: [number, number][];
   setEditVertices: (v: [number, number][]) => void;
@@ -224,7 +227,7 @@ interface ProjectState {
 
 export const useProjectStore = create<ProjectState>((set) => ({
   project: null,
-  setProject: (project) => set((state) => state.project?.id === project?.id ? { project } : { project, drawnBoundary: null, drawnAlignment: null, pendingSave: null, activeTool: "select", drawVertices: [], scene3dMeasureTool: "none" }),
+  setProject: (project) => set((state) => state.project?.id === project?.id ? { project } : { project, drawnBoundary: null, drawnAlignment: null, pendingSave: null, drawingError: null, activeTool: "select", drawVertices: [], scene3dMeasureTool: "none" }),
   activeTool: "select",
   setActiveTool: (activeTool) =>
     set((s) => ({
@@ -244,6 +247,9 @@ export const useProjectStore = create<ProjectState>((set) => ({
         activeTool,
         toolHint: nextHint,
         drawVertices: [],
+        drawingError: null,
+        selectedObject3d: null,
+        pendingSave: activeTool.startsWith("draw-") ? null : s.pendingSave,
         corridorWidthM,
       };
     }),
@@ -261,6 +267,11 @@ export const useProjectStore = create<ProjectState>((set) => ({
   popDrawVertex: () => set((s) => ({ drawVertices: s.drawVertices.slice(0, -1) })),
   clearDrawVertices: () => set({ drawVertices: [] }),
   pendingSave: null,
+  drawingError: null,
+  geometrySaving: false,
+  cancelDrawing: () => set((s) => ({ activeTool: "select", drawVertices: [], pendingSave: null, drawingError: null,
+    ...(s.pendingSave?.kind === "alignment" || s.activeTool === "edit-alignment" || s.activeTool === "draw-line"
+      ? { drawnAlignment: null } : { drawnBoundary: null }) })),
   setPendingSave: (pendingSave) => set({ pendingSave }),
   finishDrawing: (pendingSave) => set({ pendingSave, activeTool: "select", drawVertices: [], toolHint: null,
     ...(pendingSave.kind === "boundary" ? { drawnBoundary: pendingSave.geometry } : { drawnAlignment: pendingSave.geometry }) }),

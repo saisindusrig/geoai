@@ -67,7 +67,7 @@ test("approved native SUPPORT_FRAME in the real workspace", async ({page, reques
   const east = page.getByLabel("Position · metres East",{exact:true});
   await east.fill("0.1"); await east.press("Tab");
   const save = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
-  await page.getByRole("button",{name:"Save",exact:true}).click();
+  await page.getByRole("button",{name:"Save 3D model revision",exact:true}).click();
   expect((await save).ok()).toBeTruthy();
   await page.reload();
   await page.getByRole("tab",{name:"Layers",exact:true}).click();
@@ -85,7 +85,7 @@ test("approved native SUPPORT_FRAME in the real workspace", async ({page, reques
   await expect(page.getByRole("button",{name:"Show primary-0",exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Show primary-0",exact:true}).click();
   const visibilitySave = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
-  await page.getByRole("button",{name:"Save",exact:true}).click();
+  await page.getByRole("button",{name:"Save 3D model revision",exact:true}).click();
   expect((await visibilitySave).ok()).toBeTruthy();
   const profiles = await (await request.get(`${api}/api/projects/9001/site-profiles`)).json();
   const profileId = profiles.profiles[0].id;
@@ -188,7 +188,7 @@ test("native triangle canvas picking for every saved CAD component", async ({pag
   await scale.press("Escape"); // Discard the rejected numeric draft.
   await expect(scale).toHaveValue("1");
   const unchangedSave=page.waitForResponse(r=>/model-revisions$/.test(r.url()) && r.request().method()==="POST");
-  await page.getByRole("button",{name:"Save",exact:true}).click();
+  await page.getByRole("button",{name:"Save 3D model revision",exact:true}).click();
   const saved=await unchangedSave;
   expect(saved.ok()).toBeTruthy();
   expect((await saved.json()).document.components.find((c:{id:string})=>c.id===cad.at(-1).id).transform.scale).toEqual([1,1,1]);

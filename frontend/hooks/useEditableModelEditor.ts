@@ -262,7 +262,7 @@ export function useEditableModelEditor({
     let changed = false;
     for (const patch of changes) {
       const component = next.components.find((c) => c.id === patch.id);
-      if (!component || component.locked) continue;
+      if (!component || component.locked || !component.visible || component.geometry.kind === "asset_instance") continue;
       if (component.geometry.kind === "cad_mesh" && patch.transform.scale.some(v => v !== 1)) { setEditError("CAD scaling requires reviewed parametric regeneration."); return; }
       if (!patch.transform.position.every(Number.isFinite) || !patch.transform.rotation_deg.every(Number.isFinite) || !patch.transform.scale.every((n) => Number.isFinite(n) && n > 0)) continue;
       if (JSON.stringify(component.transform) !== JSON.stringify(patch.transform)) { component.transform = clone(patch.transform); changed = true; }
@@ -284,7 +284,7 @@ export function useEditableModelEditor({
     if (!document || !selectedIds.length) return;
     const next = clone(document);
     for (const component of next.components) {
-      if (!selectedIds.includes(component.id) || component.locked) continue;
+      if (!selectedIds.includes(component.id) || component.locked || !component.visible || component.geometry.kind === "asset_instance") continue;
       const position = component.transform.position[axis] + amount;
       const snapped = snapMeters > 0 ? Math.round(position / snapMeters) * snapMeters : position;
       component.transform.position[axis] = Number(snapped.toFixed(3));
@@ -297,7 +297,7 @@ export function useEditableModelEditor({
     if (kind === "scale" && document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD scaling requires reviewed parametric regeneration."); return; }
     const next = clone(document);
     for (const component of next.components) {
-      if (!selectedIds.includes(component.id) || component.locked) continue;
+      if (!selectedIds.includes(component.id) || component.locked || !component.visible || component.geometry.kind === "asset_instance") continue;
       if (kind === "rotate") component.transform.rotation_deg[2] += amount;
       else component.transform.scale = component.transform.scale.map((v) => Math.max(0.05, Number((v * amount).toFixed(3)))) as [number, number, number];
     }
@@ -396,8 +396,8 @@ export function useEditableModelEditor({
   useEffect(()=>{
     if(localSandbox)return;
     const flush=()=>{void save().catch(()=>undefined);};
-    window.addEventListener("geoai:save-project",flush);
-    return()=>window.removeEventListener("geoai:save-project",flush);
+    window.addEventListener("geoai:save-model-revision",flush);
+    return()=>window.removeEventListener("geoai:save-model-revision",flush);
   },[save,localSandbox]);
 
   const previewAiEdit = useCallback(async (prompt: string) => {
@@ -421,10 +421,11 @@ export function useEditableModelEditor({
 
   const select = useCallback((id: string | null, additive = false) => {
     if (!id) return setSelectedIds([]);
+    if (!document?.components.some(c => c.id === id && c.visible)) return;
     setSelectedIds((current) => additive
       ? current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
       : [id]);
-  }, []);
+  }, [document]);
 
   const loadLayoutIntelligence = useCallback(async () => {
     if (!project || !scenarioId || !baseRevision) return null;
