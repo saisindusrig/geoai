@@ -32,7 +32,7 @@ test("fresh live bridge uses the real editable workspace", async ({ page }) => {
   await expect(east).toHaveValue("0");
   await east.fill("0.1"); await east.press("Tab");
   const saved = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
-  await page.getByRole("button", { name: "Save", exact: true }).click();
+  await page.getByRole("button", { name: "Save 3D model revision", exact: true }).click();
   const response = await saved;
   expect(response.ok(), await response.text()).toBeTruthy();
   await page.reload(); await select();

@@ -121,5 +121,6 @@ jobs:
           name: platform-acceptance-evidence
           path: |
             frontend/test-results/platform-*.png
+            frontend/test-results/boundary-*.png
             frontend/test-results/**/test-failed-*.png
             frontend/test-results/**/error-context.md

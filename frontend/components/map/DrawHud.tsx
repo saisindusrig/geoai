@@ -15,6 +15,9 @@ export default function DrawHud({ onConfirmSave }: DrawHudProps) {
   const measureUnit = useProjectStore((s) => s.measureUnit);
   const pendingSave = useProjectStore((s) => s.pendingSave);
   const corridorWidthM = useProjectStore((s) => s.corridorWidthM);
+  const saving = useProjectStore(s => s.geometrySaving);
+  const error = useProjectStore(s => s.drawingError);
+  const editing = activeTool.startsWith("edit-");
 
   const instruction = toolInstruction(activeTool);
 
@@ -46,7 +49,7 @@ export default function DrawHud({ onConfirmSave }: DrawHudProps) {
 
   return (
     <>
-      {instruction && !pendingSave && (
+      {instruction && activeTool !== "select" && (!pendingSave || editing) && (
         <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10 panel-glass rounded-md px-3 py-1.5 text-xs text-foreground border border-border/60 pointer-events-none max-w-[90vw] text-center">
           {instruction}
           {activeTool === "draw-corridor" && (
@@ -69,26 +72,29 @@ export default function DrawHud({ onConfirmSave }: DrawHudProps) {
         </div>
       )}
 
-      {pendingSave && (
+      {pendingSave && !editing && (
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 panel-glass rounded-lg px-4 py-3 text-xs shadow-lg border border-primary/30 flex flex-col sm:flex-row items-center gap-3">
           <span>
-            {pendingSave.kind === "boundary" ? "Boundary" : "Alignment"}: {pendingSummary} · Save?
+            {pendingSave.kind === "boundary" ? "Boundary" : "Alignment"}: {pendingSummary} · Unsaved
           </span>
           <div className="flex gap-2 pointer-events-auto">
-            <Button size="sm" className="h-7 text-xs" onClick={onConfirmSave}>
-              Save
+            <Button disabled={saving} size="sm" className="h-8 text-xs" onClick={onConfirmSave}>
+              {saving ? "Saving…" : pendingSave.kind === "boundary" ? "Save boundary" : "Save alignment"}
             </Button>
             <Button
               size="sm"
               variant="ghost"
               className="h-7 text-xs"
-              onClick={() => useProjectStore.getState().setPendingSave(null)}
+              disabled={saving}
+              onClick={() => useProjectStore.getState().activateTool(pendingSave.kind === "boundary" ? "edit-boundary" : "edit-alignment")}
             >
               Continue editing
             </Button>
+            <Button disabled={saving} size="sm" variant="ghost" onClick={() => useProjectStore.getState().cancelDrawing()}>Discard draft</Button>
           </div>
         </div>
       )}
+      {error && <div role="alert" className="absolute bottom-20 left-1/2 -translate-x-1/2 z-40 max-w-sm rounded border border-destructive bg-background p-3 text-xs">{error}</div>}
     </>
   );
 }

@@ -39,7 +39,7 @@ test("generated building selection, edit, save, reload, compare and layers", asy
   await east.press("Tab");
   await expect(east).toHaveValue(String(before + .1));
   const saved = page.waitForResponse(response => /model-revisions$/.test(response.url()) && response.request().method() === "POST");
-  await page.getByRole("button", { name: "Save", exact: true }).click();
+  await page.getByRole("button", { name: "Save 3D model revision", exact: true }).click();
   const response = await saved;
   expect(response.ok(), await response.text()).toBeTruthy();
   expect((await response.json()).source).toBe("manual_edit");

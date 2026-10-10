@@ -28,6 +28,7 @@ import {
 } from "@/lib/cesium-photorealistic-tiles";
 import { lineLengthM } from "@/lib/geo";
 import { corridorFromLine, geometryToVertices, rectangleFromCorners, verticesToLine, verticesToPolygon, verticesToSmoothLine } from "@/lib/map-draw";
+import { boundaryError } from "@/lib/boundary-validation";
 import {
   fetchMapRuntimeConfig,
   loadCesiumBasemapProvider,
@@ -201,7 +202,10 @@ export default function CesiumView({
       const id=(event as CustomEvent<string>).detail;
       const entity=dataSourcesRef.current.get("editable-model")?.entities.getById(`editable:${id}`);
       const position=entity?.position?.getValue(C.JulianDate.now());
-      if(position)viewer.camera.flyToBoundingSphere(new C.BoundingSphere(position,15),{duration:0.7});
+      if(position) {
+        const radius=Number(entity?.properties?.getValue(C.JulianDate.now())?.previewRadiusM) || 15;
+        viewer.camera.flyToBoundingSphere(new C.BoundingSphere(position,radius),{duration:0.7,offset:new C.HeadingPitchRange(viewer.camera.heading,C.Math.toRadians(-58),Math.max(radius*4,12))});
+      }
     };
     window.addEventListener("geoai:locate-component",locate);
     return()=>window.removeEventListener("geoai:locate-component",locate);
@@ -358,6 +362,16 @@ export default function CesiumView({
     let cancelled = false;
     let sandboxCollection: import("cesium").PrimitiveCollection | null = null;
     let removePostRender: (() => void) | null = null;
+    const removePickPoints = viewer.scene.postRender.addEventListener(() => {
+      const points: Record<string, {x:number;y:number}> = {};
+      for (const entity of ds.entities.values) {
+        const id = entity.properties?.getValue(viewer.clock.currentTime)?.editableComponentId;
+        const position = entity.position?.getValue(viewer.clock.currentTime);
+        const point = position && Cesium.SceneTransforms.worldToWindowCoordinates(viewer.scene, position);
+        if (id && point) points[id] = {x:point.x,y:point.y};
+      }
+      viewer.canvas.dataset.componentPickPoints = JSON.stringify(points);
+    });
     let disposeTransform: (() => void) | undefined;
     let ghostCollection: import("cesium").PrimitiveCollection | undefined;
     let ghostDataSource: import("cesium").CustomDataSource | undefined;
@@ -511,6 +525,7 @@ export default function CesiumView({
     })().catch((failure: unknown) => { if (!cancelled) setCadMeshError(failure instanceof Error ? failure.message : "CAD geometry could not load."); });
     return () => {
       cancelled = true;
+      removePickPoints(); delete viewer.canvas.dataset.componentPickPoints;
       disposeTransform?.();
       if(!viewer.isDestroyed?.()){if(ghostCollection)viewer.scene.primitives.remove(ghostCollection);if(ghostDataSource)viewer.dataSources.remove(ghostDataSource,true);}
       removePostRender?.();
@@ -576,7 +591,7 @@ export default function CesiumView({
           homeButton: false,
           navigationHelpButton: false,
           infoBox: false,
-          selectionIndicator: true,
+          selectionIndicator: false,
           terrain: createFlatTerrain(Cesium),
         });
         viewer.scene.requestRenderMode = false;
@@ -584,6 +599,10 @@ export default function CesiumView({
         viewer.scene.globe.depthTestAgainstTerrain = true;
         viewer.scene.globe.enableLighting = false;
         viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#28332c");
+        // Selection is owned by the workspace; Cesium's default click selection
+        // otherwise competes with drawing and noneditable-context filtering.
+        viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+        viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
         viewerRef.current = viewer;
         setLoaded(true);
       } catch (e) {
@@ -1237,6 +1256,8 @@ export default function CesiumView({
     viewer.dataSources.add(source);
     const handler = new C.ScreenSpaceEventHandler(viewer.canvas);
     let dragging: number | null = null;
+    let cursor: [number, number] | null = null;
+    let lastClick: { x: number; y: number; at: number } | null = null;
     const pick = (position: { x: number; y: number }): [number, number] | null => {
       const ray = viewer.camera.getPickRay(position);
       const world = ray && viewer.scene.globe.pick(ray, viewer.scene) || viewer.camera.pickEllipsoid(position, C.Ellipsoid.WGS84);
@@ -1246,10 +1267,11 @@ export default function CesiumView({
     };
     const redraw = () => {
       source.entities.removeAll();
-      points.forEach((point, index) => source.entities.add({ id: `draw-handle-${index}`, position: C.Cartesian3.fromDegrees(...point), point: { pixelSize: 9, color: C.Color.YELLOW, outlineColor: C.Color.BLACK, outlineWidth: 1, heightReference: C.HeightReference.CLAMP_TO_GROUND, disableDepthTestDistance: Number.POSITIVE_INFINITY } }));
+      points.forEach((point, index) => source.entities.add({ id: `draw-handle-${index}`, position: C.Cartesian3.fromDegrees(...point), point: { pixelSize: 18, color: C.Color.YELLOW, outlineColor: C.Color.BLACK, outlineWidth: 3, heightReference: C.HeightReference.CLAMP_TO_GROUND, disableDepthTestDistance: Number.POSITIVE_INFINITY } }));
       const smooth = drawingTool === "draw-line" && useProjectStore.getState().smoothAlignment;
       const preview = smooth ? geometryToVertices(verticesToSmoothLine(points)) : points;
       if (preview.length > 1) source.entities.add({ polyline: { positions: C.Cartesian3.fromDegreesArray(preview.flat()), width: 3, material: C.Color.YELLOW, clampToGround: true } });
+      if (!editing && cursor && points.length) source.entities.add({ id: "draw-live-edge", polyline: { positions: C.Cartesian3.fromDegreesArray([points.at(-1)!, cursor, ...(drawingTool === "draw-polygon" && points.length > 1 ? [points[0]] : [])].flat()), width: 2, material: C.Color.YELLOW.withAlpha(0.65), clampToGround: true } });
       useProjectStore.getState().setDrawVertices(points);
       viewer.scene.requestRender();
     };
@@ -1261,24 +1283,49 @@ export default function CesiumView({
       else if (drawingTool === "draw-rectangle" && points.length >= 2) geometry = rectangleFromCorners(points[0], points.at(-1)!);
       else if (drawingTool === "draw-corridor" && points.length >= 2) geometry = corridorFromLine(points, useProjectStore.getState().corridorWidthM);
       else if (points.length >= 2 && !polygon) geometry = drawingTool === "draw-line" && useProjectStore.getState().smoothAlignment ? verticesToSmoothLine(points) : verticesToLine(points);
-      if (!geometry) return;
+      if (!geometry) { useProjectStore.setState({drawingError: polygon ? "Place at least three distinct vertices before finishing." : "Place at least two points before finishing."}); return; }
       const kind = polygon || drawingTool === "draw-rectangle" || drawingTool === "draw-corridor" ? "boundary" : "alignment";
+      const error = kind === "boundary" ? boundaryError(geometry) : null;
+      useProjectStore.setState({ drawingError: error });
+      if (error) return;
       useProjectStore.getState().finishDrawing({ kind, geometry });
     };
     redraw();
-    handler.setInputAction((click: { position: { x: number; y: number } }) => { if (editing) return; const point = pick(click.position); if (point) { points = [...points, point]; redraw(); } }, C.ScreenSpaceEventType.LEFT_CLICK);
+    handler.setInputAction((click: { position: { x: number; y: number } }) => {
+      if (editing) return;
+      // Cesium dispatches both clicks before a double-click. Ignore the second
+      // within the same pixel neighbourhood, rather than relying on geographic equality.
+      const now = performance.now();
+      if (lastClick && now-lastClick.at < 400 && Math.hypot(click.position.x-lastClick.x,click.position.y-lastClick.y) < 5) return;
+      lastClick = { ...click.position, at: now };
+      const point = pick(click.position);
+      if (point) { points = [...points, point]; useProjectStore.setState({ drawingError: null }); redraw(); }
+    }, C.ScreenSpaceEventType.LEFT_CLICK);
     handler.setInputAction(finish, C.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
     handler.setInputAction((click: { position: { x: number; y: number } }) => { if (!editing) return; const entity = viewer.scene.pick(click.position)?.id; if (entity?.id?.startsWith("draw-handle-")) { dragging = Number(entity.id.slice(12)); viewer.scene.screenSpaceCameraController.enableInputs = false; } }, C.ScreenSpaceEventType.LEFT_DOWN);
-    handler.setInputAction((motion: { endPosition: { x: number; y: number } }) => { if (dragging === null) return; const point = pick(motion.endPosition); if (point) { points[dragging] = point; redraw(); } }, C.ScreenSpaceEventType.MOUSE_MOVE);
-    handler.setInputAction(() => { dragging = null; viewer.scene.screenSpaceCameraController.enableInputs = true; }, C.ScreenSpaceEventType.LEFT_UP);
-    const keyboard = (event: KeyboardEvent) => { if (event.target instanceof HTMLElement && event.target.closest("input,textarea,select")) return; if (event.key === "Enter") finish(); };
+    handler.setInputAction((motion: { endPosition: { x: number; y: number } }) => {
+      const point = pick(motion.endPosition);
+      if (!point) return;
+      if (dragging !== null) { points = points.map((p,i) => i === dragging ? point : p); useProjectStore.setState({ drawingError: null }); }
+      else if (!editing) cursor = point;
+      else return;
+      redraw();
+    }, C.ScreenSpaceEventType.MOUSE_MOVE);
+    const releaseDrag = () => { dragging = null; if (!viewer.isDestroyed()) viewer.scene.screenSpaceCameraController.enableInputs = true; };
+    handler.setInputAction(releaseDrag, C.ScreenSpaceEventType.LEFT_UP);
+    window.addEventListener("pointerup", releaseDrag);
+    window.addEventListener("blur", releaseDrag);
+    const keyboard = (event: KeyboardEvent) => { if (event.target instanceof HTMLElement && event.target.closest("input,textarea,select")) return; if (event.key === "Enter") finish(); if (event.key === "Backspace" && !editing) { event.preventDefault(); useProjectStore.getState().popDrawVertex(); } };
     window.addEventListener("keydown", keyboard);
     window.addEventListener("geoai:finish-drawing", finish);
+    const removeHandles = viewer.scene.postRender.addEventListener(() => {
+      viewer.canvas.dataset.boundaryHandles = JSON.stringify(points.map(p => C.SceneTransforms.worldToWindowCoordinates(viewer.scene, C.Cartesian3.fromDegrees(...p))).map(p => p ? { x:p.x,y:p.y } : null));
+    });
     const unsubscribe = useProjectStore.subscribe((state, previous) => {
       if (state.drawVertices.length < previous.drawVertices.length && state.activeTool === drawingTool) points = state.drawVertices;
       if (state.activeTool === drawingTool && (state.drawVertices.length < previous.drawVertices.length || state.smoothAlignment !== previous.smoothAlignment)) redraw();
     });
-    return () => { unsubscribe(); window.removeEventListener("keydown", keyboard); window.removeEventListener("geoai:finish-drawing", finish); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.scene.screenSpaceCameraController.enableInputs = true; viewer.dataSources.remove(source, true); } };
+    return () => { window.removeEventListener("pointerup", releaseDrag); window.removeEventListener("blur", releaseDrag); removeHandles(); delete viewer.canvas.dataset.boundaryHandles; unsubscribe(); window.removeEventListener("keydown", keyboard); window.removeEventListener("geoai:finish-drawing", finish); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.scene.screenSpaceCameraController.enableInputs = true; viewer.dataSources.remove(source, true); } };
   }, [loaded, drawingTool, boundary, alignment]);
 
   // Pick + measure
@@ -1291,12 +1338,19 @@ export default function CesiumView({
     handlerRef.current = null;
 
     const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
-
+    const pickSelection = (position: {x:number;y:number}) => {
+      const first = viewer.scene.pick(position);
+      if (String(first?.id?.id ?? "").startsWith("transform:")) return first;
+      return viewer.scene.drillPick(position, 12).find((hit: { id?: import("cesium").Entity }) => {
+        const id = hit.id?.properties?.getValue?.(Cesium.JulianDate.now())?.editableComponentId;
+        return editableModel?.components.some(c => c.id === id && c.visible);
+      }) ?? first;
+    };
     handler.setInputAction((click: { position: { x: number; y: number } }) => {
-      const picked = viewer.scene.pick(click.position);
+      const picked = scene3dMeasureTool !== "none" ? viewer.scene.pick(click.position) : pickSelection(click.position);
       if (String(picked?.id?.id ?? "").startsWith("transform:")) return;
       const store = useProjectStore.getState();
-      if (store.activeTool.startsWith("draw-") || store.activeTool.startsWith("edit-")) return;
+      if (store.activeTool.startsWith("draw-") || store.activeTool.startsWith("edit-") || store.pendingSave) return;
 
       if (scene3dMeasureTool !== "none") {
         const measurementSequence = measurementRequest.current;
@@ -1339,6 +1393,7 @@ export default function CesiumView({
         return;
       }
       if (!picked?.id) {
+        viewer.selectedEntity = undefined;
         onSelectComponentRef.current?.(null);
         store.setSelectedObject3d(null);
         return;
@@ -1347,10 +1402,13 @@ export default function CesiumView({
       const entity = picked.id;
       const props = entity.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
       if (props.editableComponentId) {
+        if (!editableModel?.components.some(c => c.id === props.editableComponentId && c.visible)) return;
+        store.setSelectedObject3d(null);
         onSelectComponentRef.current?.(String(props.editableComponentId));
         viewer.selectedEntity = entity;
         return;
       }
+      if (selectedComponentIds.length) return;
       const layer = (props.layer ?? "buildings") as Scene3DLayerKey;
       store.setSelectedObject3d(
         objectInfoFromFeature(String(entity.id), layer, undefined, {
@@ -1369,9 +1427,11 @@ export default function CesiumView({
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
     const additivePick = (click: { position: { x: number; y: number } }) => {
-      const entity = viewer.scene.pick(click.position)?.id;
+      const store = useProjectStore.getState();
+      if (store.activeTool !== "select" || store.pendingSave || scene3dMeasureTool !== "none") return;
+      const entity = pickSelection(click.position)?.id;
       const props = entity?.properties?.getValue?.(Cesium.JulianDate.now()) ?? {};
-      if (props.editableComponentId) onSelectComponentRef.current?.(String(props.editableComponentId), true);
+      if (props.editableComponentId && editableModel?.components.some(c => c.id === props.editableComponentId && c.visible)) { store.setSelectedObject3d(null); onSelectComponentRef.current?.(String(props.editableComponentId), true); }
     };
     handler.setInputAction(additivePick, Cesium.ScreenSpaceEventType.LEFT_CLICK, Cesium.KeyboardEventModifier.SHIFT);
     handler.setInputAction(additivePick, Cesium.ScreenSpaceEventType.LEFT_CLICK, Cesium.KeyboardEventModifier.CTRL);
@@ -1384,7 +1444,7 @@ export default function CesiumView({
       measurementRequest.current++;
       destroyInputHandler(handler);
     };
-  }, [loaded, scene3dMeasureTool, measureUnit, alignment, projectTerrain, projectId, terrainEpoch, editableModel, acceptedPlacement]);
+  }, [loaded, scene3dMeasureTool, measureUnit, alignment, projectTerrain, projectId, terrainEpoch, editableModel, acceptedPlacement, selectedComponentIds]);
 
   useEffect(() => {
     const viewer = viewerRef.current;

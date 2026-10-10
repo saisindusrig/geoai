@@ -37,7 +37,7 @@ test("generic mixed design preserves Building and uses normal workspace tools", 
   const east = page.getByLabel("Position · metres East", { exact: true });
   await east.fill("15.5"); await east.press("Tab");
   const saved = page.waitForResponse(r => /model-revisions$/.test(r.url()) && r.request().method() === "POST");
-  await page.getByRole("button", { name: "Save", exact: true }).click();
+  await page.getByRole("button", { name: "Save 3D model revision", exact: true }).click();
   const saveResponse = await saved;
   expect(saveResponse.ok(), await saveResponse.text()).toBeTruthy();
   await page.reload(); await select("parking-pad");

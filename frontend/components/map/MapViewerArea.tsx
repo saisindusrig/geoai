@@ -1,5 +1,7 @@
 "use client";
 import type { EditableModelEditor } from "@/hooks/useEditableModelEditor";
+import DrawHud from "./DrawHud";
+import { boundaryError } from "@/lib/boundary-validation";
 import WorkspaceSearch from "@/components/map/WorkspaceSearch";
 import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 
@@ -155,18 +157,33 @@ export default function MapViewerArea({
 
   useEffect(() => {
     const onSaveProject = async () => {
+      if (useProjectStore.getState().geometrySaving) return;
+      if (/^(draw|edit)-/.test(useProjectStore.getState().activeTool)) {
+        useProjectStore.setState({ drawingError: "Finish drawing first, then confirm Save boundary or Save alignment." });
+        return;
+      }
       const { pendingSave, drawnBoundary, drawnAlignment } = useProjectStore.getState();
       const boundaryDraft = drawnBoundary ?? (pendingSave?.kind === "boundary" ? pendingSave.geometry : null);
       const alignmentDraft = drawnAlignment ?? (pendingSave?.kind === "alignment" ? pendingSave.geometry : null);
+      if ((boundaryDraft || alignmentDraft) && editor?.dirty) {
+        useProjectStore.setState({ drawingError: "Save the 3D model revision or undo its edits before saving site geometry. Both drafts are retained." });
+        return;
+      }
       try {
+        if (boundaryDraft) {
+          const error = boundaryError(boundaryDraft);
+          if (error) { useProjectStore.setState({ drawingError: error }); return; }
+        }
+        useProjectStore.setState({ geometrySaving: true, drawingError: null });
         if (boundaryDraft || alignmentDraft) {
           const body = {
             ...(boundaryDraft ? { boundary_geojson: boundaryDraft } : {}),
             ...(alignmentDraft ? { alignment_geojson: alignmentDraft } : {}),
           };
-          await api.put(`/api/projects/${project.id}`, body);
-          if (boundaryDraft) await onBoundaryDrawn?.(boundaryDraft);
-          if (alignmentDraft) await onAlignmentDrawn?.(alignmentDraft);
+          // The callbacks own persistence and refresh the workspace/assistant context.
+          if (boundaryDraft && onBoundaryDrawn) await onBoundaryDrawn(boundaryDraft);
+          if (alignmentDraft && onAlignmentDrawn) await onAlignmentDrawn(alignmentDraft);
+          if (boundaryDraft && !onBoundaryDrawn || alignmentDraft && !onAlignmentDrawn) await api.put(`/api/projects/${project.id}`, body);
           useProjectStore.setState(state => ({
             pendingSave: state.pendingSave === pendingSave ? null : state.pendingSave,
             drawnBoundary: state.drawnBoundary === drawnBoundary ? null : state.drawnBoundary,
@@ -190,12 +207,15 @@ export default function MapViewerArea({
         await api.put(`/api/projects/${project.id}`, body);
         toast("Project saved", { variant: "success" });
       } catch (e) {
+        useProjectStore.setState({ drawingError: `Could not save geometry: ${formatApiErrorMessage(e)}. Your draft is retained. Retry Save or continue editing.` });
         toast("Save failed", { variant: "error", description: formatApiErrorMessage(e) });
+      } finally {
+        useProjectStore.setState({ geometrySaving: false });
       }
     };
     window.addEventListener("geoai:save-project", onSaveProject);
     return () => window.removeEventListener("geoai:save-project", onSaveProject);
-  }, [project, onBoundaryDrawn, onAlignmentDrawn]);
+  }, [project, onBoundaryDrawn, onAlignmentDrawn, editor?.dirty]);
 
   useEffect(() => {
     if (!project.boundary_geojson && project.center_lng != null && project.center_lat != null) {
@@ -487,6 +507,7 @@ export default function MapViewerArea({
 
       {false && <ElevationProfileChart project={project} />}
       {view === "3d" && <Scene3DOverlay />}
+      <DrawHud onConfirmSave={() => window.dispatchEvent(new CustomEvent("geoai:save-project"))} />
 
       <div className="pointer-events-none absolute bottom-9 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/15 bg-background/85 px-3 py-1.5 text-[10px] text-muted-foreground shadow-lg backdrop-blur-xl">
         <LocateFixed className="size-3 text-primary" />

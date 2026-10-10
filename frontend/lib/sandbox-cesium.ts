@@ -52,7 +52,7 @@ export function buildSandboxMapPrimitives(
     spheres.push(sphere);
     const entity = entities.add({
       id: `editable:${component.id}`, name: component.name, position: sphere.center,
-      properties: { ...(ghost ? { referenceRevisionComponentId: component.id } : { editableComponentId: component.id }), layer: component.category, objectType: component.geometry.kind },
+      properties: { ...(ghost ? { referenceRevisionComponentId: component.id } : { editableComponentId: component.id }), previewRadiusM: sphere.radius, layer: component.category, objectType: component.geometry.kind },
       ...(selected.includes(component.id) && !ghost ? {label:{text:component.name.toUpperCase(),font:"600 11px sans-serif",fillColor:Cesium.Color.fromCssColorString("#c8ff32"),showBackground:true,backgroundColor:Cesium.Color.BLACK.withAlpha(0.7),pixelOffset:new Cesium.Cartesian2(0,-24),disableDepthTestDistance:Infinity}} : {}),
     });
     const geometry = new Cesium.Geometry({
