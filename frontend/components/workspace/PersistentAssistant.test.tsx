@@ -44,6 +44,38 @@ async function ready() {
 }
 
 describe("persistent project Assistant", () => {
+  it("keeps the saved selection/profile pair without creating a selection on send", async () => {
+    const geometry = { type: "Polygon" as const, coordinates: [[[77,12],[77.002,12],[77.002,12.001],[77,12]]] };
+    const originalGet = vi.mocked(api.get).getMockImplementation()!;
+    // Object key order is not geometric identity; coordinates and type are.
+    vi.mocked(api.get).mockImplementation(async path => path.includes("/site-selections/") ? { id: "sv1", canonicalGeometry: { coordinates: geometry.coordinates, type: geometry.type } } : originalGet(path));
+    render(<PersistentAssistant {...props} siteGeometry={geometry} />); await ready();
+    fireEvent.change(screen.getByRole("textbox", { name: "Project message" }), { target: { value: "Create a 5 m x 3 m industrial maintenance platform" } });
+    fireEvent.click(screen.getByRole("button", { name: "Send message" }));
+    await screen.findByRole("article");
+    expect(api.post).toHaveBeenCalledTimes(1);
+    expect(postBodies[0]).toMatchObject({ context: { siteSelectionVersionId: "sv1", siteProfileVersionId: "pv1" } });
+  });
+
+  it("blocks changed geometry and explains refreshing the saved site", async () => {
+    const originalGet = vi.mocked(api.get).getMockImplementation()!;
+    vi.mocked(api.get).mockImplementation(async path => path.includes("/site-selections/") ? { id: "sv1", canonicalGeometry: { type: "Point", coordinates: [77,12] } } : originalGet(path));
+    render(<PersistentAssistant {...props} siteGeometry={{ type: "Point", coordinates: [78,12] }} />); await ready();
+    fireEvent.change(screen.getByRole("textbox", { name: "Project message" }), { target: { value: "Create a platform" } });
+    fireEvent.click(screen.getByRole("button", { name: "Send message" }));
+    await screen.findByText("Site changed. Save the boundary and Refresh site before sending a new request.");
+    expect(api.post).not.toHaveBeenCalled();
+  });
+
+  it("labels the opt-in offline template and supplies the example", async () => {
+    const originalGet = vi.mocked(api.get).getMockImplementation()!;
+    vi.mocked(api.get).mockImplementation(async path => path.endsWith("/assistant/offline-platform") ? { enabled: true, label: "Offline demo · supported platform template", example: "Create a 5 m × 3 m industrial maintenance platform" } : originalGet(path));
+    render(<PersistentAssistant {...props} />); await ready();
+    expect(screen.getByText("Offline demo · supported platform template")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Use platform example" }));
+    expect(screen.getByRole("textbox", { name: "Project message" })).toHaveValue("Create a 5 m × 3 m industrial maintenance platform");
+    expect(api.post).not.toHaveBeenCalled();
+  });
   it("requires a fresh message for stale model context instead of retrying", async () => {
     messages = [{ id: "m", role: "USER", context: { selection: [], modelRevisionId: "6" }, parts: [{ kind: "TEXT", text: "Create a walkway" }],
       run: { id: "r", status: "FAILED", errorCode: "CONTEXT_REFRESH_REQUIRED" } }];

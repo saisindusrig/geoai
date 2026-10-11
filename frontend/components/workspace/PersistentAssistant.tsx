@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import ProposalReview from "./ProposalReview";
-import type { ConversationView, MessageView, MessageInput, MemoryView, MemoryInput, ProfileView, ReadinessView, SelectionVersion, SelectionInput } from "@/lib/generated/stage1";
+import type { ConversationView, MessageView, MessageInput, MemoryView, MemoryInput, ProfileView, ReadinessView, SelectionVersion } from "@/lib/generated/stage1";
 
 type Props = { projectId: number; selectedIds: string[]; revisionId: number | null; dirty: boolean; siteGeometry?: import("@/lib/types").GeoJSONGeometry | null };
 type Messages = { messages: MessageView[]; nextBefore: number | null };
@@ -24,6 +24,7 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
   const [memory, setMemory] = useState<MemoryView[]>([]);
   const [profile, setProfile] = useState<ProfileView | null>(null);
   const [readiness, setReadiness] = useState<ReadinessView | null>(null);
+  const [offlineDemo, setOfflineDemo] = useState<{ enabled: boolean; label: string; example: string } | null>(null);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -63,6 +64,8 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
     setConversation(c);
     await loadMessages(c.id);
     await loadMemory();
+    const demo = await api.get<{ enabled: boolean; label: string; example: string }>(`${base}/assistant/offline-platform`);
+    if (mounted.current) setOfflineDemo(demo);
     const profiles = await api.get<{ profiles: ProfileView[] }>(`${base}/site-profiles`);
     if (profiles.profiles[0]) await loadProfile(profiles.profiles[0].id);
   }, [base, loadMemory, loadMessages, loadProfile]);
@@ -121,12 +124,14 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
     if (!frozenSend.current) frozenSite.current = siteGeometry ? structuredClone(siteGeometry) : null;
     frozenSend.current = body; setPendingSend(true);
     void execute(async () => {
-      if (frozenSite.current) {
-        const kind = frozenSite.current.type === "Point" ? "POINT" : frozenSite.current.type === "LineString" ? "ROUTE" : "AREA";
-        const selectionInput: SelectionInput = { selection: { kind, geometry: frozenSite.current } as SelectionInput["selection"], originalCrs: { status: "RESOLVED", definition: "EPSG:4326", axisOrder: "XY", unit: "DEGREE", transformId: null } };
-        const selected = await api.post<SelectionVersion>(`${base}/site-selections`, selectionInput);
-        if (body.context.siteSelectionVersionId !== selected.id) body.context.siteProfileVersionId = null;
-        body.context.siteSelectionVersionId = selected.id;
+      if (frozenSite.current && body.context.siteProfileVersionId) {
+        // Read the saved version instead of creating a new selection on every send.
+        // Validate the captured geometry on retry too; never silently rebind context.
+        if (!profile?.current || !profile.version) throw new Error("Site changed. Save the boundary and Refresh site before sending a new request.");
+        const saved = await api.get<SelectionVersion>(`${base}/site-selections/${profile.selectionId}/versions/${profile.version.selectionVersion.version}`);
+        if (saved.id !== body.context.siteSelectionVersionId || saved.canonicalGeometry.type !== frozenSite.current.type || JSON.stringify(saved.canonicalGeometry.coordinates) !== JSON.stringify(frozenSite.current.coordinates)) {
+          throw new Error("Site changed. Save the boundary and Refresh site before sending a new request.");
+        }
       }
       await api.post(`${base}/conversations/${conversation.id}/messages`, body);
       await loadMessages(conversation.id);
@@ -158,6 +163,7 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
   return <section aria-label="Project assistant" className="flex h-full min-h-0 flex-col text-xs">
     <div className="space-y-2 border-b border-border p-3">
       <p className="font-semibold">GeoAI Assistant</p>
+      {offlineDemo?.enabled && <div className="rounded border border-border p-2"><p>{offlineDemo.label}</p><p className="text-muted-foreground">No AI inference. Concept only; review and approval required.</p><Button size="sm" variant="secondary" disabled={busy || pendingSend} onClick={() => setInput(offlineDemo.example)}>Use platform example</Button></div>}
       <p className="text-muted-foreground">Discuss any civil asset. Messages and reviewed requirements stay with this project.</p>
       <p role="status" className="text-[11px] text-muted-foreground">{activeRun?.progress ?? "Site-aware discussion and concept proposals. Geometry changes require a separate supported workflow."}</p>
       <div aria-label="Selected object context" className="break-words rounded border border-border px-2 py-1">
@@ -191,6 +197,8 @@ export default function PersistentAssistant({ projectId, selectedIds, revisionId
         {message.context.editorDirty && <p className="text-[10px] text-muted-foreground">Sent with unsaved editor changes; references point to the saved revision.</p>}
         {message.run && <p className="text-[10px] text-muted-foreground">{message.run.errorCode === "ORCHESTRATION_NOT_ENABLED" ? "Saved before AI processing was enabled" : message.run.progress ?? `Run: ${message.run.status}`}</p>}
         {message.run?.capabilities?.map((capability, i) => <p key={i} className="text-[10px] text-muted-foreground">{capability.assetType}: discussion {capability.discussionSupport.toLowerCase()} · planning {capability.planningSupport.toLowerCase()} · generation {capability.generationSupport.toLowerCase()} · analysis {capability.engineeringAnalysisSupport.toLowerCase()}</p>)}
+        {message.run?.errorCode && ["SITE_PROFILE_REQUIRED", "STALE_SITE_PROFILE"].includes(message.run.errorCode) && <div role="alert">Save the current site boundary and Refresh site, then send a new request. No model was generated.</div>}
+        {message.run?.errorCode === "OFFLINE_PLATFORM_SITE_UNSUPPORTED" && <div role="alert">The fixed 5 m × 3 m platform does not fit this saved site context. Choose a suitable area and Refresh site. The template has not been resized; no model was generated.</div>}
         {message.run?.errorCode === "CONTEXT_REFRESH_REQUIRED" && <div role="alert">Saved model context changed. Refresh your selection and send a new message. Your original message remains saved.</div>}
         {message.run && message.run.errorCode !== "CONTEXT_REFRESH_REQUIRED" && (["FAILED", "INTERRUPTED"].includes(message.run.status) || message.run.errorCode === "ORCHESTRATION_NOT_ENABLED") && <div role="alert"><p>{message.run.errorCode === "ORCHESTRATION_NOT_ENABLED" ? "Process this saved message using its original context." : `${message.run.errorCode?.replaceAll("_", " ")}. Your message is saved.`}</p><Button size="sm" variant="secondary" disabled={busy || !!activeRun} onClick={() => {
           const runId = message.run!.id; const retryId = crypto.randomUUID();
