@@ -17,11 +17,16 @@ test("honest free-form chat persists, scrolls and keeps the keyboard composer vi
     const pose = JSON.parse(await chatCanvas.getAttribute("data-scene-camera") || "{}");
     return pose.height > 100 && pose.height < 10000 && pose.pitch < -.7;
   }, { timeout: 60000 }).toBe(true);
+  // The composer stays disabled until the entire real initialization chain
+  // (conversation, messages, memory, availability, profiles) has completed.
+  // Software-rendered CI can take longer than the default 5-second assertion.
+  const profilesLoaded = page.waitForResponse(response => response.url().endsWith(`/api/projects/${project.id}/site-profiles`) && response.request().method() === "GET", { timeout: 30000 });
   await page.getByRole("tab", { name: "Assistant", exact: true }).click();
+  expect((await profilesLoaded).ok()).toBeTruthy();
   await expect(page.getByRole("region", { name: "Empty project starter" })).toHaveCount(0);
   await expect(page.getByText("Draw an alignment or generate a concept", { exact: true })).toHaveCount(0);
   const input = page.getByRole("textbox", { name: "Project message" });
-  await expect(input).toBeEnabled();
+  await expect(input).toBeEnabled({ timeout: 30000 });
   await input.fill("What loads are safe?"); await input.press("Shift+Enter");
   await expect(input).toHaveValue("What loads are safe?\n");
   await input.press("Enter");

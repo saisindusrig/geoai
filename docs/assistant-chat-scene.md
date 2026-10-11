@@ -93,3 +93,10 @@ exact request-body equality check. Production retry behavior is unchanged.
 The owner's five uncommitted UI files remain in the original checkout; this work
 uses an isolated branch. No paid AI, native CAD enablement, approval bypass,
 deployment or merge is part of this change.
+
+Run 38118137037 passed 34 browser cases (including the fresh platform flow),
+skipped seven, and failed the chat composer readiness assertion. Its retained
+screenshot shows loaded offline availability but a disabled composer during
+initialization. The chat test now waits for a successful final profiles response
+and allows 30 seconds for readiness within its unchanged overall test budget.
+It still uses the real API and requires an enabled composer before sending.
