@@ -2,13 +2,17 @@ import { expect, test } from "@playwright/test";
 import { reviewPlatform } from "./helpers/platform-review-workflow";
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
 
-test("fresh website boundary → message → review → approved platform → edit/save/reload", async ({ page }) => {
-  test.slow();
+// Keep the actual fresh project across bounded phases. Software-rendered Linux
+// takes 5.5 minutes for review/edit alone; setup must not consume that budget.
+test.describe.serial("fresh website platform", () => {
+let projectId: number;
+test("boundary → message → validated proposal", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.route("**/api/geocode/map-runtime-config", r => r.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
   const created = await page.request.post(`${api}/api/projects`, { data: { name: `Offline website platform ${Date.now()}`, project_type: "building", center_lng: 77, center_lat: 12 } });
   expect(created.ok()).toBeTruthy();
   const project = await created.json();
+  projectId = project.id;
   await page.goto(`/projects/${project.id}/workspace`);
   const canvas = page.locator(".cesium-widget canvas");
   await expect(canvas).toHaveAttribute("data-scene-camera", /.+/, { timeout: 60000 });
@@ -32,7 +36,11 @@ test("fresh website boundary → message → review → approved platform → ed
   await expect(page.getByRole("button", { name: "Review proposal", exact: true })).toBeVisible({ timeout: 60000 });
   expect(selectionWrites).toBe(0);
   await page.screenshot({ path: "test-results/platform-website-message-1440.png" });
-  await reviewPlatform(page, project.id);
+});
+test("review → approved platform → edit/save/reload", async ({ page }) => {
+  test.slow();
+  await reviewPlatform(page, projectId);
+});
 });
 
 for (const mode of ["missing-profile", "unsupported-dimensions", "too-small", "rejected"] as const) test(`offline platform fails closed: ${mode}`, async ({ page }) => {

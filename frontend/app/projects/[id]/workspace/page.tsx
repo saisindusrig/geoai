@@ -247,8 +247,8 @@ export default function WorkspacePage() {
           toolRail={<WorkspaceToolRail editor={modelEditor} />}
           mapToolbar={
             <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
-              {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
-                <Button className="h-10 gap-2 rounded-xl" onClick={() => setBuildingAssistantOpen(value => !value)}><Sparkles className="size-4" />AI Building Assistant</Button>
+              {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative shrink-0">
+                <Button className="workspace-assistant-button h-10 shrink-0 gap-2 whitespace-nowrap rounded-xl" onClick={() => setBuildingAssistantOpen(value => !value)}><Sparkles className="size-4" />AI Building Assistant</Button>
                 {buildingAssistantOpen && <BuildingAssistant projectId={projectId} boundaryKey={JSON.stringify(project.boundary_geojson ?? null)} revisionId={modelEditor.baseRevision?.id ?? null} dirty={modelEditor.dirty} generating={generating} onStarted={showBuildingJob} onClose={() => setBuildingAssistantOpen(false)} />}
               </div>}
               <div className="flex items-center" title="Scene / Sun study">

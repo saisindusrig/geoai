@@ -67,6 +67,17 @@ Optional local configured-world testing uses GEOAI_TEST_CONFIGURED_TERRAIN_URL
 pointing at the owner's existing local API, only for its read-only map config.
 Do not supply production account resources or AI credentials.
 
+Linux CI run 38115441017 at 2c93de3 preserved an initial acceptance failure:
+33 browser tests passed, 7 skipped, and the combined fresh-project flow exceeded
+its 360-second test budget. Its retry screenshot shows the generated platform,
+selected deck and enabled Undo action. The independent review/edit fixture passed
+in 5.5 minutes. The fresh flow now runs setup/proposal and review/edit as serial
+tests on the same real project, keeping the existing 120/360-second phase limits
+and every approval, edit, undo and persistence assertion. Positive inspector and
+Undo checks prevent a missing field from satisfying a negative position check.
+Retry traces are retained alongside screenshots; configured-world tests still
+disable tracing. This is a test scheduling change, not an engineering gate change.
+
 The owner's five uncommitted UI files remain in the original checkout; this work
 uses an isolated branch. No paid AI, native CAD enablement, approval bypass,
 deployment or merge is part of this change.

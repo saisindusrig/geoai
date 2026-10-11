@@ -125,3 +125,4 @@ jobs:
             frontend/test-results/boundary-*.png
             frontend/test-results/**/test-failed-*.png
             frontend/test-results/**/error-context.md
+            frontend/test-results/**/trace.zip

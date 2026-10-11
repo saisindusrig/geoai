@@ -851,14 +851,14 @@ html {
   .workspace-map-commandrow { gap: 6px; }
   .workspace-commandbar { gap: 4px; }
   .workspace-commandbar > div > button { height: 36px; }
-  .workspace-commandbar > div > button:not(.workspace-generate-button) { width: 34px; }
+  .workspace-commandbar > div > button:not(.workspace-generate-button):not(.workspace-assistant-button) { width: 34px; }
   .workspace-generate-button { padding-inline: 10px; font-size: 10px; gap: 6px; }
   .workspace-map-control > button { padding: 8px 10px; font-size: 10px; gap: 6px; }
   .workspace-map-control > button { height: 36px; }
 }
 @container (max-width: 820px) {
   .workspace-commandbar { gap: 3px; }
-  .workspace-commandbar > div > button:not(.workspace-generate-button) { width: 28px; }
+  .workspace-commandbar > div > button:not(.workspace-generate-button):not(.workspace-assistant-button) { width: 28px; }
   .workspace-map-control > button { padding-inline: 8px; gap: 4px; }
   .workspace-map-control > button > svg { width: 12px; }
 }

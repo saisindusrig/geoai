@@ -70,9 +70,18 @@ export async function reviewPlatform(page: Page, projectId: string | number) {
       await page.mouse.move(b.x+h.x+dx/length*45,b.y+h.y+dy/length*45,{steps:8});
       await expect(canvas).toHaveAttribute("data-transform-camera-enabled","false");
     };
-    await drag(); await page.keyboard.press("Escape"); await page.mouse.up(); await expect(east).toHaveValue(initialEast);
+    await drag(); await page.keyboard.press("Escape"); await page.mouse.up();
+    // Escape can retain Move or dispose its handles; neither may hold the camera lease.
+    await expect(canvas).not.toHaveAttribute("data-transform-camera-enabled","false");
+    await expect(east).toHaveValue(initialEast);
     await page.getByRole("button",{name:"Move selection",exact:true}).click();
-    await drag(); await page.mouse.up(); await expect(east).not.toHaveValue(initialEast);
+    await drag(); await page.mouse.up();
+    // A missing inspector also satisfies a negative value assertion. Require
+    // completed pointer release and a real committed edit before testing Undo.
+    await expect(page).toHaveURL(new RegExp(`/projects/${projectId}/workspace`));
+    await expect(east).toBeVisible();
+    await expect(page.getByRole("button",{name:"Undo",exact:true})).toBeEnabled({timeout:10000});
+    await expect(east).not.toHaveValue(initialEast);
     await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue(initialEast);
     await page.getByRole("button",{name:"Move east one step",exact:true}).click(); await expect(east).not.toHaveValue(initialEast);
     await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue(initialEast);
