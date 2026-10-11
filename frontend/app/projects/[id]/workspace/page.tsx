@@ -70,6 +70,9 @@ export default function WorkspacePage() {
 
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
   const activeTool = useProjectStore(state => state.activeTool);
+  const drawnBoundary = useProjectStore(state => state.drawnBoundary);
+  const drawnAlignment = useProjectStore(state => state.drawnAlignment);
+  const pendingSave = useProjectStore(state => state.pendingSave);
   const measuring = useProjectStore(state => state.scene3dMeasureTool !== "none");
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
   const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
@@ -308,6 +311,7 @@ export default function WorkspacePage() {
                     active={activeTool === "select" && !measuring && !modelEditor.loading && !modelEditor.document}
                     hasSite={Boolean(
                       project.boundary_geojson ||
+                      drawnBoundary || drawnAlignment || pendingSave ||
                       project.alignment_geojson ||
                       project.location_name ||
                       project.center_lat !== null ||

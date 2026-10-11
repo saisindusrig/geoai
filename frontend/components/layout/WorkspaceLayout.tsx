@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useProjectStore } from "@/stores/projectStore";
 
 const LEFT_WIDTH = 304;
-const RIGHT_WIDTH_DEFAULT = 380;
+const RIGHT_WIDTH_DEFAULT = 440;
 const RIGHT_WIDTH_MIN = 340;
 const RIGHT_WIDTH_MAX = 560;
 

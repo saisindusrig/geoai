@@ -4,7 +4,7 @@ import { api } from "@/lib/api";
 import EmptyProjectStarter from "./EmptyProjectStarter";
 
 vi.mock("@/lib/api", () => ({ api: { get: vi.fn() } }));
-afterEach(() => { cleanup(); vi.resetAllMocks(); });
+afterEach(() => { cleanup(); vi.resetAllMocks(); sessionStorage.clear(); });
 it.each([["Ask GeoAI", "geoai:open-copilot"], ["Draw / select site", "geoai:open-drawing"]])("opens %s without blocking the workspace", async (label, event) => {
   vi.mocked(api.get).mockResolvedValue({ isEmpty: true });
   const action=vi.fn();window.addEventListener(event,action);

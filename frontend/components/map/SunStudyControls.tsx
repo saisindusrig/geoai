@@ -14,6 +14,7 @@ import type { Viewer } from "cesium";
 import { api, formatApiErrorMessage } from "@/lib/api";
 
 import { useProjectStore } from "@/stores/projectStore";
+import { cameraSurfaceFloor } from "@/lib/camera-surface";
 import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 import styles from "./WorkspacePanels.module.css";
 import WorkspaceMapControl from "@/components/layout/WorkspaceMapControl";
@@ -31,6 +32,29 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
   const { rightControlsContainer } = useWorkspaceMap();
   const panelContainer = rightControlsContainer?.closest(".workspace-map-viewport");
   const layers = useProjectStore((state) => state.layers);
+  const underground = useProjectStore((state) => state.undergroundView);
+  useEffect(() => {
+    const controller = viewer.scene.screenSpaceCameraController;
+    controller.minimumZoomDistance = underground ? 1 : 2;
+    controller.maximumTiltAngle = underground ? undefined : Math.PI / 2 - .05;
+    const protectSurface = () => {
+      if (viewer.isDestroyed()) return;
+      const position = viewer.camera.positionCartographic;
+      const floor = cameraSurfaceFloor(viewer.scene.globe.getHeight(position), viewer.scene.verticalExaggeration, viewer.scene.verticalExaggerationRelativeHeight);
+      viewer.canvas.dataset.cameraSurfaceMode = underground ? "underground" : "surface";
+      viewer.canvas.dataset.cameraHeight = String(position.height);
+      viewer.canvas.dataset.cameraSurfaceFloor = String(floor);
+      viewer.canvas.dataset.terrainSource = viewer.terrainProvider instanceof Cesium.EllipsoidTerrainProvider ? "ellipsoid-reference" : "loaded-terrain";
+      // Camera flights and terrain loading can bypass input-controller collisions.
+      // Explicit underground inspection remains available; no terrain is replaced.
+      if (!underground && position.height < floor && Number.isFinite(floor)) {
+        viewer.camera.setView({ destination: Cesium.Cartesian3.fromRadians(position.longitude, position.latitude, floor),
+          orientation: { heading: viewer.camera.heading, pitch: viewer.camera.pitch, roll: viewer.camera.roll } });
+        viewer.scene.requestRender();
+      }
+    };
+    return viewer.scene.postUpdate.addEventListener(protectSurface);
+  }, [viewer, Cesium, underground]);
   const toggleLayer = useProjectStore((state) => state.toggleLayer);
   const { open, close, toggle } = useWorkspacePanel("scene");
   const [tab, setTab] = useState("Scene");
