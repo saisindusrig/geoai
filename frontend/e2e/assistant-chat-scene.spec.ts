@@ -9,6 +9,14 @@ test("honest free-form chat persists, scrolls and keeps the keyboard composer vi
   expect(result.ok()).toBeTruthy(); const project = await result.json();
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.goto(`/projects/${project.id}/workspace`);
+  const chatCanvas = page.locator(".cesium-widget canvas");
+  await expect(chatCanvas).toHaveAttribute("data-scene-camera", /.+/, { timeout: 60000 });
+  // Chat hydration can finish before Cesium's initial project flight. Capture
+  // the settled local scene rather than an initial stars-only loading frame.
+  await expect.poll(async () => {
+    const pose = JSON.parse(await chatCanvas.getAttribute("data-scene-camera") || "{}");
+    return pose.height > 100 && pose.height < 10000 && pose.pitch < -.7;
+  }, { timeout: 60000 }).toBe(true);
   await page.getByRole("tab", { name: "Assistant", exact: true }).click();
   await expect(page.getByRole("region", { name: "Empty project starter" })).toHaveCount(0);
   await expect(page.getByText("Draw an alignment or generate a concept", { exact: true })).toHaveCount(0);

@@ -58,6 +58,13 @@ No tokens are committed or printed. Screenshots and measured camera state are
 the evidence; absence of a permanent black frame in these tests does not prove
 the exact intermittent recording defect has been reproduced or eliminated.
 
+A fast local chat screenshot also captured an initial stars-only frame before
+Cesium's project camera initialization completed. Waiting for initialized camera
+metadata recovered the expected scene (synthetic fixture: approximately 1,250 m
+height, -58-degree pitch). Chat screenshot acceptance now waits for that settled
+local pose. This startup frame is distinct from the reported low-tilt recording;
+it is not evidence of a terrain-provider failure or proof of that defect's cause.
+
 ## Verification
 
 Run normal frontend lint, Vitest, TypeScript and build plus backend tests.
