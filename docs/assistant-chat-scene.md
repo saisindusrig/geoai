@@ -85,6 +85,11 @@ Undo checks prevent a missing field from satisfying a negative position check.
 Retry traces are retained alongside screenshots; configured-world tests still
 disable tracing. This is a test scheduling change, not an engineering gate change.
 
+Linux run 38117956256 also exposed a unit-test race: the retry assertion matched
+composer text before the persisted message rendered. It now waits for the saved
+user-message article and verifies its original captured context, retaining the
+exact request-body equality check. Production retry behavior is unchanged.
+
 The owner's five uncommitted UI files remain in the original checkout; this work
 uses an isolated branch. No paid AI, native CAD enablement, approval bypass,
 deployment or merge is part of this change.

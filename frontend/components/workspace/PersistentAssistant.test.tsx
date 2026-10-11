@@ -189,9 +189,10 @@ describe("persistent project Assistant", () => {
     await screen.findByText("Network unavailable");
     view.rerender(<PersistentAssistant {...props} selectedIds={["pier-b"]} revisionId={8} />);
     failSend = false; fireEvent.click(screen.getByRole("button", { name: "Retry" }));
-    await screen.findByText("Discuss this pier");
+    const savedArticle = await screen.findByRole("article", { name: "Your message" });
+    await within(savedArticle).findByText("Discuss this pier");
     expect(postBodies[1]).toEqual(postBodies[0]);
-    expect(screen.getByText("Captured: pier-a · revision 7")).toBeInTheDocument();
+    expect(await within(savedArticle).findByText("Captured: pier-a · revision 7")).toBeInTheDocument();
   });
 
   it.each(["Accept", "Reject"])("requires the explicit %s action for proposed memory", async action => {
