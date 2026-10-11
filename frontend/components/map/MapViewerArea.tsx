@@ -547,16 +547,7 @@ export default function MapViewerArea({
         )}
       </div>
 
-      {view === "3d" && !modelUrl && !excavationUrl && !editableModel && !drawnAlignment && !project.alignment_geojson && (
-        <div className="pointer-events-none absolute inset-x-4 bottom-24 z-10 flex justify-center">
-          <div className="max-w-md rounded-2xl border border-border bg-[rgba(5,7,10,0.72)] px-4 py-3 text-center shadow-lg backdrop-blur-xl">
-            <p className="text-sm font-semibold text-foreground">Draw an alignment or generate a concept</p>
-            <p className="mt-1 text-[12px] leading-snug text-muted-foreground">
-              AI model layers appear here after design generation completes.
-            </p>
-          </div>
-        </div>
-      )}
+
 
 
     </div>

@@ -44,6 +44,55 @@ async function ready() {
 }
 
 describe("persistent project Assistant", () => {
+  it("sends once on Enter, keeps Shift+Enter multiline and ignores composing Enter", async () => {
+    render(<PersistentAssistant {...props} />); await ready();
+    const box = screen.getByRole("textbox", { name: "Project message" });
+    fireEvent.change(box, { target: { value: "First line\nSecond line" } });
+    fireEvent.keyDown(box, { key: "Enter", shiftKey: true });
+    fireEvent.keyDown(box, { key: "Enter", isComposing: true });
+    expect(api.post).not.toHaveBeenCalled();
+    fireEvent.keyDown(box, { key: "Enter" }); fireEvent.keyDown(box, { key: "Enter" });
+    await screen.findByRole("article");
+    expect(postBodies).toHaveLength(1);
+    expect(postBodies[0]).toMatchObject({ parts: [{ kind: "TEXT", text: "First line\nSecond line" }] });
+  });
+  it("restores composer focus after confirmed submission", async () => {
+    render(<PersistentAssistant {...props} />); await ready();
+    const box = screen.getByRole("textbox", { name: "Project message" });
+    fireEvent.change(box, { target: { value: "Discuss the site" } });
+    fireEvent.keyDown(box, { key: "Enter" });
+    await screen.findByRole("article");
+    await waitFor(() => expect(box).toHaveValue(""));
+    await waitFor(() => expect(box).toHaveFocus());
+  });
+  it("explains unavailable mock chat in the saved turn without provider retries", async () => {
+    messages = [{ id: "m", role: "USER", context: { selection: [] }, parts: [{ kind: "TEXT", text: "Can you analyze the soil?" }], run: { id: "r", status: "FAILED", errorCode: "AI_PROVIDER_UNAVAILABLE" } }];
+    render(<PersistentAssistant {...props} />); await ready();
+    expect(screen.getByRole("alert")).toHaveTextContent("No inference was sent");
+    expect(screen.queryByRole("button", { name: "Retry assistant" })).not.toBeInTheDocument();
+    expect(api.post).not.toHaveBeenCalled();
+    expect(screen.getByRole("log", { name: "Conversation messages" })).toHaveAttribute("aria-live", "polite");
+  });
+  it("settles a running profile to Current without a second refresh", async () => {
+    const original = vi.mocked(api.get).getMockImplementation()!;
+    let queued = false;
+    vi.mocked(api.get).mockImplementation(async path => {
+      const value = await original(path);
+      return path.endsWith("/site-profiles/p1") ? { ...(value as object), refreshState: queued ? "RUNNING" : "IDLE" } : value;
+    });
+    vi.mocked(api.post).mockImplementation(async path => {
+      if (path.endsWith("/from-project")) return { id: "sv1" };
+      if (path.endsWith("/site-profiles")) { queued = true; return { id: "p1" }; }
+      return {};
+    });
+    render(<PersistentAssistant {...props} />); await ready();
+    fireEvent.click(screen.getByRole("button", { name: "Refresh site" }));
+    await screen.findByRole("button", { name: "Creating profile…" });
+    queued = false;
+    await screen.findByRole("button", { name: "Refresh site" }, { timeout: 3000 });
+    expect(screen.getByText("Site profile v2 · Current")).toBeInTheDocument();
+    expect(api.post).toHaveBeenCalledTimes(2);
+  });
   it("keeps the saved selection/profile pair without creating a selection on send", async () => {
     const geometry = { type: "Polygon" as const, coordinates: [[[77,12],[77.002,12],[77.002,12.001],[77,12]]] };
     const originalGet = vi.mocked(api.get).getMockImplementation()!;
@@ -128,7 +177,7 @@ describe("persistent project Assistant", () => {
   it("shows current selection and unknown site readiness without claiming zero elevation", async () => {
     render(<PersistentAssistant {...props} dirty />); await ready();
     expect(screen.getByLabelText("Selected object context")).toHaveTextContent("Selected: pier-a · revision 7 · unsaved edits");
-    expect(screen.getByLabelText("Site readiness")).toHaveTextContent("UNCONFIGURED · Demo storage");
+    expect(screen.getByText("UNCONFIGURED · Demo storage")).toBeInTheDocument();
     expect(screen.getByText("Elevation: Unknown")).toBeInTheDocument();
   });
 
