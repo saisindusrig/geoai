@@ -70,6 +70,9 @@ export default function WorkspacePage() {
 
   const [mapCreditsContainer, setMapCreditsContainer] = useState<HTMLDivElement | null>(null);
   const activeTool = useProjectStore(state => state.activeTool);
+  const drawnBoundary = useProjectStore(state => state.drawnBoundary);
+  const drawnAlignment = useProjectStore(state => state.drawnAlignment);
+  const pendingSave = useProjectStore(state => state.pendingSave);
   const measuring = useProjectStore(state => state.scene3dMeasureTool !== "none");
   const [buildingAssistantOpen, setBuildingAssistantOpen] = useState(false);
   const showBuildingJob = async (jobId: string, scenarioId?: number | null) => {
@@ -244,8 +247,8 @@ export default function WorkspacePage() {
           toolRail={<WorkspaceToolRail editor={modelEditor} />}
           mapToolbar={
             <div className="workspace-commandbar pointer-events-auto relative flex min-w-0 flex-wrap items-center gap-2">
-              {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative">
-                <Button className="h-10 gap-2 rounded-xl" onClick={() => setBuildingAssistantOpen(value => !value)}><Sparkles className="size-4" />AI Building Assistant</Button>
+              {project.project_type === "building" && !isPublicDemo && !isLocalSandbox && <div className="relative shrink-0">
+                <Button className="workspace-assistant-button h-10 shrink-0 gap-2 whitespace-nowrap rounded-xl" onClick={() => setBuildingAssistantOpen(value => !value)}><Sparkles className="size-4" />AI Building Assistant</Button>
                 {buildingAssistantOpen && <BuildingAssistant projectId={projectId} boundaryKey={JSON.stringify(project.boundary_geojson ?? null)} revisionId={modelEditor.baseRevision?.id ?? null} dirty={modelEditor.dirty} generating={generating} onStarted={showBuildingJob} onClose={() => setBuildingAssistantOpen(false)} />}
               </div>}
               <div className="flex items-center" title="Scene / Sun study">
@@ -308,6 +311,7 @@ export default function WorkspacePage() {
                     active={activeTool === "select" && !measuring && !modelEditor.loading && !modelEditor.document}
                     hasSite={Boolean(
                       project.boundary_geojson ||
+                      drawnBoundary || drawnAlignment || pendingSave ||
                       project.alignment_geojson ||
                       project.location_name ||
                       project.center_lat !== null ||

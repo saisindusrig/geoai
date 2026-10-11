@@ -58,7 +58,7 @@ describe("site data panel", () => {
 });
 
 function scene() {
-  const viewer = { isDestroyed: () => false, clock: { currentTime: "", shouldAnimate: false, multiplier: 1 }, scene: { globe: {}, verticalExaggeration: 2, requestRender: vi.fn() }, shadowMap: {} };
+  const viewer = { isDestroyed: () => false, clock: { currentTime: "", shouldAnimate: false, multiplier: 1 }, scene: { globe: {}, screenSpaceCameraController: {}, postUpdate: { addEventListener: vi.fn(() => vi.fn()) }, verticalExaggeration: 2, requestRender: vi.fn() }, shadowMap: {} };
   const Cesium = { JulianDate: { fromIso8601: (value: string) => value, toIso8601: () => "2026-10-03T09:30:00.000Z" }, ClockStep: { SYSTEM_CLOCK_MULTIPLIER: 1 }, ShadowMode: { DISABLED: 0, ENABLED: 1 }, Simon1994PlanetaryPositions: { computeSunPositionInEarthInertialFrame: () => ({}) }, Transforms: { computeIcrfToCentralBodyFixedMatrix: () => undefined } };
   return { viewer, Cesium };
 }

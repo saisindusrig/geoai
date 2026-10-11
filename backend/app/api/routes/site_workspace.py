@@ -259,4 +259,7 @@ def reject_memory(project_id:int,item_id:str,version:int,body:MemoryAction,acces
 def offline_platform_mode(project_id: int, access=Depends(scope)):
     from app.services.assistant.offline_platform import enabled, LABEL, EXAMPLE
     active = enabled()
-    return {"enabled": active, "label": LABEL if active else None, "example": EXAMPLE if active else None}
+    from app.core.config import settings
+    return {"enabled": active, "label": LABEL if active else None, "example": EXAMPLE if active else None,
+            "chatAvailable": settings.AI_PROVIDER != "mock" and bool(settings.NEBIUS_API_KEY),
+            "chatProvider": "nebius" if settings.AI_PROVIDER != "mock" and settings.NEBIUS_API_KEY else None}

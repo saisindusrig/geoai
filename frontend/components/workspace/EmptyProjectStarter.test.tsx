@@ -4,7 +4,18 @@ import { api } from "@/lib/api";
 import EmptyProjectStarter from "./EmptyProjectStarter";
 
 vi.mock("@/lib/api", () => ({ api: { get: vi.fn() } }));
-afterEach(() => { cleanup(); vi.resetAllMocks(); });
+afterEach(() => { cleanup(); vi.resetAllMocks(); sessionStorage.clear(); });
+it("keeps dismissed coaching hidden after reopening the workspace", async () => {
+  vi.mocked(api.get).mockResolvedValue({ isEmpty: true });
+  const view = render(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Site tools</p></EmptyProjectStarter>);
+  await screen.findByText("Start anywhere.");
+  fireEvent.click(screen.getByRole("button", { name: "Dismiss first-run actions" }));
+  view.unmount();
+  render(<EmptyProjectStarter projectId={1} active hasSite={false}><p>Site tools</p></EmptyProjectStarter>);
+  await waitFor(() => expect(api.get).toHaveBeenCalledTimes(2));
+  expect(screen.queryByRole("region", { name: "Empty project starter" })).not.toBeInTheDocument();
+  expect(screen.getByText("Site tools")).toBeInTheDocument();
+});
 it.each([["Ask GeoAI", "geoai:open-copilot"], ["Draw / select site", "geoai:open-drawing"]])("opens %s without blocking the workspace", async (label, event) => {
   vi.mocked(api.get).mockResolvedValue({ isEmpty: true });
   const action=vi.fn();window.addEventListener(event,action);

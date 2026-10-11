@@ -2,6 +2,7 @@
 
 import type { Viewer } from "cesium";
 import { useEffect, useState } from "react";
+import { useProjectStore } from "@/stores/projectStore";
 
 const axes = [
   { name: "X", color: "#ee465b", vector: [1, 0, 0], heading: 270, pitch: 0 },
@@ -14,6 +15,7 @@ export default function CameraGizmo({ viewer, Cesium, longitude, latitude }: {
   viewer: Viewer; Cesium: typeof import("cesium"); longitude: number; latitude: number;
 }) {
   const [points, setPoints] = useState<Endpoint[]>([]);
+  const underground = useProjectStore(state => state.undergroundView);
   useEffect(() => {
     if (viewer.isDestroyed()) return;
     const frame = Cesium.Transforms.eastNorthUpToFixedFrame(Cesium.Cartesian3.fromDegrees(longitude, latitude));
@@ -47,7 +49,7 @@ export default function CameraGizmo({ viewer, Cesium, longitude, latitude }: {
     const range = Math.max(50, Cesium.Cartesian3.distance(viewer.camera.positionWC, target));
     const selected = axes[axis];
     viewer.camera.flyToBoundingSphere(new Cesium.BoundingSphere(target, 1), {
-      offset: new Cesium.HeadingPitchRange(Cesium.Math.toRadians(selected.heading + (positive || axis === 2 ? 0 : 180)), Cesium.Math.toRadians(axis === 2 && !positive ? 90 : selected.pitch), range),
+      offset: new Cesium.HeadingPitchRange(Cesium.Math.toRadians(selected.heading + (positive || axis === 2 ? 0 : 180)), Cesium.Math.toRadians(axis === 2 && !positive ? 90 : axis !== 2 && !underground ? -5 : selected.pitch), range),
       duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : .6,
     });
   };
@@ -57,7 +59,7 @@ export default function CameraGizmo({ viewer, Cesium, longitude, latitude }: {
       {points.filter(point => point.positive).map(point => <line key={point.axis} x1="54" y1="54" x2={point.x} y2={point.y} stroke={axes[point.axis].color} strokeWidth="2" />)}
       <circle cx="54" cy="54" r="3" fill="#b8c3b9" />
     </svg>
-    {points.map(point => <button key={`${point.axis}-${point.positive}`} type="button" title={`${point.positive ? "+" : "−"}${axes[point.axis].name} view`} aria-label={`${point.positive ? "Positive" : "Negative"} ${axes[point.axis].name} axis view`} onClick={() => orient(point.axis, point.positive)}
+    {points.map(point => <button key={`${point.axis}-${point.positive}`} type="button" disabled={point.axis === 2 && !point.positive && !underground} title={point.axis === 2 && !point.positive && !underground ? "Enable explicit underground view to inspect from below" : `${point.positive ? "+" : "−"}${axes[point.axis].name} view`} aria-label={`${point.positive ? "Positive" : "Negative"} ${axes[point.axis].name} axis view`} onClick={() => orient(point.axis, point.positive)}
       className="absolute grid size-[20px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-[11px] font-bold transition-[filter,box-shadow] hover:brightness-125 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       style={{ left: point.x, top: point.y, border: `2px solid ${axes[point.axis].color}`, background: point.positive ? axes[point.axis].color : "#18221ad9", color: "#132017", boxShadow: "0 1px 4px #0005" }}>
       {point.positive ? axes[point.axis].name : ""}

@@ -101,7 +101,12 @@ async def process(db,p,run_id,provider=None):
     try:
         if provider is None:
             from app.services.assistant.offline_platform import provider_for_request
-            provider = provider_for_request(db, p, message) or NebiusProvider()
+            provider = provider_for_request(db, p, message)
+            if provider is None:
+                from app.core.config import settings
+                if settings.AI_PROVIDER == "mock":
+                    raise AssistantProviderError("AI_PROVIDER_UNAVAILABLE")
+                provider = NebiusProvider()
         async with asyncio.timeout(FLOW_TIMEOUT_SECONDS):
             preliminary=evaluate(message)
             from app.services.assistant.context_preflight import assert_current_model
