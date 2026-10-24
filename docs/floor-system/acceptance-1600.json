@@ -1,0 +1,11 @@
+{
+  "width": 1600,
+  "surface_picked": "slab-F2-B1",
+  "load_picked": "load:node:7",
+  "modes": 7,
+  "animation": true,
+  "isolated_floor": true,
+  "route_to_base": true,
+  "writes": [],
+  "errors": []
+}

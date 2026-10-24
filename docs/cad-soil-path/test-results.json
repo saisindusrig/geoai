@@ -1,0 +1,13 @@
+{
+  "regression_passed": 376,
+  "final_targeted_passed": 33,
+  "additional_sourced_cases": 4,
+  "typescript": "passed",
+  "eslint": "passed",
+  "actual_soil_analysis": "BLOCKED",
+  "geometry_changes": 0,
+  "paid_inference_calls": 0,
+  "browser_passed": 1,
+  "browser_duration_seconds": 19.2,
+  "original_rows_preserved": 9836
+}

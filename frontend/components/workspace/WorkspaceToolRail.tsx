@@ -19,10 +19,10 @@ type RailItem = {
 };
 
 const editTools: RailItem[] = [
-  { id: "select", label: "Select object", hint: "Select an object · V", icon: MousePointer2, mapTool: "select", editorTool: "select" },
-  { id: "move", label: "Move selection", hint: "Move selected objects · G", icon: Move3D, editorTool: "translate" },
-  { id: "rotate", label: "Rotate selection", hint: "Rotate selected objects · R", icon: RotateCw, editorTool: "rotate" },
-  { id: "scale", label: "Scale selection", hint: "Scale selected objects · S", icon: Scale3D, editorTool: "scale" },
+  { id: "select", label: "Select object", hint: "Click to select and inspect · Ctrl to add · V", icon: MousePointer2, mapTool: "select", editorTool: "select" },
+  { id: "move", label: "Move selection", hint: "Move selected objects · G · changes geometry; undo with Ctrl+Z", icon: Move3D, editorTool: "translate" },
+  { id: "rotate", label: "Rotate selection", hint: "Rotate selected objects · R · review local/global axes", icon: RotateCw, editorTool: "rotate" },
+  { id: "scale", label: "Scale selection", hint: "Scale selected objects · S · changes dimensions; engineering results may become stale", icon: Scale3D, editorTool: "scale" },
 ];
 
 const surveyTools: RailItem[] = [
@@ -97,7 +97,8 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
     const shortcut = (event: KeyboardEvent) => {
       if (event.defaultPrevented) return;
       const key = event.key.toLowerCase();
-      if (key === "escape") { if (!useProjectStore.getState().geometrySaving) useProjectStore.getState().cancelDrawing(); resetTools(); return; }
+      if (key === "escape" && (document.activeElement instanceof HTMLCanvasElement || drawing && event.target instanceof HTMLElement && event.target.closest('[aria-label="Drawing tool options"]'))) { if (!useProjectStore.getState().geometrySaving) useProjectStore.getState().cancelDrawing(); resetTools(); return; }
+      if (!(document.activeElement instanceof HTMLCanvasElement)) return;
       if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, [contenteditable]:not([contenteditable=false]), [role=dialog]")) return;
       if (event.ctrlKey || event.metaKey) {
         if (key === "z") {
@@ -125,7 +126,7 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
 
   const activate = (item: RailItem) => {
     resetTools();
-    if (item.mapTool) { activateTool(item.mapTool); setSurveyOpen(item.mapTool !== "select"); }
+    if (item.mapTool) { if (item.mapTool !== "select") window.dispatchEvent(new CustomEvent("geoai:presentation", { detail: "site" })); activateTool(item.mapTool); setSurveyOpen(item.mapTool !== "select"); }
     else if (item.editorTool) editor.setTool(item.editorTool);
   };
 
@@ -168,17 +169,17 @@ export default function WorkspaceToolRail({ editor }: { editor: EditableModelEdi
       </aside>
       {surveyOpen && drawing && <div aria-label="Drawing tool options" className="absolute left-20 top-44 z-40 w-52 space-y-2 border border-border bg-background-secondary p-3 shadow-xl">
         <p className="text-xs font-semibold">{surveyTools.find(item => item.mapTool === activeTool)?.label}</p>
-        <p className="text-[10px] text-muted-foreground">{activeTool.startsWith("edit-") ? "Drag yellow handles. Pan/zoom elsewhere. Enter finishes; Save boundary confirms." : "Click to place vertices. Enter or Finish drawing completes the shape; then confirm Save boundary. Esc cancels."}</p>
+        <p className="text-[10px] text-muted-foreground">{activeTool.startsWith("edit-") ? "Drag the white handles. Pan/zoom elsewhere. Enter finishes; Save boundary confirms." : activeTool === "draw-polygon" ? "Click corners, then click the blue first point to close. Enter also finishes; Save boundary confirms. Esc cancels." : activeTool === "draw-rectangle" ? "Click two opposite corners to complete the rectangle; then confirm Save boundary. Esc cancels." : "Click path points. Enter or Finish drawing completes the path. Esc cancels."}</p>
         <p className="text-[10px] text-muted-foreground">Approximate map positions · ground elevation unknown.</p>
         {activeTool === "draw-line" && <label className="flex cursor-pointer items-center gap-2 border border-border px-2 py-1.5 text-[10px] text-muted-foreground"><input type="checkbox" checked={smoothAlignment} onChange={event => useProjectStore.getState().setSmoothAlignment(event.target.checked)} />Smooth curve through points</label>}
         {!activeTool.startsWith("edit-") && <div className="flex items-center justify-between text-[10px]"><span>{vertices.length} vertices</span><button type="button" disabled={!vertices.length} className="text-primary disabled:opacity-35" onClick={() => useProjectStore.getState().popDrawVertex()}>Undo vertex</button></div>}
         <button type="button" disabled={vertices.length < (activeTool === "draw-polygon" || activeTool === "edit-boundary" ? 3 : 2)} className="block w-full border border-primary/30 bg-primary/15 px-2 py-1.5 text-xs text-primary disabled:opacity-35" onClick={() => window.dispatchEvent(new CustomEvent("geoai:finish-drawing"))}>Finish drawing</button>
         <button type="button" className="text-[10px] text-muted-foreground" onClick={() => { useProjectStore.getState().cancelDrawing(); resetTools(); }}>Cancel drawing · Esc</button>
       </div>}
-      {!drawing && !pendingSave && measureMode === "none" && editor.selectedIds.length > 0 && <div role="status" className="absolute left-20 top-44 z-40 w-52 space-y-2 border border-primary/25 bg-background-secondary p-3 text-xs">
+      {!drawing && !pendingSave && measureMode === "none" && editor.selectedIds.length > 0 && <div role="status" className="absolute left-20 top-3 z-40 w-64 space-y-1 rounded-lg border border-primary/25 bg-background-secondary px-3 py-2 text-xs">
         <p>{editor.selectedIds.length} selected · {editor.tool === "translate" ? "Move" : editor.tool}</p>
-        <p className="text-[10px] text-muted-foreground">Shift/Ctrl-click adds or removes. Click empty ground to clear. Map context keeps your selection.</p>
-        {hasEditableSelection ? <><p className="text-[10px]">Move: drag coloured axis handles, Esc cancels, Undo reverts. Step {stepMeters} m · conceptual local ENU.</p><div className="flex gap-2"><button onClick={() => editor.nudgeSelected(0, -stepMeters)} aria-label="Move west one step">E−</button><button onClick={() => editor.nudgeSelected(0, stepMeters)} aria-label="Move east one step">E+</button><button onClick={() => editor.nudgeSelected(1, stepMeters)} aria-label="Move north one step">N+</button></div></> : <p>Transforms unavailable: {selectionHint}.</p>}
+        <button className="text-primary" onClick={() => window.dispatchEvent(new Event("geoai:inspect-component"))}>Inspect selection</button>
+        {hasEditableSelection ? <><p className="text-[10px]">Step {stepMeters} m · Esc cancels · Ctrl+Z undoes</p><div className="flex gap-2"><button onClick={() => editor.nudgeSelected(0, -stepMeters)} aria-label="Move west one step">E−</button><button onClick={() => editor.nudgeSelected(0, stepMeters)} aria-label="Move east one step">E+</button><button onClick={() => editor.nudgeSelected(1, stepMeters)} aria-label="Move north one step">N+</button></div></> : <p>Transforms unavailable: {selectionHint}.</p>}
         <button onClick={() => editor.select(null)}>Clear selection</button>
       </div>}
       {measureOpen && measureMode !== "none" && <div aria-label="Measurement tools" className="absolute left-20 top-44 z-40 w-52 space-y-1 rounded-sm border border-border bg-background-secondary p-2 shadow-xl">

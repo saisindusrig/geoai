@@ -1,0 +1,12 @@
+{
+  "exact_before_after_row_schema_match": true,
+  "row_counts": {
+    "dev.db": 10283,
+    "assistant-history.db": 3
+  },
+  "changed_rows_schema_or_accounting": 0,
+  "original_manifest_requirements_launchers_unchanged": true,
+  "original_static_fixture_inputs_unchanged": true,
+  "cad_geometry_results": "Fresh original storage/proof/solver manifest comparison passed",
+  "global_path_node_npm_settings_changed": false
+}

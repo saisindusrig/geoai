@@ -1,0 +1,8 @@
+﻿"# PRELIMINARY PLANNING OUTPUT ONLY. All designs, dimensions, material estimates, costs, reinforcement assumptions, foundation depths, excavation quantities, and construction methodology are conceptual. They are NOT final structural drawings, NOT legal construction approval documents, and NOT a replacement for licensed civil/structural/geotechnical engineers, surveyors, architects, local authority approvals, or code compliance checks."
+item_code,item_name,category,quantity,unit,rate,amount,assumption
+EXC-SOIL,Foundation excavation,earthwork,3168.0,m3,250.0,792000.0,Assumed 8.0m deep open/pile foundation per pier
+CONC-M35,Structural concrete M35,concrete,2458.9,m3,8500.0,20900650.0,Deck/pier/cap/foundation massing approximation
+STEEL-FE500,Reinforcement steel,steel,393424,kg,75.0,29506800.0,160 kg/m3 preliminary factor
+FORMWORK,Formwork,concrete,9835.6,sqm,650.0,6393140.0,4 sqm per m3 factor
+ASPHALT,Wearing coat asphalt,road,198.1,m3,11000.0,2179100.0,80mm thickness
+BARRIER,Crash barriers (both sides),safety,412.79,m,3500.0,1444751.92,Both deck edges

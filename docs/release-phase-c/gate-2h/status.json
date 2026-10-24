@@ -1,0 +1,24 @@
+{
+  "phase": "Gate 2H",
+  "frontend_tests": 80,
+  "backend_tests": 71,
+  "typescript": true,
+  "scoped_eslint": true,
+  "default_turbopack_build": true,
+  "changed_prior_inputs": [
+    "frontend/lib/firebase-auth.ts"
+  ],
+  "unchanged_prior_inputs": 29,
+  "backend_and_launchers_unchanged": true,
+  "python_distributions_unchanged": 106,
+  "application_rows": 10283,
+  "assistant_history_rows": 3,
+  "original_storage_files": 55296,
+  "original_proof_files": 2090,
+  "solver_artifacts": 21,
+  "firebase_enabled": false,
+  "analytics_initialization_added": false,
+  "live_settings_accessed": false,
+  "real_authentication_tests": false,
+  "public_launch": "BLOCKED"
+}

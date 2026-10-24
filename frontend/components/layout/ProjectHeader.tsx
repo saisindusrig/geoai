@@ -71,8 +71,8 @@ export default function ProjectHeader({
 
 export function ProjectLoading({ message = "Loading project…" }: { message?: string }) {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-      <Loader2 className="h-7 w-7 animate-spin text-primary" />
+      <div role="status" aria-busy="true" className="flex-1 flex flex-col items-center justify-center gap-3 text-muted-foreground">
+        <Loader2 aria-hidden="true" className="h-7 w-7 animate-spin text-primary" />
       <p className="text-sm">{message}</p>
     </div>
   );
@@ -81,7 +81,7 @@ export function ProjectLoading({ message = "Loading project…" }: { message?: s
 export function ProjectError({ error, onRetry }: { error: string; onRetry?: () => void }) {
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-3 p-8 text-center">
-      <p className="text-sm text-destructive max-w-md">{error}</p>
+        <p role="alert" className="text-sm text-destructive max-w-md">{error}</p>
       {onRetry && (
         <button onClick={onRetry} className="text-sm text-primary hover:underline">
           Retry

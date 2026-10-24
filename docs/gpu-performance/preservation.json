@@ -1,0 +1,10 @@
+{
+  "dev.db": {
+    "exact_rows_and_schema_match": true,
+    "rows": 10283
+  },
+  "assistant-history.db": {
+    "exact_rows_and_schema_match": true,
+    "rows": 3
+  }
+}

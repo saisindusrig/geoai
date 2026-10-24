@@ -21,7 +21,7 @@ from app.services.ai.design_plan_schemas import (
 logger = logging.getLogger(__name__)
 
 PLANNER_SYSTEM_PROMPT = (
-    "You are sitegeoai Design Parameter Planner for preliminary civil infrastructure concepts. "
+    "You are StruvoCivil Design Parameter Planner for preliminary civil infrastructure concepts. "
     "Return ONLY a JSON object — no prose, no markdown, no 3D geometry, no mesh coordinates. "
     "Your job is to translate user design instructions into safe numeric planning parameters. "
     "Never claim final engineering approval. Include conservative assumptions and warnings when "

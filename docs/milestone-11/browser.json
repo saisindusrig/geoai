@@ -1,0 +1,120 @@
+[
+  {
+    "width": 1280,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  },
+  {
+    "width": 1600,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  },
+  {
+    "width": 390,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  },
+  {
+    "manifest": {
+      "name": "StruvoCivil",
+      "short_name": "StruvoCivil",
+      "description": "StruvoCivil — Model. Analyze. Design. A 3D civil and structural engineering workspace for modeling, analysis and design review. Engineering outputs require professional verification.",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#080C08",
+      "theme_color": "#080C08",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  }
+]

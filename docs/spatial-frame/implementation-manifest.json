@@ -1,0 +1,13 @@
+{
+  "backend/app/services/design/spatial_frame.py": "73fcf1516ea1c97bb340dcf795a56bc0e8fcda746ff05ab1d9f554e02e2fb2ef",
+  "backend/app/services/design/spatial_review.py": "f264aaa830aebedc0b2c71d47af9e63aa384dbae3c0d53efa162e52737238a22",
+  "backend/app/api/routes/spatial_frames.py": "62ddc315007ce5d3ebada2b2af7bc9a01de16f56b4038fa236e8a2d9e192a841",
+  "backend/app/main.py": "2e7402634b9cbdc4a2e68626943ad735f10f06e3274df7950b9008b4d89945c9",
+  "backend/tests/test_spatial_frame.py": "4d2898a53e20473b49799c0c2aff7d46db7cffd7580bcafba2c099fdce2178be",
+  "frontend/lib/spatial-visual.ts": "b8c5852f95bf075b92899655b7c477dcab6562d37f7cefbd809c3bba792ddb6b",
+  "frontend/lib/spatial-visual.test.ts": "a8b5ece97399b1d2615f8c8ccb8d28f2d6fb48c8c6d5016fa1db182a1804f003",
+  "frontend/components/model-editor/SpatialVisualPanel.tsx": "37c1f3b261cfa48b6a0d815f672379d5612b4ec35c32b6612cdc94efc5992b7e",
+  "frontend/components/model-editor/SpatialVisualPanel.test.tsx": "d48f2cf39aa37186eee2472d482addc7936e16c22ef0151a0d4b5c1de54f85ad",
+  "frontend/components/model-editor/ProfessionalModelEditor.tsx": "5f57d8f62701554976dc168bc4f1615af7d486a5243cb21a3bd41155b6002832",
+  "frontend/e2e/spatial-frame.spec.ts": "26d5362bcf4b7d5f97e7f27d4249626c6165529c9d7747cf618aedb8e3ba831e"
+}

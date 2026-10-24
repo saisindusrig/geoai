@@ -154,3 +154,34 @@ describe("compact project dashboard", () => {
     expect(screen.getByRole("button", { name: "New Project" })).toBeInTheDocument();
   });
 });
+
+
+it("optimistically moves metadata, prevents conflicts, and rolls back a failed save", async () => {
+  const project = { id: 77, name: "Audit project", project_type: "road", folder_id: null, updated_at: "2026-10-01T00:00:00Z" };
+  vi.mocked(api.get).mockImplementation(async url => url === "/api/projects" ? [project] : [{ id: 7, name: "Studies" }]);
+  let reject!: (error: Error) => void;
+  vi.mocked(api.put).mockImplementation(() => new Promise((_resolve, fail) => { reject = fail; }));
+  render(<DashboardPage />);
+  const options = await screen.findByRole("button", { name: "Project options for Audit project" });
+  await userEvent.click(options);
+  const move = screen.getAllByRole("button", { name: "Studies" }).at(-1)!;
+  await userEvent.click(move);
+  expect(options).toBeDisabled();
+  expect(options.closest("article")).toHaveTextContent("Studies");
+  fireEvent.click(options);
+  expect(api.put).toHaveBeenCalledTimes(1);
+  reject(new Error("Offline"));
+  expect(await screen.findByRole("alert")).toHaveTextContent("previous folder was restored");
+  expect(options.closest("article")).toHaveTextContent("Unfiled");
+  expect(options).toBeEnabled();
+});
+
+it("uses the server result after an optimistic move", async () => {
+  const project = { id: 77, name: "Audit project", project_type: "road", folder_id: null, updated_at: "2026-10-01T00:00:00Z" };
+  vi.mocked(api.get).mockImplementation(async url => url === "/api/projects" ? [project] : [{ id: 7, name: "Studies" }]);
+  vi.mocked(api.put).mockResolvedValue({ ...project, folder_id: 7, name: "Server name" });
+  render(<DashboardPage />);
+  await userEvent.click(await screen.findByRole("button", { name: "Project options for Audit project" }));
+  await userEvent.click(screen.getAllByRole("button", { name: "Studies" }).at(-1)!);
+  expect(await screen.findByRole("button", { name: "Project options for Server name" })).toBeEnabled();
+});

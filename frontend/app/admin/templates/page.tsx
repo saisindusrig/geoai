@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ContentSkeleton } from "@/components/ui/loading-feedback";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,21 +12,28 @@ import type { ProjectTemplate } from "@/lib/types";
 
 export default function TemplatesPage() {
   const { isAdmin, loading: authLoading } = useAuthUser();
+  const loadPending = useRef(false);
+  const [loading, setLoading] = useState(true);
   const [templates, setTemplates] = useState<ProjectTemplate[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [draftJson, setDraftJson] = useState("");
   const [error, setError] = useState("");
 
-  const load = useCallback(
-    () =>
-      api
-        .get<ProjectTemplate[]>("/api/admin/templates")
-        .then(setTemplates)
-        .catch((e) => setError(String(e.message ?? e))),
-    [],
-  );
+  const load = useCallback(async () => {
+    if (loadPending.current) return;
+    loadPending.current = true;
+    setLoading(true);
+    try {
+      const list = await api.get<ProjectTemplate[]>("/api/admin/templates");
+      setTemplates(list);
+      setError("");
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Could not load templates.");
+    } finally { loadPending.current = false; setLoading(false); }
+  }, []);
   useEffect(() => {
-    load();
+    const timer = window.setTimeout(() => void load(), 0);
+    return () => window.clearTimeout(timer);
   }, [load]);
 
   const startEdit = (t: ProjectTemplate) => {
@@ -56,7 +64,7 @@ export default function TemplatesPage() {
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-4xl mx-auto w-full px-6 py-8 space-y-5">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / administration</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / administration</p>
           <h1 className="mt-3 border-b border-border pb-5 text-[36px] font-medium tracking-[-0.045em]">Project Templates</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Default parameters applied when creating a new design for each project type.
@@ -66,7 +74,10 @@ export default function TemplatesPage() {
         {!authLoading && !isAdmin && (
           <p className="text-xs text-amber-600/90">Admin access is required to edit templates.</p>
         )}
-        {error && <p className="text-sm text-destructive">{error}</p>}
+        {loading && <ContentSkeleton label="Loading templates…" layout="rows" />}
+        {!loading && !error && templates.length === 0 && <p role="status" className="text-sm text-muted-foreground">No templates recorded yet.</p>}
+        {error && <Button variant="outline" disabled={loading} onClick={() => void load()}>Retry templates</Button>}
+        {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
 
         <div className="grid gap-3">
           {templates.map((t) => (

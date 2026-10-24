@@ -1,0 +1,13 @@
+{
+  "frontend/components/model-editor/GuidedAnalysisWorkflow.tsx": "4573738d75e730493114384c6157c9f9e1982b3a412a39cf142f159f5eb5aa20",
+  "frontend/components/model-editor/GuidedAnalysisWorkflow.test.tsx": "e71c7f33f49a251629dd649d2dc553470bd47f98927319eb355508f24e3aa641",
+  "frontend/components/model-editor/GuidedAnalysisResults.tsx": "7e79ec6decdfeb8f44004ed2e2a2e81371e07e7f18a5f70dddbb09a1a38e9310",
+  "frontend/components/model-editor/GuidedFrameInputs.tsx": "3fcbb65ba365de7a67cf72d44a7a773275f764ae67fead809379cda090b93031",
+  "frontend/components/model-editor/ProfessionalModelEditor.tsx": "ce42e8a96f13201a5b8d9375c3f15e8b23ea7e81ef30d7813866ddee5d42b27b",
+  "frontend/components/model-editor/PhysicalFramePanel.tsx": "df3be64626701bd57892f47e89e316301f32b6654bdf4b35ace31a8c6526ad9b",
+  "frontend/components/model-editor/FoundationSystemPanel.tsx": "2b3f2021e8eff2e750ce184be22e780ea77f113474f46b7d984b9f8397894f6d",
+  "frontend/lib/analysis-workflow.ts": "2bc666b2e92c7ca0713ffdf06b15a02d3096a2757e177dd76e47416e33534eb6",
+  "frontend/lib/analysis-workflow.test.ts": "96884f7b40d9469bab1fe17edc7906dfa77fe6313b613bc83cc3361c02e6983e",
+  "frontend/e2e/guided-analysis.spec.ts": "8063b0f3dea776ab8b15f42250707cafbe55e61487a18b18ac0d8f1a21d9636b",
+  "frontend/next.config.ts": "543dbca6d8ac33df1910d14cfc1efc3c9df9328e5e183dc23eb0bc39e3542fda"
+}

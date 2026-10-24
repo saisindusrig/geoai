@@ -1,0 +1,12 @@
+{
+  "os_architecture": "X64",
+  "process_architecture": "X64",
+  "archive_url": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-win-x64.zip",
+  "signed_manifest_url": "https://nodejs.org/dist/v24.22.1/SHASUMS256.txt.asc",
+  "signer_fingerprint": "5BE8A3F6C8A5C01D106C0AD820B1A390B168D356",
+  "key_source": "https://github.com/nodejs/release-keys",
+  "signature_verified": true,
+  "sha256_expected": "d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5",
+  "sha256_actual": "d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5",
+  "checksum_match": true
+}

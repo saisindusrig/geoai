@@ -1,0 +1,99 @@
+[
+  {
+    "width": 1280,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "width": 1600,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "width": 390,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "manifest": {
+      "name": "StruvoCivil",
+      "short_name": "StruvoCivil",
+      "description": "StruvoCivil — Model. Analyze. Design. A 3D civil and structural engineering workspace for modeling, analysis and design review. Engineering outputs require professional verification.",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#080C08",
+      "theme_color": "#080C08",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "original_rows_checked": 10143,
+  "missing": [],
+  "changed": [],
+  "added": {
+    "projects": 1,
+    "design_scenarios": 1,
+    "generated_files": 2,
+    "model_revisions": 2,
+    "engineering_analyses": 33
+  },
+  "copied_components_equal_source": true,
+  "component_count": 56,
+  "source_project": 800,
+  "review_project": 802,
+  "source_revision": 115,
+  "review_revision": 122,
+  "project_800_drawing_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+  "project_802_drawing_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18"
+}

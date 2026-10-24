@@ -60,6 +60,16 @@ class Settings(BaseSettings):
     NEBIUS_CHAT_MODEL: str = "nvidia/nemotron-3-super-120b-a12b"
     NEBIUS_FAST_MODEL: str = ""
     NEBIUS_PRIMARY_MODEL: str = ""
+    ENGINEERING_AI_MODE: str = "mock"
+    ENGINEERING_AI_BUDGET_APPROVED: bool = False
+    ENGINEERING_AI_BUDGET_USD: float = 0
+    NEBIUS_ENFORCE_AGENT_BUDGET: bool = False
+    # Site-wide assistant is opt-in; UI/model text cannot authorize spending.
+    ASSISTANT_INFERENCE_APPROVED: bool = False
+    ASSISTANT_BUDGET_USD: float = 0
+    ASSISTANT_DAILY_REQUESTS: int = 100
+    ASSISTANT_DAILY_TOKENS: int = 200000
+    ASSISTANT_HISTORY_DB: str = str(BACKEND_DIR / "assistant-history.db")
 
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_MODEL: str = "llama3.2"
@@ -67,10 +77,17 @@ class Settings(BaseSettings):
 
     APP_SECRET: str = "dev-secret-change-me"
     AUTH_REQUIRE_JWT: bool = False
+    # Opt-in only. Firebase mode never falls back to legacy JWT or mock identity.
+    FIREBASE_AUTH_ENABLED: bool = False
+    FIREBASE_PROJECT_ID: str = ""
+    # Certificate remains the existing default. ADC is reserved and fail-closed
+    # until a separately reviewed workload identity source can be pinned.
+    FIREBASE_AUTH_CREDENTIAL_MODE: str = "certificate"
+    FIREBASE_AUTH_CREDENTIALS_FILE: str = ""
     ACCESS_TOKEN_TTL_SECONDS: int = 3600
     DEV_MOCK_USER_ROLE: str = "admin"
     ENVIRONMENT: str = "development"
-    NEXT_PUBLIC_APP_URL: str = "http://localhost:3000"
+    NEXT_PUBLIC_APP_URL: str = "http://localhost:3001"
     # Comma-separated extra browser origins (custom domains, staging URLs).
     CORS_ALLOWED_ORIGINS: str = ""
     # Allow https://*.netlify.app (production + preview deploys).

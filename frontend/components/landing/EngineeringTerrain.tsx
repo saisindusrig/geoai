@@ -270,9 +270,9 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
     <ambientLight intensity={1.2}/><directionalLight position={[-8, 15, 9]} intensity={2.7} color="#efe3bf"/>
     <mesh ref={ground} geometry={resources.geo} material={resources.mat}/>
     <mesh ref={riverMesh} geometry={resources.river}><meshStandardMaterial color="#365e61" roughness={.35} metalness={.5} side={THREE.DoubleSide}/></mesh>
-    <group ref={boundary}><mesh geometry={resources.edge}><meshBasicMaterial color="#c8ff32" transparent opacity={.65} side={THREE.DoubleSide}/></mesh></group>
+    <group ref={boundary}><mesh geometry={resources.edge}><meshBasicMaterial color="#b7c3aa" transparent opacity={.65} side={THREE.DoubleSide}/></mesh></group>
     <group ref={alternatives}>{resources.alt.map((g, i) => <mesh geometry={g} key={i}><meshBasicMaterial color="#c5c5ae" transparent opacity={.35} side={THREE.DoubleSide}/></mesh>)}</group>
-    <group ref={road} scale={[1,.001,1]}><RoadStructure/><mesh geometry={resources.roadShoulder}><meshStandardMaterial color="#7b7d66" roughness={1} side={THREE.DoubleSide}/></mesh><mesh geometry={resources.groundRoad}><meshStandardMaterial color="#343b3c" side={THREE.DoubleSide}/></mesh><mesh geometry={resources.roadLine}><meshBasicMaterial color="#c8ff32" side={THREE.DoubleSide}/></mesh>{resources.roadEdges.map((g,i)=><mesh key={i} geometry={g}><meshBasicMaterial color="#d6d9c8" side={THREE.DoubleSide}/></mesh>)}</group>
+    <group ref={road} scale={[1,.001,1]}><RoadStructure/><mesh geometry={resources.roadShoulder}><meshStandardMaterial color="#7b7d66" roughness={1} side={THREE.DoubleSide}/></mesh><mesh geometry={resources.groundRoad}><meshStandardMaterial color="#343b3c" side={THREE.DoubleSide}/></mesh><mesh geometry={resources.roadLine}><meshBasicMaterial color="#b7c3aa" side={THREE.DoubleSide}/></mesh>{resources.roadEdges.map((g,i)=><mesh key={i} geometry={g}><meshBasicMaterial color="#d6d9c8" side={THREE.DoubleSide}/></mesh>)}</group>
     <group ref={bridge} scale={[1,.001,1]}>
       <group ref={bridgeDeck}>
       <mesh geometry={resources.bridgeRoad}><meshStandardMaterial color="#343b3c" roughness={.95} side={THREE.DoubleSide}/></mesh>
@@ -297,8 +297,8 @@ function Landscape({ state, pointer }: { state: TerrainState; pointer: React.Ref
       <mesh geometry={resources.reservoir}><meshStandardMaterial color="#3c6566" roughness={.22} metalness={.35} transparent opacity={.88} side={THREE.DoubleSide}/></mesh>
       {resources.waterBoundary.map((g,i)=><mesh key={i} geometry={g}><meshBasicMaterial color="#7daaa1" transparent opacity={.55} side={THREE.DoubleSide}/></mesh>)}
     </group>
-    <mesh ref={alignment} geometry={resources.line} position={[0,.05,0]}><meshBasicMaterial color="#c8ff32" transparent opacity={0} side={THREE.DoubleSide}/></mesh>
-    <group ref={nodes}>{[[-10,2],[-5,-6],[7,5],[11,-5]].map(([x,z],i)=><group key={i} position={[x,height(x,z)+.08,z]}><mesh rotation={[-Math.PI/2,0,0]}><ringGeometry args={[.15,.18,24]}/><meshBasicMaterial color="#d6dfb9" side={THREE.DoubleSide}/></mesh><mesh><sphereGeometry args={[.04,8,8]}/><meshBasicMaterial color="#c8ff32"/></mesh></group>)}</group>
+    <mesh ref={alignment} geometry={resources.line} position={[0,.05,0]}><meshBasicMaterial color="#b7c3aa" transparent opacity={0} side={THREE.DoubleSide}/></mesh>
+    <group ref={nodes}>{[[-10,2],[-5,-6],[7,5],[11,-5]].map(([x,z],i)=><group key={i} position={[x,height(x,z)+.08,z]}><mesh rotation={[-Math.PI/2,0,0]}><ringGeometry args={[.15,.18,24]}/><meshBasicMaterial color="#d6dfb9" side={THREE.DoubleSide}/></mesh><mesh><sphereGeometry args={[.04,8,8]}/><meshBasicMaterial color="#b7c3aa"/></mesh></group>)}</group>
   </>;
 }
 
@@ -308,7 +308,7 @@ class SceneBoundary extends Component<{ children: ReactNode; fallback: ReactNode
   render() { return this.state.failed ? this.props.fallback : this.props.children; }
 }
 export default function EngineeringTerrain({ state, pointer }: { state: TerrainState; pointer: React.RefObject<{x: number; y: number}> }) {
-  const fallback = <div className="geo-scene-fallback"><svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{Array.from({length:35},(_,i)=><path key={i} d={`M0 ${350+i*14} Q250 ${60+i*20} 490 ${300+i*12} T900 ${200+i*18} T1500 ${100+i*20}`} fill="none" stroke="#718164" strokeOpacity=".4"/>)}<path d="M0 700 Q450 600 780 470 T1400 500" fill="none" stroke="#c8ff32" strokeWidth="2"/></svg><span>Illustrative terrain · 3D view unavailable</span></div>;
+  const fallback = <div className="geo-scene-fallback"><svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{Array.from({length:35},(_,i)=><path key={i} d={`M0 ${350+i*14} Q250 ${60+i*20} 490 ${300+i*12} T900 ${200+i*18} T1500 ${100+i*20}`} fill="none" stroke="#718164" strokeOpacity=".4"/>)}<path d="M0 700 Q450 600 780 470 T1400 500" fill="none" stroke="#b7c3aa" strokeWidth="2"/></svg><span>Illustrative terrain · 3D view unavailable</span></div>;
   return <SceneBoundary fallback={fallback}><Canvas frameloop="demand" dpr={[1,1.5]} camera={{ position:[15,12.5,18], fov:47, near:.1, far:100 }} gl={{ antialias:true, alpha:true, powerPreference:"high-performance" }} fallback={fallback}><Landscape state={state} pointer={pointer}/></Canvas></SceneBoundary>;
 }
 

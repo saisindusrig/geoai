@@ -1,0 +1,19 @@
+{
+  "backend_tests_passed": 179,
+  "new_3d_tests_passed": 22,
+  "browser_workflows_passed": 3,
+  "tests": [
+    "anchor-contact-3d.spec.ts",
+    "anchor-contact-3d-regression.spec.ts",
+    "anchor-contact-3d-review.spec.ts"
+  ],
+  "typescript": "PASS",
+  "targeted_eslint": "PASS",
+  "project_id": 787,
+  "analysis_id": 351,
+  "revision_id": 91,
+  "source_interface_analysis_id": 315,
+  "actual_project_status": "BLOCKED_MISSING_MECHANICS",
+  "engineering_approval": "DISABLED",
+  "paid_inference_calls": 0
+}

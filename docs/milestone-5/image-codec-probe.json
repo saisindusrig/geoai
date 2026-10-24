@@ -1,0 +1,10 @@
+{
+  "next": "16.4.2",
+  "sharp": "0.35.5",
+  "libvips": "8.18.7",
+  "heif": "1.23.5",
+  "avif_input_to_webp": true,
+  "png_to_avif": true,
+  "svg_optimizer_rejected_by_default": true,
+  "malicious_payloads_executed": false
+}

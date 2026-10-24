@@ -1,0 +1,17 @@
+
+ RUN  v3.2.7 D:/layout project/frontend
+
+ ✓ components/workspace/PersistentAssistant.test.tsx (22 tests) 3635ms
+   ✓ persistent project Assistant > keeps preferences and full requirement counts out of the normal conversation  674ms
+   ✓ persistent project Assistant > settles a running profile to Current without a second refresh  1600ms
+ ✓ hooks/usePointerResize.test.tsx (1 test) 20ms
+ ✓ lib/api-transport.test.ts (2 tests) 8ms
+ ✓ lib/engineering-guidance.test.ts (3 tests) 4ms
+ ✓ lib/api-read-retry.test.ts (4 tests) 6ms
+ ✓ lib/engineering-presentation.test.ts (3 tests) 3ms
+
+ Test Files  6 passed (6)
+      Tests  35 passed (35)
+   Start at  11:14:47
+   Duration  8.92s (transform 253ms, setup 382ms, collect 565ms, tests 3.68s, environment 3.14s, prepare 393ms)
+

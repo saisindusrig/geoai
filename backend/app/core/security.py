@@ -42,7 +42,16 @@ def decode_token(token: str) -> int:
 def get_current_user_id(
     authorization: str | None = Header(default=None),
     x_mock_user_id: int | None = Header(default=None),
+    db: Session = Depends(get_db),
 ) -> int:
+    if settings.FIREBASE_AUTH_ENABLED:
+        from app.core.firebase_auth import verify_identity
+        from app.services.identity_links import resolve_link
+        if not settings.AUTH_REQUIRE_JWT:
+            raise HTTPException(503, 'Firebase authentication requires enforced authentication')
+        if not authorization or not authorization.lower().startswith('bearer '):
+            raise HTTPException(401, 'Firebase identity token required')
+        return resolve_link(db, verify_identity(authorization.split(' ', 1)[1].strip()))
     if authorization and authorization.lower().startswith("bearer "):
         token = authorization.split(" ", 1)[1].strip()
         return decode_token(token)
@@ -63,7 +72,7 @@ def get_current_user(
     user = db.get(User, user_id)
     if user is not None:
         return user
-    if settings.AUTH_REQUIRE_JWT:
+    if settings.AUTH_REQUIRE_JWT or settings.FIREBASE_AUTH_ENABLED:
         raise HTTPException(401, "User not found")
     return User(
         id=user_id,

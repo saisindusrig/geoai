@@ -1,0 +1,9 @@
+{
+  "physical_dependency_files": 64116,
+  "physical_dependency_bytes": 1124661861,
+  "junctions_or_symlinks": [],
+  "seconds": 82.34,
+  "normal_next_config_exact": true,
+  "credentials_excluded": true,
+  "package_install": false
+}

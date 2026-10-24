@@ -1,0 +1,17 @@
+{
+  "node": "v24.22.1",
+  "next": "16.4.2",
+  "react": "19.2.4",
+  "firebase": "13.1.0",
+  "engineEntries": 488,
+  "installedFailures": [],
+  "uninstalledNonmatchingEntries": [
+    {
+      "path": "node_modules/@img/sharp-win32-ia32",
+      "version": "0.35.5",
+      "range": "^20.9.0",
+      "installed": false,
+      "satisfied": false
+    }
+  ]
+}

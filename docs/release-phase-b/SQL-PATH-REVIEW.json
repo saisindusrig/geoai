@@ -1,0 +1,23 @@
+{
+  "scope": "Focused existing bound-query paths; not an exhaustive SQL audit or PostgreSQL role qualification.",
+  "paths": [
+    {
+      "path": "backend/app/api/routes/auth.py",
+      "protection": "User.email ORM filter binds the normalized address; test_sql_payload_does_not_authenticate_or_modify_users exercises SQL-looking input without modifying user records."
+    },
+    {
+      "path": "backend/app/api/routes/projects.py",
+      "protection": "get_owned_project checks owner; PostGIS UPDATE uses :gj and :id with parameter dict."
+    },
+    {
+      "path": "backend/app/services/survey/project_helpers.py",
+      "protection": "sync_layer_postgis uses fixed UPDATE with :gj, :srid, :id parameter dictionary."
+    },
+    {
+      "path": "backend/app/api/routes/admin_usage.py",
+      "protection": "Admin dependency plus ORM filters and constrained limit/offset."
+    }
+  ],
+  "confirmed_sql_injection_found": false,
+  "engineering_SQL_or_methods_changed": false
+}

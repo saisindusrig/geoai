@@ -6,7 +6,7 @@ test("homepage workflow, system switching and FAQ support keyboard review", asyn
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Real terrain.");
-  await expect(page.getByRole("link", { name: "Launch GeoAI" }).first()).toHaveAttribute("href", /projects|login/);
+  await expect(page.getByRole("link", { name: "Launch StruvoCivil" }).first()).toHaveAttribute("href", /projects|login/);
   await expect(page.locator("canvas")).toBeVisible();
   const workflow = page.getByRole("tablist", { name: "Site to concept workflow" });
   await workflow.getByRole("tab", { name: "01 Site" }).click();
@@ -24,10 +24,10 @@ test("homepage workflow, system switching and FAQ support keyboard review", asyn
   await expect(page.locator("canvas")).toHaveCount(1);
   await page.getByRole("button", { name: /Can I use my own survey data/ }).click();
   await expect(page.locator("#faq-answer-1")).toBeVisible();
-  await page.getByRole("button", { name: /Are GeoAI measurements engineering-grade/ }).click();
+  await page.getByRole("button", { name: /Are StruvoCivil measurements engineering-grade/ }).click();
   await expect(page.locator("#faq-answer-1")).toBeHidden();
   await expect(page.locator("#faq-answer-2")).toBeVisible();
-  await page.getByRole("link", { name: "GeoAI home", exact: true }).click();
+  await page.getByRole("link", { name: "StruvoCivil home", exact: true }).click();
   await page.screenshot({ path: "test-results/homepage-desktop.png" });
 });
 
@@ -45,7 +45,7 @@ for (const width of [390, 768]) {
       const overflow = await section.evaluate(el => el.scrollWidth > el.clientWidth + 1);
       expect(overflow, `${id} should not overflow`).toBe(false);
     }
-    await page.getByRole("link", { name: "GeoAI home", exact: true }).click();
+    await page.getByRole("link", { name: "StruvoCivil home", exact: true }).click();
     await page.screenshot({ path: `test-results/homepage-${width}.png` });
   });
 }

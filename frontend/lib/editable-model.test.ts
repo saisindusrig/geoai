@@ -20,6 +20,13 @@ const project: Project = {
 };
 
 describe("editable model documents", () => {
+  it("keeps excluded visual concept quantities unknown", () => {
+    const document = documentFromGeometrySpec(project, 12, {
+      objects: [{ kind: "box", name: "Slab", layer: "slab", size: [5, 3, .2], center: [0, 0, 3] }],
+    });
+    document.components[0].quantity = { included: false };
+    expect(estimateDocument(document)).toBeNull();
+  });
   it("creates stable semantic components from generated geometry", () => {
     const document = documentFromGeometrySpec(project, 12, {
       frame: "local_meters",
@@ -41,4 +48,9 @@ describe("editable model documents", () => {
     expect(impact?.quantities.concrete_m3).toBe(100);
     expect(impact?.total_cost_estimate).toBeGreaterThan(0);
   });
+});
+
+it('retains XYZ box rotations in a geometry spec instead of silently reducing tilt to yaw',()=>{
+ const doc=documentFromGeometrySpec(project,12,{objects:[{kind:'box',name:'Tilted beam',layer:'beam',size:[5,.3,.45],center:[0,0,3],rotation_z_deg:30,rotation_deg:[10,20,30]}]});
+ expect(doc.components[0].transform.rotation_deg).toEqual([10,20,30]);
 });

@@ -1,0 +1,41 @@
+{
+  "files": {
+    "frontend/package.json": "9ee5b95706afad7216c53bd22feef9386139d01f93d824d6e74030c3ccd6bbda",
+    "frontend/package-lock.json": "c7e2cfbe2b15b4a446406750cd7c7ebbb73d66ccc8c591f8cf5e70eb362d3dfb",
+    "frontend/next.config.ts": "543dbca6d8ac33df1910d14cfc1efc3c9df9328e5e183dc23eb0bc39e3542fda",
+    "frontend/node_modules/next/package.json": "d80d1672ce2b502402340e6c5aa8fa99449db3ccda705e864bfbb1e91df7999e",
+    "frontend/node_modules/eslint-config-next/package.json": "0ea4326eb9441b95dfd0f1b6275c643cd5ec76a96c4f654fe720ab4e5d7525b4",
+    "frontend/node_modules/@next/bundle-analyzer/package.json": "732730b3ff3f2674d529e031a76d5be2c6159edffc06a313cc494112e08b2d2d"
+  },
+  "versions": {
+    "next": {
+      "declared": "16.2.9",
+      "locked": "16.2.9",
+      "installed": "16.2.9"
+    },
+    "eslint-config-next": {
+      "declared": "16.2.9",
+      "locked": "16.2.9",
+      "installed": "16.2.9"
+    },
+    "@next/bundle-analyzer": {
+      "declared": "^16.2.9",
+      "locked": "16.2.9",
+      "installed": "16.3.6"
+    },
+    "react": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    },
+    "react-dom": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    }
+  },
+  "node": "22.18.0",
+  "npm": "10.9.3",
+  "public_repository_compared": false,
+  "local_checkout_authoritative": true
+}

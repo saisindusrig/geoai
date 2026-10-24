@@ -1,0 +1,44 @@
+[
+  {
+    "elapsed": 0.01,
+    "processes": 1,
+    "rss": 2646016,
+    "cpu_seconds": 0.0
+  },
+  {
+    "elapsed": 5.03,
+    "processes": 5,
+    "rss": 430510080,
+    "cpu_seconds": 1.45
+  },
+  {
+    "elapsed": 10.04,
+    "processes": 7,
+    "rss": 2332631040,
+    "cpu_seconds": 44.47
+  },
+  {
+    "elapsed": 15.05,
+    "processes": 7,
+    "rss": 2632318976,
+    "cpu_seconds": 64.62
+  },
+  {
+    "elapsed": 20.06,
+    "processes": 8,
+    "rss": 1395658752,
+    "cpu_seconds": 77.95
+  },
+  {
+    "elapsed": 25.07,
+    "processes": 8,
+    "rss": 1914572800,
+    "cpu_seconds": 86.61
+  },
+  {
+    "elapsed": 30.07,
+    "processes": 8,
+    "rss": 2043252736,
+    "cpu_seconds": 93.06
+  }
+]

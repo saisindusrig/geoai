@@ -1,0 +1,9 @@
+{
+  "backend_admin_sdk_installed": false,
+  "browser_sdk_installed": false,
+  "firebase_flag_enabled": false,
+  "project_id_configured": false,
+  "credential_path_configured": false,
+  "original_database_has_link_schema": false,
+  "no_live_verification_attempted": true
+}

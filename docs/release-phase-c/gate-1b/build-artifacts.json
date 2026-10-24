@@ -1,0 +1,20 @@
+{
+  "turbopack": {
+    "build_id": "mos8UQlb0mo12liENCJng",
+    "files": {
+      "BUILD_ID": "f3b4ea1eb1d8c1909c84d3505a0f3f1a786089d2c13ce73fd90694dedce2502c",
+      "build-manifest.json": "50330ae887adb6b6ec3aa7c127c4555f3809eaf7115c6ee431c3f12834a506ed",
+      "routes-manifest.json": "6fc604c73c73d7259b1d066adfd843066c9e09ff1fa52f9edf86c16acb4d7cf5",
+      "required-server-files.json": "4e2e077baefc4ed847c269f0e6c98831bbe712f50857afd7d24a36c7cb58bb00"
+    }
+  },
+  "webpack": {
+    "build_id": "_AoAmzjy3Cl8tsoPJAMAM",
+    "files": {
+      "BUILD_ID": "5aad9de4e9a2cb734b0c569588e50ede3163a3bf71a935b8285914f58a3e1613",
+      "build-manifest.json": "4ba2b62e2bd2e8ace195b3a33f1c9294f812c02877cd71fe8fc165f041621b73",
+      "routes-manifest.json": "6fc604c73c73d7259b1d066adfd843066c9e09ff1fa52f9edf86c16acb4d7cf5",
+      "required-server-files.json": "556e9966afca8994cfd05db82f6b53203af6e83daa8eeb3aa2913ccb0a6aa413"
+    }
+  }
+}

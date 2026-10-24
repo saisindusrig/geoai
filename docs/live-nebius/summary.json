@@ -1,0 +1,15 @@
+{
+  "live_calls": 22,
+  "estimated_usd": 0.2928594,
+  "prompt_tokens": 201002,
+  "completion_tokens": 46813,
+  "unknown_reservations_usd": 0,
+  "native_function_calls": 6,
+  "failed_response_validation": 7,
+  "billing_charge": "Unknown; estimates are not provider billing receipts",
+  "accepted_responses": 13,
+  "rejected_responses": 9,
+  "total_tokens": 247815,
+  "testing_stopped": true,
+  "backend_tests_passed": 81
+}

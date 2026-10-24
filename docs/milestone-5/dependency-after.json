@@ -1,0 +1,36 @@
+{
+  "versions": {
+    "next": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "eslint-config-next": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "@next/bundle-analyzer": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "react": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    },
+    "react-dom": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    },
+    "sharp": {
+      "declared": null,
+      "locked": "0.35.5",
+      "installed": "0.35.5"
+    }
+  },
+  "package_sha256": "69fafd280c9721646fa4f17e09dfeb64ad42029f9512bd3bc40e0ad65cd7731e",
+  "lock_sha256": "1bd0e91b0ff077fd148aa87e5e6ecabc0149c3d68cd46892415ad1d4edb0db44"
+}

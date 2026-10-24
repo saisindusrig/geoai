@@ -1,0 +1,1872 @@
+[
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 707,
+    "text": ".geoai-chat { background: #080c08; color: #f2f3ed; font-family: var(--font-sans); font-size: 14px; letter-spacing: -.01em; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 708,
+    "text": ".geoai-chat > header { padding: 4px 18px 8px; border: 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 709,
+    "text": ".geoai-chat > header h2 { font-size: 13px; font-weight: 500; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 710,
+    "text": ".geoai-chat > header span { border: 0; color: #97a58d; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 711,
+    "text": ".geoai-chat [aria-label=\"Site readiness\"] { font-size: 10px; color: #97a58d; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 712,
+    "text": ".geoai-chat .chat-context { font-size: 11px; color: #97a58d; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 713,
+    "text": ".geoai-chat .chat-context > summary { cursor: pointer; padding: 4px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 714,
+    "text": ".geoai-chat .chat-context details { border: 0; padding: 6px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 715,
+    "text": ".geoai-chat [role=\"log\"] { padding: 18px; scrollbar-width: thin; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 716,
+    "text": ".geoai-chat [role=\"log\"]:has(.chat-welcome) { display: flex; flex-direction: column; justify-content: center; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 717,
+    "text": ".geoai-chat .chat-welcome { padding: 0; margin: 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 718,
+    "text": ".geoai-chat .chat-welcome h3 { font-size: 21px; line-height: 1.35; font-weight: 450; letter-spacing: -.035em; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 719,
+    "text": ".geoai-chat .chat-welcome p { margin-top: 10px; font-size: 12px; color: #97a58d; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 720,
+    "text": ".geoai-chat .chat-availability { margin-top: 22px; font-size: 11px; line-height: 1.7; color: #97a58d; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 721,
+    "text": ".geoai-chat .chat-availability button { margin-top: 12px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 722,
+    "text": ".geoai-chat [aria-label=\"Your message\"] { background: transparent; border: 0; border-radius: 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 723,
+    "text": ".geoai-chat [aria-label=\"Proposal review\"] { border: 0; border-radius: 0; padding: 8px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 724,
+    "text": ".geoai-chat article time { display: none; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 725,
+    "text": ".geoai-chat [aria-label=\"Request progress\"] { background: transparent; border: 0; padding: 4px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 726,
+    "text": ".app-canvas .geoai-chat button:not(.chat-send) { background: transparent; border-color: #ffffff12; color: #b7c3aa; box-shadow: none; text-transform: none; letter-spacing: normal; font-family: inherit; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 727,
+    "text": ".app-canvas .geoai-chat button:not(.chat-send):hover { background: #ffffff08; color: #fff; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 728,
+    "text": ".geoai-chat > div:last-child { background: transparent; padding: 10px 14px 14px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 729,
+    "text": ".geoai-chat .chat-composer { background: #080c08; border: 1px solid #ffffff14; border-radius: 18px; padding: 8px; transition: border-color .15s; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 730,
+    "text": ".geoai-chat .chat-composer:focus-within { border-color: #ffffff35; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 731,
+    "text": ".app-canvas .geoai-chat .chat-composer textarea { border: 0; border-radius: 0; background: transparent; box-shadow: none; outline: none; font-family: inherit; font-size: 13px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 732,
+    "text": ".app-canvas .geoai-chat .chat-send { border-radius: 50%; background: #f2f3ed; color: #080c08; border: 0; box-shadow: none; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 733,
+    "text": ".geoai-chat .chat-send:disabled { opacity: .3; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 736,
+    "text": ".geoai-chat > .copilot-header { padding: 16px 18px; border-bottom: 1px solid #ffffff0c; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 737,
+    "text": ".geoai-chat > .copilot-header h2 { font-size: 14px; font-weight: 550; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 738,
+    "text": ".geoai-chat article[aria-label=\"Your message\"] { margin-left: 28px; padding: 10px 14px; background: #0d120d; border-radius: 14px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 739,
+    "text": ".geoai-chat [aria-label=\"Assistant message\"] { padding: 8px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 741,
+    "text": ".app-canvas .geoai-chat button.copilot-primary-action { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 9px 14px; border: 1px solid #f2f3ed; border-radius: 8px; background: #f2f3ed; color: #080c08; font: inherit; font-size: 12px; font-weight: 550; text-transform: none; letter-spacing: 0; box-shadow: none; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 743,
+    "text": ".app-canvas .geoai-chat button.copilot-primary-action:hover { background: #f2f3ed; color: #080c08; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 746,
+    "text": ".geoai-chat summary:focus-visible, .copilot-primary-action:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 895,
+    "text": ".geoai-chat [role=\"log\"] { overscroll-behavior: contain; overflow-wrap: anywhere; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 896,
+    "text": ".geoai-chat [aria-label=\"Your message\"] { background: #0d120d; border-radius: 14px; padding: 12px 14px; margin-left: 20px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 897,
+    "text": ".geoai-chat [aria-label=\"Assistant message\"] { padding: 12px 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 898,
+    "text": ".geoai-chat [role=\"log\"] > article + article { margin-top: 16px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 899,
+    "text": ".geoai-chat .chat-context { max-height: 30%; overflow-y: auto; flex-shrink: 0; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 900,
+    "text": ".geoai-chat .chat-composer textarea { line-height: 1.6; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 901,
+    "text": ".geoai-chat .chat-welcome h3 { font-size: 20px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 910,
+    "text": "  .geoai-chat [role=\"log\"] { padding: 14px; }"
+  },
+  {
+    "file": "frontend\\app\\globals.css",
+    "line": 911,
+    "text": "  .geoai-chat > div:last-child { padding: 8px 10px 12px; }"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 91,
+    "text": "    window.addEventListener(\"geoai:presentation\", onPresentation);"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 92,
+    "text": "    window.addEventListener(\"geoai:presentation-view\", onPresentation);"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 93,
+    "text": "    window.addEventListener(\"geoai:inspector-view\", onInspector);"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 94,
+    "text": "    return () => { window.removeEventListener(\"geoai:presentation\", onPresentation); window.removeEventListener(\"geoai:presentation-view\", onPresentation); window.removeEventListener(\"geoai:inspector-view\", onInspector); };"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 217,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:open-copilot\"));"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 266,
+    "text": "            <button aria-current={workflowStep === \"site\" && !importOpen && !createMenuOpen ? \"step\" : undefined} className={workflowClass} onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:presentation\", { detail: \"site\" }))}>1 Site</button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 267,
+    "text": "            <details className=\"relative\"><summary className=\"cursor-pointer list-none rounded px-2 py-2 hover:bg-white/10\">Workflow help</summary><div className=\"absolute left-0 top-full z-50 w-72 space-y-2 rounded border border-border bg-background p-3 text-xs\"><p>Open Create / Import to review a source drawing. Review 3D, then click a member to inspect its dimensions.</p><p>Edit fields \u2192 Preview \u2192 Apply \u2192 Save model. Undo and Redo reverse applied edits before saving.</p><p>Analyze / Results opens existing engineering tasks and evidence. Solver verification applies only to the stated numerical model; unsupported checks stay unverified.</p><p>Save site geometry stores boundary and alignment. Save model stores 3D component revisions.</p></div></details><details className=\"group relative\" onToggle={event => setCreateMenuOpen(event.currentTarget.open)}><summary aria-current={importOpen || createMenuOpen ? \"step\" : undefined} className={`${workflowClass} cursor-pointer list-none group-open:border-primary/30 group-open:bg-primary/15 group-open:text-primary`}>2 Create / Import</summary><div onClick={event=>event.currentTarget.closest(\"details\")?.removeAttribute(\"open\")} className=\"absolute left-0 top-full z-50 w-52 rounded-lg border border-border bg-background p-2\"><button className=\"block w-full rounded p-2 text-left hover:bg-white/10\" onClick={() => window.dispatchEvent(new Event(\"geoai:open-site-assistant\"))}>Ask Assistant</button><button className=\"block w-full rounded p-2 text-left hover:bg-white/10\" onClick={() => { window.dispatchEvent(new CustomEvent(\"geoai:presentation\", { detail: \"site\" })); setImportOpen(true); }}>Import site geometry</button><button className=\"block w-full rounded p-2 text-left hover:bg-white/10\" onClick={() => window.dispatchEvent(new Event(\"geoai:show-analysis\"))}>Review CAD drawing</button></div></details>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 268,
+    "text": "            <button aria-current={workflowStep === \"model\" && !importOpen && !createMenuOpen ? \"step\" : undefined} className={workflowClass} onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:presentation\", { detail: \"model\" }))}>3 Review 3D</button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 269,
+    "text": "            <button aria-current={workflowStep === \"edit\" && !importOpen && !createMenuOpen ? \"step\" : undefined} className={workflowClass} onClick={() => window.dispatchEvent(new Event(\"geoai:inspect-component\"))}>4 Edit</button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 270,
+    "text": "            <button aria-current={workflowStep === \"analysis\" && !importOpen && !createMenuOpen ? \"step\" : undefined} className={workflowClass} onClick={() => window.dispatchEvent(new Event(\"geoai:show-analysis\"))}>5 Analyze / Results</button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 271,
+    "text": "            <button aria-current={workflowStep === \"review\" && !importOpen && !createMenuOpen ? \"step\" : undefined} className={workflowClass} onClick={() => window.dispatchEvent(new Event(\"geoai:show-review\"))}>6 Review</button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 280,
+    "text": "                <Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-border hover:bg-white/10 hover:text-foreground\" aria-label=\"Scene / Sun study\" title=\"Scene / Sun study\" onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:open-scene-controls\"))}><Sun className=\"size-4\" /></Button>"
+  },
+  {
+    "file": "frontend\\app\\projects\\[id]\\workspace\\WorkspacePageClient.tsx",
+    "line": 283,
+    "text": "                <Button variant=\"ghost\" size=\"icon\" className=\"size-10 rounded-xl border border-transparent bg-transparent text-muted-foreground shadow-none hover:border-border hover:bg-white/10 hover:text-foreground\" data-workspace-popup=\"search\" aria-label=\"Search workspace\" title=\"Search places\" onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:open-location-search\"))}><Search className=\"size-4\" /></Button>"
+  },
+  {
+    "file": "frontend\\components\\ai\\ModernAssistantPanel.tsx",
+    "line": 13,
+    "text": "  return <div className=\"p-4 text-sm\"><p>Use the site-wide Nebius Assistant for project {_props.projectId}.</p><button className=\"mt-3 underline\" onClick={() => window.dispatchEvent(new Event(\"geoai:open-site-assistant\"))}>Open Struvo Assistant</button></div>;"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 31,
+    "text": "  useEffect(()=>{const receive=(event:Event)=>{const value=(event as CustomEvent<PrimitiveStatus>).detail;setPrimitiveStates(old=>({...old,[value.actionId]:value}));setCurrentPrimitive(value);setActionStatus(value.message);setPreviewPending(value.phase==='preview_pending');};window.addEventListener('geoai:primitive-status',receive);return()=>window.removeEventListener('geoai:primitive-status',receive);},[]);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 37,
+    "text": "    if(c&&c.projectId===editorContext.project_id&&c.revisionId===editorContext.revision_id&&path===`/projects/${c.projectId}/workspace`){queuedWorkspace.current=null;window.dispatchEvent(new CustomEvent('geoai:workspace-command',{detail:c}));}"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 50,
+    "text": "        if(path===`/projects/${command.projectId}/workspace`&&context.revision_id===command.revisionId)window.dispatchEvent(new CustomEvent('geoai:workspace-command',{detail:command}));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 107,
+    "text": "    window.addEventListener(\"geoai:inspector-view\", acknowledge);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 108,
+    "text": "    return () => window.removeEventListener(\"geoai:inspector-view\", acknowledge);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 114,
+    "text": "    if (pending.destination === \"inspect\") window.dispatchEvent(new CustomEvent(\"geoai:inspect-component\", { detail: pending }));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 115,
+    "text": "    else if ([\"analysis\", \"results\", \"cad\"].includes(pending.destination || \"\")) window.dispatchEvent(new Event(\"geoai:show-analysis\"));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 121,
+    "text": "    window.addEventListener(\"geoai:assistant-context\", update);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 122,
+    "text": "    window.addEventListener(\"geoai:open-site-assistant\", show);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 123,
+    "text": "    window.addEventListener(\"geoai:open-copilot\", show);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 124,
+    "text": "    window.addEventListener(\"geoai:assistant-preview-status\", action);"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 125,
+    "text": "    return () => { window.removeEventListener(\"geoai:assistant-context\", update); window.removeEventListener(\"geoai:open-site-assistant\", show); window.removeEventListener(\"geoai:open-copilot\", show); window.removeEventListener(\"geoai:assistant-preview-status\", action); controller.current?.abort(); };"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 189,
+    "text": "      if (tab === \"properties\") window.dispatchEvent(new CustomEvent(\"geoai:inspect-component\",{detail:result}));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 190,
+    "text": "      else window.dispatchEvent(new Event(\"geoai:show-analysis\"));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 211,
+    "text": "          window.dispatchEvent(new CustomEvent(\"geoai:assistant-position-preview\", { detail: result }));"
+  },
+  {
+    "file": "frontend\\components\\ai\\SiteAssistant.tsx",
+    "line": 214,
+    "text": "          window.dispatchEvent(new CustomEvent(\"geoai:assistant-preview-cancel\", {detail:result}));"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\CivicSpanStudio.tsx",
+    "line": 85,
+    "text": "type GeoAIStudioProps = { project?: Project };"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\CivicSpanStudio.tsx",
+    "line": 87,
+    "text": "function GeoAIStudioContent({ project }: GeoAIStudioProps) {"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\CivicSpanStudio.tsx",
+    "line": 138,
+    "text": "        `${process.env.NEXT_PUBLIC_API_URL ?? \"http://localhost:8000\"}/api/geoai/plan`,"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\CivicSpanStudio.tsx",
+    "line": 464,
+    "text": "export default function GeoAIStudio(props: GeoAIStudioProps) {"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\CivicSpanStudio.tsx",
+    "line": 473,
+    "text": "      <GeoAIStudioContent {...props} />"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\ConstructionStudio.tsx",
+    "line": 174,
+    "text": "        `${process.env.NEXT_PUBLIC_API_URL ?? \"http://localhost:8000\"}/api/geoai/concept`,"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\ConstructionStudio.tsx",
+    "line": 270,
+    "text": "    window.addEventListener(\"geoai:save-project\", onHeaderSave);"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\ConstructionStudio.tsx",
+    "line": 271,
+    "text": "    return () => window.removeEventListener(\"geoai:save-project\", onHeaderSave);"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 117,
+    "text": "    const source = instance?.getSource(\"geoai-selection\") as"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 176,
+    "text": "      instance.addSource(\"geoai-selection\", {"
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 181,
+    "text": "        id: \"geoai-corridor-outline\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 183,
+    "text": "        source: \"geoai-selection\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 192,
+    "text": "        id: \"geoai-corridor\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 194,
+    "text": "        source: \"geoai-selection\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 204,
+    "text": "        id: \"geoai-anchors\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 206,
+    "text": "        source: \"geoai-selection\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 216,
+    "text": "        id: \"geoai-anchor-labels\","
+  },
+  {
+    "file": "frontend\\components\\civicspan\\SiteMap.tsx",
+    "line": 218,
+    "text": "        source: \"geoai-selection\","
+  },
+  {
+    "file": "frontend\\components\\dashboard\\CivicSpanDashboard.tsx",
+    "line": 80,
+    "text": "export function LegacyGeoAIDashboard() {"
+  },
+  {
+    "file": "frontend\\components\\dashboard\\CreativeDashboard.tsx",
+    "line": 161,
+    "text": "    window.addEventListener(\"geoai:project-search\", onSearch);"
+  },
+  {
+    "file": "frontend\\components\\dashboard\\CreativeDashboard.tsx",
+    "line": 163,
+    "text": "      window.removeEventListener(\"geoai:project-search\", onSearch);"
+  },
+  {
+    "file": "frontend\\components\\dashboard\\LegacyDashboardPage.tsx",
+    "line": 5,
+    "text": "import GeoAIDashboard from \"@/components/dashboard/CivicSpanDashboard\";"
+  },
+  {
+    "file": "frontend\\components\\dashboard\\LegacyDashboardPage.tsx",
+    "line": 494,
+    "text": "export default GeoAIDashboard;"
+  },
+  {
+    "file": "frontend\\components\\layout\\BottomSummaryBar.tsx",
+    "line": 113,
+    "text": "  useEffect(()=>{const open=(event:Event)=>{setDockTab((event as CustomEvent<string>).detail ?? \"QUANTITIES\");setExpanded(true);};window.addEventListener(\"geoai:open-dock\",open);return()=>window.removeEventListener(\"geoai:open-dock\",open);},[]);"
+  },
+  {
+    "file": "frontend\\components\\layout\\CommandPalette.tsx",
+    "line": 49,
+    "text": "          { id: \"copilot\", label: \"Open AI Copilot panel\", group: \"Actions\", icon: Bot, run: () => { setOpen(false); document.dispatchEvent(new CustomEvent(\"geoai:open-copilot\")); } },"
+  },
+  {
+    "file": "frontend\\components\\layout\\DashboardShell.tsx",
+    "line": 330,
+    "text": "                      new CustomEvent(\"geoai:project-search\", {"
+  },
+  {
+    "file": "frontend\\components\\layout\\DashboardShell.tsx",
+    "line": 372,
+    "text": "                        new CustomEvent(\"geoai:save-project\"),"
+  },
+  {
+    "file": "frontend\\components\\layout\\DashboardShell.tsx",
+    "line": 399,
+    "text": "                            new CustomEvent(\"geoai:save-project\"),"
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 72,
+    "text": "  useEffect(()=>{const handler=(event:Event)=>setAnalysisMode(!!(event as CustomEvent<{active:boolean}>).detail?.active);window.addEventListener(\"geoai:analysis-workspace\",handler);return()=>window.removeEventListener(\"geoai:analysis-workspace\",handler);},[]);"
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 78,
+    "text": "    storageKey: \"geoai-workspace-right-width\","
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 84,
+    "text": "  const {size: inspectorWidth,onResizePointerDown: onInspectorResize}=useHorizontalPanelResize({storageKey:\"geoai-inspector-width\",defaultSize:344,minSize:320,maxSize:520});"
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 178,
+    "text": "            onOpenCopilot: () => window.dispatchEvent(new Event(\"geoai:open-site-assistant\")),"
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 179,
+    "text": "            onToggleCopilotPanel: () => window.dispatchEvent(new Event(\"geoai:open-site-assistant\")),"
+  },
+  {
+    "file": "frontend\\components\\layout\\WorkspaceLayout.tsx",
+    "line": 189,
+    "text": "                  onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:open-nav\"))}"
+  },
+  {
+    "file": "frontend\\components\\map\\CameraGizmo.tsx",
+    "line": 57,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:orient-view\", {detail:{heading:selected.heading + (positive || axis === 2 ? 0 : 180),pitch:axis === 2 && !positive ? 90 : axis !== 2 && !underground ? -5 : selected.pitch}}));"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 152,
+    "text": "    window.dispatchEvent(new CustomEvent(\"geoai:presentation-view\", { detail: modelView ? \"model\" : \"site\" }));"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 163,
+    "text": "    window.addEventListener(\"geoai:component-preview\",preview);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 164,
+    "text": "    return()=>window.removeEventListener(\"geoai:component-preview\",preview);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 177,
+    "text": "  useEffect(()=>{const update=(event:Event)=>{const detail=(event as CustomEvent).detail as (NonNullable<typeof elasticResults>&{clearMode?:string})|null;setElasticResults(current=>{if(detail?.clearMode)return current?.mode===detail.clearMode ? null:current;if(detail===null&&['finite-bearing-schematic','footing-flexure-demand','rc-flexure-layout','foundation-integrated','structural-visual'].includes(current?.mode??''))return current;return detail ? {...detail,sourceScope:overlayScope}:null;});};window.addEventListener('geoai:elastic-results',update);return()=>window.removeEventListener('geoai:elastic-results',update);},[overlayScope]);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 208,
+    "text": "  useEffect(()=>{const update=(event:Event)=>{setFoundationAppearance((event as CustomEvent<Record<string,number>>).detail??{});};window.addEventListener('geoai:foundation-appearance',update);return()=>window.removeEventListener('geoai:foundation-appearance',update);},[]);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 226,
+    "text": "      if(key&&(e.type==='pointerdown'||e.type==='click'&&!pressed)){pressed=true;viewer.canvas.setAttribute('data-foundation-last-inspected',key);window.dispatchEvent(new CustomEvent('geoai:foundation-inspect',{detail:{key}}));}"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 264,
+    "text": "  useEffect(()=>{window.dispatchEvent(new CustomEvent(\"geoai:terrain-changed\",{detail:{version:projectTerrain?.id ?? null}}));},[terrainEpoch,projectTerrain?.id]);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 288,
+    "text": "    window.addEventListener(\"geoai:locate-component\",locate);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 289,
+    "text": "    window.addEventListener(\"geoai:frame-platform-assembly\",frameAssembly);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 290,
+    "text": "    return()=>{window.removeEventListener(\"geoai:locate-component\",locate);window.removeEventListener(\"geoai:frame-platform-assembly\",frameAssembly);};"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 294,
+    "text": "    window.addEventListener(\"geoai:analysis-clip\",update);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 295,
+    "text": "    return () => window.removeEventListener(\"geoai:analysis-clip\",update);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 314,
+    "text": "    window.addEventListener(\"geoai:analysis-location\",highlight);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 315,
+    "text": "    return ()=>window.removeEventListener(\"geoai:analysis-location\",highlight);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 403,
+    "text": "    draw(new CustomEvent('geoai:elastic-results',{detail:elasticResults}));"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 528,
+    "text": "    window.addEventListener(\"geoai:fit-project\", onFit);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 529,
+    "text": "    window.addEventListener(\"geoai:presentation\", presentation);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 530,
+    "text": "    return () => { window.removeEventListener(\"geoai:fit-project\", onFit); window.removeEventListener(\"geoai:presentation\", presentation); };"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 544,
+    "text": "    window.addEventListener('geoai:workspace-camera',camera);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 546,
+    "text": "    return()=>{window.removeEventListener('geoai:workspace-camera',camera);removeError();};"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 1604,
+    "text": "    window.addEventListener(\"geoai:finish-drawing\", finish);"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 1612,
+    "text": "    return () => { releaseDrag(); viewer.canvas.removeEventListener(\"pointercancel\",cancelDrag); window.removeEventListener(\"pointerup\", releaseDrag); window.removeEventListener(\"blur\", cancelDrag); removeHandles(); if (!viewer.isDestroyed()) { delete viewer.canvas.dataset.boundaryHandles; delete viewer.canvas.dataset.boundaryCloseReady; } unsubscribe(); window.removeEventListener(\"keydown\", keyboard); window.removeEventListener(\"geoai:finish-drawing\", finish); destroyInputHandler(handler); if (!viewer.isDestroyed()) { viewer.dataSources.remove(source, true); } };"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 1641,
+    "text": "        if(check){viewer.canvas.setAttribute('data-foundation-last-inspected',String(check));window.dispatchEvent(new CustomEvent('geoai:foundation-inspect',{detail:{key:String(check)}}));return;}"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 1814,
+    "text": "  return <>{editor&&<SupervisedPrimitiveControls editor={editor}/ >}{loaded&&cameraOutside&&!elasticResults&&<div role=\"status\" className=\"absolute left-24 top-32 z-40 rounded bg-background p-3 text-sm\">Model geometry is outside the camera view.<button className=\"ml-2 underline\" onClick={()=>fitProject('all')}>Fit saved model</button></div>}{editor?.loadError&&<div role=\"alert\" className=\"absolute left-24 top-20 z-50 max-w-md rounded bg-background p-3 text-sm\">Saved model could not load: {editor.loadError}<button className=\"ml-2 underline\" onClick={editor.retryModelLoad}>Retry saved model</button></div>}{(!loaded||editor?.loading)&&<p role=\"status\" className=\"absolute left-24 top-20 z-40 rounded bg-background p-3 text-sm\">Loading the 3D workspace\u2026</p>}{loaded&&!editor?.loading&&editableModel&&editableModel.components.length===0&&<p role=\"status\" className=\"absolute left-24 top-20 z-40 rounded bg-background p-3 text-sm\">This saved model contains no components. Open Create / Import to review inputs.</p>}{loaded&&editableModel&&editableModel.components.length>0&&!editableModel.components.some(c=>c.visible)&&<p role=\"status\" className=\"absolute left-24 top-20 z-40 rounded bg-background p-3 text-sm\">All model components are hidden. Review visibility in Layers; the saved model is not empty.</p>}{loaded&&elasticResults&&(elasticResults.hideModel||analysisFocusKey)&&<div role=\"status\" className=\"absolute left-24 top-20 z-40 rounded bg-background p-3 text-xs\">Saved-result isolation is active. Other geometry is preserved.<button className=\"ml-2 underline\" onClick={()=>{setElasticResults(null);window.dispatchEvent(new Event('geoai:guided-restore-model'));fitProject();}}>Restore full model</button></div>}{loaded && editor && <WorkspaceMouseControls viewer={viewerRef.current} C={cesiumRef.current} editor={editor} modelView={modelView} underground={undergroundView} entities={() => dataSourcesRef.current.get(\"editable-model\")?.entities.values ?? []} bounds={() => sandboxBounds.current} fit={fitProject} onSitePick={point=>sitePickRef.current?.({position:point})} />}{hoveredName && <p className=\"pointer-events-none absolute bottom-32 right-4 z-20 rounded border border-white/15 bg-background/95 px-3 py-2 text-xs\">{hoveredName} \u00b7 click to select</p>}{editor && <div className=\"absolute bottom-3 left-3 z-30 max-w-[calc(100%-24px)] rounded-lg border border-white/15 bg-background/95 px-3 py-2 text-xs\" aria-label=\"Viewport presentation\">"
+  },
+  {
+    "file": "frontend\\components\\map\\CesiumView.tsx",
+    "line": 1816,
+    "text": "      <div className=\"mt-2 flex flex-wrap items-center gap-3\"><details className=\"relative\"><summary className=\"cursor-pointer text-primary\">Standard views</summary><div className=\"absolute bottom-full left-0 mb-2 w-36 rounded border border-border bg-background p-1\">{[[\"Isometric\",25,-30],[\"Top\",0,-90],[\"Front\",180,-5],[\"Side\",270,-5]].map(([name,heading,pitch])=><button key={name} className=\"block w-full rounded p-2 text-left hover:bg-white/10\" onClick={event=>{window.dispatchEvent(new CustomEvent(\"geoai:orient-view\",{detail:{heading,pitch}}));event.currentTarget.closest(\"details\")?.removeAttribute(\"open\");}}>{name}</button>)}</div></details><button className=\"text-primary\" title=\"Camera only: focus structural members; other geometry stays visible\" onClick={()=>fitProject(\"structure\")}>Focus Structure</button><button className=\"text-primary\" title=\"Camera only: fit all currently visible saved geometry\" onClick={()=>fitProject(\"all\")}>Fit All</button><button className=\"text-primary disabled:text-muted-foreground\" disabled={!selectedComponentIds.length} onClick={()=>window.dispatchEvent(new Event(\"geoai:fit-selection\"))}>Fit selection</button><button aria-pressed={dimensionsVisible} onClick={()=>setDimensionsVisible(v=>!v)}>Dimensions {dimensionsVisible ? \"on\":\"off\"}</button><details className=\"relative\"><summary className=\"cursor-pointer text-muted-foreground\">Display legend</summary><div className=\"absolute bottom-full right-0 mb-2 w-64 rounded border border-border bg-background p-3 leading-relaxed\"><p className=\"font-semibold\">Illustrative geometry finishes</p><p>Blue steel-style members \u00b7 silver stairs/connections \u00b7 warm concrete-style slabs/footings.</p><p className=\"mt-2\">Finishes are not material evidence or stress results. Geometry may be conceptual. Review sourced properties in Inspect; computed diagrams retain their analysis evidence and status.</p><p className=\"mt-2\">Focus Structure and Fit All change only the camera. No objects are hidden.</p></div></details></div>"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 57,
+    "text": "    console.warn(\"[sitegeoai] Terra Draw cleanup skipped after MapLibre teardown\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 66,
+    "text": "    console.warn(\"[sitegeoai] Terra Draw clear failed after MapLibre teardown\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 180,
+    "text": "      console.warn(\"[sitegeoai] Terra Draw initialization failed\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 192,
+    "text": "      console.warn(\"[sitegeoai] Could not change Terra Draw mode\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 202,
+    "text": "      console.warn(\"[sitegeoai] Terra Draw delete failed\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 226,
+    "text": "    link.download = \"geoai-workspace-features.geojson\";"
+  },
+  {
+    "file": "frontend\\components\\map\\DrawingTools.tsx",
+    "line": 242,
+    "text": "      console.warn(\"[sitegeoai] Terra Draw import failed\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\EngineeringEvidencePanel.tsx",
+    "line": 63,
+    "text": "    window.addEventListener(\"geoai:open-site-data\", openEvidence);"
+  },
+  {
+    "file": "frontend\\components\\map\\EngineeringEvidencePanel.tsx",
+    "line": 64,
+    "text": "    return () => window.removeEventListener(\"geoai:open-site-data\", openEvidence);"
+  },
+  {
+    "file": "frontend\\components\\map\\Google3DTilesLayer.ts",
+    "line": 23,
+    "text": "      console.warn(\"[sitegeoai] Google Photorealistic 3D Tiles failed to load\", error);"
+  },
+  {
+    "file": "frontend\\components\\map\\MapLibreWorkspace.tsx",
+    "line": 116,
+    "text": "    link.download = `geoai-project-${project.id}-workspace.geojson`;"
+  },
+  {
+    "file": "frontend\\components\\map\\MapViewerArea.tsx",
+    "line": 216,
+    "text": "    window.addEventListener(\"geoai:save-project\", onSaveProject);"
+  },
+  {
+    "file": "frontend\\components\\map\\MapViewerArea.tsx",
+    "line": 217,
+    "text": "    return () => window.removeEventListener(\"geoai:save-project\", onSaveProject);"
+  },
+  {
+    "file": "frontend\\components\\map\\MapViewerArea.tsx",
+    "line": 278,
+    "text": "    window.addEventListener(\"geoai:open-location-search\", onLocationSearch);"
+  },
+  {
+    "file": "frontend\\components\\map\\MapViewerArea.tsx",
+    "line": 279,
+    "text": "    return () => { window.removeEventListener(\"geoai:open-location-search\", onLocationSearch); };"
+  },
+  {
+    "file": "frontend\\components\\map\\MapViewerArea.tsx",
+    "line": 496,
+    "text": "      <DrawHud onConfirmSave={() => window.dispatchEvent(new CustomEvent(\"geoai:save-project\"))} />"
+  },
+  {
+    "file": "frontend\\components\\map\\SunStudyControls.tsx",
+    "line": 71,
+    "text": "    window.addEventListener(\"geoai:open-scene-controls\", openControls);"
+  },
+  {
+    "file": "frontend\\components\\map\\SunStudyControls.tsx",
+    "line": 72,
+    "text": "    return () => window.removeEventListener(\"geoai:open-scene-controls\", openControls);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 23,
+    "text": "  const readPreferences = () => { try { return JSON.parse(localStorage.getItem(\"geoai:mouse-preferences\") ?? \"{}\"); } catch { return {}; } };"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 27,
+    "text": "  const savePreference = (value: number, reversed: boolean) => { setSensitivity(value); setInvert(reversed); try { localStorage.setItem(\"geoai:mouse-preferences\", JSON.stringify({ sensitivity: value, invert: reversed })); } catch { /* session preferences still work */ } };"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 91,
+    "text": "        cancelInspect();inspectTimer=setTimeout(()=>{inspectTimer=undefined;if(latest.current.editor.selectedIds.length)window.dispatchEvent(new Event(\"geoai:selection-inspect\"));},400);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 137,
+    "text": "    const double = (e: MouseEvent) => { cancelInspect(); if (!available()) return; e.preventDefault(); e.stopImmediatePropagation(); const p=point(e);const ids=(recentClick(p)?.ids ?? picked(p)).filter(id=>latest.current.editor.document?.components.some(c=>c.id===id&&c.visible)).slice(0,1);firstClick=null; if (ids.length) { latest.current.editor.selectMany(ids); focus(ids); window.dispatchEvent(new Event(\"geoai:selection-inspect\")); } };"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 145,
+    "text": "    const modeChange = () => { cancelInspect(); stop(true); setMenu(null); }; window.addEventListener(\"geoai:cancel-gesture\", modeChange);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 155,
+    "text": "    }; window.addEventListener(\"geoai:orient-view\",orient);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 157,
+    "text": "    window.addEventListener('geoai:workspace-camera',assistantFocus);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 159,
+    "text": "    window.addEventListener(\"geoai:fit-selection\",fitSelection);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 161,
+    "text": "      window.removeEventListener(\"geoai:workspace-camera\",assistantFocus); window.removeEventListener(\"geoai:fit-selection\",fitSelection); window.removeEventListener(\"geoai:orient-view\",orient); delete canvas.dataset.navigationMode;"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 162,
+    "text": "      canvas.removeEventListener(\"pointerdown\", down, true); canvas.removeEventListener(\"pointermove\", move, true); window.removeEventListener(\"pointerup\", up, true); canvas.removeEventListener(\"wheel\", wheel, true); canvas.removeEventListener(\"contextmenu\", context); canvas.removeEventListener(\"dblclick\", double, true); canvas.removeEventListener(\"click\", suppressClick, true); canvas.removeEventListener(\"pointercancel\", cancel); canvas.removeEventListener(\"lostpointercapture\", cancel); window.removeEventListener(\"blur\", cancel); canvas.removeEventListener(\"keydown\", key, true); window.removeEventListener(\"geoai:cancel-gesture\", modeChange); };"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 164,
+    "text": "  useEffect(() => { window.dispatchEvent(new Event(\"geoai:cancel-gesture\")); }, [props.editor.tool, props.modelView, mode, drawingTool, measurementTool]);"
+  },
+  {
+    "file": "frontend\\components\\map\\WorkspaceMouseControls.tsx",
+    "line": 165,
+    "text": "  const act = (action: \"inspect\" | \"fit\" | \"translate\" | \"rotate\" | \"scale\") => { const ids = menu?.ids[0] ? [menu.ids[0]] : props.editor.selectedIds; props.editor.selectMany(ids); if (action === \"inspect\") window.dispatchEvent(new Event(\"geoai:inspect-component\")); else if (action === \"fit\") window.dispatchEvent(new CustomEvent(\"geoai:locate-component\", { detail: ids[0] })); else props.editor.setTool(action); setMenu(null); };"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnalysisOverview.tsx",
+    "line": 13,
+    "text": "    window.addEventListener(\"geoai:engineering-inputs-saved\",changed);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnalysisOverview.tsx",
+    "line": 14,
+    "text": "    return()=>window.removeEventListener(\"geoai:engineering-inputs-saved\",changed);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnalysisOverview.tsx",
+    "line": 27,
+    "text": "    else window.dispatchEvent(new CustomEvent(\"geoai:copilot-inputs\",{detail:action}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnchorContact3DPanel.tsx",
+    "line": 15,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnchorContact3DPanel.tsx",
+    "line": 30,
+    "text": "  labels.push({name:mode==='rotations'?`Plate deformation \u00d7200 \u00b7 \u03b8East ${r.rotations_east_north_rad![0].toFixed(6)} / \u03b8North ${r.rotations_east_north_rad![1].toFixed(6)} rad`:`Computed nominal pmax ${r.pressure_max_kpa!.toFixed(3)} kPa \u00b7 pressure height 0.4 m/MPa`,position:to([0,0],z+1),componentId:plateId});window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:paths.map(()=>plateId),arrowIndices:arrows,colors,polygons,nodeMarkers:labels,mode:'foundation-interface',focus:to([0,0],z),fitRange:4,fit:true,label:`3D ${mode} \u00b7 synthetic schematic offset 1.1 m East; actual project BLOCKED`}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnchorContact3DPanel.tsx",
+    "line": 36,
+    "text": " {result&&<article aria-label=\"Computed 3D anchor benchmark\" className=\"space-y-2 rounded border border-border p-2\"><b className={stale?'text-amber-200':'text-primary'}>{stale?'STALE \u2014 diagram disabled':result.status}</b><p>SYNTHETIC {result.result.inputs.case_name} \u2014 NOT ACTUAL PROJECT FORCES</p><p>Diagram schematic is offset 1.1 m East for visibility; saved geometry stays unchanged. Pressure heights and rotations are explicitly display-scaled.</p><p>C {(result.result.compression_resultant_n!/1000).toFixed(6)} kN \u00b7 active area {result.result.active_contact_area_m2?.toFixed(6)} m\u00b2 ({(result.result.active_contact_fraction!*100).toFixed(3)}%) \u00b7 pmax {result.result.pressure_max_kpa?.toFixed(6)} kPa</p><p>Translation {(result.result.translation_down_m!*1000).toFixed(9)} mm \u00b7 rotations East / North [{result.result.rotations_east_north_rad?.map(v=>v.toFixed(9)).join(', ')}] rad</p>{result.result.anchors?.map(a=><p key={a.id}>{a.id}: position [{a.position_east_north_m.map(v=>v.toFixed(3)).join(', ')}] m \u00b7 k {a.axial_stiffness_n_m/1e6} MN/m \u00b7 T {(a.tension_n/1000).toFixed(6)} kN \u00b7 {a.status}</p>)}<p>Force / East moment / North moment residuals: {result.result.equilibrium_residual_si?.map(v=>v.toExponential(3)).join(' / ')} N / N\u00b7m / N\u00b7m</p><label>3D result diagram<select aria-label=\"3D result diagram\" value={diagram} onChange={e=>{const m=e.target.value as 'pressure'|'rotations';setDiagram(m);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));}}><option value=\"pressure\">Computed active pressure region and forces</option><option value=\"rotations\">Computed rigid plate rotations \u00d7200</option></select></label><button disabled={stale||busy} onClick={()=>show()}>Show 3D contact results</button><details><summary>Independent 3D benchmarks and exact integration evidence</summary><p>{result.result.benchmark_suite?.reference} \u00b7 {result.result.benchmark_suite?.status}</p>{result.result.benchmark_suite?.cases.map(c=><p key={c.case}>{c.case}: C {(c.hand.C/1000).toFixed(6)} kN; area {c.hand.area.toFixed(6)} m\u00b2; tensions [{c.hand.tensions.map(v=>(v/1000).toFixed(6)).join(', ')}] kN; maximum pressure {c.hand.pressure_max_kpa.toFixed(6)} kPa</p>)}{result.result.formulas?.map(x=><p key={x}>{x}</p>)}<button onClick={async()=>{try{const r=await api.get(`${base}/${result.id}/evidence`),u=URL.createObjectURL(new Blob([JSON.stringify(r,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='3d-anchor-contact-evidence.json';a.click();URL.revokeObjectURL(u);}catch(e){setError(formatApiErrorMessage(e));}}}>Download 3D evidence</button></details>{result.result.limitations?.map(x=><p key={x} className=\"text-amber-200\">{x}</p>)}</article>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnchorContactPanel.tsx",
+    "line": 15,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\AnchorContactPanel.tsx",
+    "line": 28,
+    "text": "  labels.push({name:`Synthetic N ${(q.compression_n/1000).toFixed(3)} kN \u00b7 M ${(q.moment_negative_north_nm/1000).toFixed(3)} kN\u00b7m \u00b7 actual project BLOCKED`,position:to(0,z+1),componentId:plateId});window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:paths.map(()=>plateId),arrowIndices:arrows,colors,nodeMarkers:labels,mode:'foundation-interface',focus:to(0,z),fitRange:4,fit:true,label:'Separate synthetic compression/tension benchmark; actual project lacks verified mechanics'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\BearingCapacityPanel.tsx",
+    "line": 14,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\BearingCapacityPanel.tsx",
+    "line": 18,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:paths.map(()=>id),colors:['#ffe18a','#4ade80','#edab68','#edab68','#edab68'],arrowIndices:[0,1],polygons:[{positions:[[-B/2,-3,z],[B/2,-3,z],[B/2,3,z],[-B/2,3,z]],componentId:id,color:'#9ca8b8'},{positions:[[-B/2,0,z],[0,0,z-B/2],[B/2,0,z]],componentId:id,color:'#edab68'}],mode:'bearing-capacity-schematic',fit:true,fitRange:Math.max(12,B*5),fitPitch:-28,fitPoints:paths.flat(),focusComponentIds:[id],overlayThroughSolids:true,nodeMarkers:[{name:`Applied ${q.vertical_load_kn_per_m.toFixed(3)} kN/m \u00b7 ${computed.applied_pressure_kpa.toFixed(3)} kPa`,position:[0,0,z+1.5]},{name:`Ultimate reference ${computed.ultimate_resistance_kn_per_m.toFixed(3)} kN/m; not an actual reaction`,position:[B,0,z-1.5]},{name:'ILLUSTRATIVE mechanism only \u00b7 not computed collapse or stress',position:[-1.5*B,0,z-B]},{name:'Infinite strip shown as a 6 m segment; all resistance values per metre',position:[0,-3,z]}],label:'SYNTHETIC Prandtl surface strip \u00b7 actual rectangular CAD capacity BLOCKED'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\BearingCapacityPanel.tsx",
+    "line": 19,
+    "text": " return <section aria-label=\"Synthetic bearing capacity\" className=\"mb-4 space-y-3 rounded border border-border p-3 text-sm [&_input:not([type=checkbox])]:w-full [&_input]:bg-background [&_textarea]:w-full [&_textarea]:bg-background [&_select]:w-full [&_select]:bg-background [&_button]:rounded [&_button]:border [&_button]:border-border [&_button]:p-2\"><h3 className=\"font-semibold\">Shallow bearing resistance \u00b7 Prandtl surface strip</h3><p>Actual CAD capacity BLOCKED. The four saved footings are finite rectangles with unverified physical N/V/M transfer. This infinite-strip benchmark cannot assess their resistance. Site investigation, applicable strength/groundwater data and a validated rectangular method are missing.</p><p>{reference}</p><p>Independent method: \u03c6=0 total stress; homogeneous soil, surface Df=0, rough horizontal infinite strip, level ground, vertical concentric load. Nc=\u03c0+2; Nq=1; N\u03b3=0. Settlement and Winkler contact remain separate.</p><button disabled={busy||blocked||loading} onClick={()=>edit(structuredClone(fixture))}>Load documented synthetic bearing inputs</button>{q&&<><details open><summary>Explicit strength, geometry and loading inputs</summary>{([['B_m','Strip width B m'],['foundation_depth_m','Foundation depth Df m'],['su_kpa','Undrained strength su kPa'],['phi_deg','Friction angle phi degrees'],['unit_weight_kn_m3','Soil unit weight kN/m\u00b3'],['vertical_load_kn_per_m','Vertical line load kN/m'],['shear_kn_per_m','Horizontal line load kN/m'],['moment_knm_per_m','Moment per length kN\u00b7m/m'],['ground_slope_deg','Ground slope degrees'],['reference_up_m','Bearing reference Up m'],['global_factor','Declared global factor FS']] as const).map(([key,label])=><label className=\"block\" key={key}>{label}<input aria-label={label} type=\"number\" step=\"any\" value={Number.isFinite(q[key])?q[key]:''} onChange={e=>edit({...q,[key]:e.target.value===''?NaN:Number(e.target.value)})}/></label>)}<label>Footing geometry<select aria-label=\"Bearing geometry\" value={q.geometry} onChange={e=>edit({...q,geometry:e.target.value})}><option value=\"INFINITE_STRIP\">INFINITE_STRIP \u00b7 supported synthetic idealization</option><option value=\"RECTANGLE\">RECTANGLE \u00b7 unsupported, will be rejected</option></select></label><label>Soil domain<select aria-label=\"Bearing soil domain\" value={q.soil_extent} onChange={e=>edit({...q,soil_extent:e.target.value})}><option value=\"HOMOGENEOUS_INFINITE_IDEALIZATION\">Homogeneous infinite idealization</option><option value=\"LAYERED\">Layered \u00b7 unsupported</option></select></label><label>Groundwater condition<select aria-label=\"Bearing groundwater condition\" value={q.groundwater} onChange={e=>edit({...q,groundwater:e.target.value})}><option value=\"EXCLUDED_SYNTHETIC_IDEALIZATION\">Explicitly excluded synthetic idealization</option><option value=\"UNKNOWN\">Unknown \u00b7 unsupported</option><option value=\"CORRECTION_REQUIRED\">Groundwater correction \u00b7 unsupported</option></select></label><p>Groundwater exclusion is an analytical assumption, not a declaration of dry site conditions. Unit weight is required and recorded; its formula terms vanish at \u03c6=0 and Df=0.</p></details><details><summary>Independent source declarations and applicability</summary>{([['strength_source','Strength and unit weight source'],['geometry_source','Geometry source'],['groundwater_source','Groundwater source'],['load_source','Load source'],['factor_source','Resistance factor source'],['applicability','Bearing applicability limits']] as const).map(([key,label])=><label className=\"block\" key={key}>{label}<textarea aria-label={label} value={q[key]} onChange={e=>edit({...q,[key]:e.target.value})}/></label>)}</details><label><input aria-label=\"Reviewed bearing idealization\" type=\"checkbox\" checked={q.reviewed_assumptions} onChange={e=>edit({...q,reviewed_assumptions:e.target.checked})}/>Reviewed synthetic assumptions only; engineer approval remains DISABLED</label><button disabled={busy||blocked||!dirty} onClick={()=>void run(false)}>Preview synthetic bearing proposal</button></>}{proposal&&<p>Proposal #{proposal.id} \u00b7 {dirty?'STALE':proposal.status} \u00b7 exact input/source/model/profile bindings saved.</p>}<label><input aria-label=\"Authorize exact bearing benchmark\" disabled={busy||blocked||dirty||proposal?.status!=='AWAITING_AUTHORIZATION'} type=\"checkbox\" checked={consent} onChange={e=>setConsent(e.target.checked)}/>Authorize this exact synthetic strength calculation only</label><button disabled={busy||blocked||dirty||!consent||proposal?.status!=='AWAITING_AUTHORIZATION'} onClick={()=>void run(true)}>Calculate authorized bearing benchmark</button>{computed&&<article aria-label=\"Computed bearing benchmark\"><b>{stale?'STALE':result?.status}</b><p>Nc {computed.factors.Nc.toFixed(9)}; Nq {computed.factors.Nq}; N\u03b3 {computed.factors.Ngamma}.</p><p>Ultimate net/gross {computed.ultimate_net_kpa.toFixed(6)} / {computed.ultimate_gross_kpa.toFixed(6)} kPa; ultimate resistance {computed.ultimate_resistance_kn_per_m.toFixed(6)} kN/m.</p><p>Strength-only allowable reference {computed.strength_only_allowable_gross_kpa.toFixed(6)} kPa; {computed.strength_only_allowable_kn_per_m.toFixed(6)} kN/m. Method: declared global FS on NET ultimate. No code design resistance implemented.</p><p>Applied pressure {computed.applied_pressure_kpa.toFixed(6)} kPa. Applied/reference ratio {computed.applied_to_strength_reference_ratio.toFixed(6)} is numerical only; no safety verdict. Settlement, site suitability and other governing limits have not been assessed.</p><button disabled={busy||stale} onClick={show}>Show loading and illustrative failure schematic</button><details><summary>Immutable equations, bearing-factor limits and calculation evidence</summary><pre className=\"max-h-72 overflow-auto whitespace-pre-wrap break-all text-xs\">{JSON.stringify(result,null,2)}</pre></details></article>}<button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Return to preserved CAD model</button><p>Unsupported: rectangular/square capacity in this strip method, embedment, nonzero friction, eccentricity, inclined load, shear, layered soil, groundwater corrections, slope effects, code compliance and engineering approval. The strength-only reference is not an approved site allowable bearing pressure.</p>{error&&<p role=\"alert\">{error}</p>}</section>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\CadFrameAuditPanel.tsx",
+    "line": 13,
+    "text": " const show=()=>{if(!audit)return;const points=audit.members.flatMap(m=>m.centerline_enu_m),lo=[0,1,2].map(i=>Math.min(...points.map(p=>p[i]))),hi=[0,1,2].map(i=>Math.max(...points.map(p=>p[i])));window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths:[...audit.members.map(m=>m.centerline_enu_m),...audit.observed_connections.map(j=>[j.column_top_enu_m,j.beam_end_enu_m])],componentIds:[...audit.members.map(m=>m.component_id),...audit.observed_connections.map(j=>j.beam_id)],colors:['#53cfff','#53cfff','#53cfff','#ff67d4','#ff67d4'],focusComponentIds:ids,mode:'connections',fit:true,focus:lo.map((v,i)=>(v+hi[i])/2),fitRange:Math.max(...hi.map((v,i)=>v-lo[i]))*2.1,fitPitch:-22,fitHeadingOffset:.2,nodeMarkers:audit.observed_connections.flatMap(j=>[{name:`${audit.members.find(m=>m.component_id===j.column_id)?.name} physical top`,position:j.column_top_enu_m,componentId:j.column_id},{name:'Physical beam endpoint',position:j.beam_end_enu_m,componentId:j.beam_id}]),label:'CAD physical centerlines \u00b7 observed offsets only \u00b7 no approved analytical joints'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\CadSoilPanel.tsx",
+    "line": 16,
+    "text": " const show=()=>{if(!audit||editor.dirty)return;const paths:number[][][]=[],ids:string[]=[],labels:{name:string;position:number[];componentId:string}[]=[];for(const r of audit.rows){const c=editor.document?.components.find(c=>c.id===r.column_id);if(!c)continue;const top=[...c.transform.position];if(c.geometry.kind==='box')top[2]+=c.geometry.size[2]/2;paths.push([top,r.base_enu_m]);ids.push(r.column_id);labels.push({name:`${r.column_name.replace('CAD column ','')}: N ${(r.compression_n/1000).toFixed(3)} kN \u00b7 soil BLOCKED`,position:r.base_enu_m,componentId:r.column_id});const m=mappings.find(m=>m.column_id===r.column_id),f=editor.document?.components.find(c=>c.id===m?.footing_id);if(f){paths.push([r.base_enu_m,f.transform.position]);ids.push(f.id);}}const context=editor.document?.components.filter(c=>c.id.startsWith('drawing-cad:')&&['beam','slab'].includes(c.category))??[];for(const c of context){if(c.geometry.kind==='box'&&c.category==='beam'){const p=c.transform.position;paths.push([[p[0]-c.geometry.size[0]/2,p[1],p[2]],[p[0]+c.geometry.size[0]/2,p[1],p[2]]]);ids.push(c.id);}}window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:ids,colors:ids.map(()=>'#ffb65c'),nodeMarkers:labels,mode:'foundation-demand',fit:true,fitPoints:paths.flat(),focusComponentIds:[...context.map(c=>c.id),...ids,...mappings.map(m=>m.footing_id).filter(Boolean)],overlayThroughSolids:true,label:'Saved column-base demands \u2192 reviewed footing identity only \u00b7 actual soil analysis BLOCKED'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 33,
+    "text": "  window.addEventListener(\"geoai:connection-input\",navigate);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 34,
+    "text": "  return()=>window.removeEventListener(\"geoai:connection-input\",navigate);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 82,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 84,
+    "text": " const edit=(value:Inputs)=>{setQ(value);setDirty(true);setConsent(false);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 85,
+    "text": " const save=async()=>{setBusy(true);setError('');try{const r=await api.post<Row>(base+'/inputs',{inputs:q,model_revision_id:rid,base_input_id:inputId.current??null});inputId.current=r.id;setRows((await api.get<{records:Row[]}>(base)).records);setDirty(false);setConsent(false);window.dispatchEvent(new CustomEvent('geoai:engineering-inputs-saved',{detail:{projectId}}));}catch(e){setError(formatApiErrorMessage(e));}finally{setBusy(false);}};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 91,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:paths.map(()=>plate.component_id),colors,nodeMarkers:labels,arrowIndices:arrows,mode:'foundation-interface',focusComponentIds:a.geometry.objects.map(o=>o.component_id),fit:true,fitRange:3.2,fitPitch:-48,fitHeadingOffset:Math.PI*1.25,focus:to([0,0],-.05),label:computed?`Actual N/M declared-input calculation \u00b7 pressure height ${scale} m/MPa; shear unsupported`:'Saved connection geometry \u00b7 anchors declared, not measured; no calculated forces or pressure'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ConnectionInputsPanel.tsx",
+    "line": 135,
+    "text": " <details><summary>Saved geometry, loads and source provenance</summary><p>N {(actual.demand.compression_n/1000).toFixed(6)} kN compression \u00b7 |V| {(Math.abs(actual.demand.horizontal_shear_east_n)/1000).toFixed(6)} kN \u00b7 |M| {(Math.abs(actual.demand.moment_about_negative_north_nm)/1000).toFixed(6)} kN\u00b7m</p>{actual.geometry.objects.map(object=><p key={object.component_id} className=\"break-all\">{object.name} \u00b7 {object.size_m.join(\" \u00d7 \")} m \u00b7 {object.component_id}</p>)}<p>Source interface #{actual.source_interface_analysis_id} \u00b7 revision {actual.source_revision_id} \u00b7 OpenSees {actual.demand.solver_version} \u00b7 run {actual.demand.run_id}</p><p className=\"break-all\">{actual.source_evidence_sha256}</p><p>Saved anchors are conceptual, not verified physical bolts. Prior 20 mm diameter and 300 mm embedment are synthetic declarations.</p><button className=\"mt-2 underline\" disabled={blocked} onClick={()=>view()}>Fit actual connection geometry</button><button className=\"ml-3 underline\" onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Show full saved model</button></details>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\CoupledFloorPanel.tsx",
+    "line": 9,
+    "text": "const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'structural-visual'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\CoupledFloorPanel.tsx",
+    "line": 16,
+    "text": " useEffect(()=>{const inspect=(event:Event)=>{const key=(event as CustomEvent<{key:string}>).detail?.key;if(key?.startsWith('shell:')){setInspection(key);editor.selectMany(['coupled-panel']);}else if(c?.members.some(m=>m.id===key)){setInspection(key);editor.selectMany([key]);}};window.addEventListener('geoai:foundation-inspect',inspect);return()=>window.removeEventListener('geoai:foundation-inspect',inspect);},[c,editor]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\CoupledFloorPanel.tsx",
+    "line": 17,
+    "text": " useEffect(()=>{if(!c||!active){clear();return;}const key=`${c.run_id}:${mode}:${fit}`,doFit=framed.current!==key;framed.current=key;const o=coupledOverlay(c,{mode,floor:0,force,scale,original:true,selectedId:selected,fit:doFit,isolate:true,animate,surfaces,inspection});window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:o}));},[c,active,mode,force,scale,selected,animate,surfaces,inspection,fit]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\DrawingCadPanel.tsx",
+    "line": 18,
+    "text": " window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths:[],componentIds:[],focusComponentIds:cs.map(c=>c.id),label:'Reviewed DXF envelopes \u00b7 explicit mm \u2192 m \u00b7 synthetic / unverified',mode:'drawing-cad',focus,fit:true,fitRange:range,fitPitch:-28,fitHeadingOffset:.45,fitPoints:pts,nodeMarkers:[]}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\DrawingCadPanel.tsx",
+    "line": 26,
+    "text": " const edit=(next:Inputs)=>{setQ(next);setProposal(null);setConsent(false);setMessage('Inputs changed \u2014 preview/authorization required');editor.setPlatformPreview(null);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\DrawingCadPanel.tsx",
+    "line": 51,
+    "text": " {proposal&&<article aria-label=\"CAD geometry proposal\" className=\"rounded border border-border p-2 space-y-2\"><b>{proposal.status}</b>{proposal.result.missing?.map(m=><p key={m.path} className=\"break-words text-xs\">Missing {m.path}: {m.reason}</p>)}{proposal.result.proposed_document&&<><label className=\"block\"><input aria-label=\"Approve exact CAD geometry preview\" type=\"checkbox\" checked={consent} onChange={e=>setConsent(e.target.checked)}/> Approve this exact geometry preview only</label><button disabled={!consent||busy||editor.dirty||!editor.platformPreview} onClick={()=>void perform(async()=>{const r=await api.post<Row>(base+'/authorize',{proposal_id:proposal.id,proposal_sha256:proposal.result.proposal_sha256,authorize_geometry:true});if(r.result.approved_document){editor.commit(r.result.approved_document);show(r.result.approved_document);setMessage('Authorized editable draft \u2014 Save 3D model revision to persist');setProposal(null);setConsent(false);}})}>Apply authorized CAD geometry</button><button onClick={()=>{editor.setPlatformPreview(null);setProposal(null);setConsent(false);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));}}>Cancel CAD preview</button></>}<details><summary>Immutable source and preview evidence</summary><pre className=\"max-h-60 overflow-auto whitespace-pre-wrap break-all text-xs\">{JSON.stringify(proposal,null,2)}</pre></details></article>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\DrawingCadPanel.tsx",
+    "line": 53,
+    "text": " <button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Show all preserved model context</button><p className=\"text-xs text-muted-foreground\">Original members and source corrections stay unchanged. Use mapping controls, preview and authorization for CAD-derived edits. Undo/redo and Save use the existing model editor. Section properties, loads, supports, joint mechanics, reinforcement and soil inputs are still missing.</p>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ElasticFramePanel.tsx",
+    "line": 20,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ElasticFramePanel.tsx",
+    "line": 21,
+    "text": " useEffect(()=>()=>{window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ElasticFramePanel.tsx",
+    "line": 30,
+    "text": " const show=(mode:'deformation'|'moment'|'shear')=>{if(!analysis?.result.elements||stale)return;const all=analysis.result.elements.flatMap(e=>e.samples);const max=Math.max(1,...all.map(s=>Math.abs(mode==='moment'?s.moment_nm:s.shear_n)));const paths=analysis.result.elements.map(e=>e.samples.map(s=>{const first=e.samples[0].position_m,last=e.samples.at(-1)!.position_m;const dx=last[0]-first[0],dz=last[1]-first[1],length=Math.hypot(dx,dz);const offset=mode==='deformation'?0:(mode==='moment'?s.moment_nm:s.shear_n)/max*.8;return [s.position_m[0]+(mode==='deformation'?scale*s.displacement_m[0]:-dz/length*offset),0,s.position_m[1]+(mode==='deformation'?scale*s.displacement_m[1]:dx/length*offset)];}));window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,label:`${mode} \u00b7 ${mode==='deformation'?scale+'\u00d7 display scale':mode==='moment'?`max |M| ${max.toFixed(3)} N\u00b7m`:`max |V| ${max.toFixed(3)} N`} \u00b7 OpenSees ${analysis.result.solver_version}`,mode}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ElasticFramePanel.tsx",
+    "line": 38,
+    "text": " <button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:frame-platform-assembly'))}>Frame verification model</button>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 30,
+    "text": "    refresh();window.addEventListener(\"geoai:terrain-changed\",terrainChanged);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 31,
+    "text": "    return()=>{active=false;window.removeEventListener(\"geoai:terrain-changed\",terrainChanged);};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 61,
+    "text": "  useEffect(()=>{const open=(event:Event)=>{const next=(event as CustomEvent<string>).detail;if(tabs.includes(next))setTab(next);};window.addEventListener(\"geoai:dock-tab\",open);return()=>window.removeEventListener(\"geoai:dock-tab\",open);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 62,
+    "text": "  useEffect(()=>()=>{window.dispatchEvent(new CustomEvent(\"geoai:analysis-clip\",{detail:{mode:\"off\",value:0,size:50}}));window.dispatchEvent(new CustomEvent(\"geoai:analysis-location\",{detail:null}));},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 63,
+    "text": "  const updateClip=(next:AnalysisClip)=>{setClip(next);window.dispatchEvent(new CustomEvent(\"geoai:analysis-clip\",{detail:next}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 99,
+    "text": "        <div className=\"max-h-36 overflow-y-auto\">{stations.map(station=><button key={station.chainage_m} className=\"block w-full border-b border-white/5 py-1 text-left text-[10px]\" onMouseEnter={()=>window.dispatchEvent(new CustomEvent(\"geoai:analysis-location\",{detail:{longitude:station.longitude,latitude:station.latitude,elevation:station.ground_elevation_m}}))} onMouseLeave={()=>window.dispatchEvent(new CustomEvent(\"geoai:analysis-location\",{detail:null}))}>0+{station.chainage_m.toFixed(0).padStart(3,\"0\")} \u00b7 ground {show(station.ground_elevation_m,\"m\")} \u00b7 design {show(station.proposed_elevation_m,\"m\")} \u00b7 grade {show(station.grade_percent,\"%\")} \u00b7 {station.source} v{station.terrain_version_id ?? \"unknown\"} \u00b7 {station.sample_status}</button>)}</div>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 103,
+    "text": "        <div className=\"mb-2 flex gap-3\"><label>Section interval <select aria-label=\"Section interval\" value={interval} className=\"border border-border bg-background\" onChange={event=>setInterval(Number(event.target.value))}>{[10,20,50].map(value=><option key={value} value={value}>{value} m</option>)}</select></label><button disabled={busy || editor.dirty || !editor.baseRevision} className=\"text-primary disabled:opacity-40\" onClick={()=>void sectionTerrain()}>Sample section terrain</button>{sectionGround.length>0 && <span>{sectionSnapshot===sectionKey?\"SAMPLED\":\"STALE\"}</span>}</div><svg viewBox=\"0 0 900 120\" className=\"h-28 w-full\" role=\"img\" aria-label=\"Design cross section\">{sectionGround.map((row,index)=>row.elevation!==null && sectionGround[index-1]?.elevation!=null ? <line key={`ground-${index}`} x1={450+(sectionGround[index-1].offset-(minX+maxX)/2)*sectionScale} y1={105-(sectionGround[index-1].elevation!-minZ)*sectionScale} x2={450+(row.offset-(minX+maxX)/2)*sectionScale} y2={105-(row.elevation-minZ)*sectionScale} stroke=\"#94a093\" opacity={sectionSnapshot===sectionKey?1:.35}/> : null)}{segments.map((segment,index)=><polyline key={index} points={segment.points.map(([x,z])=>`${450+(x-(minX+maxX)/2)*sectionScale},${105-(z-minZ)*sectionScale}`).join(\" \")} fill=\"none\" stroke=\"#60a5fa\" strokeWidth=\"1\" onMouseEnter={()=>{editor.select(segment.id);window.dispatchEvent(new CustomEvent(\"geoai:analysis-location\",{detail:{local:[east,north,segment.points[0][1]]}}));}}><title>{segment.name}</title></polyline>)}</svg>{sectionGround.map(row=><p key={row.offset} className=\"text-[10px] text-muted-foreground\">Offset {row.offset} m \u00b7 ground ENU {show(row.elevation,\"m\")} \u00b7 design {show(row.design,\"m\")} \u00b7 {row.difference===null?\"Cut/fill unknown\":row.difference>=0?`Fill ${show(row.difference,\"m\")}`:`Cut ${show(-row.difference,\"m\")}`} \u00b7 {row.source} v{row.version ?? \"unknown\"} \u00b7 {sectionSnapshot===sectionKey?row.status:\"STALE\"}</p>)}{!segments.length && <p>No design geometry crosses this section line.</p>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringDockPanel.tsx",
+    "line": 106,
+    "text": "      {tab === \"VALIDATION\" && <><p>Readiness: {String(evidence?.readiness ?? \"Unavailable\")}</p><button className=\"mt-2 text-primary\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:open-site-data\"))}>Review site evidence and placement</button><p className=\"mt-2 text-muted-foreground\">No engineering clearance is reported without resolved datum, ground samples and the matching terrain version.</p><button className=\"mt-2 text-primary disabled:opacity-40\" disabled={busy || editor.dirty || !editor.baseRevision} onClick={()=>void checkClearance()}>{busy?\"Sampling supports\u2026\":\"Check bridge support clearances\"}</button>{clearances.map(row=><button key={row.id} className=\"mt-1 block text-left text-[10px]\" onClick={()=>editor.select(row.id)}>{row.name} \u00b7 ground {show(row.ground,\"m\")} \u00b7 support base {show(row.foundation,\"m\")} \u00b7 deck underside {show(row.deck,\"m\")} \u00b7 clearance {show(row.clearance,\"m\")} \u00b7 {row.source} v{row.version ?? \"unknown\"} \u00b7 {JSON.stringify(editor.document)!==clearanceSnapshot?\"STALE\":row.status}</button>)}</>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringResultsPanel.tsx",
+    "line": 15,
+    "text": " useEffect(()=>{const clear=(event:Event)=>{if(!(event as CustomEvent).detail)setVisible(false);};window.addEventListener('geoai:elastic-results',clear);return()=>window.removeEventListener('geoai:elastic-results',clear);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringResultsPanel.tsx",
+    "line": 20,
+    "text": "   };navigate();window.addEventListener(\"geoai:copilot-result\",navigate);return()=>window.removeEventListener(\"geoai:copilot-result\",navigate);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringResultsPanel.tsx",
+    "line": 34,
+    "text": " <div className=\"flex flex-wrap gap-2\"><button disabled={!valid} onClick={()=>{if(visible){window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));setVisible(false);}else{show(mode);setVisible(true);}}}>{visible&&!stale?'Hide Results':'Show Results'}</button><button disabled={!valid} onClick={()=>{show(mode,true);setVisible(true);}}>Fit Analysis</button><span className=\"text-xs text-muted-foreground\">{mode==='deformation'?'Deformation \u00d750':'Normalized force diagram'}</span></div>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringStudyPanel.tsx",
+    "line": 20,
+    "text": " useEffect(()=>{if(changed||source?.status==='STALE')window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[changed,source?.status]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringStudyPanel.tsx",
+    "line": 27,
+    "text": "  const points=paths.flat(),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,colors,nodeMarkers:markers,mode:'drawing-reference',focusComponentIds:['drawing-reference-only'],fit:true,fitPitch:-90,fitRange:Math.max(5,Math.hypot(maxX-minX,maxY-minY)*1.8),focus:[(minX+maxX)/2,(minY+maxY)/2,0],label:`${s.classification} \u00b7 original DXF plan ${s.source_units} \u2192 m; drawing Z=0 only, NOT structural elevation`}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringStudyPanel.tsx",
+    "line": 33,
+    "text": " {source&&<><article aria-label=\"Imported drawing source\" className=\"rounded border border-border p-2\"><b>{source.result.classification} \u00b7 {source.status}</b><p>{source.result.filename} \u00b7 source {source.result.source_units} \u2192 metres using \u00d7{source.result.scale_to_m}</p><p>{source.result.entities?.length} preserved entity IDs; materials NOT SUPPLIED.</p><details><summary>Source dimensions, notes and warnings</summary>{source.result.notes?.map((n,i)=><p key={i}>{n}</p>)}<p className=\"break-all\">SHA256 {source.result.source_sha256}</p><p>{JSON.stringify(source.result.entity_counts)}</p><p>Unextracted entities: {source.result.unsupported_entities?.length}</p></details><button disabled={blocked||source.status==='STALE'} onClick={show}>Show source drawing plan</button><button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Show saved 3D model</button><button onClick={()=>void perform(async()=>{await downloadFile(`${base}/drawings/${source.id}/source`,source.result.filename!);})}>Download original DXF</button><p className=\"text-xs text-muted-foreground\">Drawing plane Z=0 is a display convention. No structural elevation, georeference, physical bolt or connection is inferred. Drawing view hides the separate saved model for clarity.</p></article>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\EngineeringStudyPanel.tsx",
+    "line": 37,
+    "text": " <details><summary>Versioned Indian / American method registry</summary>{registry.map(m=><p key={m.id} className=\"my-2 break-words\"><b>{m.country} \u00b7 {m.standard} \u00b7 {m.edition}</b><br/>{m.status} \u00b7 {m.reason??'Single nominal steel term only; all other connection modes excluded.'}<br/><a className=\"text-primary underline\" href={m.source} target=\"_blank\" rel=\"noreferrer\">Source reference</a></p>)}</details><button onClick={()=>{window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));window.dispatchEvent(new CustomEvent('geoai:frame-platform-assembly'));}}>Frame saved conceptual context</button><p className=\"text-xs text-muted-foreground\">Saved geometry is a separate conceptual context. Nominal steel strength is not a computed force or a capacity of this platform.</p><button disabled={blocked} onClick={()=>void perform(async()=>{const f=await api.get<{inputs:Steel}>(`${base}/strength/fixture?model_revision_id=${rid}`);editSteel(f.inputs);})}>Load explicit synthetic steel benchmark</button>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FootingFlexurePanel.tsx",
+    "line": 15,
+    "text": " const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'footing-flexure-demand'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FootingFlexurePanel.tsx",
+    "line": 28,
+    "text": " window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:ids,colors,arrowIndices:arrows,mode:'footing-flexure-demand',fit:true,fitRange:3.8,fitPitch:-33,fitHeadingOffset:2.5,fitPoints:paths.flat(),focus:point(0,0,z-.1),focusComponentIds:[q.footing_id,q.column_id],overlayThroughSolids:true,nodeMarkers:markers,label:'SYNTHETIC DEMAND ONLY \u00b7 column-face strips; display ordinates not deformation'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FootingTransportPanel.tsx",
+    "line": 11,
+    "text": " const show=()=>{const paths=links.filter(l=>[l.column_reference_m,l.plate_reference_m,l.footing_reference_m].every(p=>p.length===3)).map(l=>[l.column_reference_m,l.plate_reference_m,l.footing_reference_m]);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:links.map(l=>l.footing_id),colors:paths.map(()=>'#ffb65c'),arrowIndices:paths.map((_,i)=>i),polygons:links.flatMap(l=>{const f=cs.find(c=>c.id===l.footing_id);if(!f||f.geometry.kind!=='box')return [];const x=f.transform.position[0],y=f.transform.position[1],sx=f.geometry.size[0]/2,sy=f.geometry.size[1]/2;return [l.column_reference_m,l.plate_reference_m,l.footing_reference_m].filter(p=>p.length===3).map((p,i)=>({positions:[[x-sx,y-sy,p[2]],[x+sx,y-sy,p[2]],[x+sx,y+sy,p[2]],[x-sx,y+sy,p[2]]],componentId:f.id,color:['#53cfff','#ffd36a','#fb936a'][i]}));}),mode:'demand-reference',fit:true,fitPoints:paths.flat(),focusComponentIds:[...links.flatMap(l=>[l.column_id,l.footing_id]),...cs.filter(c=>c.id.startsWith('drawing-cad:')&&['beam','slab'].includes(c.category)).map(c=>c.id)],overlayThroughSolids:true,nodeMarkers:links.flatMap(l=>{const short=name(l.column_id).replace('CAD column ','');const same=l.column_reference_m.every((v,i)=>Math.abs(v-l.plate_reference_m[i])<1e-8);return [{name:`${short} ${same?'column / declared interface':'column base'} Up ${l.column_reference_m[2]} m`,position:l.column_reference_m},...same?[]:[{name:`${short} declared interface (not physical plate)`,position:l.plate_reference_m}],{name:`${short} footing underside Up ${l.footing_reference_m[2]} m \u00b7 soil BLOCKED`,position:l.footing_reference_m}];}).filter(x=>x.position.length===3),label:'Explicit reference points; mathematical demand transport only \u00b7 soil BLOCKED'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationInterfacePanel.tsx",
+    "line": 22,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationInterfacePanel.tsx",
+    "line": 35,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:ids,arrowIndices:arrows,nodeMarkers:labels,colors:paths.map((_,i)=>arrows.includes(i)?'#ffe18a':'#53cfff'),mode:'foundation-interface',focus:[p[0],p[1],p[2]-.08],fitRange:4,fit:true,label:r.contact?'Actual N/M contact feasibility \u00b7 no partial-contact or anchor resistance':'Actual OpenSees demand \u2192 declared steel/concrete interface; axial-only pressure; no stress colors'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationSystemPanel.tsx",
+    "line": 28,
+    "text": "const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'foundation-integrated'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationVisualExplorer.tsx",
+    "line": 6,
+    "text": "const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'foundation-integrated'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationVisualExplorer.tsx",
+    "line": 13,
+    "text": " useEffect(()=>{if(stale){clear();return;}window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:overlay}));},[overlay,stale,refit]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationVisualExplorer.tsx",
+    "line": 14,
+    "text": " useEffect(()=>{window.dispatchEvent(new CustomEvent('geoai:foundation-appearance',{detail:stale?{}:{[data.geometry.footing_id]:transparent ? 0.2 : 1}}));return()=>{window.dispatchEvent(new CustomEvent('geoai:foundation-appearance',{detail:{}}));};},[transparent,stale,data.geometry.footing_id]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\FoundationVisualExplorer.tsx",
+    "line": 16,
+    "text": " useEffect(()=>{const listener=(event:Event)=>{const key=(event as CustomEvent<{key:string}>).detail.key;if(!isFoundationKey(key))return;setMode(modeFor(key));setEvidenceKey(key);setEvidenceOpen(true);if(key.endsWith('-NS'))setDirection('NS');else if(key.endsWith('-EW'))setDirection('EW');};window.addEventListener('geoai:foundation-inspect',listener);return()=>window.removeEventListener('geoai:foundation-inspect',listener);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisResults.tsx",
+    "line": 12,
+    "text": "export const clearAnalysisView=()=>{for(const clearMode of ['structural-visual','foundation-integrated'])window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisResults.tsx",
+    "line": 22,
+    "text": " useEffect(()=>{const inspect=(event:Event)=>{const key=(event as CustomEvent<{key:string}>).detail?.key;if(key){setInspection(key);if(key.startsWith('shell:'))editor.selectMany(['coupled-panel']);else if(foundation)editor.selectMany([foundation.geometry.footing_id]);else if(components.some(c=>c.id===key))editor.selectMany([key]);}};window.addEventListener('geoai:foundation-inspect',inspect);return()=>window.removeEventListener('geoai:foundation-inspect',inspect);},[editor,components,foundation]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisResults.tsx",
+    "line": 30,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{...detail,floorSystem:true,assistantCommand:assistantCommand&&assistantCommand.resultIdentity?.id===row.id&&assistantCommand.loadCase===activeCase&&assistantCommand.mode===visualMode ? assistantCommand:undefined}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisResults.tsx",
+    "line": 33,
+    "text": " useEffect(()=>{const restore=()=>{setShow(false);setIsolate(false);setAnimate(false);clearAnalysisView();};window.addEventListener('geoai:guided-restore-model',restore);return()=>{window.removeEventListener('geoai:guided-restore-model',restore);clearAnalysisView();};},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisWorkflow.tsx",
+    "line": 16,
+    "text": " const rid=editor.baseRevision?.id,doc=editor.document,storageKey=`geoai:analysis-guided:${projectId}`,defaultFamily:AnalysisFamily=doc?.metadata?.foundation_system||projectId===804?'foundation':doc?.metadata?.cad_slab_path_review?'floors':'structure';"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisWorkflow.tsx",
+    "line": 38,
+    "text": " useEffect(()=>{const navigate=(event:Event)=>{const d=(event as CustomEvent<{step?:WorkflowStep;advanced?:boolean}>).detail;if(d?.advanced)setAdvanced(true);else if(d?.step&&WORKFLOW_STEPS.includes(d.step)){setAdvanced(false);setStep(d.step);}};window.addEventListener('geoai:guided-navigation',navigate);return()=>window.removeEventListener('geoai:guided-navigation',navigate);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisWorkflow.tsx",
+    "line": 45,
+    "text": "  window.addEventListener('geoai:workspace-result',receive);return()=>window.removeEventListener('geoai:workspace-result',receive);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\GuidedAnalysisWorkflow.tsx",
+    "line": 89,
+    "text": "  <div aria-label=\"Current analysis context\" className=\"space-y-1 rounded-lg bg-muted/30 p-2 text-xs\"><p><b>{FAMILY_LABELS[family]}</b> \u00b7 {{frame:'Linear planar frame',slab:'One-way floor loads',spatial:'Linear spatial frame',coupled:'Synthetic shell\u2013frame',foundation:'Bounded foundation study'}[method]} \u00b7 {advanced?'Advanced mode':`Step ${WORKFLOW_STEPS.indexOf(step)+1} of 4`}</p><p className=\"truncate\" title={names.join(', ')}>Selected: {names.length?names.join(', '):'No components selected'} \u00b7 {doc?.components.length??0} CAD components</p><p>Active result: {result?`#${result.id} \u00b7 ${resultLabel(result)}`:'None current'} \u00b7 revision {rid??'not saved'}{caseName?` \u00b7 case ${caseName}`:''}</p><p>Next: {advanced?'Use existing engineering tools or return to the guided steps':step==='select'?'Choose an analysis type':step==='inputs'?'Review required inputs':step==='analyze'?proposalReady?'Explicitly authorize the reviewed proposal':'Prepare an exact review':'Inspect a saved result in 3D'}</p><a className=\"text-primary underline\" href={`/diagnostics?project_id=${projectId}&model_revision_id=${rid??''}`}>Diagnostics for this saved model</a><button disabled={loading||!!phase} onClick={()=>setRefresh(v=>v+1)}>Refresh saved analysis</button><button onClick={()=>{clearAnalysisView();window.dispatchEvent(new CustomEvent('geoai:guided-restore-model'));}}>Restore model</button></div>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalColumnAnalysisPanel.tsx",
+    "line": 47,
+    "text": "    const notify=()=>window.dispatchEvent(new CustomEvent('geoai:column-engineering-inputs-dirty',{detail:{componentId,dirty:dirtyInputs}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalColumnAnalysisPanel.tsx",
+    "line": 48,
+    "text": "    notify();window.addEventListener('geoai:request-column-input-draft-status',notify);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalColumnAnalysisPanel.tsx",
+    "line": 49,
+    "text": "    return()=>{window.removeEventListener('geoai:request-column-input-draft-status',notify);window.dispatchEvent(new CustomEvent('geoai:column-engineering-inputs-dirty',{detail:{componentId,dirty:false}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 29,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 30,
+    "text": " useEffect(()=>()=>{window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 46,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths:entries.map(e=>e.path),componentIds:entries.map(e=>e.id),colors:entries.map(e=>e.color),mode:'connections',fit:true,focusComponentIds:cadReview?graph.component_ids:undefined,focus:joint?enu(joint.column_top_m.map((v,i)=>(v+joint.beam_end_m[i])/2)):undefined,fitRange:joint?1.4:undefined,nodeMarkers:markers,label:form.connections?.length===2&&form.connections.every(j=>j.behavior==='rigid'||j.idealization_approved)?'Physical centerlines and explicitly declared rigid arms':'Physical centerlines and unapproved analytical joint candidates'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 54,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:ids,colors:paths.map(()=>'#ffe18a'),nodeMarkers:labels,mode:'loads',fit:true,focusComponentIds:cadReview?g.component_ids:undefined,overlayThroughSolids:cadReview,fitHeadingOffset:cadReview?0:undefined,fitPoints:(g.node_positions_m??[[0,0],[0,g.height_m],[g.length_m,g.height_m],[g.length_m,0]]).map(enu),label:`${r.case_name??'Horizontal'} applied loads \u00b7 arrows symbolic, values SI`}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 56,
+    "text": " const show=(mode:'deformation'|'moment'|'shear'|'axial'|'reactions',fit=false)=>{const r=displayed?.result,g=r?.physical_to_analytical_graph;if(!r?.elements||!g||stale)return;const samples=r.elements.flatMap(e=>e.samples),value=(s:Sample)=>mode==='moment'?s.moment_nm:mode==='axial'?s.axial_n:s.shear_n;const max=Math.max(1,...samples.map(s=>Math.abs(value(s))));const origin=g.origin_enu_m;const paths=mode==='reactions'?(r.reactions??[]).map(a=>{const x=a.node===1?0:g.length_m;return [[origin[0]+x,origin[1],origin[2]],[origin[0]+x+a.fx_n/Math.max(1,...(r.reactions??[]).map(v=>Math.hypot(v.fx_n,v.fy_n)))*.8,origin[1],origin[2]+a.fy_n/Math.max(1,...(r.reactions??[]).map(v=>Math.hypot(v.fx_n,v.fy_n)))*.8]];}):r.elements.map(e=>e.samples.map(s=>{const first=e.samples[0].position_m,last=e.samples.at(-1)!.position_m,dx=last[0]-first[0],dy=last[1]-first[1],L=Math.hypot(dx,dy),off=mode==='deformation'?0:value(s)/max*.6;return [origin[0]+s.position_m[0]+(mode==='deformation'?50*s.displacement_m[0]:-dy/L*off),origin[1],origin[2]+s.position_m[1]+(mode==='deformation'?50*s.displacement_m[1]:dx/L*off)];}));const componentIds=mode==='reactions'?(r.reactions??[]).map(a=>g.members.find(m=>m.node_ids[0]===a.node)?.component_id):r.elements.map(e=>e.component_id),colors:string[]=paths.map(()=>mode==='deformation'?'#60a5fa':mode==='moment'?'#ff8b5c':'#53cfff');if(mode==='deformation')for(const t of r.rigid_offset_transfers??[]){const n=r.nodes?.find(n=>n.id===t.node),j=g.connection_offsets?.find(j=>j.retained_node_id===t.node);if(!n||!j)continue;paths.push([[origin[0]+j.column_top_m[0]+50*n.displacement_m[0],origin[1],origin[2]+j.column_top_m[1]+50*n.displacement_m[1]],[origin[0]+j.beam_end_m[0]+50*t.physical_end_displacement_si[0],origin[1],origin[2]+j.beam_end_m[1]+50*t.physical_end_displacement_si[1]]]);componentIds.push(t.component_id);colors.push('#ff67d4');}window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,mode,fit,componentIds,colors,nodeMarkers:cadReview&&mode==='reactions'?(r.reactions??[]).map(a=>({position:[origin[0]+(a.node===1?0:g.length_m),origin[1],origin[2]],componentId:g.members.find(m=>m.node_ids[0]===a.node)?.component_id,name:`Node ${a.node}: Fx ${(a.fx_n/1000).toFixed(3)}, Fy ${(a.fy_n/1000).toFixed(3)} kN; M ${(a.moment_nm/1000).toFixed(3)} kN\u00b7m`})):undefined,focusComponentIds:cadReview?g.component_ids:undefined,overlayThroughSolids:cadReview,fitHeadingOffset:cadReview?0:undefined,fitPoints:(g.node_positions_m??[[0,0],[0,g.height_m],[g.length_m,g.height_m],[g.length_m,0]]).map(p=>[origin[0]+p[0],origin[1],origin[2]+p[1]]),label:`${r.case_name??'Legacy horizontal'} \u00b7 ${mode==='deformation'?'Displacement \u00d750':mode==='reactions'?'Support force vectors':mode==='moment'?'Bending moment':mode==='axial'?'Axial force':'Shear'} \u00b7 OpenSees ${r.solver_version}`}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 59,
+    "text": " <button disabled={cadReview&&!graph} onClick={()=>cadReview&&graph?showConnections():window.dispatchEvent(new CustomEvent('geoai:frame-platform-assembly'))}>Frame Model</button>{input&&<button onClick={()=>editor.selectMany(input.result.inputs!.component_ids)}>Select saved analysis members</button>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PhysicalFramePanel.tsx",
+    "line": 77,
+    "text": " {displayed&&<EngineeringResultsPanel result={displayed} selectCase={name=>{setViewCase(name);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));}} showLoads={()=>showLoads()} stale={stale} busy={busy} editor={editor} base={base} show={show} explain={()=>void action('explain')} />}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\PlatformAttachmentsPanel.tsx",
+    "line": 35,
+    "text": "    <div className=\"flex items-center justify-between gap-2\"><h3 className=\"text-sm font-medium\">Attached components</h3><Button size=\"sm\" variant=\"ghost\" className=\"h-7 px-2 text-[10px]\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:frame-platform-assembly\"))}>Frame assembly</Button></div>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\plotSavedFrame.ts",
+    "line": 3,
+    "text": "export const plotSavedFrame=(r:RecordRow['result'],mode:'deformation'|'moment'|'shear'|'axial'|'reactions',fit=false)=>{const g=r?.physical_to_analytical_graph;if(!r?.elements||!g)return;const samples=r.elements.flatMap(e=>e.samples),value=(s:Sample)=>mode==='moment'?s.moment_nm:mode==='axial'?s.axial_n:s.shear_n;const max=Math.max(1,...samples.map(s=>Math.abs(value(s))));const origin=g.origin_enu_m;const paths=mode==='reactions'?(r.reactions??[]).map(a=>{const x=a.node===1?0:g.length_m;return [[origin[0]+x,origin[1],origin[2]],[origin[0]+x+a.fx_n/Math.max(1,...(r.reactions??[]).map(v=>Math.hypot(v.fx_n,v.fy_n)))*.8,origin[1],origin[2]+a.fy_n/Math.max(1,...(r.reactions??[]).map(v=>Math.hypot(v.fx_n,v.fy_n)))*.8]];}):r.elements.map(e=>e.samples.map(s=>{const first=e.samples[0].position_m,last=e.samples.at(-1)!.position_m,dx=last[0]-first[0],dy=last[1]-first[1],L=Math.hypot(dx,dy),off=mode==='deformation'?0:value(s)/max*.6;return [origin[0]+s.position_m[0]+(mode==='deformation'?50*s.displacement_m[0]:-dy/L*off),origin[1],origin[2]+s.position_m[1]+(mode==='deformation'?50*s.displacement_m[1]:dx/L*off)];}));const componentIds=mode==='reactions'?(r.reactions??[]).map(a=>g.members.find(m=>m.node_ids[0]===a.node)?.component_id):r.elements.map(e=>e.component_id),colors:string[]=paths.map(()=>mode==='deformation'?'#60a5fa':mode==='moment'?'#ff8b5c':'#53cfff');if(mode==='deformation')for(const t of r.rigid_offset_transfers??[]){const n=r.nodes?.find(n=>n.id===t.node),j=g.connection_offsets?.find(j=>j.retained_node_id===t.node);if(!n||!j)continue;paths.push([[origin[0]+j.column_top_m[0]+50*n.displacement_m[0],origin[1],origin[2]+j.column_top_m[1]+50*n.displacement_m[1]],[origin[0]+j.beam_end_m[0]+50*t.physical_end_displacement_si[0],origin[1],origin[2]+j.beam_end_m[1]+50*t.physical_end_displacement_si[1]]]);componentIds.push(t.component_id);colors.push('#ff67d4');}window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,mode,fit,componentIds,colors,focusComponentIds:g.members.every(m=>m.component_id.startsWith('drawing-cad:'))?g.component_ids:undefined,overlayThroughSolids:g.members.every(m=>m.component_id.startsWith('drawing-cad:')),fitPoints:(g.node_positions_m??[[0,0],[0,g.height_m],[g.length_m,g.height_m],[g.length_m,0]]).map(p=>[origin[0]+p[0],origin[1],origin[2]+p[1]]),label:`${r.case_name??'Legacy horizontal'} \u00b7 ${mode==='deformation'?'Displacement \u00d750':mode==='reactions'?'Support force vectors':mode==='moment'?'Bending moment':mode==='axial'?'Axial force':'Shear'} \u00b7 OpenSees ${r.solver_version}`}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 89,
+    "text": "  if (!component) return <div className=\"space-y-3 p-4\"><p>Select a component</p><p className=\"text-xs text-muted-foreground\">Click a member in the viewport or choose it from Layers.</p><Button size=\"sm\" variant=\"secondary\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:layer-action\",{detail:\"restore\"}))}>Restore visibility</Button></div>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 104,
+    "text": "  useEffect(() => () => { window.dispatchEvent(new CustomEvent(\"geoai:component-preview\", {detail:null})); }, []);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 112,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:component-preview\", { detail: candidate }));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 113,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:assistant-preview-status\", { detail: \"Visual preview shown. Review in 3D, then explicitly Apply and Save model in the editor. No model has been saved.\" }));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 115,
+    "text": "    window.addEventListener(\"geoai:assistant-preview-ready\", receive);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 116,
+    "text": "    return () => window.removeEventListener(\"geoai:assistant-preview-ready\", receive);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 122,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:component-preview\", {detail:null}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 124,
+    "text": "    window.addEventListener(\"geoai:assistant-preview-cancel\", cancel);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 125,
+    "text": "    return () => window.removeEventListener(\"geoai:assistant-preview-cancel\", cancel);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 130,
+    "text": "    window.dispatchEvent(new CustomEvent(\"geoai:component-preview\", {detail:null}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 134,
+    "text": "  const clearPreview = () => {setPreviewing(false);window.dispatchEvent(new CustomEvent(\"geoai:component-preview\", {detail:null}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 153,
+    "text": "      <Button size=\"sm\" variant=\"secondary\" disabled={disabled || !changed} onClick={event=>{if(!fieldsValid(event.currentTarget))return;window.dispatchEvent(new CustomEvent(\"geoai:component-preview\",{detail:draft}));setPreviewing(true);}}>Preview</Button>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 193,
+    "text": "  return <div className=\"flex h-full flex-col\"><div className=\"flex-1 space-y-3 overflow-y-auto p-3\"><div className=\"rounded-none border border-primary/25 bg-primary/5 p-3\"><div className=\"flex items-center gap-2\"><Sparkles className=\"h-4 w-4 text-primary\" /><p className=\"text-xs font-semibold\">Engineering Assistant</p></div><p className=\"mt-2 text-[11px] leading-relaxed text-muted-foreground\">Review project evidence and checks, or prepare a semantic design proposal. Only Apply changes geometry.</p><div className=\"mt-3 flex flex-wrap gap-2\"><button className=\"text-[10px] text-primary\" onClick={()=>{void editor.validateDraft().catch(error=>toast(\"Checks failed\",{variant:\"error\",description:String(error)}));}}>Check maximum supplied grade</button><button className=\"text-[10px] text-primary\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:open-dock\",{detail:\"PROFILE\"}))}>Create terrain profile</button><button className=\"text-[10px] text-primary\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:open-dock\",{detail:\"VALIDATION\"}))}>Check bridge clearances</button><button className=\"text-[10px] text-primary\" onClick={()=>window.dispatchEvent(new CustomEvent(\"geoai:open-site-data\"))}>Inspect survey readiness</button><button className=\"text-[10px] text-primary\" onClick={()=>setPrompt(\"Reduce pier count while keeping span below 45 m\")}>Reduce pier count</button></div>{editor.layoutValidation?.violations.map((issue,index)=><p key={index} className=\"mt-2 text-[10px] text-amber-200\">{issue.message} \u00b7 {issue.action}</p>)}</div>{editor.aiPreview && <div className=\"rounded-none border border-accent/35 bg-accent/5 p-3\"><p className=\"text-xs font-semibold\">Proposal ready</p>{editor.aiPreview.patch.map(patch=><p key={patch.component_id} className=\"mt-1 text-[10px]\">{editor.document?.components.find(component=>component.id===patch.component_id)?.name ?? patch.component_id} \u00b7 {Object.keys(patch.changes).join(\", \")}</p>)}{editor.aiPreview.warnings.map((warning,index)=><p key={index} className=\"mt-1 text-[10px] text-amber-200\">{warning}</p>)}<p className=\"mt-1 text-[11px] text-muted-foreground\">{editor.aiPreview.patch.length} component change{editor.aiPreview.patch.length === 1 ? \"\" : \"s\"} \u00b7 save required after acceptance</p>{editor.aiPreview.validation_errors.length > 0 && <p className=\"mt-2 text-[10px] text-destructive\">{editor.aiPreview.validation_errors.join(\" \u00b7 \")}</p>}<div className=\"mt-3 grid grid-cols-2 gap-2\"><Button size=\"sm\" onClick={editor.acceptAiPreview} disabled={editor.aiPreview.validation_errors.length > 0 || !editor.aiPreview.patch.length || editor.dirty}><Check className=\"h-3.5 w-3.5\" />Apply proposal</Button><Button size=\"sm\" variant=\"secondary\" onClick={editor.rejectAiPreview}><X className=\"h-3.5 w-3.5\" />Cancel</Button></div></div>}{editor.impact && <div className=\"grid grid-cols-2 gap-2\"><div className=\"rounded-sm border border-border p-2\"><p className=\"text-[9px] uppercase text-muted-foreground\">Estimated cost</p><p className=\"mt-1 font-data text-xs\">{formatCurrency(editor.impact.total_cost_estimate, editor.impact.currency)}</p></div><div className=\"rounded-sm border border-border p-2\"><p className=\"text-[9px] uppercase text-muted-foreground\">Concrete</p><p className=\"mt-1 font-data text-xs\">{formatQty(editor.impact.quantities.concrete_m3, \"m\u00b3\")}</p></div></div>}</div><div className=\"border-t border-border p-3\"><textarea className=\"min-h-20 w-full resize-none rounded-none border border-border bg-background p-3 text-xs outline-none focus:border-primary\" value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder=\"Describe an engineering edit to review\u2026\" /><Button className=\"mt-2 w-full\" size=\"sm\" onClick={run} disabled={working || !editor.baseRevision || editor.dirty}><Bot className=\"h-3.5 w-3.5\" />{working ? \"Preparing preview\u2026\" : \"Prepare proposal\"}</Button></div></div>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 239,
+    "text": "      {validation?.violations.map((item) => {const key=`${JSON.stringify(editor.document)}:${item.rule}:${item.component_id}`;return <div key={key} className=\"mt-2 flex gap-2 text-[10px] text-warning\"><TriangleAlert className=\"mt-0.5 size-3.5 shrink-0\" /><span><strong>WARNING \u00b7 {item.message}</strong><br />{item.action}<span className=\"mt-1 flex gap-3\"><button onClick={()=>{editor.select(item.component_id ?? null);window.dispatchEvent(new CustomEvent(\"geoai:locate-component\",{detail:item.component_id}));}}>Locate</button><button onClick={()=>{editor.select(item.component_id ?? null);window.dispatchEvent(new CustomEvent(\"geoai:inspect-component\"));}}>Inspect</button><button onClick={()=>setReviewed(previous=>[...previous,key])} disabled={reviewed.includes(key)}>{reviewed.includes(key)?\"Reviewed in session\":\"Mark reviewed\"}</button></span></span></div>;})}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 287,
+    "text": "    <div className=\"flex flex-wrap gap-2\"><Button size=\"sm\" variant=\"secondary\" onClick={()=>window.dispatchEvent(new Event(\"geoai:fit-selection\"))}>Fit selection</Button><Button size=\"sm\" variant=\"secondary\" disabled={c.locked || !!attachmentOf(c)} onClick={()=>document.querySelector('[aria-label=\"Component edit form\"]')?.scrollIntoView({block:\"nearest\"})}>Edit</Button><Button size=\"sm\" variant=\"secondary\" onClick={()=>window.dispatchEvent(new Event(\"geoai:show-analysis\"))}>Existing analysis</Button>{['Isolate','Hide','Restore visibility'].map(label=><Button key={label} size=\"sm\" variant=\"secondary\" disabled={!!editor.comparison||!!editor.platformPreview} onClick={()=>window.dispatchEvent(new CustomEvent('geoai:layer-action',{detail:label==='Isolate'?'isolate':label==='Hide'?'hide':'restore'}))}>{label}</Button>)}</div>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 297,
+    "text": "    window.dispatchEvent(new CustomEvent(\"geoai:inspector-view\", { detail: separateAssistant ? tab : tab ?? \"layers\" }));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 301,
+    "text": "    window.addEventListener(\"geoai:presentation\", close);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 302,
+    "text": "    return () => window.removeEventListener(\"geoai:presentation\", close);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 306,
+    "text": "    window.addEventListener(\"geoai:component-preview\", track);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 307,
+    "text": "    return () => { window.removeEventListener(\"geoai:component-preview\", track); publishAssistantContext({ project_id: null, revision_id: null, selected_ids: [], dirty: false }); };"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 316,
+    "text": "      const report = (message: string) => window.dispatchEvent(new CustomEvent(\"geoai:assistant-preview-status\", { detail: message }));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 328,
+    "text": "        const deliver = () => { if (document.querySelector('[aria-label=\"Component edit form\"]')) window.dispatchEvent(new CustomEvent(\"geoai:assistant-preview-ready\", { detail: proposal })); else if (++count < 30) window.setTimeout(deliver, 50); else report(\"Inspector unavailable. Open Inspect and request the preview again.\"); };"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 332,
+    "text": "    window.addEventListener(\"geoai:assistant-position-preview\", preview);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 333,
+    "text": "    return () => window.removeEventListener(\"geoai:assistant-position-preview\", preview);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 335,
+    "text": "  useEffect(()=>{const selected=()=>{setTabState(\"properties\");};window.addEventListener(\"geoai:selection-inspect\",selected);return()=>window.removeEventListener(\"geoai:selection-inspect\",selected);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 339,
+    "text": "    setTabState(\"properties\");};window.addEventListener(\"geoai:inspect-component\",inspect);return()=>window.removeEventListener(\"geoai:inspect-component\",inspect);},[editor,projectId]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 340,
+    "text": "  useEffect(() => { const assistant = () => setTabState(separateAssistant ? null : \"copilot\"); window.addEventListener(\"geoai:open-copilot\", assistant); return () => window.removeEventListener(\"geoai:open-copilot\", assistant); }, [separateAssistant]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 343,
+    "text": "    window.addEventListener(\"geoai:show-layers\", layers); window.addEventListener(\"geoai:show-analysis\", analysis); window.addEventListener(\"geoai:show-review\", review);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 344,
+    "text": "    return () => { window.removeEventListener(\"geoai:show-layers\", layers); window.removeEventListener(\"geoai:show-analysis\", analysis); window.removeEventListener(\"geoai:show-review\", review); };"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 362,
+    "text": "        if(typeof target===\"string\" && action===\"inputs\"){window.dispatchEvent(new CustomEvent(\"geoai:guided-navigation\",{detail:{step:\"inputs\"}}));return;}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 363,
+    "text": "        window.dispatchEvent(new CustomEvent(\"geoai:guided-navigation\",{detail:{advanced:true}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 375,
+    "text": "          if(typeof target!==\"string\")window.dispatchEvent(new CustomEvent(\"geoai:connection-input\",{detail:target}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 395,
+    "text": "    window.addEventListener(\"geoai:copilot-inputs\",navigate);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 396,
+    "text": "    return()=>{stopPending();window.removeEventListener(\"geoai:copilot-inputs\",navigate);};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 400,
+    "text": "    if(activeTab===\"analysis\" && pendingNavigation.current)window.dispatchEvent(new CustomEvent(\"geoai:copilot-inputs\",{detail:pendingNavigation.current}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 403,
+    "text": "  useEffect(() => {window.dispatchEvent(new CustomEvent(\"geoai:analysis-workspace\",{detail:{active:activeTab === \"analysis\" && tab !== null}}));return()=>{window.dispatchEvent(new CustomEvent(\"geoai:analysis-workspace\",{detail:{active:false}}));};},[activeTab,tab]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 404,
+    "text": "  useEffect(() => { if (activeTab === \"copilot\") window.dispatchEvent(new Event(\"geoai:assistant-opened\")); }, [activeTab]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 433,
+    "text": "  useEffect(() => { window.dispatchEvent(new Event(\"geoai:assistant-opened\")); }, []);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\ProfessionalModelEditor.tsx",
+    "line": 434,
+    "text": "  return <div className=\"relative flex h-full min-h-0 flex-col\"><button type=\"button\" aria-label=\"Close Assistant\" title=\"Close Assistant\" className=\"absolute right-3 top-2 z-10 rounded p-1 text-muted-foreground hover:text-foreground\" onClick={() => window.dispatchEvent(new Event(\"geoai:toggle-copilot\"))}><X className=\"size-4\" /></button><div role=\"tablist\" aria-label=\"AI conversation\" className=\"shrink-0 px-3 pt-2\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" className=\"flex items-center gap-2 text-xs text-muted-foreground\" onClick={() => window.dispatchEvent(new Event(\"geoai:assistant-opened\"))}><Bot className=\"size-3.5\" />Assistant</button></div><div className=\"min-h-0 flex-1\"><PersistentAssistant projectId={projectId} siteGeometry={siteGeometry} selectedIds={editor.selectedIds} revisionId={editor.baseRevision?.id ?? null} dirty={editor.dirty || !!editor.platformPreview || !!editor.aiPreview || !!editor.comparison} /></div></div>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RCFlexurePanel.tsx",
+    "line": 15,
+    "text": " const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'rc-flexure-layout'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RCFlexurePanel.tsx",
+    "line": 24,
+    "text": " window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{mode:'rc-flexure-layout',paths,colors:[...Array(q.bar_count).fill('#ffd479'),'#80d8ed','#ffffff'],componentIds:paths.map(()=>q.footing_id),polygons,fit:true,fitRange:2.8,fitPitch:-38,fitHeadingOffset:2.5,focus:p(0,0,-H/2),focusComponentIds:[q.footing_id,g.column_id],overlayThroughSolids:true,nodeMarkers:[{name:`SYNTHETIC ${q.bar_count} \u00d8${q.bar_diameter_mm} \u00b7 d ${q.effective_depth_mm} mm \u00b7 cover ${q.cover_mm} mm`,position:p(0,-B/2-.2,-H-.15)}],label:'Synthetic single E-W layer \u00b7 x-ray overlay \u00b7 nominal mechanics only'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RectangularBearingPanel.tsx",
+    "line": 16,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'finite-bearing-schematic'}}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RectangularBearingPanel.tsx",
+    "line": 17,
+    "text": " const edit=(v:Input)=>{setQ(v);setDirty(true);setConsent(false);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'finite-bearing-schematic'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RectangularBearingPanel.tsx",
+    "line": 19,
+    "text": " const show=()=>{if(!q||!computed||stale)return;const B=q.B_m,L=q.L_m,z=q.reference_up_m,id='synthetic-finite-bearing';const paths=[[[0,0,z+1.2],[0,0,z]],[[B,0,z-1],[B,0,z]],[[-B/2,0,z],[0,0,z-B/2],[B/2,0,z]],[[-B/2,0,z],[-B,0,z-B/2],[-1.5*B,0,z]],[[B/2,0,z],[B,0,z-B/2],[1.5*B,0,z]]];window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:paths.map(()=>id),colors:['#ffe18a','#4ade80','#edab68','#edab68','#edab68'],arrowIndices:[0,1],polygons:[{positions:[[-B/2,-L/2,z],[B/2,-L/2,z],[B/2,L/2,z],[-B/2,L/2,z]],componentId:id,color:'#adb8ba'}],mode:'finite-bearing-schematic',fit:true,fitRange:Math.max(5,B*4),fitPitch:-32,fitPoints:paths.flat(),focusComponentIds:[id],overlayThroughSolids:true,nodeMarkers:[{name:`Applied ${q.vertical_load_kn.toFixed(3)} kN; ${computed.applied_pressure_kpa.toFixed(3)} kPa`,position:[0,0,z+1.2]},{name:`Ultimate ${computed.ultimate_resistance_kn.toFixed(3)} kN; NOT an actual reaction`,position:[B,0,z-1]},{name:`${B} \u00d7 ${L} m surface footing \u00b7 reference Up ${z} m`,position:[0,-L/2,z]},{name:'ILLUSTRATIVE failure mechanism \u00b7 no collapse/stress field computed',position:[-B,0,z-B]}],label:'SYNTHETIC finite-footing formula benchmark \u00b7 actual CAD foundation safety BLOCKED'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\RectangularBearingPanel.tsx",
+    "line": 20,
+    "text": " return <section data-busy={busy||loading} aria-label=\"Finite footing bearing benchmark\" className=\"mb-4 space-y-3 rounded border border-border p-3 text-sm [&_input:not([type=checkbox])]:w-full [&_input]:bg-background [&_textarea]:w-full [&_textarea]:bg-background [&_select]:w-full [&_select]:bg-background [&_button]:rounded [&_button]:border [&_button]:border-border [&_button]:p-2\"><h3 className=\"font-semibold\">Square / rectangular bearing \u00b7 synthetic verification</h3>{loading&&<p role=\"status\">Loading saved finite-footing inputs and evidence\u2026</p>}<p>Actual CAD foundation capacity and soil suitability BLOCKED. No site strength or supported physical connection transfer has been supplied. Existing soil profiles are reference only.</p><p>FHWA GEC 6 (2002), Table 5-2 \u03c6=0 row: sc=1+B/(5L); Nc=\u03c0+2; q_ult=su\u00b7Nc\u00b7sc. Surface only, B\u2264L&lt;5B, homogeneous undrained total stress, rough rigid horizontal base, vertical concentric loading. This is formula verification, not IS/US compliance.</p><button disabled={busy||loading||blocked} onClick={()=>edit(structuredClone(finiteFixture))}>Load synthetic square verification inputs</button>{q&&<fieldset disabled={busy||loading||blocked} className=\"space-y-3\"><details open><summary>Explicit finite-footing inputs</summary><label>Finite geometry<select aria-label=\"Finite geometry\" value={q.geometry} onChange={e=>edit({...q,geometry:e.target.value})}><option>SQUARE</option><option>RECTANGLE</option></select></label>{numeric.map(([key,label])=><label className=\"block\" key={key}>{label}<input aria-label={label} type=\"number\" step=\"any\" value={Number.isFinite(q[key])?Number(q[key]):''} onChange={e=>edit({...q,[key]:e.target.value===''?NaN:Number(e.target.value)})}/></label>)}<label>Soil extent<select aria-label=\"Finite soil extent\" value={q.soil_extent} onChange={e=>edit({...q,soil_extent:e.target.value})}><option>HOMOGENEOUS_INFINITE_IDEALIZATION</option><option>LAYERED</option></select></label><label>Groundwater<select aria-label=\"Finite groundwater\" value={q.groundwater} onChange={e=>edit({...q,groundwater:e.target.value})}><option>EXCLUDED_SYNTHETIC_IDEALIZATION</option><option>UNKNOWN</option><option>CORRECTION_REQUIRED</option></select></label></details><details><summary>Sources and applicability \u00b7 synthetic only</summary>{(['strength_source','geometry_source','groundwater_source','load_source','factor_source','reference_source','applicability'] as const).map(key=><label className=\"block\" key={key}>{key.replaceAll('_',' ')}<textarea aria-label={`Finite ${key}`} value={q[key]} onChange={e=>edit({...q,[key]:e.target.value})}/></label>)}</details><p>Total load must include footing weight. Direct synthetic load at the bearing plane only; no column/plate connection behavior is assumed. Groundwater corrections excluded, not an assertion of dry site conditions. Unit-weight terms vanish for \u03c6=0 and Df=0.</p><label><input aria-label=\"Finite total load includes footing\" type=\"checkbox\" checked={q.total_load_includes_footing} onChange={e=>edit({...q,total_load_includes_footing:e.target.checked})}/>Total prescribed synthetic load includes footing weight</label><label><input aria-label=\"Finite assumptions reviewed\" type=\"checkbox\" checked={q.reviewed_assumptions} onChange={e=>edit({...q,reviewed_assumptions:e.target.checked})}/>Reviewed this supported synthetic idealization only</label><button disabled={busy||blocked||!dirty} onClick={()=>void run(false)}>Preview finite bearing proposal</button></fieldset>}{proposal&&<p>Proposal #{proposal.id} \u00b7 {dirty?'STALE':proposal.status} \u00b7 exact geometry, sources, model revision and reference-profile binding.</p>}<label><input aria-label=\"Authorize finite bearing benchmark\" type=\"checkbox\" checked={consent} disabled={busy||blocked||dirty||proposal?.status!=='AWAITING_AUTHORIZATION'} onChange={e=>setConsent(e.target.checked)}/>Authorize this exact synthetic formula calculation</label><button disabled={busy||blocked||dirty||!consent||proposal?.status!=='AWAITING_AUTHORIZATION'} onClick={()=>void run(true)}>Calculate authorized finite bearing</button>{computed&&<article aria-label=\"Finite bearing results\"><b>{stale?'STALE':result?.status}</b><p>Nc {computed.factors.Nc.toFixed(9)}; sc {computed.factors.sc.toFixed(9)}; A {computed.area_m2.toFixed(6)} m\u00b2.</p><p>Ultimate resistance: {computed.ultimate_gross_kpa.toFixed(6)} kPa; {computed.ultimate_resistance_kn.toFixed(6)} kN.</p><p>Strength-only allowable reference: {computed.strength_only_allowable_gross_kpa.toFixed(6)} kPa; {computed.strength_only_allowable_kn.toFixed(6)} kN. Declared global FS only; no settlement or site-safety verdict.</p><p>Applied pressure: {computed.applied_pressure_kpa.toFixed(6)} kPa.</p><button disabled={stale||busy} onClick={show}>Show finite footing and illustrative mechanism</button><details><summary>Immutable formulas, source inputs and independent evidence</summary><pre className=\"max-h-64 overflow-auto whitespace-pre-wrap break-all text-xs\">{JSON.stringify(result,null,2)}</pre></details></article>}<button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'finite-bearing-schematic'}}))}>Return to CAD structure</button><p>Unsupported: eccentricity, shear/moments, physical connection transfer, groundwater corrections, layering, embedment, inclined base/load, foundation strength, settlement/suitability, IS/US checks and engineering approval. No synthetic value becomes a site property.</p>{error&&<p role=\"alert\">{error}</p>}</section>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SceneLayersPanel.tsx",
+    "line": 65,
+    "text": "  };window.addEventListener('geoai:layer-action',listener);return()=>window.removeEventListener('geoai:layer-action',listener);},[editor,visibilityBeforeIsolation]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SceneLayersPanel.tsx",
+    "line": 102,
+    "text": "        [\"Inspect selected\", () => window.dispatchEvent(new Event(\"geoai:selection-inspect\"))],"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SceneLayersPanel.tsx",
+    "line": 103,
+    "text": "        [\"Focus selected\", () => window.dispatchEvent(new Event(\"geoai:fit-selection\"))],"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SceneLayersPanel.tsx",
+    "line": 115,
+    "text": "      {!!editor.selectedIds.length && <div className=\"flex items-center justify-between text-[10px] text-primary\"><span>{editor.selectedIds.length} selected \u00b7 Shift for range</span><button onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:locate-component\", { detail: editor.selectedIds[0] }))}>Locate</button></div>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SceneLayersPanel.tsx",
+    "line": 146,
+    "text": "                <button className=\"flex min-w-0 flex-1 items-center gap-2 py-1.5 text-left text-[11px]\" aria-pressed={editor.selectedIds.includes(component.id)} onDoubleClick={() => window.dispatchEvent(new CustomEvent(\"geoai:locate-component\", { detail: component.id }))} onClick={event => selectRow(component.id, event.shiftKey, event.ctrlKey || event.metaKey)} title={`${componentDisplayName(component)} \u00b7 ${component.id} \u00b7 Ctrl to add \u00b7 Shift for range \u00b7 double-click to locate`}><Box className=\"size-3.5 shrink-0 text-muted-foreground\" /><span className=\"truncate\">{componentDisplayName(component)}</span></button>"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SlabTransferPanel.tsx",
+    "line": 33,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SlabTransferPanel.tsx",
+    "line": 47,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:ids,arrowIndices,polygons,nodeMarkers:labels,mode:'slab-transfer',fit:true,focusComponentIds:cadScope?[t.slab_id,...form.frames.flatMap(f=>f.component_ids)]:undefined,overlayThroughSolids:cadScope,fitPoints:t.strips.flatMap(s=>s.polygon_enu_m.flatMap(p=>[[p[0],p[1],0],[p[0],p[1],p[2]+1.5]])),label:`Slab ${form.intensity_kn_m2} kN/m\u00b2 \u00b7 one-way tributary idealization, not slab FEA`}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SlabTransferPanel.tsx",
+    "line": 72,
+    "text": " {result&&<div aria-label=\"Slab reaction balance\" className=\"space-y-2\"><p className={stale?'text-amber-200':'text-primary'}>{stale?'STALE \u2014 plots disabled':result.status} \u00b7 slab to frame reactions</p><p>Computed base reactions at explicitly fixed supports; footing and soil behavior/capacity are not modeled. Imposed slab pressure only; member and slab self-weight excluded, with no duplicate uniform-load case.</p><p>Total applied {result.result.transfer.applied_kn?.toFixed(3)} kN \u2192 total computed Ry {result.result.reaction_total_kn?.toFixed(6)} kN \u00b7 residual {result.result.reaction_balance_error_kn?.toExponential(3)} kN</p><label>Supporting frame result<select aria-label=\"Slab supporting frame result\" value={picked?.beam_id??''} onChange={e=>{setSelectedBeam(e.target.value);window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));}}>{result.result.frames?.map(f=><option key={f.beam_id} value={f.beam_id}>{name(f.beam_id)}</option>)}</select></label><button disabled={stale||!picked?.result.physical_to_analytical_graph} onClick={()=>picked?.result.physical_to_analytical_graph&&editor.selectMany(picked.result.physical_to_analytical_graph.component_ids)}>Select supporting frame members</button><details><summary>Independent fixed-fixed beam examples (different boundary condition)</summary>{result.result.beam_references?.map((b,i)=><p key={i}>Reference {i+1}: {b.status} \u00b7 Ry {b.hand.reaction_y_n/1000} kN/end \u00b7 fixed end M {b.hand.left_end_moment_nm/1000} kN\u00b7m \u00b7 midspan v {(b.hand.midspan_displacement_m*1000).toFixed(6)} mm. Portal frame uses actual column/joint flexibility and is checked separately against independent stiffness.</p>)}</details><button onClick={async()=>{try{const data=await api.get(base+`/${result.id}/evidence`);const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='slab-transfer-evidence.json';a.click();URL.revokeObjectURL(url);}catch(e){setError(formatApiErrorMessage(e));}}}>Download full slab transfer evidence</button></div>}"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilContactPanel.tsx",
+    "line": 15,
+    "text": " const change=(v:Input)=>{window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));setQ(v);setDirty(true);setConsent(false);};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilContactPanel.tsx",
+    "line": 19,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths,componentIds:[id,id],colors:['#ffbe66','#58d9ff'],polygons:[{positions:[[-q.B_m/2,-L/2,z],[q.B_m/2,-L/2,z],[q.B_m/2,L/2,z],[-q.B_m/2,L/2,z]],componentId:id,color:'#586879'},{positions:[[lo,-L/2,z+.003],[hi,-L/2,z+.003],[hi,L/2,z+.003],[lo,L/2,z+.003]],componentId:id,color:'#4ade80'}],mode:'soil-contact-benchmark',fit:true,fitRange:7,fitPitch:-32,fitPoints:paths.flat(),focusComponentIds:[id],overlayThroughSolids:true,nodeMarkers:[{name:`SYNTHETIC \u00b7 pmax ${(computed.pmax_pa!/1000).toFixed(3)} kPa`,position:[q.B_m/2,0,z+1]},{name:'Cyan displacement \u00d750 \u00b7 orange pressure normalized to 1 m',position:[-q.B_m/2,0,z-.3]}],label:'Isolated SYNTHETIC spring bed \u00b7 not actual CAD soil \u00b7 engineering approval DISABLED'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilContactPanel.tsx",
+    "line": 20,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilContactPanel.tsx",
+    "line": 22,
+    "text": " return <section aria-label=\"Soil contact benchmark\" className=\"mb-4 space-y-3 rounded border border-border p-3 text-sm [&_input]:w-full [&_input]:bg-background [&_textarea]:w-full [&_textarea]:bg-background [&_button]:rounded [&_button]:border [&_button]:border-border [&_button]:p-2\"><h3 className=\"font-semibold\">Soil contact \u00b7 synthetic mechanics verification</h3><button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Return to saved CAD geometry</button><p>Actual CAD soil analysis BLOCKED. Sourced soil/contact stiffness, applicability and a reviewed physical force-transfer path are missing. Shear, torsion, concrete strength, soil capacity, allowable settlement, IS/US checks and engineering approval DISABLED.</p><details><summary>Four actual transported demands \u00b7 no soil properties assigned</summary>{demands.map(r=><p key={r.column_id}>{name(r.column_id)} \u2192 {name(r.footing_id)}: N {(r.compression_n/1000).toFixed(6)} kN; V {r.horizontal_shear_enu_n.map(x=>(x/1000).toFixed(6)).join(', ')} kN; Mx {(r.Mx_nm/1000).toFixed(6)}, My {(r.My_nm/1000).toFixed(6)}, torsion {(r.torsion_Mz_nm/1000).toFixed(6)} kN\u00b7m.</p>)}</details><button disabled={busy||blocked} onClick={()=>change({...fixture})}>Load documented synthetic verification inputs</button>{q&&<><p>SYNTHETIC_VERIFICATION only. ENU positive My shifts compression toward East. Uniform compression-only Winkler law p=k max(delta+theta x,0); no tensile soil resistance.</p>{([['B_m','East width B \u00b7 m'],['L_m','North length L \u00b7 m'],['N_n','Compression N \u00b7 N'],['My_nm','Applied My \u00b7 N\u00b7m'],['k_n_m3','Contact stiffness k \u00b7 N/m\u00b3'],['reference_up_m','Load/contact reference Up \u00b7 m']] as const).map(([key,label])=><label key={key} className=\"block\">{label}<input aria-label={label} type=\"number\" step=\"any\" value={Number.isFinite(q[key])?q[key]:''} onChange={e=>change({...q,[key]:e.target.value===''?NaN:Number(e.target.value)})}/></label>)}<label>Source evidence<textarea aria-label=\"Soil synthetic source evidence\" value={q.source} onChange={e=>change({...q,source:e.target.value})}/></label><label>Applicability limits<textarea aria-label=\"Soil applicability limits\" value={q.applicability} onChange={e=>change({...q,applicability:e.target.value})}/></label><p>Preview requires explicit reviewed synthetic law only. These values never become real project engineering properties.</p><button disabled={busy||blocked||!dirty} onClick={()=>void run(false)}>Preview synthetic soil proposal</button></>}{proposal&&<p>Proposal #{proposal.id} \u00b7 {dirty?'STALE':proposal.status}. Exact input, source and model bindings are saved.</p>}<label className=\"flex gap-2\"><input style={{width:'auto'}} aria-label=\"Authorize synthetic soil benchmark\" type=\"checkbox\" disabled={busy||blocked||dirty||!proposal} checked={consent} onChange={e=>setConsent(e.target.checked)}/>Authorize this exact synthetic calculation only; no physical engineering approval</label><button disabled={busy||blocked||dirty||!consent||proposal?.status!=='AWAITING_AUTHORIZATION'} onClick={()=>void run(true)}>Calculate authorized soil benchmark</button>{computed&&<article aria-label=\"Computed soil benchmark\"><b>{stale?'STALE':result?.status} \u00b7 {computed.state}</b>{computed.reason&&<p>{computed.reason}</p>}{computed.pressure_samples&&<><p>Contact area {computed.contact_area_m2!.toFixed(6)} m\u00b2; pressure {(computed.pmin_pa!/1000).toFixed(6)}\u2013{(computed.pmax_pa!/1000).toFixed(6)} kPa.</p><p>Rigid spring-bed translation {(computed.delta_down_m!*1000).toFixed(6)} mm downward; rotation {(computed.theta_north_rad!*1000).toFixed(6)} mrad; opposite-edge gap {(computed.opposite_edge_gap_m!*1000).toFixed(6)} mm. These are model displacements, not verified site settlement.</p><p>Integrated N/M residual {computed.residual_n_nm?.map(v=>v.toExponential(3)).join(', ')} N / N\u00b7m.</p><button disabled={busy||stale||result?.status!=='VERIFIED_SYNTHETIC'} onClick={show}>Show synthetic contact and deformation</button></>}<details><summary>Calculation formulas, independent meshes and immutable evidence</summary><pre className=\"max-h-72 overflow-auto whitespace-pre-wrap break-all text-xs\">{JSON.stringify(result,null,2)}</pre></details></article>}{error&&<p role=\"alert\">{error}</p>}</section>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilProfilePanel.tsx",
+    "line": 14,
+    "text": "const fixture:Draft={profile:{classification:'SYNTHETIC_VERIFICATION',borehole_id:'SYNTHETIC-BH-01',location_enu_m:[0,0,0],ground_reference_up_m:0,reference_source_id:'verification',groundwater_depth_m:3,groundwater_source_id:'verification',sources:[{id:'verification',reference:'GeoAI prescribed synthetic half-space benchmark, not site investigation',investigation:'Independent Green-function integration and hand calculations. Groundwater/unit weight are synthetic display references only.'}],layers:[{id:'soil-1',description:'Synthetic homogeneous isotropic elastic half-space',top_depth_m:0,bottom_depth_m:null,extent:'UNBOUNDED_IDEALIZATION',extent_source_id:'verification',extent_kind:'SYNTHETIC',unit_weight_kn_m3:{value:18,kind:'SYNTHETIC',source_id:'verification'},E_mpa:{value:20,kind:'SYNTHETIC',source_id:'verification'},poisson:{value:.3,kind:'SYNTHETIC',source_id:'verification'}}],applicability:'Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling.'},load:{classification:'SYNTHETIC_VERIFICATION',B_m:2,L_m:2,N_n:200000,reference_up_m:0,source:'Prescribed synthetic uniform patch load, not transferred CAD footing demand',idealization:'uniform_flexible_rectangular_surface_patch',reviewed_assumptions:true}};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilProfilePanel.tsx",
+    "line": 23,
+    "text": " useEffect(()=>{if(stale)window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}));},[stale]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilProfilePanel.tsx",
+    "line": 35,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{paths:paths.map(path=>path.map(point)),componentIds:[id],colors:['#53cfff'],arrowIndices:withResult?[0]:[],polygons:polygons.map(a=>({...a,positions:a.positions.map(point)})),mode:'elastic-halfspace-settlement',fit:true,fitRange:15,fitPitch:-25,fitPoints:polygons.flatMap(a=>a.positions.map(point)),focusComponentIds:[id],overlayThroughSolids:true,nodeMarkers:[{name:withResult?`Centre ${(computed!.centre_settlement_m*1000).toFixed(6)} mm \u00b7 displacement \u00d7100`:'Synthetic flexible patch \u00b7 no settlement computed',position:point([0,0,z])},{name:`${p.borehole_id} \u00b7 depths from ground; unbounded layer shown to 6 m only`,position:point([-3,0,z-6])},...(p.groundwater_depth_m===null?[]:[{name:`Groundwater reference ${p.groundwater_depth_m} m; not coupled to calculation`,position:point([2,1,z-p.groundwater_depth_m])}])],label:'SYNTHETIC half-space centre settlement \u00b7 no Winkler displacement added'}}));};"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SoilProfilePanel.tsx",
+    "line": 36,
+    "text": " return <section aria-label=\"Soil profile and elastic settlement\" className=\"mb-4 space-y-3 rounded border border-border p-3 text-sm [&_input:not([type=checkbox])]:w-full [&_input]:bg-background [&_textarea]:w-full [&_textarea]:bg-background [&_select]:w-full [&_select]:bg-background [&_button]:rounded [&_button]:border [&_button]:border-border [&_button]:p-2\"><h3 className=\"font-semibold\">Geotechnical profile \u00b7 elastic settlement</h3><p>Actual CAD settlement BLOCKED: sourced site investigation and supported physical load-transfer/rigid-footing assumptions missing. Engineering approval and IS/US checks DISABLED.</p><p>Profiles store layers and evidence. This first calculation supports only a synthetic homogeneous infinite half-space, uniformly loaded flexible rectangular surface patch, centre displacement. Layered, embedded, rigid-footing, consolidation, nonlinear and groundwater-coupled analyses are unsupported.</p><div className=\"flex flex-wrap gap-2\"><button disabled={busy||blocked||loading} onClick={()=>edit(structuredClone(fixture))}>Load documented synthetic soil profile</button><button disabled={busy||blocked||loading} onClick={()=>edit({profile:{classification:'UNVERIFIED',borehole_id:'',location_enu_m:[NaN,NaN,NaN],ground_reference_up_m:NaN,reference_source_id:'',groundwater_depth_m:null,groundwater_source_id:null,sources:[{id:'source-1',reference:'',investigation:''}],layers:[{id:'layer-1',description:'',top_depth_m:0,bottom_depth_m:null,extent:'UNKNOWN',extent_source_id:'',extent_kind:'ENGINEER_ASSUMED',unit_weight_kn_m3:null,E_mpa:null,poisson:null}],applicability:''},load:{...blankLoad}})}>Start blank unverified profile</button><button disabled={busy||!past.length} onClick={()=>undo(false)}>Undo soil edit</button><button disabled={busy||!future.length} onClick={()=>undo(true)}>Redo soil edit</button></div>{draft&&<><label>Profile classification<select aria-label=\"Soil profile classification\" value={draft.profile.classification} onChange={e=>profileEdit({classification:e.target.value as Profile['classification']})}>{['UNVERIFIED','REAL_PROJECT','SYNTHETIC_VERIFICATION'].map(k=><option key={k}>{k}</option>)}</select></label><label>Borehole identification<input aria-label=\"Borehole identification\" value={draft.profile.borehole_id} onChange={e=>profileEdit({borehole_id:e.target.value})}/></label>{[0,1,2].map(i=><label key={i}>Borehole {['East','North','Up'][i]} \u00b7 m<input aria-label={`Borehole ${['East','North','Up'][i]} m`} type=\"number\" step=\"any\" value={numberValue(draft.profile.location_enu_m[i])} onChange={e=>profileEdit({location_enu_m:draft.profile.location_enu_m.map((v,j)=>i===j?parse(e.target.value):v)})}/></label>)}<label>Ground reference Up \u00b7 m<input aria-label=\"Soil ground reference Up m\" type=\"number\" step=\"any\" value={numberValue(draft.profile.ground_reference_up_m)} onChange={e=>profileEdit({ground_reference_up_m:parse(e.target.value)})}/></label><label>Reference source ID<input aria-label=\"Soil reference source ID\" value={draft.profile.reference_source_id} onChange={e=>profileEdit({reference_source_id:e.target.value})}/></label><label>Groundwater depth \u00b7 m; blank = UNKNOWN<input aria-label=\"Groundwater depth m\" type=\"number\" step=\"any\" value={draft.profile.groundwater_depth_m??''} onChange={e=>profileEdit({groundwater_depth_m:e.target.value===''?null:parse(e.target.value),groundwater_source_id:e.target.value===''?null:draft.profile.groundwater_source_id})}/></label><label>Groundwater source ID<input aria-label=\"Groundwater source ID\" value={draft.profile.groundwater_source_id??''} onChange={e=>profileEdit({groundwater_source_id:e.target.value||null})}/></label><details open><summary>Investigation/source records</summary>{draft.profile.sources.map((s,i)=><fieldset key={i} className=\"my-2 border-t border-border\"><legend>Source {i+1}</legend>{(['id','reference','investigation'] as const).map(k=><label key={k}>{k}<textarea aria-label={`Soil source ${i+1} ${k}`} value={s[k]} onChange={e=>profileEdit({sources:draft.profile.sources.map((v,j)=>i===j?{...v,[k]:e.target.value}:v)})}/></label>)}</fieldset>)}<button onClick={()=>profileEdit({sources:[...draft.profile.sources,{id:`source-${draft.profile.sources.length+1}`,reference:'',investigation:''}]})}>Add source record</button></details>{draft.profile.layers.map(l=><fieldset key={l.id} className=\"space-y-2 border-t border-border pt-2\"><legend>{l.id}</legend><input aria-label={`${l.id} description`} placeholder=\"Layer description\" value={l.description} onChange={e=>layerEdit(l.id,{description:e.target.value})}/><label>Top depth \u00b7 m<input aria-label={`${l.id} top depth m`} type=\"number\" step=\"any\" value={numberValue(l.top_depth_m)} onChange={e=>layerEdit(l.id,{top_depth_m:parse(e.target.value)})}/></label><label>Extent<select aria-label={`${l.id} extent`} value={l.extent} onChange={e=>layerEdit(l.id,{extent:e.target.value as Layer['extent'],bottom_depth_m:e.target.value==='FINITE'?NaN:null})}>{['UNKNOWN','FINITE','UNBOUNDED_IDEALIZATION'].map(k=><option key={k}>{k}</option>)}</select></label>{l.extent==='FINITE'&&<label>Bottom depth \u00b7 m<input aria-label={`${l.id} bottom depth m`} type=\"number\" step=\"any\" value={l.bottom_depth_m===null?'':numberValue(l.bottom_depth_m)} onChange={e=>layerEdit(l.id,{bottom_depth_m:parse(e.target.value)})}/></label>}<label>Depth/extent classification<select aria-label={`${l.id} extent classification`} value={l.extent_kind} onChange={e=>layerEdit(l.id,{extent_kind:e.target.value as Kind})}>{kinds.map(k=><option key={k}>{k}</option>)}</select></label><input aria-label={`${l.id} extent source ID`} placeholder=\"Extent source ID\" value={l.extent_source_id} onChange={e=>layerEdit(l.id,{extent_source_id:e.target.value})}/>{([['unit_weight_kn_m3','Unit weight \u00b7 kN/m\u00b3'],['E_mpa','Elastic modulus \u00b7 MPa'],['poisson',\"Poisson ratio \u00b7 dimensionless\"]] as const).map(([key,label])=><div key={key}><label>{label}<input aria-label={`${l.id} ${label}`} type=\"number\" step=\"any\" value={l[key]?numberValue(l[key]!.value):''} onChange={e=>layerEdit(l.id,{[key]:e.target.value===''?null:{value:parse(e.target.value),kind:l[key]?.kind??'ENGINEER_ASSUMED',source_id:l[key]?.source_id??''}})}/></label>{!l[key]&&<p>MISSING {label}: enter a value, classification and investigation source. E and Poisson ratio are needed for elastic displacement; unit weight is recorded but not used by this method.</p>}{l[key]&&<><select aria-label={`${l.id} ${key} classification`} value={l[key]!.kind} onChange={e=>layerEdit(l.id,{[key]:{...l[key]!,kind:e.target.value as Kind}})}>{kinds.map(k=><option key={k}>{k}</option>)}</select><input aria-label={`${l.id} ${key} source ID`} placeholder=\"Property evidence source ID\" value={l[key]!.source_id} onChange={e=>layerEdit(l.id,{[key]:{...l[key]!,source_id:e.target.value}})}/></>}</div>)}<button disabled={draft.profile.layers.length===1} onClick={()=>profileEdit({layers:draft.profile.layers.filter(v=>v.id!==l.id)})}>Remove {l.id}</button></fieldset>)}<button onClick={()=>profileEdit({layers:[...draft.profile.layers,{id:`layer-${draft.profile.layers.length+1}`,description:'',top_depth_m:draft.profile.layers.at(-1)?.bottom_depth_m??NaN,bottom_depth_m:null,extent:'UNKNOWN',extent_source_id:'',extent_kind:'ENGINEER_ASSUMED',unit_weight_kn_m3:null,E_mpa:null,poisson:null}]})}>Add soil layer with missing properties</button><label>Applicability and investigation limitations<textarea aria-label=\"Soil profile applicability\" value={draft.profile.applicability} onChange={e=>profileEdit({applicability:e.target.value})}/></label><button disabled={busy||blocked||!profileDirty} onClick={()=>void run('save')}>Save sourced soil profile version</button>{saved&&<p>Saved profile #{saved.id} \u00b7 {profileDirty?'UNSAVED EDITS':saved.status}. {saved.result.missing?.join('; ')}</p>}<details><summary>Synthetic settlement load and assumptions</summary><p>Surface flexible patch only. No rigid-footing result, no k derived from E, no Winkler displacement added. Unit weight/groundwater are reference information, not coupled to this elastic calculation. The isolated synthetic load patch is displayed at the declared borehole ENU reference, not assigned to a CAD foundation.</p>{([['B_m','Settlement width B m'],['L_m','Settlement length L m'],['N_n','Settlement load N N'],['reference_up_m','Settlement reference Up m']] as const).map(([key,label])=><label key={key}>{label}<input aria-label={label} type=\"number\" step=\"any\" value={numberValue(draft.load[key])} onChange={e=>edit({...draft,load:{...draft.load,[key]:parse(e.target.value)}})}/></label>)}<textarea aria-label=\"Settlement load source\" value={draft.load.source} onChange={e=>edit({...draft,load:{...draft.load,source:e.target.value}})}/><label><input aria-label=\"Review elastic settlement assumptions\" type=\"checkbox\" checked={draft.load.reviewed_assumptions} onChange={e=>edit({...draft,load:{...draft.load,reviewed_assumptions:e.target.checked}})}/>Reviewed synthetic homogeneous isotropic infinite half-space and flexible uniform surface load only</label></details><button disabled={busy||blocked||profileDirty||!saved} onClick={()=>void run('preview')}>Preview elastic settlement proposal</button><button disabled={busy||blocked||draft.profile.classification!=='SYNTHETIC_VERIFICATION'} onClick={()=>show(false)}>Preview synthetic soil layers and groundwater</button></>}{proposal&&<p>Settlement proposal #{proposal.id} \u00b7 {dirty?'STALE':proposal.status}</p>}<label><input aria-label=\"Authorize exact elastic settlement\" type=\"checkbox\" disabled={busy||blocked||dirty||profileDirty||proposal?.status!=='AWAITING_AUTHORIZATION'} checked={consent} onChange={e=>setConsent(e.target.checked)}/>Authorize exact synthetic settlement only; no engineering approval</label><button disabled={busy||blocked||dirty||profileDirty||!consent||proposal?.status!=='AWAITING_AUTHORIZATION'} onClick={()=>void run('authorize')}>Calculate authorized elastic settlement</button>{computed&&<article aria-label=\"Computed elastic settlement\"><b>{stale?'STALE':result?.status}</b><p>Centre settlement {(computed.centre_settlement_m*1000).toFixed(6)} mm; uniform applied stress {(computed.uniform_pressure_pa/1000).toFixed(6)} kPa.</p><p>Independent surface-kernel integration {(computed.numerical_reference.at(-1)!.centre_settlement_m*1000).toFixed(6)} mm. Winkler spring displacement NOT USED OR ADDED.</p><button disabled={busy||stale} onClick={()=>show(true)}>Show elastic centre settlement</button><details><summary>Immutable profile, formulas and independent numerical evidence</summary><pre className=\"max-h-72 overflow-auto whitespace-pre-wrap break-all text-xs\">{JSON.stringify(result,null,2)}</pre></details></article>}<button onClick={()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:null}))}>Return to saved CAD model</button>{error&&<p role=\"alert\">{error}</p>}</section>;"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SpatialVisualPanel.tsx",
+    "line": 8,
+    "text": "const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'structural-visual'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SpatialVisualPanel.tsx",
+    "line": 27,
+    "text": " useEffect(()=>{const inspect=(event:Event)=>{const key=(event as CustomEvent<{key:string}>).detail?.key;const graph=c?connectedEntities(c):undefined,entity=graph?.entities.get(key);if(entity){setInspection(key);setRouteIndex(0);editor.selectMany(entity.componentId?[entity.componentId]:[]);}};const own=(event:Event)=>{const d=(event as CustomEvent<{mode?:string}|null>).detail;if(d?.mode&&d.mode!=='structural-visual')setActive(false);};window.addEventListener('geoai:foundation-inspect',inspect);window.addEventListener('geoai:elastic-results',own);return()=>{window.removeEventListener('geoai:foundation-inspect',inspect);window.removeEventListener('geoai:elastic-results',own);};},[editor,c]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SpatialVisualPanel.tsx",
+    "line": 28,
+    "text": " useEffect(()=>{if(blocked||!c||!active){clear();return;}const key=`${rid}:${mode}:${floor}:${fit}`;const doFit=fitted.current!==key;fitted.current=key;const overlay=floorOverlay(c,{mode,floor,force,scale,original,selectedId,fit:doFit,isolate,surfaces,labels,inspectionKey,trace:traceEnabled?routeKey.split('\\n').filter(Boolean):[],animate:animate&&mode==='deformation'},transfer);if(mode==='warnings')for(const component of editor.document?.components??[]){if(!c.members.some(m=>m.id===component.id)&&!c.slabs.some(s=>s.id===component.id)&&['beam','column','slab','footing','connection'].includes(component.category))overlay.nodeMarkers.push({name:component.name+' \u00b7 No current verified spatial load transfer',position:component.transform.position,componentId:component.id,inspectionKey:component.id});}window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:overlay}));},[blocked,c,active,rid,mode,floor,fit,force,scale,original,selectedId,isolate,editor.document,surfaces,labels,inspectionKey,traceEnabled,routeKey,animate,transfer]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\StructuralVisualPanel.tsx",
+    "line": 14,
+    "text": "const clear=()=>window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{clearMode:'structural-visual'}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\StructuralVisualPanel.tsx",
+    "line": 26,
+    "text": " useEffect(()=>{const ownership=(event:Event)=>{const next=(event as CustomEvent<{mode?:string}|null>).detail;if(next?.mode&&next.mode!=='structural-visual')setActive(false);};window.addEventListener('geoai:elastic-results',ownership);return()=>window.removeEventListener('geoai:elastic-results',ownership);},[]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\StructuralVisualPanel.tsx",
+    "line": 41,
+    "text": " useEffect(()=>{const inspect=(event:Event)=>{const id=(event as CustomEvent<{key:string}>).detail?.key;if(editor.document?.components.some(c=>c.id===id))editor.selectMany([id]);};window.addEventListener('geoai:foundation-inspect',inspect);return()=>window.removeEventListener('geoai:foundation-inspect',inspect);},[editor]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\StructuralVisualPanel.tsx",
+    "line": 51,
+    "text": "  window.dispatchEvent(new CustomEvent('geoai:elastic-results',{detail:{...detail,hideModel:mode==='deformation'&&!original&&frames.length>0}}));"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SupervisedPrimitiveControls.tsx",
+    "line": 16,
+    "text": " useEffect(()=>{const ready=(event:Event)=>{const r=(event as CustomEvent<{actionId:string;ok:boolean}>).detail;if(r.actionId===p?.actionId)setReadyAction(r.ok?r.actionId:'');};window.addEventListener('geoai:workspace-outcome',ready);if(p&&document.querySelector(`[data-primitive-preview=\"${p.actionId}\"]`))queueMicrotask(()=>setReadyAction(p.actionId));return()=>window.removeEventListener('geoai:workspace-outcome',ready);},[p]);"
+  },
+  {
+    "file": "frontend\\components\\model-editor\\SupervisedPrimitiveControls.tsx",
+    "line": 17,
+    "text": " useEffect(()=>{const status=(event:Event)=>{const r=(event as CustomEvent<PrimitiveStatus>).detail;if(p?.actionId===r.actionId&&(r.phase==='canceled'||r.phase==='rejected_stale'))setReviewed({command:p,terminal:r.phase});};window.addEventListener('geoai:primitive-status',status);return()=>window.removeEventListener('geoai:primitive-status',status);},[p]);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\ColumnEngineeringAgent.tsx",
+    "line": 20,
+    "text": " useEffect(()=>{const changed=(event:Event)=>{const detail=(event as CustomEvent<{componentId:string;dirty:boolean}>).detail;if(detail.componentId===cid)setInputDraftDirty(detail.dirty);};window.addEventListener('geoai:column-engineering-inputs-dirty',changed);window.dispatchEvent(new Event('geoai:request-column-input-draft-status'));return()=>window.removeEventListener('geoai:column-engineering-inputs-dirty',changed);},[cid]);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 12,
+    "text": "    try { sessionStorage.setItem(`geoai-starter-dismissed-${projectId}`, \"true\"); } catch { /* Session storage may be unavailable. */ }"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 18,
+    "text": "      try { sessionStorage.setItem(`geoai-starter-dismissed-${projectId}`, \"true\"); } catch { /* Best effort. */ }"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 20,
+    "text": "    window.addEventListener(\"geoai:assistant-opened\", hide);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 21,
+    "text": "    return () => window.removeEventListener(\"geoai:assistant-opened\", hide);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 28,
+    "text": "        try { if (sessionStorage.getItem(`geoai-starter-dismissed-${projectId}`)) setDismissedProject(projectId); } catch { /* Best effort. */ }"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 43,
+    "text": "      <button type=\"button\" className=\"rounded border border-border px-3 py-2 text-xs text-primary\" onClick={() => start(\"geoai:open-copilot\")}>Ask Struvo Assistant</button>"
+  },
+  {
+    "file": "frontend\\components\\workspace\\EmptyProjectStarter.tsx",
+    "line": 44,
+    "text": "      <button type=\"button\" className=\"rounded border border-border px-3 py-2 text-xs\" onClick={() => start(\"geoai:open-drawing\")}>Draw / select site</button>"
+  },
+  {
+    "file": "frontend\\components\\workspace\\LiveGenerationPreview.tsx",
+    "line": 16,
+    "text": "const PREVIEW_KEY = \"geoai-live-generation-preview\";"
+  },
+  {
+    "file": "frontend\\components\\workspace\\PersistentAssistant.tsx",
+    "line": 12,
+    "text": "  return <div className=\"space-y-3 p-4 text-sm\"><p>The site-wide Struvo Assistant uses Nebius with your current page and selection.</p><button className=\"underline\" onClick={() => window.dispatchEvent(new Event(\"geoai:open-site-assistant\"))}>Open Struvo Assistant</button><p className=\"text-xs text-muted-foreground\">Existing saved conversations remain available in Assistant history. Model changes and numerical analyses require review and approval in their existing tools.</p></div>;"
+  },
+  {
+    "file": "frontend\\components\\workspace\\ProposalReview.tsx",
+    "line": 64,
+    "text": "      window.dispatchEvent(new CustomEvent(\"geoai:concept-built\", { detail: { projectId, scenarioId: result.scenarioId } }));"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 93,
+    "text": "    window.dispatchEvent(new CustomEvent(editor.selectedIds.length ? \"geoai:locate-component\" : \"geoai:fit-project\", { detail: editor.selectedIds[0] }));"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 129,
+    "text": "    if (item.mapTool) { if (item.mapTool !== \"select\") window.dispatchEvent(new CustomEvent(\"geoai:presentation\", { detail: \"site\" })); activateTool(item.mapTool); setSurveyOpen(item.mapTool !== \"select\"); }"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 141,
+    "text": "    window.addEventListener(\"geoai:open-drawing\", startDrawing);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 142,
+    "text": "    return () => window.removeEventListener(\"geoai:open-drawing\", startDrawing);"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 176,
+    "text": "        <button type=\"button\" disabled={vertices.length < (activeTool === \"draw-polygon\" || activeTool === \"edit-boundary\" ? 3 : 2)} className=\"block w-full border border-primary/30 bg-primary/15 px-2 py-1.5 text-xs text-primary disabled:opacity-35\" onClick={() => window.dispatchEvent(new CustomEvent(\"geoai:finish-drawing\"))}>Finish drawing</button>"
+  },
+  {
+    "file": "frontend\\components\\workspace\\WorkspaceToolRail.tsx",
+    "line": 181,
+    "text": "        <button className=\"text-primary\" onClick={() => window.dispatchEvent(new Event(\"geoai:inspect-component\"))}>Inspect selection</button>"
+  },
+  {
+    "file": "frontend\\lib\\api.ts",
+    "line": 11,
+    "text": "const AUTH_KEY = \"geoai_access_token\";"
+  },
+  {
+    "file": "frontend\\lib\\engineering-guidance.ts",
+    "line": 14,
+    "text": "export function requestEngineeringResult(value:ResultNavigation){pending=value;window.dispatchEvent(new Event(\"geoai:copilot-result\"));}"
+  },
+  {
+    "file": "frontend\\lib\\fonts.ts",
+    "line": 2,
+    "text": "export const inter = { variable: \"geoai-system-sans\" };"
+  },
+  {
+    "file": "frontend\\lib\\fonts.ts",
+    "line": 7,
+    "text": "export const jetbrainsMono = { variable: \"geoai-system-mono\" };"
+  },
+  {
+    "file": "frontend\\lib\\local-sandbox.ts",
+    "line": 7,
+    "text": "const STORAGE_KEY = \"geoai-local-3d-sandbox\";"
+  },
+  {
+    "file": "frontend\\lib\\map-bookmarks.ts",
+    "line": 12,
+    "text": "  return `geoai-map-bookmarks-${projectId}`;"
+  },
+  {
+    "file": "frontend\\lib\\model-viewer-debug.ts",
+    "line": 16,
+    "text": "  console.debug(\"[sitegeoai model viewer]\", {"
+  },
+  {
+    "file": "frontend\\lib\\observability.ts",
+    "line": 8,
+    "text": "      console.debug(\"[geoai] client error\", context, error);"
+  },
+  {
+    "file": "frontend\\lib\\observability.ts",
+    "line": 13,
+    "text": "  console.warn(\"[geoai] NEXT_PUBLIC_SENTRY_DSN is set but Sentry SDK is not bundled yet.\", context, error);"
+  },
+  {
+    "file": "frontend\\lib\\primitive-status.ts",
+    "line": 6,
+    "text": " window.dispatchEvent(new CustomEvent<PrimitiveStatus>('geoai:primitive-status',{detail:{actionId:c.actionId,projectId:c.projectId,phase,message,revisionId}}));"
+  },
+  {
+    "file": "frontend\\lib\\site-assistant.ts",
+    "line": 47,
+    "text": "  window.dispatchEvent(new CustomEvent(\"geoai:assistant-context\", { detail: context }));"
+  },
+  {
+    "file": "frontend\\lib\\workspace-assistant.ts",
+    "line": 4,
+    "text": "export const outcome=(c:WorkspaceCommand,ok:boolean,message:string)=>window.dispatchEvent(new CustomEvent('geoai:workspace-outcome',{detail:{actionId:c.actionId,ok,message}}));"
+  },
+  {
+    "file": "frontend\\lib\\workspace-assistant.ts",
+    "line": 7,
+    "text": " return new Promise(resolve=>{const finish=(result:WorkspaceOutcome)=>{clearTimeout(timer);window.removeEventListener('geoai:workspace-outcome',receive);resolve(result);};const receive=(e:Event)=>{const r=(e as CustomEvent<WorkspaceOutcome>).detail;if(r?.actionId===c.actionId)finish(r);};const timer=window.setTimeout(()=>finish({actionId:c.actionId,ok:false,message:'The workspace did not confirm this action. No completion is claimed; inspect the existing tool manually.'}),timeout);window.addEventListener('geoai:workspace-outcome',receive);});"
+  },
+  {
+    "file": "frontend\\lib\\map\\layers.ts",
+    "line": 6,
+    "text": "    id: \"geoai-drawn-features\","
+  },
+  {
+    "file": "frontend\\lib\\map\\layers.ts",
+    "line": 32,
+    "text": "    id: \"geoai-ai-placeholder-3d\","
+  },
+  {
+    "file": "frontend\\lib\\map\\terrain.ts",
+    "line": 4,
+    "text": "const TERRAIN_SOURCE_ID = \"geoai-mapbox-dem\";"
+  },
+  {
+    "file": "backend\\app\\main.py",
+    "line": 88,
+    "text": "    civicspan as geoai,"
+  },
+  {
+    "file": "backend\\app\\main.py",
+    "line": 137,
+    "text": "app.include_router(geoai.router)"
+  },
+  {
+    "file": "backend\\app\\core\\config.py",
+    "line": 28,
+    "text": "    DATABASE_URL: str = \"postgresql+psycopg2://geoai:geoai@localhost:5432/geoai\""
+  },
+  {
+    "file": "backend\\app\\core\\config.py",
+    "line": 32,
+    "text": "    S3_BUCKET: str = \"geoai-files\""
+  },
+  {
+    "file": "backend\\app\\core\\config.py",
+    "line": 49,
+    "text": "    GEOAI_OFFLINE_PLATFORM_DEMO: bool = False"
+  },
+  {
+    "file": "backend\\app\\core\\infrastructure.py",
+    "line": 40,
+    "text": "            worker_ok = redis_ok and settings.USE_ARQ_WORKER and bool(redis.exists(\"geoai:worker:health\"))"
+  },
+  {
+    "file": "backend\\app\\db\\stage1_schema_v1.py",
+    "line": 154,
+    "text": "        connection.exec_driver_sql(\"\"\"CREATE OR REPLACE FUNCTION geoai_stage1_immutable() RETURNS trigger"
+  },
+  {
+    "file": "backend\\app\\db\\stage1_schema_v1.py",
+    "line": 182,
+    "text": "            connection.exec_driver_sql(f'CREATE TRIGGER stage1_immutable BEFORE UPDATE OR DELETE ON \"{name}\" FOR EACH ROW EXECUTE FUNCTION geoai_stage1_immutable()')"
+  },
+  {
+    "file": "backend\\app\\experimental\\bim_orchestration.py",
+    "line": 28,
+    "text": "    if (os.environ.get(\"GEOAI_EXPERIMENTAL_BIM_AUTHORING\", \"\").lower() != \"true\""
+  },
+  {
+    "file": "backend\\app\\experimental\\bim_orchestration.py",
+    "line": 29,
+    "text": "            or user_id not in _ids(\"GEOAI_BIM_AUTHORING_USER_IDS\")"
+  },
+  {
+    "file": "backend\\app\\experimental\\bim_orchestration.py",
+    "line": 30,
+    "text": "            or project_id not in _ids(\"GEOAI_BIM_AUTHORING_PROJECT_IDS\")):"
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_adapter.py",
+    "line": 11,
+    "text": "    return str(uuid.uuid5(uuid.NAMESPACE_URL, \"geoai:cad:\" + encode([project_id, asset_id, component_id]).decode()))"
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_capability.py",
+    "line": 20,
+    "text": "    if (os.environ.get(\"GEOAI_EXPERIMENTAL_CAD\", \"\").lower() != \"true\""
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_capability.py",
+    "line": 21,
+    "text": "            or user_id not in _ids(\"GEOAI_CAD_TEST_USER_IDS\")"
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_capability.py",
+    "line": 22,
+    "text": "            or project_id not in _ids(\"GEOAI_CAD_TEST_PROJECT_IDS\")):"
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_worker.py",
+    "line": 28,
+    "text": "    root = Path(tempfile.mkdtemp(prefix=\"geoai-cad-\")).resolve()"
+  },
+  {
+    "file": "backend\\app\\experimental\\cad_worker.py",
+    "line": 33,
+    "text": "        if root.parent != base or not root.name.startswith(\"geoai-cad-\"):"
+  },
+  {
+    "file": "backend\\app\\middleware\\request_logging.py",
+    "line": 17,
+    "text": "logger = logging.getLogger(\"geoai.request\")"
+  },
+  {
+    "file": "backend\\app\\workers\\tasks.py",
+    "line": 54,
+    "text": "    health_check_key = \"geoai:worker:health\""
+  },
+  {
+    "file": "backend\\app\\services\\assistant\\offline_platform.py",
+    "line": 20,
+    "text": "    return (settings.GEOAI_OFFLINE_PLATFORM_DEMO and settings.AI_PROVIDER == \"mock\""
+  },
+  {
+    "file": "backend\\app\\services\\assistant\\runtime.py",
+    "line": 205,
+    "text": "                if re.search(r\"\\b(?:I|we|GeoAI|Struvo Civil|Struvo Assistant) (?:have |has |successfully )?(?:moved|generated|deleted|modified|translated|built)\\b(?!\\s+(?:a |the )?(?:proposal|plan|concept)\\b)\",text,re.I):"
+  },
+  {
+    "file": "backend\\app\\services\\design\\elastic_frame.py",
+    "line": 108,
+    "text": " lines=['# GeoAI bounded elastic verification model; no design approval',f'# units {q[\"units\"]}; X=East, Y=Up, rotation positive counterclockwise','wipe','model BasicBuilder -ndm 2 -ndf 3','geomTransf Linear 1']"
+  },
+  {
+    "file": "backend\\app\\services\\design\\opensees_benchmark.py",
+    "line": 15,
+    "text": "ARTIFACT_ROOT = Path(os.environ['GEOAI_ENGINEERING_ARTIFACT_ROOT']).resolve() if os.environ.get('GEOAI_ENGINEERING_ARTIFACT_ROOT') else None"
+  },
+  {
+    "file": "backend\\app\\services\\design\\opensees_benchmark.py",
+    "line": 25,
+    "text": "    configured = os.environ.get('GEOAI_OPENSEES_EXECUTABLE')"
+  },
+  {
+    "file": "backend\\app\\services\\design\\opensees_benchmark.py",
+    "line": 55,
+    "text": "    lines = ['# GeoAI saved physical-column / explicit axial-support model' if axial_parameters is not None else '# GeoAI isolated axial-column / prescribed-soil-spring verification model',"
+  },
+  {
+    "file": "backend\\app\\services\\design\\structural_layout.py",
+    "line": 78,
+    "text": "    return {\"format\": \"sitegeoai.structural-analysis-package/v1\", \"revision\": {\"id\": revision.id, \"number\": revision.revision_number}, \"origin\": document.get(\"origin\"), \"components\": document.get(\"components\", []), \"rule_validation\": validation, \"assumptions\": document.get(\"structural_layout\", {}).get(\"assumptions\", []), \"notice\": \"Conceptual data package \u2014 validate loads, connections, codes, and detailing in specialist analysis software.\"}"
+  },
+  {
+    "file": "backend\\app\\services\\geospatial\\geocoding.py",
+    "line": 17,
+    "text": "USER_AGENT = \"sitegeoai/0.1 (dev)\""
+  },
+  {
+    "file": "backend\\app\\api\\routes\\civicspan.py",
+    "line": 17,
+    "text": "router = APIRouter(prefix=\"/api/geoai\", tags=[\"geoai\"])"
+  },
+  {
+    "file": "backend\\app\\api\\routes\\runtime_diagnostics.py",
+    "line": 28,
+    "text": "        result = subprocess.run([str(exe)], input='puts \"GEOAI_VERSION:[version]\"\\nexit\\n', text=True, capture_output=True, timeout=3)"
+  },
+  {
+    "file": "backend\\app\\api\\routes\\runtime_diagnostics.py",
+    "line": 29,
+    "text": "        match = re.search(r'GEOAI_VERSION:([0-9]+(?:\\.[0-9]+){1,3})', result.stdout + '\\n' + result.stderr)"
+  },
+  {
+    "file": "backend\\app\\api\\routes\\structural_layout.py",
+    "line": 33,
+    "text": "    format: Literal[\"sitegeoai.structural-analysis-result/v1\"]"
+  },
+  {
+    "file": "backend\\app\\api\\routes\\structural_layout.py",
+    "line": 96,
+    "text": "    result[\"result_import_format\"] = \"sitegeoai.structural-analysis-result/v1\""
+  }
+]

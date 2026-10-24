@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useWorkspaceDevice } from "@/hooks/useWorkspaceDevice";
+import DesktopWorkspaceGate from "./DesktopWorkspaceGate";
+import { requiresDesktopWorkspace } from "@/lib/workspace-device";
+import { usePathname, useRouter } from "next/navigation";
 import {
   ChevronRight,
   Building2,
@@ -128,6 +131,7 @@ export function LegacySidebarContent({
   isAdmin: boolean;
 }) {
   const demoId = useDemoProjectId();
+  const router = useRouter();
 
   return (
     <>
@@ -188,7 +192,7 @@ export function LegacySidebarContent({
                 onClick={
                   "toolHint" in tool && tool.toolHint === "terrain" && projectId
                     ? () => {
-                        window.location.href = `/projects/${projectId}/analysis`;
+                        router.push(`/projects/${projectId}/analysis`);
                       }
                     : onNavigate
                 }
@@ -234,6 +238,7 @@ export default function DashboardShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const device = useWorkspaceDevice();
   const isLanding = pathname === "/";
   const isLogin = pathname === "/login";
   const isDirectWorkspace = pathname === "/projects/new";
@@ -288,12 +293,13 @@ export default function DashboardShell({
   }
 
   return (
-    <div className="app-canvas flex h-screen min-w-[1280px] overflow-hidden bg-background">
+    <DesktopWorkspaceGate key={pathname} required={requiresDesktopWorkspace(pathname)} projectId={projectId} projectName={project?.id === projectId ? project.name : undefined} returnPath={returnPath}>
+    <div className={cn("app-canvas responsive-page flex h-screen min-w-0 overflow-hidden bg-background", requiresDesktopWorkspace(pathname) && "min-w-[1280px]")}>
       <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-hidden">
         {!workspaceFullscreen && !isDashboard && (
-          <header className="app-header sticky top-0 z-30 flex min-h-12 items-center gap-3 border-b border-border px-4 py-1.5">
-            {project && inProject && (
-              <Link href="/" aria-label="GeoAI home" className="mr-1 shrink-0 border-r border-border pr-4">
+          <header className={cn("app-header sticky top-0 z-30 flex min-h-12 items-center gap-3 border-b border-border px-4 py-1.5", pathname?.endsWith("/workspace") && "h-12 shrink-0")}>
+            {inProject && (
+              <Link href="/" aria-label="StruvoCivil home" className="mr-1 shrink-0 border-r border-border pr-4">
                 <BrandWordmark size="sm" />
               </Link>
             )}
@@ -304,9 +310,9 @@ export default function DashboardShell({
                 compact
                 hideSubtitle={pathname?.endsWith("/workspace")}
               />
-            ) : (
+            ) : inProject ? <div className="min-w-0 flex-1" role="status">Loading project…</div> : (
               <div className="min-w-0">
-                <Link href="/" aria-label="GeoAI home"><BrandWordmark size="sm" /></Link>
+                <Link href="/" aria-label="StruvoCivil home"><BrandWordmark size="sm" /></Link>
                 <p className="truncate text-[10px] text-muted-foreground">
                   AI-powered, site-aware construction concept visualization
                 </p>
@@ -332,8 +338,8 @@ export default function DashboardShell({
               </label>
             )}
 
-            <div className="ml-auto flex shrink-0 items-center gap-2">
-              {project && pathname?.endsWith("/workspace") && !isLocalSandbox && <Link href={LOCAL_SANDBOX_PATH} className="flex h-8 items-center gap-2 rounded-lg border border-primary/25 bg-primary/[0.06] px-3 text-[11px] font-semibold text-primary transition hover:bg-primary/15"><Box className="size-3.5" />3D Sandbox editor</Link>}
+            <div className={cn("ml-auto flex shrink-0 items-center gap-2", pathname?.endsWith("/workspace") && "w-[604px] justify-end")}>
+              {projectId && pathname?.endsWith("/workspace") && !isLocalSandbox && <Link href={LOCAL_SANDBOX_PATH} className="flex h-8 items-center gap-2 rounded-lg border border-primary/25 bg-primary/[0.06] px-3 text-[11px] font-semibold text-primary transition hover:bg-primary/15"><Box className="size-3.5" />3D Sandbox editor</Link>}
               <Link href="/dashboard" className="mr-2 border-r border-border pr-4 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground hover:text-primary">
                 Projects
               </Link>
@@ -385,7 +391,9 @@ export default function DashboardShell({
                         variant="ghost"
                         size="sm"
                         className="h-8 gap-1.5 px-2 text-[11px] text-muted-foreground hover:bg-surface-hover hover:text-foreground"
-                        title="Save site geometry"
+                        data-engineering-edit
+                        disabled={device !== "desktop"}
+                        title={device === "desktop" ? "Saves site boundary and alignment only. Save 3D component edits with Save model in the workspace." : "Site geometry editing requires desktop."}
                         onClick={() =>
                           window.dispatchEvent(
                             new CustomEvent("geoai:save-project"),
@@ -432,7 +440,7 @@ export default function DashboardShell({
         )}
 
         <main
-          id="main-content"
+          id={requiresDesktopWorkspace(pathname) && device !== "desktop" ? undefined : "main-content"}
           className="flex min-h-0 flex-1 flex-col overflow-hidden"
         >
           <PageTransition>{children}</PageTransition>
@@ -448,5 +456,6 @@ export default function DashboardShell({
           )}
       </div>
     </div>
+    </DesktopWorkspaceGate>
   );
 }

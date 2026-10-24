@@ -1,0 +1,5 @@
+isolated-*.sqlite*
+regressions.sqlite*
+storage-*/
+test-storage/
+*-test-profile/

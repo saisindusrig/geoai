@@ -1,0 +1,13 @@
+{
+  "path": "D:\\layout project\\.local-tooling\\node-24.22.1-validation\\work\\frontend",
+  "copied_frontend_files": 1138,
+  "excluded": [
+    "all .env*",
+    ".npmrc",
+    "private database/CAD formats",
+    "node_modules",
+    "existing build/test outputs"
+  ],
+  "public_models": "Existing public marketing assets only; no backend project CAD/model/evidence copied",
+  "dependency_strategy": "Separate node_modules root with per-package junctions to installed unchanged packages; cache root stays isolated"
+}

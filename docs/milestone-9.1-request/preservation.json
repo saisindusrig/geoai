@@ -1,0 +1,11 @@
+{
+  "dev.db": {
+    "exact_entry_rows_and_schema_unchanged": true,
+    "rows": 10282
+  },
+  "assistant-history.db": {
+    "exact_entry_rows_and_schema_unchanged": true,
+    "rows": 3
+  },
+  "comparison_scope": "Exact against this request entry; 13 synthetic records predate this request. Older 10,269-row baseline remains a preserved subset."
+}

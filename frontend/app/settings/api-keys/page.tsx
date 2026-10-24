@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { api } from "@/lib/api";
@@ -26,20 +27,28 @@ const PROVIDERS = [
 ];
 
 export default function ProviderStatusPage() {
+  const pending = useRef(true);
+  const [retryVersion, setRetryVersion] = useState(0);
+  const [error, setError] = useState<string | null>(null);
   const [providers, setProviders] = useState<Providers | null>(null);
   const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let disposed = false;
     Promise.all([
       api.get<Providers>("/api/geocode/tile-providers").catch(() => null),
       api.get<SystemStatus>("/api/system/status").catch(() => null),
     ]).then(([tileProviders, status]) => {
-      setProviders(tileProviders);
-      setSystemStatus(status);
+      if (disposed) return;
+      if (tileProviders) setProviders(tileProviders);
+      if (status) setSystemStatus(status);
+      setError(!tileProviders || !status ? "Some provider status could not be loaded. Check your connection and retry. Any previous results remain visible." : null);
+      pending.current = false;
       setLoading(false);
     });
-  }, []);
+    return () => { disposed = true; };
+  }, [retryVersion]);
 
   const status = (env: string): boolean | null => {
     if (systemStatus) {
@@ -65,7 +74,7 @@ export default function ProviderStatusPage() {
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-3xl mx-auto w-full px-6 py-8 space-y-5">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / system</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / system</p>
           <h1 className="mt-3 border-b border-border pb-5 text-[36px] font-medium tracking-[-0.045em]">Provider Status</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Live status from <code className="font-data text-xs">/api/system/status</code> and tile providers.
@@ -75,20 +84,21 @@ export default function ProviderStatusPage() {
 
         <Card float className="border-primary/25 bg-primary/[0.04]">
           <CardContent className="space-y-3 p-5">
-            <div><h2 className="text-base font-semibold">Connect Cesium World Terrain</h2><p className="mt-1 text-xs leading-relaxed text-muted-foreground">The current map uses a flat ellipsoid because no Cesium read token is configured. Your ion account already has World Terrain (asset 1) and OSM Buildings (asset 96188).</p></div>
-            <ol className="space-y-1.5 text-xs text-muted-foreground"><li>1. Create an app token with <code className="text-foreground">assets:read</code> only.</li><li>2. Restrict it to assets <code className="text-foreground">1</code> and <code className="text-foreground">96188</code>; allow <code className="text-foreground">http://localhost:3000</code>.</li><li>3. Add <code className="text-foreground">CESIUM_ION_READ_TOKEN=your_token</code> to the project root <code className="text-foreground">.env</code> and restart the backend.</li></ol>
+            <div><h2 className="text-base font-semibold">Connect Cesium World Terrain</h2><p className="mt-1 text-xs leading-relaxed text-muted-foreground">A restricted Cesium read token enables World Terrain (asset 1) and OSM Buildings (asset 96188), subject to your account access. Check the live provider status below before changing configuration.</p></div>
+            <ol className="space-y-1.5 text-xs text-muted-foreground"><li>1. Create an app token with <code className="text-foreground">assets:read</code> only.</li><li>2. Restrict it to assets <code className="text-foreground">1</code> and <code className="text-foreground">96188</code>; allow the browser origin used by this deployment.</li><li>3. Add <code className="text-foreground">CESIUM_ION_READ_TOKEN=your_token</code> to the project root <code className="text-foreground">.env</code> and restart the backend.</li></ol>
             <a className="inline-flex items-center rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground" href="https://ion.cesium.com/tokens" target="_blank" rel="noreferrer">Create Cesium ion token</a>
           </CardContent>
         </Card>
 
-        {loading && (
-          <Card>
-            <CardContent className="py-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Loading system status…
-            </CardContent>
-          </Card>
-        )}
+        {loading && <ContentSkeleton label="Loading provider status…" layout="rows" />}
+        {error && <div role="alert" className="border-l-2 border-warning p-3 text-sm text-warning-text">{error}</div>}
+        {(error || loading) && <Button variant="outline" disabled={loading} aria-busy={loading} onClick={() => {
+          if (pending.current) return;
+          pending.current = true;
+          setLoading(true);
+          setError(null);
+          setRetryVersion(value => value + 1);
+        }}>{loading && <InlineSpinner />}{loading ? "Loading provider status…" : "Retry provider status"}</Button>}
 
         {systemStatus && (
           <Card float className="divide-y divide-border">
@@ -197,7 +207,7 @@ export default function ProviderStatusPage() {
                   </div>
                 </div>
                 {s === null ? (
-                  <Badge variant="default">server-side</Badge>
+                  <Badge variant="default">{loading ? "Checking" : "Unknown"}</Badge>
                 ) : s ? (
                   <Badge variant="success">active</Badge>
                 ) : (

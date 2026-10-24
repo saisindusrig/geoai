@@ -1,0 +1,13 @@
+{
+  "provider": "nebius",
+  "enabled": false,
+  "models": [
+    "zai-org/GLM-5.3-Flash",
+    "zai-org/GLM-5.3"
+  ],
+  "defaultModel": "zai-org/GLM-5.3-Flash",
+  "message": "Nebius inference unavailable: credentials and an explicitly approved backend budget are required. No offline AI fallback.",
+  "maxToolCalls": 3,
+  "maxProviderRequests": 2,
+  "automaticRetries": 0
+}

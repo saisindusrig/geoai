@@ -1,0 +1,21 @@
+{
+  "source": "Owner-supplied direct Firebase Console reference in this conversation",
+  "date": "2026-10-24",
+  "timezone": "Asia/Calcutta",
+  "web_app": "StruvoCivil Staging",
+  "project": "struvocivil-918c9",
+  "identifier_sha256": {
+    "projectId": "3c8b92ed6effa20d5ca9209875873f581cd5f310d2dba563c5bacd850d6247b1",
+    "authDomain": "30fb2bd90ca86db788ed614866607fafba715eb7fc8d88bcba61a1f30c05ecb3",
+    "apiKey": "4e2560d2234cfe80da9632f312174df9a0004c14c0592ab6cc18e1c2a11f360a",
+    "appId": "9a699b13bfb08be6c5ebedd5144550a11e4a200978476147699c0027c8eaaaf7"
+  },
+  "byte_for_byte_matches": {
+    "projectId": true,
+    "authDomain": true,
+    "apiKey": true,
+    "appId": true
+  },
+  "live_console_or_api_access": false,
+  "independent_live_verification": false
+}

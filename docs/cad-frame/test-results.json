@@ -1,0 +1,10 @@
+{
+  "backend_regression": {"passed": 303, "failed": 0, "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_frame.py tests/test_drawing_cad.py tests/test_drawing_strength.py tests/test_connection_inputs.py tests/test_anchor_contact_3d.py tests/test_anchor_contact.py tests/test_plate_contact.py tests/test_foundation_interface.py tests/test_slab_transfer.py tests/test_gravity_frame.py tests/test_eccentric_frame.py tests/test_physical_frame.py tests/test_elastic_frame.py -q --basetemp=../.cache/cad-frame/regression"},
+  "enhanced_cad_frame_hand_and_source_staleness": {"passed": 22, "failed": 0},
+  "browser_complete_workflow": {"spec": "frontend/e2e/cad-frame.spec.ts", "passed": 1, "failed": 0},
+  "browser_saved_review_and_geometry_staleness": {"spec": "frontend/e2e/cad-frame-review.spec.ts", "passed": 1, "failed": 0},
+  "typescript_no_emit": "PASSED",
+  "targeted_eslint": "PASSED",
+  "live_paid_inference_calls": 0,
+  "note": "Browser workflow uses explicitly entered synthetic values and a separately authorized copy-only geometry correction. Source-change tests use isolated databases/files. No original project data is changed."
+}

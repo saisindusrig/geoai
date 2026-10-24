@@ -1,0 +1,1791 @@
+{
+  "original_storage_files": 55296,
+  "original_engineering_proof_files": 2090,
+  "changed_or_missing_files": [],
+  "databases": [
+    {
+      "path": "backend/.test-stage1-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/dev.db",
+      "location": "LIVE",
+      "rows_unchanged": false,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/stage1-pre-migration-20261008-015346.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/stage45-pre-migration-20261008-151702.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-final-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-full-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-seeded-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4a-full-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4b-focused-seeded.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4b-full-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4cr-full-regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-cumulative-budget.sqlite",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/boundary-selection.sqlite",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/issue-3-journey.sqlite",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/platform-demo.sqlite",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-controlled-live/acceptance-first-prepare.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-controlled-live/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-understand-canary-981cd96192534cfebc42a739366700b5/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-understand-canary-e6fe966847524ba189e05ee7745fc680/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch-diagnosis/read-copy.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch-regression-651c5dabec8a4d8997f44db9836509e0/regression.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch2-mock-a1315005348340efaafc748ef42fff45/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-bridge-39f073205971470a9829fd0a9789c693/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-bridge-d83a10ceb5484174a06edba4c6e84783/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-mixed-cd1c0ac81a464aa188be8feb993d192f/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-mixed-d07b1a07216449f2be00983374e27ebe/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-4005c5d4343f4c81a2e21497f1a2f2c7/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-b0a6b1d53cf24b28bf914fa19b21db74/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-bc0f597787fb4d828e3c040914d132cd/acceptance.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship0/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship1/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_downgrade_refuses_history0/downgrade.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship0/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship1/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_downgrade_refuses_history0/downgrade.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship0/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship1/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_downgrade_refuses_history0/downgrade.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship0/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship1/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship0/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship1/existing010.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-1.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-2.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-3.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-4.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-5.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/workspace.db",
+      "location": "LIVE",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "77d7d096a60bbc8f069e51e90da231a7aa085e3453e3f31b75da6130c522fa0a"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8fb464ccd39e1e93742ab6659246ed5e985fc532bf92f3b24e04a0370aac2096"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_concurrent_and_crash_rese0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_cumulative_across_models_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_expired_contract0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_round_up_no_float_and_unk0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unknown_opening_and_unaut0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unknown_opening_and_unaut0/other/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_concurrent_and_crash_rese0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_cumulative_across_models_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_expired_contract0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_round_up_no_float_and_unk0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unknown_opening_and_unaut0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unknown_opening_and_unaut0/other/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_concurrent_and_crash_rese0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_cumulative_across_models_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_expired_contract0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_inva0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_miss0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_prov0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_stal0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_trun0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_unce0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_five_sequential_paths_and0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_round_up_no_float_and_unk0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unknown_opening_and_unaut0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unknown_opening_and_unaut0/other/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_billing_zero_d0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_concurrent_and_crash_rese0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_cumulative_across_models_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_expired_contract0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_inva0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_miss0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_prov0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_stal0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_trun0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_unce0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_five_sequential_paths_and0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_round_up_no_float_and_unk0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unknown_opening_and_unaut0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unknown_opening_and_unaut0/other/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_billing_zero_d0/money.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "28cc4bc7db3f2f607573257805d016fd51e6849aed149be9921b5236d788a511"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8fb464ccd39e1e93742ab6659246ed5e985fc532bf92f3b24e04a0370aac2096"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "4dadef9a2cb577489de213dcb1a7d380b385387e240b45677bc71cb34249265d"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "e80b19e45dff5bb4b6a9dc005d37feb6621881455338eb90278ad480ce535196"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8356de76295fd0f6b140406a2ce68aecf9e5a207f01bd0d8c03fd888c4cb965d"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "1ed7123c833c9d2a7f7005729c6801ef3ff52aa6de0de741003836ec695c5261"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "c2fe0813982563dc46797c5c64386c1ae50c0e95cd62818d685951684f9e8fa6"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "e0b1d0cbae6d4007b9f6df1a0a0b128864a717c3290df0dd3ac6084158936e57"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "2610c719327ae6a7d94987f657289715eb7b43c641eefe6827626f37f328faec"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8fb464ccd39e1e93742ab6659246ed5e985fc532bf92f3b24e04a0370aac2096"
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "faec063aaaaf8acbb98310bdb9c0e7e1a0f4a73c4056c58762bb2c08bfd01d68"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "13788744b89a4dd35e76dd7a3b2a1cad96a2bc8647098244273657cbbdf12a15"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8fb464ccd39e1e93742ab6659246ed5e985fc532bf92f3b24e04a0370aac2096"
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "6854c8bbb262fd18f5533a3cf1d3ef35a5940997a37821b18aba43d11e0bf174"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "9b28a8d17ce3717e24f045e6572d25e2b50d86f550886bb6aaaf9436fdb82c02"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3b061f87890dc162445c6578181a1d289fdf55df8777b279a1662c48544a9492"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_concurrent_and_crash_rese0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_cumulative_across_models_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_expired_contract0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_round_up_no_float_and_unk0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unknown_opening_and_unaut0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unknown_opening_and_unaut0/other/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block0/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block1/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block2/budget.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fd77b6d02d0573f983effcb164b6891d7c8ffd8d52d2447755af459ee2f07559"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "7f96ec7a7277f720185b1e0e4c3fe282ad171774d0c09a0b7e2cc6a613c505a9"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8356de76295fd0f6b140406a2ce68aecf9e5a207f01bd0d8c03fd888c4cb965d"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "a86dd5c4718fa07489ea786ee40e0c8464e878b9cd2221697b22ba08111c4c9a"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "8356de76295fd0f6b140406a2ce68aecf9e5a207f01bd0d8c03fd888c4cb965d"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "a86dd5c4718fa07489ea786ee40e0c8464e878b9cd2221697b22ba08111c4c9a"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "d43d30748ec65251cba941f5981079fdb19abec92df390326934e77a9ff749e9"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "69cf0ff39cbf4e089a6d65857a29fc72cc6d8d8fbe78bfc3534b88c95edc4336"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "c933c7326496fded47ebd9261a4fe530b0634d708e0e0a50d9e23673c451ddf4"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "69cf0ff39cbf4e089a6d65857a29fc72cc6d8d8fbe78bfc3534b88c95edc4336"
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "69cf0ff39cbf4e089a6d65857a29fc72cc6d8d8fbe78bfc3534b88c95edc4336"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "929948647a8ca2a9341443f3053f6bb5da1583619872403530ce72a6dbaa8885"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "487ada1d13b1f9dad555be4ce6f17ddb0c39a65bfab74edc5b59c5c8b2e27be6"
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "365d9a03f8afc354e3a18edfeede68bd28de9acd7fc1a3030dc6ac23af96a5b5"
+    },
+    {
+      "path": "backend/.test-universal-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-universal-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-full/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-universal-full/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "fb8e4aede223dab97d894b8ee1f7c1221fac12dc978ec4f1b9eeb3c9a254c565"
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ea43ff898e77ea596b497b6976d299e78e544caf9a2f016d64159ccd540c62e3"
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "4ed08b5635b12d86e16b4782e7802e42622fed824101614eb7d039501741a579"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "96db95330ffb479350ae4270f45465a334cc8da3be5c2c313f2492aa758136e3"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_concurrent_messages_are_o0/concurrent.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "ce7d127f40fe36d02fc7333c262d299c6dd232adac4429eda37e025c606ce3be"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_downgrade_refuses_history0/downgrade.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "3f10c9b250281168f42a00342113ee8483c312fbc7acfc4c5fe65cb17c7b4205"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_007_upgrade_pres0/legacy.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "beae5647cccc8896aee4a17243b73ed52cd4f17f7e6b7cfb7b1485c21cd27310"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_010_relationship0/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "487ada1d13b1f9dad555be4ce6f17ddb0c39a65bfab74edc5b59c5c8b2e27be6"
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_010_relationship1/existing010.db",
+      "location": "EXISTING_ARCHIVE_ONLY",
+      "rows_unchanged": true,
+      "schema_unchanged": null,
+      "archived_schema_sha256": "487ada1d13b1f9dad555be4ce6f17ddb0c39a65bfab74edc5b59c5c8b2e27be6"
+    }
+  ],
+  "archive_read_in_place": "D:\\layout project\\.cleanup-backups\\retained-backups-20261022.zip",
+  "no_extract_restore_or_backup_write": true
+}

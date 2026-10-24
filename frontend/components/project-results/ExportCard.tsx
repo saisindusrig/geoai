@@ -4,6 +4,7 @@ import type { LucideIcon } from "lucide-react";
 import { Download } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { StatusPill } from "@/components/project-results/StatusPill";
+import { DownloadButton } from "@/components/ui/download-button";
 import { cn } from "@/lib/utils";
 
 export default function ExportCard({
@@ -32,7 +33,7 @@ export default function ExportCard({
       hover={available}
       className={cn(
         "h-full p-4 transition-all duration-200 group",
-        !available && "opacity-55 cursor-not-allowed",
+        !available && "cursor-not-allowed",
         available && "hover:border-primary/30",
       )}
     >
@@ -61,10 +62,10 @@ export default function ExportCard({
           )}
           {available && (
             <div className="mt-3 flex items-center gap-3">
-              <span className="inline-flex items-center gap-1 text-[11px] font-medium text-primary group-hover:underline">
+              {href && <DownloadButton path={href} filename={`project-export.${fileType.toLowerCase()}`} variant="ghost" aria-label={`${title} (${fileType})`} className="inline-flex min-h-11 items-center gap-1 px-2 text-xs font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary">
                 <Download className="h-3 w-3" />
                 Download
-              </span>
+              </DownloadButton>}
               {onPreview && (
                 <button
                   type="button"
@@ -73,7 +74,7 @@ export default function ExportCard({
                     e.stopPropagation();
                     onPreview();
                   }}
-                  className="text-[11px] text-muted-foreground hover:text-foreground"
+                  className="min-h-11 px-3 text-xs text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary"
                 >
                   Preview
                 </button>
@@ -85,10 +86,5 @@ export default function ExportCard({
     </GlassCard>
   );
 
-  if (!available || !href) return inner;
-  return (
-    <a href={href} className="block h-full" download>
-      {inner}
-    </a>
-  );
+  return inner;
 }

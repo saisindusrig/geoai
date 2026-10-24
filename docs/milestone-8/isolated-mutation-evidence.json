@@ -1,0 +1,71 @@
+{
+  "projects": [
+    {
+      "project": 881280,
+      "immutable_initial_revision": 881280,
+      "saved_revisions": [
+        881601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 881600,
+      "immutable_initial_revision": 881600,
+      "saved_revisions": [
+        881602
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 891280,
+      "immutable_initial_revision": 891280,
+      "saved_revisions": [
+        891601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 891600,
+      "immutable_initial_revision": 891600,
+      "saved_revisions": [
+        891602
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 901280,
+      "immutable_initial_revision": 901280,
+      "saved_revisions": [
+        901601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 901600,
+      "immutable_initial_revision": 901600,
+      "saved_revisions": [
+        901602
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 911280,
+      "immutable_initial_revision": 911280,
+      "saved_revisions": [
+        911601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 911600,
+      "immutable_initial_revision": 911600,
+      "saved_revisions": [
+        911602
+      ],
+      "all_original_components_unchanged": true
+    }
+  ],
+  "engineering_analyses": 0,
+  "download_or_usage_events": 0,
+  "original_database_never_attached": true
+}

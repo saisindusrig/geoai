@@ -1,0 +1,5 @@
+{
+  "lib/firebase-auth.ts": "fdfc77bbe460cda59ac1f244dd1903af3a0959ccd9eb9a0f8fa501b812da8785",
+  "lib/firebase-auth.test.ts": "d04445f05130b1e47de07c4b853172695e2a11773e3a0168e13f93941e4a6c35",
+  "lib/firebase-staging-config.test.ts": "7483d770976a13f68ae9b5df410f3cb9e3eba439d108cd419d8c93398dc09188"
+}

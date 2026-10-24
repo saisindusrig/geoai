@@ -1,0 +1,2069 @@
+{
+  "source": "docs/production-beta/npm-audit.json",
+  "source_sha256": "bac2cace5b6a01e345604254034bcf9c0a97c5963a1a6cdb16bb27dc5b0520c7",
+  "retained_counts": {
+    "info": 0,
+    "low": 1,
+    "moderate": 9,
+    "high": 22,
+    "critical": 5,
+    "total": 37
+  },
+  "registry_audit_rerun": false,
+  "packages_upgraded": false,
+  "packages": [
+    {
+      "package": "@deck.gl/geo-layers",
+      "retained_severity": "high",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/@deck.gl/geo-layers",
+          "version": "9.3.4",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        },
+        {
+          "affected_package": "fflate",
+          "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+          "affected_range": ">=0.7.0 <0.7.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/fflate",
+              "version": "0.7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@deck.gl/mesh-layers",
+      "retained_severity": "high",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/@deck.gl/mesh-layers",
+          "version": "9.3.4",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@loaders.gl/3d-tiles",
+      "retained_severity": "high",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/@loaders.gl/3d-tiles",
+          "version": "4.4.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "fflate",
+          "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+          "affected_range": ">=0.7.0 <0.7.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/fflate",
+              "version": "0.7.4"
+            }
+          ]
+        },
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@loaders.gl/compression",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@loaders.gl/compression",
+          "version": "4.4.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "fflate",
+          "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+          "affected_range": ">=0.7.0 <0.7.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/fflate",
+              "version": "0.7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@loaders.gl/gltf",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@loaders.gl/gltf",
+          "version": "4.4.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@loaders.gl/textures",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@loaders.gl/textures",
+          "version": "4.4.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@loaders.gl/zip",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@loaders.gl/zip",
+          "version": "4.4.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "fflate",
+          "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+          "affected_range": ">=0.7.0 <0.7.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/fflate",
+              "version": "0.7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@luma.gl/gltf",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@luma.gl/gltf",
+          "version": "9.3.4",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@next/eslint-plugin-next",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@next/eslint-plugin-next",
+          "version": "16.4.2",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "affected_range": "<=3.0.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/braces",
+              "version": "3.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@vitest/mocker",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@vitest/mocker",
+          "version": "3.2.6",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Test/development tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Used by local vitest run. No public Vitest/Vite server, mocker plugin endpoint or attacker-controlled worker options found in application source. Tooling exposure is conditional; no website exploit demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "@vitest/mocker",
+          "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9",
+          "affected_range": ">=2.1.0 <4.1.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@vitest/mocker",
+              "version": "3.2.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "@vitest/mocker",
+          "title": "Vitest: Code injection via unauthenticated manual mock registration",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-qxg6-89mg-rqv8",
+          "affected_range": ">=2.1.0-beta.7 <4.1.12",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@vitest/mocker",
+              "version": "3.2.6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "@watergis/maplibre-gl-terradraw",
+      "retained_severity": "critical",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/@watergis/maplibre-gl-terradraw",
+          "version": "1.13.2",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser mapping",
+      "classification": "CONFIRMED_AFFECTED_COMPONENT_CONDITIONAL_EXPOSURE",
+      "exposure": "Installed MapLibre 5.24.0 is affected by publisher attribution sanitizer advisory GHSA-jrc7-96c5-q579; TerraDraw inherits it. Reviewed attribution strings are fixed constants, not arbitrary user HTML. No attacker-to-attribution source demonstrated; component affected, application exploit conditional.",
+      "advisories": [
+        {
+          "affected_package": "maplibre-gl",
+          "title": "MapLibre GL JS: XSS Sanitizer Bypass in DOM.sanitize() via Live NamedNodeMap Removal Skip",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-jrc7-96c5-q579",
+          "affected_range": "<=6.4.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/maplibre-gl",
+              "version": "5.24.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "argparse",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/texture-compressor/node_modules/argparse",
+          "version": "1.0.10",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "baseline-browser-mapping",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/baseline-browser-mapping",
+          "version": "2.10.36",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "baseline-browser-mapping",
+          "title": "baseline-browser-mapping process termination on invalid input causes denial of service",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-w5vr-8v7q-w6rv",
+          "affected_range": ">=2.0.0 <2.11.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/baseline-browser-mapping",
+              "version": "2.10.36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+          "version": "5.0.6",
+          "dev": true,
+          "range_matches": true
+        },
+        {
+          "path": "node_modules/brace-expansion",
+          "version": "1.1.15",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+          "affected_range": ">=3.0.0 <5.0.7",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+              "version": "5.0.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+          "affected_range": ">=4.0.0 <5.0.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+              "version": "5.0.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+          "affected_range": "<1.1.18",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/brace-expansion",
+              "version": "1.1.15"
+            }
+          ]
+        },
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+          "affected_range": ">=4.0.0 <5.0.12",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+              "version": "5.0.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+          "affected_range": ">=4.0.0 <5.0.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+              "version": "5.0.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "brace-expansion",
+          "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+          "affected_range": ">=4.0.0 <5.0.10",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+              "version": "5.0.6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "braces",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/braces",
+          "version": "3.0.3",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "affected_range": "<=3.0.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/braces",
+              "version": "3.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "browserslist",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/browserslist",
+          "version": "4.28.2",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "browserslist",
+          "title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
+          "affected_range": "<=4.28.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/browserslist",
+              "version": "4.28.2"
+            }
+          ]
+        },
+        {
+          "affected_package": "browserslist",
+          "title": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-73wf-gq98-2v4g",
+          "affected_range": "<=4.28.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/browserslist",
+              "version": "4.28.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "dompurify",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/dompurify",
+          "version": "3.4.9",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Transitive browser sanitization",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application import or untrusted HTML sanitization sink found; advisory hook/IN_PLACE/custom-element preconditions not demonstrated. Transitive library paths remain unverified.",
+      "advisories": [
+        {
+          "affected_package": "dompurify",
+          "title": "DOMPurify: Permanent `ALLOWED_ATTR` pollution via `setConfig()` bypassing the hook clone-guard (incomplete fix of the 3.4.7 hook-pollution patch)",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-cmwh-pvxp-8882",
+          "affected_range": "<=3.4.10",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/dompurify",
+              "version": "3.4.9"
+            }
+          ]
+        },
+        {
+          "affected_package": "dompurify",
+          "title": "DOMPurify: IN_PLACE hook removal leaves a detached subtree executable, causing XSS",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-55q2-fjhq-7xh7",
+          "affected_range": "<=3.4.12",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/dompurify",
+              "version": "3.4.9"
+            }
+          ]
+        },
+        {
+          "affected_package": "dompurify",
+          "title": "DOMPurify: `CUSTOM_ELEMENT_HANDLING` bypasses `afterSanitizeElements` for allowed custom elements.",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-c2j3-45gr-mqc4",
+          "affected_range": "<=3.4.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/dompurify",
+              "version": "3.4.9"
+            }
+          ]
+        },
+        {
+          "affected_package": "dompurify",
+          "title": "DOMPurify: IN_PLACE returns a force-removed rawtext root whose text carries attacker markup — pure HTML reparse executes",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-6688-9rhm-gjv2",
+          "affected_range": "<=3.4.15",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/dompurify",
+              "version": "3.4.9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "esbuild",
+      "retained_severity": "low",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/esbuild",
+          "version": "0.27.7",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Test/development tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Used by local vitest run. No public Vitest/Vite server, mocker plugin endpoint or attacker-controlled worker options found in application source. Tooling exposure is conditional; no website exploit demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "esbuild",
+          "title": "esbuild allows arbitrary file read when running the development server on Windows",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-g7r4-m6w7-qqqr",
+          "affected_range": ">=0.27.3 <0.28.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/esbuild",
+              "version": "0.27.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "eslint-config-next",
+      "retained_severity": "high",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/eslint-config-next",
+          "version": "16.4.2",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "affected_range": "<=3.0.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/braces",
+              "version": "3.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "fast-glob",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/fast-glob",
+          "version": "3.3.1",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "affected_range": "<=3.0.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/braces",
+              "version": "3.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "fflate",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/fflate",
+          "version": "0.7.4",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "fflate",
+          "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+          "affected_range": ">=0.7.0 <0.7.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/fflate",
+              "version": "0.7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "image-size",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/image-size",
+          "version": "0.7.5",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/js-yaml",
+          "version": "4.2.0",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "js-yaml",
+          "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+          "affected_range": ">=4.0.0 <4.3.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/js-yaml",
+              "version": "4.2.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "js-yaml",
+          "title": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+          "affected_range": ">=4.0.0 <4.3.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/js-yaml",
+              "version": "4.2.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "js-yaml",
+          "title": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+          "affected_range": ">=4.0.0 <4.3.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/js-yaml",
+              "version": "4.2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "maplibre-gl",
+      "retained_severity": "critical",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/maplibre-gl",
+          "version": "5.24.0",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser mapping",
+      "classification": "CONFIRMED_AFFECTED_COMPONENT_CONDITIONAL_EXPOSURE",
+      "exposure": "Installed MapLibre 5.24.0 is affected by publisher attribution sanitizer advisory GHSA-jrc7-96c5-q579; TerraDraw inherits it. Reviewed attribution strings are fixed constants, not arbitrary user HTML. No attacker-to-attribution source demonstrated; component affected, application exploit conditional.",
+      "advisories": [
+        {
+          "affected_package": "maplibre-gl",
+          "title": "MapLibre GL JS: XSS Sanitizer Bypass in DOM.sanitize() via Live NamedNodeMap Removal Skip",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-jrc7-96c5-q579",
+          "affected_range": "<=6.4.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/maplibre-gl",
+              "version": "5.24.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "micromatch",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/micromatch",
+          "version": "4.0.8",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "affected_range": "<=3.0.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/braces",
+              "version": "3.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "nanoid",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/nanoid",
+          "version": "3.3.20",
+          "dev": false,
+          "range_matches": false
+        }
+      ],
+      "category": "ID generation",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No request-controlled negative/zero size passed to affected non-secure/custom generators found. Installed component warning retained; application exploit not demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "nanoid",
+          "title": "nanoid: non-secure generators can loop indefinitely with negative size",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-28wg-ghj8-5hjv",
+          "affected_range": "<3.3.16",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "nanoid",
+          "title": "nanoid: custom generators can loop indefinitely when size is zero",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-2v37-7h3g-55p8",
+          "affected_range": "<3.3.18",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        }
+      ]
+    },
+    {
+      "package": "next",
+      "retained_severity": "critical",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/next",
+          "version": "16.4.2",
+          "dev": false,
+          "range_matches": false
+        }
+      ],
+      "category": "Active Windows HTTP framework",
+      "classification": "CURRENT_VERSION_COMPARED_WITH_RETAINED_RANGES",
+      "exposure": "Installed current Next compared with retained advisory ranges; old advisory exposure prose is superseded. No exploit or registry audit run.",
+      "advisories": [
+        {
+          "affected_package": "next",
+          "title": "Next.js: Middleware / Proxy bypass in App Router applications using Turbopack and single locale",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-6gpp-xcg3-4w24",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Denial of Service in App Router using Server Actions",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-m99w-x7hq-7vfj",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Server-Side Request Forgery in Server Actions on custom servers",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-89xv-2m56-2m9x",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Cache confusion of response bodies for requests with bodies",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-68g3-v927-f742",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Cache confusion of response bodies for requests with bodies containing invalid UTF-8 byte sequences",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-4633-3j49-mh5q",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Unbounded Server Action payload in Edge runtime",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-4c39-4ccg-62r3",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-p9j2-gv94-2wf4",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Denial of Service in the Image Optimization API using SVGs",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-q8wf-6r8g-63ch",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Unauthenticated disclosure of internal Server Function endpoints",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-955p-x3mx-jcvp",
+          "affected_range": ">=16.0.0 <16.2.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Unauthenticated Remote Code Execution on windows-hosted servers",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-p293-qw3h-jr36",
+          "affected_range": ">=16.0.0 <16.3.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-2xp9-vwfh-vxw4",
+          "affected_range": ">=16.0.0 <16.3.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js: Remote Code Execution in next/og ImageResponse",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-vcvr-r3jv-pc5j",
+          "affected_range": ">=16.2.0 <16.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js has cache poisoning of SSG and ISR pages in self-hosted applications",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-4jqv-mc3x-m676",
+          "affected_range": ">=16.0.0 <16.3.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-39w2-rjm5-chcv",
+          "affected_range": ">=16.0.0 <16.3.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js has information disclosure in App Router metadata image routes via dynamicParams bypass",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-f87g-xv8r-7p7x",
+          "affected_range": ">=16.0.0 <16.3.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js has cache poisoning in SSG/ISR rendering that leads to cross-user content substitution and persistent denial of service",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-mcj8-r9mp-w47p",
+          "affected_range": ">=16.0.0 <16.3.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "next",
+          "title": "Next.js has Server-Side Request Forgery in Image Optimization",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-cjq9-62q9-8jv4",
+          "affected_range": ">=16.0.0 <16.3.8",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+          "affected_range": "<8.5.10",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+          "affected_range": "<=8.5.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-fxqj-rqcc-2cmp",
+          "affected_range": "<=8.5.22",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+          "affected_range": "<=8.5.17",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "affected_range": "<0.35.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "sharp",
+          "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-rgj7-g3m4-5g8c",
+          "affected_range": "<0.35.4",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "sharp",
+          "title": "sharp : Vulnerability in librsvg dependency CVE-2026-96889",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-wq5f-xc86-pv6w",
+          "affected_range": "<0.35.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/next/node_modules/postcss",
+          "version": null,
+          "dev": false,
+          "range_matches": null
+        },
+        {
+          "path": "node_modules/postcss",
+          "version": "8.5.23",
+          "dev": false,
+          "range_matches": false
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+          "affected_range": "<8.5.10",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+          "affected_range": "<=8.5.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-fxqj-rqcc-2cmp",
+          "affected_range": "<=8.5.22",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "postcss",
+          "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+          "affected_range": "<=8.5.17",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        }
+      ]
+    },
+    {
+      "package": "protobufjs",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/protobufjs",
+          "version": "8.6.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Browser map/3D asset pipeline",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Map/3D loaders are used. Reviewed models/styles are saved or fixed sources; malicious compressed assets, textures or tiles were not exhaustively fuzzed. Parser exposure remains conditional/unverified.",
+      "advisories": [
+        {
+          "affected_package": "protobufjs",
+          "title": "protobufjs: Text Format string map parsing can mutate returned map object prototype",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-jfj6-75fj-8934",
+          "affected_range": ">=8.2.0 <=8.6.4",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/protobufjs",
+              "version": "8.6.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "protobufjs",
+          "title": "protobufjs: Denial of Service via infinite loop in .proto option parsing",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-j3f2-48v5-ccww",
+          "affected_range": ">=8.0.0 <=8.6.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/protobufjs",
+              "version": "8.6.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "sharp",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/sharp",
+          "version": "0.35.5",
+          "dev": false,
+          "range_matches": false
+        }
+      ],
+      "category": "Next image optimization dependency",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Native image parsers are reachable through framework image optimization subject to Next input restrictions. No next/image component, remotePatterns or arbitrary image upload path found in reviewed source. Parser exploitation not attempted; keep release blocker with Next remediation.",
+      "advisories": [
+        {
+          "affected_package": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "affected_range": "<0.35.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "sharp",
+          "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-rgj7-g3m4-5g8c",
+          "affected_range": "<0.35.4",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        },
+        {
+          "affected_package": "sharp",
+          "title": "sharp : Vulnerability in librsvg dependency CVE-2026-96889",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-wq5f-xc86-pv6w",
+          "affected_range": "<0.35.5",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": []
+        }
+      ]
+    },
+    {
+      "package": "source-map-js",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/source-map-js",
+          "version": "1.2.1",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "source-map-js",
+          "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+          "affected_range": ">=1.0.0 <1.2.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/source-map-js",
+              "version": "1.2.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "sprintf-js",
+      "retained_severity": "moderate",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/sprintf-js",
+          "version": "1.0.3",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "texture-compressor",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/texture-compressor",
+          "version": "1.0.2",
+          "dev": false,
+          "range_matches": true
+        }
+      ],
+      "category": "Build/lint or offline asset tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application API passes user-selected glob/YAML/CSS/tool options to this package in reviewed paths. Malicious repository/build inputs remain a risk; not a demonstrated website exploit.",
+      "advisories": [
+        {
+          "affected_package": "sprintf-js",
+          "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+          "affected_range": "<=1.1.3",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/sprintf-js",
+              "version": "1.0.3"
+            }
+          ]
+        },
+        {
+          "affected_package": "image-size",
+          "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+          "affected_range": ">=0.6.3 <=2.0.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/image-size",
+              "version": "0.7.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "tinypool",
+      "retained_severity": "critical",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/tinypool",
+          "version": "1.1.1",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Test/development tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Used by local vitest run. No public Vitest/Vite server, mocker plugin endpoint or attacker-controlled worker options found in application source. Tooling exposure is conditional; no website exploit demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "tinypool",
+          "title": "Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-5gmw-xhrv-c9v3",
+          "affected_range": "<=2.1.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/tinypool",
+              "version": "1.1.1"
+            }
+          ]
+        },
+        {
+          "affected_package": "tinypool",
+          "title": "Tinypool: Prototype Pollution Gadget to RCE in run() options",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-85c8-ppgw-ccpr",
+          "affected_range": "<2.1.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/tinypool",
+              "version": "1.1.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "undici",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/undici",
+          "version": "7.28.0",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Transitive HTTP client",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "No application imports of affected retry/cache/BalancedPool/WebSocketStream features found. Some framework HTTP use exists; each advisory precondition needs separate qualification. Not a demonstrated cross-user leak.",
+      "advisories": [
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to downstream response desynchronization via retry interceptor",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-8xcm-r25x-g524",
+          "affected_range": ">=7.0.0 <7.29.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to cross-user information disclosure and parse-time crash via degenerate private cache directives",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-4cwx-7wf7-3272",
+          "affected_range": ">=7.0.0 <7.29.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to CRLF Injection via blob-like body 'type' property",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-m8rv-5g2x-5cg5",
+          "affected_range": ">=7.0.0 <7.29.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to cross-user information disclosure via whitespace around equals in Cache-Control directives",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-jr45-8vmc-qm54",
+          "affected_range": ">=7.0.0 <7.29.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to cookie attribute injection via unsanitized domain and unparsed setCookie fields",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-v3r7-h72x-cjcm",
+          "affected_range": ">=7.0.0 <7.29.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to Denial of Service via unhandled error in WebSocket permessage-deflate decompression",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-3wwx-pv8p-q78v",
+          "affected_range": ">=7.28.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to Denial of Service via orphaned RetryHandler response body",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-pmjh-fq2x-6v4x",
+          "affected_range": ">=7.11.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to downstream response splitting via retry interceptor",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-r53p-7pc4-xj5r",
+          "affected_range": ">=7.0.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to Denial of Service via unrequested WebSocket subprotocol",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-rfgv-xxqx-mfg5",
+          "affected_range": ">=7.0.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to Denial of Service via unbounded decompression of compressed responses",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-3xpg-4rpp-hhhm",
+          "affected_range": ">=7.15.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to cross-user cookie disclosure via Set-Cookie caching in shared caches",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-2jfj-6hjv-fm6j",
+          "affected_range": ">=7.0.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to response truncation via oversized chunked responses in the dump interceptor",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-2gqq-gqf2-x968",
+          "affected_range": ">=7.1.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to TLS certificate validation bypass via dropped connect options in BalancedPool",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-w293-vg96-wgc3",
+          "affected_range": ">=7.24.1 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to caching and replay of unsafe HTTP method responses",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-8436-99hf-9mmv",
+          "affected_range": ">=7.0.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        },
+        {
+          "affected_package": "undici",
+          "title": "undici vulnerable to Denial of Service via WebSocketStream unclean close",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-rx4f-c7p8-82vq",
+          "affected_range": ">=7.0.0 <7.29.1",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/undici",
+              "version": "7.28.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "retained_severity": "high",
+      "direct": false,
+      "installed": [
+        {
+          "path": "node_modules/vite",
+          "version": "7.3.5",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Test/development tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Used by local vitest run. No public Vitest/Vite server, mocker plugin endpoint or attacker-controlled worker options found in application source. Tooling exposure is conditional; no website exploit demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "vite",
+          "title": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+          "affected_range": ">=7.0.0 <=7.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vite",
+              "version": "7.3.5"
+            }
+          ]
+        },
+        {
+          "affected_package": "vite",
+          "title": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+          "affected_range": ">=7.0.0 <=7.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vite",
+              "version": "7.3.5"
+            }
+          ]
+        },
+        {
+          "affected_package": "vite",
+          "title": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+          "severity": "high",
+          "url": "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+          "affected_range": ">=7.0.0 <=7.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vite",
+              "version": "7.3.5"
+            }
+          ]
+        },
+        {
+          "affected_package": "vite",
+          "title": "Vite: Cross origin script execution through Vite custom middleware",
+          "severity": "low",
+          "url": "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+          "affected_range": ">=7.0.0 <=7.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vite",
+              "version": "7.3.5"
+            }
+          ]
+        },
+        {
+          "affected_package": "vite",
+          "title": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-rq7h-c2jc-7f22",
+          "affected_range": ">=7.0.0 <=7.3.6",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vite",
+              "version": "7.3.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "package": "vitest",
+      "retained_severity": "critical",
+      "direct": true,
+      "installed": [
+        {
+          "path": "node_modules/vitest",
+          "version": "3.2.6",
+          "dev": true,
+          "range_matches": true
+        }
+      ],
+      "category": "Test/development tooling",
+      "classification": "POTENTIAL_RISK",
+      "exposure": "Used by local vitest run. No public Vitest/Vite server, mocker plugin endpoint or attacker-controlled worker options found in application source. Tooling exposure is conditional; no website exploit demonstrated.",
+      "advisories": [
+        {
+          "affected_package": "vitest",
+          "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9",
+          "affected_range": ">=2.1.0 <4.1.11",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/vitest",
+              "version": "3.2.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "@vitest/mocker",
+          "title": "Vitest: Code injection via unauthenticated manual mock registration",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-qxg6-89mg-rqv8",
+          "affected_range": ">=2.1.0-beta.7 <4.1.12",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/@vitest/mocker",
+              "version": "3.2.6"
+            }
+          ]
+        },
+        {
+          "affected_package": "tinypool",
+          "title": "Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-5gmw-xhrv-c9v3",
+          "affected_range": "<=2.1.0",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/tinypool",
+              "version": "1.1.1"
+            }
+          ]
+        },
+        {
+          "affected_package": "tinypool",
+          "title": "Tinypool: Prototype Pollution Gadget to RCE in run() options",
+          "severity": "critical",
+          "url": "https://github.com/advisories/GHSA-85c8-ppgw-ccpr",
+          "affected_range": "<2.1.2",
+          "classification": "RETAINED_ADVISORY_COMPARE_CURRENT_LEAF_VERSION_AND_REVIEW_PRECONDITIONS",
+          "current_installed_matches": [
+            {
+              "path": "node_modules/tinypool",
+              "version": "1.1.1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

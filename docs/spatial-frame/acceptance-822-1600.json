@@ -1,0 +1,11 @@
+{
+  "project": 822,
+  "width": 1600,
+  "modes": 7,
+  "force_components": 6,
+  "load_cases": 3,
+  "floor_filter": true,
+  "member_and_slab_inspection": true,
+  "writes": [],
+  "errors": []
+}

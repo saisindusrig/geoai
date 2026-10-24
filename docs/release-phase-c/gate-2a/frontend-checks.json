@@ -1,0 +1,14 @@
+{
+  "typescript": {
+    "exit_code": 0,
+    "elapsed_seconds": 25.6
+  },
+  "lint": {
+    "exit_code": 0,
+    "elapsed_seconds": 2.15
+  },
+  "build": {
+    "exit_code": 0,
+    "elapsed_seconds": 24.78
+  }
+}

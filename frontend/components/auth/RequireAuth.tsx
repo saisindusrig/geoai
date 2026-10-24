@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { authRequired, getAuthToken } from "@/lib/api";
 import { loginPath, PUBLIC_APP_PATHS } from "@/lib/auth-routes";
+import { firebaseMode, firebaseSignedIn } from "@/lib/firebase-auth";
 
 /** Redirect unauthenticated users to /login in production JWT mode. */
 export function useRequireAuth() {
@@ -19,8 +20,8 @@ export function useRequireAuth() {
     const isLocalSandboxWorkspace =
       /^\/projects\/\d+\/workspace$/.test(pathname) &&
       new URLSearchParams(window.location.search).get("local") === "1";
-    if (isPublicDemoWorkspace || isLocalSandboxWorkspace) return;
-    if (getAuthToken()) return;
+    if (!firebaseMode() && (isPublicDemoWorkspace || isLocalSandboxWorkspace)) return;
+    if (getAuthToken() || firebaseSignedIn()) return;
     router.replace(loginPath(pathname));
   }, [pathname, router]);
 }

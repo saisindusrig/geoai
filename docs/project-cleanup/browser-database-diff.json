@@ -1,0 +1,415 @@
+[
+  {
+    "table": "assistant_run_events",
+    "before": 437,
+    "after": 464,
+    "added_pk": [
+      [
+        "09498487-3daa-5026-80c7-f7707be3de59"
+      ],
+      [
+        "79d00fe0-5ff4-59d4-ac67-8e746e3ddbd5"
+      ],
+      [
+        "59f2d62d-b3a5-553f-a5d2-4a1808ae58b5"
+      ],
+      [
+        "3c4ef1b4-a0aa-54cb-bb4f-a2fc86e064d5"
+      ],
+      [
+        "c4ed46ab-850b-5486-9e81-6b5d1ff2e414"
+      ],
+      [
+        "2fc358ba-afc1-59aa-bc12-44e9d6c7eff5"
+      ],
+      [
+        "aa1fe3da-9dea-5e17-aeae-0d1228596124"
+      ],
+      [
+        "3263c596-339d-5ca5-a992-f50c74f5e79a"
+      ],
+      [
+        "a13a1c90-c8bc-56bc-b262-7d95565fbbca"
+      ],
+      [
+        "42695103-c3ba-5e95-b79c-59cdba8f8c6a"
+      ],
+      [
+        "42c61c05-a344-50c4-8642-8eff75d3e0fe"
+      ],
+      [
+        "6425c215-4c6a-5026-a239-315c36bfebcb"
+      ],
+      [
+        "b4f26d3c-28bc-5ee1-bf87-1bad5b947212"
+      ],
+      [
+        "f621c2e3-2dcd-569a-9759-09a1e73260f9"
+      ],
+      [
+        "397ae70a-2151-5d60-bdf6-f43ce625d4e6"
+      ],
+      [
+        "c396600a-fa82-5c54-833f-f874178bb1e6"
+      ],
+      [
+        "777da168-53ba-5870-ae64-4878ec707483"
+      ],
+      [
+        "1163767a-6723-5fe1-9626-52e222688dc7"
+      ],
+      [
+        "ebd5b50a-5847-5884-af73-c9c759f1543a"
+      ],
+      [
+        "1d265408-d44e-5593-b0df-0e6abebf8004"
+      ],
+      [
+        "f617c658-0c0d-5b97-9896-86976bc169ba"
+      ],
+      [
+        "f27081dd-a902-5e1d-afb6-8cd7d388e549"
+      ],
+      [
+        "ec134937-7e94-50c7-b41a-88e360415a16"
+      ],
+      [
+        "1756823d-cb04-551f-a0ae-5964a731308c"
+      ],
+      [
+        "c106d72a-1235-53b1-bc40-ae0bbdb14afc"
+      ],
+      [
+        "453a34d2-3f3a-5e13-a4d5-db4fb7894e99"
+      ],
+      [
+        "d15a1fae-e067-56f3-932c-7b0c1315a604"
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "assistant_runs",
+    "before": 124,
+    "after": 133,
+    "added_pk": [
+      [
+        "ce977182-79c5-518e-90e4-4aa8377b71e1"
+      ],
+      [
+        "a8841b02-b020-5cf0-97c1-8f6bb31e62e1"
+      ],
+      [
+        "14882bef-27cf-517b-a53b-d7413aa72ce6"
+      ],
+      [
+        "74161845-dea5-5810-b2f1-fb37a957ba55"
+      ],
+      [
+        "f6b0a036-5871-570d-9525-c835a2192eec"
+      ],
+      [
+        "bd8af5df-3a4d-5e99-9e5f-94137f7e0404"
+      ],
+      [
+        "6181889b-d2d6-5f6e-9182-746c670d1613"
+      ],
+      [
+        "2c0dea86-cca2-5ac2-89c9-d76912fd2f2b"
+      ],
+      [
+        "f8d9d76d-efee-52f4-87dd-12e29dd56f63"
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "conversation_messages",
+    "before": 176,
+    "after": 194,
+    "added_pk": [
+      [
+        "cd78a85a-fc8b-57e4-8d2c-3600882ffdd4"
+      ],
+      [
+        "3324f390-6fb8-5680-b409-06d6d2caf172"
+      ],
+      [
+        "dce98b7d-ada3-5a5e-851a-7deecf583572"
+      ],
+      [
+        "6bd12c8c-eb99-58ea-bcc2-f00a2ea57ae3"
+      ],
+      [
+        "02515709-7a2c-5512-accd-b67f16d8bfb7"
+      ],
+      [
+        "31346317-0163-5f8e-bf3e-01c7dc85ba93"
+      ],
+      [
+        "b7d6ea7f-1c31-564d-9a99-f93b56aa789e"
+      ],
+      [
+        "7a74a5e2-a9e2-5979-9136-0d63e71d3e11"
+      ],
+      [
+        "af22e33e-09f0-5a49-aa20-3c5f5e3a7efe"
+      ],
+      [
+        "4bc40d3b-0d91-5433-bbf1-9919198ee8aa"
+      ],
+      [
+        "4d067ea6-b9c7-5530-a2c3-005edc9134a7"
+      ],
+      [
+        "d2be8a75-ad1f-5bde-aeaa-52dfcf2bebda"
+      ],
+      [
+        "f9e833f7-f8bc-564b-ab32-374999f1a3f6"
+      ],
+      [
+        "67b1fe1d-79ab-57c0-9514-55babf4d8a09"
+      ],
+      [
+        "a94718db-40c2-5892-ad27-4f585e91ab25"
+      ],
+      [
+        "2dc52f51-040a-5e63-8785-6285daac3846"
+      ],
+      [
+        "4f3d8941-5ec0-5427-97e3-a840c4d068f4"
+      ],
+      [
+        "c97e69d1-e9b1-5a4c-9a93-65ab60799a67"
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "design_scenarios",
+    "before": 578,
+    "after": 578,
+    "added_pk": [],
+    "removed_pk": [],
+    "changed": [
+      {
+        "pk": [
+          589
+        ],
+        "columns": [
+          "design_output_json"
+        ]
+      }
+    ]
+  },
+  {
+    "table": "engineering_analyses",
+    "before": 590,
+    "after": 606,
+    "added_pk": [
+      [
+        591
+      ],
+      [
+        592
+      ],
+      [
+        593
+      ],
+      [
+        594
+      ],
+      [
+        595
+      ],
+      [
+        596
+      ],
+      [
+        597
+      ],
+      [
+        598
+      ],
+      [
+        599
+      ],
+      [
+        600
+      ],
+      [
+        601
+      ],
+      [
+        602
+      ],
+      [
+        603
+      ],
+      [
+        604
+      ],
+      [
+        605
+      ],
+      [
+        606
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "engineering_audit_events",
+    "before": 100,
+    "after": 102,
+    "added_pk": [
+      [
+        101
+      ],
+      [
+        102
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "generated_files",
+    "before": 127,
+    "after": 129,
+    "added_pk": [
+      [
+        140
+      ],
+      [
+        141
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "model_revisions",
+    "before": 124,
+    "after": 126,
+    "added_pk": [
+      [
+        125
+      ],
+      [
+        126
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  },
+  {
+    "table": "project_conversations",
+    "before": 120,
+    "after": 120,
+    "added_pk": [],
+    "removed_pk": [],
+    "changed": [
+      {
+        "pk": [
+          "b25c3bbc-7758-540c-abc7-c85b1dd7d495"
+        ],
+        "columns": [
+          "next_sequence"
+        ]
+      },
+      {
+        "pk": [
+          "eaf0994e-be61-5066-96c7-32018ca85633"
+        ],
+        "columns": [
+          "next_sequence"
+        ]
+      },
+      {
+        "pk": [
+          "76a88de7-bd13-5d78-b02b-09880327ba9d"
+        ],
+        "columns": [
+          "next_sequence"
+        ]
+      },
+      {
+        "pk": [
+          "63320202-b2a2-58a3-8f97-24c04cebd2d5"
+        ],
+        "columns": [
+          "next_sequence"
+        ]
+      }
+    ]
+  },
+  {
+    "table": "projects",
+    "before": 278,
+    "after": 278,
+    "added_pk": [],
+    "removed_pk": [],
+    "changed": [
+      {
+        "pk": [
+          784
+        ],
+        "columns": [
+          "updated_at"
+        ]
+      },
+      {
+        "pk": [
+          788
+        ],
+        "columns": [
+          "updated_at"
+        ]
+      },
+      {
+        "pk": [
+          789
+        ],
+        "columns": [
+          "updated_at"
+        ]
+      },
+      {
+        "pk": [
+          793
+        ],
+        "columns": [
+          "updated_at"
+        ]
+      },
+      {
+        "pk": [
+          801
+        ],
+        "columns": [
+          "updated_at"
+        ]
+      }
+    ]
+  },
+  {
+    "table": "quantity_estimates",
+    "before": 100,
+    "after": 102,
+    "added_pk": [
+      [
+        105
+      ],
+      [
+        106
+      ]
+    ],
+    "removed_pk": [],
+    "changed": []
+  }
+]

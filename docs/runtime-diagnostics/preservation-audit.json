@@ -1,0 +1,21 @@
+{
+  "all_preexisting_rows_and_files_preserved": true,
+  "all_database_schemas_preserved": true,
+  "strict_baseline_fingerprints_identical": false,
+  "strict_mismatch_report": "preservation-manifests.json",
+  "unchanged_original_databases": 263,
+  "development_db_append_only": true,
+  "added_rows_by_table": {
+    "projects": 3,
+    "design_scenarios": 1,
+    "audit_logs": 3,
+    "usage_events": 3,
+    "model_revisions": 1,
+    "engineering_analyses": 3,
+    "project_conversations": 1,
+    "conversation_messages": 4,
+    "assistant_runs": 2,
+    "assistant_run_events": 6
+  },
+  "note": "Historical baseline predates existing appended rows; all current original database rows are also verified exactly against the Milestone 2 baseline in milestone-preservation.json. No rows were repaired or removed."
+}

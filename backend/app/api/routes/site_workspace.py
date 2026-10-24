@@ -170,14 +170,8 @@ def list_messages(project_id:int,conversation_id:str,before:int|None=Query(None,
 
 @router.post("/conversations/{conversation_id}/messages",status_code=202)
 def send_message(project_id:int,conversation_id:str,body:MessageInput,background:BackgroundTasks,access=Depends(scope)):
-    db,actor=access
-    from app.services.assistant.storage import rows
-    for run in rows(db,"assistant_runs",project_id):
-        if run["conversation_id"]==conversation_id:recover(db,project_id,run)
-    result=conversations.submit(db,project_id,actor,conversation_id,body,orchestrate=True)
-    if result["status"]=="QUEUED":
-        background.add_task(background_run,db.get_bind(),project_id,result["runId"])
-    return result
+    from fastapi import HTTPException
+    raise HTTPException(410, "Use /api/assistant/turn for Nebius-only chat. Earlier conversations remain read-only; offline chat generation is retired.")
 
 
 @router.get("/assistant/runs/{run_id}",response_model=RunSummary)
@@ -259,4 +253,14 @@ def reject_memory(project_id:int,item_id:str,version:int,body:MemoryAction,acces
 def offline_platform_mode(project_id: int, access=Depends(scope)):
     from app.services.assistant.offline_platform import enabled, LABEL, EXAMPLE
     active = enabled()
-    return {"enabled": active, "label": LABEL if active else None, "example": EXAMPLE if active else None}
+    from app.core.config import settings
+    return {"enabled": active, "label": LABEL if active else None, "example": EXAMPLE if active else None,
+            "chatAvailable": settings.AI_PROVIDER != "mock" and bool(settings.NEBIUS_API_KEY),
+            "chatProvider": "nebius" if settings.AI_PROVIDER != "mock" and settings.NEBIUS_API_KEY else None}
+
+
+@router.get("/assistant/engineering-context")
+def engineering_context(project_id:int,revision_id:int|None=Query(None,gt=0),selected_ids:str=Query("",max_length=12000),dirty:bool=False,access=Depends(scope)):
+    from app.services.assistant.engineering_guidance import saved_context,MODELS
+    context=saved_context(access[0],project_id,revision_id,[v for v in selected_ids.split(",") if v],dirty)
+    return {"context":context,"models":MODELS,"defaultModel":MODELS[0],"cloudEnabled":False,"mode":"ENGINEERING_OFFLINE"}

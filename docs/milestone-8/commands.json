@@ -1,0 +1,582 @@
+{
+  "1280": {
+    "first": {
+      "projectId": 911280,
+      "projectName": "Synthetic column review 1280",
+      "revisionId": 911280,
+      "documentHash": "95e9e93e9a67f27b86390095d25f796cc11a5fb71850b5e6abdd7c5d7803ce75",
+      "candidate": {
+        "id": "assistant-column:544eb9807e3b6a134a2e48c0",
+        "parent_id": null,
+        "name": "Cancelled column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911280,
+          "revision_id": 911280,
+          "primitive": "column",
+          "name": "Cancelled column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "044eed4930d223659993df362fec71204a9481f814895549bcb8c42f423da7a1"
+    },
+    "second": {
+      "projectId": 911280,
+      "projectName": "Synthetic column review 1280",
+      "revisionId": 911280,
+      "documentHash": "95e9e93e9a67f27b86390095d25f796cc11a5fb71850b5e6abdd7c5d7803ce75",
+      "candidate": {
+        "id": "assistant-column:a50747d5d8822ddf3448f39d",
+        "parent_id": null,
+        "name": "Natural cancel column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911280,
+          "revision_id": 911280,
+          "primitive": "column",
+          "name": "Natural cancel column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "45da90c328238c0362cdcc8e9de3c56b19fffe7b2ff52e061584993a35cfe9b3"
+    },
+    "final": {
+      "projectId": 911280,
+      "projectName": "Synthetic column review 1280",
+      "revisionId": 911280,
+      "documentHash": "95e9e93e9a67f27b86390095d25f796cc11a5fb71850b5e6abdd7c5d7803ce75",
+      "candidate": {
+        "id": "assistant-column:37613446c37c9f7c21aee926",
+        "parent_id": null,
+        "name": "Approved conceptual column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911280,
+          "revision_id": 911280,
+          "primitive": "column",
+          "name": "Approved conceptual column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "df347a364b91b8474a69c08e2fec43ebae84460fca8239a24da0adb5183fe2ae"
+    },
+    "cancel": {
+      "projectId": 911280,
+      "projectName": "Synthetic column review 1280",
+      "revisionId": 911280,
+      "documentHash": "95e9e93e9a67f27b86390095d25f796cc11a5fb71850b5e6abdd7c5d7803ce75",
+      "kind": "workspace_action",
+      "operation": "cancel_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "cancel_primitive_preview",
+        "arguments": {
+          "project_id": 911280
+        }
+      },
+      "executed": false,
+      "actionId": "ddfbb8f84b42cf9c3931fae10db6fa645c2ef0ce36b3afe7f062887d4842733f"
+    }
+  },
+  "1600": {
+    "first": {
+      "projectId": 911600,
+      "projectName": "Synthetic column review 1600",
+      "revisionId": 911600,
+      "documentHash": "03253f17072d649ad4914503547513ed391890558702f7b59accfd2fd3469a9e",
+      "candidate": {
+        "id": "assistant-column:f0d029a56f759c36833c6448",
+        "parent_id": null,
+        "name": "Cancelled column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911600,
+          "revision_id": 911600,
+          "primitive": "column",
+          "name": "Cancelled column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "f053865dc89099cfe133728e79bc936913427658eebcea649d4972511cb8825f"
+    },
+    "second": {
+      "projectId": 911600,
+      "projectName": "Synthetic column review 1600",
+      "revisionId": 911600,
+      "documentHash": "03253f17072d649ad4914503547513ed391890558702f7b59accfd2fd3469a9e",
+      "candidate": {
+        "id": "assistant-column:0a81f1fc401d829fcc29a129",
+        "parent_id": null,
+        "name": "Natural cancel column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911600,
+          "revision_id": 911600,
+          "primitive": "column",
+          "name": "Natural cancel column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "8f01ec9587dc2409a5d11e77c6c3ef0c03cfc3c631375ddcdfeb71b10b31479d"
+    },
+    "final": {
+      "projectId": 911600,
+      "projectName": "Synthetic column review 1600",
+      "revisionId": 911600,
+      "documentHash": "03253f17072d649ad4914503547513ed391890558702f7b59accfd2fd3469a9e",
+      "candidate": {
+        "id": "assistant-column:dcd727952e13d2369d905a35",
+        "parent_id": null,
+        "name": "Approved conceptual column",
+        "category": "column",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            0.4,
+            0.5,
+            3.0
+          ]
+        },
+        "transform": {
+          "position": [
+            3.0,
+            0.0,
+            1.5
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 911600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY"
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_primitive_preview",
+        "arguments": {
+          "project_id": 911600,
+          "revision_id": 911600,
+          "primitive": "column",
+          "name": "Approved conceptual column",
+          "units": "mm",
+          "dimensions": [
+            400.0,
+            500.0,
+            3000.0
+          ],
+          "position": [
+            3000.0,
+            0.0,
+            1500.0
+          ],
+          "position_reference": "local_enu_center",
+          "rotation_deg": [
+            0.0,
+            0.0,
+            15.0
+          ],
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "797bfd75c40df449731b697adff286ae907df4514f1a149780c7784ac6eaa3ea"
+    },
+    "cancel": {
+      "projectId": 911600,
+      "projectName": "Synthetic column review 1600",
+      "revisionId": 911600,
+      "documentHash": "03253f17072d649ad4914503547513ed391890558702f7b59accfd2fd3469a9e",
+      "kind": "workspace_action",
+      "operation": "cancel_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "cancel_primitive_preview",
+        "arguments": {
+          "project_id": 911600
+        }
+      },
+      "executed": false,
+      "actionId": "5600d26821c05a8f6839830dc362bbf3d8e9b68dfba6a50023f305d3699bab14"
+    }
+  }
+}

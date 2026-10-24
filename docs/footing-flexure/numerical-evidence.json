@@ -1,0 +1,1143 @@
+{
+  "review_project": 803,
+  "model_revision": 123,
+  "source_project": 802,
+  "source_revision": 122,
+  "geometry": {
+    "footing_id": "drawing-cad:614f117ae2a74794:9A",
+    "column_id": "drawing-cad:614f117ae2a74794:9C",
+    "footing_source": "dxf:614f117ae2a74794:9A",
+    "column_source": "dxf:614f117ae2a74794:9C",
+    "center_east_north_m": [
+      0.15,
+      0.15
+    ],
+    "footing_size_m": [
+      1.2,
+      1.2,
+      0.45
+    ],
+    "column_size_m": [
+      0.3,
+      0.3,
+      3.26
+    ],
+    "bearing_up_m": -0.45,
+    "column_face_up_m": 0.0,
+    "connection_status": "SYNTHETIC_PATCH_ONLY_ACTUAL_CONNECTION_UNVERIFIED"
+  },
+  "cases": [
+    {
+      "name": "reference saved CAD envelope",
+      "result": {
+        "method_version": "CAD_FOOTING_CANTILEVER_DEMAND_V1",
+        "status": "VERIFIED_SYNTHETIC_DEMAND_ONLY",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "method": "CAD_FOOTING_CANTILEVER_DEMAND_V1",
+          "footing_id": "drawing-cad:614f117ae2a74794:9A",
+          "column_id": "drawing-cad:614f117ae2a74794:9C",
+          "B_m": 1.2,
+          "L_m": 1.2,
+          "thickness_m": 0.45,
+          "column_east_m": 0.3,
+          "column_north_m": 0.3,
+          "column_load_kn": 144.0,
+          "uniform_net_pressure_kpa": 100.0,
+          "bearing_reference_up_m": -0.45,
+          "load_reference_up_m": 0.0,
+          "eccentricity_east_m": 0,
+          "eccentricity_north_m": 0,
+          "horizontal_shear_kn": 0,
+          "applied_moment_knm": 0,
+          "soil_reaction": "PRESCRIBED_UNIFORM_UPWARD_FULL_CONTACT",
+          "self_weight": "EXCLUDED_SYNTHETIC_NET_PRESSURE_BENCHMARK",
+          "load_path": "REVIEWED_HYPOTHETICAL_DIRECT_COLUMN_PATCH",
+          "reviewed_footprint": true,
+          "reviewed_assumptions": true,
+          "geometry_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "footprint_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "load_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "pressure_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "reference_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "load_path_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "applicability": "Explicit synthetic source declaration only; actual site and physical connection data unverified."
+        },
+        "faces": [
+          {
+            "face": "East",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 10.124999999999998,
+            "full_cut_moment_knm": 12.149999999999997,
+            "upward_cut_force_kn": 53.99999999999999,
+            "external_moment_axis": "north",
+            "external_moment_sign": -1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 10.124999999999998
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 9.137812499999997
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 8.20125
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 7.315312499999998
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 6.48
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 5.695312499999999
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 4.961249999999999
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 4.2778125
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 3.644999999999999
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 3.0628124999999997
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 2.5312499999999996
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 2.050312499999999
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 1.62
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 1.2403124999999997
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 0.9112500000000001
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 0.6328124999999999
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.40499999999999975
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.22781250000000003
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.10124999999999994
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.02531250000000004
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "West",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 10.124999999999998,
+            "full_cut_moment_knm": 12.149999999999997,
+            "upward_cut_force_kn": 53.99999999999999,
+            "external_moment_axis": "north",
+            "external_moment_sign": 1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 10.124999999999998
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 9.137812499999997
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 8.20125
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 7.315312499999998
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 6.48
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 5.695312499999999
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 4.961249999999999
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 4.2778125
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 3.644999999999999
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 3.0628124999999997
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 2.5312499999999996
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 2.050312499999999
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 1.62
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 1.2403124999999997
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 0.9112500000000001
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 0.6328124999999999
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.40499999999999975
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.22781250000000003
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.10124999999999994
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.02531250000000004
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "North",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 10.124999999999998,
+            "full_cut_moment_knm": 12.149999999999997,
+            "upward_cut_force_kn": 53.99999999999999,
+            "external_moment_axis": "east",
+            "external_moment_sign": 1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 10.124999999999998
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 9.137812499999997
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 8.20125
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 7.315312499999998
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 6.48
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 5.695312499999999
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 4.961249999999999
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 4.2778125
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 3.644999999999999
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 3.0628124999999997
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 2.5312499999999996
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 2.050312499999999
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 1.62
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 1.2403124999999997
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 0.9112500000000001
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 0.6328124999999999
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.40499999999999975
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.22781250000000003
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.10124999999999994
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.02531250000000004
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "South",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 10.124999999999998,
+            "full_cut_moment_knm": 12.149999999999997,
+            "upward_cut_force_kn": 53.99999999999999,
+            "external_moment_axis": "east",
+            "external_moment_sign": -1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 10.124999999999998
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 9.137812499999997
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 8.20125
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 7.315312499999998
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 6.48
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 5.695312499999999
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 4.961249999999999
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 4.2778125
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 3.644999999999999
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 3.0628124999999997
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 2.5312499999999996
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 2.050312499999999
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 1.62
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 1.2403124999999997
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 0.9112500000000001
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 0.6328124999999999
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.40499999999999975
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.22781250000000003
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.10124999999999994
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.02531250000000004
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          }
+        ],
+        "upward_force_kn": 144.0,
+        "column_load_kn": 144.0,
+        "force_residual_kn": 0.0,
+        "global_moment_residual_knm": [
+          0.0,
+          -1.609823385706477e-15
+        ],
+        "independent_integration": [
+          {
+            "cells_per_axis": 1,
+            "upward_force_kn": 144.0,
+            "moment_about_east_knm": 0.0,
+            "moment_about_north_knm": 0.0,
+            "faces": {
+              "East": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "West": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "North": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "South": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              }
+            }
+          },
+          {
+            "cells_per_axis": 2,
+            "upward_force_kn": 144.0,
+            "moment_about_east_knm": -3.552713678800501e-15,
+            "moment_about_north_knm": 3.552713678800501e-15,
+            "faces": {
+              "East": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "West": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "North": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              },
+              "South": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999997
+              }
+            }
+          },
+          {
+            "cells_per_axis": 8,
+            "upward_force_kn": 144.0,
+            "moment_about_east_knm": -2.220446049250313e-16,
+            "moment_about_north_knm": 4.440892098500626e-16,
+            "faces": {
+              "East": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "West": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "North": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "South": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              }
+            }
+          },
+          {
+            "cells_per_axis": 32,
+            "upward_force_kn": 144.0,
+            "moment_about_east_knm": 0.0,
+            "moment_about_north_knm": -1.609823385706477e-15,
+            "faces": {
+              "East": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "West": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "North": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              },
+              "South": {
+                "force_kn": 53.99999999999999,
+                "face_moment_knm": 12.149999999999999
+              }
+            }
+          }
+        ],
+        "decimal_hand": {
+          "moment_knm_per_m": "10.12500",
+          "one_metre_strip_Nmm": "10125000.00000"
+        },
+        "formula": "a_EW=(B-cE)/2; a_NS=(L-cN)/2; for each full-width cut: w=q_net*b; V=w*a; M_face=w*a^2/2; per metre m=q_net*a^2/2; m(s)=q_net*(a-s)^2/2 from face toward free edge. q_net*B*L=N.",
+        "sign_convention": "ENU axes; upward pressure +Up. External face moment is r cross F: East -My, West +My, North +Mx, South -Mx. Report positive demand magnitudes; internal resisting cut moment is opposite. No capacity/sign-of-reinforcement verdict.",
+        "reference": "https://www.vdot.virginia.gov/media/vdotvirginiagov/doing-business/technical-guidance-and-support/technical-guidance-documents/structure-and-bridge/VDMASD.pdf",
+        "reference_note": "VDOT ASD manual section4.4.11.1.1: isolated footing as cantilever; column-face section; integrate forces on one side. Used solely to document the mechanics idealization, not compliance.",
+        "limitations": [
+          "Demand only; no reinforcement area, effective depth or material strengths inferred",
+          "Orthogonal full-width cuts overlap in area: never sum their four upward forces as separate reactions or their magnitudes as one global moment",
+          "Prescribed uniform NET upward pressure with footing self-weight deliberately excluded from this synthetic equilibrium benchmark",
+          "No plate/shell FEA, cracking, stiffness, deflection, nonuniform reaction, uplift, eccentricity, shear or physical connection transfer",
+          "Actual steel-column/base-plate/RC-footing behavior remains unverified; the reviewed column envelope is only a hypothetical load patch",
+          "No reinforcement adequacy, one-way shear, punching, footing/soil safety or IS/US code checks"
+        ],
+        "actual_foundation_safety": "BLOCKED",
+        "engineering_approval": "DISABLED",
+        "reinforcement_capacity": "NOT_IMPLEMENTED",
+        "shear_capacity": "NOT_IMPLEMENTED",
+        "design_code_checks": "DISABLED"
+      }
+    },
+    {
+      "name": "double load and prescribed pressure",
+      "result": {
+        "method_version": "CAD_FOOTING_CANTILEVER_DEMAND_V1",
+        "status": "VERIFIED_SYNTHETIC_DEMAND_ONLY",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "method": "CAD_FOOTING_CANTILEVER_DEMAND_V1",
+          "footing_id": "drawing-cad:614f117ae2a74794:9A",
+          "column_id": "drawing-cad:614f117ae2a74794:9C",
+          "B_m": 1.2,
+          "L_m": 1.2,
+          "thickness_m": 0.45,
+          "column_east_m": 0.3,
+          "column_north_m": 0.3,
+          "column_load_kn": 288.0,
+          "uniform_net_pressure_kpa": 200.0,
+          "bearing_reference_up_m": -0.45,
+          "load_reference_up_m": 0.0,
+          "eccentricity_east_m": 0,
+          "eccentricity_north_m": 0,
+          "horizontal_shear_kn": 0,
+          "applied_moment_knm": 0,
+          "soil_reaction": "PRESCRIBED_UNIFORM_UPWARD_FULL_CONTACT",
+          "self_weight": "EXCLUDED_SYNTHETIC_NET_PRESSURE_BENCHMARK",
+          "load_path": "REVIEWED_HYPOTHETICAL_DIRECT_COLUMN_PATCH",
+          "reviewed_footprint": true,
+          "reviewed_assumptions": true,
+          "geometry_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "footprint_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "load_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "pressure_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "reference_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "load_path_source": "Explicit synthetic source declaration only; actual site and physical connection data unverified.",
+          "applicability": "Explicit synthetic source declaration only; actual site and physical connection data unverified."
+        },
+        "faces": [
+          {
+            "face": "East",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 20.249999999999996,
+            "full_cut_moment_knm": 24.299999999999994,
+            "upward_cut_force_kn": 107.99999999999999,
+            "external_moment_axis": "north",
+            "external_moment_sign": -1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 20.249999999999996
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 18.275624999999994
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 16.4025
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 14.630624999999997
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 12.96
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 11.390624999999998
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 9.922499999999998
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 8.555625
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 7.289999999999998
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 6.125624999999999
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 5.062499999999999
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 4.100624999999998
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 3.24
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 2.4806249999999994
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 1.8225000000000002
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 1.2656249999999998
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.8099999999999995
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.45562500000000006
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.20249999999999987
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.05062500000000008
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "West",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 20.249999999999996,
+            "full_cut_moment_knm": 24.299999999999994,
+            "upward_cut_force_kn": 107.99999999999999,
+            "external_moment_axis": "north",
+            "external_moment_sign": 1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 20.249999999999996
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 18.275624999999994
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 16.4025
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 14.630624999999997
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 12.96
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 11.390624999999998
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 9.922499999999998
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 8.555625
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 7.289999999999998
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 6.125624999999999
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 5.062499999999999
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 4.100624999999998
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 3.24
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 2.4806249999999994
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 1.8225000000000002
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 1.2656249999999998
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.8099999999999995
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.45562500000000006
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.20249999999999987
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.05062500000000008
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "North",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 20.249999999999996,
+            "full_cut_moment_knm": 24.299999999999994,
+            "upward_cut_force_kn": 107.99999999999999,
+            "external_moment_axis": "east",
+            "external_moment_sign": 1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 20.249999999999996
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 18.275624999999994
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 16.4025
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 14.630624999999997
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 12.96
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 11.390624999999998
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 9.922499999999998
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 8.555625
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 7.289999999999998
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 6.125624999999999
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 5.062499999999999
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 4.100624999999998
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 3.24
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 2.4806249999999994
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 1.8225000000000002
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 1.2656249999999998
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.8099999999999995
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.45562500000000006
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.20249999999999987
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.05062500000000008
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          },
+          {
+            "face": "South",
+            "projection_m": 0.44999999999999996,
+            "cut_width_m": 1.2,
+            "moment_knm_per_m": 20.249999999999996,
+            "full_cut_moment_knm": 24.299999999999994,
+            "upward_cut_force_kn": 107.99999999999999,
+            "external_moment_axis": "east",
+            "external_moment_sign": -1,
+            "diagram": [
+              {
+                "distance_from_face_m": 0.0,
+                "moment_knm_per_m": 20.249999999999996
+              },
+              {
+                "distance_from_face_m": 0.0225,
+                "moment_knm_per_m": 18.275624999999994
+              },
+              {
+                "distance_from_face_m": 0.045,
+                "moment_knm_per_m": 16.4025
+              },
+              {
+                "distance_from_face_m": 0.06749999999999999,
+                "moment_knm_per_m": 14.630624999999997
+              },
+              {
+                "distance_from_face_m": 0.09,
+                "moment_knm_per_m": 12.96
+              },
+              {
+                "distance_from_face_m": 0.1125,
+                "moment_knm_per_m": 11.390624999999998
+              },
+              {
+                "distance_from_face_m": 0.13499999999999998,
+                "moment_knm_per_m": 9.922499999999998
+              },
+              {
+                "distance_from_face_m": 0.15749999999999997,
+                "moment_knm_per_m": 8.555625
+              },
+              {
+                "distance_from_face_m": 0.18,
+                "moment_knm_per_m": 7.289999999999998
+              },
+              {
+                "distance_from_face_m": 0.20249999999999999,
+                "moment_knm_per_m": 6.125624999999999
+              },
+              {
+                "distance_from_face_m": 0.225,
+                "moment_knm_per_m": 5.062499999999999
+              },
+              {
+                "distance_from_face_m": 0.24749999999999997,
+                "moment_knm_per_m": 4.100624999999998
+              },
+              {
+                "distance_from_face_m": 0.26999999999999996,
+                "moment_knm_per_m": 3.24
+              },
+              {
+                "distance_from_face_m": 0.2925,
+                "moment_knm_per_m": 2.4806249999999994
+              },
+              {
+                "distance_from_face_m": 0.31499999999999995,
+                "moment_knm_per_m": 1.8225000000000002
+              },
+              {
+                "distance_from_face_m": 0.33749999999999997,
+                "moment_knm_per_m": 1.2656249999999998
+              },
+              {
+                "distance_from_face_m": 0.36,
+                "moment_knm_per_m": 0.8099999999999995
+              },
+              {
+                "distance_from_face_m": 0.38249999999999995,
+                "moment_knm_per_m": 0.45562500000000006
+              },
+              {
+                "distance_from_face_m": 0.40499999999999997,
+                "moment_knm_per_m": 0.20249999999999987
+              },
+              {
+                "distance_from_face_m": 0.42749999999999994,
+                "moment_knm_per_m": 0.05062500000000008
+              },
+              {
+                "distance_from_face_m": 0.45,
+                "moment_knm_per_m": 0.0
+              }
+            ]
+          }
+        ],
+        "upward_force_kn": 288.0,
+        "column_load_kn": 288.0,
+        "force_residual_kn": 0.0,
+        "global_moment_residual_knm": [
+          0.0,
+          -3.219646771412954e-15
+        ],
+        "independent_integration": [
+          {
+            "cells_per_axis": 1,
+            "upward_force_kn": 288.0,
+            "moment_about_east_knm": 0.0,
+            "moment_about_north_knm": 0.0,
+            "faces": {
+              "East": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "West": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "North": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "South": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              }
+            }
+          },
+          {
+            "cells_per_axis": 2,
+            "upward_force_kn": 288.0,
+            "moment_about_east_knm": -7.105427357601002e-15,
+            "moment_about_north_knm": 7.105427357601002e-15,
+            "faces": {
+              "East": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "West": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "North": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              },
+              "South": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999994
+              }
+            }
+          },
+          {
+            "cells_per_axis": 8,
+            "upward_force_kn": 288.0,
+            "moment_about_east_knm": -4.440892098500626e-16,
+            "moment_about_north_knm": 8.881784197001252e-16,
+            "faces": {
+              "East": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "West": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "North": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "South": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              }
+            }
+          },
+          {
+            "cells_per_axis": 32,
+            "upward_force_kn": 288.0,
+            "moment_about_east_knm": 0.0,
+            "moment_about_north_knm": -3.219646771412954e-15,
+            "faces": {
+              "East": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "West": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "North": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              },
+              "South": {
+                "force_kn": 107.99999999999999,
+                "face_moment_knm": 24.299999999999997
+              }
+            }
+          }
+        ],
+        "decimal_hand": {
+          "moment_knm_per_m": "20.25000",
+          "one_metre_strip_Nmm": "20250000.00000"
+        },
+        "formula": "a_EW=(B-cE)/2; a_NS=(L-cN)/2; for each full-width cut: w=q_net*b; V=w*a; M_face=w*a^2/2; per metre m=q_net*a^2/2; m(s)=q_net*(a-s)^2/2 from face toward free edge. q_net*B*L=N.",
+        "sign_convention": "ENU axes; upward pressure +Up. External face moment is r cross F: East -My, West +My, North +Mx, South -Mx. Report positive demand magnitudes; internal resisting cut moment is opposite. No capacity/sign-of-reinforcement verdict.",
+        "reference": "https://www.vdot.virginia.gov/media/vdotvirginiagov/doing-business/technical-guidance-and-support/technical-guidance-documents/structure-and-bridge/VDMASD.pdf",
+        "reference_note": "VDOT ASD manual section4.4.11.1.1: isolated footing as cantilever; column-face section; integrate forces on one side. Used solely to document the mechanics idealization, not compliance.",
+        "limitations": [
+          "Demand only; no reinforcement area, effective depth or material strengths inferred",
+          "Orthogonal full-width cuts overlap in area: never sum their four upward forces as separate reactions or their magnitudes as one global moment",
+          "Prescribed uniform NET upward pressure with footing self-weight deliberately excluded from this synthetic equilibrium benchmark",
+          "No plate/shell FEA, cracking, stiffness, deflection, nonuniform reaction, uplift, eccentricity, shear or physical connection transfer",
+          "Actual steel-column/base-plate/RC-footing behavior remains unverified; the reviewed column envelope is only a hypothetical load patch",
+          "No reinforcement adequacy, one-way shear, punching, footing/soil safety or IS/US code checks"
+        ],
+        "actual_foundation_safety": "BLOCKED",
+        "engineering_approval": "DISABLED",
+        "reinforcement_capacity": "NOT_IMPLEMENTED",
+        "shear_capacity": "NOT_IMPLEMENTED",
+        "design_code_checks": "DISABLED"
+      }
+    }
+  ],
+  "hand": {
+    "area_m2": 1.44,
+    "upward_force_kn": 144,
+    "projection_m": 0.45,
+    "net_pressure_kpa": 100,
+    "moment_per_metre_knm_per_m": 10.125,
+    "full_cut_moment_knm": 12.15,
+    "force_outside_one_face_kn": 54,
+    "one_metre_strip_Nmm": 10125000
+  },
+  "note": "Opposite faces cancel signed external moments. Full-width orthogonal cut regions overlap; their forces are never summed as independent reactions.",
+  "engineering_approval": "DISABLED"
+}

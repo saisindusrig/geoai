@@ -1,0 +1,81 @@
+{
+  "existing_turns": 3,
+  "provider_requests": 5,
+  "accounted_usd": 0.0024219000000000003,
+  "actual_charges": "UNKNOWN",
+  "new_ui_inference_requests": 0,
+  "tasks": [
+    {
+      "id": "acf9c16f-424c-42ab-9c97-15a1a338d005",
+      "status": "SUCCEEDED",
+      "accounted_usd": 0.0002741,
+      "accounted_tokens": 1419,
+      "provider_requests": 1,
+      "models": [
+        {
+          "requested": "zai-org/GLM-5.3-Flash",
+          "returned": "zai-org/GLM-5.3-Flash",
+          "accounting_state": "REPORTED_ESTIMATE"
+        }
+      ],
+      "tool_results": [],
+      "delta_events": 49
+    },
+    {
+      "id": "f3c5420c-d2c0-4b7a-bebe-caf8fed36a22",
+      "status": "SUCCEEDED",
+      "accounted_usd": 0.0005961,
+      "accounted_tokens": 3743,
+      "provider_requests": 2,
+      "models": [
+        {
+          "requested": "zai-org/GLM-5.3-Flash",
+          "returned": "zai-org/GLM-5.3-Flash",
+          "accounting_state": "REPORTED_ESTIMATE"
+        },
+        {
+          "requested": "zai-org/GLM-5.3-Flash",
+          "returned": "zai-org/GLM-5.3-Flash",
+          "accounting_state": "REPORTED_ESTIMATE"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "list_projects",
+          "ok": true
+        }
+      ],
+      "delta_events": 23
+    },
+    {
+      "id": "96eeb595-f8ba-469a-a45a-7dfc03730949",
+      "status": "SUCCEEDED",
+      "accounted_usd": 0.0015517,
+      "accounted_tokens": 9325,
+      "provider_requests": 2,
+      "models": [
+        {
+          "requested": "zai-org/GLM-5.3-Flash",
+          "returned": "zai-org/GLM-5.3-Flash",
+          "accounting_state": "REPORTED_ESTIMATE"
+        },
+        {
+          "requested": "zai-org/GLM-5.3-Flash",
+          "returned": "zai-org/GLM-5.3-Flash",
+          "accounting_state": "REPORTED_ESTIMATE"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "read_context",
+          "ok": true
+        },
+        {
+          "name": "read_capabilities",
+          "ok": true
+        }
+      ],
+      "delta_events": 91
+    }
+  ]
+}

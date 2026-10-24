@@ -1,0 +1,20 @@
+{
+  "real_browser_recording": true,
+  "viewport": [
+    1600,
+    1000
+  ],
+  "project": 823,
+  "surface_picked": "slab-F2-B1",
+  "load_picked": "load:node:7",
+  "followed": [
+    "slab-F2-B1",
+    "beam-F2-N13-14",
+    "node:13",
+    "column-F2-N7-13"
+  ],
+  "animation_magnification": 300,
+  "static_case_not_dynamics": true,
+  "errors": [],
+  "writes": []
+}

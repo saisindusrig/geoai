@@ -1,0 +1,12 @@
+{
+  "sdk_version": "7.7.0",
+  "official_import": true,
+  "default_disabled": true,
+  "missing_project_fail_closed": true,
+  "missing_credentials_fail_closed": true,
+  "sdk_apps_initialized": 0,
+  "forbidden_network_or_credential_attempts": 0,
+  "pytest_exit": 0,
+  "genuine_firebase_qualification": false,
+  "keyless_adc_operational": false
+}

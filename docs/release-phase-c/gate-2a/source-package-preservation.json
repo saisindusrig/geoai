@@ -1,0 +1,7 @@
+{
+  "graphics_sources_unchanged": 4,
+  "engineering_fixture_inputs_unchanged": 10,
+  "python_distributions_unchanged": 106,
+  "firebase_admin": "7.7.0",
+  "firebase_browser": "13.1.0"
+}

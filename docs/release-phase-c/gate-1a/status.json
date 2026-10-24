@@ -1,0 +1,34 @@
+{
+  "compatibility_decision": "BLOCKED_FOR_FULL_DEFAULT_PIPELINE_TRANSITION",
+  "runtime": "Node 24.22.1 portable x64",
+  "npm": "11.19.1 bundled",
+  "archive_signature_and_checksum": "PASS",
+  "all_installed_engine_requirements": "PASS",
+  "raw_lock_graph": "One uninstalled optional ia32 Sharp entry does not match Node 24 or Node 22; not used on x64",
+  "firebase_module_import": "PASS; zero apps initialized",
+  "typescript_node24": "PASS",
+  "typescript_node22_comparison": "PASS",
+  "scoped_eslint": "PASS",
+  "frontend_tests": {
+    "passed": 64,
+    "files": 12
+  },
+  "default_turbopack_build": "INCOMPLETE; bounded interrupted attempt in junction-based copy, not proof of Node-specific defect",
+  "webpack_build": "PASS; TypeScript and static generation completed",
+  "browser_widths": [
+    1280,
+    1600,
+    390
+  ],
+  "browser_errors": 0,
+  "normal_node": "22.18.0 unchanged",
+  "firebase_admin": "NOT INSTALLED",
+  "firebase_authentication": "DISABLED; no live test",
+  "public_launch": "BLOCKED",
+  "runtime_processes_logged": 71,
+  "guard_denials": {
+    "network": 3,
+    "writes": 15
+  },
+  "normal_startup_unchanged": true
+}

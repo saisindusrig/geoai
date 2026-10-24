@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    [
+      60,
+      12,
+      "#8CB223"
+    ],
+    [
+      12,
+      42,
+      "#8CB223"
+    ],
+    [
+      108,
+      42,
+      "#8CB223"
+    ],
+    [
+      108,
+      98,
+      "#8CB223"
+    ],
+    [
+      60,
+      128,
+      "#B7C3AA"
+    ],
+    [
+      12,
+      98,
+      "#B7C3AA"
+    ]
+  ],
+  "reference": "Reconstructed from approved raster; original vector master not supplied."
+}

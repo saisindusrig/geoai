@@ -1,0 +1,11 @@
+{
+  "parsed": [
+    "backend/app/api/routes/auth.py",
+    "backend/app/services/rate_limit.py",
+    "backend/app/services/upload_limits.py",
+    "backend/app/services/survey/import_pipeline.py",
+    "backend/app/api/routes/survey.py",
+    "backend/tests/test_release_phase_b.py"
+  ],
+  "errors": 0
+}

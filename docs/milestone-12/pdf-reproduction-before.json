@@ -1,0 +1,8 @@
+{
+  "user_text_reached_image_loader": true,
+  "intercepted": [
+    "https://invalid.example.test/synthetic-proof.png"
+  ],
+  "network_requests": 0,
+  "database_writes": 0
+}

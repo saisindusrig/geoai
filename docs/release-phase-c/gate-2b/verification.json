@@ -1,0 +1,13 @@
+{
+  "phase": "Gate 2B",
+  "approval_preparation": "COMPLETE",
+  "approval_decisions_pending": 10,
+  "real_service_cases_not_run": 7,
+  "application_manifest_and_matrix_hashes_unchanged": 30,
+  "dev_rows": 10283,
+  "assistant_history_rows": 3,
+  "rows_and_schema_unchanged": true,
+  "document_checks": "PASS",
+  "firebase_activation": "NOT_AUTHORIZED",
+  "public_launch": "BLOCKED"
+}

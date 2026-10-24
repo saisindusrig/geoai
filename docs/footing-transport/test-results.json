@@ -1,0 +1,14 @@
+{
+  "backend_passed": 398,
+  "final_targeted_passed": 18,
+  "browser_workflows_passed": 2,
+  "typescript": "passed",
+  "eslint": "passed",
+  "original_components_preserved": 54,
+  "added_footings": 2,
+  "soil_pressure": "BLOCKED",
+  "engineering_approval": "DISABLED",
+  "paid_inference_calls": 0,
+  "transport_browser_seconds": 47.6,
+  "operational_metadata_differences": 3
+}

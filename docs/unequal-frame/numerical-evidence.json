@@ -1,0 +1,1224 @@
+{
+  "project_id": 792,
+  "model_revision_id": 101,
+  "analysis_id": 398,
+  "algorithm_version": "physical-frame/4-unequal",
+  "solver_version": "3.8.0",
+  "solver": {
+    "name": "OpenSees",
+    "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+    "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+  },
+  "run_id": "b3440394-79ac-468f-b364-09c403f49f2a",
+  "status": "VERIFIED",
+  "convergence_code": 0,
+  "exit_code": 0,
+  "units": "SI; viewer mm/kN/kN\u00b7m",
+  "classification": "SYNTHETIC_VERIFICATION",
+  "inputs": {
+    "component_ids": [
+      "drawing-cad:614f117ae2a74794:9C",
+      "drawing-cad:614f117ae2a74794:96",
+      "drawing-cad:614f117ae2a74794:AE"
+    ],
+    "sections": [
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:9C",
+        "shape": "solid_rectangle",
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.09,
+        "inertia_m4": 0.0006749999999999998,
+        "material_name": "Synthetic solid rectangular steel",
+        "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+        "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:96",
+        "shape": "solid_rectangle",
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.06,
+        "inertia_m4": 0.00044999999999999993,
+        "material_name": "Synthetic solid rectangular steel",
+        "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+        "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:AE",
+        "shape": "solid_rectangle",
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.09,
+        "inertia_m4": 0.0006749999999999998,
+        "material_name": "Synthetic solid rectangular steel",
+        "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+        "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+      }
+    ],
+    "connections": [
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "left",
+        "behavior": "rigid_offset",
+        "offset_m": [
+          -0.15,
+          -0.009999999999999787
+        ],
+        "idealization_approved": true,
+        "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+      },
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "right",
+        "behavior": "rigid_offset",
+        "offset_m": [
+          0.15000000000000036,
+          0.04999999999999982
+        ],
+        "idealization_approved": true,
+        "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+      }
+    ],
+    "supports": "both_column_bases_fixed",
+    "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+    "load_pattern": "equal_horizontal_column_head_loads",
+    "load_n": 20000.0,
+    "load_source": "Synthetic verification total 20 kN East; equal 10 kN at each head",
+    "load_cases": null,
+    "combination": null,
+    "purpose": "VERIFICATION_ONLY",
+    "elements_per_member": 2,
+    "units": "SI"
+  },
+  "physical_to_analytical_graph": {
+    "beam_offsets_m": [
+      [
+        -0.15,
+        -0.009999999999999787
+      ],
+      [
+        0.15000000000000036,
+        0.04999999999999982
+      ]
+    ],
+    "connection_offsets": [
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "beam_endpoint": "left",
+        "retained_node_id": 2,
+        "offset_m": [
+          -0.15,
+          -0.009999999999999787
+        ],
+        "offset_length_m": 0.15033296378372907,
+        "column_top_m": [
+          0,
+          3.26
+        ],
+        "beam_end_m": [
+          -0.15,
+          3.25
+        ]
+      },
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "beam_endpoint": "right",
+        "retained_node_id": 3,
+        "offset_m": [
+          0.15000000000000036,
+          0.04999999999999982
+        ],
+        "offset_length_m": 0.15811388300841925,
+        "column_top_m": [
+          5.699999999999999,
+          3.2
+        ],
+        "beam_end_m": [
+          5.85,
+          3.25
+        ]
+      }
+    ],
+    "kind": "physical_assembly",
+    "length_m": 5.699999999999999,
+    "height_m": 3.26,
+    "column_heights_m": [
+      3.26,
+      3.2
+    ],
+    "unequal_heights": true,
+    "node_positions_m": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3.26
+      ],
+      [
+        5.699999999999999,
+        3.2
+      ],
+      [
+        5.699999999999999,
+        0
+      ]
+    ],
+    "method_version": "cad-planar-unequal/1",
+    "origin_enu_m": [
+      0.15,
+      0.15,
+      0.0
+    ],
+    "coordinate_mapping": "Analytical X = saved East - origin.E; Y = saved Up - origin.U; rotation about -North; physical North constant",
+    "members": [
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:9C",
+        "name": "CAD column SW",
+        "position_enu_m": [
+          0.15,
+          0.15,
+          1.63
+        ],
+        "size_m": [
+          0.3,
+          0.3,
+          3.26
+        ],
+        "axis": "Up",
+        "length_m": 3.26,
+        "centerline_endpoints_m": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3.26
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.09,
+        "solid_rectangle_inertia_m4": 0.0006749999999999998,
+        "node_ids": [
+          1,
+          2
+        ],
+        "cad_source": {
+          "source_entity_id": "dxf:614f117ae2a74794:9C",
+          "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+          "generator": "reviewed-dxf-parametric/1",
+          "component_sha256": "c6d66e9f71e501ebb12227b66481092bb6056f0ad3b4afc2ab154ae9c9d7bd0b",
+          "classification": "SYNTHETIC_VERIFICATION",
+          "input_evidence": {
+            "entity_id": "dxf:614f117ae2a74794:9C",
+            "operation": "update_generated",
+            "role": "COLUMN",
+            "name": "CAD column SW",
+            "center_east_mm": 150,
+            "center_north_mm": 150,
+            "size_east_mm": 300,
+            "size_north_mm": 300,
+            "bottom_mm": 0,
+            "top_mm": 3260,
+            "material_name": "Explicit synthetic material identity; no grade/E/fy",
+            "material_source": "Verification input only; not measured/manufacturer material data",
+            "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+            "plan_policy": "MATCH_REVIEWED_PLAN",
+            "override_reason": "",
+            "connectivity": "EXPLICIT_ATTACHMENTS",
+            "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+          }
+        },
+        "section": {
+          "component_id": "drawing-cad:614f117ae2a74794:9C",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+          "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+        }
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:96",
+        "name": "CAD beam South",
+        "position_enu_m": [
+          3,
+          0.15,
+          3.25
+        ],
+        "size_m": [
+          6,
+          0.2,
+          0.3
+        ],
+        "axis": "East",
+        "length_m": 6,
+        "centerline_endpoints_m": [
+          [
+            -0.15,
+            3.25
+          ],
+          [
+            5.85,
+            3.25
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.06,
+        "solid_rectangle_inertia_m4": 0.00044999999999999993,
+        "node_ids": [
+          2,
+          3
+        ],
+        "cad_source": {
+          "source_entity_id": "dxf:614f117ae2a74794:96",
+          "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+          "generator": "reviewed-dxf-parametric/1",
+          "component_sha256": "470992c9d842fa64c23ebdd63b18c569e4f1698ccfdce12e34af17f98cefb469",
+          "classification": "SYNTHETIC_VERIFICATION",
+          "input_evidence": {
+            "entity_id": "dxf:614f117ae2a74794:96",
+            "operation": "create",
+            "role": "BEAM",
+            "name": "CAD beam South",
+            "center_east_mm": 3000,
+            "center_north_mm": 150,
+            "size_east_mm": 6000,
+            "size_north_mm": 200,
+            "bottom_mm": 3100,
+            "top_mm": 3400,
+            "material_name": "Explicit synthetic material identity; no grade/E/fy",
+            "material_source": "Verification input only; not measured/manufacturer material data",
+            "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+            "plan_policy": "MATCH_REVIEWED_PLAN",
+            "override_reason": "",
+            "connectivity": "EXPLICIT_ATTACHMENTS",
+            "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+          }
+        },
+        "section": {
+          "component_id": "drawing-cad:614f117ae2a74794:96",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.06,
+          "inertia_m4": 0.00044999999999999993,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+          "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+        }
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:AE",
+        "name": "CAD column SE",
+        "position_enu_m": [
+          5.85,
+          0.15,
+          1.6
+        ],
+        "size_m": [
+          0.3,
+          0.3,
+          3.2
+        ],
+        "axis": "Up",
+        "length_m": 3.2,
+        "centerline_endpoints_m": [
+          [
+            5.699999999999999,
+            0
+          ],
+          [
+            5.699999999999999,
+            3.2
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.09,
+        "solid_rectangle_inertia_m4": 0.0006749999999999998,
+        "node_ids": [
+          4,
+          3
+        ],
+        "cad_source": {
+          "source_entity_id": "dxf:614f117ae2a74794:AE",
+          "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+          "generator": "reviewed-dxf-parametric/1",
+          "component_sha256": "1bbc97b6333c9ca47418ea32a65965fc845b91785112b129180e976deeb695b2",
+          "classification": "SYNTHETIC_VERIFICATION",
+          "input_evidence": {
+            "entity_id": "dxf:614f117ae2a74794:AE",
+            "operation": "create",
+            "role": "COLUMN",
+            "name": "CAD column SE",
+            "center_east_mm": 5850,
+            "center_north_mm": 150,
+            "size_east_mm": 300,
+            "size_north_mm": 300,
+            "bottom_mm": 0,
+            "top_mm": 3200,
+            "material_name": "Explicit synthetic material identity; no grade/E/fy",
+            "material_source": "Verification input only; not measured/manufacturer material data",
+            "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+            "plan_policy": "MATCH_REVIEWED_PLAN",
+            "override_reason": "",
+            "connectivity": "EXPLICIT_ATTACHMENTS",
+            "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+          }
+        },
+        "section": {
+          "component_id": "drawing-cad:614f117ae2a74794:AE",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+          "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+        }
+      }
+    ],
+    "component_ids": [
+      "drawing-cad:614f117ae2a74794:9C",
+      "drawing-cad:614f117ae2a74794:96",
+      "drawing-cad:614f117ae2a74794:AE"
+    ],
+    "candidate_joints": [
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "left"
+      },
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "right"
+      }
+    ],
+    "geometric_tolerance_m": 1e-07,
+    "note": "Observed endpoints and offsets are geometry facts only. Explicit joint declarations required; no geometry snapping. Coincidence tolerance 1e-7 m; massless rigid arms retain the full saved beam elastic length, including overhangs, not an automatic clear-span or connection-capacity interpretation.",
+    "joints": [
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "left",
+        "behavior": "rigid_offset",
+        "offset_m": [
+          -0.15,
+          -0.009999999999999787
+        ],
+        "idealization_approved": true,
+        "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+      },
+      {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "beam_id": "drawing-cad:614f117ae2a74794:96",
+        "column_endpoint": "top",
+        "beam_endpoint": "right",
+        "behavior": "rigid_offset",
+        "offset_m": [
+          0.15000000000000036,
+          0.04999999999999982
+        ],
+        "idealization_approved": true,
+        "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+      }
+    ],
+    "supports": {
+      "nodes": [
+        1,
+        4
+      ],
+      "dofs": [
+        "ux",
+        "uy",
+        "rotation"
+      ],
+      "source": "Explicit synthetic fixed bases; no footing stiffness assumed"
+    },
+    "loads": {
+      "nodes": [
+        2,
+        3
+      ],
+      "each_fx_n": 10000.0,
+      "source": "Synthetic verification total 20 kN East; equal 10 kN at each head"
+    },
+    "nodes": [
+      {
+        "id": 1,
+        "position_m": [
+          0,
+          0
+        ],
+        "position_enu_m": [
+          0.15,
+          0.15,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "position_m": [
+          0,
+          3.26
+        ],
+        "position_enu_m": [
+          0.15,
+          0.15,
+          3.26
+        ]
+      },
+      {
+        "id": 3,
+        "position_m": [
+          5.699999999999999,
+          3.2
+        ],
+        "position_enu_m": [
+          5.85,
+          0.15,
+          3.2
+        ]
+      },
+      {
+        "id": 4,
+        "position_m": [
+          5.699999999999999,
+          0
+        ],
+        "position_enu_m": [
+          5.85,
+          0.15,
+          0.0
+        ]
+      }
+    ]
+  },
+  "cad_source_provenance": {
+    "source_project_id": 792,
+    "source_reference_id": 387,
+    "source_file_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+    "source_record_sha256": "7dff62d38ca93389439356a69376ba4bf7e0ea53194db22abb61b2f161610cc6",
+    "review_record_id": 388,
+    "review_record_sha256": "6f2d7edc95179d9afe70678c6fb40deb84ea7afb6a3067dca5ebfc1b14eb1d71",
+    "component_sources": {
+      "drawing-cad:614f117ae2a74794:9C": {
+        "source_entity_id": "dxf:614f117ae2a74794:9C",
+        "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "generator": "reviewed-dxf-parametric/1",
+        "component_sha256": "c6d66e9f71e501ebb12227b66481092bb6056f0ad3b4afc2ab154ae9c9d7bd0b",
+        "classification": "SYNTHETIC_VERIFICATION",
+        "input_evidence": {
+          "entity_id": "dxf:614f117ae2a74794:9C",
+          "operation": "update_generated",
+          "role": "COLUMN",
+          "name": "CAD column SW",
+          "center_east_mm": 150,
+          "center_north_mm": 150,
+          "size_east_mm": 300,
+          "size_north_mm": 300,
+          "bottom_mm": 0,
+          "top_mm": 3260,
+          "material_name": "Explicit synthetic material identity; no grade/E/fy",
+          "material_source": "Verification input only; not measured/manufacturer material data",
+          "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+          "plan_policy": "MATCH_REVIEWED_PLAN",
+          "override_reason": "",
+          "connectivity": "EXPLICIT_ATTACHMENTS",
+          "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+        }
+      },
+      "drawing-cad:614f117ae2a74794:96": {
+        "source_entity_id": "dxf:614f117ae2a74794:96",
+        "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "generator": "reviewed-dxf-parametric/1",
+        "component_sha256": "470992c9d842fa64c23ebdd63b18c569e4f1698ccfdce12e34af17f98cefb469",
+        "classification": "SYNTHETIC_VERIFICATION",
+        "input_evidence": {
+          "entity_id": "dxf:614f117ae2a74794:96",
+          "operation": "create",
+          "role": "BEAM",
+          "name": "CAD beam South",
+          "center_east_mm": 3000,
+          "center_north_mm": 150,
+          "size_east_mm": 6000,
+          "size_north_mm": 200,
+          "bottom_mm": 3100,
+          "top_mm": 3400,
+          "material_name": "Explicit synthetic material identity; no grade/E/fy",
+          "material_source": "Verification input only; not measured/manufacturer material data",
+          "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+          "plan_policy": "MATCH_REVIEWED_PLAN",
+          "override_reason": "",
+          "connectivity": "EXPLICIT_ATTACHMENTS",
+          "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+        }
+      },
+      "drawing-cad:614f117ae2a74794:AE": {
+        "source_entity_id": "dxf:614f117ae2a74794:AE",
+        "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "generator": "reviewed-dxf-parametric/1",
+        "component_sha256": "1bbc97b6333c9ca47418ea32a65965fc845b91785112b129180e976deeb695b2",
+        "classification": "SYNTHETIC_VERIFICATION",
+        "input_evidence": {
+          "entity_id": "dxf:614f117ae2a74794:AE",
+          "operation": "create",
+          "role": "COLUMN",
+          "name": "CAD column SE",
+          "center_east_mm": 5850,
+          "center_north_mm": 150,
+          "size_east_mm": 300,
+          "size_north_mm": 300,
+          "bottom_mm": 0,
+          "top_mm": 3200,
+          "material_name": "Explicit synthetic material identity; no grade/E/fy",
+          "material_source": "Verification input only; not measured/manufacturer material data",
+          "geometry_source": "Explicit synthetic S-001 geometry declaration; plan is reference only",
+          "plan_policy": "MATCH_REVIEWED_PLAN",
+          "override_reason": "",
+          "connectivity": "EXPLICIT_ATTACHMENTS",
+          "connectivity_source": "Explicit geometric attachments only, no analytical joint behavior"
+        }
+      }
+    },
+    "source_classification": "SYNTHETIC_VERIFICATION"
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "position_m": [
+        0,
+        0
+      ],
+      "displacement_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 2,
+      "position_m": [
+        0,
+        3.26
+      ],
+      "displacement_m": [
+        0.00042425207682310876,
+        6.7726725709986e-07,
+        -0.00013096374129054595
+      ]
+    },
+    {
+      "id": 3,
+      "position_m": [
+        5.699999999999999,
+        3.2
+      ],
+      "displacement_m": [
+        0.00041627390955515075,
+        -6.6480221555814e-07,
+        -0.0001319290874728111
+      ]
+    },
+    {
+      "id": 4,
+      "position_m": [
+        5.699999999999999,
+        0
+      ],
+      "displacement_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": 5,
+      "position_m": [
+        0.0,
+        1.63
+      ],
+      "displacement_m": [
+        0.00015875831383565687,
+        3.3863362854993e-07,
+        -0.00016246707548554237
+      ]
+    },
+    {
+      "id": 6,
+      "position_m": [
+        2.85,
+        3.25
+      ],
+      "displacement_m": [
+        0.0004229064016694972,
+        6.5784119379985e-07,
+        5.552920874404888e-05
+      ]
+    },
+    {
+      "id": 7,
+      "position_m": [
+        5.699999999999999,
+        1.6
+      ],
+      "displacement_m": [
+        0.0001553653197884509,
+        -3.3240110777907e-07,
+        -0.0001621461232357741
+      ]
+    }
+  ],
+  "reactions": [
+    {
+      "node": 1,
+      "fx_n": -9855.84903717593,
+      "fy_n": -3739.5124625145445,
+      "moment_nm": 21488.379045389313
+    },
+    {
+      "node": 4,
+      "fx_n": -10144.150962824031,
+      "fy_n": 3739.512462514546,
+      "moment_nm": 21796.39991827766
+    }
+  ],
+  "rigid_offset_transfers": [
+    {
+      "element_id": 3,
+      "component_id": "drawing-cad:614f117ae2a74794:96",
+      "node": 2,
+      "offset_m": [
+        -0.15,
+        -0.009999999999999787
+      ],
+      "physical_end_global_force_si": [
+        144.1509628244629,
+        -3739.5124625145468,
+        -11204.057194809664
+      ],
+      "offset_moment_nm": 562.3683790054266,
+      "retained_node_global_force_si": [
+        144.1509628244629,
+        -3739.5124625145468,
+        -10641.688815804237
+      ],
+      "physical_end_displacement_si": [
+        0.0004229424394102033,
+        2.0321828450681754e-05,
+        -0.00013096374129054595
+      ]
+    },
+    {
+      "element_id": 4,
+      "component_id": "drawing-cad:614f117ae2a74794:96",
+      "node": 3,
+      "offset_m": [
+        0.15000000000000036,
+        0.04999999999999982
+      ],
+      "physical_end_global_force_si": [
+        -144.1509628237379,
+        3739.5124625145454,
+        -11233.017580277618
+      ],
+      "offset_moment_nm": 568.13441751837,
+      "retained_node_global_force_si": [
+        -144.1509628237379,
+        3739.5124625145454,
+        -10664.883162759248
+      ],
+      "physical_end_displacement_si": [
+        0.0004228703639287913,
+        -2.0454165336479853e-05,
+        -0.0001319290874728111
+      ]
+    }
+  ],
+  "equilibrium_residual_si": [
+    3.637978807091713e-11,
+    1.3642420526593924e-12,
+    -1.1641532182693481e-10
+  ],
+  "independent_stiffness_comparisons": {
+    "nodes": {
+      "max_absolute_error": 3.2526065174565133e-19,
+      "passed": true
+    },
+    "reactions": {
+      "max_absolute_error": 2.9103830456733704e-11,
+      "passed": true
+    },
+    "forces": {
+      "max_absolute_error": 2.2816948330728337e-10,
+      "passed": true
+    },
+    "joint_equilibrium": {
+      "max_absolute_error": 7.250093858601758e-10,
+      "passed": true
+    }
+  },
+  "independent_energy_verification": {
+    "passed": true,
+    "checks": 36,
+    "max_absolute_errors": {
+      "retained_displacement": 8.131516293641283e-19,
+      "physical_member_end_force": 4.1316638998978306e-10,
+      "base_reaction": 4.3655745685100555e-11
+    },
+    "reference": {
+      "version": "cad-planar-unequal/1",
+      "formulation": "Full 12-DOF retained-node assembly, six independent free head DOFs. Independently integrate EA axial strain and EI Hermite curvature energy using exact Gauss quadrature. Measured physical endpoint transforms include uphysical=uretained+[-ry theta,rx theta]. Kff uf=Ff; R=Ku-F. Nonsymmetric geometry; no symmetry reduction.",
+      "nodes": {
+        "1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.00042425207682310795,
+          6.772672570998554e-07,
+          -0.00013096374129054566
+        ],
+        "3": [
+          0.00041627390955514994,
+          -6.648022155581404e-07,
+          -0.0001319290874728108
+        ],
+        "4": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "node_positions_m": {
+        "1": [
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          3.26
+        ],
+        "3": [
+          5.699999999999999,
+          3.2
+        ],
+        "4": [
+          5.699999999999999,
+          0.0
+        ]
+      },
+      "reactions": {
+        "1": [
+          -9855.849037175918,
+          -3739.512462514539,
+          21488.379045389283
+        ],
+        "4": [
+          -10144.15096282401,
+          3739.5124625145395,
+          21796.399918277617
+        ]
+      },
+      "member_end_forces_si": {
+        "drawing-cad:614f117ae2a74794:9C": [
+          -3739.512462514539,
+          9855.849037175918,
+          21488.379045389283,
+          3739.512462514539,
+          -9855.849037175918,
+          10641.68881580422
+        ],
+        "drawing-cad:614f117ae2a74794:96": [
+          144.15096282415107,
+          -3739.512462514539,
+          -11204.057194809639,
+          -144.15096282415107,
+          3739.512462514539,
+          -11233.017580277592
+        ],
+        "drawing-cad:614f117ae2a74794:AE": [
+          3739.5124625145395,
+          10144.15096282401,
+          21796.399918277617,
+          -3739.5124625145395,
+          -10144.15096282401,
+          10664.883162759212
+        ]
+      },
+      "member_offsets_m": {
+        "drawing-cad:614f117ae2a74794:9C": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "drawing-cad:614f117ae2a74794:96": [
+          [
+            -0.15,
+            -0.009999999999999787
+          ],
+          [
+            0.15000000000000036,
+            0.04999999999999982
+          ]
+        ],
+        "drawing-cad:614f117ae2a74794:AE": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "member_lengths_m": {
+        "drawing-cad:614f117ae2a74794:9C": 3.26,
+        "drawing-cad:614f117ae2a74794:96": 6.0,
+        "drawing-cad:614f117ae2a74794:AE": 3.2
+      },
+      "stiffness_si": [
+        [
+          46758676.96727608,
+          0.0,
+          -76216643.45666002,
+          -46758676.96727608,
+          0.0,
+          -76216643.45666002,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5521472392.638037,
+          0.0,
+          0.0,
+          -5521472392.638037,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -76216643.45666002,
+          0.0,
+          165644171.77914107,
+          76216643.45666002,
+          0.0,
+          82822085.88957056,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -46758676.96727608,
+          0.0,
+          76216643.45666002,
+          2046758676.967276,
+          0.0,
+          96216643.45665959,
+          -2000000000.0,
+          0.0,
+          99999999.99999964,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -5521472392.638037,
+          0.0,
+          0.0,
+          5526472392.638037,
+          14250000.0,
+          0.0,
+          -5000000.0,
+          14249999.999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -76216643.45666002,
+          0.0,
+          82822085.88957056,
+          96216643.45665959,
+          14250000.0,
+          221456671.77914104,
+          -19999999.999999575,
+          -14250000.0,
+          26612499.99999997,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -2000000000.0,
+          0.0,
+          -19999999.999999575,
+          2049438476.5625,
+          0.0,
+          -20898437.499999672,
+          -49438476.56249998,
+          0.0,
+          79101562.49999997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -5000000.0,
+          -14250000.0,
+          0.0,
+          5630000000.0,
+          -14249999.999999998,
+          0.0,
+          -5625000000.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          99999999.99999964,
+          14249999.999999998,
+          26612499.99999997,
+          -20898437.499999672,
+          -14249999.999999998,
+          229362499.99999988,
+          -79101562.49999997,
+          0.0,
+          84374999.99999997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -49438476.56249998,
+          0.0,
+          -79101562.49999997,
+          49438476.56249998,
+          0.0,
+          -79101562.49999997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -5625000000.0,
+          0.0,
+          0.0,
+          5625000000.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          79101562.49999997,
+          0.0,
+          84374999.99999997,
+          -79101562.49999997,
+          0.0,
+          168749999.99999994
+        ]
+      ],
+      "free_stiffness_si": [
+        [
+          2046758676.967276,
+          0.0,
+          96216643.45665959,
+          -2000000000.0,
+          0.0,
+          99999999.99999964
+        ],
+        [
+          0.0,
+          5526472392.638037,
+          14250000.0,
+          0.0,
+          -5000000.0,
+          14249999.999999998
+        ],
+        [
+          96216643.45665959,
+          14250000.0,
+          221456671.77914104,
+          -19999999.999999575,
+          -14250000.0,
+          26612499.99999997
+        ],
+        [
+          -2000000000.0,
+          0.0,
+          -19999999.999999575,
+          2049438476.5625,
+          0.0,
+          -20898437.499999672
+        ],
+        [
+          0.0,
+          -5000000.0,
+          -14250000.0,
+          0.0,
+          5630000000.0,
+          -14249999.999999998
+        ],
+        [
+          99999999.99999964,
+          14249999.999999998,
+          26612499.99999997,
+          -20898437.499999672,
+          -14249999.999999998,
+          229362499.99999988
+        ]
+      ],
+      "load_vector_si": [
+        0.0,
+        0.0,
+        0.0,
+        10000.0,
+        0.0,
+        0.0,
+        10000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "free_dofs": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "free_equation_residual_si": [
+        0.0,
+        2.2737367544323206e-13,
+        3.637978807091713e-12,
+        -2.3283064365386963e-10,
+        -4.547473508864641e-13,
+        7.275957614183426e-12
+      ],
+      "geometry_response_symmetry_assumed": false,
+      "stiffness_symmetry_error": 0.0,
+      "free_matrix_condition_number": 261.9888521581946
+    },
+    "note": "Elastic stiffness is reciprocal/symmetric; the retained six-DOF geometry and resulting response are nonsymmetric. No symmetric-frame hand formulas applied."
+  },
+  "artifact_sha256": {
+    "model.tcl": "e992517f3a4d9d9186b4474be6063ec0adf08a664a7977c03d198016f2bc77d5",
+    "nodes.tsv": "ce3f98ecd64809fd806e953d486d4a69643e737aefef3e144fa82adbb809c9d2",
+    "forces.tsv": "8c62a79e3ed34fd186bae0b8d8a2c91d91281695fc7efec2c77fc1972eb40c0e",
+    "reactions.tsv": "4d340faaa110212ae6f18977d5ecd4ffa2176487bf9417d14fac58079200e2d9",
+    "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48",
+    "manifest.json": "2ce218fab3d240c220009c7b66e791ff31e71253678dcfe7c029745d39fc2bc0"
+  },
+  "max_sampled_translation_mm": 0.42724256797253,
+  "beam_internal_ends": [
+    {
+      "component_id": "drawing-cad:614f117ae2a74794:96",
+      "start": {
+        "position_m": [
+          -0.15,
+          3.25
+        ],
+        "displacement_m": [
+          0.0004229424394102033,
+          2.0321828450681754e-05
+        ],
+        "moment_nm": 11204.057194809664,
+        "shear_n": -3739.5124625145468,
+        "axial_n": -144.1509628244629
+      },
+      "end": {
+        "position_m": [
+          2.85,
+          3.25
+        ],
+        "displacement_m": [
+          0.0004229064016694972,
+          6.5784119379985e-07
+        ],
+        "moment_nm": -14.480192733975855,
+        "shear_n": -3739.5124625145468,
+        "axial_n": -144.1509628244629
+      }
+    },
+    {
+      "component_id": "drawing-cad:614f117ae2a74794:96",
+      "start": {
+        "position_m": [
+          2.85,
+          3.25
+        ],
+        "displacement_m": [
+          0.0004229064016694972,
+          6.5784119379985e-07
+        ],
+        "moment_nm": -14.480192733982221,
+        "shear_n": -3739.5124625145454,
+        "axial_n": -144.1509628237379
+      },
+      "end": {
+        "position_m": [
+          5.85,
+          3.25
+        ],
+        "displacement_m": [
+          0.0004228703639287913,
+          -2.0454165336479853e-05
+        ],
+        "moment_nm": -11233.017580277618,
+        "shear_n": -3739.5124625145454,
+        "axial_n": -144.1509628237379
+      }
+    }
+  ],
+  "engineering_approval": "DISABLED",
+  "code_checks": "DISABLED"
+}

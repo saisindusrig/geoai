@@ -1,0 +1,19 @@
+{
+  "backend": {
+    "passed": 41,
+    "failed": 0,
+    "warning": "Existing Starlette/httpx deprecation warning"
+  },
+  "browser": {
+    "eccentric_saved_platform": "passed",
+    "existing_zero_offset_analysis_workspace": "passed",
+    "page_errors": []
+  },
+  "typescript": "passed",
+  "targeted_eslint": "passed",
+  "live_paid_inference_calls": 0,
+  "review_project_id": 782,
+  "model_revision_id": 82,
+  "analysis_id": 277,
+  "scope": "Only selected three-member linear 2D rigid-offset frame; no engineering safety approval"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "source": "docs\\coupled-floor\\validated-result.json",
+    "sha256": "daac8c3497bcbab394df005418a72333869577a726bfca0c099227856a9fd397",
+    "bytes": 638038,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\foundation-system\\api-results.json",
+    "sha256": "c211bed46d51d74b4c9470c73df441c9efb9bf334681ab7cf39e16d274f61286",
+    "bytes": 138973,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\analysis-workflow\\frame-input-fixture.json",
+    "sha256": "269b7bd2e40b4d95469f11592204d09348569b4c87b3bf7c28d9d252a931894b",
+    "bytes": 20281,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\spatial-frame\\demo.json",
+    "sha256": "64c63f6caf8eaba80fcc100cd6c0a753e22c878abebafd6ff50505ad449ee08d",
+    "bytes": 1732526,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\structural-visual\\project-793.json",
+    "sha256": "a846a2c18729ccafe8b5a59077106f7d12c797d0b98d674d30919cbc312b6f01",
+    "bytes": 457076,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\floor-system\\floor-evidence.json",
+    "sha256": "e5312a0032fc6dc7b1c768f225e4ceca2163a0a65fa23009031cca78c8fb4efb",
+    "bytes": 73671,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\structural-visual\\project-794.json",
+    "sha256": "c8de1cb63521425ecd97a4ad2a4a970b0d5c0975860c0ec27a0ddc3faf5dc2e8",
+    "bytes": 472493,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\coupled-floor\\demo.json",
+    "sha256": "b85b1af8ed4ffba1e885e2b35ea2ee34293c26fbb0a0973333a645c35084cdcb",
+    "bytes": 1442410,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\analysis-workflow\\review-projects.json",
+    "sha256": "5719c7773cd37b76ff37b1b92d3f1868d3af4029866e575416704fd0c3d7fc27",
+    "bytes": 329,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  },
+  {
+    "source": "docs\\foundation-visual\\demo.json",
+    "sha256": "758de634090aa222341e986b828194da29d9e2c8818e7656f8f20266ed7a862c",
+    "bytes": 494,
+    "use": "Read-only static test/typecheck import; not public/API/staging database data"
+  }
+]

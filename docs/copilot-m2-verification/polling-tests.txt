@@ -1,0 +1,12 @@
+
+ RUN  v3.2.7 D:/layout project/frontend
+
+ ✓ components/workspace/PersistentAssistant.test.tsx (21 tests) 3469ms
+   ✓ persistent project Assistant > keeps preferences and full requirement counts out of the normal conversation  642ms
+   ✓ persistent project Assistant > settles a running profile to Current without a second refresh  1581ms
+
+ Test Files  1 passed (1)
+      Tests  21 passed (21)
+   Start at  11:04:15
+   Duration  4.85s (transform 174ms, setup 63ms, collect 328ms, tests 3.47s, environment 683ms, prepare 91ms)
+

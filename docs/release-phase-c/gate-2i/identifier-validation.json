@@ -1,0 +1,28 @@
+{
+  "project": {
+    "expected": "struvocivil-918c9",
+    "matches": true
+  },
+  "auth_domain": {
+    "expected": "struvocivil-918c9.firebaseapp.com",
+    "matches": true
+  },
+  "api_key": {
+    "local_shape": "PASS",
+    "sha256": "4e2560d2234cfe80da9632f312174df9a0004c14c0592ab6cc18e1c2a11f360a",
+    "official_match": "MATCH_OWNER_SUPPLIED_CONSOLE_REFERENCE"
+  },
+  "app_id": {
+    "local_shape": "PASS",
+    "sha256": "9a699b13bfb08be6c5ebedd5144550a11e4a200978476147699c0027c8eaaaf7",
+    "official_match": "MATCH_OWNER_SUPPLIED_CONSOLE_REFERENCE"
+  },
+  "packet_hash_matches": true,
+  "firebase_disabled": true,
+  "recovery_disabled": true,
+  "both_providers_prepared": true,
+  "independent_source_status": "OWNER_SUPPLIED_CONSOLE_REFERENCE_ACCEPTED",
+  "live_configuration_accessed": false,
+  "all_four_identifiers_match_owner_reference": true,
+  "independent_live_verification": false
+}

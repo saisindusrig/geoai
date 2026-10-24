@@ -1,0 +1,79 @@
+{
+  "drawing_project": 789,
+  "strength_project": 790,
+  "drawing_reference_id": 357,
+  "drawing_revision_id": 96,
+  "drawing_review_id": 365,
+  "strength_analysis_id": 369,
+  "strength_revision_id": 95,
+  "source_classification": "SYNTHETIC_VERIFICATION",
+  "preserved_source_hashes": {
+    "GeoAI_Practice_Structural_Drawings_A3.pdf": "c7ac732511f275721c921f58ec444d7c3cf04eac51ffd22574b93624b42f9d3f",
+    "GeoAI_Practice_Platform_Plan_mm.dxf": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18"
+  },
+  "source_dxf_bytes_equal_original": true,
+  "retained_entity_counts": {
+    "LWPOLYLINE": 18,
+    "CIRCLE": 16,
+    "LINE": 30,
+    "TEXT": 9
+  },
+  "retained_entity_count": 73,
+  "dimensions": {
+    "native_mm": [
+      6000,
+      4000
+    ],
+    "metres": [
+      6.0,
+      4.0
+    ],
+    "scale_to_m": 0.001
+  },
+  "drawing_materials_not_invented": true,
+  "analytical_model_status": "BLOCKED_MISSING_SUPPORTED_3D_ENGINEERING_INPUTS",
+  "copied_context_preservation": [
+    {
+      "project_id": 789,
+      "component_count": 45,
+      "components_and_origin_identical_to_revision": 93
+    },
+    {
+      "project_id": 790,
+      "component_count": 45,
+      "components_and_origin_identical_to_revision": 93
+    }
+  ],
+  "independent_hand": {
+    "area_mm2": 245.0,
+    "fy_mpa": 400.0,
+    "fu_mpa": 600.0,
+    "edition_psi_limit": 125000,
+    "psi_pa_exact_from_inch_and_lbf": "6894.757293168361336722673445",
+    "used_fu_mpa": "600.0",
+    "nominal_n": "147000.00",
+    "nominal_kn": "147.00",
+    "cap_yield_example_n": "116375.0",
+    "cap_psi_example_n": "211151.9421032810659371318742"
+  },
+  "computed": {
+    "nominal_n": 147000.0,
+    "nominal_kn": 147.0,
+    "independent_inlb": {
+      "area_in2": "0.3797507595015190030380060760",
+      "used_fu_psi": "87022.64263812553334251247400",
+      "nominal_strength_n": "147000.0000000000071791117354",
+      "error_n": 0.0
+    },
+    "method_provenance": {
+      "method_id": "US/ACI318-19-INLB/anchor-steel-nominal-tension@1",
+      "descriptor_sha256": "fe63774996d08e2f93c87a08d72f9e684ad410a93a99fea9baeba952fa7f53fd",
+      "implementation_sha256": "69d480e1eefa334bd335a177d31feb387c9a8683b4a1e0496eb3c4e4544d60b6"
+    },
+    "approval": "DISABLED",
+    "design_strength_phi_n": null,
+    "physical_connection_capacity": "NOT_VERIFIED"
+  },
+  "actual_real_construction_drawing_supplied": false,
+  "scope": "Synthetic drawing review and isolated synthetic nominal steel verification only; actual engineering analysis and full code compliance are blocked."
+}

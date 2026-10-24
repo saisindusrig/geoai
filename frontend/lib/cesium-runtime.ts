@@ -14,7 +14,13 @@ export function loadCesiumRuntime(): Promise<Runtime> {
     script.async = true;
     const timer = window.setTimeout(() => failed(new Error("Cesium browser runtime loading timed out.")), 30000);
     const failed = (error: Error) => {window.clearTimeout(timer); script.remove(); pending = null; reject(error);};
-    script.onerror = () => failed(new Error("Cesium browser runtime is unavailable."));
+    let retried = false;
+    script.onerror = () => {
+      if (retried) { failed(new Error("Cesium browser runtime is unavailable.")); return; }
+      retried = true;
+      script.remove();
+      window.setTimeout(() => { script.src = "/cesium/Cesium.js"; document.head.appendChild(script); }, 250);
+    };
     script.onload = () => {
       window.clearTimeout(timer);
       if (!global.Cesium?.Viewer) {failed(new Error("Invalid Cesium browser runtime.")); return;}

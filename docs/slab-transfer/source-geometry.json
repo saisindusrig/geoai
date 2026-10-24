@@ -1,0 +1,508 @@
+{
+  "schema_version": 1,
+  "project_id": 768,
+  "scenario_id": 555,
+  "project_type": "unclassified",
+  "units": "metric",
+  "origin": {
+    "lng": 77.59516745544197,
+    "lat": 12.970659741605996,
+    "heading_deg": 0,
+    "elevation_m": null
+  },
+  "generator_parameters": {
+    "platform_attachments": {
+      "version": 1,
+      "items": [
+        {
+          "id": "c9e0e256-1608-4be2-b1ab-adafa10424c0",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "44d566cb-7ca0-4c95-bf4d-1d574f788df0",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "149f0f5d-b98f-4260-a428-b2fc50959cf2",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "b1ad97d4-faca-46e7-87c9-f5eebb37575f",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "13ff4b82-88f8-4c41-9613-ad85bf72054b",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "9c6c5059-9557-4c35-887a-a66e95606df4",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "2054528e-2362-4a24-843c-01988b6c8fea",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "a1f8b089-a278-4474-8596-ff0dade18975",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-nw",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "850c983b-9d8c-416d-8785-eb7106e068bb",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "b5d32b14-a981-4478-888f-42d19034592d",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "ed0730b0-c13b-47ba-9753-b63f1e86d4ac",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-ne",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "b95d6eda-29f0-4b03-90ec-2c5b59199b8d",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "63a1eab7-ac09-4ceb-aaea-75c0427821e7",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+          "kind": "stairs",
+          "refs": [
+            "industrial-platform-5x3:platform-deck"
+          ],
+          "parameters": {
+            "width": 1,
+            "going": 0.32,
+            "maxRiser": 0.18,
+            "treadThickness": 0.04,
+            "stringerRadius": 0.05
+          }
+        }
+      ]
+    },
+    "maintenance_platform": {
+      "version": 1,
+      "parameters": {
+        "length": 6,
+        "width": 4,
+        "height": 3.6,
+        "slabThickness": 0.2,
+        "beamWidth": 0.3,
+        "beamDepth": 0.2,
+        "columnWidth": 0.3,
+        "columnDepth": 0.3
+      },
+      "status": "conceptual_unverified"
+    }
+  },
+  "components": [
+    {
+      "id": "industrial-platform-5x3:beam-east",
+      "parent_id": null,
+      "name": "beam-east",
+      "category": "beam",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          3.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-north",
+      "parent_id": null,
+      "name": "beam-north",
+      "category": "beam",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.8500115220427484,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-south",
+      "parent_id": null,
+      "name": "beam-south",
+      "category": "beam",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -1.8499884779572517,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-west",
+      "parent_id": null,
+      "name": "beam-west",
+      "category": "beam",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          3.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-ne",
+      "parent_id": null,
+      "name": "column-ne",
+      "category": "column",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-nw",
+      "parent_id": null,
+      "name": "column-nw",
+      "category": "column",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-se",
+      "parent_id": null,
+      "name": "column-se",
+      "category": "column",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-sw",
+      "parent_id": null,
+      "name": "column-sw",
+      "category": "column",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:platform-deck",
+      "parent_id": null,
+      "name": "platform-deck",
+      "category": "slab",
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          4,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          3.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "frame": "local_enu_meters"
+  },
+  "structural_layout": {
+    "rule_preset": {},
+    "assumptions": [
+      "Preliminary geometry; no engineering validation."
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Box,
   Calendar,
@@ -14,6 +14,7 @@ import {
   Ruler,
 } from "lucide-react";
 import { ProjectError, ProjectLoading } from "@/components/layout/ProjectHeader";
+import ProtectedPdfPreview from "@/components/project-results/ProtectedPdfPreview";
 import ExportCard from "@/components/project-results/ExportCard";
 import ProjectResultShell from "@/components/project-results/ProjectResultShell";
 import ResultPageHeader from "@/components/project-results/ResultPageHeader";
@@ -22,10 +23,13 @@ import EmptyState from "@/components/ui/empty-state";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Input } from "@/components/ui/input";
 import ProjectValidationPanel from "@/components/project/ProjectValidationPanel";
+import { useWorkspaceDevice } from "@/hooks/useWorkspaceDevice";
+import { useUnsavedChanges } from "@/hooks/useUnsavedChanges";
 import { useProjectData } from "@/hooks/useProjectData";
 import { api, apiUrl } from "@/lib/api";
 import type { SurveyStatus } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
+import { toast } from "@/lib/toast";
 
 const EXPORTS = [
   { id: "pdf", label: "Download PDF Report", desc: "Full preliminary planning report with assumptions", icon: FileText, preview: "Executive summary, BOQ snapshot, risks", fileType: "PDF" },
@@ -38,14 +42,18 @@ const EXPORTS = [
 export default function ReportPage() {
   const params = useParams<{ id: string }>();
   const projectId = Number(params.id);
+  const desktopEditing = useWorkspaceDevice() === "desktop";
   const { project, design, summaryStats, loading, error, load, modelFile, calc, estimate, scenario } =
     useProjectData(projectId);
   const serverAssumptions = scenario?.assumptions_json ?? [];
   const [editing, setEditing] = useState(false);
+  const savingRef = useRef(false);
+  const [saving, setSaving] = useState(false);
   const [draftAssumptions, setDraftAssumptions] = useState<string[]>([]);
+  useUnsavedChanges(editing && JSON.stringify(draftAssumptions) !== JSON.stringify(serverAssumptions));
   const [showPdfPreview, setShowPdfPreview] = useState(false);
   const [surveyStatus, setSurveyStatus] = useState<SurveyStatus | null>(null);
-  const assumptions = editing ? draftAssumptions : serverAssumptions;
+  const assumptions = editing && desktopEditing ? draftAssumptions : serverAssumptions;
 
   useEffect(() => {
     api
@@ -55,12 +63,22 @@ export default function ReportPage() {
   }, [projectId]);
 
   const saveAssumptions = async () => {
-    if (!scenario) return;
-    await api.put(`/api/projects/${projectId}/scenarios/${scenario.id}/assumptions`, {
-      assumptions: draftAssumptions,
-    });
-    setEditing(false);
-    await load();
+    if (!scenario || savingRef.current) return;
+    savingRef.current = true;
+    setSaving(true);
+    try {
+      await api.put(`/api/projects/${projectId}/scenarios/${scenario.id}/assumptions`, {
+        assumptions: draftAssumptions,
+      });
+      setEditing(false);
+      toast("Assumptions saved", { variant: "success" });
+      await load();
+    } catch (reason) {
+      toast(reason instanceof Error ? reason.message : "Assumptions could not be saved. Retry with your draft retained.", { variant: "error" });
+    } finally {
+      savingRef.current = false;
+      setSaving(false);
+    }
   };
 
   if (loading) return <ProjectLoading />;
@@ -76,7 +94,7 @@ export default function ReportPage() {
         subtitle="Download preliminary reports, BOQ, models, and project data."
       />
 
-      <ProjectValidationPanel projectId={projectId} className="mb-1" />
+      <ProjectValidationPanel projectId={projectId} className="mb-1" readOnly={!desktopEditing} />
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {EXPORTS.map(({ id, label, desc, icon, preview, fileType }) => (
@@ -137,7 +155,7 @@ export default function ReportPage() {
           description={modelFile ? "Conceptual GLB for BIM review" : "Generate a design first"}
           fileType="GLB"
           icon={Box}
-          href={modelFile?.file_url ?? undefined}
+          href={modelFile ? apiUrl(`/api/projects/${projectId}/exports/model.glb`) : undefined}
           available={!!modelFile}
           unavailableReason="Generate a design to export the 3D model."
         />
@@ -162,11 +180,7 @@ export default function ReportPage() {
               Close
             </button>
           </div>
-          <iframe
-            title="PDF preview"
-            src={apiUrl(`/api/projects/${projectId}/exports/pdf`)}
-            className="w-full h-[480px] bg-background border-0"
-          />
+          <ProtectedPdfPreview path={`/api/projects/${projectId}/exports/pdf`} />
         </GlassCard>
       )}
 
@@ -208,9 +222,11 @@ export default function ReportPage() {
           <section>
             <div className="flex items-center justify-between mb-2">
               <h4 className="text-sm font-semibold text-foreground">Assumptions</h4>
-              {scenario && (
+              {scenario && desktopEditing && (
                 <button
                   type="button"
+                  disabled={saving}
+                  aria-busy={saving}
                   onClick={() => {
                     if (editing) {
                       void saveAssumptions();
@@ -221,17 +237,18 @@ export default function ReportPage() {
                   }}
                   className="text-xs text-primary hover:underline"
                 >
-                  {editing ? "Save" : "Edit"}
+                  {saving ? "Saving…" : editing ? "Save" : "Edit"}
                 </button>
               )}
             </div>
-            {editing ? (
+            {editing && desktopEditing ? (
               <div className="space-y-1.5">
                 {assumptions.map((a, i) => (
                   <Input
                     key={i}
                     aria-label={`Assumption ${i + 1}`}
                     value={a}
+                    disabled={saving}
                     onChange={(e) =>
                       setDraftAssumptions((prev) => prev.map((x, j) => (j === i ? e.target.value : x)))
                     }

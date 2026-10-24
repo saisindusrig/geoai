@@ -1,0 +1,99 @@
+[
+  {
+    "width": 1280,
+    "canonical": "https://struvocivil.com",
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedMutations": []
+  },
+  {
+    "width": 1600,
+    "canonical": "https://struvocivil.com",
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedMutations": []
+  },
+  {
+    "width": 390,
+    "canonical": "https://struvocivil.com",
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedMutations": []
+  },
+  {
+    "manifest": {
+      "name": "Struvo Civil",
+      "short_name": "Struvo Civil",
+      "description": "Struvo Civil — Model. Analyze. Design. A 3D civil and structural engineering workspace for modeling, analysis and design review. Engineering outputs require professional verification.",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#07100d",
+      "theme_color": "#07100d",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    }
+  }
+]

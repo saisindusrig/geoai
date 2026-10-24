@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import type { GeoJSONGeometry } from "@/lib/types";
 import { toast } from "@/lib/toast";
 import { parseKmlToGeometry } from "@/lib/map-draw";
+import { boundaryError } from "@/lib/boundary-validation";
 
 interface Props {
   onImportBoundary?: (g: GeoJSONGeometry) => void | Promise<void>;
@@ -45,10 +46,14 @@ export default function GeoJsonImport({ onImportBoundary, onImportAlignment }: P
         return;
       }
       if (geom.type === "Polygon") {
-        await onImportBoundary?.(geom);
+        const error = boundaryError(geom);
+        if (error) throw new Error(error);
+        if (!onImportBoundary) throw new Error("Boundary import is unavailable in this view.");
+        await onImportBoundary(geom);
         toast("Boundary imported", { variant: "success" });
       } else {
-        await onImportAlignment?.(geom);
+        if (!onImportAlignment) throw new Error("Alignment import is unavailable in this view.");
+        await onImportAlignment(geom);
         toast("Alignment imported", { variant: "success" });
       }
     } catch (e) {

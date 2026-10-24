@@ -1,0 +1,345 @@
+{
+  "checks": [
+    {
+      "name": "project dialog keyboard trap, Escape and focus return",
+      "status": "PASS"
+    },
+    {
+      "name": "project create failure retains name; retry posts once and opens same project",
+      "status": "PASS"
+    },
+    {
+      "name": "populated cost table scrolls by keyboard",
+      "status": "PASS"
+    },
+    {
+      "name": "usage pagination reads offset=100 and preserves table",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile report is read-only; timeline download contains exact fixture",
+      "status": "PASS",
+      "detail": {
+        "filename": "acceptance-fixture-—-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name-long-infrastructure-project-name--timeline.json",
+        "phases": 30
+      }
+    },
+    {
+      "name": "report export attachment has expected format, filename and fixture content",
+      "status": "PASS",
+      "detail": {
+        "filename": "fixture-project.json",
+        "backend": "mocked"
+      }
+    },
+    {
+      "name": "desktop report save failure preserves draft and successful retry recovers",
+      "status": "PASS"
+    },
+    {
+      "name": "forced-colors and reduced-motion keyboard focus",
+      "status": "PASS",
+      "detail": {
+        "forced": true,
+        "reduced": true,
+        "tag": "A",
+        "outline": "auto"
+      }
+    },
+    {
+      "name": "150-project library renderer and memory observation",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "canvas": 12,
+          "heap": 27600000
+        },
+        "after": {
+          "canvas": 76,
+          "heap": 27600000
+        },
+        "interactions": [
+          {
+            "duration": 56,
+            "name": "pointerdown"
+          },
+          {
+            "duration": 56,
+            "name": "pointerup"
+          },
+          {
+            "duration": 56,
+            "name": "click"
+          }
+        ]
+      }
+    }
+  ],
+  "calls": [
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/project-folders",
+      "query": ""
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects",
+      "query": ""
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/project-folders",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": "?scenario_id=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": "?scenario_id=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/usage",
+      "query": "?limit=100&offset=0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/usage",
+      "query": "?limit=100&offset=100"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/survey/status",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/validation",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/survey/status",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/validation",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/json",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/survey/status",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/validation",
+      "query": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/api/projects/999998/scenarios/1/assumptions",
+      "query": ""
+    },
+    {
+      "method": "PUT",
+      "path": "/api/projects/999998/scenarios/1/assumptions",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/scenarios",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/exports/files",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/estimates",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/site-analysis",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/999998/validation",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "query": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/project-folders",
+      "query": ""
+    }
+  ]
+}

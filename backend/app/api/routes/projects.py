@@ -7,6 +7,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.core.disclaimer import DISCLAIMER
+from app.core.config import settings
 from app.core.project_catalog import PROJECT_TYPES, UNIT_OPTIONS
 from app.core.security import DEV_USER_ID, get_current_user, get_current_user_id
 from app.db.models import Project, ProjectFolder, User
@@ -229,6 +230,8 @@ def project_summaries(db: Session = Depends(get_db), user_id: int = Depends(get_
 @router.get("/demo", response_model=ProjectOut)
 def get_demo_project(db: Session = Depends(get_db)):
     """Return the read-only seeded demo without exposing any private project."""
+    if settings.ENVIRONMENT.lower() in {"production", "prod"}:
+        raise HTTPException(404, "Development demo is unavailable in production")
     from app.db.demo_seed import ensure_demo_project_for_user
 
     project = ensure_demo_project_for_user(db, DEV_USER_ID)

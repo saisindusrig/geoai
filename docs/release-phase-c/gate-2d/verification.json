@@ -1,0 +1,14 @@
+{
+  "phase": "Gate 2D",
+  "decision": "MANAGED_CLOUD_RUN_RECOMMENDED_BILLING_APPROVAL_REQUIRED",
+  "application_inputs_unchanged": 30,
+  "row_and_schema_preservation": true,
+  "application_rows": 10283,
+  "assistant_history_rows": 3,
+  "original_file_manifests": "Reused Gate 2C verified manifests; no fresh file rescan",
+  "credential_handling_changed": false,
+  "cloud_or_console_access": false,
+  "application_tests_rerun": false,
+  "live_F01_F07": "NOT_RUN",
+  "public_launch": "BLOCKED"
+}

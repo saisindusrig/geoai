@@ -582,6 +582,8 @@ export type MessageInput = {
   "clientRequestId": string;
   "parts": Array<(TextPart | AttachmentPart | ProposalPart | QuestionPart | EvidencePart | AssumptionPart)>;
   "context": SubmitContext;
+  "assistantMode"?: "EXISTING" | "ENGINEERING_OFFLINE";
+  "requestedModel"?: "zai-org/GLM-5.3-Flash" | "zai-org/GLM-5.3";
 };
 
 export type MessageView = {

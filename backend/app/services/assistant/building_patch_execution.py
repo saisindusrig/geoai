@@ -49,4 +49,4 @@ def _execute(db, project_id, version_id, view, spec_row):
                object_id=component["id"],component_id=component["id"],payload=payload,**fields)
     service.transition(db,project_id,version_id,"BUILT")
     db.commit()
-    return {"modelRevisionId":str(revision.id),"status":"BUILT"}
+    return {"modelRevisionId":str(revision.id),"scenarioId":revision.design_scenario_id,"status":"BUILT"}

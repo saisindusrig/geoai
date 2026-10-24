@@ -1,0 +1,29 @@
+{
+  "backend": {
+    "passed": 213,
+    "new_input_workflow_tests": 34,
+    "preserved_regression_tests": 179,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_connection_inputs.py tests/test_anchor_contact_3d.py tests/test_anchor_contact.py tests/test_plate_contact.py tests/test_foundation_interface.py tests/test_slab_transfer.py tests/test_gravity_frame.py tests/test_eccentric_frame.py tests/test_physical_frame.py tests/test_elastic_frame.py -q",
+    "warning": "Existing Starlette httpx deprecation, no dependency changes"
+  },
+  "browser": {
+    "passed_workflows": 3,
+    "base_url": "http://localhost:3001",
+    "files": [
+      "frontend/e2e/connection-inputs.spec.ts",
+      "frontend/e2e/connection-inputs-review.spec.ts",
+      "frontend/e2e/connection-source-regression.spec.ts"
+    ],
+    "runtime_errors": [],
+    "actual_project_contact_runs": 0
+  },
+  "static": {
+    "typescript": "PASS",
+    "eslint_modified_frontend": "PASS"
+  },
+  "scope": {
+    "paid_inference_calls": 0,
+    "engineering_approval": "DISABLED",
+    "actual_input_status": "BLOCKED_MISSING_ENGINEERING_INPUTS"
+  }
+}

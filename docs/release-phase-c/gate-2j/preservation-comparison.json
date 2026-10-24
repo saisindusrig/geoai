@@ -1,0 +1,22 @@
+{
+  "source_asset_fingerprints": 1576,
+  "changed_source_assets": [],
+  "current_database_files": 161,
+  "changed_database_files": [],
+  "prior_application_inputs": 30,
+  "changed_prior_inputs": [],
+  "row_and_schema_baseline_matches": true,
+  "application_rows": 10283,
+  "assistant_history_rows": 3,
+  "safe_cache_files": 125,
+  "changed_cache_candidates": [],
+  "original_storage_files": 55296,
+  "original_proof_files": 2090,
+  "all_original_storage_and_proof_files_unchanged": true,
+  "solver_artifacts": 21,
+  "deletions": 0,
+  "migrations": 0,
+  "environment_created": false,
+  "runtime_isolation_qualified": false,
+  "public_launch": "BLOCKED"
+}

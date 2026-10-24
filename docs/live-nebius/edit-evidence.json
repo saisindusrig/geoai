@@ -1,0 +1,724 @@
+{
+  "revision_id": 74,
+  "original": "3.6",
+  "changed": "3.8",
+  "history": {
+    "records": [
+      {
+        "id": 163,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "component_id": "industrial-platform-5x3:column-ne",
+          "analysis_id": 161,
+          "explanation": {
+            "narrative": "The analysis is an isolated linear axial check of a column supported on a prescribed axial spring. The computed results cover column shortening, spring settlement, total displacement, compression stress and the support reaction. All comparisons against the provided reference values passed, with rela",
+            "analysis_id": 161,
+            "evidence_sha256": "67a4c3787f61f09f512839f6f08b16ddbd70af60df946c41fe6e67eea13458cd"
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3",
+            "returned_model": "zai-org/GLM-5.3",
+            "mock": false,
+            "prompt_tokens": 721,
+            "completion_tokens": 263,
+            "estimated_cost_usd": 0.0021666,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.076648,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 2.0997486999985995,
+            "finish_reason": "stop",
+            "response_id": "508a8ca4d1dd488f9d34d7cfc991ba60",
+            "http_status": 200,
+            "native_tool_calls": 0,
+            "inference_requested": true,
+            "reasoning_tokens": 19
+          },
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED"
+        }
+      },
+      {
+        "id": 160,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "model_revision_id": 72,
+          "component_id": "industrial-platform-5x3:column-ne",
+          "input_record_id": 153,
+          "scenario_id": 563,
+          "physical_component": {
+            "component_id": "industrial-platform-5x3:column-ne",
+            "name": "column-ne",
+            "length_m": 3.1999999999999997,
+            "width_m": 0.3,
+            "depth_m": 0.3,
+            "base_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              0
+            ],
+            "head_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              3.1999999999999997
+            ],
+            "axis_enu": [
+              0,
+              0,
+              1
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ],
+            "component_sha256": "39b50854bf526f7761a1ca4a23d3c8aa97fc3466d7e271149566d6e78091ce34",
+            "validation": "Saved geometry and transform consistency only; engineering status remains unverified",
+            "excluded_component_ids": [
+              "industrial-platform-5x3:beam-east",
+              "industrial-platform-5x3:beam-north",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:beam-west",
+              "industrial-platform-5x3:column-nw",
+              "industrial-platform-5x3:column-se",
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:platform-deck",
+              "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+              "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+              "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+              "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+              "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+              "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+              "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+              "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+              "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+              "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+              "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+              "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1"
+            ]
+          },
+          "engineering_inputs": {
+            "purpose": "VERIFICATION_ONLY",
+            "material_name": "Synthetic verification elastic steel",
+            "material_source": "Explicit synthetic E for numerical verification; not project material data",
+            "elastic_modulus_pa": 200000000000,
+            "section_kind": "solid_rectangle",
+            "section_width_m": 0.3,
+            "section_depth_m": 0.3,
+            "section_source": "Explicit solid rectangle matching saved geometry for verification only",
+            "compression_n": 100000,
+            "load_source": "Synthetic centered verification load; not actual project load",
+            "support_kind": "axial_linear_spring",
+            "support_stiffness_n_per_m": 100000000,
+            "support_source": "Synthetic prescribed spring; not geotechnical or foundation data",
+            "isolated_axial_only": true,
+            "elements": 2,
+            "solver_units": "SI"
+          },
+          "missing": [],
+          "proposal": {
+            "summary": "Isolated linear axial analysis proposal for column-ne using synthetic verification elastic steel with a solid rectangular section, a synthetic centered verification compression load, and a prescribed axial linear spring support. Geometry and transform consistency only; engineering status remains unv",
+            "missing_properties": [],
+            "tool": {
+              "name": "prepare_column_analysis",
+              "arguments": {
+                "model_revision_id": 72,
+                "component_id": "industrial-platform-5x3:column-ne",
+                "input_record_id": 153
+              }
+            }
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3",
+            "returned_model": "zai-org/GLM-5.3",
+            "mock": false,
+            "prompt_tokens": 2274,
+            "completion_tokens": 98,
+            "estimated_cost_usd": 0.0036148,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.08045740000000001,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 1.3673359999957029,
+            "finish_reason": "tool_calls",
+            "response_id": "8cef8f2176d84a69b660145328b222bd",
+            "http_status": 200,
+            "native_tool_calls": 1,
+            "inference_requested": true,
+            "reasoning_tokens": 1
+          },
+          "provider": "nebius",
+          "model": "zai-org/GLM-5.3",
+          "limitations": [
+            "Isolated linear axial column only",
+            "Explicit declared solid rectangular section only",
+            "Prescribed axial spring, not soil or footing design",
+            "Connections, foundations, bending, buckling and code checks unsupported",
+            "No safety approval or automatic model modifications"
+          ],
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED",
+          "model_document_sha256": "8c5ecc9757de709aafaf714a9432511d68c0bf7a5ed874be6e77d9f51b4c5ec9",
+          "proposal_sha256": "ade8054521a612ac3fce71929734e0c9f9c116f244c4f0042f18f888b75bb3f4",
+          "solver_authorization": {
+            "actor_user_id": 1,
+            "authorized_at": "2026-10-11T18:43:51.669089+00:00",
+            "scope": "Execute the exact isolated axial proposal only; not engineering approval"
+          },
+          "solver_analysis_id": 161
+        }
+      },
+      {
+        "id": 158,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "component_id": "industrial-platform-5x3:column-ne",
+          "analysis_id": 156,
+          "explanation": {
+            "narrative": "The isolated linear axial analysis completed with all five reported quantities matching their reference values to within floating-point round-off, each comparison passing. The column shortening and spring settlement sum to the reported total displacement, consistent with a series arrangement of the ",
+            "analysis_id": 156,
+            "evidence_sha256": "ff9de372d692ef287132c67e745531fa77f9d477fe0683764e0413608d7ed52c"
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3-Flash",
+            "returned_model": "zai-org/GLM-5.3-Flash",
+            "mock": false,
+            "prompt_tokens": 724,
+            "completion_tokens": 250,
+            "estimated_cost_usd": 0.00023359999999999999,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.0086804,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 3.394667100001243,
+            "finish_reason": "stop",
+            "response_id": "a7d9c809cc88425498aa14a1ddd61e1a",
+            "http_status": 200,
+            "native_tool_calls": 0,
+            "inference_requested": true,
+            "reasoning_tokens": 1
+          },
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED"
+        }
+      },
+      {
+        "id": 155,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "model_revision_id": 72,
+          "component_id": "industrial-platform-5x3:column-ne",
+          "input_record_id": 153,
+          "scenario_id": 563,
+          "physical_component": {
+            "component_id": "industrial-platform-5x3:column-ne",
+            "name": "column-ne",
+            "length_m": 3.1999999999999997,
+            "width_m": 0.3,
+            "depth_m": 0.3,
+            "base_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              0
+            ],
+            "head_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              3.1999999999999997
+            ],
+            "axis_enu": [
+              0,
+              0,
+              1
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ],
+            "component_sha256": "39b50854bf526f7761a1ca4a23d3c8aa97fc3466d7e271149566d6e78091ce34",
+            "validation": "Saved geometry and transform consistency only; engineering status remains unverified",
+            "excluded_component_ids": [
+              "industrial-platform-5x3:beam-east",
+              "industrial-platform-5x3:beam-north",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:beam-west",
+              "industrial-platform-5x3:column-nw",
+              "industrial-platform-5x3:column-se",
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:platform-deck",
+              "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+              "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+              "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+              "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+              "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+              "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+              "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+              "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+              "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+              "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+              "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+              "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1"
+            ]
+          },
+          "engineering_inputs": {
+            "purpose": "VERIFICATION_ONLY",
+            "material_name": "Synthetic verification elastic steel",
+            "material_source": "Explicit synthetic E for numerical verification; not project material data",
+            "elastic_modulus_pa": 200000000000,
+            "section_kind": "solid_rectangle",
+            "section_width_m": 0.3,
+            "section_depth_m": 0.3,
+            "section_source": "Explicit solid rectangle matching saved geometry for verification only",
+            "compression_n": 100000,
+            "load_source": "Synthetic centered verification load; not actual project load",
+            "support_kind": "axial_linear_spring",
+            "support_stiffness_n_per_m": 100000000,
+            "support_source": "Synthetic prescribed spring; not geotechnical or foundation data",
+            "isolated_axial_only": true,
+            "elements": 2,
+            "solver_units": "SI"
+          },
+          "missing": [],
+          "proposal": {
+            "summary": "Prepares an isolated linear axial verification-only analysis of component column-ne using the explicitly declared synthetic elastic steel material, solid rectangular section matching saved geometry, synthetic centered axial load, and prescribed axial spring support; connections, foundations, bending",
+            "missing_properties": [],
+            "tool": {
+              "name": "prepare_column_analysis",
+              "arguments": {
+                "model_revision_id": 72,
+                "component_id": "industrial-platform-5x3:column-ne",
+                "input_record_id": 153
+              }
+            }
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3-Flash",
+            "returned_model": "zai-org/GLM-5.3-Flash",
+            "mock": false,
+            "prompt_tokens": 2274,
+            "completion_tokens": 114,
+            "estimated_cost_usd": 0.0003981,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.009088549999999999,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 2.0498727999947732,
+            "finish_reason": "tool_calls",
+            "response_id": "2342dd336ec94c94b105f3945983c46c",
+            "http_status": 200,
+            "native_tool_calls": 1,
+            "inference_requested": true,
+            "reasoning_tokens": 1
+          },
+          "provider": "nebius",
+          "model": "zai-org/GLM-5.3-Flash",
+          "limitations": [
+            "Isolated linear axial column only",
+            "Explicit declared solid rectangular section only",
+            "Prescribed axial spring, not soil or footing design",
+            "Connections, foundations, bending, buckling and code checks unsupported",
+            "No safety approval or automatic model modifications"
+          ],
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED",
+          "model_document_sha256": "8c5ecc9757de709aafaf714a9432511d68c0bf7a5ed874be6e77d9f51b4c5ec9",
+          "proposal_sha256": "888856ac2909d66bbe13dccfdd62379dd2bb36062d8859dcfcf732f44acc2ca9",
+          "solver_authorization": {
+            "actor_user_id": 1,
+            "authorized_at": "2026-10-11T18:43:44.993305+00:00",
+            "scope": "Execute the exact isolated axial proposal only; not engineering approval"
+          },
+          "solver_analysis_id": 156
+        }
+      },
+      {
+        "id": 152,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "model_revision_id": 72,
+          "component_id": "industrial-platform-5x3:column-ne",
+          "input_record_id": null,
+          "scenario_id": 563,
+          "physical_component": {
+            "component_id": "industrial-platform-5x3:column-ne",
+            "name": "column-ne",
+            "length_m": 3.1999999999999997,
+            "width_m": 0.3,
+            "depth_m": 0.3,
+            "base_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              0
+            ],
+            "head_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              3.1999999999999997
+            ],
+            "axis_enu": [
+              0,
+              0,
+              1
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ],
+            "component_sha256": "39b50854bf526f7761a1ca4a23d3c8aa97fc3466d7e271149566d6e78091ce34",
+            "validation": "Saved geometry and transform consistency only; engineering status remains unverified",
+            "excluded_component_ids": [
+              "industrial-platform-5x3:beam-east",
+              "industrial-platform-5x3:beam-north",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:beam-west",
+              "industrial-platform-5x3:column-nw",
+              "industrial-platform-5x3:column-se",
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:platform-deck",
+              "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+              "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+              "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+              "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+              "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+              "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+              "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+              "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+              "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+              "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+              "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+              "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1"
+            ]
+          },
+          "engineering_inputs": null,
+          "missing": [
+            "material_name",
+            "material_source",
+            "elastic_modulus_pa",
+            "section_kind",
+            "section_width_m",
+            "section_depth_m",
+            "section_source",
+            "compression_n",
+            "load_source",
+            "support_kind",
+            "support_stiffness_n_per_m",
+            "support_source",
+            "isolated_axial_only"
+          ],
+          "proposal": {
+            "summary": "Prepared an isolated linear axial analysis proposal for the northeast column of the industrial platform. Geometry and transform consistency were saved only; engineering status remains unverified. Material, section, axial load and support properties are missing and must be supplied before review. Con",
+            "missing_properties": [
+              "material_name",
+              "material_source",
+              "elastic_modulus_pa",
+              "section_kind",
+              "section_width_m",
+              "section_depth_m",
+              "section_source",
+              "compression_n",
+              "load_source",
+              "support_kind",
+              "support_stiffness_n_per_m",
+              "support_source",
+              "isolated_axial_only"
+            ],
+            "tool": {
+              "name": "prepare_column_analysis",
+              "arguments": {
+                "model_revision_id": 72,
+                "component_id": "industrial-platform-5x3:column-ne",
+                "input_record_id": null
+              }
+            }
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3",
+            "returned_model": "zai-org/GLM-5.3",
+            "mock": false,
+            "prompt_tokens": 2152,
+            "completion_tokens": 192,
+            "estimated_cost_usd": 0.0038576,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.07977420000000002,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 2.088098500011256,
+            "finish_reason": "tool_calls",
+            "response_id": "f354230d3d184643b0ebae5c4ead484e",
+            "http_status": 200,
+            "native_tool_calls": 1,
+            "inference_requested": true,
+            "reasoning_tokens": 15
+          },
+          "provider": "nebius",
+          "model": "zai-org/GLM-5.3",
+          "limitations": [
+            "Isolated linear axial column only",
+            "Explicit declared solid rectangular section only",
+            "Prescribed axial spring, not soil or footing design",
+            "Connections, foundations, bending, buckling and code checks unsupported",
+            "No safety approval or automatic model modifications"
+          ],
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED",
+          "model_document_sha256": "8c5ecc9757de709aafaf714a9432511d68c0bf7a5ed874be6e77d9f51b4c5ec9",
+          "proposal_sha256": "d061d5c94878f66b3cd0dad5a7101348775c64b6f1022e7698f1064f6c08fa80"
+        }
+      },
+      {
+        "id": 150,
+        "model_revision_id": 72,
+        "status": "STALE",
+        "result": {
+          "model_revision_id": 72,
+          "component_id": "industrial-platform-5x3:column-ne",
+          "input_record_id": null,
+          "scenario_id": 563,
+          "physical_component": {
+            "component_id": "industrial-platform-5x3:column-ne",
+            "name": "column-ne",
+            "length_m": 3.1999999999999997,
+            "width_m": 0.3,
+            "depth_m": 0.3,
+            "base_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              0
+            ],
+            "head_enu_m": [
+              2.849999996652096,
+              1.8500115220427484,
+              3.1999999999999997
+            ],
+            "axis_enu": [
+              0,
+              0,
+              1
+            ],
+            "rotation_deg": [
+              0,
+              0,
+              0
+            ],
+            "component_sha256": "39b50854bf526f7761a1ca4a23d3c8aa97fc3466d7e271149566d6e78091ce34",
+            "validation": "Saved geometry and transform consistency only; engineering status remains unverified",
+            "excluded_component_ids": [
+              "industrial-platform-5x3:beam-east",
+              "industrial-platform-5x3:beam-north",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:beam-west",
+              "industrial-platform-5x3:column-nw",
+              "industrial-platform-5x3:column-se",
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:platform-deck",
+              "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+              "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+              "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+              "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+              "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+              "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+              "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+              "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+              "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+              "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+              "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+              "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+              "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1"
+            ]
+          },
+          "engineering_inputs": null,
+          "missing": [
+            "material_name",
+            "material_source",
+            "elastic_modulus_pa",
+            "section_kind",
+            "section_width_m",
+            "section_depth_m",
+            "section_source",
+            "compression_n",
+            "load_source",
+            "support_kind",
+            "support_stiffness_n_per_m",
+            "support_source",
+            "isolated_axial_only"
+          ],
+          "proposal": {
+            "summary": "Prepared reviewable isolated linear axial analysis proposal for component column-ne; geometry and transform consistency saved only, engineering status unverified. Scope limited to isolated linear axial behavior with an explicitly declared solid rectangular section and a prescribed axial spring suppo",
+            "missing_properties": [
+              "material_name",
+              "material_source",
+              "elastic_modulus_pa",
+              "section_kind",
+              "section_width_m",
+              "section_depth_m",
+              "section_source",
+              "compression_n",
+              "load_source",
+              "support_kind",
+              "support_stiffness_n_per_m",
+              "support_source",
+              "isolated_axial_only"
+            ],
+            "tool": {
+              "name": "prepare_column_analysis",
+              "arguments": {
+                "model_revision_id": 72,
+                "component_id": "industrial-platform-5x3:column-ne",
+                "input_record_id": null
+              }
+            }
+          },
+          "usage": {
+            "provider": "nebius",
+            "requested_model": "zai-org/GLM-5.3-Flash",
+            "returned_model": "zai-org/GLM-5.3-Flash",
+            "mock": false,
+            "prompt_tokens": 2152,
+            "completion_tokens": 208,
+            "estimated_cost_usd": 0.0004268,
+            "actual_charged_usd": null,
+            "reserved_upper_bound_usd": 0.00901535,
+            "usage_status": "PROVIDER_REPORTED_ESTIMATE",
+            "price_source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+            "elapsed_seconds": 1.9763013999909163,
+            "finish_reason": "tool_calls",
+            "response_id": "ed5cf76e5f9740858b0fd9f0eeaf8ac1",
+            "http_status": 200,
+            "native_tool_calls": 1,
+            "inference_requested": true,
+            "reasoning_tokens": 1
+          },
+          "provider": "nebius",
+          "model": "zai-org/GLM-5.3-Flash",
+          "limitations": [
+            "Isolated linear axial column only",
+            "Explicit declared solid rectangular section only",
+            "Prescribed axial spring, not soil or footing design",
+            "Connections, foundations, bending, buckling and code checks unsupported",
+            "No safety approval or automatic model modifications"
+          ],
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED",
+          "model_document_sha256": "8c5ecc9757de709aafaf714a9432511d68c0bf7a5ed874be6e77d9f51b4c5ec9",
+          "proposal_sha256": "7222809efaeec85eb4b69d5bbcf11e0c8eb9a23a813d2d4f3cf27dafe6fb944d"
+        }
+      }
+    ]
+  },
+  "checks": [
+    "preview",
+    "apply",
+    "undo",
+    "redo",
+    "save",
+    "reload",
+    "stale"
+  ]
+}

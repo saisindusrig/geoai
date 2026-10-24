@@ -1,0 +1,13 @@
+{
+  "isolated_database": "D:\\layout project\\docs\\foundation-system\\isolated\\foundation.db",
+  "project": 830,
+  "explicit_authorization": true,
+  "technical_accordions_used": 0,
+  "writes": [
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/preview",
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/inputs",
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/proposals",
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/authorize-run"
+  ],
+  "errors": []
+}

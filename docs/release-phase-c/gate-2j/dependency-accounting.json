@@ -1,0 +1,597 @@
+{
+  "frontend": [
+    {
+      "name": "@deck.gl/core",
+      "declared": "^9.3.4",
+      "kind": "dependencies",
+      "installed_version": "9.3.4"
+    },
+    {
+      "name": "@deck.gl/geo-layers",
+      "declared": "^9.3.4",
+      "kind": "dependencies",
+      "installed_version": "9.3.4"
+    },
+    {
+      "name": "@deck.gl/layers",
+      "declared": "^9.3.4",
+      "kind": "dependencies",
+      "installed_version": "9.3.4"
+    },
+    {
+      "name": "@deck.gl/mapbox",
+      "declared": "^9.3.4",
+      "kind": "dependencies",
+      "installed_version": "9.3.4"
+    },
+    {
+      "name": "@deck.gl/mesh-layers",
+      "declared": "^9.3.4",
+      "kind": "dependencies",
+      "installed_version": "9.3.4"
+    },
+    {
+      "name": "@hookform/resolvers",
+      "declared": "^5.4.0",
+      "kind": "dependencies",
+      "installed_version": "5.4.0"
+    },
+    {
+      "name": "@loaders.gl/3d-tiles",
+      "declared": "^4.4.3",
+      "kind": "dependencies",
+      "installed_version": "4.4.3"
+    },
+    {
+      "name": "@loaders.gl/core",
+      "declared": "^4.4.3",
+      "kind": "dependencies",
+      "installed_version": "4.4.3"
+    },
+    {
+      "name": "@react-three/fiber",
+      "declared": "^9.6.1",
+      "kind": "dependencies",
+      "installed_version": "9.6.1"
+    },
+    {
+      "name": "@watergis/maplibre-gl-terradraw",
+      "declared": "^1.13.2",
+      "kind": "dependencies",
+      "installed_version": "1.13.2"
+    },
+    {
+      "name": "cesium",
+      "declared": "^1.142.0",
+      "kind": "dependencies",
+      "installed_version": "1.142.0"
+    },
+    {
+      "name": "class-variance-authority",
+      "declared": "^0.7.1",
+      "kind": "dependencies",
+      "installed_version": "0.7.1"
+    },
+    {
+      "name": "clsx",
+      "declared": "^2.1.1",
+      "kind": "dependencies",
+      "installed_version": "2.1.1"
+    },
+    {
+      "name": "cursor-style",
+      "declared": "^1.5.1",
+      "kind": "dependencies",
+      "installed_version": "1.5.1"
+    },
+    {
+      "name": "firebase",
+      "declared": "13.1.0",
+      "kind": "dependencies",
+      "installed_version": "13.1.0"
+    },
+    {
+      "name": "framer-motion",
+      "declared": "^12.40.0",
+      "kind": "dependencies",
+      "installed_version": "12.40.0"
+    },
+    {
+      "name": "lucide-react",
+      "declared": "^1.17.0",
+      "kind": "dependencies",
+      "installed_version": "1.17.0"
+    },
+    {
+      "name": "maplibre-gl",
+      "declared": "^5.24.0",
+      "kind": "dependencies",
+      "installed_version": "5.24.0"
+    },
+    {
+      "name": "next",
+      "declared": "16.4.2",
+      "kind": "dependencies",
+      "installed_version": "16.4.2"
+    },
+    {
+      "name": "next-themes",
+      "declared": "^0.4.6",
+      "kind": "dependencies",
+      "installed_version": "0.4.6"
+    },
+    {
+      "name": "ogl",
+      "declared": "^1.0.11",
+      "kind": "dependencies",
+      "installed_version": "1.0.11"
+    },
+    {
+      "name": "react",
+      "declared": "19.2.4",
+      "kind": "dependencies",
+      "installed_version": "19.2.4"
+    },
+    {
+      "name": "react-dom",
+      "declared": "19.2.4",
+      "kind": "dependencies",
+      "installed_version": "19.2.4"
+    },
+    {
+      "name": "react-hook-form",
+      "declared": "^7.78.0",
+      "kind": "dependencies",
+      "installed_version": "7.78.0"
+    },
+    {
+      "name": "recharts",
+      "declared": "^3.8.1",
+      "kind": "dependencies",
+      "installed_version": "3.8.1"
+    },
+    {
+      "name": "tailwind-merge",
+      "declared": "^3.6.0",
+      "kind": "dependencies",
+      "installed_version": "3.6.0"
+    },
+    {
+      "name": "terra-draw",
+      "declared": "^1.31.1",
+      "kind": "dependencies",
+      "installed_version": "1.31.1"
+    },
+    {
+      "name": "terra-draw-maplibre-gl-adapter",
+      "declared": "^1.4.1",
+      "kind": "dependencies",
+      "installed_version": "1.4.1"
+    },
+    {
+      "name": "three",
+      "declared": "^0.184.0",
+      "kind": "dependencies",
+      "installed_version": "0.184.0"
+    },
+    {
+      "name": "zod",
+      "declared": "^4.4.3",
+      "kind": "dependencies",
+      "installed_version": "4.4.3"
+    },
+    {
+      "name": "zustand",
+      "declared": "^5.0.14",
+      "kind": "dependencies",
+      "installed_version": "5.0.14"
+    },
+    {
+      "name": "@next/bundle-analyzer",
+      "declared": "16.4.2",
+      "kind": "devDependencies",
+      "installed_version": "16.4.2"
+    },
+    {
+      "name": "@playwright/test",
+      "declared": "^1.61.1",
+      "kind": "devDependencies",
+      "installed_version": "1.61.1"
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "declared": "^4",
+      "kind": "devDependencies",
+      "installed_version": "4.3.0"
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "declared": "^6.9.1",
+      "kind": "devDependencies",
+      "installed_version": "6.9.1"
+    },
+    {
+      "name": "@testing-library/react",
+      "declared": "^16.3.2",
+      "kind": "devDependencies",
+      "installed_version": "16.3.2"
+    },
+    {
+      "name": "@testing-library/user-event",
+      "declared": "^14.6.1",
+      "kind": "devDependencies",
+      "installed_version": "14.6.1"
+    },
+    {
+      "name": "@types/node",
+      "declared": "^20",
+      "kind": "devDependencies",
+      "installed_version": "20.19.43"
+    },
+    {
+      "name": "@types/react",
+      "declared": "^19",
+      "kind": "devDependencies",
+      "installed_version": "19.2.17"
+    },
+    {
+      "name": "@types/react-dom",
+      "declared": "^19",
+      "kind": "devDependencies",
+      "installed_version": "19.2.3"
+    },
+    {
+      "name": "@types/three",
+      "declared": "^0.185.0",
+      "kind": "devDependencies",
+      "installed_version": "0.185.0"
+    },
+    {
+      "name": "eslint",
+      "declared": "^9",
+      "kind": "devDependencies",
+      "installed_version": "9.39.4"
+    },
+    {
+      "name": "eslint-config-next",
+      "declared": "16.4.2",
+      "kind": "devDependencies",
+      "installed_version": "16.4.2"
+    },
+    {
+      "name": "jsdom",
+      "declared": "^29.1.1",
+      "kind": "devDependencies",
+      "installed_version": "29.1.1"
+    },
+    {
+      "name": "tailwindcss",
+      "declared": "^4",
+      "kind": "devDependencies",
+      "installed_version": "4.3.0"
+    },
+    {
+      "name": "typescript",
+      "declared": "^5",
+      "kind": "devDependencies",
+      "installed_version": "5.9.3"
+    },
+    {
+      "name": "vitest",
+      "declared": "^3.2.4",
+      "kind": "devDependencies",
+      "installed_version": "3.2.6"
+    }
+  ],
+  "backend": [
+    {
+      "name": "fastapi",
+      "declaration": "fastapi>=0.115",
+      "installed_version": "0.136.3",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "uvicorn",
+      "declaration": "uvicorn[standard]>=0.30",
+      "installed_version": "0.49.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "sqlalchemy",
+      "declaration": "sqlalchemy>=2.0",
+      "installed_version": "2.0.50",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "alembic",
+      "declaration": "alembic>=1.13",
+      "installed_version": "1.18.4",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "geoalchemy2",
+      "declaration": "geoalchemy2>=0.15",
+      "installed_version": "0.20.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "psycopg2-binary",
+      "declaration": "psycopg2-binary>=2.9.10",
+      "installed_version": "2.9.12",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "pydantic",
+      "declaration": "pydantic==2.13.4",
+      "installed_version": "2.13.4",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "pydantic-settings",
+      "declaration": "pydantic-settings>=2.4",
+      "installed_version": "2.14.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "shapely",
+      "declaration": "shapely>=2.0.6",
+      "installed_version": "2.1.2",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "pyproj",
+      "declaration": "pyproj>=3.7",
+      "installed_version": "3.7.2",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "httpx",
+      "declaration": "httpx>=0.27",
+      "installed_version": "0.28.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "redis",
+      "declaration": "redis>=5.0",
+      "installed_version": "5.3.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "arq",
+      "declaration": "arq>=0.26",
+      "installed_version": "0.28.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "boto3",
+      "declaration": "boto3>=1.34",
+      "installed_version": "1.43.28",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "numpy",
+      "declaration": "numpy>=2.0",
+      "installed_version": "2.4.6",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "scipy",
+      "declaration": "scipy>=1.14",
+      "installed_version": "1.17.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "trimesh",
+      "declaration": "trimesh>=4.4",
+      "installed_version": "4.12.2",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "reportlab",
+      "declaration": "reportlab>=4.2",
+      "installed_version": "4.5.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "python-multipart",
+      "declaration": "python-multipart>=0.0.9",
+      "installed_version": "0.0.32",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "python-jose",
+      "declaration": "python-jose[cryptography]>=3.3",
+      "installed_version": "3.5.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "firebase-admin",
+      "declaration": "firebase-admin==7.7.0",
+      "installed_version": "7.7.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "geopandas",
+      "declaration": "geopandas>=1.0",
+      "installed_version": "1.1.4",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "rasterio",
+      "declaration": "rasterio>=1.4",
+      "installed_version": "1.5.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "fiona",
+      "declaration": "fiona>=1.10",
+      "installed_version": "1.10.1",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "laspy",
+      "declaration": "laspy>=2.5",
+      "installed_version": "2.7.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "ezdxf",
+      "declaration": "ezdxf>=1.3",
+      "installed_version": "1.4.4",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "Pillow",
+      "declaration": "Pillow>=10.0",
+      "installed_version": "12.2.0",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "pytest",
+      "declaration": "pytest>=8.0",
+      "installed_version": "9.0.3",
+      "specifier_satisfied": true
+    },
+    {
+      "name": "sentry-sdk",
+      "declaration": "sentry-sdk>=2.0",
+      "installed_version": "2.64.0",
+      "specifier_satisfied": true
+    }
+  ],
+  "alembic_revisions": {
+    "backend/alembic/versions/001_initial.py": {
+      "revision": "001",
+      "down_revision": null
+    },
+    "backend/alembic/versions/002_survey_schema.py": {
+      "revision": "002",
+      "down_revision": "001"
+    },
+    "backend/alembic/versions/003_auth_usage.py": {
+      "revision": "003",
+      "down_revision": "002"
+    },
+    "backend/alembic/versions/004_project_folders.py": {
+      "revision": "004",
+      "down_revision": "003"
+    },
+    "backend/alembic/versions/005_model_revisions.py": {
+      "revision": "005",
+      "down_revision": "004"
+    },
+    "backend/alembic/versions/006_engineering_evidence.py": {
+      "revision": "006",
+      "down_revision": "005"
+    },
+    "backend/alembic/versions/007_building_plans.py": {
+      "revision": "007",
+      "down_revision": "006"
+    },
+    "backend/alembic/versions/008_stage1_foundation.py": {
+      "revision": "008",
+      "down_revision": "007"
+    },
+    "backend/alembic/versions/009_placement_elevation_provenance.py": {
+      "revision": "009",
+      "down_revision": "008"
+    },
+    "backend/alembic/versions/010_site_workspace.py": {
+      "revision": "010",
+      "down_revision": "009"
+    },
+    "backend/alembic/versions/011_composition_relationships.py": {
+      "revision": "011",
+      "down_revision": "010"
+    }
+  },
+  "static_alembic_heads": [
+    "011"
+  ],
+  "existing_identity_link_migration_found": false,
+  "build_test_data_dependencies": [
+    {
+      "source": "docs\\coupled-floor\\validated-result.json",
+      "sha256": "daac8c3497bcbab394df005418a72333869577a726bfca0c099227856a9fd397",
+      "bytes": 638038,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\foundation-system\\api-results.json",
+      "sha256": "c211bed46d51d74b4c9470c73df441c9efb9bf334681ab7cf39e16d274f61286",
+      "bytes": 138973,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\analysis-workflow\\frame-input-fixture.json",
+      "sha256": "269b7bd2e40b4d95469f11592204d09348569b4c87b3bf7c28d9d252a931894b",
+      "bytes": 20281,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\spatial-frame\\demo.json",
+      "sha256": "64c63f6caf8eaba80fcc100cd6c0a753e22c878abebafd6ff50505ad449ee08d",
+      "bytes": 1732526,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\structural-visual\\project-793.json",
+      "sha256": "a846a2c18729ccafe8b5a59077106f7d12c797d0b98d674d30919cbc312b6f01",
+      "bytes": 457076,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\floor-system\\floor-evidence.json",
+      "sha256": "e5312a0032fc6dc7b1c768f225e4ceca2163a0a65fa23009031cca78c8fb4efb",
+      "bytes": 73671,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\structural-visual\\project-794.json",
+      "sha256": "c8de1cb63521425ecd97a4ad2a4a970b0d5c0975860c0ec27a0ddc3faf5dc2e8",
+      "bytes": 472493,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\coupled-floor\\demo.json",
+      "sha256": "b85b1af8ed4ffba1e885e2b35ea2ee34293c26fbb0a0973333a645c35084cdcb",
+      "bytes": 1442410,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\analysis-workflow\\review-projects.json",
+      "sha256": "5719c7773cd37b76ff37b1b92d3f1868d3af4029866e575416704fd0c3d7fc27",
+      "bytes": 329,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    },
+    {
+      "source": "docs\\foundation-visual\\demo.json",
+      "sha256": "758de634090aa222341e986b828194da29d9e2c8818e7656f8f20266ed7a862c",
+      "bytes": 494,
+      "use": "Read-only static test/typecheck import; not public/API/staging database data"
+    }
+  ],
+  "build_test_data_must_not_be_imported_into_new_runtime": true,
+  "required_retained_paths": [
+    "frontend/app",
+    "frontend/components",
+    "frontend/lib",
+    "frontend/hooks",
+    "frontend/stores",
+    "frontend/public",
+    "frontend/scripts",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "backend/app",
+    "backend/alembic",
+    "backend/requirements.txt",
+    "backend/cad-notices",
+    "backend/.cad-proof-deps",
+    ".local-tooling/node-24.22.1-validation/runtime",
+    "scripts/verify-local-node.cjs",
+    "run-website.bat",
+    "start-copilot-review.ps1"
+  ],
+  "no_unused_package_claim": true,
+  "no_packages_installed": true
+}

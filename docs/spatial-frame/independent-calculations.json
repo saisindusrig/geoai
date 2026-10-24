@@ -1,0 +1,295 @@
+{
+  "actions": "Declared unfactored synthetic gravity/lateral; linear sum factors 1.0; no code load combinations",
+  "benchmarks": {
+    "status": "VERIFIED",
+    "checks": [
+      {
+        "axis": 0,
+        "units": "SI",
+        "run_id": "6874be89-f2a7-412c-98f6-4e3e5f863344",
+        "expected_local": [
+          7.5e-07,
+          0.0025875,
+          0.0015468749999999999,
+          0.00015,
+          -0.0007499999999999999,
+          0.0013499999999999999
+        ],
+        "actual_local": [
+          7.5e-07,
+          0.002587500000000001,
+          0.001546875,
+          0.00015000000000000001,
+          -0.00075,
+          0.0013500000000000003
+        ],
+        "max_abs_error": 8.673617379884035e-19
+      },
+      {
+        "axis": 0,
+        "units": "N-mm",
+        "run_id": "d35bee47-1361-423d-9fd5-126c090893dc",
+        "expected_local": [
+          7.5e-07,
+          0.0025875,
+          0.0015468749999999999,
+          0.00015,
+          -0.0007499999999999999,
+          0.0013499999999999999
+        ],
+        "actual_local": [
+          7.499999999999999e-07,
+          0.0025875,
+          0.001546875,
+          0.00015000000000000001,
+          -0.00075,
+          0.00135
+        ],
+        "max_abs_error": 2.168404344971009e-19
+      },
+      {
+        "axis": 1,
+        "units": "SI",
+        "run_id": "380e96e5-c9a8-4170-884a-f73af661b1c3",
+        "expected_local": [
+          1.5e-06,
+          -0.0007875,
+          0.0017999999999999997,
+          0.0001875,
+          -0.0009187499999999999,
+          -0.0003375
+        ],
+        "actual_local": [
+          1.5e-06,
+          -0.0007875000000000001,
+          0.0018000000000000002,
+          0.0001875,
+          -0.0009187500000000001,
+          -0.00033750000000000007
+        ],
+        "max_abs_error": 4.336808689942018e-19
+      },
+      {
+        "axis": 1,
+        "units": "N-mm",
+        "run_id": "6ac7ade9-14f2-402f-9cd7-cc21e69eec58",
+        "expected_local": [
+          1.5e-06,
+          -0.0007875,
+          0.0017999999999999997,
+          0.0001875,
+          -0.0009187499999999999,
+          -0.0003375
+        ],
+        "actual_local": [
+          1.4999999999999998e-06,
+          -0.0007875000000000001,
+          0.0017999999999999997,
+          0.0001875,
+          -0.00091875,
+          -0.0003375
+        ],
+        "max_abs_error": 1.0842021724855044e-19
+      },
+      {
+        "axis": 2,
+        "units": "SI",
+        "run_id": "bf1d1d57-d0a4-4250-a683-cccc84549652",
+        "expected_local": [
+          2.25e-06,
+          0.00140625,
+          0.0010125,
+          0.000225,
+          -0.0004875,
+          0.0007499999999999999
+        ],
+        "actual_local": [
+          2.25e-06,
+          0.00140625,
+          0.0010125,
+          0.00022500000000000002,
+          -0.00048750000000000003,
+          0.00075
+        ],
+        "max_abs_error": 1.0842021724855044e-19
+      },
+      {
+        "axis": 2,
+        "units": "N-mm",
+        "run_id": "45b9bd3f-8e71-4b04-862f-1b560610b32c",
+        "expected_local": [
+          2.25e-06,
+          0.00140625,
+          0.0010125,
+          0.000225,
+          -0.0004875,
+          0.0007499999999999999
+        ],
+        "actual_local": [
+          2.2499999999999996e-06,
+          0.00140625,
+          0.0010125,
+          0.00022500000000000002,
+          -0.0004875,
+          0.00075
+        ],
+        "max_abs_error": 1.0842021724855044e-19
+      }
+    ],
+    "scope": "6DOF axial, two bending planes, torsion, three orientations, SI/N-mm; independent closed forms + assembled stiffness"
+  },
+  "independent_formulas": {
+    "cantilever_local_axial": "u=P L/(E A)",
+    "cantilever_local_y": "v=Fy L^3/(3 E Iz)+Mz L^2/(2 E Iz)",
+    "cantilever_local_z": "w=Fz L^3/(3 E Iy)-My L^2/(2 E Iy)",
+    "cantilever_torsion": "theta_x=T L/(G J)",
+    "fixed_beam_uniform": "delta_mid=q L^4/(384 E I); |M_end|=|q| L^2/12; |M_mid|=|q| L^2/24",
+    "reference_system": "Independent 12-DOF local Euler-Bernoulli matrices; K_global=T^T K_local T; consistent uniform loads; constrained Kff u=P; reaction=K u-P",
+    "one_way_slab": "Area 4x4=16 m2, pressure 5 kPa ->80 kN/slab; q=5*4/2=10 kN/m on each of two 4 m beams; two slabs/floor ->160 kN/floor"
+  },
+  "fixed_beam_closed_form": {
+    "L_m": 4,
+    "q_n_m": -10000,
+    "E_pa": 30000000000.0,
+    "I_m4": 0.0006749999999999999,
+    "mid_deflection_mm": -0.3292181069958848,
+    "end_moment_abs_knm": 13.333333333333334,
+    "mid_moment_abs_knm": 6.666666666666667
+  },
+  "reviews": [
+    {
+      "project": 822,
+      "revision": 149,
+      "analysis": 682,
+      "nodes": 12,
+      "members": 13,
+      "slabs": 2,
+      "document_sha256": "167087a46ff43afc04afdbdc52a1848700fb684167bc9cd5af6b8de5275c3652",
+      "input_sha256": "54773e57dfd4ccb2f4af436f800efec04cbeede710387be39a9650207353351d",
+      "evidence_sha256": "541ee8b8f60742c83258a3c1f5928696a293aec8ce5528a91716d63329cc689f",
+      "cases": [
+        {
+          "name": "Gravity \u00b7 5 kPa one-way slabs",
+          "reaction_sum_enu_n": [
+            -8.804323645414361e-14,
+            1.262177448353619e-29,
+            160000.0
+          ],
+          "max_node_translation_mm": 0.04906687242376538,
+          "max_member_sample_translation_mm": 0.5105356565674378,
+          "native_vs_independent": {
+            "displacement_max_abs": 1.6263032587282567e-19,
+            "reaction_max_abs": 7.275957614183426e-12,
+            "member_end_force_max_abs": 7.275957614183426e-12,
+            "equilibrium_force_n": 2.9103830456733704e-11,
+            "equilibrium_moment_nm": 1.3747244735458562e-12
+          },
+          "run_id": "80393732-ce30-4b50-9b0f-78147190fab9"
+        },
+        {
+          "name": "Lateral \u00b7 E + N nodal actions",
+          "reaction_sum_enu_n": [
+            -7500.0,
+            -3600.0,
+            -6.835151931013181e-21
+          ],
+          "max_node_translation_mm": 0.25595008915773204,
+          "max_member_sample_translation_mm": 0.25595008915773204,
+          "native_vs_independent": {
+            "displacement_max_abs": 1.111307226797642e-18,
+            "reaction_max_abs": 6.343725544762017e-11,
+            "member_end_force_max_abs": 4.908429218630772e-11,
+            "equilibrium_force_n": 6.821210263296962e-13,
+            "equilibrium_moment_nm": 2.9558577807620168e-12
+          },
+          "run_id": "658f3bb8-d6a5-4d1e-b289-e5b02ea4bcbf"
+        },
+        {
+          "name": "Linear gravity + lateral",
+          "reaction_sum_enu_n": [
+            -7500.0,
+            -3600.0,
+            160000.0
+          ],
+          "max_node_translation_mm": 0.26180923046715543,
+          "max_member_sample_translation_mm": 0.5896735186498618,
+          "native_vs_independent": {
+            "displacement_max_abs": 9.215718466126788e-19,
+            "reaction_max_abs": 6.707523425370096e-11,
+            "member_end_force_max_abs": 3.774403012357652e-11,
+            "equilibrium_force_n": 4.547473508864641e-13,
+            "equilibrium_moment_nm": 1.1641532182693481e-10
+          },
+          "run_id": "80dc738a-090a-4010-a426-cda93541556c"
+        }
+      ]
+    },
+    {
+      "project": 823,
+      "revision": 150,
+      "analysis": 684,
+      "nodes": 18,
+      "members": 26,
+      "slabs": 4,
+      "document_sha256": "53f7a8cd99f89370549f7b748e68f985bc756f234ce980592fcf771bf590fa68",
+      "input_sha256": "ef0a94c3035e07515847ba1cfa08978ebc3adb5618ed47a48ae09c0a2ecd28cb",
+      "evidence_sha256": "aca32dc17ce059c311239d945e46566185afff6391d2b834b6c677ee4d1d325f",
+      "cases": [
+        {
+          "name": "Gravity \u00b7 5 kPa one-way slabs",
+          "reaction_sum_enu_n": [
+            5.671781000000001e-13,
+            3.7076462545387555e-29,
+            320000.0
+          ],
+          "max_node_translation_mm": 0.14261878666692485,
+          "max_member_sample_translation_mm": 0.5610416631388853,
+          "native_vs_independent": {
+            "displacement_max_abs": 3.778244297577688e-19,
+            "reaction_max_abs": 7.275957614183426e-11,
+            "member_end_force_max_abs": 7.275957614183426e-11,
+            "equilibrium_force_n": 5.820766091346741e-11,
+            "equilibrium_moment_nm": 2.3283064365386963e-10
+          },
+          "run_id": "3abebaf0-ea07-4a5e-ad7a-8c2f44b2655c"
+        },
+        {
+          "name": "Lateral \u00b7 E + N nodal actions",
+          "reaction_sum_enu_n": [
+            -15000.0,
+            -7200.0,
+            5.684342354585621e-14
+          ],
+          "max_node_translation_mm": 1.0704708652029453,
+          "max_member_sample_translation_mm": 1.0704708652029453,
+          "native_vs_independent": {
+            "displacement_max_abs": 1.3877787807814457e-17,
+            "reaction_max_abs": 3.6794745029035624e-10,
+            "member_end_force_max_abs": 2.2775736852054251e-10,
+            "equilibrium_force_n": 7.958078640513122e-13,
+            "equilibrium_moment_nm": 9.094947017729282e-13
+          },
+          "run_id": "6e2d9df1-28b0-4fdd-a8b7-80ff190b6bbf"
+        },
+        {
+          "name": "Linear gravity + lateral",
+          "reaction_sum_enu_n": [
+            -15000.0,
+            -7200.0,
+            320000.0
+          ],
+          "max_node_translation_mm": 1.0789699388380303,
+          "max_member_sample_translation_mm": 1.2062715041826175,
+          "native_vs_independent": {
+            "displacement_max_abs": 1.3010426069826053e-17,
+            "reaction_max_abs": 1.793978299204712e-10,
+            "member_end_force_max_abs": 1.4642864698544145e-10,
+            "equilibrium_force_n": 5.820766091346741e-11,
+            "equilibrium_moment_nm": 4.656612873077393e-10
+          },
+          "run_id": "2a26735b-5ac2-43be-8ba6-5b6df399aff3"
+        }
+      ]
+    }
+  ]
+}

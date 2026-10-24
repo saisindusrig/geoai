@@ -1,0 +1,15 @@
+{
+  "browser_workflows_passed": 2,
+  "final_read_only_diagram_pick_rerun": "passed",
+  "physical_frame_backend_tests_passed": 15,
+  "typescript": "passed",
+  "targeted_eslint": "passed",
+  "responsive_widths_px": [
+    1600,
+    1280,
+    900
+  ],
+  "save_reload_scope": "Reload of existing saved revision and results; draft changes discarded without creating a new geometry revision",
+  "paid_inference_calls": 0,
+  "numerical_solver_methods_changed": false
+}

@@ -1,0 +1,2467 @@
+{
+  "source_files": [
+    {
+      "path": "app/error.tsx",
+      "bytes": 830,
+      "lines": 29
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 2155,
+      "lines": 56
+    },
+    {
+      "path": "app/loading.tsx",
+      "bytes": 335,
+      "lines": 8
+    },
+    {
+      "path": "app/not-found.tsx",
+      "bytes": 900,
+      "lines": 15
+    },
+    {
+      "path": "app/page.tsx",
+      "bytes": 114,
+      "lines": 4
+    },
+    {
+      "path": "app/dashboard/error.tsx",
+      "bytes": 54,
+      "lines": 3
+    },
+    {
+      "path": "app/dashboard/head.tsx",
+      "bytes": 83,
+      "lines": 3
+    },
+    {
+      "path": "app/dashboard/loading.tsx",
+      "bytes": 41,
+      "lines": 1
+    },
+    {
+      "path": "app/dashboard/page.test.tsx",
+      "bytes": 10046,
+      "lines": 156
+    },
+    {
+      "path": "app/dashboard/page.tsx",
+      "bytes": 146,
+      "lines": 4
+    },
+    {
+      "path": "app/login/head.tsx",
+      "bytes": 81,
+      "lines": 3
+    },
+    {
+      "path": "app/login/LoginPageInner.tsx",
+      "bytes": 8035,
+      "lines": 181
+    },
+    {
+      "path": "app/login/page.tsx",
+      "bytes": 313,
+      "lines": 10
+    },
+    {
+      "path": "app/privacy/page.tsx",
+      "bytes": 1100,
+      "lines": 7
+    },
+    {
+      "path": "app/settings/page.tsx",
+      "bytes": 152,
+      "lines": 5
+    },
+    {
+      "path": "app/settings/api-keys/page.tsx",
+      "bytes": 10595,
+      "lines": 213
+    },
+    {
+      "path": "app/projects/new/head.tsx",
+      "bytes": 170,
+      "lines": 3
+    },
+    {
+      "path": "app/projects/new/page.tsx",
+      "bytes": 130,
+      "lines": 5
+    },
+    {
+      "path": "app/projects/[id]/error.tsx",
+      "bytes": 54,
+      "lines": 3
+    },
+    {
+      "path": "app/projects/[id]/loading.tsx",
+      "bytes": 41,
+      "lines": 1
+    },
+    {
+      "path": "app/projects/[id]/analysis/page.tsx",
+      "bytes": 8150,
+      "lines": 182
+    },
+    {
+      "path": "app/projects/[id]/cost/page.tsx",
+      "bytes": 12438,
+      "lines": 306
+    },
+    {
+      "path": "app/projects/[id]/estimate/page.tsx",
+      "bytes": 13345,
+      "lines": 329
+    },
+    {
+      "path": "app/projects/[id]/map/MapSelectionPageInner.tsx",
+      "bytes": 5125,
+      "lines": 142
+    },
+    {
+      "path": "app/projects/[id]/map/page.tsx",
+      "bytes": 360,
+      "lines": 13
+    },
+    {
+      "path": "app/projects/[id]/model/page.tsx",
+      "bytes": 9198,
+      "lines": 240
+    },
+    {
+      "path": "app/projects/[id]/report/page.tsx",
+      "bytes": 11414,
+      "lines": 279
+    },
+    {
+      "path": "app/projects/[id]/scenarios/page.tsx",
+      "bytes": 17137,
+      "lines": 394
+    },
+    {
+      "path": "app/projects/[id]/timeline/page.tsx",
+      "bytes": 7994,
+      "lines": 178
+    },
+    {
+      "path": "app/projects/[id]/workspace/page.tsx",
+      "bytes": 19557,
+      "lines": 371
+    },
+    {
+      "path": "app/admin/audit/page.tsx",
+      "bytes": 4590,
+      "lines": 128
+    },
+    {
+      "path": "app/admin/rates/page.tsx",
+      "bytes": 7425,
+      "lines": 176
+    },
+    {
+      "path": "app/admin/templates/page.tsx",
+      "bytes": 4133,
+      "lines": 110
+    },
+    {
+      "path": "app/admin/usage/page.tsx",
+      "bytes": 4289,
+      "lines": 122
+    },
+    {
+      "path": "components/DisclaimerBanner.tsx",
+      "bytes": 1190,
+      "lines": 41
+    },
+    {
+      "path": "components/ThemeProvider.tsx",
+      "bytes": 452,
+      "lines": 18
+    },
+    {
+      "path": "components/ai/ModernAssistantPanel.test.tsx",
+      "bytes": 2760,
+      "lines": 39
+    },
+    {
+      "path": "components/ai/ModernAssistantPanel.tsx",
+      "bytes": 20876,
+      "lines": 507
+    },
+    {
+      "path": "components/auth/RequireAuth.test.tsx",
+      "bytes": 2150,
+      "lines": 68
+    },
+    {
+      "path": "components/auth/RequireAuth.tsx",
+      "bytes": 1006,
+      "lines": 26
+    },
+    {
+      "path": "components/civicspan/BridgeScene.tsx",
+      "bytes": 5386,
+      "lines": 151
+    },
+    {
+      "path": "components/civicspan/CivicSpanStudio.tsx",
+      "bytes": 18842,
+      "lines": 476
+    },
+    {
+      "path": "components/civicspan/ConstructionMapOverlay.tsx",
+      "bytes": 10584,
+      "lines": 359
+    },
+    {
+      "path": "components/civicspan/ConstructionScene.tsx",
+      "bytes": 10374,
+      "lines": 328
+    },
+    {
+      "path": "components/civicspan/ConstructionStudio.tsx",
+      "bytes": 31794,
+      "lines": 769
+    },
+    {
+      "path": "components/civicspan/SiteMap.tsx",
+      "bytes": 11692,
+      "lines": 371
+    },
+    {
+      "path": "components/dashboard/CivicSpanDashboard.tsx",
+      "bytes": 12756,
+      "lines": 315
+    },
+    {
+      "path": "components/dashboard/ConstructionPreview.tsx",
+      "bytes": 1762,
+      "lines": 60
+    },
+    {
+      "path": "components/dashboard/CreativeDashboard.tsx",
+      "bytes": 25822,
+      "lines": 551
+    },
+    {
+      "path": "components/dashboard/DashboardSidebar.tsx",
+      "bytes": 2723,
+      "lines": 17
+    },
+    {
+      "path": "components/dashboard/LegacyDashboardPage.tsx",
+      "bytes": 16220,
+      "lines": 494
+    },
+    {
+      "path": "components/dashboard/NewProjectDialog.tsx",
+      "bytes": 3733,
+      "lines": 58
+    },
+    {
+      "path": "components/landing/AccuracySection.tsx",
+      "bytes": 3922,
+      "lines": 92
+    },
+    {
+      "path": "components/landing/BrandWordmark.tsx",
+      "bytes": 942,
+      "lines": 31
+    },
+    {
+      "path": "components/landing/CTASection.tsx",
+      "bytes": 2346,
+      "lines": 64
+    },
+    {
+      "path": "components/landing/DemoPreview.tsx",
+      "bytes": 15809,
+      "lines": 367
+    },
+    {
+      "path": "components/landing/DemoWorkspaceScene.tsx",
+      "bytes": 3629,
+      "lines": 149
+    },
+    {
+      "path": "components/landing/engineeringSite.test.ts",
+      "bytes": 1455,
+      "lines": 28
+    },
+    {
+      "path": "components/landing/engineeringSite.ts",
+      "bytes": 1762,
+      "lines": 33
+    },
+    {
+      "path": "components/landing/EngineeringTerrain.tsx",
+      "bytes": 24077,
+      "lines": 315
+    },
+    {
+      "path": "components/landing/FeatureCard.tsx",
+      "bytes": 1753,
+      "lines": 59
+    },
+    {
+      "path": "components/landing/FeaturesSection.tsx",
+      "bytes": 3488,
+      "lines": 100
+    },
+    {
+      "path": "components/landing/FeatureStack.tsx",
+      "bytes": 5790,
+      "lines": 162
+    },
+    {
+      "path": "components/landing/Footer.tsx",
+      "bytes": 2609,
+      "lines": 69
+    },
+    {
+      "path": "components/landing/Hero.tsx",
+      "bytes": 2793,
+      "lines": 79
+    },
+    {
+      "path": "components/landing/HeroEarthAnimation.tsx",
+      "bytes": 1289,
+      "lines": 32
+    },
+    {
+      "path": "components/landing/HeroEarthScene.tsx",
+      "bytes": 3330,
+      "lines": 129
+    },
+    {
+      "path": "components/landing/HeroMockup.tsx",
+      "bytes": 6279,
+      "lines": 139
+    },
+    {
+      "path": "components/landing/HomePage.tsx",
+      "bytes": 14654,
+      "lines": 120
+    },
+    {
+      "path": "components/landing/landing-theme.ts",
+      "bytes": 885,
+      "lines": 27
+    },
+    {
+      "path": "components/landing/landingCloudModel.tsx",
+      "bytes": 3828,
+      "lines": 130
+    },
+    {
+      "path": "components/landing/LandingCustomCursor.tsx",
+      "bytes": 217,
+      "lines": 7
+    },
+    {
+      "path": "components/landing/landingEarthModel.tsx",
+      "bytes": 3088,
+      "lines": 113
+    },
+    {
+      "path": "components/landing/landingSatelliteModel.tsx",
+      "bytes": 2986,
+      "lines": 93
+    },
+    {
+      "path": "components/landing/landingSceneShared.tsx",
+      "bytes": 20482,
+      "lines": 685
+    },
+    {
+      "path": "components/landing/landingSceneTextures.ts",
+      "bytes": 18513,
+      "lines": 611
+    },
+    {
+      "path": "components/landing/landingSceneUtils.ts",
+      "bytes": 11382,
+      "lines": 380
+    },
+    {
+      "path": "components/landing/landingTerrainPBR.ts",
+      "bytes": 1721,
+      "lines": 47
+    },
+    {
+      "path": "components/landing/Navbar.tsx",
+      "bytes": 3205,
+      "lines": 104
+    },
+    {
+      "path": "components/landing/StructuralDetails.tsx",
+      "bytes": 8155,
+      "lines": 128
+    },
+    {
+      "path": "components/landing/TechnicalOverview.tsx",
+      "bytes": 1952,
+      "lines": 33
+    },
+    {
+      "path": "components/landing/TransformationStory.tsx",
+      "bytes": 4276,
+      "lines": 31
+    },
+    {
+      "path": "components/landing/TrustMetrics.tsx",
+      "bytes": 2695,
+      "lines": 85
+    },
+    {
+      "path": "components/landing/Workflow.tsx",
+      "bytes": 3097,
+      "lines": 75
+    },
+    {
+      "path": "components/layout/BottomSummaryBar.tsx",
+      "bytes": 9228,
+      "lines": 233
+    },
+    {
+      "path": "components/layout/CommandPalette.tsx",
+      "bytes": 5252,
+      "lines": 135
+    },
+    {
+      "path": "components/layout/DashboardShell.tsx",
+      "bytes": 16020,
+      "lines": 452
+    },
+    {
+      "path": "components/layout/DemoProjectLink.tsx",
+      "bytes": 783,
+      "lines": 28
+    },
+    {
+      "path": "components/layout/DocumentTitle.tsx",
+      "bytes": 812,
+      "lines": 24
+    },
+    {
+      "path": "components/layout/DrawingToolsPanel.tsx",
+      "bytes": 20003,
+      "lines": 628
+    },
+    {
+      "path": "components/layout/DrawingToolsToolbar.tsx",
+      "bytes": 16010,
+      "lines": 476
+    },
+    {
+      "path": "components/layout/MobileAiDrawer.tsx",
+      "bytes": 138,
+      "lines": 6
+    },
+    {
+      "path": "components/layout/MobileBottomNav.tsx",
+      "bytes": 146,
+      "lines": 6
+    },
+    {
+      "path": "components/layout/ProjectHeader.tsx",
+      "bytes": 2444,
+      "lines": 92
+    },
+    {
+      "path": "components/layout/ProjectStepper.tsx",
+      "bytes": 2635,
+      "lines": 71
+    },
+    {
+      "path": "components/layout/SidebarStatusCard.tsx",
+      "bytes": 1990,
+      "lines": 75
+    },
+    {
+      "path": "components/layout/SiteUtilities.tsx",
+      "bytes": 1869,
+      "lines": 40
+    },
+    {
+      "path": "components/layout/UserMenu.test.tsx",
+      "bytes": 1836,
+      "lines": 62
+    },
+    {
+      "path": "components/layout/UserMenu.tsx",
+      "bytes": 1791,
+      "lines": 51
+    },
+    {
+      "path": "components/layout/WorkspaceLayout.tsx",
+      "bytes": 16389,
+      "lines": 386
+    },
+    {
+      "path": "components/layout/WorkspaceLeftSidebar.tsx",
+      "bytes": 1382,
+      "lines": 48
+    },
+    {
+      "path": "components/layout/WorkspaceMapContext.tsx",
+      "bytes": 1007,
+      "lines": 40
+    },
+    {
+      "path": "components/layout/WorkspaceMapControl.tsx",
+      "bytes": 810,
+      "lines": 18
+    },
+    {
+      "path": "components/map/BlenderLayerPanel.tsx",
+      "bytes": 13474,
+      "lines": 337
+    },
+    {
+      "path": "components/map/CameraGizmo.tsx",
+      "bytes": 4976,
+      "lines": 73
+    },
+    {
+      "path": "components/map/CameraViewControls.test.tsx",
+      "bytes": 2244,
+      "lines": 29
+    },
+    {
+      "path": "components/map/CameraViewControls.tsx",
+      "bytes": 4014,
+      "lines": 51
+    },
+    {
+      "path": "components/map/CesiumView.tsx",
+      "bytes": 105310,
+      "lines": 1704
+    },
+    {
+      "path": "components/map/DeckOverlay.tsx",
+      "bytes": 2466,
+      "lines": 78
+    },
+    {
+      "path": "components/map/DrawHud.tsx",
+      "bytes": 4621,
+      "lines": 100
+    },
+    {
+      "path": "components/map/DrawingTools.tsx",
+      "bytes": 10775,
+      "lines": 312
+    },
+    {
+      "path": "components/map/ElevationProfileChart.tsx",
+      "bytes": 2652,
+      "lines": 83
+    },
+    {
+      "path": "components/map/EngineeringEvidencePanel.tsx",
+      "bytes": 16627,
+      "lines": 144
+    },
+    {
+      "path": "components/map/FeaturePropertiesPanel.tsx",
+      "bytes": 4196,
+      "lines": 92
+    },
+    {
+      "path": "components/map/GeoJsonImport.tsx",
+      "bytes": 3233,
+      "lines": 92
+    },
+    {
+      "path": "components/map/Google3DTilesLayer.ts",
+      "bytes": 740,
+      "lines": 26
+    },
+    {
+      "path": "components/map/MapLibreBaseMap.tsx",
+      "bytes": 4165,
+      "lines": 124
+    },
+    {
+      "path": "components/map/MapLibreWorkspace.tsx",
+      "bytes": 6833,
+      "lines": 196
+    },
+    {
+      "path": "components/map/MapStatusBar.tsx",
+      "bytes": 2207,
+      "lines": 57
+    },
+    {
+      "path": "components/map/MapToolbar.tsx",
+      "bytes": 4893,
+      "lines": 130
+    },
+    {
+      "path": "components/map/MapToolbarExtended.tsx",
+      "bytes": 1372,
+      "lines": 48
+    },
+    {
+      "path": "components/map/mapTypes.ts",
+      "bytes": 1339,
+      "lines": 51
+    },
+    {
+      "path": "components/map/MapView.tsx",
+      "bytes": 32852,
+      "lines": 937
+    },
+    {
+      "path": "components/map/MapViewerArea.geometry.test.tsx",
+      "bytes": 3757,
+      "lines": 55
+    },
+    {
+      "path": "components/map/MapViewerArea.tsx",
+      "bytes": 23926,
+      "lines": 562
+    },
+    {
+      "path": "components/map/MeasurementResult.tsx",
+      "bytes": 3603,
+      "lines": 32
+    },
+    {
+      "path": "components/map/ObjectDetailsPanel.tsx",
+      "bytes": 2435,
+      "lines": 57
+    },
+    {
+      "path": "components/map/Scene3DLayerPanel.tsx",
+      "bytes": 3266,
+      "lines": 100
+    },
+    {
+      "path": "components/map/Scene3DOverlay.tsx",
+      "bytes": 655,
+      "lines": 21
+    },
+    {
+      "path": "components/map/SiteSuggestionsPanel.tsx",
+      "bytes": 7762,
+      "lines": 234
+    },
+    {
+      "path": "components/map/SunStudyControls.tsx",
+      "bytes": 17020,
+      "lines": 278
+    },
+    {
+      "path": "components/map/WorkspaceMapEngine.tsx",
+      "bytes": 2360,
+      "lines": 80
+    },
+    {
+      "path": "components/map/WorkspaceMouseControls.test.tsx",
+      "bytes": 7772,
+      "lines": 73
+    },
+    {
+      "path": "components/map/WorkspaceMouseControls.tsx",
+      "bytes": 23663,
+      "lines": 176
+    },
+    {
+      "path": "components/map/WorkspacePanels.test.tsx",
+      "bytes": 7576,
+      "lines": 96
+    },
+    {
+      "path": "components/map/WorkspaceSearch.tsx",
+      "bytes": 4795,
+      "lines": 60
+    },
+    {
+      "path": "components/model-editor/AnalysisOverview.test.tsx",
+      "bytes": 2614,
+      "lines": 32
+    },
+    {
+      "path": "components/model-editor/AnalysisOverview.tsx",
+      "bytes": 4953,
+      "lines": 46
+    },
+    {
+      "path": "components/model-editor/AnchorContact3DPanel.tsx",
+      "bytes": 16190,
+      "lines": 39
+    },
+    {
+      "path": "components/model-editor/AnchorContactPanel.tsx",
+      "bytes": 14017,
+      "lines": 37
+    },
+    {
+      "path": "components/model-editor/BearingCapacityPanel.tsx",
+      "bytes": 12720,
+      "lines": 20
+    },
+    {
+      "path": "components/model-editor/CadFrameAuditPanel.tsx",
+      "bytes": 6857,
+      "lines": 15
+    },
+    {
+      "path": "components/model-editor/CadSoilPanel.tsx",
+      "bytes": 11825,
+      "lines": 18
+    },
+    {
+      "path": "components/model-editor/ComponentIdentity.test.tsx",
+      "bytes": 1108,
+      "lines": 20
+    },
+    {
+      "path": "components/model-editor/ComponentIdentity.tsx",
+      "bytes": 3032,
+      "lines": 48
+    },
+    {
+      "path": "components/model-editor/ConnectionInputNavigation.test.tsx",
+      "bytes": 3543,
+      "lines": 36
+    },
+    {
+      "path": "components/model-editor/ConnectionInputsPanel.tsx",
+      "bytes": 26489,
+      "lines": 139
+    },
+    {
+      "path": "components/model-editor/DrawingCadPanel.tsx",
+      "bytes": 16255,
+      "lines": 57
+    },
+    {
+      "path": "components/model-editor/ElasticFramePanel.tsx",
+      "bytes": 13209,
+      "lines": 60
+    },
+    {
+      "path": "components/model-editor/EngineeringDockPanel.test.tsx",
+      "bytes": 3341,
+      "lines": 38
+    },
+    {
+      "path": "components/model-editor/EngineeringDockPanel.tsx",
+      "bytes": 18272,
+      "lines": 120
+    },
+    {
+      "path": "components/model-editor/EngineeringResultsPanel.tsx",
+      "bytes": 14926,
+      "lines": 39
+    },
+    {
+      "path": "components/model-editor/EngineeringStudyPanel.tsx",
+      "bytes": 23084,
+      "lines": 42
+    },
+    {
+      "path": "components/model-editor/ExperimentalCadReview.tsx",
+      "bytes": 4370,
+      "lines": 56
+    },
+    {
+      "path": "components/model-editor/FootingFlexurePanel.test.tsx",
+      "bytes": 2921,
+      "lines": 14
+    },
+    {
+      "path": "components/model-editor/FootingFlexurePanel.tsx",
+      "bytes": 13664,
+      "lines": 35
+    },
+    {
+      "path": "components/model-editor/FootingTransportPanel.tsx",
+      "bytes": 8303,
+      "lines": 13
+    },
+    {
+      "path": "components/model-editor/FoundationInterfacePanel.tsx",
+      "bytes": 29107,
+      "lines": 60
+    },
+    {
+      "path": "components/model-editor/FrameLoadCasesEditor.tsx",
+      "bytes": 6319,
+      "lines": 9
+    },
+    {
+      "path": "components/model-editor/NumberField.test.tsx",
+      "bytes": 1780,
+      "lines": 28
+    },
+    {
+      "path": "components/model-editor/OpenSeesBenchmarkPanel.tsx",
+      "bytes": 9603,
+      "lines": 99
+    },
+    {
+      "path": "components/model-editor/PhysicalColumnAnalysisPanel.tsx",
+      "bytes": 16603,
+      "lines": 111
+    },
+    {
+      "path": "components/model-editor/PhysicalFramePanel.test.tsx",
+      "bytes": 1947,
+      "lines": 28
+    },
+    {
+      "path": "components/model-editor/PhysicalFramePanel.tsx",
+      "bytes": 29786,
+      "lines": 81
+    },
+    {
+      "path": "components/model-editor/PlatformAttachmentsPanel.tsx",
+      "bytes": 8762,
+      "lines": 51
+    },
+    {
+      "path": "components/model-editor/PlatformParametersPanel.tsx",
+      "bytes": 3507,
+      "lines": 28
+    },
+    {
+      "path": "components/model-editor/plotSavedFrame.ts",
+      "bytes": 2719,
+      "lines": 3
+    },
+    {
+      "path": "components/model-editor/ProfessionalModelEditor.tsx",
+      "bytes": 52588,
+      "lines": 369
+    },
+    {
+      "path": "components/model-editor/PropertiesPanel.test.tsx",
+      "bytes": 3516,
+      "lines": 32
+    },
+    {
+      "path": "components/model-editor/RCFlexurePanel.test.tsx",
+      "bytes": 3213,
+      "lines": 16
+    },
+    {
+      "path": "components/model-editor/RCFlexurePanel.tsx",
+      "bytes": 11591,
+      "lines": 34
+    },
+    {
+      "path": "components/model-editor/RectangularBearingPanel.test.tsx",
+      "bytes": 2193,
+      "lines": 16
+    },
+    {
+      "path": "components/model-editor/RectangularBearingPanel.tsx",
+      "bytes": 12596,
+      "lines": 26
+    },
+    {
+      "path": "components/model-editor/SceneLayersPanel.test.tsx",
+      "bytes": 2270,
+      "lines": 10
+    },
+    {
+      "path": "components/model-editor/SceneLayersPanel.tsx",
+      "bytes": 18773,
+      "lines": 159
+    },
+    {
+      "path": "components/model-editor/SlabTransferPanel.tsx",
+      "bytes": 29059,
+      "lines": 76
+    },
+    {
+      "path": "components/model-editor/SoilContactPanel.tsx",
+      "bytes": 9070,
+      "lines": 23
+    },
+    {
+      "path": "components/model-editor/SoilProfilePanel.tsx",
+      "bytes": 19831,
+      "lines": 37
+    },
+    {
+      "path": "components/model-editor/TransformOptions.tsx",
+      "bytes": 3028,
+      "lines": 19
+    },
+    {
+      "path": "components/model-editor/UnequalFrameComparisonPanel.test.tsx",
+      "bytes": 2819,
+      "lines": 24
+    },
+    {
+      "path": "components/model-editor/UnequalFrameComparisonPanel.tsx",
+      "bytes": 3645,
+      "lines": 11
+    },
+    {
+      "path": "components/motion/PageTransition.tsx",
+      "bytes": 869,
+      "lines": 38
+    },
+    {
+      "path": "components/project/ProjectValidationPanel.tsx",
+      "bytes": 6517,
+      "lines": 187
+    },
+    {
+      "path": "components/project-results/ChartCard.tsx",
+      "bytes": 939,
+      "lines": 32
+    },
+    {
+      "path": "components/project-results/CostRangeCards.tsx",
+      "bytes": 1821,
+      "lines": 50
+    },
+    {
+      "path": "components/project-results/ExportCard.tsx",
+      "bytes": 3109,
+      "lines": 94
+    },
+    {
+      "path": "components/project-results/MetricCard.tsx",
+      "bytes": 1114,
+      "lines": 38
+    },
+    {
+      "path": "components/project-results/ProjectResultShell.tsx",
+      "bytes": 941,
+      "lines": 35
+    },
+    {
+      "path": "components/project-results/ResultPageHeader.tsx",
+      "bytes": 1282,
+      "lines": 35
+    },
+    {
+      "path": "components/project-results/RiskList.tsx",
+      "bytes": 1804,
+      "lines": 54
+    },
+    {
+      "path": "components/project-results/StatusPill.tsx",
+      "bytes": 825,
+      "lines": 31
+    },
+    {
+      "path": "components/projects/NewProjectBoundaryPanel.tsx",
+      "bytes": 8309,
+      "lines": 207
+    },
+    {
+      "path": "components/sandbox/SandboxGrid.tsx",
+      "bytes": 11789,
+      "lines": 241
+    },
+    {
+      "path": "components/sandbox/SandboxWorkspace.tsx",
+      "bytes": 22778,
+      "lines": 147
+    },
+    {
+      "path": "components/scenarios/ScenarioSelector.test.tsx",
+      "bytes": 1448,
+      "lines": 51
+    },
+    {
+      "path": "components/scenarios/ScenarioSelector.tsx",
+      "bytes": 2379,
+      "lines": 78
+    },
+    {
+      "path": "components/settings/AuthStatusCard.tsx",
+      "bytes": 2576,
+      "lines": 78
+    },
+    {
+      "path": "components/settings/SettingsPageClient.tsx",
+      "bytes": 4229,
+      "lines": 114
+    },
+    {
+      "path": "components/settings/SystemStatusPanel.tsx",
+      "bytes": 7174,
+      "lines": 188
+    },
+    {
+      "path": "components/settings/UsageCard.tsx",
+      "bytes": 3132,
+      "lines": 76
+    },
+    {
+      "path": "components/survey/AccuracyBadge.tsx",
+      "bytes": 940,
+      "lines": 42
+    },
+    {
+      "path": "components/survey/EngineeringLayerPanel.tsx",
+      "bytes": 1170,
+      "lines": 36
+    },
+    {
+      "path": "components/survey/OffsetCorrectionTool.tsx",
+      "bytes": 2919,
+      "lines": 85
+    },
+    {
+      "path": "components/survey/SurveyLayerToggles.tsx",
+      "bytes": 2501,
+      "lines": 71
+    },
+    {
+      "path": "components/survey/SurveyModePanel.tsx",
+      "bytes": 15013,
+      "lines": 420
+    },
+    {
+      "path": "components/survey/SurveyVisualWarning.tsx",
+      "bytes": 887,
+      "lines": 24
+    },
+    {
+      "path": "components/ui/api-error-details.tsx",
+      "bytes": 1655,
+      "lines": 48
+    },
+    {
+      "path": "components/ui/badge.tsx",
+      "bytes": 866,
+      "lines": 34
+    },
+    {
+      "path": "components/ui/BorderGlow.tsx",
+      "bytes": 6415,
+      "lines": 226
+    },
+    {
+      "path": "components/ui/button.tsx",
+      "bytes": 1645,
+      "lines": 40
+    },
+    {
+      "path": "components/ui/card.tsx",
+      "bytes": 1349,
+      "lines": 46
+    },
+    {
+      "path": "components/ui/collapsible-section.tsx",
+      "bytes": 1503,
+      "lines": 55
+    },
+    {
+      "path": "components/ui/empty-state.tsx",
+      "bytes": 881,
+      "lines": 28
+    },
+    {
+      "path": "components/ui/form-field.tsx",
+      "bytes": 791,
+      "lines": 35
+    },
+    {
+      "path": "components/ui/glass-card.tsx",
+      "bytes": 444,
+      "lines": 23
+    },
+    {
+      "path": "components/ui/GooeyNav.tsx",
+      "bytes": 6790,
+      "lines": 209
+    },
+    {
+      "path": "components/ui/input.tsx",
+      "bytes": 514,
+      "lines": 19
+    },
+    {
+      "path": "components/ui/map-style-toggle.tsx",
+      "bytes": 1542,
+      "lines": 53
+    },
+    {
+      "path": "components/ui/map-toolbar-toggle.tsx",
+      "bytes": 1056,
+      "lines": 41
+    },
+    {
+      "path": "components/ui/page-header.tsx",
+      "bytes": 769,
+      "lines": 24
+    },
+    {
+      "path": "components/ui/panel-resize-handle.tsx",
+      "bytes": 941,
+      "lines": 32
+    },
+    {
+      "path": "components/ui/select.tsx",
+      "bytes": 502,
+      "lines": 16
+    },
+    {
+      "path": "components/ui/skeleton.tsx",
+      "bytes": 219,
+      "lines": 9
+    },
+    {
+      "path": "components/ui/SoftAurora.tsx",
+      "bytes": 9181,
+      "lines": 318
+    },
+    {
+      "path": "components/ui/stat-card.tsx",
+      "bytes": 1042,
+      "lines": 35
+    },
+    {
+      "path": "components/ui/tabs.tsx",
+      "bytes": 1077,
+      "lines": 41
+    },
+    {
+      "path": "components/ui/toaster.tsx",
+      "bytes": 2015,
+      "lines": 54
+    },
+    {
+      "path": "components/ui/wizard-stepper.tsx",
+      "bytes": 2130,
+      "lines": 60
+    },
+    {
+      "path": "components/workspace/AssistantPanel.test.tsx",
+      "bytes": 1290,
+      "lines": 22
+    },
+    {
+      "path": "components/workspace/AssistantPanel.tsx",
+      "bytes": 3670,
+      "lines": 105
+    },
+    {
+      "path": "components/workspace/BuildingAssistant.test.tsx",
+      "bytes": 4343,
+      "lines": 67
+    },
+    {
+      "path": "components/workspace/BuildingAssistant.tsx",
+      "bytes": 11841,
+      "lines": 129
+    },
+    {
+      "path": "components/workspace/ColumnEngineeringAgent.tsx",
+      "bytes": 12107,
+      "lines": 57
+    },
+    {
+      "path": "components/workspace/EmptyProjectStarter.test.tsx",
+      "bytes": 4921,
+      "lines": 72
+    },
+    {
+      "path": "components/workspace/EmptyProjectStarter.tsx",
+      "bytes": 2977,
+      "lines": 47
+    },
+    {
+      "path": "components/workspace/JobStatusBar.tsx",
+      "bytes": 2783,
+      "lines": 87
+    },
+    {
+      "path": "components/workspace/LayerPanel.tsx",
+      "bytes": 1098,
+      "lines": 36
+    },
+    {
+      "path": "components/workspace/LiveGenerationPreview.tsx",
+      "bytes": 6074,
+      "lines": 189
+    },
+    {
+      "path": "components/workspace/MissingEngineeringInputs.tsx",
+      "bytes": 2381,
+      "lines": 27
+    },
+    {
+      "path": "components/workspace/ParameterForm.tsx",
+      "bytes": 24317,
+      "lines": 591
+    },
+    {
+      "path": "components/workspace/PersistentAssistant.test.tsx",
+      "bytes": 22599,
+      "lines": 302
+    },
+    {
+      "path": "components/workspace/PersistentAssistant.tsx",
+      "bytes": 36714,
+      "lines": 391
+    },
+    {
+      "path": "components/workspace/ProjectEngineeringReview.tsx",
+      "bytes": 4744,
+      "lines": 23
+    },
+    {
+      "path": "components/workspace/ProposalReview.test.tsx",
+      "bytes": 8471,
+      "lines": 114
+    },
+    {
+      "path": "components/workspace/ProposalReview.tsx",
+      "bytes": 11154,
+      "lines": 128
+    },
+    {
+      "path": "components/workspace/ScenarioComparePanel.tsx",
+      "bytes": 5831,
+      "lines": 137
+    },
+    {
+      "path": "components/workspace/ScenarioSelector.tsx",
+      "bytes": 68,
+      "lines": 1
+    },
+    {
+      "path": "components/workspace/StructuralPalette.tsx",
+      "bytes": 3017,
+      "lines": 31
+    },
+    {
+      "path": "components/workspace/WorkspaceToolRail.test.tsx",
+      "bytes": 5504,
+      "lines": 97
+    },
+    {
+      "path": "components/workspace/WorkspaceToolRail.tsx",
+      "bytes": 16444,
+      "lines": 195
+    },
+    {
+      "path": "hooks/polling-performance.test.tsx",
+      "bytes": 1677,
+      "lines": 27
+    },
+    {
+      "path": "hooks/useActiveJobPolling.test.ts",
+      "bytes": 1121,
+      "lines": 45
+    },
+    {
+      "path": "hooks/useActiveJobPolling.test.tsx",
+      "bytes": 2221,
+      "lines": 46
+    },
+    {
+      "path": "hooks/useActiveJobPolling.ts",
+      "bytes": 4701,
+      "lines": 124
+    },
+    {
+      "path": "hooks/useEditableModelEditor.test.tsx",
+      "bytes": 17352,
+      "lines": 248
+    },
+    {
+      "path": "hooks/useEditableModelEditor.ts",
+      "bytes": 29344,
+      "lines": 553
+    },
+    {
+      "path": "hooks/usePointerResize.test.tsx",
+      "bytes": 1177,
+      "lines": 19
+    },
+    {
+      "path": "hooks/usePointerResize.ts",
+      "bytes": 3433,
+      "lines": 118
+    },
+    {
+      "path": "hooks/useProjectData.ts",
+      "bytes": 12404,
+      "lines": 364
+    },
+    {
+      "path": "hooks/useWorkspacePanel.ts",
+      "bytes": 1177,
+      "lines": 30
+    },
+    {
+      "path": "lib/api-errors.test.ts",
+      "bytes": 1818,
+      "lines": 55
+    },
+    {
+      "path": "lib/api-errors.ts",
+      "bytes": 2134,
+      "lines": 61
+    },
+    {
+      "path": "lib/api-read-retry.test.ts",
+      "bytes": 1630,
+      "lines": 28
+    },
+    {
+      "path": "lib/api-transport.test.ts",
+      "bytes": 1147,
+      "lines": 19
+    },
+    {
+      "path": "lib/api.ts",
+      "bytes": 7929,
+      "lines": 242
+    },
+    {
+      "path": "lib/asset-types.test.ts",
+      "bytes": 2075,
+      "lines": 35
+    },
+    {
+      "path": "lib/asset-types.ts",
+      "bytes": 2711,
+      "lines": 66
+    },
+    {
+      "path": "lib/assistant-boundary.ts",
+      "bytes": 801,
+      "lines": 10
+    },
+    {
+      "path": "lib/auth-routes.test.ts",
+      "bytes": 1540,
+      "lines": 54
+    },
+    {
+      "path": "lib/auth-routes.ts",
+      "bytes": 1040,
+      "lines": 28
+    },
+    {
+      "path": "lib/automatic-terrain.test.ts",
+      "bytes": 1951,
+      "lines": 30
+    },
+    {
+      "path": "lib/automatic-terrain.ts",
+      "bytes": 2034,
+      "lines": 47
+    },
+    {
+      "path": "lib/boundary-validation.test.ts",
+      "bytes": 817,
+      "lines": 17
+    },
+    {
+      "path": "lib/boundary-validation.ts",
+      "bytes": 1755,
+      "lines": 23
+    },
+    {
+      "path": "lib/cad-mesh.test.ts",
+      "bytes": 3178,
+      "lines": 50
+    },
+    {
+      "path": "lib/cad-mesh.ts",
+      "bytes": 3435,
+      "lines": 53
+    },
+    {
+      "path": "lib/camera-surface.test.ts",
+      "bytes": 516,
+      "lines": 11
+    },
+    {
+      "path": "lib/camera-surface.ts",
+      "bytes": 331,
+      "lines": 5
+    },
+    {
+      "path": "lib/cesium-photorealistic-tiles.test.ts",
+      "bytes": 2778,
+      "lines": 44
+    },
+    {
+      "path": "lib/cesium-photorealistic-tiles.ts",
+      "bytes": 5090,
+      "lines": 146
+    },
+    {
+      "path": "lib/cesium-runtime.ts",
+      "bytes": 1420,
+      "lines": 32
+    },
+    {
+      "path": "lib/cesium-scene.test.ts",
+      "bytes": 1497,
+      "lines": 24
+    },
+    {
+      "path": "lib/cesium-scene.ts",
+      "bytes": 10228,
+      "lines": 324
+    },
+    {
+      "path": "lib/cesium-transform.test.ts",
+      "bytes": 7768,
+      "lines": 81
+    },
+    {
+      "path": "lib/cesium-transform.ts",
+      "bytes": 20411,
+      "lines": 239
+    },
+    {
+      "path": "lib/chart-theme.ts",
+      "bytes": 366,
+      "lines": 15
+    },
+    {
+      "path": "lib/civicspan.ts",
+      "bytes": 2513,
+      "lines": 74
+    },
+    {
+      "path": "lib/component-edit.test.ts",
+      "bytes": 1622,
+      "lines": 25
+    },
+    {
+      "path": "lib/component-edit.ts",
+      "bytes": 538,
+      "lines": 10
+    },
+    {
+      "path": "lib/component-inspection.test.ts",
+      "bytes": 1525,
+      "lines": 7
+    },
+    {
+      "path": "lib/component-overlaps.ts",
+      "bytes": 1042,
+      "lines": 14
+    },
+    {
+      "path": "lib/component-presentation.ts",
+      "bytes": 1546,
+      "lines": 18
+    },
+    {
+      "path": "lib/construction.ts",
+      "bytes": 4975,
+      "lines": 157
+    },
+    {
+      "path": "lib/design-mesh-layers.ts",
+      "bytes": 7222,
+      "lines": 251
+    },
+    {
+      "path": "lib/display-material.test.ts",
+      "bytes": 921,
+      "lines": 12
+    },
+    {
+      "path": "lib/display-material.ts",
+      "bytes": 1828,
+      "lines": 23
+    },
+    {
+      "path": "lib/editable-model.test.ts",
+      "bytes": 1962,
+      "lines": 51
+    },
+    {
+      "path": "lib/editable-model.ts",
+      "bytes": 4703,
+      "lines": 129
+    },
+    {
+      "path": "lib/editor-analysis.test.ts",
+      "bytes": 5396,
+      "lines": 41
+    },
+    {
+      "path": "lib/editor-analysis.ts",
+      "bytes": 9438,
+      "lines": 102
+    },
+    {
+      "path": "lib/editor-clipping.ts",
+      "bytes": 2080,
+      "lines": 25
+    },
+    {
+      "path": "lib/editor-transform.test.ts",
+      "bytes": 3410,
+      "lines": 42
+    },
+    {
+      "path": "lib/editor-transform.ts",
+      "bytes": 5215,
+      "lines": 72
+    },
+    {
+      "path": "lib/engineering-guidance.test.ts",
+      "bytes": 2107,
+      "lines": 36
+    },
+    {
+      "path": "lib/engineering-guidance.ts",
+      "bytes": 4563,
+      "lines": 54
+    },
+    {
+      "path": "lib/engineering-measurement.test.ts",
+      "bytes": 1694,
+      "lines": 10
+    },
+    {
+      "path": "lib/engineering-measurement.ts",
+      "bytes": 2198,
+      "lines": 33
+    },
+    {
+      "path": "lib/engineering-presentation.test.ts",
+      "bytes": 2350,
+      "lines": 24
+    },
+    {
+      "path": "lib/engineering-presentation.ts",
+      "bytes": 5151,
+      "lines": 61
+    },
+    {
+      "path": "lib/engineering-snap.test.ts",
+      "bytes": 1336,
+      "lines": 17
+    },
+    {
+      "path": "lib/engineering-snap.ts",
+      "bytes": 1616,
+      "lines": 27
+    },
+    {
+      "path": "lib/fonts.ts",
+      "bytes": 419,
+      "lines": 16
+    },
+    {
+      "path": "lib/format-display.ts",
+      "bytes": 2270,
+      "lines": 61
+    },
+    {
+      "path": "lib/generation-job.ts",
+      "bytes": 2222,
+      "lines": 77
+    },
+    {
+      "path": "lib/geo.ts",
+      "bytes": 6256,
+      "lines": 195
+    },
+    {
+      "path": "lib/local-sandbox.test.ts",
+      "bytes": 4464,
+      "lines": 72
+    },
+    {
+      "path": "lib/local-sandbox.ts",
+      "bytes": 9234,
+      "lines": 177
+    },
+    {
+      "path": "lib/map-bookmarks.ts",
+      "bytes": 1060,
+      "lines": 38
+    },
+    {
+      "path": "lib/map-colors.ts",
+      "bytes": 463,
+      "lines": 14
+    },
+    {
+      "path": "lib/map-draw.ts",
+      "bytes": 8607,
+      "lines": 234
+    },
+    {
+      "path": "lib/map-imagery.test.ts",
+      "bytes": 1759,
+      "lines": 27
+    },
+    {
+      "path": "lib/map-imagery.ts",
+      "bytes": 5401,
+      "lines": 180
+    },
+    {
+      "path": "lib/map-view-mode.test.ts",
+      "bytes": 312,
+      "lines": 9
+    },
+    {
+      "path": "lib/map-view-mode.ts",
+      "bytes": 162,
+      "lines": 4
+    },
+    {
+      "path": "lib/model-display-elevation.test.ts",
+      "bytes": 2003,
+      "lines": 34
+    },
+    {
+      "path": "lib/model-display-elevation.ts",
+      "bytes": 1289,
+      "lines": 21
+    },
+    {
+      "path": "lib/model-framing.test.ts",
+      "bytes": 647,
+      "lines": 13
+    },
+    {
+      "path": "lib/model-framing.ts",
+      "bytes": 373,
+      "lines": 6
+    },
+    {
+      "path": "lib/model-layers.ts",
+      "bytes": 875,
+      "lines": 21
+    },
+    {
+      "path": "lib/model-url-resolution.test.ts",
+      "bytes": 6168,
+      "lines": 196
+    },
+    {
+      "path": "lib/model-url-resolution.ts",
+      "bytes": 6851,
+      "lines": 193
+    },
+    {
+      "path": "lib/model-viewer-debug.ts",
+      "bytes": 1044,
+      "lines": 29
+    },
+    {
+      "path": "lib/model-viewer-state.ts",
+      "bytes": 2086,
+      "lines": 55
+    },
+    {
+      "path": "lib/navigation.ts",
+      "bytes": 3089,
+      "lines": 79
+    },
+    {
+      "path": "lib/observability.ts",
+      "bytes": 826,
+      "lines": 19
+    },
+    {
+      "path": "lib/parametric-platform.test.ts",
+      "bytes": 3292,
+      "lines": 31
+    },
+    {
+      "path": "lib/parametric-platform.ts",
+      "bytes": 4295,
+      "lines": 43
+    },
+    {
+      "path": "lib/platform-attachments.test.ts",
+      "bytes": 8941,
+      "lines": 77
+    },
+    {
+      "path": "lib/platform-attachments.ts",
+      "bytes": 12746,
+      "lines": 152
+    },
+    {
+      "path": "lib/project-catalog.ts",
+      "bytes": 4049,
+      "lines": 97
+    },
+    {
+      "path": "lib/project-workflow.ts",
+      "bytes": 5419,
+      "lines": 161
+    },
+    {
+      "path": "lib/revision-comparison.test.ts",
+      "bytes": 1199,
+      "lines": 8
+    },
+    {
+      "path": "lib/revision-comparison.ts",
+      "bytes": 915,
+      "lines": 13
+    },
+    {
+      "path": "lib/sandbox-cesium.ts",
+      "bytes": 10628,
+      "lines": 141
+    },
+    {
+      "path": "lib/sandbox-geometry.test.ts",
+      "bytes": 2006,
+      "lines": 42
+    },
+    {
+      "path": "lib/sandbox-geometry.ts",
+      "bytes": 2410,
+      "lines": 47
+    },
+    {
+      "path": "lib/scenario-api.ts",
+      "bytes": 3231,
+      "lines": 77
+    },
+    {
+      "path": "lib/site-suggestions.ts",
+      "bytes": 5577,
+      "lines": 161
+    },
+    {
+      "path": "lib/sun-study.test.ts",
+      "bytes": 1323,
+      "lines": 22
+    },
+    {
+      "path": "lib/sun-study.ts",
+      "bytes": 2660,
+      "lines": 39
+    },
+    {
+      "path": "lib/survey-terrain-state.ts",
+      "bytes": 13536,
+      "lines": 143
+    },
+    {
+      "path": "lib/toast.ts",
+      "bytes": 1719,
+      "lines": 61
+    },
+    {
+      "path": "lib/types.ts",
+      "bytes": 17692,
+      "lines": 639
+    },
+    {
+      "path": "lib/useAuthUser.ts",
+      "bytes": 1325,
+      "lines": 63
+    },
+    {
+      "path": "lib/useDemoProjectId.ts",
+      "bytes": 716,
+      "lines": 28
+    },
+    {
+      "path": "lib/useFocusTrap.ts",
+      "bytes": 1609,
+      "lines": 56
+    },
+    {
+      "path": "lib/useLandingScrollSpy.ts",
+      "bytes": 1710,
+      "lines": 60
+    },
+    {
+      "path": "lib/utils.ts",
+      "bytes": 536,
+      "lines": 15
+    },
+    {
+      "path": "lib/viewport-interaction.test.ts",
+      "bytes": 1632,
+      "lines": 24
+    },
+    {
+      "path": "lib/viewport-interaction.ts",
+      "bytes": 1141,
+      "lines": 19
+    },
+    {
+      "path": "lib/visual-framing.test.ts",
+      "bytes": 1877,
+      "lines": 18
+    },
+    {
+      "path": "lib/visual-framing.ts",
+      "bytes": 1960,
+      "lines": 23
+    },
+    {
+      "path": "lib/generated/stage1.ts",
+      "bytes": 36473,
+      "lines": 1261
+    },
+    {
+      "path": "lib/map/design-model-layer.ts",
+      "bytes": 1532,
+      "lines": 44
+    },
+    {
+      "path": "lib/map/generation-preview-geometry.ts",
+      "bytes": 7802,
+      "lines": 271
+    },
+    {
+      "path": "lib/map/generation-preview-layers.ts",
+      "bytes": 7595,
+      "lines": 233
+    },
+    {
+      "path": "lib/map/geojson.ts",
+      "bytes": 4830,
+      "lines": 143
+    },
+    {
+      "path": "lib/map/layers.ts",
+      "bytes": 1932,
+      "lines": 55
+    },
+    {
+      "path": "lib/map/measurements.ts",
+      "bytes": 1662,
+      "lines": 51
+    },
+    {
+      "path": "lib/map/providers.ts",
+      "bytes": 1083,
+      "lines": 36
+    },
+    {
+      "path": "lib/map/styles.ts",
+      "bytes": 1384,
+      "lines": 39
+    },
+    {
+      "path": "lib/map/terrain.ts",
+      "bytes": 1007,
+      "lines": 32
+    },
+    {
+      "path": "lib/map/workspace-engine.ts",
+      "bytes": 830,
+      "lines": 25
+    },
+    {
+      "path": "lib/map/workspace-map-tools.ts",
+      "bytes": 452,
+      "lines": 18
+    },
+    {
+      "path": "stores/projectStore.drawing.test.ts",
+      "bytes": 2523,
+      "lines": 43
+    },
+    {
+      "path": "stores/projectStore.ts",
+      "bytes": 15578,
+      "lines": 432
+    },
+    {
+      "path": "scripts/copy-cesium.js",
+      "bytes": 697,
+      "lines": 17
+    },
+    {
+      "path": "scripts/sync-asset-catalogue.js",
+      "bytes": 745,
+      "lines": 14
+    },
+    {
+      "path": "e2e/ai3d-workspace-acceptance.spec.ts",
+      "bytes": 4792,
+      "lines": 67
+    },
+    {
+      "path": "e2e/analysis-workspace.spec.ts",
+      "bytes": 7976,
+      "lines": 28
+    },
+    {
+      "path": "e2e/anchor-contact-3d-regression.spec.ts",
+      "bytes": 1779,
+      "lines": 5
+    },
+    {
+      "path": "e2e/anchor-contact-3d-review.spec.ts",
+      "bytes": 2574,
+      "lines": 4
+    },
+    {
+      "path": "e2e/anchor-contact-3d.spec.ts",
+      "bytes": 7716,
+      "lines": 17
+    },
+    {
+      "path": "e2e/anchor-contact-regression.spec.ts",
+      "bytes": 2162,
+      "lines": 6
+    },
+    {
+      "path": "e2e/anchor-contact-review.spec.ts",
+      "bytes": 1606,
+      "lines": 4
+    },
+    {
+      "path": "e2e/anchor-contact.spec.ts",
+      "bytes": 6114,
+      "lines": 11
+    },
+    {
+      "path": "e2e/assistant-chat-scene.spec.ts",
+      "bytes": 8236,
+      "lines": 106
+    },
+    {
+      "path": "e2e/bearing-capacity.spec.ts",
+      "bytes": 6437,
+      "lines": 19
+    },
+    {
+      "path": "e2e/boundary-workspace.spec.ts",
+      "bytes": 6144,
+      "lines": 84
+    },
+    {
+      "path": "e2e/building-assistant.spec.ts",
+      "bytes": 6379,
+      "lines": 80
+    },
+    {
+      "path": "e2e/building-patch-acceptance.spec.ts",
+      "bytes": 2503,
+      "lines": 35
+    },
+    {
+      "path": "e2e/building-workspace-acceptance.spec.ts",
+      "bytes": 3920,
+      "lines": 61
+    },
+    {
+      "path": "e2e/cad-frame-review.spec.ts",
+      "bytes": 5682,
+      "lines": 12
+    },
+    {
+      "path": "e2e/cad-frame.spec.ts",
+      "bytes": 11451,
+      "lines": 21
+    },
+    {
+      "path": "e2e/cad-slab-analysis.spec.ts",
+      "bytes": 10638,
+      "lines": 15
+    },
+    {
+      "path": "e2e/cad-slab-geometry.spec.ts",
+      "bytes": 5810,
+      "lines": 12
+    },
+    {
+      "path": "e2e/cad-slab-review.spec.ts",
+      "bytes": 4403,
+      "lines": 7
+    },
+    {
+      "path": "e2e/cad-soil-path.spec.ts",
+      "bytes": 6144,
+      "lines": 6
+    },
+    {
+      "path": "e2e/cad-workspace.spec.ts",
+      "bytes": 13875,
+      "lines": 195
+    },
+    {
+      "path": "e2e/cesium-transform.spec.ts",
+      "bytes": 2986,
+      "lines": 38
+    },
+    {
+      "path": "e2e/column-agent.spec.ts",
+      "bytes": 11097,
+      "lines": 46
+    },
+    {
+      "path": "e2e/component-inspection.spec.ts",
+      "bytes": 2978,
+      "lines": 7
+    },
+    {
+      "path": "e2e/connection-inputs-review.spec.ts",
+      "bytes": 2585,
+      "lines": 10
+    },
+    {
+      "path": "e2e/connection-inputs.spec.ts",
+      "bytes": 8057,
+      "lines": 15
+    },
+    {
+      "path": "e2e/connection-source-regression.spec.ts",
+      "bytes": 1399,
+      "lines": 4
+    },
+    {
+      "path": "e2e/copilot-m2-editor.spec.ts",
+      "bytes": 3769,
+      "lines": 10
+    },
+    {
+      "path": "e2e/copilot-m2-verification.spec.ts",
+      "bytes": 5761,
+      "lines": 24
+    },
+    {
+      "path": "e2e/critical-path.spec.ts",
+      "bytes": 5287,
+      "lines": 91
+    },
+    {
+      "path": "e2e/dashboard.spec.ts",
+      "bytes": 5120,
+      "lines": 89
+    },
+    {
+      "path": "e2e/drawing-cad-review.spec.ts",
+      "bytes": 1884,
+      "lines": 6
+    },
+    {
+      "path": "e2e/drawing-cad.spec.ts",
+      "bytes": 8624,
+      "lines": 21
+    },
+    {
+      "path": "e2e/drawing-strength-review.spec.ts",
+      "bytes": 2222,
+      "lines": 5
+    },
+    {
+      "path": "e2e/drawing-strength.spec.ts",
+      "bytes": 11389,
+      "lines": 22
+    },
+    {
+      "path": "e2e/eccentric-frame.spec.ts",
+      "bytes": 10422,
+      "lines": 24
+    },
+    {
+      "path": "e2e/elastic-frame.spec.ts",
+      "bytes": 6749,
+      "lines": 26
+    },
+    {
+      "path": "e2e/engineering-map.spec.ts",
+      "bytes": 7652,
+      "lines": 105
+    },
+    {
+      "path": "e2e/footing-flexure.spec.ts",
+      "bytes": 5986,
+      "lines": 18
+    },
+    {
+      "path": "e2e/footing-geometry.spec.ts",
+      "bytes": 5673,
+      "lines": 12
+    },
+    {
+      "path": "e2e/footing-transport.spec.ts",
+      "bytes": 6597,
+      "lines": 7
+    },
+    {
+      "path": "e2e/foundation-interface.spec.ts",
+      "bytes": 8427,
+      "lines": 19
+    },
+    {
+      "path": "e2e/foundation-legacy.spec.ts",
+      "bytes": 4997,
+      "lines": 21
+    },
+    {
+      "path": "e2e/foundation-review.spec.ts",
+      "bytes": 2220,
+      "lines": 7
+    },
+    {
+      "path": "e2e/foundation-slab-regression.spec.ts",
+      "bytes": 3078,
+      "lines": 10
+    },
+    {
+      "path": "e2e/gravity-frame.spec.ts",
+      "bytes": 13380,
+      "lines": 23
+    },
+    {
+      "path": "e2e/gravity-legacy.spec.ts",
+      "bytes": 4919,
+      "lines": 21
+    },
+    {
+      "path": "e2e/gravity-review.spec.ts",
+      "bytes": 2658,
+      "lines": 9
+    },
+    {
+      "path": "e2e/homepage.spec.ts",
+      "bytes": 3076,
+      "lines": 51
+    },
+    {
+      "path": "e2e/live-ai3d-v2-workspace.spec.ts",
+      "bytes": 3718,
+      "lines": 58
+    },
+    {
+      "path": "e2e/live-nebius.spec.ts",
+      "bytes": 3886,
+      "lines": 27
+    },
+    {
+      "path": "e2e/model-visualization.spec.ts",
+      "bytes": 2753,
+      "lines": 15
+    },
+    {
+      "path": "e2e/new-project.spec.ts",
+      "bytes": 2735,
+      "lines": 44
+    },
+    {
+      "path": "e2e/offline-platform-website.spec.ts",
+      "bytes": 6323,
+      "lines": 89
+    },
+    {
+      "path": "e2e/opensees-benchmark.spec.ts",
+      "bytes": 7727,
+      "lines": 84
+    },
+    {
+      "path": "e2e/parametric-platform.spec.ts",
+      "bytes": 4785,
+      "lines": 33
+    },
+    {
+      "path": "e2e/phase1-local.spec.ts",
+      "bytes": 2115,
+      "lines": 25
+    },
+    {
+      "path": "e2e/physical-column.spec.ts",
+      "bytes": 10340,
+      "lines": 68
+    },
+    {
+      "path": "e2e/physical-frame-reload.spec.ts",
+      "bytes": 3106,
+      "lines": 7
+    },
+    {
+      "path": "e2e/physical-frame.spec.ts",
+      "bytes": 11055,
+      "lines": 21
+    },
+    {
+      "path": "e2e/plate-contact-legacy.spec.ts",
+      "bytes": 4955,
+      "lines": 21
+    },
+    {
+      "path": "e2e/plate-contact-review.spec.ts",
+      "bytes": 1977,
+      "lines": 5
+    },
+    {
+      "path": "e2e/plate-contact-slab.spec.ts",
+      "bytes": 3043,
+      "lines": 10
+    },
+    {
+      "path": "e2e/plate-contact.spec.ts",
+      "bytes": 5768,
+      "lines": 12
+    },
+    {
+      "path": "e2e/platform-attachments-review.spec.ts",
+      "bytes": 3151,
+      "lines": 26
+    },
+    {
+      "path": "e2e/platform-attachments.spec.ts",
+      "bytes": 7441,
+      "lines": 54
+    },
+    {
+      "path": "e2e/platform-workspace-acceptance.spec.ts",
+      "bytes": 432,
+      "lines": 8
+    },
+    {
+      "path": "e2e/rc-flexure.spec.ts",
+      "bytes": 6211,
+      "lines": 18
+    },
+    {
+      "path": "e2e/rectangular-bearing.spec.ts",
+      "bytes": 5809,
+      "lines": 19
+    },
+    {
+      "path": "e2e/sandbox.spec.ts",
+      "bytes": 7582,
+      "lines": 118
+    },
+    {
+      "path": "e2e/slab-transfer-legacy.spec.ts",
+      "bytes": 4955,
+      "lines": 21
+    },
+    {
+      "path": "e2e/slab-transfer-review.spec.ts",
+      "bytes": 2879,
+      "lines": 10
+    },
+    {
+      "path": "e2e/slab-transfer.spec.ts",
+      "bytes": 9548,
+      "lines": 24
+    },
+    {
+      "path": "e2e/soil-contact.spec.ts",
+      "bytes": 5857,
+      "lines": 32
+    },
+    {
+      "path": "e2e/soil-profile.spec.ts",
+      "bytes": 7636,
+      "lines": 22
+    },
+    {
+      "path": "e2e/study-regression.spec.ts",
+      "bytes": 1401,
+      "lines": 4
+    },
+    {
+      "path": "e2e/unequal-frame-review.spec.ts",
+      "bytes": 4747,
+      "lines": 11
+    },
+    {
+      "path": "e2e/unequal-frame.spec.ts",
+      "bytes": 10980,
+      "lines": 21
+    },
+    {
+      "path": "e2e/unequal-gravity-review.spec.ts",
+      "bytes": 4906,
+      "lines": 11
+    },
+    {
+      "path": "e2e/unequal-gravity.spec.ts",
+      "bytes": 14060,
+      "lines": 33
+    },
+    {
+      "path": "e2e/workspace-layer-tools.spec.ts",
+      "bytes": 2893,
+      "lines": 39
+    },
+    {
+      "path": "e2e/workspace-layout.spec.ts",
+      "bytes": 3325,
+      "lines": 42
+    },
+    {
+      "path": "e2e/workspace-quality.spec.ts",
+      "bytes": 1593,
+      "lines": 8
+    },
+    {
+      "path": "e2e/workspace-search.spec.ts",
+      "bytes": 2696,
+      "lines": 44
+    },
+    {
+      "path": "e2e/helpers/platform-review-workflow.ts",
+      "bytes": 9607,
+      "lines": 129
+    }
+  ],
+  "packages_without_static_imports": [
+    "@loaders.gl/core",
+    "@watergis/maplibre-gl-terradraw",
+    "cursor-style"
+  ],
+  "files_without_static_incoming_imports": [
+    {
+      "path": "components/civicspan/CivicSpanStudio.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/civicspan/ConstructionStudio.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/dashboard/LegacyDashboardPage.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/AccuracySection.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/CTASection.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/DemoPreview.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/DemoWorkspaceScene.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/FeatureCard.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/FeaturesSection.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/Footer.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/Hero.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/HeroEarthScene.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/HeroMockup.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/LandingCustomCursor.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/Navbar.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/TrustMetrics.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/landing/Workflow.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/layout/DemoProjectLink.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/layout/MobileAiDrawer.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/layout/MobileBottomNav.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/layout/ProjectStepper.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/map/MapLibreWorkspace.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/model-editor/TransformOptions.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/projects/NewProjectBoundaryPanel.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/survey/SurveyVisualWarning.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/ui/GooeyNav.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/workspace/JobStatusBar.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/workspace/LayerPanel.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/workspace/ParameterForm.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/workspace/ScenarioSelector.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "components/workspace/StructuralPalette.tsx",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "lib/map-bookmarks.ts",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "lib/survey-terrain-state.ts",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "lib/useFocusTrap.ts",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    },
+    {
+      "path": "lib/map/workspace-map-tools.ts",
+      "status": "Review only: static imports absent; dynamic, side-effect, framework and external consumers not ruled out"
+    }
+  ],
+  "limitations": "Import-text heuristic only. No dependency or source removed on this evidence; CSS/config imports and runtime registration require review."
+}

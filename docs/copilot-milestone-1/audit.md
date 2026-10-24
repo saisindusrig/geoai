@@ -1,0 +1,7 @@
+# Copilot milestone 1 — initial audit
+
+Browser: project 793 at 1280 px, before-assistant-793.jpg. The existing Assistant exposes a Column engineering agent and generic next steps, but the initial conversation load failed with a bare Failed to fetch/Retry message. Context is collapsed; the panel is fixed-width and the viewport remains usable. No inference was requested.
+
+Code audit: PersistentAssistant already uses typed conversation APIs, server-pinned component identities/revisions, idempotent submissions, progress polling, project memory and exact proposal review. Reuse all of these. The orchestration runtime has strict JSON/tool validation and bounded tools, but structural requests receive a generic unsupported-module notice rather than existing saved OpenSees evidence. ModelRouter can automatically choose/escalate tiers; the new offline engineering guidance must never enter that paid route. Column/frame/connection forms already provide explicit-input, preview, exact-hash authorization and solver actions. Reuse them through navigation, not chat execution.
+
+Focused change: deterministic, clearly labeled offline engineering guidance from saved revision/components/analysis records; persisted through the existing conversation/run tables. Explicit GLM model preference with no cloud execution in this milestone. Expandable evidence, missing-input groups and follow-up navigation. Preserve every existing solver/proposal gate and usage record.

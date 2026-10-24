@@ -1,0 +1,68 @@
+[
+  {
+    "components": 10,
+    "before": {
+      "ready_ms": 5785,
+      "idle_frames": 68,
+      "idle_draw_calls": 1020,
+      "idle_submitted_triangles": 25024,
+      "orbit_fps": 35.5,
+      "orbit_mean_cpu_submit_ms": 0.34,
+      "heap_bytes": 53985077
+    },
+    "after": {
+      "ready_ms": 5821,
+      "idle_frames": 3,
+      "idle_draw_calls": 45,
+      "idle_submitted_triangles": 1104,
+      "orbit_fps": 33.5,
+      "orbit_mean_cpu_submit_ms": 0.4,
+      "heap_bytes": 56515197
+    },
+    "idle_draw_call_reduction_percent": 95.6
+  },
+  {
+    "components": 100,
+    "before": {
+      "ready_ms": 5680,
+      "idle_frames": 63,
+      "idle_draw_calls": 6615,
+      "idle_submitted_triangles": 227304,
+      "orbit_fps": 31.9,
+      "orbit_mean_cpu_submit_ms": 0.42,
+      "heap_bytes": 113261053
+    },
+    "after": {
+      "ready_ms": 5710,
+      "idle_frames": 3,
+      "idle_draw_calls": 315,
+      "idle_submitted_triangles": 10824,
+      "orbit_fps": 34.8,
+      "orbit_mean_cpu_submit_ms": 0.43,
+      "heap_bytes": 89459489
+    },
+    "idle_draw_call_reduction_percent": 95.2
+  },
+  {
+    "components": 400,
+    "before": {
+      "ready_ms": 5708,
+      "idle_frames": 47,
+      "idle_draw_calls": 19035,
+      "idle_submitted_triangles": 677176,
+      "orbit_fps": 30.6,
+      "orbit_mean_cpu_submit_ms": 0.55,
+      "heap_bytes": 142652611
+    },
+    "after": {
+      "ready_ms": 5697,
+      "idle_frames": 3,
+      "idle_draw_calls": 1215,
+      "idle_submitted_triangles": 43224,
+      "orbit_fps": 32.9,
+      "orbit_mean_cpu_submit_ms": 0.57,
+      "heap_bytes": 306679004
+    },
+    "idle_draw_call_reduction_percent": 93.6
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "status": "DESIGN_ONLY_NOT_PROVISIONED",
+  "root": "D:\\StruvoCivil-Staging\\gate2j-proposed",
+  "root_created": false,
+  "existing_data_root": "D:\\layout project",
+  "data_paths": {
+    "private_files": "D:\\StruvoCivil-Staging\\gate2j-proposed\\data\\private-files",
+    "assistant_history": "D:\\StruvoCivil-Staging\\gate2j-proposed\\data\\assistant-history",
+    "accounting": "D:\\StruvoCivil-Staging\\gate2j-proposed\\data\\accounting",
+    "backups": "D:\\StruvoCivil-Staging\\gate2j-proposed\\backups"
+  },
+  "resources": {
+    "application_database": "NEW PostgreSQL/PostGIS database and least-privilege roles, exact endpoint/name approval pending",
+    "private_storage": "NEW private namespace with ownership gates, location/credentials approval pending",
+    "redis": "NEW isolated instance/namespace and persistence, endpoint approval pending",
+    "volumes": "NEW uniquely named volumes only; never pgdata/redisdata/miniodata from existing compose"
+  },
+  "initial_counts": {"users": 0, "projects": 0, "identity_links": 0, "model_revisions": 0, "saved_results": 0, "cad_drawings": 0, "assistant_conversations": 0, "usage_accounting": 0, "audit_records": 0},
+  "seeding": false,
+  "copy_development_data": false,
+  "legacy_authentication_allowed": false,
+  "database_fallback_allowed": false,
+  "firebase_enabled_now": false,
+  "nebius_inference_enabled": false,
+  "solver_execution_authorized": false,
+  "runtime_admission": "BLOCKED until approved Firebase identity source, enforced auth, new data endpoints, HTTPS, schemas and OS/container isolation are qualified",
+  "runtime_isolation_verified": false,
+  "required_future_isolation": ["new restricted service principal with no access to original workspace/backups", "no original data mounts, shared volumes or developer credentials", "new source artifact without dotenv/data/test evidence", "no PYTHONPATH, editable install or reparse link back to original workspace", "runtime connection and ACL negative tests with synthetic data only"]
+}

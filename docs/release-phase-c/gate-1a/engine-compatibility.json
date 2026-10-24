@@ -1,0 +1,237 @@
+{
+  "node": "v24.22.1",
+  "execPath": "D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe",
+  "npm": "11.19.1",
+  "next": "16.4.2",
+  "react": "19.2.4",
+  "engine_entries": 488,
+  "failures": [
+    {
+      "path": "node_modules/@img/sharp-win32-ia32",
+      "version": "0.35.5",
+      "range": "^20.9.0",
+      "satisfied": false,
+      "firebase": false,
+      "installed": false,
+      "os": [
+        "win32"
+      ],
+      "cpu": [
+        "ia32"
+      ],
+      "satisfied_node22": false
+    }
+  ],
+  "installed_failures": [],
+  "firebase_entries": [
+    {
+      "path": "node_modules/@firebase/ai",
+      "version": "3.0.0",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/app",
+      "version": "0.16.4",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/app-check",
+      "version": "0.13.1",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/app-check-compat",
+      "version": "0.4.7",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/app-compat",
+      "version": "0.5.20",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat",
+      "version": "0.6.13",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/component",
+      "version": "0.7.5",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/database",
+      "version": "1.1.5",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/database-compat",
+      "version": "2.1.7",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore",
+      "version": "4.19.0",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/firestore-compat",
+      "version": "0.4.16",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/functions",
+      "version": "0.14.0",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/functions-compat",
+      "version": "0.5.0",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/logger",
+      "version": "0.5.2",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/@firebase/storage",
+      "version": "0.14.6",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/storage-compat",
+      "version": "0.4.6",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    },
+    {
+      "path": "node_modules/@firebase/util",
+      "version": "1.15.3",
+      "range": ">=20.0.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": true
+    },
+    {
+      "path": "node_modules/firebase/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "range": ">=24.12.0",
+      "satisfied": true,
+      "firebase": true,
+      "installed": true,
+      "os": null,
+      "cpu": null,
+      "satisfied_node22": false
+    }
+  ]
+}

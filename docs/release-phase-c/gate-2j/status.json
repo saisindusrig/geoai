@@ -1,0 +1,15 @@
+{
+  "gate": "2J",
+  "preparation": "COMPLETE",
+  "inventory_regular_files": 270220,
+  "inventory_logical_bytes": 15767940549,
+  "safe_cleanup_candidates": 125,
+  "candidate_logical_MiB": 727.24,
+  "deletions_executed": 0,
+  "migrations_executed": 0,
+  "environment_created": false,
+  "original_data_preservation": "PASS",
+  "isolation_plan_tests_passed": 8,
+  "runtime_isolation": "NOT_QUALIFIED",
+  "launch": "BLOCKED"
+}

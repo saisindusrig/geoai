@@ -22,7 +22,7 @@ export default function ResultPageHeader({
   return (
     <div className={cn("flex flex-col gap-4 border-b border-border pb-5 sm:flex-row sm:items-start sm:justify-between", className)}>
       <div className="min-w-0 space-y-2">
-        <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / project data</p>
+        <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / project data</p>
         <div className="flex flex-wrap items-center gap-2">
           <h1 className="text-2xl font-medium tracking-[-0.045em] text-foreground sm:text-3xl">{title}</h1>
           {status && <StatusPill label={status} variant={statusVariant} />}

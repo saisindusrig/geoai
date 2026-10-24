@@ -1,0 +1,63 @@
+{
+  "inference_requests": 0,
+  "approval_changed": false,
+  "configuration_source": "backend resolver in diagnostic process; review runtime may deliberately clear its key",
+  "credentials_configured": true,
+  "official_endpoint": true,
+  "spending_approved": false,
+  "budget_usd": 0.0,
+  "catalogue": {
+    "zai-org/GLM-5.3-Flash": true,
+    "zai-org/GLM-5.3": true
+  },
+  "retained_official_schema_sha256": "60ed536847c218b72a7a379b2a86bfea2977b46792729d320cb95cf160689f8e",
+  "api_fields": {
+    "stream": true,
+    "stream_options": true,
+    "tools": true,
+    "tool_choice": true,
+    "max_tokens": true,
+    "reasoning_effort": true
+  },
+  "reservations": {
+    "website_help": {
+      "request_sha256": "1655c0e50975c155c013911d637e182de8372ce893bdde66885398b4689dc222",
+      "input_bytes": 5799,
+      "input_token_bound": 8743,
+      "output_token_cap": 4096,
+      "tokens": 12839,
+      "reserved_usd": 0.00335945,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.5,
+      "state": "RESERVED",
+      "actual_charge": "UNKNOWN"
+    },
+    "saved_project": {
+      "request_sha256": "1d59aa1a87d2491873aa4b6fbb617f03b156189b53e2fbb2a0359a1d18dc1c51",
+      "input_bytes": 17619,
+      "input_token_bound": 20563,
+      "output_token_cap": 4096,
+      "tokens": 24659,
+      "reserved_usd": 0.00513245,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.5,
+      "state": "RESERVED",
+      "actual_charge": "UNKNOWN"
+    },
+    "synthetic_long_wire": {
+      "request_sha256": "ac74bf84d8606fc4238de6550f7d59a5e85dcd2fd19d651a3162246cf5015fc4",
+      "input_bytes": 74236,
+      "input_token_bound": 77180,
+      "output_token_cap": 4096,
+      "tokens": 81276,
+      "reserved_usd": 0.013625,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.5,
+      "state": "RESERVED",
+      "actual_charge": "UNKNOWN"
+    }
+  }
+}

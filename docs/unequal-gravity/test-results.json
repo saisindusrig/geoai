@@ -1,0 +1,13 @@
+{
+  "backend_passed": 344,
+  "new_backend_tests": 22,
+  "frontend_unit_tests_passed": 2,
+  "typescript": "passed",
+  "cloud_inference": "locked",
+  "installations": 0,
+  "scope": "one selected unequal CAD planar frame",
+  "browser_tests_passed": 2,
+  "responsive_width_px": 1280,
+  "eslint": "passed",
+  "original_rows_preserved": 9768
+}

@@ -1,0 +1,27 @@
+{
+  "rejected": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "blocked": [
+    {
+      "url": "http://127.0.0.1:8001/files/projects/5/excavation.glb",
+      "reason": "outside frontend origin"
+    },
+    {
+      "url": "http://127.0.0.1:3001/local-api/api/projects/1/design/generate",
+      "reason": "mutation"
+    },
+    {
+      "url": "http://127.0.0.1:3001/files/projects/5/excavation.glb",
+      "reason": "not a synthetic project file"
+    },
+    {
+      "url": "http://127.0.0.1:3001/local-api/api/projects/991600/exports/report",
+      "reason": "side-effect or download endpoint"
+    }
+  ],
+  "normal_api_requests_sent": 0
+}

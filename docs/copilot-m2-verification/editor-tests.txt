@@ -1,0 +1,8 @@
+
+Running 2 tests using 1 worker
+
+
+
+[1/2] [chromium] › e2e\copilot-m2-editor.spec.ts:5:5 › Assistant resize terminates on blur and keeps composer visible
+[2/2] [chromium] › e2e\copilot-m2-editor.spec.ts:8:5 › isolated component preview apply undo redo save reload and restore
+  2 passed (13.4s)

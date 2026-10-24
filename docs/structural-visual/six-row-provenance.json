@@ -1,0 +1,141 @@
+{
+  "records": [
+    {
+      "table": "projects",
+      "record": {
+        "id": 805,
+        "user_id": 1,
+        "name": "Foundation integrated study \u00b7 reference 804",
+        "status": "draft",
+        "created_at": "2026-10-15 15:43:00.205411"
+      }
+    },
+    {
+      "table": "design_scenarios",
+      "record": {
+        "id": 593,
+        "project_id": 805,
+        "name": "Integrated foundation review",
+        "status": "complete",
+        "created_at": "2026-10-15 15:43:00.254861"
+      }
+    },
+    {
+      "table": "model_revisions",
+      "record": {
+        "id": 125,
+        "project_id": 805,
+        "design_scenario_id": 593,
+        "source": "manual_edit",
+        "prompt": "Authorized separate foundation study; original project unchanged",
+        "user_id": 1,
+        "created_at": "2026-10-15 15:43:00.266536",
+        "foundation_study_marker": {
+          "source_project_id": 804,
+          "source_revision_id": 124,
+          "source_binding_sha256": "bf32d23928e168dcd283cc422fb0d54a31c8f7e39834b39d8268dca273c2e06f",
+          "classification": "SYNTHETIC_VERIFICATION"
+        }
+      }
+    },
+    {
+      "table": "engineering_analyses",
+      "record": {
+        "id": 591,
+        "project_id": 805,
+        "model_revision_id": 125,
+        "analysis_type": "DRAWING_REFERENCE",
+        "status": "REFERENCE_IMPORTED_NOT_ANALYTICAL_MODEL",
+        "actor_user_id": 1,
+        "created_at": "2026-10-15 15:43:00.334671",
+        "copied_from": {
+          "project_id": 804,
+          "record_id": 564,
+          "sha256": "5b0cea2487e1b776c86dffbbeff859888217faeab6e87a7a14853446cb93fa01"
+        },
+        "authorization": null,
+        "binding": null,
+        "source_hash_matches": false
+      }
+    },
+    {
+      "table": "engineering_analyses",
+      "record": {
+        "id": 592,
+        "project_id": 805,
+        "model_revision_id": 125,
+        "analysis_type": "DRAWING_REVIEW",
+        "status": "REVIEWED_REFERENCE_ANALYSIS_BLOCKED",
+        "actor_user_id": 1,
+        "created_at": "2026-10-15 15:43:00.354570",
+        "copied_from": {
+          "project_id": 804,
+          "record_id": 565,
+          "sha256": "496df2f946ce11eda3c2abddb7b61f829c72a7f61862fa2f1c82ac003215af78"
+        },
+        "authorization": null,
+        "binding": null,
+        "source_hash_matches": false
+      }
+    },
+    {
+      "table": "engineering_analyses",
+      "record": {
+        "id": 593,
+        "project_id": 805,
+        "model_revision_id": 125,
+        "analysis_type": "FOUNDATION_SYSTEM_PROPOSAL",
+        "status": "AWAITING_EXPLICIT_REVIEW",
+        "actor_user_id": 1,
+        "created_at": "2026-10-15 15:56:00.262314",
+        "copied_from": null,
+        "authorization": null,
+        "binding": {
+          "model_revision_id": 125,
+          "model_document_sha256": "fc269076be90d64c302b8355d3ad61fdd563cd856e2acd370db4133e3b793a4f",
+          "source": {
+            "source_project_id": 804,
+            "source_revision_id": 124,
+            "source_binding_sha256": "bf32d23928e168dcd283cc422fb0d54a31c8f7e39834b39d8268dca273c2e06f",
+            "classification": "SYNTHETIC_VERIFICATION"
+          },
+          "source_current_binding": {
+            "model_revision_id": 124,
+            "model_sha256": "708aafe1413c4727b34ed79c85b31541c4d23d1ab9e42b61daaeefb5dc9463cf",
+            "drawing_id": 564,
+            "drawing_sha256": "5b0cea2487e1b776c86dffbbeff859888217faeab6e87a7a14853446cb93fa01",
+            "review_id": 565,
+            "review_sha256": "496df2f946ce11eda3c2abddb7b61f829c72a7f61862fa2f1c82ac003215af78",
+            "source_project_id": 803,
+            "source_revision_id": 123,
+            "demand_result_id": 563,
+            "demand_sha256": "8080065a111d4a0d496ebdedf8860022d1d5f88c0d9196f0da76b0f4ef6db262",
+            "source_binding_sha256": "7b93ad7705636c52c06de73db2a164e38f9d880e50068b5386978523df0272da"
+          },
+          "method_manifest": {
+            "app.services.design.foundation_system": "0504321e136490a1be486a7b6715b11c3e8320c31628c54d83b4f78973409b11",
+            "app.services.design.footing_flexure": "aab704d6649eaff2064914a99d58073daf8f4180c2023863924b159287306bff",
+            "app.services.design.rc_flexure": "4b75f349b135e205dd2024c8de8c94decc740dd14bde69ab8619b0dede224fdd",
+            "app.services.design.soil_contact": "ff4d27d21c26692db4e4c007c5fcb80413908fe5be65d56b3b38208da0c1a599",
+            "app.services.design.rectangular_bearing": "7752afca846d94cdc34654333267f3ed16b092759f1e0df84e4536739c2a7567",
+            "app.services.design.demand_transport": "b5eb52c7c3fab45c1738b054ea96ebe7ac70dbce256cda272b3774fe1e4950c6",
+            "foundation_api": "f4b936b289a8b1806a4a56d1de424ef0178c16f7ff478fad9cd33b7ba6d63327"
+          }
+        }
+      }
+    }
+  ],
+  "normal_backend_access_log": [
+    {
+      "file": "docs\\foundation-system\\normal-backend.log",
+      "line": 213,
+      "text": "INFO:     127.0.0.1:7591 - \"POST /api/projects/804/engineering/foundation-system/copy HTTP/1.1\" 200 OK"
+    },
+    {
+      "file": "docs\\foundation-system\\normal-backend.log",
+      "line": 262,
+      "text": "INFO:     127.0.0.1:12592 - \"POST /api/projects/805/engineering/foundation-system/preview HTTP/1.1\" 200 OK"
+    }
+  ],
+  "conclusion": "Normal-backend access log records successful copy and preview requests. Copied source references match original hashes. Study 805 originates from the separate-study route for 804; its proposal is awaiting review, not an authorized result. Logs do not identify which browser/person initiated requests. All six records retained unchanged."
+}

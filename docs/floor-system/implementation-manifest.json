@@ -1,0 +1,13 @@
+{
+  "backend/app/services/design/floor_transfer.py": "932ea26c89907902b0b9e9492955ccd98bf158b3c634d5195e9d3aaa47c5eea4",
+  "backend/app/api/routes/spatial_frames.py": "e0cea810ed6e7fea74539ef266850528811d391c09b4d778f42840fe09342315",
+  "backend/tests/test_floor_transfer.py": "5f00ba3bfdaba5320c7923f9f94dc8eb815c7c584cfc4aea29cc1edeaa55862e",
+  "frontend/lib/floor-system.ts": "d864df9666606f4d8f96f8a1743148bbbe59615f7efb6a4a2ca4b03a5168974c",
+  "frontend/lib/deformation-animation.ts": "e98f45797e96c43978920ac23449541dbf509c25371648dff4a8469df938c5e4",
+  "frontend/lib/floor-system.test.ts": "5eb020ae4be879aa0ca6cdcb9089259cf38ed006bcc38e10d3877e9bcffc0c8b",
+  "frontend/lib/structural-visual.ts": "c86e33a4553070a32288ad2f050989ef65eed1d6fedcbb1eba2305028e7b2801",
+  "frontend/components/model-editor/SpatialVisualPanel.tsx": "ed96ce8060c587cca950c5dd9e30267205aac4a8448824cb3beadeb45e4273fd",
+  "frontend/components/model-editor/SpatialVisualPanel.test.tsx": "9b7724b04997cc3897fe4f4ad83a901abdeb8ae3faffc2695d9f29b2c1f9afa6",
+  "frontend/components/map/CesiumView.tsx": "7884c293acf4b1156b88b171d0ebfcabc05d31560bc481ba23ad0e6ddfb9571d",
+  "frontend/e2e/floor-system.spec.ts": "745e8132ba2f065111314bcaebe67784e6158297f38417732419562f2b2f91da"
+}

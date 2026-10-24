@@ -1,0 +1,8 @@
+{
+  "errors": [],
+  "blocked": [],
+  "downloads": [],
+  "originalWrites": 0,
+  "forcedGCForRetentionSamples": true,
+  "instrumentation": "WeakRefs for scenes/contexts; no retained heap snapshots or device identities"
+}

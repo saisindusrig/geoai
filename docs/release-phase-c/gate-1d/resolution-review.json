@@ -1,0 +1,110 @@
+{
+  "planned": [
+    {
+      "name": "firebase_admin",
+      "version": "7.7.0",
+      "previous": null
+    },
+    {
+      "name": "google-api-core",
+      "version": "2.43.0",
+      "previous": null
+    },
+    {
+      "name": "google-auth",
+      "version": "2.62.0",
+      "previous": null
+    },
+    {
+      "name": "googleapis-common-protos",
+      "version": "1.76.0",
+      "previous": null
+    },
+    {
+      "name": "grpcio",
+      "version": "1.84.1",
+      "previous": null
+    },
+    {
+      "name": "grpcio-status",
+      "version": "1.84.1",
+      "previous": null
+    },
+    {
+      "name": "h2",
+      "version": "4.4.1",
+      "previous": null
+    },
+    {
+      "name": "hpack",
+      "version": "4.2.0",
+      "previous": null
+    },
+    {
+      "name": "hyperframe",
+      "version": "6.1.0",
+      "previous": null
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.1",
+      "previous": null
+    },
+    {
+      "name": "proto-plus",
+      "version": "1.29.0",
+      "previous": null
+    },
+    {
+      "name": "protobuf",
+      "version": "7.36.2",
+      "previous": null
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "previous": null
+    },
+    {
+      "name": "CacheControl",
+      "version": "0.14.4",
+      "previous": null
+    },
+    {
+      "name": "msgpack",
+      "version": "1.2.3",
+      "previous": null
+    },
+    {
+      "name": "google-cloud-firestore",
+      "version": "2.34.1",
+      "previous": null
+    },
+    {
+      "name": "google-cloud-core",
+      "version": "2.8.0",
+      "previous": null
+    },
+    {
+      "name": "google-cloud-storage",
+      "version": "3.17.1",
+      "previous": null
+    },
+    {
+      "name": "google-crc32c",
+      "version": "1.9.0",
+      "previous": null
+    },
+    {
+      "name": "google-resumable-media",
+      "version": "2.11.0",
+      "previous": null
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2",
+      "previous": null
+    }
+  ],
+  "existing_packages_changed": []
+}

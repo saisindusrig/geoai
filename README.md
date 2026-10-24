@@ -1,4 +1,8 @@
-# GeoAI — AI-Assisted Civil Infrastructure Planning
+# StruvoCivil — Structural Engineering Software
+
+**Model. Analyze. Design.**
+
+Public domain preparation: `https://struvocivil.com` (not deployed or verified).
 
 [![CI](https://github.com/saisindusrig/geoai/actions/workflows/ci.yml/badge.svg)](https://github.com/saisindusrig/geoai/actions/workflows/ci.yml)
 [![CAD worker](https://github.com/saisindusrig/geoai/actions/workflows/cad-worker-linux.yml/badge.svg)](https://github.com/saisindusrig/geoai/actions/workflows/cad-worker-linux.yml)
@@ -6,16 +10,16 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![CesiumJS](https://img.shields.io/badge/3D-CesiumJS-6CADDF)](https://cesium.com/platform/cesiumjs/)
 
-GeoAI is an end-to-end workspace for exploring civil and infrastructure concepts on real terrain. It combines geospatial context, editable 3D models, approval-gated AI assistance, deterministic engineering calculators, and preliminary project reporting in one browser-based workflow.
+StruvoCivil is an end-to-end workspace for exploring civil and infrastructure concepts on real terrain. It combines geospatial context, editable 3D models, approval-gated AI assistance, deterministic engineering calculators, and preliminary project reporting in one browser-based workflow.
 
-![GeoAI terrain planning workspace](frontend/public/images/hero-planning-still.png)
+![StruvoCivil terrain planning workspace](frontend/public/images/hero-planning-still.png)
 
 > [!IMPORTANT]
-> GeoAI produces **preliminary planning outputs**, not final structural drawings, legal construction approvals, or a substitute for licensed engineers, surveyors, and authority sign-off.
+> StruvoCivil produces **preliminary planning outputs**, not final structural drawings, legal construction approvals, or a substitute for licensed engineers, surveyors, and authority sign-off.
 
-## Why GeoAI
+## Why StruvoCivil
 
-Infrastructure planning data is usually fragmented across maps, spreadsheets, CAD tools, reports, and disconnected AI experiments. GeoAI brings the early-stage workflow together while keeping important decisions reviewable:
+Infrastructure planning data is usually fragmented across maps, spreadsheets, CAD tools, reports, and disconnected AI experiments. StruvoCivil brings the early-stage workflow together while keeping important decisions reviewable:
 
 - Ground project context in maps, terrain, survey inputs, and visible evidence.
 - Generate bounded building and infrastructure concepts through an assistant.
@@ -109,7 +113,7 @@ python -m venv .venv
 # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 alembic upgrade head
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8001
 
 # Terminal 2 — web app
 cd frontend
@@ -117,9 +121,9 @@ npm install
 npm run dev
 ```
 
-Open the app at [http://localhost:3000](http://localhost:3000) and the API documentation at [http://localhost:8000/docs](http://localhost:8000/docs).
+Open the app at [http://localhost:3001](http://localhost:3001) and the API documentation at [http://localhost:8001/docs](http://localhost:8001/docs).
 
-Docker is optional for the primary demo. When external services are unavailable, GeoAI falls back to SQLite, in-process jobs, local storage, and mock AI. See [LOCAL_SETUP.md](./LOCAL_SETUP.md) for environment variables and detailed setup.
+Docker is optional for the primary demo. Local development can use SQLite, in-process jobs and local storage. The site-wide StruvoCivil Assistant requires Nebius Token Factory; no offline AI fallback is enabled. See [LOCAL_SETUP.md](./LOCAL_SETUP.md) for environment variables and detailed setup.
 
 ## Validation and tests
 

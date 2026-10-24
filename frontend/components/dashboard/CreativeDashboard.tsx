@@ -17,6 +17,9 @@ import {
   Trash2,
   X,
 } from "lucide-react";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
+import { toast } from "@/lib/toast";
+import ProjectReturnLink from "./ProjectReturnLink";
 import DashboardSidebar from "./DashboardSidebar";
 import NewProjectDialog from "./NewProjectDialog";
 import "./dashboard-hub.css";
@@ -73,6 +76,10 @@ export default function CreativeDashboard() {
   const [folderFilter, setFolderFilter] = useState<FolderFilter>("all");
   const [sort, setSort] = useState<SortOption>("recent");
   const [error, setError] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
+  const loadingRef = useRef(false);
+  const mutations = useRef(new Set<number>());
+  const [pendingProjects, setPendingProjects] = useState<Set<number>>(new Set());
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
 
   const [folderDialog, setFolderDialog] = useState<
@@ -119,6 +126,9 @@ export default function CreativeDashboard() {
   }, [folderDialog]);
 
   const load = useCallback(async () => {
+    if (loadingRef.current || mutations.current.size) return;
+    loadingRef.current = true;
+    setRefreshing(true);
     try {
       const [savedProjects, savedFolders] = await Promise.all([
         api.get<Project[]>("/api/projects"),
@@ -128,11 +138,13 @@ export default function CreativeDashboard() {
       setFolders(savedFolders);
       setError(null);
     } catch {
-      setProjects([]);
-      setFolders([]);
+      // Preserve previously loaded data during a recoverable refresh failure.
       setError(
         "Saved projects are unavailable. You can retry or create a new project when the backend is available.",
       );
+    } finally {
+      loadingRef.current = false;
+      setRefreshing(false);
     }
   }, []);
 
@@ -182,35 +194,39 @@ export default function CreativeDashboard() {
   const hasActiveFilter =
     Boolean(query.trim()) || folderFilter !== "all";
 
+  const pending = (id: number, busy: boolean) => {
+    if (busy) mutations.current.add(id); else mutations.current.delete(id);
+    setPendingProjects(new Set(mutations.current));
+  };
+
   const moveProject = async (project: Project, folderId: number | null) => {
+    if (loadingRef.current || mutations.current.has(project.id)) return;
+    pending(project.id, true);
     setActiveMenu(null);
+    const previousFolder = project.folder_id;
+    setProjects(current => current?.map(item => item.id === project.id ? { ...item, folder_id: folderId } : item) ?? current);
     try {
-      const updated = await api.put<Project>(`/api/projects/${project.id}`, {
-        folder_id: folderId,
-      });
-      setProjects(
-        (current) =>
-          current?.map((item) => (item.id === project.id ? updated : item)) ??
-          current,
-      );
+      const updated = await api.put<Project>(`/api/projects/${project.id}`, { folder_id: folderId });
+      setProjects(current => current?.map(item => item.id === project.id ? updated : item) ?? current);
+      toast("Project folder updated", { variant: "success" });
     } catch {
-      setError("The project folder could not be updated. Please try again.");
-    }
+      setProjects(current => current?.map(item => item.id === project.id ? { ...item, folder_id: previousFolder } : item) ?? current);
+      setError("The project folder could not be updated. The previous folder was restored.");
+    } finally { pending(project.id, false); }
   };
 
   const removeProject = async (project: Project) => {
-    if (!window.confirm(`Delete “${project.name}”? This cannot be undone.`))
-      return;
+    if (loadingRef.current || mutations.current.has(project.id)) return;
+    if (!window.confirm(`Delete “${project.name}”? This cannot be undone.`)) return;
+    pending(project.id, true);
+    setActiveMenu(null);
     try {
       await api.delete(`/api/projects/${project.id}`);
-      setProjects(
-        (current) =>
-          current?.filter((item) => item.id !== project.id) ?? current,
-      );
-      setActiveMenu(null);
+      setProjects(current => current?.filter(item => item.id !== project.id) ?? current);
+      toast("Project deleted", { variant: "success" });
     } catch {
       setError("The project could not be deleted. Please try again.");
-    }
+    } finally { pending(project.id, false); }
   };
 
   const openFolderDialog = (folder?: ProjectFolder) => {
@@ -295,36 +311,27 @@ export default function CreativeDashboard() {
       <div className="hub-main">
         <header className="hub-toolbar"><label className="hub-search"><Search size={16}/><input ref={searchRef} type="search" aria-label="Search projects" placeholder="Search projects..." value={query} onChange={event=>{setQuery(event.target.value); if(event.target.value) navigate("concepts");}}/><kbd>Ctrl K</kbd></label><div className="hub-toolbar-actions"><Link href={LOCAL_SANDBOX_PATH}><Box size={15}/>Open sandbox</Link><button ref={newProjectButton} className="hub-primary" onClick={() => setNewProjectOpen(true)}><Plus size={16}/>New Project</button><Link href="/settings" title="Settings" aria-label="Open settings"><Settings size={17}/></Link></div></header>
         <div className={`hub-content ${section === "overview" ? "hub-command-center" : "hub-library-view"}`}>
+          <ProjectReturnLink projects={projects} />
           <section className="hub-overview"><span className="hub-micro">WORKSPACE / {section.toUpperCase()}</span><h1>{section === "overview" ? "Your projects" : "Projects"}</h1><p>{"Your saved infrastructure work, together in one place."}</p></section>
           {section === "overview" && <section className="hub-continue" aria-label="Continue working"><h2>Continue working</h2>{latestProject ? <div><strong>{latestProject.name}</strong><span>{projectLocation(latestProject)}</span><Link href={`/projects/${latestProject.id}/workspace`}>Open workspace <ArrowRight size={14}/></Link></div> : <p>Name a project, open the workspace, and start anywhere.</p>}</section>}
           <section id="hub-concepts" className="hub-all-concepts" aria-label="Saved projects"><h2 className="mb-3 text-sm font-semibold">{section === "overview" ? "Recent projects" : "Projects"}</h2>
           <div className="hub-filters"><span className="hub-collection-count">{projects===null?"—":visibleProjects.length} projects</span><div className="hub-filter-tabs"><button aria-pressed={folderFilter==="all"&&!recentOnly} onClick={()=>{setFolderFilter("all");setRecentOnly(false);}}>All</button><button aria-pressed={recentOnly} onClick={()=>{setRecentOnly(true);setSort("recent");setFolderFilter("all");}}>Recent</button><button aria-pressed={folderFilter==="unfiled"} onClick={()=>{setFolderFilter("unfiled");setRecentOnly(false);}}>Unfiled</button></div>{typeof folderFilter==="number"&&<button className="hub-folder-chip" onClick={()=>setFolderFilter("all")}>{folders.find(f=>f.id===folderFilter)?.name}<X size={12}/></button>}<label className="hub-sort">Sort <select aria-label="Sort concepts" value={sort} onChange={e=>setSort(e.target.value as SortOption)}><option value="recent">Recently updated</option><option value="name">Name A–Z</option></select></label></div>
           {error && (
-            <div className="mt-5 flex items-center justify-between rounded-xl border border-warning/25 bg-warning/10 px-4 py-3 text-sm text-warning-text">
+            <div role="alert" className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-warning/25 bg-warning/10 px-4 py-3 text-sm text-warning-text">
               <span>{error}</span>
               <button
                 type="button"
                 onClick={() => void load()}
+                disabled={refreshing}
+                aria-busy={refreshing}
                 className="font-semibold underline underline-offset-2"
               >
-                Retry
+                {refreshing && <InlineSpinner />} {refreshing ? "Retrying…" : "Retry"}
               </button>
             </div>
           )}
 
-          {projects === null && (
-            <div
-              className="hub-concept-grid"
-              aria-label="Loading saved concepts"
-            >
-              {[0, 1, 2].map((item) => (
-                <div
-                  key={item}
-                  className="h-72 animate-pulse rounded-2xl border border-border bg-card"
-                />
-              ))}
-            </div>
-          )}
+          {projects === null && !error && <ContentSkeleton label="Loading saved projects…" />}
 
           {projects !== null && visibleProjects.length === 0 && !error && (
             <div className="mt-5 rounded-2xl border border-dashed border-border bg-card px-7 py-14 text-center">
@@ -370,6 +377,7 @@ export default function CreativeDashboard() {
                 return (
                   <article
                     key={project.id}
+                    aria-busy={pendingProjects.has(project.id)}
                     className="hub-concept-card group"
                   >
                     <Link
@@ -417,12 +425,13 @@ export default function CreativeDashboard() {
                             current === project.id ? null : project.id,
                           )
                         }
+                        disabled={refreshing || pendingProjects.has(project.id)}
                         aria-label={`Project options for ${project.name}`}
                         title={`Project options for ${project.name}`}
                         aria-expanded={activeMenu === project.id}
                         className="ml-auto rounded-lg p-1 text-muted-foreground transition hover:bg-surface-hover hover:text-foreground"
                       >
-                        <MoreHorizontal className="size-4" />
+                        {pendingProjects.has(project.id) ? <InlineSpinner /> : <MoreHorizontal className="size-4" />}
                       </button>
                     </div>
                     {activeMenu === project.id && (
@@ -536,6 +545,7 @@ export default function CreativeDashboard() {
                 disabled={savingFolder || !folderName.trim()}
                 className="rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50"
               >
+                {savingFolder && <InlineSpinner />}
                 {savingFolder
                   ? "Saving…"
                   : folderDialog.kind === "create"

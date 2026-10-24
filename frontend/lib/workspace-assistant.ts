@@ -1,0 +1,8 @@
+import type { ResultIdentity } from './analysis-workflow';
+export type WorkspaceCommand={expiresAt?:number;kind:'workspace_action';actionId:string;operation:'open_project'|'select_components'|'focus_components'|'switch_workspace_view'|'show_saved_result'|'prepare_primitive_preview'|'prepare_beam_preview'|'cancel_primitive_preview';projectId:number;projectName:string;revisionId:number;documentHash:string;componentIds:string[];candidate?:import('./types').EditableModelComponent;view?:'model'|'site';resultIdentity?:ResultIdentity;resultHash?:string;loadCase?:string;mode?:string;validation:{name:string;arguments:Record<string,unknown>}};
+export type WorkspaceOutcome={actionId:string;ok:boolean;message:string};
+export const outcome=(c:WorkspaceCommand,ok:boolean,message:string)=>window.dispatchEvent(new CustomEvent('geoai:workspace-outcome',{detail:{actionId:c.actionId,ok,message}}));
+export function matchesWorkspace(c:WorkspaceCommand,projectId:number,revisionId?:number,dirty=false){return c.projectId===projectId&&c.revisionId===revisionId&&!dirty;}
+export function waitForWorkspace(c:WorkspaceCommand,timeout=20000):Promise<WorkspaceOutcome>{
+ return new Promise(resolve=>{const finish=(result:WorkspaceOutcome)=>{clearTimeout(timer);window.removeEventListener('geoai:workspace-outcome',receive);resolve(result);};const receive=(e:Event)=>{const r=(e as CustomEvent<WorkspaceOutcome>).detail;if(r?.actionId===c.actionId)finish(r);};const timer=window.setTimeout(()=>finish({actionId:c.actionId,ok:false,message:'The workspace did not confirm this action. No completion is claimed; inspect the existing tool manually.'}),timeout);window.addEventListener('geoai:workspace-outcome',receive);});
+}

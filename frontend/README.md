@@ -1,6 +1,6 @@
-# GeoAI frontend
+# StruvoCivil frontend
 
-This Next.js App Router application provides the GeoAI dashboard, project creation dialog, project workspaces, map/3D views, and assistant/review panels.
+This Next.js App Router application provides the StruvoCivil dashboard, project creation dialog, project workspaces, map/3D views, and assistant/review panels.
 
 ## Setup
 

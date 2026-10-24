@@ -1,0 +1,18 @@
+{
+  "invalid": 401,
+  "foreign": 404,
+  "report": 200,
+  "attachment": "attachment; filename=project_793_frame_421_report.json",
+  "bytes": 1338836,
+  "sha256": "3ad31dc54638fda35ec8bbd3c551f086ccc0209f6af4d46cc976de17b76cbb76",
+  "denied": 404,
+  "non_allowlisted": 404,
+  "stale_id": 417,
+  "stale_rejected": 409,
+  "headers": {
+    "nosniff": null,
+    "frame": null,
+    "csp": null
+  },
+  "engineering_approval": "DISABLED"
+}

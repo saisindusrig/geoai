@@ -14,6 +14,7 @@ import type { Viewer } from "cesium";
 import { api, formatApiErrorMessage } from "@/lib/api";
 
 import { useProjectStore } from "@/stores/projectStore";
+import { cameraSurfaceFloor } from "@/lib/camera-surface";
 import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 import styles from "./WorkspacePanels.module.css";
 import WorkspaceMapControl from "@/components/layout/WorkspaceMapControl";
@@ -31,6 +32,29 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
   const { rightControlsContainer } = useWorkspaceMap();
   const panelContainer = rightControlsContainer?.closest(".workspace-map-viewport");
   const layers = useProjectStore((state) => state.layers);
+  const underground = useProjectStore((state) => state.undergroundView);
+  useEffect(() => {
+    const controller = viewer.scene.screenSpaceCameraController;
+    controller.minimumZoomDistance = underground ? 1 : 2;
+    controller.maximumTiltAngle = underground ? undefined : Math.PI / 2 - .05;
+    const protectSurface = () => {
+      if (viewer.isDestroyed()) return;
+      const position = viewer.camera.positionCartographic;
+      const floor = cameraSurfaceFloor(viewer.scene.globe.getHeight(position), viewer.scene.verticalExaggeration, viewer.scene.verticalExaggerationRelativeHeight);
+      viewer.canvas.dataset.cameraSurfaceMode = underground ? "underground" : "surface";
+      viewer.canvas.dataset.cameraHeight = String(position.height);
+      viewer.canvas.dataset.cameraSurfaceFloor = String(floor);
+      viewer.canvas.dataset.terrainSource = viewer.terrainProvider instanceof Cesium.EllipsoidTerrainProvider ? "ellipsoid-reference" : "loaded-terrain";
+      // Camera flights and terrain loading can bypass input-controller collisions.
+      // Explicit underground inspection remains available; no terrain is replaced.
+      if (!underground && position.height < floor && Number.isFinite(floor)) {
+        viewer.camera.setView({ destination: Cesium.Cartesian3.fromRadians(position.longitude, position.latitude, floor),
+          orientation: { heading: viewer.camera.heading, pitch: viewer.camera.pitch, roll: viewer.camera.roll } });
+        viewer.scene.requestRender();
+      }
+    };
+    return viewer.scene.postUpdate.addEventListener(protectSurface);
+  }, [viewer, Cesium, underground]);
   const toggleLayer = useProjectStore((state) => state.toggleLayer);
   const { open, close, toggle } = useWorkspacePanel("scene");
   const [tab, setTab] = useState("Scene");
@@ -117,6 +141,17 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
 
     viewer.scene.globe.enableLighting = preferences.preset !== "ENGINEERING" && preferences.preset !== "SURVEY_QA";
 
+    const applyImageryStyle = () => {
+      for (let index = 0; index < viewer.imageryLayers.length; index++) {
+        const layer = viewer.imageryLayers.get(index);
+        layer.saturation = preferences.preset === "ENGINEERING" ? .45 : 1;
+        layer.brightness = preferences.preset === "ENGINEERING" ? .85 : 1;
+      }
+      viewer.scene.requestRender();
+    };
+    applyImageryStyle();
+    const removeImageryListener = viewer.imageryLayers.layerAdded.addEventListener(applyImageryStyle);
+
 
 
     viewer.shadows = preferences.shadows !== "OFF";
@@ -127,13 +162,16 @@ export default function SunStudyControls({ viewer, Cesium, longitude, latitude, 
 
     viewer.shadowMap.size = preferences.shadows === "HIGH" ? 4096 : 2048;
 
-    viewer.resolutionScale = preferences.quality === "PERFORMANCE" ? .75 : preferences.quality === "HIGH_DETAIL" ? 1.25 : 1;
+    // The editor graphics controller owns drawing-buffer size and idle rendering.
+    if (!viewer.canvas.dataset.graphicsQuality) {
+      viewer.resolutionScale = preferences.quality === "PERFORMANCE" ? .75 : preferences.quality === "HIGH_DETAIL" ? 1.25 : 1;
+      viewer.scene.requestRenderMode = preferences.quality === "PERFORMANCE";
+    }
 
     viewer.scene.globe.maximumScreenSpaceError = preferences.quality === "PERFORMANCE" ? 4 : preferences.quality === "HIGH_DETAIL" ? 1 : 2;
 
-    viewer.scene.requestRenderMode = preferences.quality === "PERFORMANCE";
-
     viewer.scene.requestRender();
+    return () => removeImageryListener();
 
   }, [preferences.preset, preferences.shadows, preferences.quality, viewer, Cesium]);
 

@@ -1,0 +1,9 @@
+{
+  "tables": 62,
+  "original_rows_checked": 9486,
+  "changed_original_rows": [],
+  "missing_original_rows": [],
+  "inference_tables": [],
+  "live_inference_calls_this_milestone": 0,
+  "existing_inference_ledger_count": 22
+}

@@ -1,0 +1,53 @@
+{
+  "width": 1280,
+  "height": 900,
+  "isolatedProject": 911280,
+  "savedRevision": 911601,
+  "explicitSaves": 1,
+  "mockedTurns": 5,
+  "paidInferenceRequests": 0,
+  "forbidden": [],
+  "errors": [],
+  "outcomes": [
+    {
+      "task_id": "5bba6faa-fc48-4c16-b347-051e4c487d2e",
+      "action_id": "044eed4930d223659993df362fec71204a9481f814895549bcb8c42f423da7a1",
+      "ok": true,
+      "message": "Temporary column preview shown in the 3D editor. Not applied or saved; review Apply and Save separately.",
+      "taskId": "5bba6faa-fc48-4c16-b347-051e4c487d2e",
+      "actionId": "044eed4930d223659993df362fec71204a9481f814895549bcb8c42f423da7a1"
+    },
+    {
+      "task_id": "4ee380b1-1121-44d5-a16f-0c015f3d46dc",
+      "action_id": "044eed4930d223659993df362fec71204a9481f814895549bcb8c42f423da7a1",
+      "ok": false,
+      "message": "Duplicate proposal replay rejected. Request a new proposal.",
+      "taskId": "4ee380b1-1121-44d5-a16f-0c015f3d46dc",
+      "actionId": "044eed4930d223659993df362fec71204a9481f814895549bcb8c42f423da7a1"
+    },
+    {
+      "task_id": "e305382a-e74a-43b2-8c14-82be4181a129",
+      "action_id": "45da90c328238c0362cdcc8e9de3c56b19fffe7b2ff52e061584993a35cfe9b3",
+      "ok": true,
+      "message": "Temporary column preview shown in the 3D editor. Not applied or saved; review Apply and Save separately.",
+      "taskId": "e305382a-e74a-43b2-8c14-82be4181a129",
+      "actionId": "45da90c328238c0362cdcc8e9de3c56b19fffe7b2ff52e061584993a35cfe9b3"
+    },
+    {
+      "task_id": "ce5336c1-ad5a-4dd3-901d-305046186de2",
+      "action_id": "ddfbb8f84b42cf9c3931fae10db6fa645c2ef0ce36b3afe7f062887d4842733f",
+      "ok": true,
+      "message": "Temporary column proposal cancelled. No model change was applied or saved.",
+      "taskId": "ce5336c1-ad5a-4dd3-901d-305046186de2",
+      "actionId": "ddfbb8f84b42cf9c3931fae10db6fa645c2ef0ce36b3afe7f062887d4842733f"
+    },
+    {
+      "task_id": "51b13e64-1811-4d7f-b7f2-9ead50b3bff8",
+      "action_id": "df347a364b91b8474a69c08e2fec43ebae84460fca8239a24da0adb5183fe2ae",
+      "ok": true,
+      "message": "Temporary column preview shown in the 3D editor. Not applied or saved; review Apply and Save separately.",
+      "taskId": "51b13e64-1811-4d7f-b7f2-9ead50b3bff8",
+      "actionId": "df347a364b91b8474a69c08e2fec43ebae84460fca8239a24da0adb5183fe2ae"
+    }
+  ]
+}

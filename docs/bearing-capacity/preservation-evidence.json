@@ -1,0 +1,15 @@
+{
+  "original_rows_checked": 9926,
+  "missing_original_rows": [],
+  "changed_original_rows": [],
+  "all_56_component_bodies_identical": true,
+  "original_and_copied_drawing_bytes_preserved": true,
+  "all_original_soil_profile_versions_copied_unchanged": true,
+  "original_profile_count": 5,
+  "copied_reference_profile_count": 5,
+  "paid_inference_calls": 0,
+  "source_project": 799,
+  "review_project": 800,
+  "source_revision": 114,
+  "review_revision": 115
+}

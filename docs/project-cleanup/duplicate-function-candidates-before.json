@@ -1,0 +1,91 @@
+[
+  [
+    {
+      "path": "backend/app/api/routes/anchor_contacts.py",
+      "line": 37,
+      "function": "output"
+    },
+    {
+      "path": "backend/app/api/routes/anchor_contacts_3d.py",
+      "line": 36,
+      "function": "output"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/api/routes/anchor_contacts.py",
+      "line": 46,
+      "function": "owned"
+    },
+    {
+      "path": "backend/app/api/routes/anchor_contacts_3d.py",
+      "line": 45,
+      "function": "owned"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/api/routes/anchor_contacts.py",
+      "line": 57,
+      "function": "save"
+    },
+    {
+      "path": "backend/app/api/routes/anchor_contacts_3d.py",
+      "line": 56,
+      "function": "save"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/api/routes/anchor_contacts.py",
+      "line": 76,
+      "function": "history"
+    },
+    {
+      "path": "backend/app/api/routes/connection_inputs.py",
+      "line": 49,
+      "function": "history"
+    },
+    {
+      "path": "backend/app/api/routes/foundation_interfaces.py",
+      "line": 93,
+      "function": "history"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/api/routes/elastic_frames.py",
+      "line": 53,
+      "function": "owned"
+    },
+    {
+      "path": "backend/app/api/routes/physical_frames.py",
+      "line": 56,
+      "function": "owned"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/api/routes/footing_flexure.py",
+      "line": 44,
+      "function": "preview"
+    },
+    {
+      "path": "backend/app/api/routes/rc_flexure.py",
+      "line": 52,
+      "function": "preview"
+    }
+  ],
+  [
+    {
+      "path": "backend/app/services/design/flyover_generator.py",
+      "line": 130,
+      "function": "_geometry_spec_meta"
+    },
+    {
+      "path": "backend/app/services/design/road_generator.py",
+      "line": 84,
+      "function": "_geometry_spec_meta"
+    }
+  ]
+]

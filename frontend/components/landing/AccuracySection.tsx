@@ -25,7 +25,7 @@ export default function AccuracySection() {
               Built for Mapping Accuracy
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              sitegeoai is built for teams who need trustworthy spatial context before detailed
+              StruvoCivil is built for teams who need trustworthy spatial context before detailed
               design — combining GIS precision with AI-assisted layout generation and deterministic
               quantity engines.
             </p>

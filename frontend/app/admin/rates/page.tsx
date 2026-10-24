@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
+import { TableScrollRegion } from "@/components/ui/table-scroll-region";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { api } from "@/lib/api";
@@ -12,16 +14,29 @@ const EMPTY = { region: "default", item_code: "", item_name: "", unit: "m3", rat
 
 export default function RatesPage() {
   const { isAdmin, loading: authLoading } = useAuthUser();
+  const deleting = useRef(new Set<number>());
+  const [pendingDeletes, setPendingDeletes] = useState<Set<number>>(new Set());
+  const loadPending = useRef(false);
+  const [loading, setLoading] = useState(true);
   const [rates, setRates] = useState<RateItem[]>([]);
   const [draft, setDraft] = useState({ ...EMPTY });
   const [error, setError] = useState("");
 
-  const load = useCallback(
-    () => api.get<RateItem[]>("/api/admin/rates").then(setRates).catch((e) => setError(String(e.message ?? e))),
-    [],
-  );
+  const load = useCallback(async () => {
+    if (loadPending.current) return;
+    loadPending.current = true;
+    setLoading(true);
+    try {
+      const list = await api.get<RateItem[]>("/api/admin/rates");
+      setRates(list);
+      setError("");
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Could not load rates.");
+    } finally { loadPending.current = false; setLoading(false); }
+  }, []);
   useEffect(() => {
-    load();
+    const timer = window.setTimeout(() => void load(), 0);
+    return () => window.clearTimeout(timer);
   }, [load]);
 
   const updateRate = async (r: RateItem, rate: number) => {
@@ -42,19 +57,29 @@ export default function RatesPage() {
     load();
   };
 
-  const remove = async (id: number) => {
-    await toastPromise(api.delete(`/api/admin/rates/${id}`), {
-      loading: "Removing…",
-      success: "Rate removed",
-    });
-    load();
+  const remove = async (item: RateItem) => {
+    if (deleting.current.has(item.id)) return;
+    if (!window.confirm(`Delete rate “${item.item_name}”? Future cost estimates will no longer use this rate. This cannot be undone here.`)) return;
+    deleting.current.add(item.id);
+    setPendingDeletes(new Set(deleting.current));
+    try {
+      await toastPromise(api.delete(`/api/admin/rates/${item.id}`), {
+        loading: "Removing rate…", success: "Rate removed",
+      });
+      await load();
+    } catch {
+      setError("The rate could not be deleted. Please retry.");
+    } finally {
+      deleting.current.delete(item.id);
+      setPendingDeletes(new Set(deleting.current));
+    }
   };
 
   return (
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-5xl mx-auto w-full px-6 py-8 space-y-5">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / administration</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / administration</p>
           <h1 className="mt-3 border-b border-border pb-5 text-[36px] font-medium tracking-[-0.045em]">Material & Labor Rates</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Regional rates drive all cost estimates.
@@ -64,10 +89,14 @@ export default function RatesPage() {
         {!authLoading && !isAdmin && (
           <p className="text-xs text-amber-600/90">Admin access is required to edit rates.</p>
         )}
-        {error && <p className="text-sm text-destructive">{error}</p>}
+        {loading && <ContentSkeleton label="Loading rates…" layout="rows" />}
+        {!loading && !error && rates.length === 0 && <p role="status" className="text-sm text-muted-foreground">No rates recorded yet.</p>}
+        {error && <Button variant="outline" disabled={loading} onClick={() => void load()}>Retry rates</Button>}
+        {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
 
-        <Card className="overflow-x-auto">
-          <table className="data-table w-full text-sm">
+        <Card className="overflow-hidden">
+          <TableScrollRegion label="Material and labor rates table">
+          <table className="data-table w-full min-w-[640px] text-sm">
             <thead className="sticky top-0 bg-background-secondary z-10">
               <tr>
                 {["Code", "Item", "Unit", "Rate", "Currency", ""].map((h) => (
@@ -104,10 +133,13 @@ export default function RatesPage() {
                     {isAdmin && (
                       <button
                         type="button"
-                        onClick={() => remove(r.id)}
+                        onClick={() => void remove(r)}
+                        disabled={pendingDeletes.has(r.id)}
+                        aria-busy={pendingDeletes.has(r.id)}
+                        aria-label={`Delete rate for ${r.item_name}`}
                         className="text-destructive text-xs hover:underline"
                       >
-                        delete
+                        {pendingDeletes.has(r.id) ? <InlineSpinner /> : "Delete"}
                       </button>
                     )}
                   </td>
@@ -169,6 +201,7 @@ export default function RatesPage() {
               )}
             </tbody>
           </table>
+          </TableScrollRegion>
         </Card>
       </div>
     </div>

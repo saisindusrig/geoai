@@ -1,0 +1,14 @@
+{
+  "frontend-tests": {
+    "exit_code": 0,
+    "elapsed_seconds": 6.15
+  },
+  "typescript": {
+    "exit_code": 0,
+    "elapsed_seconds": 13.16
+  },
+  "lint": {
+    "exit_code": 0,
+    "elapsed_seconds": 3.55
+  }
+}

@@ -59,8 +59,9 @@ export default function ProposalReview({ projectId, versionId, dirty = false }: 
     if (!proposal || proposal.status !== "APPROVED" || !canGenerate || dirty) return;
     setBusy(true); setError(null);
     try {
-      const result = await api.post<{ modelRevisionId: string }>(`${base}/proposals/versions/${versionId}/build`, {});
+      const result = await api.post<{ modelRevisionId: string; scenarioId?: number }>(`${base}/proposals/versions/${versionId}/build`, {});
       setBuiltRevision(result.modelRevisionId);
+      window.dispatchEvent(new CustomEvent("geoai:concept-built", { detail: { projectId, scenarioId: result.scenarioId } }));
       await load();
     } catch (e) { setError(e instanceof Error ? e.message : "Concept generation failed."); }
     finally { setBusy(false); }
@@ -83,12 +84,12 @@ export default function ProposalReview({ projectId, versionId, dirty = false }: 
           <p>No geometry has been changed yet. Source revision: {patch.sourceModelRevisionId}.</p>
         </div>}
         {generic && <div aria-label="Generic 3D design summary" className="rounded border border-border p-2">
-          <p>GeoAI understood · preliminary 3D layout</p>
-          {!!proposal.content.aiChosenPreviewParameters?.length && <div aria-label="AI-chosen preview parameters">
-            <p>AI-chosen preview parameters · PREVIEW_ASSUMPTION</p>
-            <p>Conceptual values for review. Local visual Z is not survey elevation.</p>
+          <p>StruvoCivil understood · preliminary 3D layout</p>
+          {!!proposal.content.aiChosenPreviewParameters?.length && <details aria-label="AI-chosen preview parameters" className="my-2">
+            <summary className="cursor-pointer text-xs">Component dimensions · preview assumptions</summary>
+            <p>PREVIEW_ASSUMPTION · Conceptual values for review. Local visual Z is not survey elevation.</p>
             {proposal.content.aiChosenPreviewParameters.map((entry, i) => <p key={i}>{String(entry.objectId)} · {String(entry.parameter)}: {Array.isArray(entry.value) ? entry.value.join(" × ") : String(entry.value)} {String(entry.unit ?? "")}</p>)}
-          </div>}
+          </details>}
           {generic.systems.map(system => <div key={system.id}><p>{system.role.replaceAll("_", " ")}</p><p>{generic.objects.filter(object => object.systemId === system.id && !object.templateOnly && !["POINT", "PATH", "POLYGON", "OFFSET"].includes(object.parameters.primitiveType)).map(objectSummary).join("; ")}</p></div>)}
           <p>Site: saved selection · local engineering frame</p>
           <p>Elevation and terrain placement are unvalidated. Local Z is a visual reference.</p>

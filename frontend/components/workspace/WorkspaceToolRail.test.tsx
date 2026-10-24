@@ -78,7 +78,9 @@ it("preserves text-field undo and uses drawing undo for vertices instead of obje
   expect(useProjectStore.getState().activeTool).toBe("select");
   fireEvent.click(screen.getByRole("button", { name: "Draw alignment" }));
   act(() => useProjectStore.getState().setDrawVertices([[1, 2], [3, 4]]));
+  const viewport = document.createElement("canvas"); viewport.tabIndex=0; document.body.append(viewport); viewport.focus();
   fireEvent.keyDown(window, { key: "z", ctrlKey: true });
+  viewport.remove();
   expect(useProjectStore.getState().drawVertices).toEqual([[1, 2]]);
   expect(editor.undo).not.toHaveBeenCalled();
 });

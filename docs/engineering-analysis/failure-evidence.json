@@ -1,0 +1,147 @@
+[
+  {
+    "test": "test_actual_singular_model_non0",
+    "manifest": {
+      "run_id": "d0867bf8-8f89-434b-85d8-716d6f9ec1a6",
+      "timestamp": "2026-10-11T16:50:08.487101+00:00",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "inputs": {
+        "length_m": 3,
+        "area_m2": 0.01,
+        "elastic_modulus_pa": 200000000000.0,
+        "soil_stiffness_n_per_m": 100000000.0,
+        "compression_n": 100000.0,
+        "load_factor": 1.0,
+        "elements": 1,
+        "solver_units": "SI"
+      },
+      "inputs_sha256": "63e9db287900943a11784a19457f67061cd39f0e65f6a04a3d9a41889e535a09",
+      "input_file_sha256": "1d2fda62c7e35e1d20dd46e01f6167818765943471114235c788fb9e8e97a315",
+      "status": "FAILED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+      "limitations": [
+        "Linear axial elasticity only",
+        "Rigid plate/footing idealization; anchors inactive",
+        "Prescribed soil spring; no soil capacity check",
+        "No bending, buckling, self-weight or design-code checks"
+      ],
+      "exit_code": 0,
+      "error": "Solver result failed independent reference/equilibrium/mesh/restraint verification.",
+      "artifact_sha256": {
+        "model.tcl": "7665759ac875f4115d58f003ce480a8f0b2463aa4a05e7364b4dda97b9147e90",
+        "nodes.tsv": "6cde53cbcbda3e60176e6b81172099a50b0fa7b46b189749c37d1dc20c679cf7",
+        "forces.tsv": "1ea768c5987af4f1c91898769a02c0d0d12900d1badb4a27253cab53af3cf69e",
+        "summary.tsv": "7574efb788e8b8c602430330186aba472152eae8eef64601f180dc8d3cbf0a07",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      }
+    },
+    "files": {
+      "forces.tsv": "2\t0\n",
+      "model.tcl": "# GeoAI isolated axial-column / prescribed-soil-spring verification model\n# Units: SI; no gravity, bending, buckling, contact or design checks\n# One-dimensional coordinate/DOF represents local vertical z, upward positive.\nwipe\nmodel BasicBuilder -ndm 1 -ndf 1\nnode 1 0\nfix 1 0\nnode 2 0\nuniaxialMaterial Elastic 1 200000000000\nuniaxialMaterial Elastic 2 100000000\nelement zeroLength 1 1 2 -mat 2 -dir 1\nnode 3 3\nelement truss 2 2 3 0.01 1\ntimeSeries Linear 1\npattern Plain 1 1 {load 3 -100000}\nconstraints Plain\nnumberer Plain\nsystem BandGeneral\ntest NormUnbalance 1e-8 10 0\nalgorithm Linear\nintegrator LoadControl 1.0\nanalysis Static\nset rc [analyze 1]\nset f [open summary.tsv w]\nputs $f \"version\t[version]\"\nputs $f \"convergence\t$rc\"\nif {$rc != 0} {close $f; exit 2}\nreactions\nputs $f \"reaction\t[format %.17g [nodeReaction 1 1]]\"\nclose $f\nset f [open nodes.tsv w]\nputs $f \"1\t[format %.17g [nodeCoord 1 1]]\t[format %.17g [nodeDisp 1 1]]\"\nputs $f \"2\t[format %.17g [nodeCoord 2 1]]\t[format %.17g [nodeDisp 2 1]]\"\nputs $f \"3\t[format %.17g [nodeCoord 3 1]]\t[format %.17g [nodeDisp 3 1]]\"\nclose $f\nset f [open forces.tsv w]\nputs $f \"2\t[format %.17g [lindex [eleResponse 2 axialForce] 0]]\"\nclose $f\nwipe\nexit 0\n",
+      "nodes.tsv": "1\t0\t-1351079888211.1489\n2\t0\t-1351079888211.1489\n3\t3\t-1351079888211.1489\n",
+      "stderr.txt": "\n\n         OpenSees -- Open System For Earthquake Engineering Simulation\n                 Pacific Earthquake Engineering Research Center\n        Version 3.8.0 64-Bit (6e55293513192aa05c7e1205e66a5a1a1ed088c4)\n\n      (c) Copyright 1999-2016 The Regents of the University of California\n                              All Rights Reserved\n  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)\n\n\n",
+      "stdout.txt": "",
+      "summary.tsv": "version\t3.8.0\nconvergence\t0\nreaction\t0\n"
+    }
+  },
+  {
+    "test": "test_actual_solver_timeout0",
+    "manifest": {
+      "run_id": "c86a3944-7501-470e-9f77-5810c5bdbbdd",
+      "timestamp": "2026-10-11T16:50:08.390082+00:00",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "inputs": {
+        "length_m": 3,
+        "area_m2": 0.01,
+        "elastic_modulus_pa": 200000000000.0,
+        "soil_stiffness_n_per_m": 100000000.0,
+        "compression_n": 100000.0,
+        "load_factor": 1.0,
+        "elements": 1,
+        "solver_units": "SI"
+      },
+      "inputs_sha256": "63e9db287900943a11784a19457f67061cd39f0e65f6a04a3d9a41889e535a09",
+      "input_file_sha256": "41cbdd24b3f3a81f952b5f035c572a1839f1d5ea3042747ffec5ca1b8eee10c9",
+      "status": "FAILED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+      "limitations": [
+        "Linear axial elasticity only",
+        "Rigid plate/footing idealization; anchors inactive",
+        "Prescribed soil spring; no soil capacity check",
+        "No bending, buckling, self-weight or design-code checks"
+      ],
+      "error": "Command '['D:\\\\layout project\\\\.cache\\\\opensees\\\\OpenSees3.8.0\\\\bin\\\\OpenSees.exe', 'model.tcl']' timed out after 0.05 seconds",
+      "artifact_sha256": {
+        "model.tcl": "c21f57ba909f88ec080bd9ee282dde22cbf8b3aeac22879ee28847619e48fb0f",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      }
+    },
+    "files": {
+      "model.tcl": "after 2000\nexit 0\n",
+      "stderr.txt": "\n\n         OpenSees -- Open System For Earthquake Engineering Simulation\n                 Pacific Earthquake Engineering Research Center\n        Version 3.8.0 64-Bit (6e55293513192aa05c7e1205e66a5a1a1ed088c4)\n\n      (c) Copyright 1999-2016 The Regents of the University of California\n                              All Rights Reserved\n  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)\n\n\n",
+      "stdout.txt": ""
+    }
+  },
+  {
+    "test": "test_actual_zero_stiffness_non0",
+    "manifest": {
+      "run_id": "6c3e820c-a0ed-4355-b55e-1d93d8f739c9",
+      "timestamp": "2026-10-11T16:50:08.564929+00:00",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "inputs": {
+        "length_m": 3,
+        "area_m2": 0.01,
+        "elastic_modulus_pa": 200000000000.0,
+        "soil_stiffness_n_per_m": 100000000.0,
+        "compression_n": 100000.0,
+        "load_factor": 1.0,
+        "elements": 1,
+        "solver_units": "SI"
+      },
+      "inputs_sha256": "63e9db287900943a11784a19457f67061cd39f0e65f6a04a3d9a41889e535a09",
+      "input_file_sha256": "878f599c1acfb43798269a7664920c72f8015fe2d6639372c046561208a40a12",
+      "status": "FAILED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+      "limitations": [
+        "Linear axial elasticity only",
+        "Rigid plate/footing idealization; anchors inactive",
+        "Prescribed soil spring; no soil capacity check",
+        "No bending, buckling, self-weight or design-code checks"
+      ],
+      "exit_code": 2,
+      "error": "OpenSees exited with code 2; inspect stderr artifact.",
+      "artifact_sha256": {
+        "model.tcl": "308db917d966c09c80965c02e4b07e55f97cb29d5370f0a0c5df6e7dc58b995f",
+        "summary.tsv": "43b1fd1cf36630acb18617e092075cf4620c10941acbae61695603b8e8223d69",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "ec75276d7ea975a1ca44bc47310e72b61c9769856f929cf99e4db65899b379ea"
+      }
+    },
+    "files": {
+      "model.tcl": "# GeoAI isolated axial-column / prescribed-soil-spring verification model\n# Units: SI; no gravity, bending, buckling, contact or design checks\n# One-dimensional coordinate/DOF represents local vertical z, upward positive.\nwipe\nmodel BasicBuilder -ndm 1 -ndf 1\nnode 1 0\nfix 1 1\nnode 2 0\nuniaxialMaterial Elastic 1 0\nuniaxialMaterial Elastic 2 100000000\nelement zeroLength 1 1 2 -mat 2 -dir 1\nnode 3 3\nelement truss 2 2 3 0.01 1\ntimeSeries Linear 1\npattern Plain 1 1 {load 3 -100000}\nconstraints Plain\nnumberer Plain\nsystem BandGeneral\ntest NormUnbalance 1e-8 10 0\nalgorithm Linear\nintegrator LoadControl 1.0\nanalysis Static\nset rc [analyze 1]\nset f [open summary.tsv w]\nputs $f \"version\t[version]\"\nputs $f \"convergence\t$rc\"\nif {$rc != 0} {close $f; exit 2}\nreactions\nputs $f \"reaction\t[format %.17g [nodeReaction 1 1]]\"\nclose $f\nset f [open nodes.tsv w]\nputs $f \"1\t[format %.17g [nodeCoord 1 1]]\t[format %.17g [nodeDisp 1 1]]\"\nputs $f \"2\t[format %.17g [nodeCoord 2 1]]\t[format %.17g [nodeDisp 2 1]]\"\nputs $f \"3\t[format %.17g [nodeCoord 3 1]]\t[format %.17g [nodeDisp 3 1]]\"\nclose $f\nset f [open forces.tsv w]\nputs $f \"2\t[format %.17g [lindex [eleResponse 2 axialForce] 0]]\"\nclose $f\nwipe\nexit 0\n",
+      "stderr.txt": "\n\n         OpenSees -- Open System For Earthquake Engineering Simulation\n                 Pacific Earthquake Engineering Research Center\n        Version 3.8.0 64-Bit (6e55293513192aa05c7e1205e66a5a1a1ed088c4)\n\n      (c) Copyright 1999-2016 The Regents of the University of California\n                              All Rights Reserved\n  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)\n\n\nWARNING BandGenLinLapackSolver::solve() -factorization failed, matrix singular U(i,i) = 0, i= 1\nWARNING Linear::solveCurrentStep() -the LinearSOE failed in solve()\nStaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1\nOpenSees > analyze failed, returned: -3 error flag\n",
+      "stdout.txt": "",
+      "summary.tsv": "version\t3.8.0\nconvergence\t-3\n"
+    }
+  }
+]

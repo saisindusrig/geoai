@@ -1,0 +1,1050 @@
+{
+  "1280": {
+    "first": {
+      "projectId": 991280,
+      "projectName": "Synthetic beam review 1280",
+      "revisionId": 991280,
+      "documentHash": "2486836e36b25c6f308b59b730f94b2437ca872881f5f2a0fd27e4f014e47970",
+      "candidate": {
+        "id": "assistant-beam:6d20e0dfb1803fc72d5b4ebe",
+        "parent_id": null,
+        "name": "Beam proposal A",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991280,
+          "revision_id": 991280,
+          "primitive": "beam",
+          "name": "Beam proposal A",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "fea6a4a9b4e97c2c96336cc4ee76cbc38b065771af5a7f3e2024b8b8edf18c3b"
+    },
+    "second": {
+      "projectId": 991280,
+      "projectName": "Synthetic beam review 1280",
+      "revisionId": 991280,
+      "documentHash": "2486836e36b25c6f308b59b730f94b2437ca872881f5f2a0fd27e4f014e47970",
+      "candidate": {
+        "id": "assistant-beam:fb7b2ef61bf2d9e233bcf8e7",
+        "parent_id": null,
+        "name": "Beam proposal B",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991280,
+          "revision_id": 991280,
+          "primitive": "beam",
+          "name": "Beam proposal B",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "15f6043f8162e8bc3a41739a2445055b24fac896632bb0768c5694253de7a54b"
+    },
+    "stale": {
+      "projectId": 991280,
+      "projectName": "Synthetic beam review 1280",
+      "revisionId": 991280,
+      "documentHash": "2486836e36b25c6f308b59b730f94b2437ca872881f5f2a0fd27e4f014e47970",
+      "candidate": {
+        "id": "assistant-beam:92f314de5777ee6710891153",
+        "parent_id": null,
+        "name": "Beam proposal C",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991280,
+          "revision_id": 991280,
+          "primitive": "beam",
+          "name": "Beam proposal C",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "b7e8a2de9f0af68b9b009b73b9aa849b875446168955abb17dfa5c9d1d2bacee"
+    },
+    "final": {
+      "projectId": 991280,
+      "projectName": "Synthetic beam review 1280",
+      "revisionId": 991280,
+      "documentHash": "2486836e36b25c6f308b59b730f94b2437ca872881f5f2a0fd27e4f014e47970",
+      "candidate": {
+        "id": "assistant-beam:581b57147300b3cc46285a79",
+        "parent_id": null,
+        "name": "Beam proposal D",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991280,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991280,
+          "revision_id": 991280,
+          "primitive": "beam",
+          "name": "Beam proposal D",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "529acb756f765980c2c59017ccff4958485155dad9ae4e4c863de6c57f1a39bc"
+    },
+    "cancel": {
+      "projectId": 991280,
+      "projectName": "Synthetic beam review 1280",
+      "revisionId": 991280,
+      "documentHash": "2486836e36b25c6f308b59b730f94b2437ca872881f5f2a0fd27e4f014e47970",
+      "kind": "workspace_action",
+      "operation": "cancel_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "cancel_primitive_preview",
+        "arguments": {
+          "project_id": 991280
+        }
+      },
+      "executed": false,
+      "actionId": "4dac58f3affe3dde7778a079e0237600bcce5d09c401e27020b48038df5d5e05"
+    }
+  },
+  "1600": {
+    "first": {
+      "projectId": 991600,
+      "projectName": "Synthetic beam review 1600",
+      "revisionId": 991600,
+      "documentHash": "3aadaa9f94936c9ca63bade95528fbae0e908d29dff63b5d041b3c4ed8ec014c",
+      "candidate": {
+        "id": "assistant-beam:5a6563a8e9b9865e61e95575",
+        "parent_id": null,
+        "name": "Beam proposal A",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991600,
+          "revision_id": 991600,
+          "primitive": "beam",
+          "name": "Beam proposal A",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "b6c79abd8eb93355aa41ac92789a3efd6eaae0616b3586c29d35ab43ad6ec35b"
+    },
+    "second": {
+      "projectId": 991600,
+      "projectName": "Synthetic beam review 1600",
+      "revisionId": 991600,
+      "documentHash": "3aadaa9f94936c9ca63bade95528fbae0e908d29dff63b5d041b3c4ed8ec014c",
+      "candidate": {
+        "id": "assistant-beam:eb4fbca31f23716030b4a16e",
+        "parent_id": null,
+        "name": "Beam proposal B",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991600,
+          "revision_id": 991600,
+          "primitive": "beam",
+          "name": "Beam proposal B",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "b1629db1d8b9ff1f7b008bf1aeee77c4148aacc849993e491b778be8bbe9029e"
+    },
+    "stale": {
+      "projectId": 991600,
+      "projectName": "Synthetic beam review 1600",
+      "revisionId": 991600,
+      "documentHash": "3aadaa9f94936c9ca63bade95528fbae0e908d29dff63b5d041b3c4ed8ec014c",
+      "candidate": {
+        "id": "assistant-beam:3faedce28f2cf3d77cca67d6",
+        "parent_id": null,
+        "name": "Beam proposal C",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991600,
+          "revision_id": 991600,
+          "primitive": "beam",
+          "name": "Beam proposal C",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "900c2747ef571cb3fe3f385e126e4c8bb4f04c579621e9f7e362498bf97715de"
+    },
+    "final": {
+      "projectId": 991600,
+      "projectName": "Synthetic beam review 1600",
+      "revisionId": 991600,
+      "documentHash": "3aadaa9f94936c9ca63bade95528fbae0e908d29dff63b5d041b3c4ed8ec014c",
+      "candidate": {
+        "id": "assistant-beam:e1b8bd7cbe2eee4623568272",
+        "parent_id": null,
+        "name": "Beam proposal D",
+        "category": "beam",
+        "visible": true,
+        "locked": false,
+        "geometry": {
+          "kind": "box",
+          "size": [
+            4.58257569495584,
+            0.3,
+            0.45
+          ]
+        },
+        "transform": {
+          "position": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "rotation_deg": [
+            5.710593137499642,
+            -11.255239732662094,
+            27.128220911916994
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "material": {
+          "name": "Conceptual geometry only",
+          "color": "#E879F9",
+          "roughness": 0.75,
+          "metalness": 0
+        },
+        "quantity": {
+          "included": false
+        },
+        "metadata": {
+          "source": "assistant_supervised_primitive",
+          "provenance": "user_dimensions_conceptual",
+          "base_revision_id": 991600,
+          "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+          "beam": {
+            "size": [
+              4.58257569495584,
+              0.3,
+              0.45
+            ],
+            "position": [
+              0.0,
+              1.0,
+              4.0
+            ],
+            "rotation_deg": [
+              5.710593137499642,
+              -11.255239732662094,
+              27.128220911916994
+            ],
+            "endpoints_enu_m": [
+              [
+                -2.0,
+                0.0,
+                3.5
+              ],
+              [
+                2.0,
+                2.0,
+                4.5
+              ]
+            ],
+            "length_m": 4.58257569495584,
+            "direction_enu": [
+              0.8728715609439696,
+              0.4364357804719848,
+              0.2182178902359924
+            ],
+            "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+          }
+        }
+      },
+      "requiresApproval": true,
+      "saved": false,
+      "kind": "workspace_action",
+      "operation": "prepare_beam_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "prepare_beam_preview",
+        "arguments": {
+          "project_id": 991600,
+          "revision_id": 991600,
+          "primitive": "beam",
+          "name": "Beam proposal D",
+          "units": "mm",
+          "endpoints": [
+            [
+              -2000.0,
+              0.0,
+              3500.0
+            ],
+            [
+              2000.0,
+              2000.0,
+              4500.0
+            ]
+          ],
+          "width": 300.0,
+          "depth": 450.0,
+          "position_reference": "local_enu",
+          "point_source": "user_explicit_enu",
+          "parent_id": null,
+          "provenance": "user_dimensions_conceptual"
+        }
+      },
+      "executed": false,
+      "actionId": "8c928b985d8554983eb74d46a72638f8d224f8959102b9ebfb38cd3b33ee7ab3"
+    },
+    "cancel": {
+      "projectId": 991600,
+      "projectName": "Synthetic beam review 1600",
+      "revisionId": 991600,
+      "documentHash": "3aadaa9f94936c9ca63bade95528fbae0e908d29dff63b5d041b3c4ed8ec014c",
+      "kind": "workspace_action",
+      "operation": "cancel_primitive_preview",
+      "componentIds": [],
+      "view": null,
+      "validation": {
+        "name": "cancel_primitive_preview",
+        "arguments": {
+          "project_id": 991600
+        }
+      },
+      "executed": false,
+      "actionId": "89afdcbf07633bc9b55ba74d6c6fee744cf729a99237ca1e17dba6a50a40381e"
+    }
+  }
+}

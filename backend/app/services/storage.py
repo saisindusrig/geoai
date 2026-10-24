@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import logging
 import os
+import tempfile
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -38,7 +39,7 @@ def public_api_base() -> str:
     render_url = os.environ.get("RENDER_EXTERNAL_URL", "").strip()
     if render_url:
         return render_url.rstrip("/")
-    return "http://localhost:8000"
+    return "http://localhost:8001"
 
 
 def local_file_url(key: str) -> str:
@@ -77,9 +78,13 @@ def _ensure_bucket(client, bucket: str) -> None:
 def _get_s3():
     global _s3_client, _s3_checked
     if _s3_checked:
+        if _s3_client is None and settings.ENVIRONMENT.lower() in ('prod', 'production'):
+            raise RuntimeError('Production storage unavailable; local fallback forbidden')
         return _s3_client
     _s3_checked = True
     if not _s3_configured():
+        if settings.ENVIRONMENT.lower() in ('prod', 'production'):
+            raise RuntimeError('Production requires explicitly configured private object storage')
         return None
     try:
         import boto3
@@ -105,11 +110,16 @@ def _get_s3():
                     client = boto3.client("s3", **kwargs)
             except Exception:
                 logger.debug("Could not resolve bucket region; using configured S3_REGION", exc_info=True)
-        _ensure_bucket(client, settings.S3_BUCKET)
+        if settings.ENVIRONMENT.lower() in ('prod', 'production'):
+            client.head_bucket(Bucket=settings.S3_BUCKET)  # Never provision resources at runtime.
+        else:
+            _ensure_bucket(client, settings.S3_BUCKET)
         _s3_client = client
         target = settings.S3_ENDPOINT or f"aws:s3:{settings.S3_REGION or 'default'}"
         logger.info("Using S3 storage (%s, bucket=%s)", target, settings.S3_BUCKET)
     except Exception:
+        if settings.ENVIRONMENT.lower() in ('prod', 'production'):
+            raise RuntimeError('Production object storage unavailable; local fallback forbidden') from None
         logger.warning("S3 unreachable; using local filesystem storage", exc_info=True)
         _s3_client = None
     return _s3_client
@@ -117,6 +127,10 @@ def _get_s3():
 
 def save_file(key: str, data: bytes, content_type: str) -> str:
     """Returns a URL the frontend can download from."""
+    root = Path(settings.LOCAL_STORAGE_DIR).resolve()
+    path = (root / key).resolve()
+    if not key or "\\" in key or not path.is_relative_to(root) or path == root:
+        raise ValueError("Storage key must stay inside the configured storage root")
     s3 = _get_s3()
     if s3 is not None:
         s3.put_object(Bucket=settings.S3_BUCKET, Key=key, Body=data, ContentType=content_type)
@@ -125,9 +139,19 @@ def save_file(key: str, data: bytes, content_type: str) -> str:
             Params={"Bucket": settings.S3_BUCKET, "Key": key},
             ExpiresIn=7 * 24 * 3600,
         )
-    path = Path(settings.LOCAL_STORAGE_DIR) / key
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(data)
+    # Same-filesystem staging: a failed write cannot expose partial final bytes.
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix='.publish-', delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(data)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
     return local_file_url(key)
 
 

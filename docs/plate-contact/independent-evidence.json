@@ -1,0 +1,134 @@
+{
+  "analysis_id": 315,
+  "revision_id": 88,
+  "source_analysis_id": 301,
+  "source_solver_version": "3.8.0",
+  "N_kn": 29.999999999999996,
+  "V_kn": -10.765080571577306,
+  "M_kn_m": 11.753693592818216,
+  "independent_eccentricity_mm": "391.7897864272739189053048570",
+  "kern_mm": "108.3333333333333333333333333",
+  "half_width_mm": "325.000",
+  "outside_plate_distance_mm": "66.78978642727391890530485700",
+  "contact": {
+    "compression_n": 29999.999999999996,
+    "moment_about_negative_north_nm": 11753.693592818216,
+    "width_east_m": 0.65,
+    "length_north_m": 0.65,
+    "area_m2": 0.42250000000000004,
+    "eccentricity_m": 0.3917897864272739,
+    "eccentricity_east_m": -0.3917897864272739,
+    "kern_limit_m": 0.10833333333333334,
+    "footprint_half_width_m": 0.325,
+    "mean_pressure_kpa": 71.0059171597633,
+    "pressure_min_kpa": null,
+    "pressure_max_kpa": null,
+    "pressure_at_minus_east_edge_kpa": null,
+    "pressure_at_plus_east_edge_kpa": null,
+    "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+    "full_connection_status": "NOT_YET_VERIFIED",
+    "shear_transfer": "NOT_YET_VERIFIED",
+    "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+    "anchor_resistance": "NOT_ASSUMED",
+    "capacity_check": "NOT_YET_VERIFIED",
+    "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+    "formulas": [
+      "e = M/N [m]",
+      "kern = B/6 [m]; footprint limit = B/2 [m]",
+      "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+      "p(\u2212B/2)=N/(BL)\u00d7(1+6e/B); p(+B/2)=N/(BL)\u00d7(1\u22126e/B) [Pa]",
+      "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+    ],
+    "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+    "contact_state": "RESULTANT_OUTSIDE_FOOTPRINT",
+    "compression_only_equilibrium": "IMPOSSIBLE",
+    "message": "Compression-only contact cannot equilibrate the full N/M demand: resultant lies outside the physical plate footprint.",
+    "contact_loss_detected": true
+  },
+  "independent_benchmarks": [
+    {
+      "force_n": 100000.0,
+      "applied_moment_nm": 0.0,
+      "independent_edge_pressures_kpa": [
+        333.3333333333333,
+        333.3333333333333
+      ],
+      "integrated_upward_force_n": 100000.00000000001,
+      "integrated_contact_moment_about_negative_north_nm": 0.0,
+      "moment_balance_nm": 0.0
+    },
+    {
+      "force_n": 100000.0,
+      "applied_moment_nm": 5000.0,
+      "independent_edge_pressures_kpa": [
+        500.0,
+        166.66666666666666
+      ],
+      "integrated_upward_force_n": 100000.0,
+      "integrated_contact_moment_about_negative_north_nm": -5000.000000000002,
+      "moment_balance_nm": -1.8189894035458565e-12
+    },
+    {
+      "force_n": 100000.0,
+      "applied_moment_nm": -5000.0,
+      "independent_edge_pressures_kpa": [
+        166.66666666666666,
+        500.0
+      ],
+      "integrated_upward_force_n": 100000.0,
+      "integrated_contact_moment_about_negative_north_nm": 5000.000000000002,
+      "moment_balance_nm": 1.8189894035458565e-12
+    },
+    {
+      "force_n": 100000.0,
+      "applied_moment_nm": 10000.0,
+      "independent_edge_pressures_kpa": [
+        666.6666666666666,
+        0.0
+      ],
+      "integrated_upward_force_n": 100000.00000000001,
+      "integrated_contact_moment_about_negative_north_nm": -10000.000000000002,
+      "moment_balance_nm": -1.8189894035458565e-12
+    },
+    {
+      "force_n": 50000.0,
+      "applied_moment_nm": 2500.0,
+      "independent_edge_pressures_kpa": [
+        250.0,
+        83.33333333333333
+      ],
+      "integrated_upward_force_n": 50000.0,
+      "integrated_contact_moment_about_negative_north_nm": -2500.000000000001,
+      "moment_balance_nm": -9.094947017729282e-13
+    }
+  ],
+  "all_45_source_components_unchanged": true,
+  "source_artifact_hashes_verified": {
+    "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+    "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+    "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+    "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+    "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+  },
+  "source_numerical_comparisons": {
+    "nodes": {
+      "max_absolute_error": 3.152945840023404e-19,
+      "passed": true
+    },
+    "reactions": {
+      "max_absolute_error": 1.8189894035458565e-11,
+      "passed": true
+    },
+    "forces": {
+      "max_absolute_error": 1.8189894035458565e-11,
+      "passed": true
+    },
+    "joint_equilibrium": {
+      "max_absolute_error": 1.4551915228366852e-11,
+      "passed": true
+    }
+  },
+  "engineering_approval": "DISABLED"
+}

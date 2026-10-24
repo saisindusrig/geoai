@@ -1,0 +1,10 @@
+import {describe,it,expect} from 'vitest';
+import {coupledOverlay,type CoupledCase} from './coupled-floor';
+import native from '../../docs/coupled-floor/validated-result.json';
+const c=native as unknown as CoupledCase,options={mode:'slab' as const,floor:0,force:'My' as const,scale:300,original:true,fit:true,isolate:true,animate:false,surfaces:true,inspection:''};
+describe('native coupled floor projection',()=>{
+ it('renders actual shell mesh and computed nodal colors, preserving source results',()=>{const before=JSON.stringify(c),o=coupledOverlay(c,options);expect(o.polygons).toHaveLength(256);expect(new Set(o.polygons.map(p=>p.color)).size).toBeGreaterThan(10);expect(o.polygons[0].positions).toEqual(c.shells[0].nodes.map(id=>c.nodes.find(n=>n.id===id)!.position));expect(o.displayOpacity?.['coupled-panel']).toBe(0);expect(JSON.stringify(c)).toBe(before);});
+ it('magnifies actual native shell displacement and supplies original geometry for animation',()=>{const o=coupledOverlay(c,{...options,mode:'deformation',animate:true}),p=o.polygons[50],n=c.nodes.find(n=>n.id===c.shells[50].nodes[0])!;expect(p.positions[0][2]).toBeCloseTo(n.position[2]+300*n.displacement[2],12);expect(p.basePositions?.[0]).toEqual(n.position);expect(o.animation?.periodSeconds).toBe(4);expect(o.animation?.basePaths.length).toBe(o.paths.length);});
+ it('displays pressure once and no invented tributary arrows',()=>{const o=coupledOverlay(c,{...options,mode:'loads'});expect(o.nodeMarkers.filter(n=>n.name.includes('Shell pressure total'))).toHaveLength(1);expect(o.nodeMarkers.at(-1)?.name).toContain('-80.0 kN');expect(o.paths.length).toBe(c.members.length+5);});
+ it('supports mesh face inspection and surface isolation without data changes',()=>{const o=coupledOverlay(c,{...options,inspection:'shell:1050'});expect(o.nodeMarkers.some(n=>n.inspectionKey==='shell:1050')).toBe(true);expect(coupledOverlay(c,{...options,surfaces:false}).polygons).toHaveLength(0);expect(coupledOverlay(c,{...options,mode:'forces'}).polygons.every(p=>p.componentId!=='coupled-panel')).toBe(true);});
+});

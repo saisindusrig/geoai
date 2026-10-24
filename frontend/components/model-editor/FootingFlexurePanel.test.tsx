@@ -1,0 +1,14 @@
+import {cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
+import {afterEach,expect,it,vi} from 'vitest';
+import FootingFlexurePanel,{flexureFixture} from './FootingFlexurePanel';
+import {api} from '@/lib/api';
+import type {EditableModelEditor} from '@/hooks/useEditableModelEditor';
+vi.mock('@/lib/api',()=>({api:{get:vi.fn(),post:vi.fn()},formatApiErrorMessage:(e:Error)=>e.message}));
+afterEach(()=>{cleanup();vi.clearAllMocks();});
+it('requires explicit footprint and synthetic-path review before preview and locks pending inputs',async()=>{
+ vi.mocked(api.get).mockResolvedValue({records:[],candidates:[]});vi.mocked(api.post).mockImplementation(()=>new Promise(()=>{}));render(<FootingFlexurePanel projectId={803} editor={{baseRevision:{id:123},dirty:false} as EditableModelEditor}/>);
+ const load=screen.getByRole('button',{name:'Load synthetic CAD footing demand inputs'});await waitFor(()=>expect(load).toBeEnabled());fireEvent.click(load);const preview=screen.getByRole('button',{name:'Preview footing demand mapping'});expect(preview).toBeDisabled();fireEvent.click(screen.getByRole('checkbox',{name:'Reviewed column footprint'}));expect(preview).toBeDisabled();fireEvent.click(screen.getByLabelText('Reviewed synthetic flexure assumptions'));expect(preview).toBeEnabled();fireEvent.click(preview);await waitFor(()=>expect(screen.getByLabelText('Synthetic column load kN')).toBeDisabled());expect(api.post).toHaveBeenCalledWith(expect.stringContaining('/footing-flexure/preview'),expect.objectContaining({benchmark:expect.objectContaining({reviewed_footprint:true,reviewed_assumptions:true})}));
+});
+it('marks saved demand stale and resets authorization when pressure or load changes',async()=>{
+ const inputs={model_revision_id:123,benchmark:{...flexureFixture,reviewed_footprint:true,reviewed_assumptions:true}},geometry={center_east_north_m:[.15,.15]},computed={faces:[{face:'East',projection_m:.45,moment_knm_per_m:10.125,full_cut_moment_knm:12.15}],upward_force_kn:144,force_residual_kn:0,global_moment_residual_knm:[0,0]};vi.mocked(api.get).mockResolvedValue({candidates:[],records:[{id:2,type:'FOOTING_FLEXURE_RESULT',status:'VERIFIED_SYNTHETIC_DEMAND_ONLY',result:{inputs,geometry,computed}},{id:1,type:'FOOTING_FLEXURE_PROPOSAL',status:'AWAITING_AUTHORIZATION',result:{inputs,geometry,proposal_sha256:'a'.repeat(64)}}]});render(<FootingFlexurePanel projectId={803} editor={{baseRevision:{id:123},dirty:false} as EditableModelEditor}/>);await screen.findByText(/moment 10.125000/);fireEvent.change(screen.getByLabelText('Prescribed net pressure kPa'),{target:{value:'200'}});expect(screen.getByRole('article',{name:'Footing bending demand results'})).toHaveTextContent('STALE');expect(screen.getByRole('button',{name:'Show column faces, pressure and moment demand'})).toBeDisabled();expect(screen.getByLabelText('Authorize exact footing demand')).toBeDisabled();
+});

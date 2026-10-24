@@ -30,6 +30,10 @@ backend/storage/
 # node
 node_modules/
 .next/
+.next-*/
+/.cache/
+/.cleanup-backups/
+/.cleanup-backup-path
 out/
 frontend/public/cesium/
 frontend/test-results/
@@ -70,7 +74,17 @@ frontend/playwright/.cache/
 /backend/evals/results/
 /backend/evals/results*.zip
 /backend/live-results/
+/backend/assistant-history.db
+/backend/assistant-history.db-*
 
 # Isolated CAD kernel evaluation dependencies and regenerable artifacts
 /backend/.cad-proof-deps/
 /backend/.cad-proof-output/
+
+# Local validation runtimes and temporary test workspaces
+.local-tooling/
+/pytest-of-*/
+/struvocivil-gate*/
+/docs/**/*.db
+/docs/**/*.sqlite
+/docs/**/*.sqlite3

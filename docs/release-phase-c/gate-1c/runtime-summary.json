@@ -1,0 +1,8 @@
+{
+  "admitted_runtime_records": 79,
+  "all_exact_Node24": true,
+  "owned_compiler_ipc_records": 4,
+  "all_compiler_worker_records_exact_Node24": true,
+  "retained_runtime_files_still_match": true,
+  "normal_runtime_not_restarted": true
+}

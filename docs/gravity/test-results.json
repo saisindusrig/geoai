@@ -1,0 +1,21 @@
+{
+  "backend": {
+    "passed": 60,
+    "failed": 0,
+    "warning": "Existing Starlette/httpx deprecation warning"
+  },
+  "browser": {
+    "full_gravity_workflow": "passed",
+    "existing_horizontal_workspace_read_only": "passed",
+    "saved_gravity_member_inspection_and_review_read_only": "passed",
+    "page_errors": []
+  },
+  "typescript": "passed",
+  "targeted_eslint": "passed",
+  "paid_inference_calls": 0,
+  "review_project_id": 783,
+  "saved_revision_id": 84,
+  "analysis_id": 290,
+  "engineering_approval": "DISABLED",
+  "design_code_checks": "DISABLED"
+}

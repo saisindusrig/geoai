@@ -19,6 +19,13 @@ export function transformMatrix(transform: EditableModelComponent["transform"]) 
     new THREE.Quaternion().setFromEuler(new THREE.Euler(...transform.rotation_deg.map(THREE.MathUtils.degToRad) as [number, number, number])),
     new THREE.Vector3(...transform.scale));
 }
+/** Inspect a rectangular member through the renderer's existing XYZ transform. */
+export function boxFrame(component:EditableModelComponent){
+  if(component.geometry.kind!=='box')throw Error('Box geometry required');
+  const matrix=transformMatrix(component.transform),half=component.geometry.size[0]/2;
+  const start=new THREE.Vector3(-half,0,0).applyMatrix4(matrix),end=new THREE.Vector3(half,0,0).applyMatrix4(matrix);
+  return {start,end,length:start.distanceTo(end),direction:end.clone().sub(start).normalize()};
+}
 /** Resolve endpoint geometry through the same saved transform used by the editor. */
 export function cylinderFrame(component: EditableModelComponent) {
   if (component.geometry.kind !== "cylinder" && component.geometry.kind !== "sweep") throw new Error("Cylinder geometry required");

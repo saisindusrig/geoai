@@ -1,0 +1,231 @@
+{
+  "results": [
+    {
+      "route": "/login",
+      "width": 390,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/dashboard",
+      "width": 390,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/workspace",
+      "width": 390,
+      "axe": {
+        "violations": [],
+        "incomplete": []
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/projects/2/report",
+      "width": 390,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/login",
+      "width": 1280,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/dashboard",
+      "width": 1280,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/workspace",
+      "width": 1280,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/report",
+      "width": 1280,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/login",
+      "width": 1440,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/dashboard",
+      "width": 1440,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/workspace",
+      "width": 1440,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/report",
+      "width": 1440,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/login",
+      "width": 1920,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr"
+        ]
+      },
+      "canvas": 0
+    },
+    {
+      "route": "/dashboard",
+      "width": 1920,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/workspace",
+      "width": 1920,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 1
+    },
+    {
+      "route": "/projects/2/report",
+      "width": 1920,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "aria-prohibited-attr",
+          "color-contrast"
+        ]
+      },
+      "canvas": 0
+    }
+  ],
+  "zoom": [
+    {
+      "route": "/login",
+      "actual": 2,
+      "width": 720,
+      "desktopRequired": false
+    },
+    {
+      "route": "/dashboard",
+      "actual": 2,
+      "width": 720,
+      "desktopRequired": false
+    },
+    {
+      "route": "/projects/2/report",
+      "actual": 2,
+      "width": 720,
+      "desktopRequired": false
+    },
+    {
+      "route": "/projects/2/workspace",
+      "actual": 2,
+      "width": 720,
+      "desktopRequired": true
+    }
+  ],
+  "focus": {
+    "outline": "solid",
+    "focused": true,
+    "forced": true,
+    "reduced": true
+  },
+  "library": {
+    "before": {
+      "canvas": 8,
+      "heap": 283744521
+    },
+    "after": {
+      "canvas": 12,
+      "heap": 310972529
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5",
+  "matches_previously_signed_archive": true,
+  "critical_files": {
+    "node.exe": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
+    "node_modules/npm/bin/npm-cli.js": "3ce7cba6f5128dd5f54c98b6a5036b0f850496878cc2e21044b675fe3c594e3e",
+    "node_modules/npm/package.json": "d5b859b88af16e893fbc2d28819db601a8543b241f8c80459f70898be2777c12",
+    "npm.cmd": "21b46c69ad6e2f231f02a9e120f4ba6c8e75fef5a45637103002eab99f888ab8",
+    "npm": "13372aa943f8eb32c9a8b6f946ed6a49118edd60051321953288b1f35611aefb",
+    "npm.ps1": "e8aedc8c76d6cb9423b70ede071228f7cb1644094c114b8721ae6d121100d4fe"
+  },
+  "node": "v24.22.1",
+  "npm": "11.19.1"
+}

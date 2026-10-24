@@ -1,0 +1,2269 @@
+{
+  "cases": [
+    {
+      "label": "Concentric",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 0.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 0.0,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "FULL_CONTACT",
+        "verification": "VERIFIED_SYNTHETIC_MECHANICS_ONLY",
+        "contact_interval_east_m": [
+          -1.0,
+          1.0
+        ],
+        "contact_area_m2": 4.0,
+        "pmin_pa": 50000.0,
+        "pmax_pa": 50000.0,
+        "delta_down_m": 0.0025,
+        "theta_north_rad": 0.0,
+        "opposite_edge_gap_m": 0,
+        "force_integral_n": 200000.0,
+        "moment_integral_nm": 0.0,
+        "residual_n_nm": [
+          0.0,
+          0.0
+        ],
+        "numerical_reference": [
+          {
+            "cells": 200,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 0.0,
+            "pmax_pa": 50000.0
+          },
+          {
+            "cells": 400,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": -1.3322759562749144e-19,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 0.0,
+            "pmax_pa": 50000.0
+          },
+          {
+            "cells": 800,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 2.664539422443224e-19,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 0.0,
+            "pmax_pa": 50000.00000000001
+          }
+        ],
+        "pressure_samples": [
+          {
+            "x_m": -1.0,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.95,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.9,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.85,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.8,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.75,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.7,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.65,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.6,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.55,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.5,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.44999999999999996,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.4,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.35,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.30000000000000004,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.25,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.19999999999999996,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.15000000000000002,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.09999999999999998,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": -0.050000000000000044,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.0,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.050000000000000044,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.10000000000000009,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.1499999999999999,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.19999999999999996,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.25,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.30000000000000004,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.3500000000000001,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.3999999999999999,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.44999999999999996,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.5,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.55,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.6000000000000001,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.6499999999999999,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.7,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.75,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.8,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.8500000000000001,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.8999999999999999,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.95,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 1.0,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          }
+        ],
+        "formulas": "Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2)."
+      }
+    },
+    {
+      "label": "Full contact",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 40000.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 0.2,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "FULL_CONTACT",
+        "verification": "VERIFIED_SYNTHETIC_MECHANICS_ONLY",
+        "contact_interval_east_m": [
+          -1.0,
+          1.0
+        ],
+        "contact_area_m2": 4.0,
+        "pmin_pa": 20000.0,
+        "pmax_pa": 80000.0,
+        "delta_down_m": 0.0025,
+        "theta_north_rad": 0.0015,
+        "opposite_edge_gap_m": 0,
+        "force_integral_n": 200000.0,
+        "moment_integral_nm": 40000.00000000002,
+        "residual_n_nm": [
+          0.0,
+          2.1827872842550278e-11
+        ],
+        "numerical_reference": [
+          {
+            "cells": 200,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0015000375009375233,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 39999.99999999999,
+            "pmax_pa": 80000.75001875048
+          },
+          {
+            "cells": 400,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0015000093750585938,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 39999.999999999985,
+            "pmax_pa": 80000.18750117188
+          },
+          {
+            "cells": 800,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0015000023437536628,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 40000.00000000001,
+            "pmax_pa": 80000.04687507325
+          }
+        ],
+        "pressure_samples": [
+          {
+            "x_m": -1.0,
+            "p_pa": 20000.0,
+            "down_m": 0.001
+          },
+          {
+            "x_m": -0.95,
+            "p_pa": 21500.0,
+            "down_m": 0.001075
+          },
+          {
+            "x_m": -0.9,
+            "p_pa": 23000.0,
+            "down_m": 0.00115
+          },
+          {
+            "x_m": -0.85,
+            "p_pa": 24500.0,
+            "down_m": 0.001225
+          },
+          {
+            "x_m": -0.8,
+            "p_pa": 26000.0,
+            "down_m": 0.0013
+          },
+          {
+            "x_m": -0.75,
+            "p_pa": 27500.0,
+            "down_m": 0.001375
+          },
+          {
+            "x_m": -0.7,
+            "p_pa": 29000.000000000004,
+            "down_m": 0.0014500000000000001
+          },
+          {
+            "x_m": -0.65,
+            "p_pa": 30499.999999999996,
+            "down_m": 0.0015249999999999999
+          },
+          {
+            "x_m": -0.6,
+            "p_pa": 32000.0,
+            "down_m": 0.0016
+          },
+          {
+            "x_m": -0.55,
+            "p_pa": 33500.0,
+            "down_m": 0.0016749999999999998
+          },
+          {
+            "x_m": -0.5,
+            "p_pa": 35000.0,
+            "down_m": 0.00175
+          },
+          {
+            "x_m": -0.44999999999999996,
+            "p_pa": 36500.00000000001,
+            "down_m": 0.0018250000000000002
+          },
+          {
+            "x_m": -0.4,
+            "p_pa": 38000.0,
+            "down_m": 0.0019
+          },
+          {
+            "x_m": -0.35,
+            "p_pa": 39500.00000000001,
+            "down_m": 0.001975
+          },
+          {
+            "x_m": -0.30000000000000004,
+            "p_pa": 40999.99999999999,
+            "down_m": 0.0020499999999999997
+          },
+          {
+            "x_m": -0.25,
+            "p_pa": 42500.0,
+            "down_m": 0.002125
+          },
+          {
+            "x_m": -0.19999999999999996,
+            "p_pa": 44000.0,
+            "down_m": 0.0022
+          },
+          {
+            "x_m": -0.15000000000000002,
+            "p_pa": 45500.0,
+            "down_m": 0.002275
+          },
+          {
+            "x_m": -0.09999999999999998,
+            "p_pa": 47000.0,
+            "down_m": 0.00235
+          },
+          {
+            "x_m": -0.050000000000000044,
+            "p_pa": 48500.0,
+            "down_m": 0.002425
+          },
+          {
+            "x_m": 0.0,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.050000000000000044,
+            "p_pa": 51500.0,
+            "down_m": 0.002575
+          },
+          {
+            "x_m": 0.10000000000000009,
+            "p_pa": 53000.0,
+            "down_m": 0.00265
+          },
+          {
+            "x_m": 0.1499999999999999,
+            "p_pa": 54500.0,
+            "down_m": 0.002725
+          },
+          {
+            "x_m": 0.19999999999999996,
+            "p_pa": 56000.0,
+            "down_m": 0.0028
+          },
+          {
+            "x_m": 0.25,
+            "p_pa": 57500.0,
+            "down_m": 0.002875
+          },
+          {
+            "x_m": 0.30000000000000004,
+            "p_pa": 59000.00000000001,
+            "down_m": 0.0029500000000000004
+          },
+          {
+            "x_m": 0.3500000000000001,
+            "p_pa": 60500.00000000001,
+            "down_m": 0.0030250000000000003
+          },
+          {
+            "x_m": 0.3999999999999999,
+            "p_pa": 62000.0,
+            "down_m": 0.0031
+          },
+          {
+            "x_m": 0.44999999999999996,
+            "p_pa": 63500.0,
+            "down_m": 0.003175
+          },
+          {
+            "x_m": 0.5,
+            "p_pa": 65000.00000000001,
+            "down_m": 0.0032500000000000003
+          },
+          {
+            "x_m": 0.55,
+            "p_pa": 66500.0,
+            "down_m": 0.0033250000000000003
+          },
+          {
+            "x_m": 0.6000000000000001,
+            "p_pa": 68000.0,
+            "down_m": 0.0034000000000000002
+          },
+          {
+            "x_m": 0.6499999999999999,
+            "p_pa": 69500.0,
+            "down_m": 0.003475
+          },
+          {
+            "x_m": 0.7,
+            "p_pa": 71000.0,
+            "down_m": 0.00355
+          },
+          {
+            "x_m": 0.75,
+            "p_pa": 72500.0,
+            "down_m": 0.003625
+          },
+          {
+            "x_m": 0.8,
+            "p_pa": 74000.0,
+            "down_m": 0.0037
+          },
+          {
+            "x_m": 0.8500000000000001,
+            "p_pa": 75500.0,
+            "down_m": 0.003775
+          },
+          {
+            "x_m": 0.8999999999999999,
+            "p_pa": 77000.0,
+            "down_m": 0.00385
+          },
+          {
+            "x_m": 0.95,
+            "p_pa": 78500.0,
+            "down_m": 0.003925
+          },
+          {
+            "x_m": 1.0,
+            "p_pa": 80000.0,
+            "down_m": 0.004
+          }
+        ],
+        "formulas": "Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2)."
+      }
+    },
+    {
+      "label": "Kern boundary",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 66666.66666666667,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 0.33333333333333337,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "FULL_CONTACT",
+        "verification": "VERIFIED_SYNTHETIC_MECHANICS_ONLY",
+        "contact_interval_east_m": [
+          -1.0,
+          1.0
+        ],
+        "contact_area_m2": 4.0,
+        "pmin_pa": 0,
+        "pmax_pa": 100000.0,
+        "delta_down_m": 0.0025,
+        "theta_north_rad": 0.0025,
+        "opposite_edge_gap_m": 0,
+        "force_integral_n": 200000.0,
+        "moment_integral_nm": 66666.66666666667,
+        "residual_n_nm": [
+          0.0,
+          0.0
+        ],
+        "numerical_reference": [
+          {
+            "cells": 200,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.002500062501562539,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 66666.66666666666,
+            "pmax_pa": 100001.25003125079
+          },
+          {
+            "cells": 400,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0025000156250976568,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 66666.66666666666,
+            "pmax_pa": 100000.31250195313
+          },
+          {
+            "cells": 800,
+            "iterations": 1,
+            "delta_m": 0.0025,
+            "theta_rad": 0.0025000039062561042,
+            "contact_area_m2": 4.0,
+            "force_n": 200000.0,
+            "moment_nm": 66666.6666666667,
+            "pmax_pa": 100000.07812512209
+          }
+        ],
+        "pressure_samples": [
+          {
+            "x_m": -1.0,
+            "p_pa": 0.0,
+            "down_m": 0.0
+          },
+          {
+            "x_m": -0.95,
+            "p_pa": 2500.0000000000023,
+            "down_m": 0.0001250000000000001
+          },
+          {
+            "x_m": -0.9,
+            "p_pa": 4999.999999999995,
+            "down_m": 0.0002499999999999998
+          },
+          {
+            "x_m": -0.85,
+            "p_pa": 7499.999999999998,
+            "down_m": 0.0003749999999999999
+          },
+          {
+            "x_m": -0.8,
+            "p_pa": 10000.0,
+            "down_m": 0.0005
+          },
+          {
+            "x_m": -0.75,
+            "p_pa": 12500.000000000002,
+            "down_m": 0.0006250000000000001
+          },
+          {
+            "x_m": -0.7,
+            "p_pa": 15000.000000000005,
+            "down_m": 0.0007500000000000002
+          },
+          {
+            "x_m": -0.65,
+            "p_pa": 17500.0,
+            "down_m": 0.0008749999999999999
+          },
+          {
+            "x_m": -0.6,
+            "p_pa": 20000.0,
+            "down_m": 0.001
+          },
+          {
+            "x_m": -0.55,
+            "p_pa": 22500.0,
+            "down_m": 0.001125
+          },
+          {
+            "x_m": -0.5,
+            "p_pa": 25000.0,
+            "down_m": 0.00125
+          },
+          {
+            "x_m": -0.44999999999999996,
+            "p_pa": 27500.000000000004,
+            "down_m": 0.0013750000000000001
+          },
+          {
+            "x_m": -0.4,
+            "p_pa": 30000.0,
+            "down_m": 0.0015
+          },
+          {
+            "x_m": -0.35,
+            "p_pa": 32500.000000000004,
+            "down_m": 0.0016250000000000001
+          },
+          {
+            "x_m": -0.30000000000000004,
+            "p_pa": 35000.0,
+            "down_m": 0.0017499999999999998
+          },
+          {
+            "x_m": -0.25,
+            "p_pa": 37500.0,
+            "down_m": 0.001875
+          },
+          {
+            "x_m": -0.19999999999999996,
+            "p_pa": 40000.0,
+            "down_m": 0.002
+          },
+          {
+            "x_m": -0.15000000000000002,
+            "p_pa": 42500.0,
+            "down_m": 0.002125
+          },
+          {
+            "x_m": -0.09999999999999998,
+            "p_pa": 45000.00000000001,
+            "down_m": 0.0022500000000000003
+          },
+          {
+            "x_m": -0.050000000000000044,
+            "p_pa": 47500.0,
+            "down_m": 0.002375
+          },
+          {
+            "x_m": 0.0,
+            "p_pa": 50000.0,
+            "down_m": 0.0025
+          },
+          {
+            "x_m": 0.050000000000000044,
+            "p_pa": 52500.0,
+            "down_m": 0.002625
+          },
+          {
+            "x_m": 0.10000000000000009,
+            "p_pa": 55000.00000000001,
+            "down_m": 0.0027500000000000003
+          },
+          {
+            "x_m": 0.1499999999999999,
+            "p_pa": 57500.0,
+            "down_m": 0.002875
+          },
+          {
+            "x_m": 0.19999999999999996,
+            "p_pa": 60000.0,
+            "down_m": 0.003
+          },
+          {
+            "x_m": 0.25,
+            "p_pa": 62500.0,
+            "down_m": 0.003125
+          },
+          {
+            "x_m": 0.30000000000000004,
+            "p_pa": 65000.00000000001,
+            "down_m": 0.0032500000000000003
+          },
+          {
+            "x_m": 0.3500000000000001,
+            "p_pa": 67500.00000000001,
+            "down_m": 0.0033750000000000004
+          },
+          {
+            "x_m": 0.3999999999999999,
+            "p_pa": 70000.0,
+            "down_m": 0.0034999999999999996
+          },
+          {
+            "x_m": 0.44999999999999996,
+            "p_pa": 72500.0,
+            "down_m": 0.0036249999999999998
+          },
+          {
+            "x_m": 0.5,
+            "p_pa": 75000.0,
+            "down_m": 0.00375
+          },
+          {
+            "x_m": 0.55,
+            "p_pa": 77500.0,
+            "down_m": 0.003875
+          },
+          {
+            "x_m": 0.6000000000000001,
+            "p_pa": 80000.0,
+            "down_m": 0.004
+          },
+          {
+            "x_m": 0.6499999999999999,
+            "p_pa": 82500.0,
+            "down_m": 0.004125
+          },
+          {
+            "x_m": 0.7,
+            "p_pa": 85000.0,
+            "down_m": 0.00425
+          },
+          {
+            "x_m": 0.75,
+            "p_pa": 87500.00000000001,
+            "down_m": 0.004375
+          },
+          {
+            "x_m": 0.8,
+            "p_pa": 90000.00000000001,
+            "down_m": 0.0045000000000000005
+          },
+          {
+            "x_m": 0.8500000000000001,
+            "p_pa": 92500.00000000001,
+            "down_m": 0.004625000000000001
+          },
+          {
+            "x_m": 0.8999999999999999,
+            "p_pa": 95000.0,
+            "down_m": 0.00475
+          },
+          {
+            "x_m": 0.95,
+            "p_pa": 97500.0,
+            "down_m": 0.004875
+          },
+          {
+            "x_m": 1.0,
+            "p_pa": 100000.0,
+            "down_m": 0.005
+          }
+        ],
+        "formulas": "Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2)."
+      }
+    },
+    {
+      "label": "Partial contact",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 100000.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 0.5,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "PARTIAL_CONTACT",
+        "verification": "VERIFIED_SYNTHETIC_MECHANICS_ONLY",
+        "contact_interval_east_m": [
+          -0.5,
+          1.0
+        ],
+        "contact_area_m2": 3.0,
+        "pmin_pa": 0,
+        "pmax_pa": 133333.3333333333,
+        "delta_down_m": 0.0022222222222222222,
+        "theta_north_rad": 0.0044444444444444444,
+        "opposite_edge_gap_m": 0.0022222222222222222,
+        "force_integral_n": 200000.0,
+        "moment_integral_nm": 100000.00000000001,
+        "residual_n_nm": [
+          0.0,
+          1.4551915228366852e-11
+        ],
+        "numerical_reference": [
+          {
+            "cells": 200,
+            "iterations": 4,
+            "delta_m": 0.0022221728373112886,
+            "theta_rad": 0.004444641984088182,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.0000000001,
+            "moment_nm": 100000.00000000001,
+            "pmax_pa": 133336.2964279894
+          },
+          {
+            "cells": 400,
+            "iterations": 4,
+            "delta_m": 0.0022222098764060347,
+            "theta_rad": 0.004444493827709195,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.0,
+            "moment_nm": 100000.0,
+            "pmax_pa": 133334.0740823046
+          },
+          {
+            "cells": 800,
+            "iterations": 4,
+            "delta_m": 0.002222219135793896,
+            "theta_rad": 0.004444456790157749,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.0,
+            "moment_nm": 100000.0,
+            "pmax_pa": 133333.51851903292
+          }
+        ],
+        "pressure_samples": [
+          {
+            "x_m": -1.0,
+            "p_pa": 0.0,
+            "down_m": -0.0022222222222222222
+          },
+          {
+            "x_m": -0.95,
+            "p_pa": 0.0,
+            "down_m": -0.0019999999999999996
+          },
+          {
+            "x_m": -0.9,
+            "p_pa": 0.0,
+            "down_m": -0.0017777777777777779
+          },
+          {
+            "x_m": -0.85,
+            "p_pa": 0.0,
+            "down_m": -0.0015555555555555553
+          },
+          {
+            "x_m": -0.8,
+            "p_pa": 0.0,
+            "down_m": -0.0013333333333333335
+          },
+          {
+            "x_m": -0.75,
+            "p_pa": 0.0,
+            "down_m": -0.001111111111111111
+          },
+          {
+            "x_m": -0.7,
+            "p_pa": 0.0,
+            "down_m": -0.0008888888888888887
+          },
+          {
+            "x_m": -0.65,
+            "p_pa": 0.0,
+            "down_m": -0.000666666666666667
+          },
+          {
+            "x_m": -0.6,
+            "p_pa": 0.0,
+            "down_m": -0.00044444444444444436
+          },
+          {
+            "x_m": -0.55,
+            "p_pa": 0.0,
+            "down_m": -0.0002222222222222226
+          },
+          {
+            "x_m": -0.5,
+            "p_pa": 0.0,
+            "down_m": 0.0
+          },
+          {
+            "x_m": -0.44999999999999996,
+            "p_pa": 4444.4444444444525,
+            "down_m": 0.0002222222222222226
+          },
+          {
+            "x_m": -0.4,
+            "p_pa": 8888.888888888887,
+            "down_m": 0.00044444444444444436
+          },
+          {
+            "x_m": -0.35,
+            "p_pa": 13333.333333333336,
+            "down_m": 0.0006666666666666668
+          },
+          {
+            "x_m": -0.30000000000000004,
+            "p_pa": 17777.777777777774,
+            "down_m": 0.0008888888888888887
+          },
+          {
+            "x_m": -0.25,
+            "p_pa": 22222.222222222223,
+            "down_m": 0.0011111111111111111
+          },
+          {
+            "x_m": -0.19999999999999996,
+            "p_pa": 26666.66666666667,
+            "down_m": 0.0013333333333333335
+          },
+          {
+            "x_m": -0.15000000000000002,
+            "p_pa": 31111.11111111111,
+            "down_m": 0.0015555555555555555
+          },
+          {
+            "x_m": -0.09999999999999998,
+            "p_pa": 35555.555555555555,
+            "down_m": 0.0017777777777777779
+          },
+          {
+            "x_m": -0.050000000000000044,
+            "p_pa": 39999.99999999999,
+            "down_m": 0.0019999999999999996
+          },
+          {
+            "x_m": 0.0,
+            "p_pa": 44444.444444444445,
+            "down_m": 0.0022222222222222222
+          },
+          {
+            "x_m": 0.050000000000000044,
+            "p_pa": 48888.8888888889,
+            "down_m": 0.002444444444444445
+          },
+          {
+            "x_m": 0.10000000000000009,
+            "p_pa": 53333.33333333334,
+            "down_m": 0.002666666666666667
+          },
+          {
+            "x_m": 0.1499999999999999,
+            "p_pa": 57777.777777777774,
+            "down_m": 0.0028888888888888888
+          },
+          {
+            "x_m": 0.19999999999999996,
+            "p_pa": 62222.22222222222,
+            "down_m": 0.003111111111111111
+          },
+          {
+            "x_m": 0.25,
+            "p_pa": 66666.66666666666,
+            "down_m": 0.003333333333333333
+          },
+          {
+            "x_m": 0.30000000000000004,
+            "p_pa": 71111.11111111111,
+            "down_m": 0.0035555555555555557
+          },
+          {
+            "x_m": 0.3500000000000001,
+            "p_pa": 75555.55555555556,
+            "down_m": 0.0037777777777777783
+          },
+          {
+            "x_m": 0.3999999999999999,
+            "p_pa": 80000.0,
+            "down_m": 0.004
+          },
+          {
+            "x_m": 0.44999999999999996,
+            "p_pa": 84444.44444444444,
+            "down_m": 0.004222222222222222
+          },
+          {
+            "x_m": 0.5,
+            "p_pa": 88888.88888888889,
+            "down_m": 0.0044444444444444444
+          },
+          {
+            "x_m": 0.55,
+            "p_pa": 93333.33333333334,
+            "down_m": 0.004666666666666667
+          },
+          {
+            "x_m": 0.6000000000000001,
+            "p_pa": 97777.77777777778,
+            "down_m": 0.004888888888888889
+          },
+          {
+            "x_m": 0.6499999999999999,
+            "p_pa": 102222.2222222222,
+            "down_m": 0.0051111111111111105
+          },
+          {
+            "x_m": 0.7,
+            "p_pa": 106666.66666666666,
+            "down_m": 0.005333333333333333
+          },
+          {
+            "x_m": 0.75,
+            "p_pa": 111111.1111111111,
+            "down_m": 0.005555555555555555
+          },
+          {
+            "x_m": 0.8,
+            "p_pa": 115555.55555555555,
+            "down_m": 0.0057777777777777775
+          },
+          {
+            "x_m": 0.8500000000000001,
+            "p_pa": 120000.0,
+            "down_m": 0.006
+          },
+          {
+            "x_m": 0.8999999999999999,
+            "p_pa": 124444.44444444442,
+            "down_m": 0.006222222222222221
+          },
+          {
+            "x_m": 0.95,
+            "p_pa": 128888.88888888888,
+            "down_m": 0.006444444444444444
+          },
+          {
+            "x_m": 1.0,
+            "p_pa": 133333.3333333333,
+            "down_m": 0.006666666666666666
+          }
+        ],
+        "formulas": "Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2)."
+      }
+    },
+    {
+      "label": "Reversed eccentricity",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": -100000.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": -0.5,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "PARTIAL_CONTACT",
+        "verification": "VERIFIED_SYNTHETIC_MECHANICS_ONLY",
+        "contact_interval_east_m": [
+          -1.0,
+          0.5
+        ],
+        "contact_area_m2": 3.0,
+        "pmin_pa": 0,
+        "pmax_pa": 133333.3333333333,
+        "delta_down_m": 0.0022222222222222222,
+        "theta_north_rad": -0.0044444444444444444,
+        "opposite_edge_gap_m": 0.0022222222222222222,
+        "force_integral_n": 200000.0,
+        "moment_integral_nm": -100000.00000000001,
+        "residual_n_nm": [
+          0.0,
+          -1.4551915228366852e-11
+        ],
+        "numerical_reference": [
+          {
+            "cells": 200,
+            "iterations": 4,
+            "delta_m": 0.0022221728373112886,
+            "theta_rad": -0.00444464198408818,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.00000000003,
+            "moment_nm": -99999.99999999999,
+            "pmax_pa": 133336.29642798938
+          },
+          {
+            "cells": 400,
+            "iterations": 4,
+            "delta_m": 0.0022222098764060343,
+            "theta_rad": -0.004444493827709197,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.00000000003,
+            "moment_nm": -100000.0,
+            "pmax_pa": 133334.0740823046
+          },
+          {
+            "cells": 800,
+            "iterations": 4,
+            "delta_m": 0.002222219135793895,
+            "theta_rad": -0.004444456790157753,
+            "contact_area_m2": 3.0,
+            "force_n": 200000.0,
+            "moment_nm": -100000.0,
+            "pmax_pa": 133333.51851903295
+          }
+        ],
+        "pressure_samples": [
+          {
+            "x_m": -1.0,
+            "p_pa": 133333.3333333333,
+            "down_m": 0.006666666666666666
+          },
+          {
+            "x_m": -0.95,
+            "p_pa": 128888.88888888888,
+            "down_m": 0.006444444444444444
+          },
+          {
+            "x_m": -0.9,
+            "p_pa": 124444.44444444445,
+            "down_m": 0.006222222222222223
+          },
+          {
+            "x_m": -0.85,
+            "p_pa": 120000.0,
+            "down_m": 0.006
+          },
+          {
+            "x_m": -0.8,
+            "p_pa": 115555.55555555555,
+            "down_m": 0.0057777777777777775
+          },
+          {
+            "x_m": -0.75,
+            "p_pa": 111111.1111111111,
+            "down_m": 0.005555555555555555
+          },
+          {
+            "x_m": -0.7,
+            "p_pa": 106666.66666666666,
+            "down_m": 0.005333333333333333
+          },
+          {
+            "x_m": -0.65,
+            "p_pa": 102222.22222222223,
+            "down_m": 0.005111111111111111
+          },
+          {
+            "x_m": -0.6,
+            "p_pa": 97777.77777777778,
+            "down_m": 0.004888888888888889
+          },
+          {
+            "x_m": -0.55,
+            "p_pa": 93333.33333333334,
+            "down_m": 0.004666666666666667
+          },
+          {
+            "x_m": -0.5,
+            "p_pa": 88888.88888888889,
+            "down_m": 0.0044444444444444444
+          },
+          {
+            "x_m": -0.44999999999999996,
+            "p_pa": 84444.44444444444,
+            "down_m": 0.004222222222222222
+          },
+          {
+            "x_m": -0.4,
+            "p_pa": 80000.0,
+            "down_m": 0.004
+          },
+          {
+            "x_m": -0.35,
+            "p_pa": 75555.55555555555,
+            "down_m": 0.0037777777777777775
+          },
+          {
+            "x_m": -0.30000000000000004,
+            "p_pa": 71111.11111111111,
+            "down_m": 0.0035555555555555557
+          },
+          {
+            "x_m": -0.25,
+            "p_pa": 66666.66666666666,
+            "down_m": 0.003333333333333333
+          },
+          {
+            "x_m": -0.19999999999999996,
+            "p_pa": 62222.22222222222,
+            "down_m": 0.003111111111111111
+          },
+          {
+            "x_m": -0.15000000000000002,
+            "p_pa": 57777.777777777774,
+            "down_m": 0.0028888888888888888
+          },
+          {
+            "x_m": -0.09999999999999998,
+            "p_pa": 53333.33333333333,
+            "down_m": 0.0026666666666666666
+          },
+          {
+            "x_m": -0.050000000000000044,
+            "p_pa": 48888.8888888889,
+            "down_m": 0.002444444444444445
+          },
+          {
+            "x_m": 0.0,
+            "p_pa": 44444.444444444445,
+            "down_m": 0.0022222222222222222
+          },
+          {
+            "x_m": 0.050000000000000044,
+            "p_pa": 39999.99999999999,
+            "down_m": 0.0019999999999999996
+          },
+          {
+            "x_m": 0.10000000000000009,
+            "p_pa": 35555.55555555555,
+            "down_m": 0.0017777777777777774
+          },
+          {
+            "x_m": 0.1499999999999999,
+            "p_pa": 31111.111111111117,
+            "down_m": 0.001555555555555556
+          },
+          {
+            "x_m": 0.19999999999999996,
+            "p_pa": 26666.66666666667,
+            "down_m": 0.0013333333333333335
+          },
+          {
+            "x_m": 0.25,
+            "p_pa": 22222.222222222223,
+            "down_m": 0.0011111111111111111
+          },
+          {
+            "x_m": 0.30000000000000004,
+            "p_pa": 17777.777777777774,
+            "down_m": 0.0008888888888888887
+          },
+          {
+            "x_m": 0.3500000000000001,
+            "p_pa": 13333.333333333327,
+            "down_m": 0.0006666666666666663
+          },
+          {
+            "x_m": 0.3999999999999999,
+            "p_pa": 8888.888888888896,
+            "down_m": 0.0004444444444444448
+          },
+          {
+            "x_m": 0.44999999999999996,
+            "p_pa": 4444.4444444444525,
+            "down_m": 0.0002222222222222226
+          },
+          {
+            "x_m": 0.5,
+            "p_pa": 0.0,
+            "down_m": 0.0
+          },
+          {
+            "x_m": 0.55,
+            "p_pa": 0.0,
+            "down_m": -0.0002222222222222226
+          },
+          {
+            "x_m": 0.6000000000000001,
+            "p_pa": 0.0,
+            "down_m": -0.0004444444444444448
+          },
+          {
+            "x_m": 0.6499999999999999,
+            "p_pa": 0.0,
+            "down_m": -0.0006666666666666661
+          },
+          {
+            "x_m": 0.7,
+            "p_pa": 0.0,
+            "down_m": -0.0008888888888888887
+          },
+          {
+            "x_m": 0.75,
+            "p_pa": 0.0,
+            "down_m": -0.001111111111111111
+          },
+          {
+            "x_m": 0.8,
+            "p_pa": 0.0,
+            "down_m": -0.0013333333333333335
+          },
+          {
+            "x_m": 0.8500000000000001,
+            "p_pa": 0.0,
+            "down_m": -0.0015555555555555561
+          },
+          {
+            "x_m": 0.8999999999999999,
+            "p_pa": 0.0,
+            "down_m": -0.001777777777777777
+          },
+          {
+            "x_m": 0.95,
+            "p_pa": 0.0,
+            "down_m": -0.0019999999999999996
+          },
+          {
+            "x_m": 1.0,
+            "p_pa": 0.0,
+            "down_m": -0.0022222222222222222
+          }
+        ],
+        "formulas": "Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2)."
+      }
+    },
+    {
+      "label": "Edge resultant",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 200000.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 1.0,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "IMPOSSIBLE_FINITE_CONTACT_EQUILIBRIUM",
+        "reason": "Resultant at/outside footprint; finite compression pressure cannot equilibrate the wrench"
+      }
+    },
+    {
+      "label": "Outside footprint",
+      "result": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "inputs": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "My_nm": 210000.0,
+          "k_n_m3": 20000000.0,
+          "contact_law": "uniform_linear_compression_only_winkler",
+          "reference_up_m": 0.0,
+          "source": "Synthetic independently prescribed benchmark properties, not actual geotechnical evidence",
+          "applicability": "Rigid compression-only uniform linear springs; uniaxial small rotation below 0.05 rad",
+          "reviewed": true
+        },
+        "sign_convention": "East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.",
+        "applicability_bounds": {
+          "dimensions_m": [
+            0.001,
+            20
+          ],
+          "stiffness_n_m3": [
+            1,
+            1000000000000.0
+          ],
+          "rotation_rad": 0.05
+        },
+        "limitations": [
+          "Uniform independent linear springs and rigid footing; no continuum soil interaction",
+          "Synthetic stiffness is not a measured soil modulus or allowable settlement",
+          "No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval"
+        ],
+        "eccentricity_m": 1.05,
+        "kern_halfwidth_m": 0.3333333333333333,
+        "footprint_halfwidth_m": 1.0,
+        "state": "IMPOSSIBLE_FINITE_CONTACT_EQUILIBRIUM",
+        "reason": "Resultant at/outside footprint; finite compression pressure cannot equilibrate the wrench"
+      }
+    }
+  ],
+  "source_project_id": 797,
+  "review_project_id": 798,
+  "source_transport_result_id": 464,
+  "transported_demands": [
+    {
+      "column_id": "drawing-cad:614f117ae2a74794:9C",
+      "footing_id": "drawing-cad:614f117ae2a74794:9A",
+      "source_reaction": {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "column_name": "CAD column SW",
+        "base_enu_m": [
+          0.15,
+          0.15,
+          0.0
+        ],
+        "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+        "source_node_id": 1,
+        "compression_n": 29953.701030133314,
+        "shear_east_n": 9961.989188777927,
+        "moment_negative_north_nm": -10857.803904079845,
+        "observed_footing_candidates": [
+          {
+            "footing_id": "drawing-cad:614f117ae2a74794:9A",
+            "name": "CAD footing SW",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              0.15,
+              0.15,
+              -0.225
+            ],
+            "source_entity_id": "dxf:614f117ae2a74794:9A",
+            "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+          }
+        ],
+        "source_footing_outlines": [
+          {
+            "entity_id": "dxf:614f117ae2a74794:9A",
+            "handle": "9A",
+            "plan_points_m": [
+              [
+                -0.45,
+                -0.45,
+                0.0
+              ],
+              [
+                0.75,
+                -0.45,
+                0.0
+              ],
+              [
+                0.75,
+                0.75,
+                0.0
+              ],
+              [
+                -0.45,
+                0.75,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "reference_only_eccentricity_m": -0.36248622142408826,
+        "nominal_outline_kern_m": 0.19999999999999998,
+        "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+        "connection": "NOT_DECLARED",
+        "actual_analysis": "BLOCKED",
+        "missing": [
+          "Explicit column-to-footing stable identity link and reviewed load path",
+          "Reviewed footing dimensions and reference/contact elevations",
+          "Sourced concrete properties and reinforcement information",
+          "Sourced soil bearing/contact assumptions and applicability",
+          "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+        ]
+      },
+      "link": {
+        "column_id": "drawing-cad:614f117ae2a74794:9C",
+        "footing_id": "drawing-cad:614f117ae2a74794:9A",
+        "column_reference_m": [
+          0.15,
+          0.15,
+          0.0
+        ],
+        "plate_reference_m": [
+          0.15,
+          0.15,
+          0.0
+        ],
+        "footing_reference_m": [
+          0.15,
+          0.15,
+          -0.45
+        ],
+        "source": "Changed sourced mapping review; stale results must be blocked until reauthorization",
+        "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+        "reviewed": true
+      },
+      "plate_demand": {
+        "force_enu_n": [
+          -9961.989188777927,
+          0,
+          -29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0.0,
+          -10857.803904079845,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "footing_demand": {
+        "force_enu_n": [
+          -9961.989188777927,
+          0,
+          -29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0.0,
+          -15340.699039029912,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.45
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          -4482.895134950068,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "compression_n": 29953.701030133314,
+      "horizontal_shear_enu_n": [
+        -9961.989188777927,
+        0
+      ],
+      "Mx_nm": 0.0,
+      "My_nm": -15340.699039029912,
+      "torsion_Mz_nm": 0.0,
+      "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+    },
+    {
+      "column_id": "drawing-cad:614f117ae2a74794:AE",
+      "footing_id": "drawing-cad:614f117ae2a74794:AC",
+      "source_reaction": {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "column_name": "CAD column SE",
+        "base_enu_m": [
+          5.85,
+          0.15,
+          0.0
+        ],
+        "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+        "source_node_id": 4,
+        "compression_n": 30046.29896986668,
+        "shear_east_n": -9961.989188777947,
+        "moment_negative_north_nm": 10593.899775839793,
+        "observed_footing_candidates": [
+          {
+            "footing_id": "drawing-cad:614f117ae2a74794:AC",
+            "name": "CAD footing SE",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              5.85,
+              0.15,
+              -0.225
+            ],
+            "source_entity_id": "dxf:614f117ae2a74794:AC",
+            "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+          }
+        ],
+        "source_footing_outlines": [
+          {
+            "entity_id": "dxf:614f117ae2a74794:AC",
+            "handle": "AC",
+            "plan_points_m": [
+              [
+                5.25,
+                -0.45,
+                0.0
+              ],
+              [
+                6.45,
+                -0.45,
+                0.0
+              ],
+              [
+                6.45,
+                0.75,
+                0.0
+              ],
+              [
+                5.25,
+                0.75,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "reference_only_eccentricity_m": 0.3525858471442481,
+        "nominal_outline_kern_m": 0.19999999999999998,
+        "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+        "connection": "NOT_DECLARED",
+        "actual_analysis": "BLOCKED",
+        "missing": [
+          "Explicit column-to-footing stable identity link and reviewed load path",
+          "Reviewed footing dimensions and reference/contact elevations",
+          "Sourced concrete properties and reinforcement information",
+          "Sourced soil bearing/contact assumptions and applicability",
+          "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+        ]
+      },
+      "link": {
+        "column_id": "drawing-cad:614f117ae2a74794:AE",
+        "footing_id": "drawing-cad:614f117ae2a74794:AC",
+        "column_reference_m": [
+          5.85,
+          0.15,
+          0.0
+        ],
+        "plate_reference_m": [
+          5.85,
+          0.15,
+          0.0
+        ],
+        "footing_reference_m": [
+          5.85,
+          0.15,
+          -0.45
+        ],
+        "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+        "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+        "reviewed": true
+      },
+      "plate_demand": {
+        "force_enu_n": [
+          9961.989188777947,
+          0,
+          -30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0.0,
+          10593.899775839793,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "footing_demand": {
+        "force_enu_n": [
+          9961.989188777947,
+          0,
+          -30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0.0,
+          15076.794910789868,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.45
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          4482.895134950076,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "compression_n": 30046.29896986668,
+      "horizontal_shear_enu_n": [
+        9961.989188777947,
+        0
+      ],
+      "Mx_nm": 0.0,
+      "My_nm": 15076.794910789868,
+      "torsion_Mz_nm": 0.0,
+      "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+    },
+    {
+      "column_id": "drawing-cad:614f117ae2a74794:A5",
+      "footing_id": "drawing-cad:614f117ae2a74794:A3",
+      "source_reaction": {
+        "column_id": "drawing-cad:614f117ae2a74794:A5",
+        "column_name": "CAD column NW",
+        "base_enu_m": [
+          0.15,
+          3.85,
+          0.0
+        ],
+        "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+        "source_node_id": 1,
+        "compression_n": 29953.701030133314,
+        "shear_east_n": 9961.989188777927,
+        "moment_negative_north_nm": -10857.803904079845,
+        "observed_footing_candidates": [
+          {
+            "footing_id": "drawing-cad:614f117ae2a74794:A3",
+            "name": "CAD footing NW",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              0.15,
+              3.85,
+              -0.225
+            ],
+            "source_entity_id": "dxf:614f117ae2a74794:A3",
+            "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+          }
+        ],
+        "source_footing_outlines": [
+          {
+            "entity_id": "dxf:614f117ae2a74794:A3",
+            "handle": "A3",
+            "plan_points_m": [
+              [
+                -0.45,
+                3.25,
+                0.0
+              ],
+              [
+                0.75,
+                3.25,
+                0.0
+              ],
+              [
+                0.75,
+                4.45,
+                0.0
+              ],
+              [
+                -0.45,
+                4.45,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "reference_only_eccentricity_m": -0.36248622142408826,
+        "nominal_outline_kern_m": 0.19999999999999998,
+        "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+        "connection": "NOT_DECLARED",
+        "actual_analysis": "BLOCKED",
+        "missing": [
+          "Explicit column-to-footing stable identity link and reviewed load path",
+          "Reviewed footing dimensions and reference/contact elevations",
+          "Sourced concrete properties and reinforcement information",
+          "Sourced soil bearing/contact assumptions and applicability",
+          "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+        ]
+      },
+      "link": {
+        "column_id": "drawing-cad:614f117ae2a74794:A5",
+        "footing_id": "drawing-cad:614f117ae2a74794:A3",
+        "column_reference_m": [
+          0.15,
+          3.85,
+          0.0
+        ],
+        "plate_reference_m": [
+          0.15,
+          3.85,
+          0.0
+        ],
+        "footing_reference_m": [
+          0.15,
+          3.85,
+          -0.45
+        ],
+        "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+        "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+        "reviewed": true
+      },
+      "plate_demand": {
+        "force_enu_n": [
+          -9961.989188777927,
+          0,
+          -29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0.0,
+          -10857.803904079845,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "footing_demand": {
+        "force_enu_n": [
+          -9961.989188777927,
+          0,
+          -29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0.0,
+          -15340.699039029912,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.45
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          -4482.895134950068,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "compression_n": 29953.701030133314,
+      "horizontal_shear_enu_n": [
+        -9961.989188777927,
+        0
+      ],
+      "Mx_nm": 0.0,
+      "My_nm": -15340.699039029912,
+      "torsion_Mz_nm": 0.0,
+      "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+    },
+    {
+      "column_id": "drawing-cad:614f117ae2a74794:B7",
+      "footing_id": "drawing-cad:614f117ae2a74794:B5",
+      "source_reaction": {
+        "column_id": "drawing-cad:614f117ae2a74794:B7",
+        "column_name": "CAD column NE",
+        "base_enu_m": [
+          5.85,
+          3.85,
+          0.0
+        ],
+        "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+        "source_node_id": 4,
+        "compression_n": 30046.29896986668,
+        "shear_east_n": -9961.989188777947,
+        "moment_negative_north_nm": 10593.899775839793,
+        "observed_footing_candidates": [
+          {
+            "footing_id": "drawing-cad:614f117ae2a74794:B5",
+            "name": "CAD footing NE",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              5.85,
+              3.85,
+              -0.225
+            ],
+            "source_entity_id": "dxf:614f117ae2a74794:B5",
+            "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+          }
+        ],
+        "source_footing_outlines": [
+          {
+            "entity_id": "dxf:614f117ae2a74794:B5",
+            "handle": "B5",
+            "plan_points_m": [
+              [
+                5.25,
+                3.25,
+                0.0
+              ],
+              [
+                6.45,
+                3.25,
+                0.0
+              ],
+              [
+                6.45,
+                4.45,
+                0.0
+              ],
+              [
+                5.25,
+                4.45,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "reference_only_eccentricity_m": 0.3525858471442481,
+        "nominal_outline_kern_m": 0.19999999999999998,
+        "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+        "connection": "NOT_DECLARED",
+        "actual_analysis": "BLOCKED",
+        "missing": [
+          "Explicit column-to-footing stable identity link and reviewed load path",
+          "Reviewed footing dimensions and reference/contact elevations",
+          "Sourced concrete properties and reinforcement information",
+          "Sourced soil bearing/contact assumptions and applicability",
+          "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+        ]
+      },
+      "link": {
+        "column_id": "drawing-cad:614f117ae2a74794:B7",
+        "footing_id": "drawing-cad:614f117ae2a74794:B5",
+        "column_reference_m": [
+          5.85,
+          3.85,
+          0.0
+        ],
+        "plate_reference_m": [
+          5.85,
+          3.85,
+          0.0
+        ],
+        "footing_reference_m": [
+          5.85,
+          3.85,
+          -0.45
+        ],
+        "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+        "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+        "reviewed": true
+      },
+      "plate_demand": {
+        "force_enu_n": [
+          9961.989188777947,
+          0,
+          -30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0.0,
+          10593.899775839793,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "footing_demand": {
+        "force_enu_n": [
+          9961.989188777947,
+          0,
+          -30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0.0,
+          15076.794910789868,
+          0.0
+        ],
+        "r_old_minus_new_m": [
+          0.0,
+          0.0,
+          0.45
+        ],
+        "offset_couple_nm": [
+          -0.0,
+          4482.895134950076,
+          0.0
+        ],
+        "equilibrium_residual_nm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+        "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+        "physical_connection_capacity": "NOT_VERIFIED",
+        "soil_pressure": "BLOCKED"
+      },
+      "compression_n": 30046.29896986668,
+      "horizontal_shear_enu_n": [
+        9961.989188777947,
+        0
+      ],
+      "Mx_nm": 0.0,
+      "My_nm": 15076.794910789868,
+      "torsion_Mz_nm": 0.0,
+      "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+    }
+  ],
+  "units": "SI: N, m, N*m, Pa, N/m^3, rad",
+  "engineering_approval": "DISABLED",
+  "actual_project_analysis": "BLOCKED"
+}

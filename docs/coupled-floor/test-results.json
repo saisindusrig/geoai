@@ -1,0 +1,89 @@
+{
+  "frontend_tests": 382,
+  "frontend_files": 78,
+  "backend_tests": 290,
+  "new_coupled_backend_tests": 18,
+  "browser_workflows": 6,
+  "viewports": [
+    1280,
+    1600
+  ],
+  "typescript": "PASS",
+  "scoped_eslint": "PASS",
+  "browser_acceptance": [
+    {
+      "project": 828,
+      "width": 1280,
+      "modes": 7,
+      "picked_shell": "shell:1119",
+      "native_shells": 256,
+      "animation": true,
+      "download": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 828,
+      "width": 1600,
+      "modes": 7,
+      "picked_shell": "shell:1119",
+      "native_shells": 256,
+      "animation": true,
+      "download": true,
+      "writes": [],
+      "errors": []
+    }
+  ],
+  "project": 828,
+  "analysis": 693,
+  "native_and_independent_checks": {
+    "mesh_relative_center_change": 0.004454552098215658,
+    "ritz_relative_center_change": 0.000147747271507237,
+    "independent_center_relative_error": 0.005849218320242322,
+    "independent_force_peak_normalized_error": 0.02154154179315167,
+    "independent_moment_peak_normalized_error": 0.015001183930327705
+  },
+  "native_equilibrium_and_substructure": {
+    "frame_displacement_error_m_rad": 1.3282560815119915e-15,
+    "frame_reaction_error_n_nm": 3.699096851050854e-08,
+    "frame_end_force_error_n_nm": 4.71045495942235e-08,
+    "shell_interior_balance_n_nm": 5.217810894464492e-08,
+    "global_force_error_n": 5.093170329928398e-11,
+    "global_moment_error_nm": 8.549250196665525e-11
+  },
+  "normal_preservation": {
+    "all_rows_and_schemas_exactly_unchanged": true,
+    "rows": 10245
+  },
+  "review_preservation": {
+    "existing_isolated_rows_unchanged": true,
+    "preexisting_isolated_rows": 10479,
+    "isolated_rows": 10484,
+    "appended_rows": {
+      "projects": 1,
+      "design_scenarios": 1,
+      "model_revisions": 1,
+      "engineering_analyses": 2
+    },
+    "existing_spatial_solver_files_unchanged": true,
+    "spatial_solver_files": 635,
+    "no_restore_delete_or_preexisting_record_updates": true
+  },
+  "original_storage_files": 55296,
+  "original_proof_files": 2090,
+  "original_database_schemas_checked": 264,
+  "video": {
+    "duration_seconds": 68.08,
+    "width": 1600,
+    "height": 1000
+  },
+  "engineering_approval": "DISABLED",
+  "unsupported": [
+    "Rigid diaphragm integration",
+    "Two-storey shell coupling",
+    "Lateral shell behavior",
+    "Shell stress fields",
+    "Physical connection/foundation/soil capacity",
+    "General floor geometry"
+  ]
+}

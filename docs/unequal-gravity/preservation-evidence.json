@@ -1,0 +1,12 @@
+{
+  "original_rows_checked": 9768,
+  "changed_original_rows": [],
+  "missing_original_rows": [],
+  "copy_geometry_all_revisions_match_project_792_revision_101": true,
+  "copy_component_count": 51,
+  "copy_model_revision_count": 2,
+  "copy_model_revision_id": 103,
+  "original_and_copy_drawing_bytes_preserved": true,
+  "dxf_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+  "new_live_inference_calls": 0
+}

@@ -1,0 +1,14 @@
+{
+  "application_inputs_unchanged": 30,
+  "gate2h_validator_and_tests_unchanged": true,
+  "backend_and_launchers_unchanged": true,
+  "application_rows": 10283,
+  "assistant_history_rows": 3,
+  "row_schema_and_accounting_fingerprints_unchanged": true,
+  "supplied_packet_originals_unchanged": true,
+  "original_artifact_evidence": "Reused Gate 2H verified manifests; docs-only review with no CAD/solver writes",
+  "independent_official_comparison": "BLOCKED_REFERENCE_NOT_SUPPLIED",
+  "firebase_enabled": false,
+  "live_services_accessed": false,
+  "public_launch": "BLOCKED"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/api/health",
+    "status": 200,
+    "body": null
+  },
+  {
+    "path": "/api/auth/config",
+    "status": 200,
+    "body": "{\"mode\":\"local_development\",\"firebase\":{\"enabled\":false,\"ready\":false,\"code\":\"DISABLED\",\"message\":\"Firebase authentication is disabled.\"},\"firebase_project_id\":null,\"password_login_allowed\":true}"
+  },
+  {
+    "path": "/api/projects/290",
+    "status": 200,
+    "body": null
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "BETA-01",
+    "severity": "High",
+    "classification": "Confirmed reproducible application defect",
+    "status": "Fixed",
+    "title": "Development token shortcut bypassed JWT enforcement outside production",
+    "source": "backend/app/api/routes/auth.py:112",
+    "reproduction": "With AUTH_REQUIRE_JWT=true and ENVIRONMENT=development, unauthenticated POST /api/auth/token user_id=1 returned a token (HTTP 200).",
+    "fix": "Reject whenever JWT enforcement is enabled, as well as in production. Explicit non-JWT local development remains available.",
+    "evidence": [
+      "reproduction-before.log",
+      "backend-targeted.log",
+      "security-final.log"
+    ]
+  },
+  {
+    "id": "BETA-02",
+    "severity": "Medium",
+    "classification": "Confirmed reproducible application defect",
+    "status": "Fixed",
+    "title": "Raw forwarded headers controlled rate-limit and audit identities",
+    "source": [
+      "backend/app/services/rate_limit.py:96",
+      "backend/app/services/audit.py:45"
+    ],
+    "reproduction": "21 login-limit requests with different raw X-Forwarded-For values avoided the 20/minute limit; the raw value also replaced the audit peer IP.",
+    "fix": "Use ASGI request.client for both controls. The offline loopback API disables proxy-header normalization; shared deployments still require qualified trusted-proxy stripping and address handling. Historical audit rows are unchanged.",
+    "evidence": [
+      "reproduction-before.log",
+      "security-final.log",
+      "backend/scripts/serve_copilot_review_local.py:12"
+    ]
+  },
+  {
+    "id": "BETA-03",
+    "severity": "Critical",
+    "classification": "Publisher-confirmed affected dependency; application RCE not executed",
+    "status": "Blocked",
+    "title": "Installed Next 16.2.9 matches the Windows RCE advisory",
+    "source": "https://github.com/vercel/next.js/security/advisories/GHSA-p293-qw3h-jr36",
+    "fix": "No upgrade authorized. Local frontend launch paths now bind 127.0.0.1; this reduces network exposure but does not patch the vulnerability.",
+    "evidence": [
+      "dependency-review.json",
+      "web.log",
+      "backend-targeted.log"
+    ]
+  },
+  {
+    "id": "BETA-04",
+    "severity": "High",
+    "classification": "Configuration/exposure risk; exploit not demonstrated",
+    "status": "Blocked",
+    "title": "Shared-beta browser/deployment policy remains unqualified",
+    "evidence": [
+      "security-1280.json",
+      "security-1600.json"
+    ],
+    "details": "Observed frontend responses have no X-Frame-Options, CSP or X-Content-Type-Options. HTTPS, trusted reverse-proxy configuration, complete CSP/Cesium compatibility and clickjacking qualification remain unverified. No header architecture was changed without an exploit/compatibility assessment."
+  }
+]

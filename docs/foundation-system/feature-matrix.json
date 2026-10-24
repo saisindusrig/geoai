@@ -1,0 +1,31 @@
+{
+  "delivery_status": "VALIDATED_BOUNDED_SYNTHETIC_MODULE_NOT_FULL_ENGINEERING_COVERAGE",
+  "engineering_approval": "DISABLED",
+  "features": [
+    {"feature":"CAD and project804 provenance","status":"IMPLEMENTED","limits":"Separate copies, original identities and source bytes preserved"},
+    {"feature":"OpenSees reactions and wrench transfer","status":"IMPLEMENTED_BOUNDED_LINK","limits":"Exact current mapping; nonzero shear/moments/torsion/uplift rejected by uniform RC profile"},
+    {"feature":"Soil contact","status":"IMPLEMENTED_REUSED","limits":"Uniform concentric rigid Winkler idealization"},
+    {"feature":"Bearing capacity","status":"IMPLEMENTED_REUSED","limits":"FHWA surface homogeneous undrained phi0 strength reference; not site allowable bearing"},
+    {"feature":"Settlement","status":"PARTIAL","limits":"Winkler displacement only; site/continuum/consolidation acceptance not integrated"},
+    {"feature":"Unfactored and factored bending demand","status":"IMPLEMENTED_REUSED","limits":"Square concentric patch, explicit independent factored action; no automatic combinations"},
+    {"feature":"Nominal resistance both directions","status":"IMPLEMENTED_REUSED","limits":"Existing cylinder20to28MPa yielded strain-equilibrium domain"},
+    {"feature":"IS design flexure and steel both directions","status":"IMPLEMENTED_BOUNDED","limits":"IS4562000 scan A1/A2, deformed Fe415/Fe500, under-reinforced square sections"},
+    {"feature":"ACI design flexure and required steel","status":"IMPLEMENTED_BOUNDED","limits":"31814 tension-controlled subset; minimum steel only verified Grade60"},
+    {"feature":"ACI one-way shear","status":"IMPLEMENTED_BENCHMARKED","limits":"31814 normalweight interior square no shear reinforcement"},
+    {"feature":"IS one-way shear resistance","status":"DISABLED","limits":"Primary amendment wording verification required; demand calculated separately"},
+    {"feature":"Two-way punching","status":"IMPLEMENTED_BENCHMARKED","limits":"Interior square concentric patch; no unbalanced moment, openings or shear reinforcement"},
+    {"feature":"Cover effective depth and spacing","status":"PARTIAL","limits":"Geometry and IS subset; complete exposure/fire/ACI spacing qualification excluded"},
+    {"feature":"Development and anchorage","status":"PARTIAL","limits":"IS straight full-stress deformed bars and narrow ACI documented subset; hooks/dowels/laps disabled"},
+    {"feature":"Reinforcement detailing","status":"PARTIAL","limits":"Two uniform straight orthogonal bottom mats; complete construction detailing excluded"},
+    {"feature":"Alternatives","status":"IMPLEMENTED","limits":"Six non-mutating width/thickness/bar-count comparisons; existing exact geometry authorization required to apply edits"},
+    {"feature":"Concrete and reinforcement quantities","status":"IMPLEMENTED_BOUNDED","limits":"Gross concrete, displaced steel volume and straight-mat mass only"},
+    {"feature":"Indian and American edition selection","status":"IMPLEMENTED_EXPLICIT_GATES","limits":"IS4562000 A1/A2 and ACI31814 subsets; laterACI and automaticASCE/IS combinations disabled"},
+    {"feature":"Engineering Copilot","status":"IMPLEMENTED_OFFLINE","limits":"Saved evidence explanation; no provider call, automatic mutation or authorization"},
+    {"feature":"Cesium 3D","status":"IMPLEMENTED_VALIDATED","limits":"Two mats, pressure/displacement labels, cut sections/perimeter, cover/depth/spacing; illustrative arrows"},
+    {"feature":"Calculation report","status":"IMPLEMENTED","limits":"Downloadable HTML with formulas, hashes, benchmark constants and limitations; explicitly not a safety certificate"},
+    {"feature":"History ownership authorization staleness","status":"IMPLEMENTED_TESTED","limits":"Immutable records, exact latest hash, dependency and implementation checks"},
+    {"feature":"Full structural safety or code approval","status":"DISABLED","limits":"Engineering review and unresolved checks remain necessary"}
+  ],
+  "validation":{"backend_focused":134,"backend_engineering_regression":191,"frontend":26,"isolated_browser":1,"native_cad":"PASSED","typescript":"PASSED","scoped_eslint":"PASSED","normal_website_read_only":"PASSED"},
+  "preservation":{"original_databases":264,"original_storage_files":55296,"original_engineering_proof_files":2090,"preexisting_dev_rows":10239,"all_unchanged":true}
+}

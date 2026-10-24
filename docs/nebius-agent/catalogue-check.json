@@ -1,0 +1,1 @@
+{"request":"GET /v1/models only; no inference","checked_date":"2026-10-11","key_configured":true,"models":{"zai-org/GLM-5.3":true,"zai-org/GLM-5.3-Flash":true}}

@@ -1,7 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { attachmentOf, previewAttachment, validateAttachments } from "@/lib/platform-attachments";
 import { api } from "@/lib/api";
+import {boxComponent,primitiveDocument} from '@/lib/supervised-primitive';
+import type {WorkspaceCommand} from '@/lib/workspace-assistant';
 import { documentFromGeometrySpec, estimateDocument } from "@/lib/editable-model";
 import { defaultTransformSettings, type TransformSettings } from "@/lib/editor-transform";
 import { COMPONENT_SIZES, emptySandboxDocument, readSandboxLayout, sandboxPayload, writeSandboxLayout, type SandboxView, type LocalSandboxDraft } from "@/lib/local-sandbox";
@@ -59,6 +62,8 @@ export function useEditableModelEditor({
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loadError,setLoadError]=useState<string|null>(null);
+  const [modelReadVersion,setModelReadVersion]=useState(0);
   const [aiPreview, setAiPreview] = useState<AiPreview | null>(null);
   const [lastImpact, setLastImpact] = useState<ModelImpact | null>(null);
   const [layoutValidation, setLayoutValidation] = useState<StructuralLayoutValidation | null>(null);
@@ -82,6 +87,8 @@ export function useEditableModelEditor({
     if (!saveBlocked.current) setLocalSaveStatus("saving");
   }, [sandboxView]);
 
+  const [platformPreviewState, setPlatformPreview] = useState<{source: EditableModelDocument; document: EditableModelDocument; label?: string; proposal?:WorkspaceCommand} | null>(null);
+  const platformPreview = platformPreviewState?.source === document ? platformPreviewState : null;
   const scenarioId = scenario?.id ?? null;
 
   useEffect(() => {
@@ -111,13 +118,14 @@ export function useEditableModelEditor({
       return;
     }
     queueMicrotask(() => {
-      if (!cancelled) setLoading(true);
+      if (!cancelled) {setLoading(true);setLoadError(null);}
     });
     void Promise.all([
       api.getOptional<ModelRevision>(`/api/projects/${project.id}/scenarios/${scenarioId}/model-revisions/latest`),
       api.get<RevisionList>(`/api/projects/${project.id}/scenarios/${scenarioId}/model-revisions`),
     ]).then(([latest, list]) => {
       if (cancelled) return;
+      if(!latest&&scenario?.design_output_json?.editable_model_revision_id)throw Error('Saved revision is unavailable. No generated geometry substitute was loaded.');
       const fallback = scenario?.design_output_json?.geometry_spec
         ? documentFromGeometrySpec(project, scenarioId, scenario.design_output_json.geometry_spec)
         : null;
@@ -126,9 +134,10 @@ export function useEditableModelEditor({
       setRevisions(list.revisions);
       setDirty(Boolean(!latest && fallback));
       setLoading(false);
-    }).catch(() => {
+    }).catch((failure) => {
       if (cancelled) return;
-      const fallback = scenario?.design_output_json?.geometry_spec
+      setBaseRevision(null);setLoadError(failure instanceof Error ? failure.message : "Saved revision request failed.");
+      const fallback = !scenario?.design_output_json?.editable_model_revision_id&&scenario?.design_output_json?.geometry_spec
         ? documentFromGeometrySpec(project, scenarioId, scenario.design_output_json.geometry_spec)
         : null;
       setDocument(fallback);
@@ -136,7 +145,7 @@ export function useEditableModelEditor({
       setLoading(false);
     });
     return () => { cancelled = true; };
-  }, [project, scenario, scenarioId, localSandbox]);
+  }, [project, scenario, scenarioId, localSandbox,modelReadVersion]);
 
   useEffect(() => {
     if (!localSandbox || !project || localInitialized.current) return;
@@ -224,6 +233,10 @@ export function useEditableModelEditor({
   }, [dirty]);
 
   const commit = useCallback((next: EditableModelDocument) => {
+    const errors = validateAttachments(next);
+    if (errors.length) { setEditError(errors.join(" ")); return false; }
+    setEditError(null);
+    setPlatformPreview(null);
     aiSequence.current += 1;
     validationSequence.current += 1;
     setLayoutValidation(null);
@@ -241,7 +254,26 @@ export function useEditableModelEditor({
     if (localSandbox && !saveBlocked.current) setLocalSaveStatus("saving");
     setHistoryState({ canUndo: undoRef.current.length > 0, canRedo: redoRef.current.length > 0 });
     setAiPreview(null);
+    return true;
   }, [document, localSandbox]);
+
+  const stagedActions=useRef(new Set<string>());
+  const stagePrimitivePreview=useCallback((command:WorkspaceCommand)=>{
+    if(!document||!baseRevision||localSandbox||loading||loadError||saving||dirty||aiPreview||comparison||platformPreview||JSON.stringify(document)!==JSON.stringify(baseRevision.document))throw Error('Open a clean saved primitive model and resolve other previews first.');
+    const next=primitiveDocument(command,document,baseRevision.id);
+    const key=`geoai:primitive:${command.actionId}`;
+    if(stagedActions.current.has(key)||sessionStorage.getItem(key))throw Error('Duplicate proposal replay rejected. Request a new proposal.');
+    const errors=validateAttachments(next);if(errors.length)throw Error(errors.join(' '));
+    sessionStorage.setItem(key,'reviewed');stagedActions.current.add(key);
+    setPlatformPreview({source:document,document:next,label:`Proposed ${command.candidate?.category} · temporary · not applied or saved`,proposal:command});
+  },[document,baseRevision,localSandbox,loading,loadError,saving,dirty,aiPreview,comparison,platformPreview]);
+  const applyPrimitivePreview=useCallback((actionId:string)=>{
+    const p=platformPreview;
+    if(!p?.proposal||p.proposal.actionId!==actionId||p.source!==document||dirty||saving||loading||loadError||aiPreview||comparison||!baseRevision)throw Error('Preview is no longer current. Nothing applied.');
+    const next=primitiveDocument(p.proposal,document,baseRevision.id);
+    if(!commit(next))throw Error('The existing editor rejected this addition.');
+    setSelectedIds([p.proposal.candidate!.id]);
+  },[platformPreview,document,dirty,saving,loading,loadError,aiPreview,comparison,baseRevision,commit]);
 
   const updateComponent = useCallback((id: string, changes: Partial<EditableModelComponent>) => {
     if (!document) return;
@@ -315,10 +347,10 @@ export function useEditableModelEditor({
     if (document) redoRef.current.push(clone(document));
     setDocument(previous);
     setSelectedIds((ids) => ids.filter((id) => previous.components.some((c) => c.id === id)));
-    setDirty(true);
+    setDirty(!baseRevision?.document || JSON.stringify(previous) !== JSON.stringify(baseRevision.document));
     if (localSandbox && !saveBlocked.current) setLocalSaveStatus("saving");
     setHistoryState({ canUndo: undoRef.current.length > 0, canRedo: redoRef.current.length > 0 });
-  }, [document, localSandbox]);
+  }, [document, localSandbox, baseRevision]);
 
   const redo = useCallback(() => {
     aiSequence.current += 1;
@@ -330,13 +362,14 @@ export function useEditableModelEditor({
     setAiPreview(null);
     if (document) undoRef.current.push(clone(document));
     setDocument(next);
-    setDirty(true);
+    setDirty(!baseRevision?.document || JSON.stringify(next) !== JSON.stringify(baseRevision.document));
     if (localSandbox && !saveBlocked.current) setLocalSaveStatus("saving");
     setHistoryState({ canUndo: undoRef.current.length > 0, canRedo: redoRef.current.length > 0 });
-  }, [document, localSandbox]);
+  }, [document, localSandbox, baseRevision]);
 
   const duplicateSelected = useCallback(() => {
     if (!document || !selectedIds.length) return;
+    if (document.components.some(c => selectedIds.includes(c.id) && attachmentOf(c))) { setEditError("Add attached assemblies using the attachment controls so their references remain valid."); return; }
     if (document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD duplication requires a reviewed BIM assembly proposal."); return; }
     const next = clone(document);
     const copies = next.components.filter((c) => selectedIds.includes(c.id) && !c.locked).map((component) => ({
@@ -353,6 +386,17 @@ export function useEditableModelEditor({
 
   const deleteSelected = useCallback(() => {
     if (!document || !selectedIds.length) return;
+    const managed = document.components.filter(c => selectedIds.includes(c.id) && attachmentOf(c));
+    if (managed.length) {
+      if (managed.length !== selectedIds.length) { setEditError("Select attached assemblies separately from other objects for a deletion preview."); return; }
+      try {
+        let candidate=document;
+        for(const id of new Set(managed.map(c=>attachmentOf(c)!))) candidate=previewAttachment(candidate,null,id);
+        setComparison(null);setPlatformPreview({source:document,document:candidate,label:"Delete attached assembly"});setEditError(null);
+        window.dispatchEvent(new Event("geoai:inspect-component"));
+      } catch(e) { setEditError((e as Error).message); }
+      return;
+    }
     if (document.components.some(c => selectedIds.includes(c.id) && c.geometry.kind === "cad_mesh")) { setEditError("CAD deletion requires a reviewed BIM assembly proposal; hide components instead."); return; }
     const next = clone(document);
     next.components = next.components.filter((item) => !selectedIds.includes(item.id) || item.locked);
@@ -362,6 +406,8 @@ export function useEditableModelEditor({
   }, [commit, document, selectedIds]);
 
   const save = useCallback(async () => {
+    if (platformPreview) throw new Error("Apply or cancel the platform preview before saving.");
+    if (document) { const errors=validateAttachments(document); if(errors.length) throw new Error(errors.join(" ")); }
     if (localSandbox) { saveLocal(); return null; }
     if (!project || !document || !scenarioId || localSandbox) return null;
     setSaving(true);
@@ -392,7 +438,7 @@ export function useEditableModelEditor({
     } finally {
       setSaving(false);
     }
-  }, [aiPreview, baseRevision, document, localSandbox, onSaved, project, scenarioId, saveLocal]);
+  }, [aiPreview, baseRevision, document, localSandbox, onSaved, project, scenarioId, saveLocal, platformPreview]);
   useEffect(()=>{
     if(localSandbox)return;
     const flush=()=>{void save().catch(()=>undefined);};
@@ -489,17 +535,15 @@ export function useEditableModelEditor({
     const next = clone(document);
     const size = COMPONENT_SIZES[category] ?? [1, 1, 1];
     const id = crypto.randomUUID();
-    next.components.push({ id, parent_id: null, name: `${category.replaceAll("_", " ")} ${next.components.length + 1}`,
-      category, visible: true, locked: false, geometry: { kind: "box", size },
-      transform: { position: position ?? [0, 0, size[2] / 2], rotation_deg: [0, 0, 0], scale: [1, 1, 1] },
-      material: { name: "Conceptual component", color: "#60A5FA", roughness: 0.75, metalness: 0 },
-      quantity: { included: !["zone", "grid", "site_boundary", "construction_phase"].includes(category) },
-    });
+    next.components.push({...boxComponent(category,id,size,position??[0,0,size[2]/2]),name:`${category.replaceAll('_',' ')} ${next.components.length+1}`});
     commit(next);
     setSelectedIds([id]);
   }, [commit, document]);
 
-  const impact = useMemo(() => lastImpact ?? estimateDocument(document), [document, lastImpact]);
+  const impact = useMemo(() => {
+    if (document?.components.length && document.components.every(component => component.quantity?.included === false)) return null;
+    return lastImpact ?? estimateDocument(document);
+  }, [document, lastImpact]);
   const selected = document?.components.find((item) => item.id === selectedIds[0]) ?? null;
   const revisionDocument = useCallback(async (id: number) => {
     if (!project || !scenarioId) throw new Error("Open a saved project revision first.");
@@ -511,15 +555,16 @@ export function useEditableModelEditor({
 
   return {
     document, baseRevision, revisions, selected, selectedIds, select, selectMany: (ids: string[]) => setSelectedIds([...new Set(ids)].filter(id => document?.components.some(component => component.id === id))), tool, setTool,
-    comparison, setComparison, revisionDocument,
+    comparison, setComparison, revisionDocument, platformPreview, setPlatformPreview,
     coordinateMode, setCoordinateMode, pivotMode, setPivotMode, rotationSnap, setRotationSnap, scaleSnap, setScaleSnap, editError, setEditError, saveError,
-    snapMeters, setSnapMeters, dirty, saving, loading, aiPreview, impact,
+    snapMeters, setSnapMeters, dirty, saving, loading, loadError,retryModelLoad:()=>setModelReadVersion(v=>v+1), aiPreview, impact,
     updateComponent, nudgeSelected, transformSelected, duplicateSelected, deleteSelected,
     commitTransforms, replaceDocument, commit, sandboxView, setSandboxView, localSaveStatus, localSaveError, restoreError, localDraft,
     undo, redo, canUndo: historyState.canUndo, canRedo: historyState.canRedo,
     save, previewAiEdit, acceptAiPreview, rejectAiPreview: () => { aiSequence.current++; setAiPreview(null); },
     layoutValidation, alternatives, loadLayoutIntelligence, approveLayout,
     addStructuralComponent,
+    stagePrimitivePreview,applyPrimitivePreview,
     exportAnalysisPackage,
     validateDraft, updateRulePreset, importAnalysisResults, analysisResults,
     canPersist: Boolean(scenarioId && !localSandbox),

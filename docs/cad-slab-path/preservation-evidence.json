@@ -1,0 +1,18 @@
+{
+  "original_rows_checked": 9799,
+  "changed_original_rows": [],
+  "missing_original_rows": [],
+  "copy_matches_project_793_revision_103": true,
+  "all_51_original_components_exactly_preserved": true,
+  "added_component_ids": [
+    "drawing-cad:614f117ae2a74794:97",
+    "drawing-cad:614f117ae2a74794:A5",
+    "drawing-cad:614f117ae2a74794:B7"
+  ],
+  "component_count": 54,
+  "copy_revision_count": 2,
+  "current_revision_id": 105,
+  "source_files_byte_identical": true,
+  "dxf_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+  "new_paid_inference_calls": 0
+}

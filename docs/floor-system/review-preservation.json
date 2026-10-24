@@ -1,0 +1,7 @@
+{
+  "existing_isolated_rows_unchanged": true,
+  "isolated_rows": 10478,
+  "existing_spatial_solver_files_unchanged": true,
+  "spatial_solver_files": 635,
+  "no_restore_delete_or_record_updates": true
+}

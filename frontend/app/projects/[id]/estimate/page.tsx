@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -22,10 +22,14 @@ import ProjectResultShell from "@/components/project-results/ProjectResultShell"
 import ResultPageHeader from "@/components/project-results/ResultPageHeader";
 import EmptyState from "@/components/ui/empty-state";
 import { GlassCard } from "@/components/ui/glass-card";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
 import { Button } from "@/components/ui/button";
+import { DownloadButton } from "@/components/ui/download-button";
 import { Tabs } from "@/components/ui/tabs";
+import { TableScrollRegion } from "@/components/ui/table-scroll-region";
 import { useProjectData } from "@/hooks/useProjectData";
-import { api, apiUrl } from "@/lib/api";
+import { useUnsavedChanges } from "@/hooks/useUnsavedChanges";
+import { api } from "@/lib/api";
 import { CHART } from "@/lib/chart-theme";
 import { toastPromise } from "@/lib/toast";
 import type { LineItem, QuantityEstimate } from "@/lib/types";
@@ -38,9 +42,14 @@ export default function EstimatePage() {
   const projectId = Number(params.id);
   const { project, scenarios, scenarioSummaries, scenario, selectScenario, summaryStats, loading, error, load } =
     useProjectData(projectId);
+  const savingRef = useRef(false);
+  const [saving, setSaving] = useState(false);
+  const [estimateLoading, setEstimateLoading] = useState(true);
+  const [retryVersion, setRetryVersion] = useState(0);
   const [estimate, setEstimate] = useState<QuantityEstimate | null>(null);
   const [items, setItems] = useState<LineItem[]>([]);
   const [dirty, setDirty] = useState(false);
+  useUnsavedChanges(dirty);
   const [loadErr, setLoadErr] = useState("");
   const [phase, setPhase] = useState<(typeof PHASES)[number]>("all");
 
@@ -48,6 +57,7 @@ export default function EstimatePage() {
 
   useEffect(() => {
     let cancelled = false;
+    queueMicrotask(() => { if (!cancelled) setEstimateLoading(true); });
     const qs = scenarioId ? `?scenario_id=${scenarioId}` : "";
     api
       .getOptional<QuantityEstimate>(`/api/projects/${projectId}/estimates${qs}`)
@@ -64,11 +74,11 @@ export default function EstimatePage() {
           setEstimate(null);
           setItems([]);
         }
-      });
+      }).finally(() => { if (!cancelled) setEstimateLoading(false); });
     return () => {
       cancelled = true;
     };
-  }, [projectId, scenarioId]);
+  }, [projectId, scenarioId, retryVersion]);
 
   const filteredItems = useMemo(() => {
     if (phase === "all") return items;
@@ -108,18 +118,20 @@ export default function EstimatePage() {
   };
 
   const save = async () => {
-    if (!estimate) return;
-    await toastPromise(
-      api.put<QuantityEstimate>(
-        `/api/projects/${projectId}/estimates/${estimate.id}/line-items`,
-        { line_items: items },
-      ),
-      { loading: "Saving BOQ…", success: "BOQ saved" },
-    ).then((updated) => {
+    if (!estimate || savingRef.current) return;
+    savingRef.current = true;
+    setSaving(true);
+    try {
+      const updated = await toastPromise(
+        api.put<QuantityEstimate>(`/api/projects/${projectId}/estimates/${estimate.id}/line-items`, { line_items: items }),
+        { loading: "Saving BOQ…", success: "BOQ saved" },
+      );
       setEstimate(updated);
       setItems(updated.line_items);
       setDirty(false);
-    });
+    } catch {
+      // toastPromise announces the failure; preserve the user's draft for retry.
+    } finally { savingRef.current = false; setSaving(false); }
   };
 
   const calc = scenario?.design_output_json?.calculated;
@@ -138,9 +150,9 @@ export default function EstimatePage() {
         actions={
           <>
             {dirty && (
-              <Button size="sm" className="gap-1.5 " onClick={save}>
-                <Save className="h-3.5 w-3.5" />
-                Save BOQ
+              <Button size="sm" className="gap-1.5 " onClick={save} disabled={saving} aria-busy={saving}>
+                {saving ? <InlineSpinner /> : <Save className="h-3.5 w-3.5" />}
+                {saving ? "Saving BOQ…" : "Save BOQ"}
               </Button>
             )}
             <Link href={`/projects/${projectId}/scenarios`}>
@@ -149,12 +161,7 @@ export default function EstimatePage() {
                 Compare
               </Button>
             </Link>
-            <a href={apiUrl(`/api/projects/${projectId}/exports/csv`)}>
-              <Button size="sm" variant="secondary" className="gap-1.5">
-                <Download className="h-3.5 w-3.5" />
-                Export CSV
-              </Button>
-            </a>
+            <DownloadButton path={`/api/projects/${projectId}/exports/csv`} filename={`boq_project_${projectId}.csv`} size="sm" variant="secondary" className="gap-1.5"><Download className="h-3.5 w-3.5" />Export CSV</DownloadButton>
           </>
         }
       />
@@ -164,7 +171,10 @@ export default function EstimatePage() {
           projectId={projectId}
           scenarios={scenarios}
           selectedId={scenario?.id ?? null}
+          disabled={saving}
           onSelect={(s) => {
+            if (savingRef.current || (dirty && !window.confirm("Discard unsaved BOQ edits and switch scenarios?"))) return;
+            setDirty(false);
             const summary = scenarioSummaries.find((x) => x.scenario_id === s.id);
             if (summary) void selectScenario(summary);
           }}
@@ -183,17 +193,20 @@ export default function EstimatePage() {
         />
       </div>
 
-      {loadErr && (
+      {estimateLoading && <ContentSkeleton label="Loading BOQ…" layout="rows" />}
+      {!estimateLoading && !estimate && !loadErr && <EmptyState icon={Package} title="No BOQ available yet" description="This scenario has no saved quantity estimate. Generate an estimate in the workspace to continue." />}
+      {!estimateLoading && loadErr && (
         <GlassCard className="p-6">
           <EmptyState
             icon={Package}
             title="No BOQ available yet"
-            description={`${loadErr} — generate a design in AI Design Studio first.`}
+            description={loadErr}
           />
+          <Button variant="outline" onClick={() => setRetryVersion(value => value + 1)}>Retry BOQ</Button>
         </GlassCard>
       )}
 
-      {estimate && (
+      {!estimateLoading && estimate && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             <MetricCard label="Concrete" value={estimate.concrete_m3.toLocaleString("en-IN")} unit="m³" icon={Layers} />
@@ -249,7 +262,7 @@ export default function EstimatePage() {
                 </p>
               </div>
             </div>
-            <div className="overflow-x-auto">
+            <TableScrollRegion label="BOQ line items">
               <table className="data-table w-full min-w-[880px]">
                 <thead>
                   <tr>
@@ -270,6 +283,7 @@ export default function EstimatePage() {
                         <td className="text-xs text-muted-foreground">{item.category}</td>
                         <td className="text-right">
                           <input
+                            disabled={saving}
                             type="number"
                             aria-label="Quantity"
                             value={item.quantity}
@@ -280,6 +294,7 @@ export default function EstimatePage() {
                         <td className="text-right text-xs">{item.unit}</td>
                         <td className="text-right">
                           <input
+                            disabled={saving}
                             type="number"
                             aria-label="Rate"
                             value={item.rate}
@@ -320,7 +335,7 @@ export default function EstimatePage() {
                   </tr>
                 </tfoot>
               </table>
-            </div>
+            </TableScrollRegion>
           </GlassCard>
         </>
       )}

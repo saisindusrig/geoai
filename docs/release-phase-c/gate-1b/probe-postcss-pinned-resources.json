@@ -1,0 +1,12 @@
+[
+  {
+    "elapsed_seconds": 0.0,
+    "visible_processes": 1,
+    "tree_rss_bytes": 6672384,
+    "visible_tree_cpu_seconds": 0.0,
+    "tree_read_bytes": 0,
+    "tree_write_bytes": 0,
+    "output_files": 48,
+    "output_bytes": 22850995
+  }
+]

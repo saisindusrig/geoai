@@ -50,7 +50,7 @@ export default function DrawHud({ onConfirmSave }: DrawHudProps) {
   return (
     <>
       {instruction && activeTool !== "select" && (!pendingSave || editing) && (
-        <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10 panel-glass rounded-md px-3 py-1.5 text-xs text-foreground border border-border/60 pointer-events-none max-w-[90vw] text-center">
+        <div className="absolute top-28 left-1/2 -translate-x-1/2 z-10 panel-glass rounded-full px-4 py-2 text-xs text-foreground border border-sky-400/25 pointer-events-none max-w-[90vw] text-center shadow-lg">
           {instruction}
           {activeTool === "draw-corridor" && (
             <span className="ml-2 text-muted-foreground">· Width {corridorWidthM} m</span>

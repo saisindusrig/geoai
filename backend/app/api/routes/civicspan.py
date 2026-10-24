@@ -1,4 +1,4 @@
-"""Public, hackathon-focused API for the GeoAI concept studio."""
+"""Public, hackathon-focused API for the StruvoCivil concept studio."""
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GeoAI CAD geometry proof</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>StruvoCivil CAD geometry proof</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#111820;color:#e6edf3;font:14px system-ui}header{padding:20px 24px;border-bottom:1px solid #35414c}h1{font-size:22px;margin:0 0 7px}p{margin:0;color:#adb8c2}main{display:grid;grid-template-columns:minmax(0,1fr) 330px;height:calc(100vh - 93px)}#viewport{position:relative;min-height:450px}aside{border-left:1px solid #35414c;padding:22px;overflow:auto}label{display:block;margin-bottom:8px;color:#adb8c2}select,button{width:100%;padding:10px;background:#202d39;color:inherit;border:1px solid #46535e;border-radius:4px;margin-bottom:18px}h2{font-size:16px;margin:8px 0 12px}pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#c6d3dd}.hint{position:absolute;bottom:20px;left:24px;font-size:12px;color:#adb8c2;pointer-events:none}#status{margin-top:16px;font-size:12px;line-height:1.6}@media(max-width:700px){main{grid-template-columns:1fr;height:auto}#viewport{height:55vh}aside{border-left:0}}
 </style><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
-<body><header><h1>GeoAI · CAD geometry proof</h1><p>Exact OCCT solids, derived render meshes · local metres · engineering unverified</p></header>
+<body><header><h1>StruvoCivil · CAD geometry proof</h1><p>Exact OCCT solids, derived render meshes · local metres · engineering unverified</p></header>
 <main><section id="viewport"><div class="hint">Drag to orbit · scroll to zoom · click a component to inspect</div></section><aside>
 <label for="mode">Review candidate</label><select id="mode"><option value="before">SUPPORT_FRAME · 5 m beams</option><option value="after">SUPPORT_FRAME · 6 m beams</option><option value="solids">Six isolated solid proofs</option></select>
 <label for="component">Inspect component</label><select id="component"></select><button id="fit">Fit view</button><h2 id="name">Component</h2><pre id="details"></pre><p id="status">Loading local proof artifacts…</p></aside></main>

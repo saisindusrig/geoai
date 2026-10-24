@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "classification": "ISOLATED FULL-STACK VERIFIED",
+  "projectId": 2,
+  "originalRevision": 1,
+  "savedRevision": 2,
+  "restoredRevision": 3,
+  "originalEast": "0",
+  "testOffsetMetres": 0.1,
+  "undo": true,
+  "redo": true,
+  "reload": true,
+  "originalRevisionImmutable": true,
+  "originalPositionRestoredInNewRevision": true
+}

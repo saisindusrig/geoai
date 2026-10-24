@@ -1,0 +1,364 @@
+{
+  "project_id": 785,
+  "analysis_id": 309,
+  "revision_id": 88,
+  "source_project_id": 784,
+  "source_analysis_id": 301,
+  "source_revision_id": 86,
+  "all_45_source_components_unchanged": true,
+  "geometry": {
+    "objects": [
+      {
+        "component_id": "industrial-platform-5x3:column-sw",
+        "name": "column-sw",
+        "category": "column",
+        "size_m": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ],
+        "position_enu_m": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "engineering_status": "conceptual_unverified",
+        "definition": "CONCEPTUAL_PLACEHOLDER"
+      },
+      {
+        "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+        "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 \u00b7 body",
+        "category": "base_plate",
+        "size_m": [
+          0.65,
+          0.65,
+          0.025
+        ],
+        "position_enu_m": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.0125
+        ],
+        "engineering_status": "conceptual_unverified",
+        "definition": "CONCEPTUAL_PLACEHOLDER"
+      },
+      {
+        "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+        "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 \u00b7 body",
+        "category": "foundation",
+        "size_m": [
+          1.2,
+          1.2,
+          0.45
+        ],
+        "position_enu_m": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.25
+        ],
+        "engineering_status": "conceptual_unverified",
+        "definition": "CONCEPTUAL_PLACEHOLDER"
+      }
+    ],
+    "column_base_enu_m": [
+      -2.8500000033479043,
+      -1.8499884779572517,
+      0.0
+    ],
+    "plate_contact_z_m": -0.025,
+    "contact_area_m2": 0.42250000000000004,
+    "saved_anchor_ids": [],
+    "anchor_geometry_status": "NOT_SAVED",
+    "reinforcement_geometry_status": "NOT_SAVED",
+    "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about \u2212North",
+    "physical_capacity": "NOT_YET_VERIFIED"
+  },
+  "full_actual_demand": {
+    "column_id": "industrial-platform-5x3:column-sw",
+    "node": 1,
+    "compression_n": 29999.999999999996,
+    "demand_on_interface_enu_force_n": [
+      -10765.080571577306,
+      0,
+      -29999.999999999996
+    ],
+    "demand_on_interface_enu_moment_nm": [
+      0,
+      -11753.693592818216,
+      0
+    ],
+    "horizontal_shear_east_n": -10765.080571577306,
+    "moment_about_negative_north_nm": 11753.693592818216,
+    "support_reaction_si": {
+      "node": 1,
+      "fx_n": 10765.080571577306,
+      "fy_n": 29999.999999999996,
+      "moment_nm": -11753.693592818216
+    },
+    "solver_version": "3.8.0",
+    "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+    "source_frame_inputs": {
+      "component_ids": [
+        "industrial-platform-5x3:column-sw",
+        "industrial-platform-5x3:beam-south",
+        "industrial-platform-5x3:column-se"
+      ],
+      "sections": [
+        {
+          "component_id": "industrial-platform-5x3:column-sw",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        },
+        {
+          "component_id": "industrial-platform-5x3:beam-south",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.06,
+          "inertia_m4": 0.00020000000000000006,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        },
+        {
+          "component_id": "industrial-platform-5x3:column-se",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        }
+      ],
+      "connections": [
+        {
+          "column_id": "industrial-platform-5x3:column-sw",
+          "beam_id": "industrial-platform-5x3:beam-south",
+          "column_endpoint": "top",
+          "beam_endpoint": "left",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            -0.1499999999999999,
+            0.10000000000000009
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+        },
+        {
+          "column_id": "industrial-platform-5x3:column-se",
+          "beam_id": "industrial-platform-5x3:beam-south",
+          "column_endpoint": "top",
+          "beam_endpoint": "right",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            0.14999999999999947,
+            0.10000000000000009
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+        }
+      ],
+      "supports": "both_column_bases_fixed",
+      "support_source": "Synthetic fixed bases; no foundation adequacy",
+      "load_pattern": null,
+      "load_n": null,
+      "load_source": null,
+      "load_cases": [
+        {
+          "name": "Slab tributary",
+          "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+          "horizontal_n": 0,
+          "vertical_nodal_loads": [],
+          "beam_uniform_n_per_m": -10000.0,
+          "self_weight": null
+        }
+      ],
+      "combination": null,
+      "purpose": "VERIFICATION_ONLY",
+      "elements_per_member": 2,
+      "units": "SI"
+    },
+    "source_model_revision_id": 86,
+    "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+    "solver_artifact_sha256": {
+      "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+      "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+      "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+      "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+      "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+      "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+    },
+    "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=\u2212Rx; M about \u2212North=\u2212Rmoment.",
+    "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+    "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+  },
+  "source_numerical_comparisons": {
+    "nodes": {
+      "max_absolute_error": 3.152945840023404e-19,
+      "passed": true
+    },
+    "reactions": {
+      "max_absolute_error": 1.8189894035458565e-11,
+      "passed": true
+    },
+    "forces": {
+      "max_absolute_error": 1.8189894035458565e-11,
+      "passed": true
+    },
+    "joint_equilibrium": {
+      "max_absolute_error": 1.4551915228366852e-11,
+      "passed": true
+    }
+  },
+  "source_equilibrium_residual_si": [
+    7.275957614183426e-12,
+    -1.0913936421275139e-11,
+    -4.3655745685100555e-11
+  ],
+  "independent_calculation": {
+    "method": "Independent Decimal N/(Bmm\u00d7Lmm), pressure\u00d7gross area equilibrium",
+    "compression_n": 29999.999999999996,
+    "gross_area_mm2": "422500",
+    "pressure_n_mm2": "0.07100591715976330414201183432",
+    "pressure_kpa": 71.0059171597633,
+    "integrated_reaction_n": 29999.999999999993,
+    "force_balance_error_n": -3.637978807091713e-12
+  },
+  "benchmark": {
+    "status": "VERIFIED",
+    "reference": "Synthetic concentric N=100 kN, B=500 mm, L=400 mm: p=100000/200000=0.5 N/mm\u00b2=500 kPa; pA=100 kN. No strength comparison.",
+    "result": {
+      "compression_n": 100000,
+      "area_m2": 0.2,
+      "pressure_pa": 500000.0,
+      "pressure_kpa": 500.0,
+      "pressure_mpa": 0.5,
+      "independent_n_mm2": 0.5,
+      "integrated_reaction_n": 100000.0,
+      "equilibrium_error_n": 0.0,
+      "formula": "A=B\u00d7L [m\u00b2]; p=N/A [N/m\u00b2=Pa]; kPa=Pa/1000; MPa=Pa/1e6=N/mm\u00b2",
+      "verification": "VERIFIED_ARITHMETIC_AND_EQUILIBRIUM",
+      "capacity_check": "NOT_YET_VERIFIED"
+    }
+  },
+  "bearing": {
+    "compression_n": 29999.999999999996,
+    "area_m2": 0.42250000000000004,
+    "pressure_pa": 71005.9171597633,
+    "pressure_kpa": 71.0059171597633,
+    "pressure_mpa": 0.0710059171597633,
+    "independent_n_mm2": 0.0710059171597633,
+    "integrated_reaction_n": 29999.999999999996,
+    "equilibrium_error_n": 0.0,
+    "formula": "A=B\u00d7L [m\u00b2]; p=N/A [N/m\u00b2=Pa]; kPa=Pa/1000; MPa=Pa/1e6=N/mm\u00b2",
+    "verification": "VERIFIED_ARITHMETIC_AND_EQUILIBRIUM",
+    "capacity_check": "NOT_YET_VERIFIED"
+  },
+  "source_artifact_hashes_verified": {
+    "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+    "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+    "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+    "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+    "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+  },
+  "scope": "Isolated axial component only; full connection demand NOT VERIFIED",
+  "unsupported": [
+    {
+      "check": "Moment-bearing distributions",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Anchor tension and shear",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Plate bending",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Weld behavior",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Footing reinforcement capacity",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Soil capacity",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Settlement",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "IS/ACI/AISC compliance",
+      "status": "NOT_YET_VERIFIED"
+    },
+    {
+      "check": "Physical connection and foundation safety",
+      "status": "NOT_YET_VERIFIED"
+    }
+  ],
+  "engineering_approval": "DISABLED",
+  "new_anchor_locations": {
+    "status": "synthetic_engineer_declared_unverified",
+    "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+    "items": [
+      {
+        "id": "synthetic-anchor-1",
+        "position_enu_m": [
+          -3.090000003347904,
+          -2.0899884779572515,
+          0.0
+        ],
+        "diameter_m": 0.02,
+        "embedment_m": 0.3,
+        "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+      },
+      {
+        "id": "synthetic-anchor-2",
+        "position_enu_m": [
+          -3.090000003347904,
+          -1.6099884779572518,
+          0.0
+        ],
+        "diameter_m": 0.02,
+        "embedment_m": 0.3,
+        "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+      },
+      {
+        "id": "synthetic-anchor-3",
+        "position_enu_m": [
+          -2.6100000033479045,
+          -2.0899884779572515,
+          0.0
+        ],
+        "diameter_m": 0.02,
+        "embedment_m": 0.3,
+        "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+      },
+      {
+        "id": "synthetic-anchor-4",
+        "position_enu_m": [
+          -2.6100000033479045,
+          -1.6099884779572518,
+          0.0
+        ],
+        "diameter_m": 0.02,
+        "embedment_m": 0.3,
+        "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+      }
+    ]
+  },
+  "steel_strength_used": false,
+  "concrete_strength_used": false
+}

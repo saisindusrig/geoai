@@ -1,0 +1,17 @@
+{
+  "dev.db": {
+    "schema_equal": true,
+    "tables": {
+      "usage_events": {
+        "before": 1950,
+        "after": 1951,
+        "missing": 0,
+        "new": 1
+      }
+    }
+  },
+  "assistant-history.db": {
+    "schema_equal": true,
+    "tables": {}
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "project_id": 793,
+  "revision_id": 103,
+  "components": 51,
+  "visible": 51,
+  "kinds": [
+    "box",
+    "cylinder"
+  ],
+  "methods": {
+    "frame": {
+      "status": "SUPPORTED",
+      "reason": "Saved planar inputs pass the existing method validator. Exact authorization is still required.",
+      "can_review": true,
+      "current_results": [
+        {
+          "id": 421,
+          "project_id": 793,
+          "model_revision_id": 103,
+          "method": "frame",
+          "status": "VERIFIED",
+          "load_cases": [
+            "Linear sum",
+            "Horizontal",
+            "Gravity",
+            "Self weight"
+          ],
+          "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19"
+        }
+      ],
+      "history": [
+        {
+          "id": 421,
+          "project_id": 793,
+          "model_revision_id": 103,
+          "method": "frame",
+          "status": "VERIFIED",
+          "load_cases": [
+            "Linear sum",
+            "Horizontal",
+            "Gravity",
+            "Self weight"
+          ],
+          "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+          "current": true
+        },
+        {
+          "id": 417,
+          "project_id": 793,
+          "model_revision_id": 103,
+          "method": "frame",
+          "status": "STALE",
+          "load_cases": [
+            "Linear sum",
+            "Horizontal",
+            "Gravity",
+            "Self weight"
+          ],
+          "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+          "current": false
+        },
+        {
+          "id": 406,
+          "project_id": 793,
+          "model_revision_id": 103,
+          "method": "frame",
+          "status": "STALE",
+          "load_cases": [
+            "Linear sum",
+            "Horizontal",
+            "Gravity",
+            "Self weight"
+          ],
+          "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+          "current": false
+        }
+      ]
+    },
+    "slab": {
+      "status": "MISSING_INPUTS",
+      "reason": "Explicit slab/support mapping, pressure, declarations and supporting frame inputs are required; no shell behavior is inferred.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "spatial": {
+      "status": "UNSUPPORTED",
+      "reason": "No reviewed spatial-frame input is bound to this saved model.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "coupled": {
+      "status": "UNSUPPORTED",
+      "reason": "Only the prescribed synthetic one-storey shell\u2013frame fixture is supported.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "foundation": {
+      "status": "UNSUPPORTED",
+      "reason": "No integrated foundation study is bound to this model; reference evidence remains separate.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    }
+  }
+}

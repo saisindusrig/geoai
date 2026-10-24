@@ -2,7 +2,7 @@ import { expect, type Page } from "@playwright/test";
 
 export async function reviewPlatform(page: Page, projectId: string | number) {
   // Approval, two desktop canvas workflows and persistence share this test.
-  const errors:string[]=[]; page.on("pageerror", e=>errors.push(e.message));
+  const errors:string[]=[]; page.on("pageerror", e=>errors.push(e.stack ?? e.message));
   await page.setViewportSize({ width: 1626, height: 982 });
   await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
   await page.goto(`/projects/${projectId}/workspace`);
@@ -27,9 +27,9 @@ export async function reviewPlatform(page: Page, projectId: string | number) {
   const response = await built;
   expect(response.ok(), await response.text()).toBeTruthy();
   await expect(review.getByRole("status")).toContainText("Generic 3D concept saved as revision");
-  await page.reload();
+  // Successful generation refreshes the active scenario in-place.
   const selectDeck = async () => {
-    await page.getByRole("tab", { name: "Layers", exact: true }).click();
+    if (await page.getByRole("tab", { name: "Layers", exact: true }).getAttribute("aria-selected") !== "true") await page.getByRole("tab", { name: "Layers", exact: true }).click();
     await page.getByLabel("Search scene components").fill("platform-deck");
     await page.getByRole("button", { name: "platform-deck", exact: true }).click();
     await page.getByRole("tab", { name: "Inspect", exact: true }).click();
@@ -70,9 +70,18 @@ export async function reviewPlatform(page: Page, projectId: string | number) {
       await page.mouse.move(b.x+h.x+dx/length*45,b.y+h.y+dy/length*45,{steps:8});
       await expect(canvas).toHaveAttribute("data-transform-camera-enabled","false");
     };
-    await drag(); await page.keyboard.press("Escape"); await page.mouse.up(); await expect(east).toHaveValue(initialEast);
+    await drag(); await page.keyboard.press("Escape"); await page.mouse.up();
+    // Escape can retain Move or dispose its handles; neither may hold the camera lease.
+    await expect(canvas).not.toHaveAttribute("data-transform-camera-enabled","false");
+    await expect(east).toHaveValue(initialEast);
     await page.getByRole("button",{name:"Move selection",exact:true}).click();
-    await drag(); await page.mouse.up(); await expect(east).not.toHaveValue(initialEast);
+    await drag(); await page.mouse.up();
+    // A missing inspector also satisfies a negative value assertion. Require
+    // completed pointer release and a real committed edit before testing Undo.
+    await expect(page).toHaveURL(new RegExp(`/projects/${projectId}/workspace`));
+    await expect(east).toBeVisible();
+    await expect(page.getByRole("button",{name:"Undo",exact:true})).toBeEnabled({timeout:10000});
+    await expect(east).not.toHaveValue(initialEast);
     await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue(initialEast);
     await page.getByRole("button",{name:"Move east one step",exact:true}).click(); await expect(east).not.toHaveValue(initialEast);
     await page.getByRole("button",{name:"Undo",exact:true}).click(); await expect(east).toHaveValue(initialEast);
@@ -114,6 +123,7 @@ export async function reviewPlatform(page: Page, projectId: string | number) {
   await page.waitForTimeout(1800);
   await expect(page.locator(".cesium-widget canvas")).toBeVisible();
   await expect(page.locator(".cesium-widget-errorPanel")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Cost —", exact: true })).toBeVisible();
   await page.screenshot({ path: "test-results/platform-workspace-accepted.png" });
   expect(errors).toEqual([]);
 }

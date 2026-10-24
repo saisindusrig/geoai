@@ -1,0 +1,10 @@
+{
+  "exact_milestone_entry_database_comparison": true,
+  "databases": {
+    "dev.db": 10283,
+    "assistant-history.db": 3
+  },
+  "added_removed_or_changed_rows": 0,
+  "schema_changes": 0,
+  "accounting_and_history_unchanged": true
+}

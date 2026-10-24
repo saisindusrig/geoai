@@ -1,0 +1,31 @@
+{
+  "original_rows_checked": 9714,
+  "changed_original_rows": [],
+  "missing_original_rows": [],
+  "authorized_scenario_output_changes": [
+    {
+      "table": "projects",
+      "key": [
+        789
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "design_scenarios",
+      "key": [
+        577
+      ],
+      "fields": [
+        "design_output_json"
+      ]
+    }
+  ],
+  "original_45_components_unchanged": true,
+  "original_source_bytes_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+  "source_sha256_expected": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+  "latest_revision": 98,
+  "new_component_count": 51,
+  "new_live_inference_calls": 0
+}

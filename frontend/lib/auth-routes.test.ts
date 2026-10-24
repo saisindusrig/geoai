@@ -4,7 +4,19 @@ import {
   loginPath,
   PUBLIC_APP_PATHS,
   registrationPath,
+  safeAuthReturnPath,
 } from "@/lib/auth-routes";
+
+describe("safeAuthReturnPath", () => {
+  it("retains local project context including queries and fragments", () => {
+    expect(safeAuthReturnPath("/projects/5/workspace?demo=1#review")).toBe("/projects/5/workspace?demo=1#review");
+  });
+  it("rejects schemes, network paths, backslashes and control characters", () => {
+    for (const value of [null, "", "javascript:alert(1)", "https://example.invalid", "//example.invalid", "/\\example.invalid", "/\n/example.invalid", " /dashboard"]) {
+      expect(safeAuthReturnPath(value)).toBe("/dashboard");
+    }
+  });
+});
 
 vi.mock("@/lib/api", () => ({
   authRequired: vi.fn(() => false),

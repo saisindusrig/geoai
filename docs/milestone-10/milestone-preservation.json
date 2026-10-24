@@ -1,0 +1,14 @@
+{
+  "unchanged_original_rows": true,
+  "original_rows": 10269,
+  "added_rows_by_table": {
+    "users": 1,
+    "projects": 1,
+    "audit_logs": 5,
+    "usage_events": 7
+  },
+  "note": "Thirteen synthetic records predate M10; M10 browser asset misrouting appended one download usage record, retained. All original rows/schemas unchanged.",
+  "milestone_10_added_rows": {
+    "usage_events": 1
+  }
+}

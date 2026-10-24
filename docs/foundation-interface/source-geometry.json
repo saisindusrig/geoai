@@ -1,0 +1,5319 @@
+{
+  "schema_version": 1,
+  "project_id": 784,
+  "scenario_id": 572,
+  "project_type": "unclassified",
+  "units": "metric",
+  "origin": {
+    "lng": 77.59516745544197,
+    "lat": 12.970659741605996,
+    "heading_deg": 0,
+    "elevation_m": null
+  },
+  "generator_parameters": {
+    "platform_attachments": {
+      "version": 1,
+      "items": [
+        {
+          "id": "c9e0e256-1608-4be2-b1ab-adafa10424c0",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "44d566cb-7ca0-4c95-bf4d-1d574f788df0",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "149f0f5d-b98f-4260-a428-b2fc50959cf2",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "b1ad97d4-faca-46e7-87c9-f5eebb37575f",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "13ff4b82-88f8-4c41-9613-ad85bf72054b",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "9c6c5059-9557-4c35-887a-a66e95606df4",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "2054528e-2362-4a24-843c-01988b6c8fea",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "a1f8b089-a278-4474-8596-ff0dade18975",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-nw",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "850c983b-9d8c-416d-8785-eb7106e068bb",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "b5d32b14-a981-4478-888f-42d19034592d",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "ed0730b0-c13b-47ba-9753-b63f1e86d4ac",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-ne",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "b95d6eda-29f0-4b03-90ec-2c5b59199b8d",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "63a1eab7-ac09-4ceb-aaea-75c0427821e7",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+          "kind": "stairs",
+          "refs": [
+            "industrial-platform-5x3:platform-deck"
+          ],
+          "parameters": {
+            "width": 1,
+            "going": 0.32,
+            "maxRiser": 0.18,
+            "treadThickness": 0.04,
+            "stringerRadius": 0.05
+          }
+        }
+      ]
+    },
+    "maintenance_platform": {
+      "version": 1,
+      "parameters": {
+        "length": 6,
+        "width": 4,
+        "height": 3.6,
+        "slabThickness": 0.2,
+        "beamWidth": 0.3,
+        "beamDepth": 0.2,
+        "columnWidth": 0.3,
+        "columnDepth": 0.3
+      },
+      "status": "conceptual_unverified"
+    }
+  },
+  "components": [
+    {
+      "id": "industrial-platform-5x3:beam-east",
+      "parent_id": null,
+      "name": "beam-east",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          3.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:beam-east",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "beam-east",
+        "primitiveType": "BOX",
+        "componentKind": "BEAM",
+        "componentRole": "BEAM",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-north",
+      "parent_id": null,
+      "name": "beam-north",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.8500115220427484,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:beam-north",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "beam-north",
+        "primitiveType": "BOX",
+        "componentKind": "BEAM",
+        "componentRole": "BEAM",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-south",
+      "parent_id": null,
+      "name": "beam-south",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -1.8499884779572517,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:beam-south",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "beam-south",
+        "primitiveType": "BOX",
+        "componentKind": "BEAM",
+        "componentRole": "BEAM",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-west",
+      "parent_id": null,
+      "name": "beam-west",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          3.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:beam-west",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "beam-west",
+        "primitiveType": "BOX",
+        "componentKind": "BEAM",
+        "componentRole": "BEAM",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-ne",
+      "parent_id": null,
+      "name": "column-ne",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:column-ne",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "column-ne",
+        "primitiveType": "BOX",
+        "componentKind": "COLUMN",
+        "componentRole": "COLUMN",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-nw",
+      "parent_id": null,
+      "name": "column-nw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:column-nw",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "column-nw",
+        "primitiveType": "BOX",
+        "componentKind": "COLUMN",
+        "componentRole": "COLUMN",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-se",
+      "parent_id": null,
+      "name": "column-se",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:column-se",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "column-se",
+        "primitiveType": "BOX",
+        "componentKind": "COLUMN",
+        "componentRole": "COLUMN",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-sw",
+      "parent_id": null,
+      "name": "column-sw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:column-sw",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "column-sw",
+        "primitiveType": "BOX",
+        "componentKind": "COLUMN",
+        "componentRole": "COLUMN",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:platform-deck",
+      "parent_id": null,
+      "name": "platform-deck",
+      "category": "slab",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          6,
+          4,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          3.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "id": "industrial-platform-5x3:platform-deck",
+        "ai3dDesignId": "industrial-platform-5x3",
+        "systemId": "platform",
+        "assetFamily": "CUSTOM",
+        "systemAssetType": "UNREGISTERED_CIVIL_ASSET",
+        "sourceParentId": null,
+        "sourceObjectId": "platform-deck",
+        "primitiveType": "BOX",
+        "componentKind": "SLAB",
+        "componentRole": "SLAB",
+        "executorVersion": "1",
+        "referencePlane": "LOCAL_VISUAL_REFERENCE",
+        "assetId": "c8c281c9-80e0-5751-a131-cfc740745da0",
+        "specificationId": "a5cb6db7-2014-5b99-a6bf-f6081d19fd69",
+        "specificationHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "specificationVersion": 1,
+        "designVersion": 1,
+        "designHash": "9d2fb5d0a65edada751a405f4a884f27c328f9b4520398b7a7d47c5e4fc18514",
+        "generatorId": "generic-3d",
+        "generatorVersion": "1",
+        "approvalId": "f121e097-c6a4-53eb-bc79-0795c98925d2",
+        "siteAnalysisSummary": {
+          "selectionReference": {
+            "id": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+            "version": 1,
+            "contentHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9"
+          },
+          "selectionKind": "AREA",
+          "localGeometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "coordinateFrame": "LOCAL_ENU",
+          "origin": {
+            "lng": 77.59516745544197,
+            "lat": 12.970659741605996,
+            "heading_deg": 0,
+            "elevation_m": null
+          },
+          "projectBoundaryLocal": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ],
+                [
+                  54.365514710926526,
+                  59.8260226471014
+                ],
+                [
+                  54.36574957966046,
+                  -59.82591345042023
+                ],
+                [
+                  -54.36574958628907,
+                  -59.82591345011978
+                ],
+                [
+                  -54.365514717792436,
+                  59.82602264706213
+                ]
+              ]
+            ]
+          },
+          "frameSource": "SELECTED_GEOMETRY_CENTROID",
+          "referencePlane": "LOCAL_VISUAL_REFERENCE",
+          "sourceModelRevisionId": null,
+          "profileReference": {
+            "id": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+            "version": 1,
+            "contentHash": "c4a93067a3a129df3c65939b5635d1571038b6c7d2944dbd351851599345575b"
+          },
+          "facts": {
+            "dimensions": {
+              "area": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "area",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 13009.90628784895,
+                    "unit": "m2"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "perimeter": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "perimeter",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 456.7664007842392,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "routeLength": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "crossingSpan": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              },
+              "boundingWidth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingWidth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 119.7215255286595,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "boundingDepth": {
+                "applicability": "APPLICABLE",
+                "fact": {
+                  "id": "boundingDepth",
+                  "sourceKind": "DERIVED",
+                  "value": {
+                    "value": 108.79464193532422,
+                    "unit": "m"
+                  },
+                  "evidenceIds": [
+                    "a0d15355-158f-5361-bc55-8d7197c2f40c"
+                  ],
+                  "use": "CONCEPT",
+                  "verification": "UNVERIFIED"
+                },
+                "reason": null
+              },
+              "endpointDistance": {
+                "applicability": "NOT_APPLICABLE",
+                "fact": null,
+                "reason": "Not a AREA measurement"
+              }
+            },
+            "terrain": {
+              "activeConfigurationRevision": null,
+              "datasetId": null,
+              "versionId": null,
+              "coverage": {
+                "status": "UNKNOWN",
+                "coveredFraction": null,
+                "checkedGeometryHash": "073c9dd974ae9d74332dcd2d775f2674ae720de448ba361f5e1c841412e4a2e9",
+                "methodVersion": "coverage/1",
+                "evidenceIds": [
+                  "49557751-b16d-519d-b945-22b399f821f4"
+                ]
+              },
+              "sampleSetId": "e179a114-eb87-52ef-95c1-1fb2f1bb9ea2",
+              "sampleSummary": {
+                "requested": 10,
+                "valid": 0,
+                "failed": 10
+              }
+            },
+            "relief": {
+              "minElevation": {
+                "id": "minElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxElevation": {
+                "id": "maxElevation",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "meanSlope": {
+                "id": "meanSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "maxSlope": {
+                "id": "maxSlope",
+                "sourceKind": "UNKNOWN",
+                "value": null,
+                "reason": "UNAVAILABLE",
+                "evidenceIds": [
+                  "543000db-8ed9-53da-a97b-92f234bd7205",
+                  "b0ece4b3-a36a-5235-8f6d-07670c7b242b",
+                  "072d2c69-9eff-5581-9ecf-805885d0da0a",
+                  "74d5cc06-d73f-5d74-8c29-8351fd8239b6",
+                  "a4b955b7-c352-5448-9ad5-0fb05d976a0e",
+                  "025deabc-6330-5662-bd55-b7130ae0715e",
+                  "567fe8b2-5038-5df9-ba67-f94322dfc1a1",
+                  "b6657d1f-d157-53d4-a7dc-e87d1f1c25c4",
+                  "95afc54d-69ee-51b7-a3e2-1fafd9315d7e",
+                  "18288394-e717-5531-b713-26fef76ac8ef"
+                ],
+                "missingInformationIds": [
+                  "b10ada60-16f1-50fc-b0c1-63b2030e74b7"
+                ]
+              },
+              "slopeMethodVersion": null,
+              "profileIds": []
+            },
+            "constraints": []
+          },
+          "unknowns": [
+            "soil",
+            "groundwater",
+            "structuralCapacity",
+            "designLoads",
+            "engineeringApproval"
+          ],
+          "limitations": [
+            "Local reference coordinates are derived from saved selection and placement. Preview Z does not establish ground elevation.",
+            "No terrain-following generation or slope-aware optimization in V1."
+          ]
+        },
+        "proposalId": "52c93edb-5a17-5388-90c4-a8148e8febb1",
+        "proposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+        "proposalVersion": 1,
+        "sourceModelRevisionId": null,
+        "siteSelectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2",
+        "siteProfileVersionId": "0d5fa152-e320-5a92-8aa1-eeafc4b0eba9",
+        "generationModelRevisionId": 44,
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 \u00b7 body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "c9e0e256-1608-4be2-b1ab-adafa10424c0",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-sw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 \u00b7 body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "44d566cb-7ca0-4c95-bf4d-1d574f788df0",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-sw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "connection 149f0f5d-b98f-4260-a428-b2fc50959cf2 \u00b7 joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "149f0f5d-b98f-4260-a428-b2fc50959cf2",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-sw",
+          "industrial-platform-5x3:beam-south"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "foundation b1ad97d4-faca-46e7-87c9-f5eebb37575f \u00b7 body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "b1ad97d4-faca-46e7-87c9-f5eebb37575f",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-se"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "base plate d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3 \u00b7 body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-se"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "connection 13ff4b82-88f8-4c41-9613-ad85bf72054b \u00b7 joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "13ff4b82-88f8-4c41-9613-ad85bf72054b",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-se",
+          "industrial-platform-5x3:beam-south"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "foundation 9c6c5059-9557-4c35-887a-a66e95606df4 \u00b7 body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "9c6c5059-9557-4c35-887a-a66e95606df4",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "base plate 2054528e-2362-4a24-843c-01988b6c8fea \u00b7 body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "2054528e-2362-4a24-843c-01988b6c8fea",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "connection a1f8b089-a278-4474-8596-ff0dade18975 \u00b7 joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "a1f8b089-a278-4474-8596-ff0dade18975",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-nw",
+          "industrial-platform-5x3:beam-north"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "foundation 850c983b-9d8c-416d-8785-eb7106e068bb \u00b7 body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "850c983b-9d8c-416d-8785-eb7106e068bb",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "base plate b5d32b14-a981-4478-888f-42d19034592d \u00b7 body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "b5d32b14-a981-4478-888f-42d19034592d",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "connection ed0730b0-c13b-47ba-9753-b63f1e86d4ac \u00b7 joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "ed0730b0-c13b-47ba-9753-b63f1e86d4ac",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-ne",
+          "industrial-platform-5x3:beam-north"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "brace b95d6eda-29f0-4b03-90ec-2c5b59199b8d \u00b7 diagonal",
+      "category": "bracing",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          -2.85,
+          -1.85,
+          0
+        ],
+        "end": [
+          -2.85,
+          1.85,
+          3.1999999999999997
+        ],
+        "radius_m": 0.04
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#f59e0b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "b95d6eda-29f0-4b03-90ec-2c5b59199b8d",
+        "attachment_kind": "brace",
+        "references": [
+          "industrial-platform-5x3:column-sw",
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "brace 63a1eab7-ac09-4ceb-aaea-75c0427821e7 \u00b7 diagonal",
+      "category": "bracing",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          2.85,
+          -1.85,
+          0
+        ],
+        "end": [
+          2.85,
+          1.85,
+          3.1999999999999997
+        ],
+        "radius_m": 0.04
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#f59e0b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "63a1eab7-ac09-4ceb-aaea-75c0427821e7",
+        "attachment_kind": "brace",
+        "references": [
+          "industrial-platform-5x3:column-se",
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -8.239988477957253,
+          0.16
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-2",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.919988477957252,
+          0.33999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-3",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.599988477957252,
+          0.52
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-4",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.279988477957252,
+          0.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-5",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.959988477957252,
+          0.8799999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-6",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.639988477957251,
+          1.06
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-7",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.319988477957252,
+          1.24
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-8",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.999988477957252,
+          1.42
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-9",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.679988477957251,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-10",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.359988477957251,
+          1.7799999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-11",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.039988477957252,
+          1.96
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-12",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.719988477957252,
+          2.14
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-13",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.399988477957252,
+          2.32
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-14",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.079988477957252,
+          2.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-15",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.7599884779572514,
+          2.6799999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-16",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.4399884779572516,
+          2.86
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-17",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.1199884779572518,
+          3.04
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-18",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.7999884779572515,
+          3.2199999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-19",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.4799884779572516,
+          3.4
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-20",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.32,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.159988477957252,
+          3.5799999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 stringer--1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          -0.4,
+          -8.488888888888889,
+          0
+        ],
+        "end": [
+          -0.4,
+          -2.16,
+          3.56
+        ],
+        "radius_m": 0.05
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#64748b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 stringer-1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          0.4,
+          -8.488888888888889,
+          0
+        ],
+        "end": [
+          0.4,
+          -2.16,
+          3.56
+        ],
+        "radius_m": 0.05
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#64748b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "664f80f7-3591-4b78-aecf-33ba6bc2fe5e",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "ai_generate",
+    "frame": "local_enu_meters",
+    "ai3dProposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+    "ai3dDesignId": "industrial-platform-5x3",
+    "ai3dValidation": {
+      "status": "DESIGN_VALID",
+      "geometryStatus": "GEOMETRY_VALID",
+      "engineeringStatus": "UNVALIDATED",
+      "issues": [],
+      "constraintChecks": [
+        {
+          "id": "platform-within-site",
+          "kind": "WITHIN_AREA",
+          "status": "SATISFIED"
+        }
+      ],
+      "componentCount": 9,
+      "relationshipStatus": "RECORDED_NOT_ENGINEERING_VALIDATED"
+    },
+    "referencePlane": "LOCAL_VISUAL_REFERENCE",
+    "generatedAt": "2026-10-11T12:17:34.270131+00:00",
+    "elevation_known": false,
+    "placementProvenance": {
+      "project_id": 727,
+      "anchor_longitude": 77.59516745544197,
+      "anchor_latitude": 12.970659741605996,
+      "anchor_elevation": null,
+      "anchor_heading_deg": 0,
+      "elevation_offset": 0,
+      "placement_mode": "GROUND_RELATIVE",
+      "height_reference": "TERRAIN",
+      "elevation_resolution": "UNKNOWN",
+      "anchor_locked": true,
+      "legacy_placement": false,
+      "local_transform_json": {},
+      "elevation_provenance_json": {
+        "source": "UNKNOWN",
+        "anchorSource": "SELECTED_GEOMETRY_CENTROID",
+        "selectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2"
+      },
+      "placement_state": "REVIEW_REQUIRED"
+    },
+    "ai3dRelationships": [],
+    "slab_transfer_review": {
+      "source_project_id": 768,
+      "source_revision_id": 59,
+      "scope": "Explicit one-way slab tributary assumption; two separate supporting frames, synthetic pressure; no slab FEA or safety approval"
+    }
+  },
+  "structural_layout": {
+    "rule_preset": {},
+    "assumptions": [
+      "Preliminary geometry; no engineering validation."
+    ]
+  }
+}

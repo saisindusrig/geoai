@@ -1,0 +1,23 @@
+{
+  "gate": "2I",
+  "scope": "read-only screenshot transcription into inert staging review artifact",
+  "source": "Firebase Console screenshot previously provided in chat, not live Console fetch",
+  "checks": {
+    "exact_project": true,
+    "exact_domain": true,
+    "api_key_pattern": true,
+    "app_id_pattern": true,
+    "global_auth_disabled": true,
+    "recovery_disabled": true,
+    "both_providers_prepared": true,
+    "only_expected_keys": true,
+    "no_private_key": true
+  },
+  "status": "offline static validation passed",
+  "warning": "Source screenshot must be compared with current Firebase Console before any future enablement or live acceptance",
+  "runtime_modified": false,
+  "cloud_calls": 0,
+  "firebase_auth_enabled": false,
+  "normal_repository_modified": false,
+  "sha256": "844a5b5a8f4b72a8306bc0c6b048cdeff59732ade447df7c27241d7d0bad541e"
+}

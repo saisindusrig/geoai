@@ -4,6 +4,7 @@ import { MapboxOverlay } from "@deck.gl/mapbox";
 import type maplibregl from "maplibre-gl";
 import { Eye, EyeOff, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OperationProgress } from "@/components/ui/loading-feedback";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { buildPreviewLayout } from "@/lib/map/generation-preview-geometry";
 import { buildGenerationPreviewLayers } from "@/lib/map/generation-preview-layers";
@@ -20,7 +21,7 @@ function readPreviewEnabled() {
 }
 
 function mapJobStageToPreview(stage?: JobStage | null): JobStage | "idle" {
-  if (!stage || stage === "completed" || stage === "failed") return "idle";
+  if (!stage || stage === "completed" || stage === "failed" || stage === "cancelled") return "idle";
   return stage;
 }
 
@@ -82,10 +83,11 @@ export default function LiveGenerationPreview({
     activeJob &&
     activeJob.status !== "completed" &&
     activeJob.status !== "failed" &&
+    activeJob.status !== "cancelled" &&
     stage !== "idle";
 
   useEffect(() => {
-    if (!active) return;
+    if (!active || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const tick = () => {
       const now = Date.now();
@@ -143,7 +145,7 @@ export default function LiveGenerationPreview({
     });
   }, []);
 
-  if (!activeJob || activeJob.status === "completed" || activeJob.status === "failed") {
+  if (!activeJob || [activeJob.status, activeJob.stage].some(value => ["completed", "failed", "cancelled"].includes(value ?? ""))) {
     return null;
   }
 
@@ -159,12 +161,12 @@ export default function LiveGenerationPreview({
         {enabled && mapStatus && (
           <span className="text-muted-foreground">· {mapStatus}</span>
         )}
-        {activeJob.progress != null && (
-          <span className="font-data text-[10px] text-muted-foreground">{activeJob.progress}%</span>
-        )}
+        <OperationProgress label={chipLabel} />
+        {activeJob.preview_ready && <span className="text-muted-foreground">Preview only — generation is still running.</span>}
         <button
           type="button"
           onClick={toggleEnabled}
+          aria-pressed={enabled}
           className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] text-muted-foreground hover:bg-surface-hover hover:text-foreground"
         >
           {enabled ? <Eye className="h-3 w-3" /> : <EyeOff className="h-3 w-3" />}

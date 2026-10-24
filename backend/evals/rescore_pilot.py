@@ -15,6 +15,9 @@ def rescore_pilot(source,destination):
     original_summary=json.loads((source/'summary.json').read_text())
     config,all_cases=load()
     cases=[next(c for c in all_cases if c.id==key) for key in original_summary['case_ids']]
+    # Historical evidence must retain the configuration actually used for that
+    # run. Today's model catalogue is not part of an offline archived replay.
+    config=type(config).model_validate(original_summary['evaluation_configuration'])
     assert original_summary['evaluation_configuration']==redact(config.model_dump())
     assert original_summary['dataset_hash']==hashlib.sha256(json.dumps([c.model_dump() for c in cases],sort_keys=True).encode()).hexdigest()
     # Historical replay uses the archived prompt, not today's production instructions.

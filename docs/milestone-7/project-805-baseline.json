@@ -1,0 +1,47 @@
+{
+  "project_id": 805,
+  "revision_id": 125,
+  "components": 56,
+  "visible": 56,
+  "kinds": [
+    "box",
+    "cylinder"
+  ],
+  "methods": {
+    "frame": {
+      "status": "MISSING_INPUTS",
+      "reason": "Select two columns and a beam for backend geometry inspection; declare materials, loads and joints.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "slab": {
+      "status": "MISSING_INPUTS",
+      "reason": "Explicit slab/support mapping, pressure, declarations and supporting frame inputs are required; no shell behavior is inferred.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "spatial": {
+      "status": "UNSUPPORTED",
+      "reason": "No reviewed spatial-frame input is bound to this saved model.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "coupled": {
+      "status": "UNSUPPORTED",
+      "reason": "Only the prescribed synthetic one-storey shell\u2013frame fixture is supported.",
+      "can_review": false,
+      "current_results": [],
+      "history": []
+    },
+    "foundation": {
+      "status": "SUPPORTED",
+      "reason": "Saved bounded foundation inputs and source binding validated; unsupported checks remain disabled.",
+      "can_review": true,
+      "current_results": [],
+      "history": []
+    }
+  }
+}

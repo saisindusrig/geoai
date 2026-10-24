@@ -1,0 +1,165 @@
+{
+  "select": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "kind": "workspace_action",
+    "operation": "select_components",
+    "componentIds": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "view": null,
+    "validation": {
+      "name": "select_components",
+      "arguments": {
+        "project_id": 793,
+        "component_ids": [
+          "drawing-cad:614f117ae2a74794:9C"
+        ]
+      }
+    },
+    "executed": false,
+    "actionId": "a34abd65cae5846c2ed51afcffcd602e5e78b29b2501f1527149af40c8e1c387"
+  },
+  "focus": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "kind": "workspace_action",
+    "operation": "focus_components",
+    "componentIds": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "view": null,
+    "validation": {
+      "name": "focus_components",
+      "arguments": {
+        "project_id": 793,
+        "component_ids": [
+          "drawing-cad:614f117ae2a74794:9C"
+        ]
+      }
+    },
+    "executed": false,
+    "actionId": "049038a574d09e2d9ad4a916bad67f0b9f3ac597ae22dd854f30faf28a443418"
+  },
+  "result": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "resultIdentity": {
+      "id": 421,
+      "project_id": 793,
+      "model_revision_id": 103,
+      "method": "frame",
+      "status": "VERIFIED",
+      "load_cases": [
+        "Linear sum",
+        "Horizontal",
+        "Gravity",
+        "Self weight"
+      ],
+      "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19"
+    },
+    "resultHash": "98c8e7399e8ffbf333c8a457966c3e176a912bb99f126091c1fd9dd4a09b3a1c",
+    "loadCase": "Horizontal",
+    "mode": "forces",
+    "kind": "workspace_action",
+    "operation": "show_saved_result",
+    "componentIds": [],
+    "view": null,
+    "validation": {
+      "name": "show_saved_result",
+      "arguments": {
+        "project_id": 793,
+        "revision_id": 103,
+        "result_id": 421,
+        "method": "frame",
+        "load_case": "Horizontal",
+        "mode": "forces"
+      }
+    },
+    "executed": false,
+    "actionId": "ea1bb54c5906ef86301d2cea78774a4ea2c5ad270d8622d2b86c676726005652"
+  },
+  "deformation": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "resultIdentity": {
+      "id": 421,
+      "project_id": 793,
+      "model_revision_id": 103,
+      "method": "frame",
+      "status": "VERIFIED",
+      "load_cases": [
+        "Linear sum",
+        "Horizontal",
+        "Gravity",
+        "Self weight"
+      ],
+      "model_document_sha256": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19"
+    },
+    "resultHash": "98c8e7399e8ffbf333c8a457966c3e176a912bb99f126091c1fd9dd4a09b3a1c",
+    "loadCase": "Horizontal",
+    "mode": "deformation",
+    "kind": "workspace_action",
+    "operation": "show_saved_result",
+    "componentIds": [],
+    "view": null,
+    "validation": {
+      "name": "show_saved_result",
+      "arguments": {
+        "project_id": 793,
+        "revision_id": 103,
+        "result_id": 421,
+        "method": "frame",
+        "load_case": "Horizontal",
+        "mode": "deformation"
+      }
+    },
+    "executed": false,
+    "actionId": "1f83b390267c9ed730606f637496caba0a970c6fdba4de7afda9bdb8ad8b642c"
+  },
+  "view": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "kind": "workspace_action",
+    "operation": "switch_workspace_view",
+    "componentIds": [],
+    "view": "model",
+    "validation": {
+      "name": "switch_workspace_view",
+      "arguments": {
+        "project_id": 793,
+        "view": "model"
+      }
+    },
+    "executed": false,
+    "actionId": "d500b1848427b573c2e9020fb03549292e60d8d05b27e9debd10a5507a59baf2"
+  },
+  "open": {
+    "projectId": 804,
+    "projectName": "RC footing nominal flexure \u2014 synthetic review",
+    "revisionId": 124,
+    "documentHash": "708aafe1413c4727b34ed79c85b31541c4d23d1ab9e42b61daaeefb5dc9463cf",
+    "kind": "workspace_action",
+    "operation": "open_project",
+    "componentIds": [],
+    "view": null,
+    "validation": {
+      "name": "open_project",
+      "arguments": {
+        "project_id": 804
+      }
+    },
+    "executed": false,
+    "actionId": "755b2f9367c49f95c41a813ac58b73cd2c651e975b4ec971f041a468fb811311"
+  }
+}

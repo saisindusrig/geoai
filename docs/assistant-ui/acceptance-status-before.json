@@ -1,0 +1,30 @@
+{
+  "provider": "nebius",
+  "enabled": true,
+  "canSend": false,
+  "state": "RATE_LIMITED",
+  "code": "ALLOWANCE_OR_RATE_LIMIT",
+  "models": [
+    "zai-org/GLM-5.3-Flash"
+  ],
+  "defaultModel": "zai-org/GLM-5.3-Flash",
+  "message": "Rate-limited or allowance exhausted. Refresh availability manually later; a larger request may require more remaining allowance.",
+  "usage": {
+    "accounted_usd": 0.0024219,
+    "daily_requests": 3,
+    "accounted_daily_tokens": 14487,
+    "active_global": 0,
+    "active_user": 0,
+    "recent_requests": 0,
+    "accounting_blocked": false
+  },
+  "configuration": {
+    "credentialsConfigured": true,
+    "officialEndpoint": true
+  },
+  "actualCharges": "UNKNOWN",
+  "dailyTokenAllowance": 200000,
+  "maxToolCalls": 3,
+  "maxProviderRequests": 2,
+  "automaticRetries": 0
+}

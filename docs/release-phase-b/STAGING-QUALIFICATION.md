@@ -1,0 +1,56 @@
+# Phase B — genuine staging qualification specification
+
+This is an unexecuted plan. **No cloud resources, SDKs, accounts, credentials, deployment, DNS or billing have been changed.** All service tests below require separately approved isolated staging, synthetic identities, a cost ceiling, an operator and a stop/rollback rule. Local mocks do not satisfy these tests. Never connect these procedures to the original development database, storage or evidence.
+
+## Minimum isolated setup and role boundary
+
+- One NEW staging PostgreSQL database with PostGIS, separate from all historical databases. Existing SQLAlchemy/Alembic code is the migration boundary. Install/enable PostGIS only through an approved migration operator. `psycopg2` is present locally; real PostgreSQL/PostGIS, grants and restore are not qualified.
+- Separate migration owner, restricted application runtime, engineering worker and backup/restore identities. Runtime has no superuser, CREATE DATABASE/ROLE, schema ownership, DDL or migration grants. Grant only required table/sequence DML and schema USAGE. Do not enable PostgreSQL RLS blindly: qualify server ownership and optionally designed tenant policies, pooling/context reset and role-bypass behavior. Worker cannot alter users/roles/ownership; evidence/job mutation privileges need explicit design. Audit writes should be append-only where supported. Backup access and restore rights belong to a separate operator, not the public application.
+- One NEW private staging bucket/namespace and NEW shared AI-accounting store, with no imported development records, conversations or accounting. For native Google Cloud Storage, the existing S3 adapter is not a qualified substitute: approve the supported adapter/IAM approach first. Runtime cannot set public ACLs or administer bucket/IAM; require individual owner-authorized object access, minimal read/create permissions and short-lived links. Reconciliation/listing/deletion permissions must be separated and justified. Private bucket existence/HEAD success does not prove confidentiality.
+- One isolated shared Redis instance/namespace for rate limiting; qualify transactional INCR plus EXPIRE NX on its actual version, separate service identity, TLS/auth, bounded memory/eviction policy, failure refusal and database isolation. A mocked pipeline call is not distributed protection evidence.
+- A restricted HTTPS staging ingress with explicit domain/certificate, no public open signup until lifecycle review, exact CORS origins, explicit proxy IP allowlist and no raw forwarded-header trust. Retain loopback localhost HTTP independently. Do not preload HSTS or introduce a CSP that breaks the 3D renderer without browser evidence.
+- Synthetic fixtures only; no production dumps, original CAD, saved user revisions, real authorization tokens or engineering evidence. Marketing assets remain separate, clearly labeled public content. Start with empty project/user/history/usage tables except approved provisioning records and schema metadata; no implicit demo seeder.
+
+## Firebase prerequisites and test cases
+
+The official backend `firebase-admin` SDK is absent (`sdk-prerequisites.log`); no installation occurred. The frontend official Firebase browser SDK/sign-in boundary is not active. Approve exact dependency versions and installation separately, a real restricted Firebase project/provider/domain configuration, least-privilege credentials/secret delivery and audited identity provisioning. Current adapter requires a credential file matching the explicit project; workload identity/ADC support would need a reviewed code change. No emulator or browser claims may substitute for genuine verification.
+
+Use existing `core/firebase_auth.py` and `services/identity_links.py`. Explicit project/issuer/audience/signature/expiry/subject checks and mandatory `check_revoked=True` remain. Revocation/account verification adds network traffic/latency per verification; certificate refresh also requires network. Fail closed on service failures. Identity link schema/provisioning is separate, requires verified identity control and authorized audit approval, and must not copy/merge by email or renumber local users. Review linking/revocation when approver privileges change.
+
+Execute only after approval, recording test ID, synthetic identity, expected status, actual server response/audit and sanitized timestamp:
+
+- F01 Sign-in: genuine SDK tokens for linked user A/B resolve exact internal identities; expired/forged/wrong-project/unlinked tokens fail. Do not accept mocks as F01 evidence.
+- F02 Revocation/disable/delete: retain a pre-action token, revoke/disable/delete its synthetic account, then verify the old token is refused by all owned API/file/result/history paths. Verification-service/certificate outages fail closed.
+- F03 Logout: clear browser persistence, verify no UI replay/request succeeds without authentication; explicitly document that client-only logout does NOT itself revoke a stolen bearer token. If global logout is required, use an approved revoke operation and verify server refusal.
+- F04 Password change/reset: request an approved synthetic reset, verify action/recipient/domain binding, expiration, single use, enumeration-safe responses, request quotas and post-change old-token invalidation. Do not send recovery mail to real users or build an invented offline reset flow.
+- F05 Recovery/account change: verify reauthentication and approved recovery identity policy, no email-only link/ownership transfer, admin-approval revocation and safe rollback. Recovery remains unimplemented/unqualified until this actual flow exists.
+- F06 Cross-user: A cannot read/mutate/download B's projects/CAD/current or stale results/quantities/history; forged role/user/project fields cannot elevate; roles come from internal approved identity, not browser claims. Non-admin audit/usage endpoints deny access.
+- F07 Browser session: qualify SDK persistence/refresh/expiry across tabs/logout and XSS exposure. Current local bearer storage is not an HttpOnly cookie session. Any new cookies require Secure/HttpOnly/SameSite plus CSRF/Origin protections, scoped path/domain and actual HTTPS tests.
+
+Existing synthetic verifier tests prepare negative cases; they do not demonstrate F01–F07. Firebase recovery/reset and account creation must remain unavailable until a reviewed implementation exists. Production legacy registration is now blocked independently of account existence; local registration remains available for development only.
+
+## Database, storage and recovery acceptance cases
+
+- D01 New-schema migration: inspect/review Alembic SQL and constraints; apply only to new synthetic staging. Record migration/schema versions, role identities and counts. Verify startup cannot repair/create/seed an outdated production schema; runtime DDL and role escalation attempts fail. Verify workers/backups cannot use each other's privileges.
+- D02 Immutable identity: save a synthetic owned model/revision with exact source/document hashes, create synthetic evidence records without invoking a solver, and verify owner/revision/load-case/method/source binding. Concurrent saves must yield one accepted base transition and a stale conflict, not silent overwrite. Reopen hashes after connection failure.
+- D03 Backup/restore: take an approved backup and object manifest of synthetic data only; restore to a SECOND new isolated target with separate credentials. Compare exact table/ownership/revision/hash/evidence/ledger relationships and file hashes, including interrupted-job status and audit/accounting. Measure RPO/RTO. No overwrite of originals; restore failure blocks launch.
+- S01 Private files: anonymous object read/list/ACL changes denied; A cannot retrieve B objects even knowing keys; owner-gated API access, link expiry, cache behavior and path traversal tested. Do not let links bypass application ownership or expose original storage.
+- S02 Publication failures: interrupt upload/DB commit/worker at bounded points; no incomplete artifact may appear as verified evidence. Preserve orphan manifests and reconcile under approved operator authority; never auto-delete or rerun uncertain calculations.
+
+## Distributed budgets, ingress and security-header acceptance
+
+- AI01 With provider transport mocked and inference disabled, run two staging instances against ONE shared transactional reservation store. Concurrent users/instances cannot exceed the agreed budget; duplicate/replayed request IDs cannot double charge/refund; disconnect/crash/unknown usage conservatively retain reservation; settlement exactly once; provider identity/pricing mismatch blocks further requests. Do not call Nebius while proving storage invariants.
+- AI02 Qualify shared ledger backup/restore and migration without losing historical reserved spend. Existing local history is preserved, not copied into clean production. Paid inference needs a later separate explicit spend authorization after this evidence passes. No automatic retry/model escalation or fallback.
+- H01 Verify TLS certificate/redirect policy, chosen HSTS duration/subdomain policy, full compatible CSP (including renderer/worker/connect requirements), framing/nosniff/referrer headers on frontend/API/errors/storage links and HTTPS-only protected transport. Exercise 3D scene and assistant at desktop/mobile dimensions; collect policy violations before tightening. Current partial CSP is not full ASVS qualification.
+- H02 Exact allowed CORS origins succeed; foreign/null origins cannot use credentialed APIs; forwarding/header spoofing cannot change client identity or trusted scheme. ASGI proxy trust must enumerate the actual ingress IP/network; wildcard trust is not acceptable evidence.
+- H03 Bounded multipart/JSON ingress before spooling, per-user/global resource quotas and sandboxed native CAD/raster/LAS parser time/memory/work limits. GeoJSON now has additional local complexity limits, but compressed native data can still expand beyond file-byte limits. Dedicated staging only: no destructive load tests against original localhost data.
+- A01 Account abuse: account-wide and IP-wide quotas apply consistently across instances. Rejected hits cannot extend the fixed cooldown; expiry genuinely resets it. Test Redis failure/eviction and temporary denial-of-service behavior. Decide a progressive/invitation/recovery policy; do not add arbitrary permanent lockouts.
+
+## Required approval decisions (not requests to launch)
+
+1. Exact official Firebase SDK installation/configuration and synthetic identity/account-link lifecycle plan.
+2. New isolated PostgreSQL/PostGIS, Redis, private storage/adapter and least-privilege/backup test resources, operator access and cost ceiling. No existing resources/accounts changed implicitly.
+3. Restricted staging HTTPS ingress/domain/certificate/proxy configuration and bounded test authorization with monitoring/incident owner.
+4. Any actual credential rotation or historical exposure action requires separate explicit approval. None performed here; no Git operation needed for local Phase B.
+
+Paid inference, engineering execution and public launch are excluded from these approvals. Launch remains blocked until actual real-service results are reviewed.

@@ -1,0 +1,9 @@
+{
+  "status": 503,
+  "body": {
+    "detail": {
+      "message": "Survey Mode requires PostgreSQL with PostGIS. Start Docker services (docker compose up -d) and set DATABASE_URL to the PostGIS instance."
+    },
+    "request_id": "be7ea6012f4a4b62b7fc5a6c5b68136b"
+  }
+}

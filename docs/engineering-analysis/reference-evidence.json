@@ -1,0 +1,36 @@
+{
+  "status": "REFERENCE_VERIFIED_SOLVER_NOT_RUN",
+  "engineering_review": "REQUIRED_NOT_APPROVED",
+  "code_checks": "NONE_SUPPORTED",
+  "inputs_si": {
+    "length_m": 3,
+    "area_m2": 0.01,
+    "modulus_pa": 200000000000.0,
+    "soil_spring_n_per_m": 100000000.0,
+    "compression_n": 100000.0
+  },
+  "results_si": {
+    "soil_translation": 0.0010000000000000007,
+    "head_translation": 0.0011500000000000006,
+    "column_shortening": 0.00014999999999999996,
+    "stress": 10000000.0,
+    "reaction": 100000.00000000007,
+    "strain_energy": 57.50000000000003
+  },
+  "results_n_mm": {
+    "soil_translation": 0.9999999999999997,
+    "head_translation": 1.1499999999999995,
+    "column_shortening": 0.1499999999999998,
+    "stress": 10.0,
+    "reaction": 99999.99999999997,
+    "strain_energy": 57499.99999999997
+  },
+  "assertions": "Two independent formulations, equilibrium and N-mm unit equivalence passed",
+  "limitations": [
+    "Linear axial mechanics only",
+    "No self-weight, buckling or bending",
+    "Rigid plate and footing; anchors inactive in this compression-only idealization",
+    "Prescribed spring, not derived geotechnical bearing or settlement capacity",
+    "No established solver executed and no design-standard checks implemented"
+  ]
+}

@@ -155,7 +155,7 @@ function ConstructionStudioContent({ project }: { project?: Project }) {
       setPlan(offlineConstructionPlan(site, prompt, projectType));
       setStage("finish");
       setMessage(
-        "Local procedural preview updated. No GeoAI, Nebius, or backend API request was made.",
+        "Local procedural preview updated. No StruvoCivil, Nebius, or backend API request was made.",
       );
       return;
     }
@@ -214,7 +214,7 @@ function ConstructionStudioContent({ project }: { project?: Project }) {
       useProjectStore.getState().setProject(localProject);
       setName(localProject.name);
       setMessage(
-        "Saved in this browser only. Nothing was sent to the GeoAI backend or added to your dashboard.",
+        "Saved in this browser only. Nothing was sent to the StruvoCivil backend or added to your dashboard.",
       );
       return;
     }
@@ -633,14 +633,14 @@ function ConstructionStudioContent({ project }: { project?: Project }) {
             <button
               type="button"
               onClick={() => setAiOpen(true)}
-              aria-label="Open GeoAI planner"
-              title="Try GeoAI"
+              aria-label="Open StruvoCivil planner"
+              title="Try StruvoCivil"
               className="grid size-12 place-items-center rounded-full border border-primary/45 bg-primary text-primary-foreground shadow-[var(--shadow-md)] transition hover:scale-105"
             >
               <Sparkles className="size-5" />
             </button>
             <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground shadow-[var(--shadow-sm)]">
-              Try GeoAI
+              Try StruvoCivil
             </span>
           </div>
         )}
@@ -649,14 +649,14 @@ function ConstructionStudioContent({ project }: { project?: Project }) {
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-200/85">
-                  03 · GeoAI planner
+                  03 · StruvoCivil planner
                 </p>
                 <h2 className="mt-1 text-xl font-semibold">Try an idea</h2>
               </div>
               <button
                 type="button"
                 onClick={() => setAiOpen(false)}
-                aria-label="Close GeoAI planner"
+                aria-label="Close StruvoCivil planner"
                 title="Close AI planner"
                 className="rounded-lg p-2 text-muted-foreground transition hover:bg-surface-hover hover:text-foreground"
               >
@@ -664,7 +664,7 @@ function ConstructionStudioContent({ project }: { project?: Project }) {
               </button>
             </div>
             <p className="mt-2 text-xs leading-5 text-muted-foreground">
-              Describe the change you want to explore. GeoAI will create a constrained conceptual preview.
+              Describe the change you want to explore. StruvoCivil will create a constrained conceptual preview.
             </p>
             <div className="mt-4 rounded-xl border border-white/10 bg-black/15 p-3">
               <div className="flex items-center justify-between text-[11px]">

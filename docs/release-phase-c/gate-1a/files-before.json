@@ -1,0 +1,7 @@
+{
+  "frontend/package.json": "8e0eee78520e349a5e865be2ab68982cdcfdce66d2b84f5ea50d5502d50b2ba6",
+  "frontend/package-lock.json": "e605d53157e892817a7d06837f33547a4202982ed5afd2b8c7b0373d07c98416",
+  "backend/requirements.txt": "ebf0a05e337874751ff3ab1eb2d335d32c9e2299ba8f4ed6c07492a7e03280d1",
+  "run-website.bat": "d9c5cbbb0d74b805b2ce4a1af91f62fe61829826ca250bfed54856c865b2fd65",
+  "start-copilot-review.ps1": "36acca56dba7eba129c166935c1f6afe438a4fbece56e68d2b83dcdfae66ee8b"
+}

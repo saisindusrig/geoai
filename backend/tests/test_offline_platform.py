@@ -67,6 +67,15 @@ def test_other_requests_are_not_hijacked(site_db, text):
     assert provider_for_request(site_db, 1, msg) is None
 
 
+def test_mock_general_chat_fails_closed_without_transport(site_db):
+    rid = run(site_db, "What load can this platform safely carry?")
+    saved = owned_row(site_db, "assistant_runs", 1, rid)
+    assert saved["status"] == "FAILED"
+    assert saved["error_code"] == "AI_PROVIDER_UNAVAILABLE"
+    assert not rows(site_db, "design_proposal_versions", 1)
+    assert not rows(site_db, "generation_requests", 1)
+
+
 @pytest.mark.parametrize("gate,value", [("GEOAI_OFFLINE_PLATFORM_DEMO", False), ("AI_PROVIDER", "nebius"), ("ENVIRONMENT", "production")])
 def test_explicit_local_gate(site_db, monkeypatch, gate, value):
     msg, _ = message(site_db, EXAMPLE)

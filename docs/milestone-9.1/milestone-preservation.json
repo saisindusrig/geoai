@@ -1,0 +1,21 @@
+{
+  "database": {
+    "all_original_rows_unchanged": true,
+    "schema_unchanged": true,
+    "original_rows": 10269,
+    "added_rows_by_table": {
+      "users": 1,
+      "projects": 1,
+      "audit_logs": 5,
+      "usage_events": 6
+    },
+    "exactly_unchanged": false
+  },
+  "assistant-history": {
+    "all_original_rows_unchanged": true,
+    "schema_unchanged": true,
+    "original_rows": 3,
+    "added_rows_by_table": {},
+    "exactly_unchanged": true
+  }
+}

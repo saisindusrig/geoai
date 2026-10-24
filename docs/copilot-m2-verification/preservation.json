@@ -1,0 +1,197 @@
+{
+  "original_rows_checked": 10063,
+  "missing_original_rows": [],
+  "changed_original_rows": [
+    {
+      "table": "projects",
+      "key": [
+        784
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        788
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        789
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        793
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        800
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "b25c3bbc-7758-540c-abc7-c85b1dd7d495"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "eaf0994e-be61-5066-96c7-32018ca85633"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "76a88de7-bd13-5d78-b02b-09880327ba9d"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "63320202-b2a2-58a3-8f97-24c04cebd2d5"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    }
+  ],
+  "original_analysis_count": 509,
+  "new_analysis_count": 0,
+  "usage_events_added": 1,
+  "qa_project": 801,
+  "qa_revisions": [
+    [
+      118
+    ],
+    [
+      119
+    ],
+    [
+      120
+    ]
+  ],
+  "operational_metadata_changes": [
+    {
+      "table": "projects",
+      "key": [
+        784
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        788
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        789
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        793
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        800
+      ],
+      "fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "b25c3bbc-7758-540c-abc7-c85b1dd7d495"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "eaf0994e-be61-5066-96c7-32018ca85633"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "76a88de7-bd13-5d78-b02b-09880327ba9d"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "63320202-b2a2-58a3-8f97-24c04cebd2d5"
+      ],
+      "fields": [
+        "next_sequence"
+      ]
+    }
+  ],
+  "unexpected_changes": [],
+  "usage_event_explanation": {
+    "id": 2476,
+    "event_type": "file.download",
+    "project_id": 789,
+    "file_name": "model.glb",
+    "paid_inference": false
+  },
+  "project_800_activity_explanation": "A new empty persistent conversation was created during local review; backend log records POST /api/projects/800/conversations. Project.updated_at advances through the existing lock_project write. Actor/tab attribution is not established.",
+  "qa_components_restored": true,
+  "original_message_rows_unchanged": true,
+  "original_permissions_unchanged": true
+}

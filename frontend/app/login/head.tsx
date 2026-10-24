@@ -1,3 +1,3 @@
 export default function Head() {
-  return <><title>Sign in | GeoAI</title></>;
+  return <><title>Sign in | StruvoCivil</title></>;
 }

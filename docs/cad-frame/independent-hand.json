@@ -1,0 +1,29 @@
+{
+  "left": [
+    0.0004099485852894093,
+    6.564767014205215e-07,
+    -0.00012979811271946102
+  ],
+  "right": [
+    0.0004099485852894093,
+    -6.564767014205215e-07,
+    -0.00012979811271946102
+  ],
+  "left_reaction": [
+    -10000.0,
+    -3692.681445490434,
+    21475.85788035226
+  ],
+  "right_reaction": [
+    -10000.0,
+    3692.681445490434,
+    21475.85788035226
+  ],
+  "beam_local_left_shear_n": -3692.681445490434,
+  "beam_local_end_moment_nm": -11078.044336471301,
+  "beam_internal_start_moment_nm": 11078.044336471301,
+  "beam_internal_end_moment_nm": -11078.044336471301,
+  "rigid_offset_couple_nm": 553.902216823565,
+  "moment_equilibrium_nm": 0.0,
+  "method": "Independent three-DOF symmetric strain energy; actual 6 m elastic beam, 5.7 m column span and explicit \u00b10.15 m arms. Equal horizontal load gives zero beam axial force, so common 0.05 m vertical offsets do not contribute axial work. End force/diagram checks use the separately substituted Euler-Bernoulli end-force formulas. Not valid for arbitrary loading."
+}

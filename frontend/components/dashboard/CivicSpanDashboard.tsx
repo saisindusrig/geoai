@@ -128,7 +128,7 @@ export function LegacyGeoAIDashboard() {
         <header className="flex items-center justify-between gap-8">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              GeoAI home
+              StruvoCivil home
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight text-foreground">
               What will you create?

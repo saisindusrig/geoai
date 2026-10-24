@@ -1,0 +1,6 @@
+{
+  "before_after_installed_packages_identical": true,
+  "firebase_admin_installed": false,
+  "dry_run_only": true,
+  "package_count": 85
+}

@@ -1,0 +1,1 @@
+Final cad-soil-path.spec.ts: 1 passed (19.2 seconds). Source reactions, stable footing review, missing engineering source rejection, exact authorization, contact-loss benchmark, stale draft, full CAD load-path visualization and responsive save/reload verified. See browser-evidence.json.

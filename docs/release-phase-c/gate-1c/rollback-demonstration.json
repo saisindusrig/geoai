@@ -1,0 +1,9 @@
+{
+  "restored_bytes_match": true,
+  "launcher_sha256": {
+    "run-website.bat": "d9c5cbbb0d74b805b2ce4a1af91f62fe61829826ca250bfed54856c865b2fd65",
+    "start-copilot-review.ps1": "36acca56dba7eba129c166935c1f6afe438a4fbece56e68d2b83dcdfae66ee8b"
+  },
+  "inherited_node_after_restore": "v22.18.0",
+  "original_files_not_restored_during_test": true
+}

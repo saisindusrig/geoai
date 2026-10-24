@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, type RefObject } from "react";
+import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 
 export function readStoredSize(key: string, fallback: number) {
   if (typeof window === "undefined") return fallback;
@@ -10,19 +10,28 @@ export function readStoredSize(key: string, fallback: number) {
 }
 
 function armDragSession(cursor: string, onMove: (ev: PointerEvent) => void, onEnd: () => void) {
+  const previousCursor=document.body.style.cursor,previousSelect=document.body.style.userSelect;
   document.body.style.cursor = cursor;
   document.body.style.userSelect = "none";
 
+  let ended=false;
   const onUp = () => {
+    if(ended)return;
+    ended=true;
     document.removeEventListener("pointermove", onMove);
     document.removeEventListener("pointerup", onUp);
-    document.body.style.cursor = "";
-    document.body.style.userSelect = "";
+    document.removeEventListener("pointercancel", onUp);
+    window.removeEventListener("blur", onUp);
+    document.body.style.cursor = previousCursor;
+    document.body.style.userSelect = previousSelect;
     onEnd();
   };
 
   document.addEventListener("pointermove", onMove);
   document.addEventListener("pointerup", onUp);
+  document.addEventListener("pointercancel", onUp);
+  window.addEventListener("blur", onUp);
+  return onUp;
 }
 
 export function useVerticalSplitResize({
@@ -79,15 +88,19 @@ export function useHorizontalPanelResize({
   maxSize: number;
 }) {
   const [size, setSize] = useState(() => readStoredSize(storageKey, defaultSize));
+  const cleanup=useRef<(()=>void)|null>(null);
+  useEffect(()=>()=>cleanup.current?.(),[]);
 
   const onResizePointerDown = useCallback(
     (e: React.PointerEvent) => {
+      if(e.button!==0)return;
       e.preventDefault();
+      cleanup.current?.();
       const startX = e.clientX;
       const startW = size;
       let latest = startW;
 
-      armDragSession(
+      cleanup.current=armDragSession(
         "ew-resize",
         (ev) => {
           latest = Math.min(Math.max(startW + (startX - ev.clientX), minSize), maxSize);

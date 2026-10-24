@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { Loader2, RefreshCw } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { RefreshCw } from "lucide-react";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
 import { api } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,12 +42,17 @@ function StatusRow({
 }
 
 export default function SystemStatusPanel() {
+  const pending = useRef(false);
+  const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<SystemStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
 
   const load = useCallback(async (silent = false) => {
+    if (pending.current) return;
+    pending.current = true;
+    setError(null);
     if (silent) setRefreshing(true);
     else setLoading(true);
     try {
@@ -54,8 +60,10 @@ export default function SystemStatusPanel() {
       setStatus(s);
       setUpdatedAt(new Date());
     } catch {
+      setError("System status could not be refreshed. Check your connection and retry.");
       if (!silent) setStatus(null);
     } finally {
+      pending.current = false;
       setLoading(false);
       setRefreshing(false);
     }
@@ -71,10 +79,7 @@ export default function SystemStatusPanel() {
   if (loading) {
     return (
       <Card>
-        <CardContent className="flex items-center gap-2 py-6 text-sm text-muted-foreground">
-          <Loader2 className="h-4 w-4 animate-spin" />
-          Loading system status…
-        </CardContent>
+        <ContentSkeleton label="Loading system status…" layout="rows" />
       </Card>
     );
   }
@@ -83,7 +88,8 @@ export default function SystemStatusPanel() {
     return (
       <Card>
         <CardContent className="py-6 text-sm text-muted-foreground">
-          Could not reach backend system status. Is the API running on port 8000?
+          <p role="alert">Could not load system status. Check your connection and try again.</p>
+          <button type="button" onClick={() => void load()} className="mt-3 min-h-11 text-primary underline">Retry system status</button>
         </CardContent>
       </Card>
     );
@@ -109,6 +115,7 @@ export default function SystemStatusPanel() {
   return (
     <Card float>
       <CardContent className="p-5">
+        {error && <p role="alert" className="mb-3 text-sm text-warning-text">{error} Showing the last successful result.</p>}
         <div className="flex items-center justify-between gap-3 border-b border-border pb-3">
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-2.5 w-2.5">
@@ -123,10 +130,11 @@ export default function SystemStatusPanel() {
             type="button"
             onClick={() => void load(true)}
             disabled={refreshing}
+            aria-busy={refreshing}
             className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs text-muted-foreground transition hover:text-foreground disabled:opacity-50"
           >
-            <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin" : ""}`} />
-            Refresh
+            {refreshing ? <InlineSpinner /> : <RefreshCw aria-hidden="true" className="h-3.5 w-3.5" />}
+            {refreshing ? "Refreshing…" : "Refresh"}
           </button>
         </div>
 

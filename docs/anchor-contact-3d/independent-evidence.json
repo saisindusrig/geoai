@@ -1,0 +1,488 @@
+{
+  "project_id": 787,
+  "analysis_id": 351,
+  "revision_id": 91,
+  "current_case": "biaxial",
+  "all_45_source_components_unchanged": true,
+  "actual_saved_plate_size_m": [
+    0.65,
+    0.65,
+    0.025
+  ],
+  "actual_declared_anchor_local_positions": [
+    {
+      "id": "synthetic-anchor-1",
+      "position_east_north_m": [
+        -0.23999999999999977,
+        -0.23999999999999977
+      ],
+      "definition": "DECLARED_UNVERIFIED_NOT_SAVED_PHYSICAL_BOLT"
+    },
+    {
+      "id": "synthetic-anchor-2",
+      "position_east_north_m": [
+        -0.23999999999999977,
+        0.24
+      ],
+      "definition": "DECLARED_UNVERIFIED_NOT_SAVED_PHYSICAL_BOLT"
+    },
+    {
+      "id": "synthetic-anchor-3",
+      "position_east_north_m": [
+        0.23999999999999977,
+        -0.23999999999999977
+      ],
+      "definition": "DECLARED_UNVERIFIED_NOT_SAVED_PHYSICAL_BOLT"
+    },
+    {
+      "id": "synthetic-anchor-4",
+      "position_east_north_m": [
+        0.23999999999999977,
+        0.24
+      ],
+      "definition": "DECLARED_UNVERIFIED_NOT_SAVED_PHYSICAL_BOLT"
+    }
+  ],
+  "actual_project_status": "ACTUAL_PROJECT_BLOCKED_MISSING_MECHANICS",
+  "actual_demand": {
+    "column_id": "industrial-platform-5x3:column-sw",
+    "node": 1,
+    "compression_n": 29999.999999999996,
+    "demand_on_interface_enu_force_n": [
+      -10765.080571577306,
+      0,
+      -29999.999999999996
+    ],
+    "demand_on_interface_enu_moment_nm": [
+      0,
+      -11753.693592818216,
+      0
+    ],
+    "horizontal_shear_east_n": -10765.080571577306,
+    "moment_about_negative_north_nm": 11753.693592818216,
+    "support_reaction_si": {
+      "node": 1,
+      "fx_n": 10765.080571577306,
+      "fy_n": 29999.999999999996,
+      "moment_nm": -11753.693592818216
+    },
+    "solver_version": "3.8.0",
+    "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+    "source_frame_inputs": {
+      "component_ids": [
+        "industrial-platform-5x3:column-sw",
+        "industrial-platform-5x3:beam-south",
+        "industrial-platform-5x3:column-se"
+      ],
+      "sections": [
+        {
+          "component_id": "industrial-platform-5x3:column-sw",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        },
+        {
+          "component_id": "industrial-platform-5x3:beam-south",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.06,
+          "inertia_m4": 0.00020000000000000006,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        },
+        {
+          "component_id": "industrial-platform-5x3:column-se",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic steel",
+          "material_source": "Synthetic E=200 GPa verification assumption",
+          "section_source": "Explicit saved solid rectangular verification section"
+        }
+      ],
+      "connections": [
+        {
+          "column_id": "industrial-platform-5x3:column-sw",
+          "beam_id": "industrial-platform-5x3:beam-south",
+          "column_endpoint": "top",
+          "beam_endpoint": "left",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            -0.1499999999999999,
+            0.10000000000000009
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+        },
+        {
+          "column_id": "industrial-platform-5x3:column-se",
+          "beam_id": "industrial-platform-5x3:beam-south",
+          "column_endpoint": "top",
+          "beam_endpoint": "right",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            0.14999999999999947,
+            0.10000000000000009
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+        }
+      ],
+      "supports": "both_column_bases_fixed",
+      "support_source": "Synthetic fixed bases; no foundation adequacy",
+      "load_pattern": null,
+      "load_n": null,
+      "load_source": null,
+      "load_cases": [
+        {
+          "name": "Slab tributary",
+          "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+          "horizontal_n": 0,
+          "vertical_nodal_loads": [],
+          "beam_uniform_n_per_m": -10000.0,
+          "self_weight": null
+        }
+      ],
+      "combination": null,
+      "purpose": "VERIFICATION_ONLY",
+      "elements_per_member": 2,
+      "units": "SI"
+    },
+    "source_model_revision_id": 86,
+    "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+    "solver_artifact_sha256": {
+      "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+      "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+      "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+      "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+      "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+      "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+    },
+    "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=\u2212Rx; M about \u2212North=\u2212Rmoment.",
+    "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+    "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+  },
+  "missing_actual_inputs": [
+    "Effective contact stiffness kc [N/m\u00b3], evidence and calibration/assumption source",
+    "Reviewed fixed anchor-ground tension load path and reference-plane idealization",
+    "Individual anchor axial stiffnesses ki [N/m] with sources",
+    "synthetic-anchor-1: no axial stiffness defined",
+    "synthetic-anchor-2: no axial stiffness defined",
+    "synthetic-anchor-3: no axial stiffness defined",
+    "synthetic-anchor-4: no axial stiffness defined"
+  ],
+  "benchmarks": [
+    {
+      "case": "symmetric",
+      "independent_decimal_hand": {
+        "state": [
+          "0.0002",
+          "0",
+          "0"
+        ],
+        "active_area_m2": "0.4225",
+        "compression_n": "84500.000000000",
+        "contact_first_moments_nm": [
+          "0",
+          "0"
+        ],
+        "individual_tensions_n": [
+          "0.0",
+          "0.0",
+          "0.0",
+          "0.0"
+        ],
+        "net_axial_n": "84500.000000000",
+        "applied_moments_east_north_nm": [
+          "0.000",
+          "0.000"
+        ],
+        "max_pressure_pa": "200000.00000"
+      },
+      "computed": {
+        "compression_n": 84500.0,
+        "active_area_m2": 0.42250000000000004,
+        "rotations_east_north_rad": [
+          0.0,
+          0.0
+        ],
+        "individual_tensions_n": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "equilibrium_residual_si": [
+          0.0,
+          -9.094947017729282e-13,
+          0.0
+        ],
+        "independent_triangle_quadrature": {
+          "force_and_first_moments_si": [
+            84500.0,
+            0.0,
+            -9.094947017729282e-13
+          ],
+          "area_m2": 0.42250000000000004
+        }
+      }
+    },
+    {
+      "case": "uniaxial",
+      "independent_decimal_hand": {
+        "state": [
+          "0",
+          "-0.001",
+          "0"
+        ],
+        "active_area_m2": "0.21125",
+        "compression_n": "34328.125000000000",
+        "contact_first_moments_nm": [
+          "-7437.760416666666666666666667",
+          "0"
+        ],
+        "individual_tensions_n": [
+          "0.0",
+          "0.0",
+          "2400.000000",
+          "2400.000000"
+        ],
+        "net_axial_n": "29528.125000000000",
+        "applied_moments_east_north_nm": [
+          "0E-8",
+          "-8589.760416666666666666666667"
+        ],
+        "max_pressure_pa": "325000.0000000"
+      },
+      "computed": {
+        "compression_n": 34328.12500000001,
+        "active_area_m2": 0.21125,
+        "rotations_east_north_rad": [
+          -1.2902640598018546e-21,
+          -0.0010000000000000002
+        ],
+        "individual_tensions_n": [
+          0.0,
+          0.0,
+          2400.0000000000014,
+          2400.0000000000014
+        ],
+        "equilibrium_residual_si": [
+          -3.637978807091713e-12,
+          -9.094947017729282e-13,
+          0.0
+        ],
+        "independent_triangle_quadrature": {
+          "force_and_first_moments_si": [
+            34328.125,
+            -7437.760416666668,
+            -9.094947017729282e-13
+          ],
+          "area_m2": 0.21124999999999997
+        }
+      }
+    },
+    {
+      "case": "asymmetric",
+      "independent_decimal_hand": {
+        "state": [
+          "0",
+          "-0.001",
+          "0"
+        ],
+        "active_area_m2": "0.21125",
+        "compression_n": "34328.125000000000",
+        "contact_first_moments_nm": [
+          "-7437.760416666666666666666667",
+          "0"
+        ],
+        "individual_tensions_n": [
+          "0.0",
+          "0.0",
+          "4800.000000",
+          "2400.000000"
+        ],
+        "net_axial_n": "27128.125000000000",
+        "applied_moments_east_north_nm": [
+          "-576.00000000",
+          "-9165.760416666666666666666667"
+        ],
+        "max_pressure_pa": "325000.0000000"
+      },
+      "computed": {
+        "compression_n": 34328.12500000001,
+        "active_area_m2": 0.21125,
+        "rotations_east_north_rad": [
+          2.1282052639065378e-20,
+          -0.0010000000000000002
+        ],
+        "individual_tensions_n": [
+          0.0,
+          0.0,
+          4800.000000000003,
+          2400.0000000000014
+        ],
+        "equilibrium_residual_si": [
+          -3.637978807091713e-12,
+          -5.684341886080801e-13,
+          0.0
+        ],
+        "independent_triangle_quadrature": {
+          "force_and_first_moments_si": [
+            34328.125,
+            -7437.760416666668,
+            -9.094947017729282e-13
+          ],
+          "area_m2": 0.21124999999999997
+        }
+      }
+    },
+    {
+      "case": "biaxial",
+      "independent_decimal_hand": {
+        "state": [
+          "0",
+          "-0.001",
+          "-0.001"
+        ],
+        "active_area_m2": "0.211250",
+        "compression_n": "45770.83333333333333333333333",
+        "contact_first_moments_nm": [
+          "-7437.760416666666666666666667",
+          "-7437.760416666666666666666667"
+        ],
+        "individual_tensions_n": [
+          "0.0",
+          "0.0",
+          "0.0",
+          "4800.000000"
+        ],
+        "net_axial_n": "40970.83333333333333333333333",
+        "applied_moments_east_north_nm": [
+          "8589.760416666666666666666667",
+          "-8589.760416666666666666666667"
+        ],
+        "max_pressure_pa": "650000.000000"
+      },
+      "computed": {
+        "compression_n": 45770.83333333334,
+        "active_area_m2": 0.21125,
+        "rotations_east_north_rad": [
+          0.001,
+          -0.0010000000000000002
+        ],
+        "individual_tensions_n": [
+          0.0,
+          0.0,
+          8.131516293641283e-13,
+          4800.000000000001
+        ],
+        "equilibrium_residual_si": [
+          7.275957614183426e-12,
+          0.0,
+          1.8189894035458565e-12
+        ],
+        "independent_triangle_quadrature": {
+          "force_and_first_moments_si": [
+            45770.83333333334,
+            -7437.76041666667,
+            -7437.760416666668
+          ],
+          "area_m2": 0.21124999999999997
+        }
+      }
+    },
+    {
+      "case": "2d_reduction",
+      "independent_decimal_hand": {
+        "state": [
+          "0",
+          "-0.001",
+          "0"
+        ],
+        "active_area_m2": "0.15",
+        "compression_n": "22500.0000000",
+        "contact_first_moments_nm": [
+          "-4500.00000000",
+          "0"
+        ],
+        "individual_tensions_n": [
+          "0.0",
+          "0.0",
+          "4000.00000",
+          "2400.000000"
+        ],
+        "net_axial_n": "16100.0000000",
+        "applied_moments_east_north_nm": [
+          "0E-7",
+          "-5876.00000000"
+        ],
+        "max_pressure_pa": "300000.00000"
+      },
+      "computed": {
+        "compression_n": 22500.000000000997,
+        "active_area_m2": 0.15000000000000563,
+        "rotations_east_north_rad": [
+          3.469446045901322e-20,
+          -0.000999999999999969
+        ],
+        "individual_tensions_n": [
+          0.0,
+          0.0,
+          3999.99999999965,
+          2399.9999999998126
+        ],
+        "equilibrium_residual_si": [
+          1.5315890777856112e-09,
+          0.0,
+          -1.8189894035458565e-12
+        ],
+        "independent_triangle_quadrature": {
+          "force_and_first_moments_si": [
+            22500.000000000993,
+            -4500.000000000113,
+            0.0
+          ],
+          "area_m2": 0.15000000000000563
+        }
+      }
+    }
+  ],
+  "current": {
+    "compression_n": 45770.83333333334,
+    "area_m2": 0.21125,
+    "pressure_max_kpa": 650.0000000000001,
+    "rotations_east_north_rad": [
+      0.001,
+      -0.0010000000000000002
+    ],
+    "tensions_n": [
+      0.0,
+      0.0,
+      8.131516293641283e-13,
+      4800.000000000001
+    ],
+    "residuals": [
+      7.275957614183426e-12,
+      0.0,
+      1.8189894035458565e-12
+    ]
+  },
+  "source_artifact_hashes_verified": {
+    "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+    "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+    "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+    "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+    "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+  },
+  "engineering_approval": "DISABLED"
+}

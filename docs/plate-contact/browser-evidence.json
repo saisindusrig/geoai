@@ -1,0 +1,1468 @@
+{
+  "current": {
+    "id": 311,
+    "model_revision_id": 88,
+    "status": "VERIFIED_CONTACT_FEASIBILITY_ONLY",
+    "result": {
+      "geometry": {
+        "objects": [
+          {
+            "component_id": "industrial-platform-5x3:column-sw",
+            "name": "column-sw",
+            "category": "column",
+            "size_m": [
+              0.3,
+              0.3,
+              3.1999999999999997
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              1.5999999999999999
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          },
+          {
+            "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+            "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 \u00b7 body",
+            "category": "base_plate",
+            "size_m": [
+              0.65,
+              0.65,
+              0.025
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              -0.0125
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          },
+          {
+            "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+            "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 \u00b7 body",
+            "category": "foundation",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              -0.25
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          }
+        ],
+        "column_base_enu_m": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          0
+        ],
+        "plate_contact_z_m": -0.025,
+        "contact_area_m2": 0.42250000000000004,
+        "saved_anchor_ids": [],
+        "anchor_geometry_status": "NOT_SAVED",
+        "reinforcement_geometry_status": "NOT_SAVED",
+        "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about \u2212North",
+        "physical_capacity": "NOT_YET_VERIFIED"
+      },
+      "demand": {
+        "column_id": "industrial-platform-5x3:column-sw",
+        "node": 1,
+        "compression_n": 29999.999999999996,
+        "demand_on_interface_enu_force_n": [
+          -10765.080571577306,
+          0,
+          -29999.999999999996
+        ],
+        "demand_on_interface_enu_moment_nm": [
+          0,
+          -11753.693592818216,
+          0
+        ],
+        "horizontal_shear_east_n": -10765.080571577306,
+        "moment_about_negative_north_nm": 11753.693592818216,
+        "support_reaction_si": {
+          "node": 1,
+          "fx_n": 10765.080571577306,
+          "fy_n": 29999.999999999996,
+          "moment_nm": -11753.693592818216
+        },
+        "solver_version": "3.8.0",
+        "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+        "source_frame_inputs": {
+          "component_ids": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:beam-south",
+            "industrial-platform-5x3:column-se"
+          ],
+          "sections": [
+            {
+              "component_id": "industrial-platform-5x3:column-sw",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-south",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00020000000000000006,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-se",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            }
+          ],
+          "connections": [
+            {
+              "column_id": "industrial-platform-5x3:column-sw",
+              "beam_id": "industrial-platform-5x3:beam-south",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.1499999999999999,
+                0.10000000000000009
+              ],
+              "idealization_approved": true,
+              "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+            },
+            {
+              "column_id": "industrial-platform-5x3:column-se",
+              "beam_id": "industrial-platform-5x3:beam-south",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.14999999999999947,
+                0.10000000000000009
+              ],
+              "idealization_approved": true,
+              "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Synthetic fixed bases; no foundation adequacy",
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Slab tributary",
+              "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+              "horizontal_n": 0,
+              "vertical_nodal_loads": [],
+              "beam_uniform_n_per_m": -10000,
+              "self_weight": null
+            }
+          ],
+          "combination": null,
+          "purpose": "VERIFICATION_ONLY",
+          "elements_per_member": 2,
+          "units": "SI"
+        },
+        "source_model_revision_id": 86,
+        "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+        "solver_artifact_sha256": {
+          "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+          "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+          "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+          "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+          "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        },
+        "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=\u2212Rx; M about \u2212North=\u2212Rmoment.",
+        "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+        "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+      },
+      "inputs": {
+        "column_id": "industrial-platform-5x3:column-sw",
+        "plate_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+        "footing_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+        "source_analysis_id": 301,
+        "source_beam_id": "industrial-platform-5x3:beam-south",
+        "plate_dimensions_m": [
+          0.65,
+          0.65,
+          0.025
+        ],
+        "footing_dimensions_m": [
+          1.2,
+          1.2,
+          0.45
+        ],
+        "dimension_source": "Explicit review of saved conceptual boxes; dimensions not capacity-approved",
+        "steel": {
+          "material_name": "Synthetic plate steel",
+          "elastic_modulus_pa": 200000000000,
+          "yield_strength_mpa": 250,
+          "source": "Synthetic E=200 GPa and yield=250 MPa; unused by pressure arithmetic"
+        },
+        "concrete": {
+          "strength_mpa": 30,
+          "strength_basis": "cylinder",
+          "source": "Synthetic 30 MPa cylinder strength; not a bearing capacity check"
+        },
+        "reinforcement": {
+          "status": "not_defined_capacity_excluded",
+          "information": "No bars saved or reinforcement designed. Footing remains conceptual; reinforcement capacity excluded.",
+          "source": "Explicit synthetic scope exclusion"
+        },
+        "soil": {
+          "status": "not_defined_soil_analysis_excluded",
+          "assumptions": "No geotechnical data. Soil support, bearing capacity and settlement excluded; solver bases are idealized fixed.",
+          "source": "Explicit synthetic scope exclusion"
+        },
+        "anchors": {
+          "status": "synthetic_engineer_declared_unverified",
+          "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+          "items": [
+            {
+              "id": "synthetic-anchor-1",
+              "position_enu_m": [
+                -3.090000003347904,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-2",
+              "position_enu_m": [
+                -3.090000003347904,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-3",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-4",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            }
+          ]
+        },
+        "contact_assumption": "rigid_plate_contact_feasibility",
+        "contact_reference_assumption": "column_base_N_M_only_no_shear_translation",
+        "contact_source": "Synthetic nominal gross full contact, uniform pressure under isolated concentric N; no plate bending or moment-bearing model",
+        "demand_scope": "actual_N_M_contact_feasibility",
+        "excluded_shear_moment_acknowledged": true,
+        "rigid_plate_idealization_approved": true,
+        "geometry_reviewed": true,
+        "purpose": "SYNTHETIC_VERIFICATION_ONLY"
+      },
+      "unsupported": [
+        {
+          "check": "Moment-bearing distributions",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Anchor tension and shear",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Plate bending",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Weld behavior",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Footing reinforcement capacity",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Soil capacity",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Settlement",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "IS/ACI/AISC compliance",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Physical connection and foundation safety",
+          "status": "NOT_YET_VERIFIED"
+        }
+      ],
+      "engineering_approval": "DISABLED",
+      "scope": "Actual N/M contact feasibility at column base reference; horizontal shear transfer and physical capacity NOT YET VERIFIED",
+      "bearing_assumption": "Nominal gross rigid plate N/M law only within kern. No pressure distribution returned outside kern; no partial contact or anchor resistance invented. Shear reference-plane transport is excluded.",
+      "scenario_id": 573,
+      "model_document_sha256": "fbdf2d638456bc56daf4c30bec24a87871bc2848a53ad86de3accb32e471c7b2",
+      "source_evidence_sha256": "13b56e5814b2d99ecc6ff2a87da465206d1fc1e1759f1cc2575d9e72b019f305",
+      "source_project_id": 784,
+      "source_analysis_id": 301,
+      "input_sha256": "08a824012293cdbf50ec53e85922beb03a8283637e3c2c5e78f2c50b86a44828",
+      "bearing": {
+        "compression_n": 29999.999999999996,
+        "area_m2": 0.42250000000000004,
+        "pressure_pa": 71005.9171597633,
+        "pressure_kpa": 71.0059171597633,
+        "pressure_mpa": 0.0710059171597633,
+        "independent_n_mm2": 0.0710059171597633,
+        "integrated_reaction_n": 29999.999999999996,
+        "equilibrium_error_n": 0,
+        "formula": "A=B\u00d7L [m\u00b2]; p=N/A [N/m\u00b2=Pa]; kPa=Pa/1000; MPa=Pa/1e6=N/mm\u00b2",
+        "verification": "VERIFIED_ARITHMETIC_AND_EQUILIBRIUM",
+        "capacity_check": "NOT_YET_VERIFIED"
+      },
+      "contact": {
+        "compression_n": 29999.999999999996,
+        "moment_about_negative_north_nm": 11753.693592818216,
+        "width_east_m": 0.65,
+        "length_north_m": 0.65,
+        "area_m2": 0.42250000000000004,
+        "eccentricity_m": 0.3917897864272739,
+        "eccentricity_east_m": -0.3917897864272739,
+        "kern_limit_m": 0.10833333333333334,
+        "footprint_half_width_m": 0.325,
+        "mean_pressure_kpa": 71.0059171597633,
+        "pressure_min_kpa": null,
+        "pressure_max_kpa": null,
+        "pressure_at_minus_east_edge_kpa": null,
+        "pressure_at_plus_east_edge_kpa": null,
+        "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+        "full_connection_status": "NOT_YET_VERIFIED",
+        "shear_transfer": "NOT_YET_VERIFIED",
+        "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+        "anchor_resistance": "NOT_ASSUMED",
+        "capacity_check": "NOT_YET_VERIFIED",
+        "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+        "formulas": [
+          "e = M/N [m]",
+          "kern = B/6 [m]; footprint limit = B/2 [m]",
+          "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+          "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+          "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+        ],
+        "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+        "contact_state": "RESULTANT_OUTSIDE_FOOTPRINT",
+        "compression_only_equilibrium": "IMPOSSIBLE",
+        "message": "Compression-only contact cannot equilibrate the full N/M demand: resultant lies outside the physical plate footprint.",
+        "contact_loss_detected": true
+      },
+      "contact_benchmarks": {
+        "status": "VERIFIED",
+        "reference": "Independent worked N=100kN, B=600mm,L=500mm: A=300000mm\u00b2,S=30000000mm\u00b3; M=\u00b15kNm gives edges 0.166666667/0.5 N/mm\u00b2. Kern e=100mm, footprint half-width=300mm. Zero moment, kern boundary, reversed moment, proportional half load and unsupported contact states verified.",
+        "cases": [
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 0,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0,
+              "eccentricity_east_m": 0,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 333.33333333333337,
+              "pressure_max_kpa": 333.33333333333337,
+              "pressure_at_minus_east_edge_kpa": 333.33333333333337,
+              "pressure_at_plus_east_edge_kpa": 333.33333333333337,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.3333333333333333,
+                0.3333333333333333
+              ],
+              "integrated_force_n": 100000.00000000001,
+              "integrated_moment_nm": 0,
+              "force_residual_n": 1.4551915228366852e-11,
+              "moment_residual_nm": 0
+            },
+            "hand_edge_pressures_kpa": [
+              333.3333333333333,
+              333.3333333333333
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 5000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.05,
+              "eccentricity_east_m": -0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 166.66666666666669,
+              "pressure_max_kpa": 500.00000000000006,
+              "pressure_at_minus_east_edge_kpa": 500.00000000000006,
+              "pressure_at_plus_east_edge_kpa": 166.66666666666669,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.5,
+                0.16666666666666666
+              ],
+              "integrated_force_n": 100000,
+              "integrated_moment_nm": -5000.000000000002,
+              "force_residual_n": 0,
+              "moment_residual_nm": -1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              500,
+              166.66666666666666
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": -5000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": -0.05,
+              "eccentricity_east_m": 0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 166.66666666666669,
+              "pressure_max_kpa": 500.00000000000006,
+              "pressure_at_minus_east_edge_kpa": 166.66666666666669,
+              "pressure_at_plus_east_edge_kpa": 500.00000000000006,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.16666666666666666,
+                0.5
+              ],
+              "integrated_force_n": 100000,
+              "integrated_moment_nm": 5000.000000000002,
+              "force_residual_n": 0,
+              "moment_residual_nm": 1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              166.66666666666666,
+              500
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 10000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.1,
+              "eccentricity_east_m": -0.1,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 0,
+              "pressure_max_kpa": 666.6666666666667,
+              "pressure_at_minus_east_edge_kpa": 666.6666666666667,
+              "pressure_at_plus_east_edge_kpa": 0,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "KERN_BOUNDARY_ZERO_EDGE_PRESSURE",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.6666666666666666,
+                0
+              ],
+              "integrated_force_n": 100000.00000000001,
+              "integrated_moment_nm": -10000.000000000002,
+              "force_residual_n": 1.4551915228366852e-11,
+              "moment_residual_nm": -1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              666.6666666666666,
+              0
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 50000,
+              "moment_about_negative_north_nm": 2500,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.05,
+              "eccentricity_east_m": -0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 166.66666666666669,
+              "pressure_min_kpa": 83.33333333333334,
+              "pressure_max_kpa": 250.00000000000003,
+              "pressure_at_minus_east_edge_kpa": 250.00000000000003,
+              "pressure_at_plus_east_edge_kpa": 83.33333333333334,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.25,
+                0.08333333333333333
+              ],
+              "integrated_force_n": 50000,
+              "integrated_moment_nm": -2500.000000000001,
+              "force_residual_n": 0,
+              "moment_residual_nm": -9.094947017729282e-13
+            },
+            "hand_edge_pressures_kpa": [
+              250,
+              83.33333333333333
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 15000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.15,
+              "eccentricity_east_m": -0.15,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": null,
+              "pressure_max_kpa": null,
+              "pressure_at_minus_east_edge_kpa": null,
+              "pressure_at_plus_east_edge_kpa": null,
+              "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "CONTACT_LOSS_PARTIAL_UNSUPPORTED",
+              "compression_only_equilibrium": "NOT_CALCULATED_PARTIAL_CONTACT_UNSUPPORTED",
+              "message": "Resultant outside middle third; full-contact linear law would require tension. Partial-contact pressure calculations are not implemented or verified.",
+              "contact_loss_detected": true
+            },
+            "hand_contact_state": "CONTACT_LOSS_PARTIAL_UNSUPPORTED"
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 30001,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.30001,
+              "eccentricity_east_m": -0.30001,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": null,
+              "pressure_max_kpa": null,
+              "pressure_at_minus_east_edge_kpa": null,
+              "pressure_at_plus_east_edge_kpa": null,
+              "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "RESULTANT_OUTSIDE_FOOTPRINT",
+              "compression_only_equilibrium": "IMPOSSIBLE",
+              "message": "Compression-only contact cannot equilibrate the full N/M demand: resultant lies outside the physical plate footprint.",
+              "contact_loss_detected": true
+            },
+            "hand_contact_state": "RESULTANT_OUTSIDE_FOOTPRINT"
+          }
+        ]
+      },
+      "status": "VERIFIED_CONTACT_FEASIBILITY_ONLY",
+      "full_connection_status": "NOT_YET_VERIFIED",
+      "concrete_strength_used_in_calculation": false,
+      "steel_strength_used_in_calculation": false,
+      "soil_or_reinforcement_used_in_calculation": false,
+      "input_record_id": 310,
+      "authorization": {
+        "actor_user_id": 1,
+        "authorized_at": "2026-10-12T05:56:19.564944+00:00",
+        "scope": "Exact isolated concentric compression arithmetic; NOT structural approval"
+      }
+    }
+  },
+  "updated": {
+    "id": 313,
+    "model_revision_id": 88,
+    "status": "VERIFIED_CONTACT_FEASIBILITY_ONLY",
+    "result": {
+      "geometry": {
+        "objects": [
+          {
+            "component_id": "industrial-platform-5x3:column-sw",
+            "name": "column-sw",
+            "category": "column",
+            "size_m": [
+              0.3,
+              0.3,
+              3.1999999999999997
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              1.5999999999999999
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          },
+          {
+            "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+            "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 \u00b7 body",
+            "category": "base_plate",
+            "size_m": [
+              0.65,
+              0.65,
+              0.025
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              -0.0125
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          },
+          {
+            "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+            "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 \u00b7 body",
+            "category": "foundation",
+            "size_m": [
+              1.2,
+              1.2,
+              0.45
+            ],
+            "position_enu_m": [
+              -2.8500000033479043,
+              -1.8499884779572517,
+              -0.25
+            ],
+            "engineering_status": "conceptual_unverified",
+            "definition": "CONCEPTUAL_PLACEHOLDER"
+          }
+        ],
+        "column_base_enu_m": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          0
+        ],
+        "plate_contact_z_m": -0.025,
+        "contact_area_m2": 0.42250000000000004,
+        "saved_anchor_ids": [],
+        "anchor_geometry_status": "NOT_SAVED",
+        "reinforcement_geometry_status": "NOT_SAVED",
+        "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about \u2212North",
+        "physical_capacity": "NOT_YET_VERIFIED"
+      },
+      "demand": {
+        "column_id": "industrial-platform-5x3:column-sw",
+        "node": 1,
+        "compression_n": 29999.999999999996,
+        "demand_on_interface_enu_force_n": [
+          -10765.080571577306,
+          0,
+          -29999.999999999996
+        ],
+        "demand_on_interface_enu_moment_nm": [
+          0,
+          -11753.693592818216,
+          0
+        ],
+        "horizontal_shear_east_n": -10765.080571577306,
+        "moment_about_negative_north_nm": 11753.693592818216,
+        "support_reaction_si": {
+          "node": 1,
+          "fx_n": 10765.080571577306,
+          "fy_n": 29999.999999999996,
+          "moment_nm": -11753.693592818216
+        },
+        "solver_version": "3.8.0",
+        "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+        "source_frame_inputs": {
+          "component_ids": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:beam-south",
+            "industrial-platform-5x3:column-se"
+          ],
+          "sections": [
+            {
+              "component_id": "industrial-platform-5x3:column-sw",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-south",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00020000000000000006,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-se",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic steel",
+              "material_source": "Synthetic E=200 GPa verification assumption",
+              "section_source": "Explicit saved solid rectangular verification section"
+            }
+          ],
+          "connections": [
+            {
+              "column_id": "industrial-platform-5x3:column-sw",
+              "beam_id": "industrial-platform-5x3:beam-south",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.1499999999999999,
+                0.10000000000000009
+              ],
+              "idealization_approved": true,
+              "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+            },
+            {
+              "column_id": "industrial-platform-5x3:column-se",
+              "beam_id": "industrial-platform-5x3:beam-south",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.14999999999999947,
+                0.10000000000000009
+              ],
+              "idealization_approved": true,
+              "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Synthetic fixed bases; no foundation adequacy",
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Slab tributary",
+              "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+              "horizontal_n": 0,
+              "vertical_nodal_loads": [],
+              "beam_uniform_n_per_m": -10000,
+              "self_weight": null
+            }
+          ],
+          "combination": null,
+          "purpose": "VERIFICATION_ONLY",
+          "elements_per_member": 2,
+          "units": "SI"
+        },
+        "source_model_revision_id": 86,
+        "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+        "solver_artifact_sha256": {
+          "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+          "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+          "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+          "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+          "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        },
+        "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=\u2212Rx; M about \u2212North=\u2212Rmoment.",
+        "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+        "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+      },
+      "inputs": {
+        "column_id": "industrial-platform-5x3:column-sw",
+        "plate_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+        "footing_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+        "source_analysis_id": 301,
+        "source_beam_id": "industrial-platform-5x3:beam-south",
+        "plate_dimensions_m": [
+          0.65,
+          0.65,
+          0.025
+        ],
+        "footing_dimensions_m": [
+          1.2,
+          1.2,
+          0.45
+        ],
+        "dimension_source": "Explicit review of saved conceptual boxes; dimensions not capacity-approved",
+        "steel": {
+          "material_name": "Synthetic plate steel",
+          "elastic_modulus_pa": 200000000000,
+          "yield_strength_mpa": 260,
+          "source": "Synthetic E=200 GPa and yield=250 MPa; unused by pressure arithmetic"
+        },
+        "concrete": {
+          "strength_mpa": 30,
+          "strength_basis": "cylinder",
+          "source": "Synthetic 30 MPa cylinder strength; not a bearing capacity check"
+        },
+        "reinforcement": {
+          "status": "not_defined_capacity_excluded",
+          "information": "No bars saved or reinforcement designed. Footing remains conceptual; reinforcement capacity excluded.",
+          "source": "Explicit synthetic scope exclusion"
+        },
+        "soil": {
+          "status": "not_defined_soil_analysis_excluded",
+          "assumptions": "No geotechnical data. Soil support, bearing capacity and settlement excluded; solver bases are idealized fixed.",
+          "source": "Explicit synthetic scope exclusion"
+        },
+        "anchors": {
+          "status": "synthetic_engineer_declared_unverified",
+          "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+          "items": [
+            {
+              "id": "synthetic-anchor-1",
+              "position_enu_m": [
+                -3.090000003347904,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-2",
+              "position_enu_m": [
+                -3.090000003347904,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-3",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-4",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            }
+          ]
+        },
+        "contact_assumption": "rigid_plate_contact_feasibility",
+        "contact_reference_assumption": "column_base_N_M_only_no_shear_translation",
+        "contact_source": "Synthetic nominal gross full contact, uniform pressure under isolated concentric N; no plate bending or moment-bearing model",
+        "demand_scope": "actual_N_M_contact_feasibility",
+        "excluded_shear_moment_acknowledged": true,
+        "rigid_plate_idealization_approved": true,
+        "geometry_reviewed": true,
+        "purpose": "SYNTHETIC_VERIFICATION_ONLY"
+      },
+      "unsupported": [
+        {
+          "check": "Moment-bearing distributions",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Anchor tension and shear",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Plate bending",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Weld behavior",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Footing reinforcement capacity",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Soil capacity",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Settlement",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "IS/ACI/AISC compliance",
+          "status": "NOT_YET_VERIFIED"
+        },
+        {
+          "check": "Physical connection and foundation safety",
+          "status": "NOT_YET_VERIFIED"
+        }
+      ],
+      "engineering_approval": "DISABLED",
+      "scope": "Actual N/M contact feasibility at column base reference; horizontal shear transfer and physical capacity NOT YET VERIFIED",
+      "bearing_assumption": "Nominal gross rigid plate N/M law only within kern. No pressure distribution returned outside kern; no partial contact or anchor resistance invented. Shear reference-plane transport is excluded.",
+      "scenario_id": 573,
+      "model_document_sha256": "fbdf2d638456bc56daf4c30bec24a87871bc2848a53ad86de3accb32e471c7b2",
+      "source_evidence_sha256": "13b56e5814b2d99ecc6ff2a87da465206d1fc1e1759f1cc2575d9e72b019f305",
+      "source_project_id": 784,
+      "source_analysis_id": 301,
+      "input_sha256": "c58e2cf0030a6ef62616bc2a5b4ffb33a002dd61902e0804a1026aeeb65fe0c1",
+      "bearing": {
+        "compression_n": 29999.999999999996,
+        "area_m2": 0.42250000000000004,
+        "pressure_pa": 71005.9171597633,
+        "pressure_kpa": 71.0059171597633,
+        "pressure_mpa": 0.0710059171597633,
+        "independent_n_mm2": 0.0710059171597633,
+        "integrated_reaction_n": 29999.999999999996,
+        "equilibrium_error_n": 0,
+        "formula": "A=B\u00d7L [m\u00b2]; p=N/A [N/m\u00b2=Pa]; kPa=Pa/1000; MPa=Pa/1e6=N/mm\u00b2",
+        "verification": "VERIFIED_ARITHMETIC_AND_EQUILIBRIUM",
+        "capacity_check": "NOT_YET_VERIFIED"
+      },
+      "contact": {
+        "compression_n": 29999.999999999996,
+        "moment_about_negative_north_nm": 11753.693592818216,
+        "width_east_m": 0.65,
+        "length_north_m": 0.65,
+        "area_m2": 0.42250000000000004,
+        "eccentricity_m": 0.3917897864272739,
+        "eccentricity_east_m": -0.3917897864272739,
+        "kern_limit_m": 0.10833333333333334,
+        "footprint_half_width_m": 0.325,
+        "mean_pressure_kpa": 71.0059171597633,
+        "pressure_min_kpa": null,
+        "pressure_max_kpa": null,
+        "pressure_at_minus_east_edge_kpa": null,
+        "pressure_at_plus_east_edge_kpa": null,
+        "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+        "full_connection_status": "NOT_YET_VERIFIED",
+        "shear_transfer": "NOT_YET_VERIFIED",
+        "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+        "anchor_resistance": "NOT_ASSUMED",
+        "capacity_check": "NOT_YET_VERIFIED",
+        "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+        "formulas": [
+          "e = M/N [m]",
+          "kern = B/6 [m]; footprint limit = B/2 [m]",
+          "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+          "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+          "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+        ],
+        "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+        "contact_state": "RESULTANT_OUTSIDE_FOOTPRINT",
+        "compression_only_equilibrium": "IMPOSSIBLE",
+        "message": "Compression-only contact cannot equilibrate the full N/M demand: resultant lies outside the physical plate footprint.",
+        "contact_loss_detected": true
+      },
+      "contact_benchmarks": {
+        "status": "VERIFIED",
+        "reference": "Independent worked N=100kN, B=600mm,L=500mm: A=300000mm\u00b2,S=30000000mm\u00b3; M=\u00b15kNm gives edges 0.166666667/0.5 N/mm\u00b2. Kern e=100mm, footprint half-width=300mm. Zero moment, kern boundary, reversed moment, proportional half load and unsupported contact states verified.",
+        "cases": [
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 0,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0,
+              "eccentricity_east_m": 0,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 333.33333333333337,
+              "pressure_max_kpa": 333.33333333333337,
+              "pressure_at_minus_east_edge_kpa": 333.33333333333337,
+              "pressure_at_plus_east_edge_kpa": 333.33333333333337,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.3333333333333333,
+                0.3333333333333333
+              ],
+              "integrated_force_n": 100000.00000000001,
+              "integrated_moment_nm": 0,
+              "force_residual_n": 1.4551915228366852e-11,
+              "moment_residual_nm": 0
+            },
+            "hand_edge_pressures_kpa": [
+              333.3333333333333,
+              333.3333333333333
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 5000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.05,
+              "eccentricity_east_m": -0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 166.66666666666669,
+              "pressure_max_kpa": 500.00000000000006,
+              "pressure_at_minus_east_edge_kpa": 500.00000000000006,
+              "pressure_at_plus_east_edge_kpa": 166.66666666666669,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.5,
+                0.16666666666666666
+              ],
+              "integrated_force_n": 100000,
+              "integrated_moment_nm": -5000.000000000002,
+              "force_residual_n": 0,
+              "moment_residual_nm": -1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              500,
+              166.66666666666666
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": -5000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": -0.05,
+              "eccentricity_east_m": 0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 166.66666666666669,
+              "pressure_max_kpa": 500.00000000000006,
+              "pressure_at_minus_east_edge_kpa": 166.66666666666669,
+              "pressure_at_plus_east_edge_kpa": 500.00000000000006,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.16666666666666666,
+                0.5
+              ],
+              "integrated_force_n": 100000,
+              "integrated_moment_nm": 5000.000000000002,
+              "force_residual_n": 0,
+              "moment_residual_nm": 1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              166.66666666666666,
+              500
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 10000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.1,
+              "eccentricity_east_m": -0.1,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": 0,
+              "pressure_max_kpa": 666.6666666666667,
+              "pressure_at_minus_east_edge_kpa": 666.6666666666667,
+              "pressure_at_plus_east_edge_kpa": 0,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "KERN_BOUNDARY_ZERO_EDGE_PRESSURE",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.6666666666666666,
+                0
+              ],
+              "integrated_force_n": 100000.00000000001,
+              "integrated_moment_nm": -10000.000000000002,
+              "force_residual_n": 1.4551915228366852e-11,
+              "moment_residual_nm": -1.8189894035458565e-12
+            },
+            "hand_edge_pressures_kpa": [
+              666.6666666666666,
+              0
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 50000,
+              "moment_about_negative_north_nm": 2500,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.05,
+              "eccentricity_east_m": -0.05,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 166.66666666666669,
+              "pressure_min_kpa": 83.33333333333334,
+              "pressure_max_kpa": 250.00000000000003,
+              "pressure_at_minus_east_edge_kpa": 250.00000000000003,
+              "pressure_at_plus_east_edge_kpa": 83.33333333333334,
+              "verification": "VERIFIED_LINEAR_PRESSURE_UNITS_AND_N_M_EQUILIBRIUM",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "FULL_CONTACT_LINEAR",
+              "compression_only_equilibrium": "VERIFIED_N_M_EQUILIBRIUM",
+              "message": "Nominal linear compression pressure verified for N/M only; shear and physical capacity remain unverified.",
+              "contact_loss_detected": false,
+              "independent_n_mm2_at_edges": [
+                0.25,
+                0.08333333333333333
+              ],
+              "integrated_force_n": 50000,
+              "integrated_moment_nm": -2500.000000000001,
+              "force_residual_n": 0,
+              "moment_residual_nm": -9.094947017729282e-13
+            },
+            "hand_edge_pressures_kpa": [
+              250,
+              83.33333333333333
+            ]
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 15000,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.15,
+              "eccentricity_east_m": -0.15,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": null,
+              "pressure_max_kpa": null,
+              "pressure_at_minus_east_edge_kpa": null,
+              "pressure_at_plus_east_edge_kpa": null,
+              "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "CONTACT_LOSS_PARTIAL_UNSUPPORTED",
+              "compression_only_equilibrium": "NOT_CALCULATED_PARTIAL_CONTACT_UNSUPPORTED",
+              "message": "Resultant outside middle third; full-contact linear law would require tension. Partial-contact pressure calculations are not implemented or verified.",
+              "contact_loss_detected": true
+            },
+            "hand_contact_state": "CONTACT_LOSS_PARTIAL_UNSUPPORTED"
+          },
+          {
+            "result": {
+              "compression_n": 100000,
+              "moment_about_negative_north_nm": 30001,
+              "width_east_m": 0.6,
+              "length_north_m": 0.5,
+              "area_m2": 0.3,
+              "eccentricity_m": 0.30001,
+              "eccentricity_east_m": -0.30001,
+              "kern_limit_m": 0.09999999999999999,
+              "footprint_half_width_m": 0.3,
+              "mean_pressure_kpa": 333.33333333333337,
+              "pressure_min_kpa": null,
+              "pressure_max_kpa": null,
+              "pressure_at_minus_east_edge_kpa": null,
+              "pressure_at_plus_east_edge_kpa": null,
+              "verification": "VERIFIED_FEASIBILITY_CLASSIFICATION_ONLY",
+              "full_connection_status": "NOT_YET_VERIFIED",
+              "shear_transfer": "NOT_YET_VERIFIED",
+              "partial_contact": "NOT_IMPLEMENTED_NOT_VERIFIED",
+              "anchor_resistance": "NOT_ASSUMED",
+              "capacity_check": "NOT_YET_VERIFIED",
+              "reference": "N and M at saved column-base reference plane. No horizontal-shear translation to plate underside.",
+              "formulas": [
+                "e = M/N [m]",
+                "kern = B/6 [m]; footprint limit = B/2 [m]",
+                "Full nominal contact only: p(x)=N/(BL)\u2212Mx/I (x positive East); I=LB\u00b3/12 [m\u2074]",
+                "p\u00b1 = N/(BL) \u00d7 (1 \u00b1 6e/B) [Pa]",
+                "\u222bp dA=N; \u222bEast x p dA=\u2212M; applied M + contact moment = 0"
+              ],
+              "scope": "Uniaxial nominal gross rectangular rigid plate; compression-only. No holes/contact loss, biaxial moments, anchors, shear, plate flexibility or material strength verification.",
+              "contact_state": "RESULTANT_OUTSIDE_FOOTPRINT",
+              "compression_only_equilibrium": "IMPOSSIBLE",
+              "message": "Compression-only contact cannot equilibrate the full N/M demand: resultant lies outside the physical plate footprint.",
+              "contact_loss_detected": true
+            },
+            "hand_contact_state": "RESULTANT_OUTSIDE_FOOTPRINT"
+          }
+        ]
+      },
+      "status": "VERIFIED_CONTACT_FEASIBILITY_ONLY",
+      "full_connection_status": "NOT_YET_VERIFIED",
+      "concrete_strength_used_in_calculation": false,
+      "steel_strength_used_in_calculation": false,
+      "soil_or_reinforcement_used_in_calculation": false,
+      "input_record_id": 312,
+      "authorization": {
+        "actor_user_id": 1,
+        "authorized_at": "2026-10-12T05:56:37.693824+00:00",
+        "scope": "Exact isolated concentric compression arithmetic; NOT structural approval"
+      }
+    }
+  },
+  "forged_authorization_status": 409,
+  "errors": [],
+  "final_assessment": {
+    "analysis_id": 315,
+    "revision_id": 88,
+    "source_analysis_id": 301,
+    "reason": "Append clarified N/M reference-plane assumptions and signed edge-pressure formulas; previous evidence preserved"
+  }
+}

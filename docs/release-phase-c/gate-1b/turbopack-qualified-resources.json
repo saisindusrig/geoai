@@ -1,0 +1,62 @@
+[
+  {
+    "elapsed_seconds": 0.01,
+    "visible_processes": 1,
+    "tree_rss_bytes": 7057408,
+    "visible_tree_cpu_seconds": 0.02,
+    "tree_read_bytes": 0,
+    "tree_write_bytes": 0,
+    "output_files": 0,
+    "output_bytes": 0
+  },
+  {
+    "elapsed_seconds": 5.01,
+    "visible_processes": 3,
+    "tree_rss_bytes": 2018639872,
+    "visible_tree_cpu_seconds": 38.77,
+    "tree_read_bytes": 240373495,
+    "tree_write_bytes": 930521,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 10.03,
+    "visible_processes": 3,
+    "tree_rss_bytes": 2425319424,
+    "visible_tree_cpu_seconds": 61.86,
+    "tree_read_bytes": 262563288,
+    "tree_write_bytes": 930521,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 15.04,
+    "visible_processes": 4,
+    "tree_rss_bytes": 1716555776,
+    "visible_tree_cpu_seconds": 75.55,
+    "tree_read_bytes": 295216784,
+    "tree_write_bytes": 247196300,
+    "output_files": 738,
+    "output_bytes": 247193956
+  },
+  {
+    "elapsed_seconds": 20.06,
+    "visible_processes": 4,
+    "tree_rss_bytes": 2265284608,
+    "visible_tree_cpu_seconds": 84.12,
+    "tree_read_bytes": 300754002,
+    "tree_write_bytes": 247196300,
+    "output_files": 738,
+    "output_bytes": 247193956
+  },
+  {
+    "elapsed_seconds": 25.08,
+    "visible_processes": 4,
+    "tree_rss_bytes": 2096549888,
+    "visible_tree_cpu_seconds": 90.22,
+    "tree_read_bytes": 300754002,
+    "tree_write_bytes": 247196300,
+    "output_files": 738,
+    "output_bytes": 247193956
+  }
+]

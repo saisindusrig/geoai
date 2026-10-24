@@ -277,7 +277,7 @@ export function LegacyDashboardPage() {
       <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
         <PageHeader
           title="Bridge Concept Dashboard"
-          description="Saved GeoAI site-aware bridge concepts"
+          description="Saved StruvoCivil site-aware bridge concepts"
           actions={
             <>
               <Link href="/projects/new">
@@ -310,7 +310,7 @@ export function LegacyDashboardPage() {
             <StatCard
               label="Bridge concepts"
               value={stats.bridgeConcepts}
-              sub="GeoAI workspaces"
+              sub="StruvoCivil workspaces"
               icon={Sparkles}
             />
             <StatCard

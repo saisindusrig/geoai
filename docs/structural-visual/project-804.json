@@ -1,0 +1,1239 @@
+{
+  "project_id": 804,
+  "revision_id": 124,
+  "components": [
+    {
+      "id": "industrial-platform-5x3:beam-east",
+      "name": "beam-east",
+      "category": "beam",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-north",
+      "name": "beam-north",
+      "category": "beam",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.8500115220427484,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-south",
+      "name": "beam-south",
+      "category": "beam",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -1.8499884779572517,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-west",
+      "name": "beam-west",
+      "category": "beam",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.1522042748281695e-05,
+          3.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-ne",
+      "name": "column-ne",
+      "category": "column",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-nw",
+      "name": "column-nw",
+      "category": "column",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-se",
+      "name": "column-se",
+      "category": "column",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-sw",
+      "name": "column-sw",
+      "category": "column",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:platform-deck",
+      "name": "platform-deck",
+      "category": "slab",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          3.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+      "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 \u00b7 body",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+      "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 \u00b7 body",
+      "category": "base_plate",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+      "name": "connection 149f0f5d-b98f-4260-a428-b2fc50959cf2 \u00b7 joint",
+      "category": "connection",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          -1.8499884779572517,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+      "name": "foundation b1ad97d4-faca-46e7-87c9-f5eebb37575f \u00b7 body",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+      "name": "base plate d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3 \u00b7 body",
+      "category": "base_plate",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+      "name": "connection 13ff4b82-88f8-4c41-9613-ad85bf72054b \u00b7 joint",
+      "category": "connection",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          -1.8499884779572517,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+      "name": "foundation 9c6c5059-9557-4c35-887a-a66e95606df4 \u00b7 body",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+      "name": "base plate 2054528e-2362-4a24-843c-01988b6c8fea \u00b7 body",
+      "category": "base_plate",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+      "name": "connection a1f8b089-a278-4474-8596-ff0dade18975 \u00b7 joint",
+      "category": "connection",
+      "transform": {
+        "position": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+      "name": "foundation 850c983b-9d8c-416d-8785-eb7106e068bb \u00b7 body",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+      "name": "base plate b5d32b14-a981-4478-888f-42d19034592d \u00b7 body",
+      "category": "base_plate",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+      "name": "connection ed0730b0-c13b-47ba-9753-b63f1e86d4ac \u00b7 joint",
+      "category": "connection",
+      "transform": {
+        "position": [
+          2.849999996652096,
+          1.8500115220427484,
+          3.1999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+      "name": "brace b95d6eda-29f0-4b03-90ec-2c5b59199b8d \u00b7 diagonal",
+      "category": "bracing",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+      "name": "brace 63a1eab7-ac09-4ceb-aaea-75c0427821e7 \u00b7 diagonal",
+      "category": "bracing",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-1",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -8.239988477957253,
+          0.16
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-2",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.919988477957252,
+          0.33999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-3",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.599988477957252,
+          0.52
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-4",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -7.279988477957252,
+          0.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-5",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.959988477957252,
+          0.8799999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-6",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.639988477957251,
+          1.06
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-7",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -6.319988477957252,
+          1.24
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-8",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.999988477957252,
+          1.42
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-9",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.679988477957251,
+          1.5999999999999999
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-10",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.359988477957251,
+          1.7799999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-11",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -5.039988477957252,
+          1.96
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-12",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.719988477957252,
+          2.14
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-13",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.399988477957252,
+          2.32
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-14",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -4.079988477957252,
+          2.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-15",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.7599884779572514,
+          2.6799999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-16",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.4399884779572516,
+          2.86
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-17",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -3.1199884779572518,
+          3.04
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-18",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.7999884779572515,
+          3.2199999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-19",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.4799884779572516,
+          3.4
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 tread-20",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -2.159988477957252,
+          3.5799999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 stringer--1",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1",
+      "name": "stairs 664f80f7-3591-4b78-aecf-33ba6bc2fe5e \u00b7 stringer-1",
+      "category": "stairs",
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:9C",
+      "name": "CAD column SW",
+      "category": "column",
+      "transform": {
+        "position": [
+          0.15,
+          0.15,
+          1.63
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:AE",
+      "name": "CAD column SE",
+      "category": "column",
+      "transform": {
+        "position": [
+          5.85,
+          0.15,
+          1.6
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:96",
+      "name": "CAD beam South",
+      "category": "beam",
+      "transform": {
+        "position": [
+          3,
+          0.15,
+          3.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:95",
+      "name": "CAD slab",
+      "category": "slab",
+      "transform": {
+        "position": [
+          3,
+          2,
+          3.5
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:9A",
+      "name": "CAD footing SW",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          0.15,
+          0.15,
+          -0.225
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:AC",
+      "name": "CAD footing SE",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          5.85,
+          0.15,
+          -0.225
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:97",
+      "name": "CAD beam North",
+      "category": "beam",
+      "transform": {
+        "position": [
+          3,
+          3.85,
+          3.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:A5",
+      "name": "CAD column NW",
+      "category": "column",
+      "transform": {
+        "position": [
+          0.15,
+          3.85,
+          1.63
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:B7",
+      "name": "CAD column NE",
+      "category": "column",
+      "transform": {
+        "position": [
+          5.85,
+          3.85,
+          1.6
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:A3",
+      "name": "CAD footing NW",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          0.15,
+          3.85,
+          -0.225
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:B5",
+      "name": "CAD footing NE",
+      "category": "foundation",
+      "transform": {
+        "position": [
+          5.85,
+          3.85,
+          -0.225
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "rows": []
+}

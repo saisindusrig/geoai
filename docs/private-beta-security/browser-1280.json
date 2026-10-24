@@ -1,0 +1,11 @@
+{
+  "width": 1280,
+  "height": 900,
+  "read_only": true,
+  "simulated_transport_outage": true,
+  "manual_recovery": true,
+  "keyboard_refresh": true,
+  "reads": 4,
+  "writes": [],
+  "errors": []
+}

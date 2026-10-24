@@ -1,0 +1,23 @@
+"use client";
+import {useEffect,useRef,useState} from 'react';
+import {api,formatApiErrorMessage} from '@/lib/api';
+import {Button} from '@/components/ui/button';
+type Review={id:number;status:string;model_revision_id:number;result:{model_document_sha256:string;review:{component_count:number;category_counts:Record<string,number>;facts:{component_ids:string[];observation:string}[];load_path_hypothesis:string;assumptions:string[];missing_engineering_data:string[];unsupported_analysis:string[];suggested_improvements:string[]};usage:{requested_model:string;returned_model:string;prompt_tokens:number;completion_tokens:number;estimated_cost_usd:number;elapsed_seconds:number;mock:boolean}}};
+export default function ProjectEngineeringReview({projectId,revisionId,model,provider,disabled,modelDirty,onComplete}:{projectId:number;revisionId:number|null;model:string;provider:string;disabled:boolean;modelDirty:boolean;onComplete:()=>Promise<void>}){
+ const base=`/api/projects/${projectId}/engineering/agent`;
+ const [reviews,setReviews]=useState<Review[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState<string|null>(null);
+ const generation=useRef(0);
+ const [request,setRequest]=useState('Review this structure, identify its possible load path, distinguish saved geometry from assumptions, identify missing engineering inputs and unsupported analysis, and suggest improvements for engineer review without changing the model.');
+ useEffect(()=>{let active=true;const refresh=()=>{const stamp=generation.current;void api.get<{records:Review[]}>(`${base}/project-reviews`).then(r=>{if(active&&stamp===generation.current)setReviews(r.records);}).catch(()=>{if(active)setError('Saved project reviews could not be read.');});};refresh();const timer=window.setInterval(refresh,5000);return()=>{active=false;window.clearInterval(timer);};},[base]);
+ const review=reviews[0];
+ const run=async()=>{generation.current++;setBusy(true);setError(null);try{const r=await api.post<Review>(`${base}/project-reviews`,{model_revision_id:revisionId,model,provider,request});setReviews(old=>[r,...old]);await onComplete();}catch(reason){setError(formatApiErrorMessage(reason));}finally{setBusy(false);}};
+ return <section aria-label="Whole saved project review" className="space-y-2 border border-border p-2"><h4 className="font-semibold">Whole-model review · read only</h4><textarea aria-label="Engineering project review request" className="min-h-20 w-full border border-border bg-background p-2 text-xs" value={request} disabled={busy} onChange={e=>setRequest(e.target.value)}/><Button size="sm" variant="secondary" disabled={disabled||busy||!revisionId||!request.trim()} onClick={()=>void run()}>{busy?'Reviewing saved project…':'Review entire saved model'}</Button>
+ {error&&<p role="alert" className="text-destructive">{error}</p>}
+ {review&&<article aria-label="Live whole-model review" className="space-y-2"><p className="text-amber-200">{review.model_revision_id!==revisionId||modelDirty?'STALE':review.status} · no structural approval</p><p>{review.result.review.component_count} actual saved components · model #{review.model_revision_id}</p><p className="text-[10px]">{Object.entries(review.result.review.category_counts).map(([k,n])=>`${k}: ${n}`).join(' · ')}</p>
+ <p className="text-[10px]">Actual model {review.result.usage.returned_model??'mock'} · {review.result.usage.prompt_tokens??'N/A'} input / {review.result.usage.completion_tokens??'N/A'} output tokens · estimate ${review.result.usage.estimated_cost_usd.toFixed(6)} · {review.result.usage.elapsed_seconds?.toFixed(1)} s. Billing charge unknown.</p>
+ <details open><summary>Facts from saved geometry and references</summary>{review.result.review.facts.map((fact,i)=><p key={i} className="mt-2 text-[10px]">{fact.observation}<span className="block break-all text-muted-foreground">{fact.component_ids.join(', ')}</span></p>)}</details>
+ <details><summary>Hypothesized load path · unverified</summary><p>{review.result.review.load_path_hypothesis}</p></details>
+ {([['Assumptions',review.result.review.assumptions],['Missing engineering data',review.result.review.missing_engineering_data],['Unsupported analysis',review.result.review.unsupported_analysis],['Improvements for review only',review.result.review.suggested_improvements]] as const).map(([title,items])=><details key={title}><summary>{title}</summary><ul className="list-disc space-y-1 pl-4">{items.map((item,i)=><li key={i}>{item}</li>)}</ul></details>)}
+ <p className="break-all text-[10px]">Saved-model SHA-256 {review.result.model_document_sha256}</p><p className="text-[10px]">No values are assigned, no design changes applied, and no whole-project solver is available.</p>
+ </article>}</section>;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "docs/coupled-floor/isolated-frontend-error.log",
+    "before_bytes": 0,
+    "after_bytes": 168,
+    "original_prefix_preserved": true
+  },
+  {
+    "path": "docs/coupled-floor/isolated-frontend.log",
+    "before_bytes": 1180,
+    "after_bytes": 1700,
+    "original_prefix_preserved": true
+  },
+  {
+    "path": "docs/coupled-floor/normal-frontend-recovered-error.log",
+    "before_bytes": 455,
+    "after_bytes": 662,
+    "original_prefix_preserved": true
+  },
+  {
+    "path": "docs/coupled-floor/normal-frontend-recovered.log",
+    "before_bytes": 1811,
+    "after_bytes": 2525,
+    "original_prefix_preserved": true
+  }
+]

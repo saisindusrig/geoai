@@ -1,0 +1,21 @@
+{
+  "before": {
+    "frontend_entry_pid": 21884,
+    "frontend_server_pid": 20572,
+    "frontend_generated_workers": [
+      6156,
+      13336
+    ],
+    "frontend_distDir": "frontend/.next-phase1",
+    "backend_launcher_pid": 7632,
+    "backend_worker_pid": 19256,
+    "backend_environment": "backend/.venv"
+  },
+  "checks": [
+    "CIM process commands and port owners inspected with host access",
+    "No Node/Python runtime command used either archived workspace build",
+    "Active frontend tree identity rechecked before temporary stop",
+    "Standard run-website.bat restarted; backend unchanged; proxy health returned HTTP 200",
+    "No Python environment removed"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "unequal_project_id": 792,
+  "unequal_analysis_id": 398,
+  "equal_project_id": 791,
+  "equal_analysis_id": 384,
+  "equal_revision_id": 100,
+  "unequal_revision_id": 101,
+  "same_declared_inputs": "E=200 GPa, column A=.09 m\u00b2 I=.000675 m\u2074, beam A=.06 m\u00b2 I=.00045 m\u2074; total 20 kN East split equally at actual heads; fixed bases",
+  "heads": [
+    {
+      "node": 2,
+      "unequal_displacement_si": [
+        0.00042425207682310876,
+        6.7726725709986e-07,
+        -0.00013096374129054595
+      ],
+      "equal_displacement_si": [
+        0.00040994858528940753,
+        6.5647670142052e-07,
+        -0.00012979811271946043
+      ],
+      "delta_si": [
+        1.4303491533701235e-05,
+        2.0790555679339923e-08,
+        -1.1656285710855282e-06
+      ]
+    },
+    {
+      "node": 3,
+      "unequal_displacement_si": [
+        0.00041627390955515075,
+        -6.6480221555814e-07,
+        -0.0001319290874728111
+      ],
+      "equal_displacement_si": [
+        0.0004099485852894075,
+        -6.5647670142052e-07,
+        -0.00012979811271946048
+      ],
+      "delta_si": [
+        6.325324265743276e-06,
+        -8.325514137619986e-09,
+        -2.130974753350608e-06
+      ]
+    }
+  ],
+  "reactions": [
+    {
+      "node": 1,
+      "unequal": {
+        "node": 1,
+        "fx_n": -9855.84903717593,
+        "fy_n": -3739.5124625145445,
+        "moment_nm": 21488.379045389313
+      },
+      "equal": {
+        "node": 1,
+        "fx_n": -9999.999999999933,
+        "fy_n": -3692.681445490415,
+        "moment_nm": 21475.857880352152
+      }
+    },
+    {
+      "node": 4,
+      "unequal": {
+        "node": 4,
+        "fx_n": -10144.150962824031,
+        "fy_n": 3739.512462514546,
+        "moment_nm": 21796.39991827766
+      },
+      "equal": {
+        "node": 4,
+        "fx_n": -9999.99999999996,
+        "fy_n": 3692.6814454904197,
+        "moment_nm": 21475.857880352167
+      }
+    }
+  ],
+  "external_load_moment_knm": {
+    "unequal": 64.6,
+    "equal": 64.0
+  }
+}

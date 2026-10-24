@@ -1,0 +1,1 @@
+{"schema": [["index", "sqlite_autoindex_tasks_1", "tasks", null], ["table", "tasks", "tasks", "CREATE TABLE tasks (id TEXT PRIMARY KEY, owner INTEGER NOT NULL, scope INTEGER NOT NULL, started REAL NOT NULL, status TEXT NOT NULL, model TEXT NOT NULL, reserved REAL NOT NULL, tokens INTEGER NOT NULL, payload TEXT NOT NULL)"]], "tables": {"tasks": []}}

@@ -1,0 +1,19 @@
+{
+  "errors": [],
+  "component_counts": [
+    47,
+    135
+  ],
+  "local_url": "http://localhost:3001/projects/775/workspace",
+  "checks": [
+    "Saved component rendering",
+    "Independent bay framing",
+    "Budget enabled",
+    "Persisted evidence"
+  ],
+  "initial_component_counts": [
+    45,
+    135
+  ],
+  "current_revision": 74
+}

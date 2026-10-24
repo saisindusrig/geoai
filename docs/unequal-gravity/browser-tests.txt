@@ -1,0 +1,5 @@
+Completed local browser runs:
+unequal-gravity.spec.ts: 1 passed (2.8 minutes)
+unequal-gravity-review.spec.ts: 1 passed (40.4 seconds)
+Both runs used localhost:3001, offline AI fixtures, saved revision 103 and actual OpenSees.
+See browser-evidence.json and browser-review-evidence.json for assertions and returned evidence.

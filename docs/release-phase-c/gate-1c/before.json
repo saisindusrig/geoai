@@ -1,0 +1,16 @@
+{
+  "launcher_sha256": {
+    "run-website.bat": "d9c5cbbb0d74b805b2ce4a1af91f62fe61829826ca250bfed54856c865b2fd65",
+    "start-copilot-review.ps1": "36acca56dba7eba129c166935c1f6afe438a4fbece56e68d2b83dcdfae66ee8b"
+  },
+  "effective_node": {
+    "node": "v22.18.0",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "child": "v22.18.0 C:\\Program Files\\nodejs\\node.exe"
+  },
+  "npm_candidates": [
+    "C:\\Program Files\\nodejs\\npm",
+    "C:\\Program Files\\nodejs\\npm.cmd"
+  ],
+  "process_path_sha256": "983f9cb23d0156a1cf10c9f29d3eb931a1c515742b7d2291c101835b636d8060"
+}

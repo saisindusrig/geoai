@@ -1,0 +1,9 @@
+{
+  "unchanged_original_rows": true,
+  "all_rows_and_schemas_exactly_unchanged": false,
+  "original_rows": 10267,
+  "rows": 10269,
+  "added_rows_by_table": {
+    "usage_events": 2
+  }
+}

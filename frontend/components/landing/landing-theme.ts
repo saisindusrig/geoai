@@ -1,7 +1,7 @@
 /** Landing page tokens — reads from globals.css CSS variables where possible. */
 
-export const BRAND_NAME = "GeoAI";
-export const BRAND_COPILOT = "GeoAI Copilot";
+export { BRAND_NAME } from "@/lib/brand";
+export { ASSISTANT_NAME as BRAND_COPILOT } from "@/lib/brand";
 
 export const landing = {
   bg: "var(--background)",

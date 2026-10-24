@@ -215,7 +215,7 @@ export function toolInstruction(tool: string): string {
     case "suggest-site":
       return "Click map to generate AI site suggestions";
     case "draw-polygon":
-      return "Click corners · Enter or double-click to finish · Esc cancel · Backspace undo";
+      return "Click corners · Click first point to close · Enter also finishes · Esc cancels";
     case "draw-line":
     case "draw-corridor":
       return "Click path points · Enter or double-click to finish · Esc cancel · Backspace undo";
@@ -227,7 +227,7 @@ export function toolInstruction(tool: string): string {
       return "Click polygon corners · Enter to measure · Esc to clear";
     case "edit-boundary":
     case "edit-alignment":
-      return "Drag vertices · Drag midpoint to add · Alt-click vertex to remove · Save or Revert in sidebar";
+      return "Drag handles · Enter finishes · Save boundary confirms · Esc reverts";
     default:
       return "";
   }

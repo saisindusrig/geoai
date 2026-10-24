@@ -1,0 +1,12 @@
+{
+  "gate": "Phase C Gate1B",
+  "default_turbopack": "PASS, cold and repeat",
+  "node24_frontend_compatibility": "GO for future approved process-local launcher transition",
+  "normal_runtime_switched": false,
+  "firebase_enabled": false,
+  "gpu_memory": "NOT QUALIFIED; carried forward",
+  "public_launch": "BLOCKED",
+  "frontend_tests_passed": 109,
+  "ipc_policy_checks_passed": 12,
+  "original_data_preserved": true
+}

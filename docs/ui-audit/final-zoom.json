@@ -1,0 +1,128 @@
+[
+  {
+    "route": "/",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 1
+  },
+  {
+    "route": "/login",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/privacy",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/dashboard",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 1
+  },
+  {
+    "route": "/settings",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/settings/api-keys",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/admin/rates",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/admin/templates",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/admin/usage",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/admin/audit",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/projects/999998/cost",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/projects/999998/report",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": false,
+    "canvas": 0
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "zoom": 2,
+    "width": 720,
+    "dpr": 2,
+    "scrollWidth": 714,
+    "desktopRequired": true,
+    "canvas": 0
+  }
+]

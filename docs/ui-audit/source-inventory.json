@@ -1,0 +1,647 @@
+{
+  "routes": [
+    {
+      "route": "/admin/audit",
+      "source": "frontend/app/admin/audit/page.tsx",
+      "imports": [
+        "react",
+        "next/link",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/badge",
+        "@/components/ui/table-scroll-region",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/api-error-details",
+        "@/lib/auth-routes",
+        "@/lib/api",
+        "@/lib/api-errors",
+        "@/lib/useAuthUser"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "disabled",
+        "retry"
+      ]
+    },
+    {
+      "route": "/admin/rates",
+      "source": "frontend/app/admin/rates/page.tsx",
+      "imports": [
+        "react",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/table-scroll-region",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/lib/api",
+        "@/lib/toast",
+        "@/lib/useAuthUser",
+        "@/lib/types"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "disabled",
+        "success",
+        "retry"
+      ]
+    },
+    {
+      "route": "/admin/templates",
+      "source": "frontend/app/admin/templates/page.tsx",
+      "imports": [
+        "react",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/lib/api",
+        "@/lib/toast",
+        "@/lib/useAuthUser",
+        "@/lib/types"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "disabled",
+        "success",
+        "retry"
+      ]
+    },
+    {
+      "route": "/admin/usage",
+      "source": "frontend/app/admin/usage/page.tsx",
+      "imports": [
+        "react",
+        "next/link",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/badge",
+        "@/components/ui/table-scroll-region",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/api-error-details",
+        "@/lib/auth-routes",
+        "@/lib/api",
+        "@/lib/api-errors",
+        "@/lib/useAuthUser"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "disabled",
+        "retry"
+      ]
+    },
+    {
+      "route": "/dashboard",
+      "source": "frontend/app/dashboard/page.tsx",
+      "imports": [
+        "@/components/dashboard/CivicSpanDashboard"
+      ],
+      "dynamic_imports": [],
+      "states": []
+    },
+    {
+      "route": "/login",
+      "source": "frontend/app/login/page.tsx",
+      "imports": [
+        "react",
+        "./LoginPageInner"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading"
+      ]
+    },
+    {
+      "route": "/",
+      "source": "frontend/app/page.tsx",
+      "imports": [
+        "@/components/landing/HomePage"
+      ],
+      "dynamic_imports": [],
+      "states": []
+    },
+    {
+      "route": "/privacy",
+      "source": "frontend/app/privacy/page.tsx",
+      "imports": [
+        "next"
+      ],
+      "dynamic_imports": [],
+      "states": []
+    },
+    {
+      "route": "/projects/[id]/analysis",
+      "source": "frontend/app/projects/[id]/analysis/page.tsx",
+      "imports": [
+        "next/dynamic",
+        "@/components/layout/ProjectHeader"
+      ],
+      "dynamic_imports": [
+        "./AnalysisPageClient"
+      ],
+      "states": [
+        "loading"
+      ]
+    },
+    {
+      "route": "/projects/[id]/cost",
+      "source": "frontend/app/projects/[id]/cost/page.tsx",
+      "imports": [
+        "next/navigation",
+        "react",
+        "recharts",
+        "lucide-react",
+        "@/components/layout/ProjectHeader",
+        "@/components/project-results/ChartCard",
+        "@/components/project-results/MetricCard",
+        "@/components/project-results/ProjectResultShell",
+        "@/components/project-results/ResultPageHeader",
+        "@/components/scenarios/ScenarioSelector",
+        "@/components/project-results/StatusPill",
+        "@/components/ui/empty-state",
+        "@/components/ui/glass-card",
+        "@/components/ui/button",
+        "@/components/ui/tabs",
+        "@/hooks/useProjectData",
+        "@/lib/api",
+        "@/lib/format-display",
+        "@/lib/chart-theme",
+        "@/lib/utils"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "retry"
+      ]
+    },
+    {
+      "route": "/projects/[id]/estimate",
+      "source": "frontend/app/projects/[id]/estimate/page.tsx",
+      "imports": [
+        "next/link",
+        "next/navigation",
+        "react",
+        "recharts",
+        "lucide-react",
+        "@/components/layout/ProjectHeader",
+        "@/components/scenarios/ScenarioSelector",
+        "@/components/project-results/ChartCard",
+        "@/components/project-results/CostRangeCards",
+        "@/components/project-results/MetricCard",
+        "@/components/project-results/ProjectResultShell",
+        "@/components/project-results/ResultPageHeader",
+        "@/components/ui/empty-state",
+        "@/components/ui/glass-card",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/button",
+        "@/components/ui/tabs",
+        "@/hooks/useProjectData",
+        "@/lib/api",
+        "@/lib/chart-theme",
+        "@/lib/toast",
+        "@/lib/types",
+        "@/lib/utils"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "disabled",
+        "success",
+        "retry"
+      ]
+    },
+    {
+      "route": "/projects/[id]/map",
+      "source": "frontend/app/projects/[id]/map/page.tsx",
+      "imports": [
+        "react",
+        "@/components/layout/ProjectHeader",
+        "next/dynamic"
+      ],
+      "dynamic_imports": [
+        "./MapSelectionPageInner"
+      ],
+      "states": [
+        "loading"
+      ]
+    },
+    {
+      "route": "/projects/[id]/model",
+      "source": "frontend/app/projects/[id]/model/page.tsx",
+      "imports": [
+        "next/dynamic",
+        "@/components/layout/ProjectHeader"
+      ],
+      "dynamic_imports": [
+        "./ModelPageClient"
+      ],
+      "states": [
+        "loading"
+      ]
+    },
+    {
+      "route": "/projects/[id]/report",
+      "source": "frontend/app/projects/[id]/report/page.tsx",
+      "imports": [
+        "next/navigation",
+        "next/link",
+        "react",
+        "lucide-react",
+        "@/components/layout/ProjectHeader",
+        "@/components/project-results/ExportCard",
+        "@/components/project-results/ProjectResultShell",
+        "@/components/project-results/ResultPageHeader",
+        "@/components/project-results/RiskList",
+        "@/components/ui/empty-state",
+        "@/components/ui/glass-card",
+        "@/components/ui/input",
+        "@/components/project/ProjectValidationPanel",
+        "@/hooks/useWorkspaceDevice",
+        "@/hooks/useProjectData",
+        "@/lib/api",
+        "@/lib/types",
+        "@/lib/utils"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "retry"
+      ]
+    },
+    {
+      "route": "/projects/[id]/scenarios",
+      "source": "frontend/app/projects/[id]/scenarios/page.tsx",
+      "imports": [
+        "next/link",
+        "next/navigation",
+        "react",
+        "lucide-react",
+        "recharts",
+        "@/components/layout/ProjectHeader",
+        "@/components/project-results/ChartCard",
+        "@/components/project-results/ProjectResultShell",
+        "@/components/project-results/ResultPageHeader",
+        "@/components/project-results/StatusPill",
+        "@/components/ui/empty-state",
+        "@/components/ui/glass-card",
+        "@/components/ui/button",
+        "@/components/workspace/ScenarioComparePanel",
+        "@/hooks/useProjectData",
+        "@/lib/api",
+        "@/lib/format-display",
+        "@/lib/scenario-chart-data",
+        "@/lib/chart-theme",
+        "@/lib/utils",
+        "@/lib/types",
+        "@/lib/utils"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "disabled",
+        "success",
+        "retry"
+      ]
+    },
+    {
+      "route": "/projects/[id]/timeline",
+      "source": "frontend/app/projects/[id]/timeline/page.tsx",
+      "imports": [
+        "react",
+        "next/navigation",
+        "lucide-react",
+        "@/components/ui/button",
+        "@/components/layout/ProjectHeader",
+        "@/components/project-results/MetricCard",
+        "@/components/project-results/ProjectResultShell",
+        "@/components/project-results/ResultPageHeader",
+        "@/components/project-results/StatusPill",
+        "@/components/ui/empty-state",
+        "@/components/ui/glass-card",
+        "@/hooks/useProjectData",
+        "@/lib/utils"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "empty",
+        "retry"
+      ]
+    },
+    {
+      "route": "/projects/[id]/workspace",
+      "source": "frontend/app/projects/[id]/workspace/page.tsx",
+      "imports": [
+        "next/dynamic",
+        "@/components/layout/ProjectHeader"
+      ],
+      "dynamic_imports": [
+        "./WorkspacePageClient"
+      ],
+      "states": [
+        "loading"
+      ]
+    },
+    {
+      "route": "/projects/new",
+      "source": "frontend/app/projects/new/page.tsx",
+      "imports": [
+        "next/navigation"
+      ],
+      "dynamic_imports": [],
+      "states": []
+    },
+    {
+      "route": "/settings/api-keys",
+      "source": "frontend/app/settings/api-keys/page.tsx",
+      "imports": [
+        "react",
+        "@/components/ui/loading-feedback",
+        "@/components/ui/button",
+        "@/components/ui/badge",
+        "@/components/ui/card",
+        "@/lib/api",
+        "@/lib/map-imagery",
+        "@/lib/types"
+      ],
+      "dynamic_imports": [],
+      "states": [
+        "loading",
+        "error",
+        "disabled",
+        "success",
+        "retry"
+      ]
+    },
+    {
+      "route": "/settings",
+      "source": "frontend/app/settings/page.tsx",
+      "imports": [
+        "@/components/settings/SettingsPageClient"
+      ],
+      "dynamic_imports": [],
+      "states": []
+    }
+  ],
+  "component_groups": {
+    "ai": [
+      "ModernAssistantPanel.tsx"
+    ],
+    "auth": [
+      "RequireAuth.tsx"
+    ],
+    "civicspan": [
+      "BridgeScene.tsx",
+      "CivicSpanStudio.tsx",
+      "ConstructionMapOverlay.tsx",
+      "ConstructionScene.tsx",
+      "ConstructionStudio.tsx",
+      "SiteMap.tsx"
+    ],
+    "dashboard": [
+      "CivicSpanDashboard.tsx",
+      "ConstructionPreview.tsx",
+      "CreativeDashboard.tsx",
+      "DashboardSidebar.tsx",
+      "LegacyDashboardPage.tsx",
+      "NewProjectDialog.tsx",
+      "ProjectReturnLink.tsx"
+    ],
+    ".": [
+      "DisclaimerBanner.tsx",
+      "ThemeProvider.tsx"
+    ],
+    "landing": [
+      "AccuracySection.tsx",
+      "BrandWordmark.tsx",
+      "CTASection.tsx",
+      "DemoPreview.tsx",
+      "DemoWorkspaceScene.tsx",
+      "EngineeringTerrain.tsx",
+      "FeatureCard.tsx",
+      "FeaturesSection.tsx",
+      "FeatureStack.tsx",
+      "Footer.tsx",
+      "Hero.tsx",
+      "HeroEarthAnimation.tsx",
+      "HeroEarthScene.tsx",
+      "HeroMockup.tsx",
+      "HomePage.tsx",
+      "landingCloudModel.tsx",
+      "LandingCustomCursor.tsx",
+      "landingEarthModel.tsx",
+      "landingSatelliteModel.tsx",
+      "landingSceneShared.tsx",
+      "Navbar.tsx",
+      "StructuralDetails.tsx",
+      "TechnicalOverview.tsx",
+      "TransformationStory.tsx",
+      "TrustMetrics.tsx",
+      "Workflow.tsx"
+    ],
+    "layout": [
+      "BottomSummaryBar.tsx",
+      "CommandPalette.tsx",
+      "DashboardShell.tsx",
+      "DemoProjectLink.tsx",
+      "DesktopWorkspaceGate.tsx",
+      "DocumentTitle.tsx",
+      "DrawingToolsPanel.tsx",
+      "DrawingToolsToolbar.tsx",
+      "MobileAiDrawer.tsx",
+      "MobileBottomNav.tsx",
+      "ProjectHeader.tsx",
+      "ProjectStepper.tsx",
+      "SidebarStatusCard.tsx",
+      "SiteUtilities.tsx",
+      "UserMenu.tsx",
+      "WorkspaceLayout.tsx",
+      "WorkspaceLeftSidebar.tsx",
+      "WorkspaceMapContext.tsx",
+      "WorkspaceMapControl.tsx"
+    ],
+    "map": [
+      "BlenderLayerPanel.tsx",
+      "CameraGizmo.tsx",
+      "CameraViewControls.tsx",
+      "CesiumView.tsx",
+      "DeckOverlay.tsx",
+      "DrawHud.tsx",
+      "DrawingTools.tsx",
+      "ElevationProfileChart.tsx",
+      "EngineeringEvidencePanel.tsx",
+      "FeaturePropertiesPanel.tsx",
+      "GeoJsonImport.tsx",
+      "MapLibreBaseMap.tsx",
+      "MapLibreWorkspace.tsx",
+      "MapStatusBar.tsx",
+      "MapToolbar.tsx",
+      "MapToolbarExtended.tsx",
+      "MapView.tsx",
+      "MapViewerArea.tsx",
+      "MeasurementResult.tsx",
+      "ObjectDetailsPanel.tsx",
+      "Scene3DLayerPanel.tsx",
+      "Scene3DOverlay.tsx",
+      "SiteSuggestionsPanel.tsx",
+      "SunStudyControls.tsx",
+      "WorkspaceMapEngine.tsx",
+      "WorkspaceMouseControls.tsx",
+      "WorkspaceSearch.tsx"
+    ],
+    "model-editor": [
+      "AnalysisOverview.tsx",
+      "AnchorContact3DPanel.tsx",
+      "AnchorContactPanel.tsx",
+      "BearingCapacityPanel.tsx",
+      "CadFrameAuditPanel.tsx",
+      "CadSoilPanel.tsx",
+      "ComponentIdentity.tsx",
+      "ConnectionInputsPanel.tsx",
+      "CoupledFloorPanel.tsx",
+      "DrawingCadPanel.tsx",
+      "ElasticFramePanel.tsx",
+      "EngineeringDockPanel.tsx",
+      "EngineeringResultsPanel.tsx",
+      "EngineeringStudyPanel.tsx",
+      "ExperimentalCadReview.tsx",
+      "FootingFlexurePanel.tsx",
+      "FootingTransportPanel.tsx",
+      "FoundationInterfacePanel.tsx",
+      "FoundationSystemPanel.tsx",
+      "FoundationVisualExplorer.tsx",
+      "FrameLoadCasesEditor.tsx",
+      "GuidedAnalysisResults.tsx",
+      "GuidedAnalysisWorkflow.tsx",
+      "GuidedFrameInputs.tsx",
+      "OpenSeesBenchmarkPanel.tsx",
+      "PhysicalColumnAnalysisPanel.tsx",
+      "PhysicalFramePanel.tsx",
+      "PlatformAttachmentsPanel.tsx",
+      "PlatformParametersPanel.tsx",
+      "ProfessionalModelEditor.tsx",
+      "RCFlexurePanel.tsx",
+      "RectangularBearingPanel.tsx",
+      "SceneLayersPanel.tsx",
+      "SecondaryAnalysisTools.tsx",
+      "SlabTransferPanel.tsx",
+      "SoilContactPanel.tsx",
+      "SoilProfilePanel.tsx",
+      "SpatialVisualPanel.tsx",
+      "StructuralVisualPanel.tsx",
+      "TransformOptions.tsx",
+      "UnequalFrameComparisonPanel.tsx"
+    ],
+    "motion": [
+      "PageTransition.tsx"
+    ],
+    "project": [
+      "ProjectValidationPanel.tsx"
+    ],
+    "project-results": [
+      "ChartCard.tsx",
+      "CostRangeCards.tsx",
+      "ExportCard.tsx",
+      "MetricCard.tsx",
+      "ProjectResultShell.tsx",
+      "ResultPageHeader.tsx",
+      "RiskList.tsx",
+      "StatusPill.tsx"
+    ],
+    "projects": [
+      "NewProjectBoundaryPanel.tsx"
+    ],
+    "sandbox": [
+      "SandboxGrid.tsx",
+      "SandboxWorkspace.tsx"
+    ],
+    "scenarios": [
+      "ScenarioSelector.tsx"
+    ],
+    "settings": [
+      "AuthStatusCard.tsx",
+      "SettingsPageClient.tsx",
+      "SystemStatusPanel.tsx",
+      "UsageCard.tsx"
+    ],
+    "survey": [
+      "AccuracyBadge.tsx",
+      "EngineeringLayerPanel.tsx",
+      "OffsetCorrectionTool.tsx",
+      "SurveyLayerToggles.tsx",
+      "SurveyModePanel.tsx",
+      "SurveyVisualWarning.tsx"
+    ],
+    "ui": [
+      "api-error-details.tsx",
+      "badge.tsx",
+      "BorderGlow.tsx",
+      "button.tsx",
+      "card.tsx",
+      "collapsible-section.tsx",
+      "empty-state.tsx",
+      "form-field.tsx",
+      "glass-card.tsx",
+      "GooeyNav.tsx",
+      "input.tsx",
+      "loading-feedback.tsx",
+      "map-style-toggle.tsx",
+      "map-toolbar-toggle.tsx",
+      "page-header.tsx",
+      "panel-resize-handle.tsx",
+      "select.tsx",
+      "skeleton.tsx",
+      "SoftAurora.tsx",
+      "stat-card.tsx",
+      "table-scroll-region.tsx",
+      "tabs.tsx",
+      "toaster.tsx",
+      "wizard-stepper.tsx"
+    ],
+    "workspace": [
+      "AssistantPanel.tsx",
+      "BuildingAssistant.tsx",
+      "ColumnEngineeringAgent.tsx",
+      "EmptyProjectStarter.tsx",
+      "JobStatusBar.tsx",
+      "LayerPanel.tsx",
+      "LiveGenerationPreview.tsx",
+      "MissingEngineeringInputs.tsx",
+      "ParameterForm.tsx",
+      "PersistentAssistant.tsx",
+      "ProjectEngineeringReview.tsx",
+      "ProposalReview.tsx",
+      "ScenarioComparePanel.tsx",
+      "ScenarioSelector.tsx",
+      "StructuralPalette.tsx",
+      "WorkspaceToolRail.tsx"
+    ]
+  },
+  "dialog_confirmation_sources": [
+    "frontend/app/projects/[id]/estimate/page.tsx",
+    "frontend/app/admin/rates/page.tsx",
+    "frontend/components/dashboard/CivicSpanDashboard.tsx",
+    "frontend/components/dashboard/CreativeDashboard.tsx",
+    "frontend/components/dashboard/LegacyDashboardPage.tsx",
+    "frontend/components/dashboard/NewProjectDialog.tsx",
+    "frontend/components/layout/DrawingToolsPanel.tsx",
+    "frontend/components/sandbox/SandboxWorkspace.tsx",
+    "frontend/components/workspace/ParameterForm.tsx"
+  ]
+}

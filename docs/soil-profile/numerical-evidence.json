@@ -1,0 +1,1653 @@
+{
+  "review_project_id": 799,
+  "model_revision_id": 114,
+  "source_project_id": 798,
+  "source_revision_id": 113,
+  "hand_calculation": {
+    "units": "N, mm, MPa=N/mm\u00b2",
+    "a_mm": 1000,
+    "b_mm": 1000,
+    "pressure_n_mm2": ".05",
+    "E_n_mm2": "20",
+    "poisson": ".3",
+    "integral_mm": "7050.988696156344201860874599838338472226",
+    "settlement_mm": "5.106008656286539156935048259310681204562",
+    "formula": "I=8 a ln(1+sqrt(2)); s=q(1-nu\u00b2) I/(pi E)"
+  },
+  "benchmark_cases": [
+    {
+      "name": "square centre",
+      "result": {
+        "status": "VERIFIED_SYNTHETIC",
+        "method": "flexible-rectangle-centre-halfspace/1",
+        "centre_settlement_m": 0.005106008656286539,
+        "uniform_pressure_pa": 50000.0,
+        "applied_load_n": 200000.0,
+        "area_m2": 4.0,
+        "force_balance_residual_n": 0.0,
+        "E_pa": 20000000.0,
+        "poisson": 0.3,
+        "influence_integral_m": 7.050988696156344,
+        "numerical_reference": [
+          {
+            "angular_cells": 512,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9998996100104316,
+            "integrated_load_n": 199994.98050052155,
+            "centre_settlement_m": 0.005105957249068208,
+            "load_relative_error": 2.5097497392323476e-05
+          },
+          {
+            "angular_cells": 2048,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999937251089657,
+            "integrated_load_n": 199999.68625544827,
+            "centre_settlement_m": 0.005106005443189869,
+            "load_relative_error": 1.5687227586935748e-06
+          },
+          {
+            "angular_cells": 8192,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999996078172915,
+            "integrated_load_n": 199999.9803908646,
+            "centre_settlement_m": 0.005106008455467428,
+            "load_relative_error": 9.804567702165201e-08
+          }
+        ],
+        "reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+        "formula": "s_center=q(1-nu\u00b2)/(pi E) * 4[a asinh(b/a)+b asinh(a/b)], a=B/2, b=L/2. Derived by integrating Boussinesq surface point-load kernel (1-nu\u00b2)/(pi E r).",
+        "profile": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "borehole_id": "SYNTHETIC-BH-01",
+          "location_enu_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ground_reference_up_m": 0.0,
+          "reference_source_id": "verification",
+          "groundwater_depth_m": 3.0,
+          "groundwater_source_id": "verification",
+          "sources": [
+            {
+              "id": "verification",
+              "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+              "investigation": "Independent elastic Green-function integration and hand worked benchmark; groundwater display reference only"
+            }
+          ],
+          "layers": [
+            {
+              "id": "soil-1",
+              "description": "Synthetic homogeneous isotropic elastic half-space",
+              "top_depth_m": 0.0,
+              "bottom_depth_m": null,
+              "extent": "UNBOUNDED_IDEALIZATION",
+              "extent_source_id": "verification",
+              "extent_kind": "SYNTHETIC",
+              "unit_weight_kn_m3": {
+                "value": 18.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "E_mpa": {
+                "value": 20.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "poisson": {
+                "value": 0.3,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              }
+            }
+          ],
+          "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+        },
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        },
+        "winkler_stiffness": "NOT_DERIVED",
+        "winkler_displacement": "NOT_USED_OR_ADDED",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "limitations": [
+          "Flexible uniformly loaded surface patch centre displacement only, not rigid-footing settlement",
+          "Homogeneous isotropic linear elastic infinite half-space; small displacement",
+          "No layer averaging, finite-depth correction, embedment, moments, contact loss, shear or nonlinear response",
+          "Unit weight and groundwater are stored references only; no pore-pressure/effective-stress or consolidation calculation",
+          "No bearing capacity, allowable settlement, construction recommendation, IS/US compliance or engineering safety approval"
+        ]
+      }
+    },
+    {
+      "name": "half load",
+      "result": {
+        "status": "VERIFIED_SYNTHETIC",
+        "method": "flexible-rectangle-centre-halfspace/1",
+        "centre_settlement_m": 0.0025530043281432697,
+        "uniform_pressure_pa": 25000.0,
+        "applied_load_n": 100000.0,
+        "area_m2": 4.0,
+        "force_balance_residual_n": 0.0,
+        "E_pa": 20000000.0,
+        "poisson": 0.3,
+        "influence_integral_m": 7.050988696156344,
+        "numerical_reference": [
+          {
+            "angular_cells": 512,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9998996100104316,
+            "integrated_load_n": 99997.49025026077,
+            "centre_settlement_m": 0.002552978624534104,
+            "load_relative_error": 2.5097497392323476e-05
+          },
+          {
+            "angular_cells": 2048,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999937251089657,
+            "integrated_load_n": 99999.84312772413,
+            "centre_settlement_m": 0.0025530027215949344,
+            "load_relative_error": 1.5687227586935748e-06
+          },
+          {
+            "angular_cells": 8192,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999996078172915,
+            "integrated_load_n": 99999.9901954323,
+            "centre_settlement_m": 0.002553004227733714,
+            "load_relative_error": 9.804567702165201e-08
+          }
+        ],
+        "reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+        "formula": "s_center=q(1-nu\u00b2)/(pi E) * 4[a asinh(b/a)+b asinh(a/b)], a=B/2, b=L/2. Derived by integrating Boussinesq surface point-load kernel (1-nu\u00b2)/(pi E r).",
+        "profile": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "borehole_id": "SYNTHETIC-BH-01",
+          "location_enu_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ground_reference_up_m": 0.0,
+          "reference_source_id": "verification",
+          "groundwater_depth_m": 3.0,
+          "groundwater_source_id": "verification",
+          "sources": [
+            {
+              "id": "verification",
+              "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+              "investigation": "Independent elastic Green-function integration and hand worked benchmark; groundwater display reference only"
+            }
+          ],
+          "layers": [
+            {
+              "id": "soil-1",
+              "description": "Synthetic homogeneous isotropic elastic half-space",
+              "top_depth_m": 0.0,
+              "bottom_depth_m": null,
+              "extent": "UNBOUNDED_IDEALIZATION",
+              "extent_source_id": "verification",
+              "extent_kind": "SYNTHETIC",
+              "unit_weight_kn_m3": {
+                "value": 18.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "E_mpa": {
+                "value": 20.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "poisson": {
+                "value": 0.3,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              }
+            }
+          ],
+          "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+        },
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 100000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        },
+        "winkler_stiffness": "NOT_DERIVED",
+        "winkler_displacement": "NOT_USED_OR_ADDED",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "limitations": [
+          "Flexible uniformly loaded surface patch centre displacement only, not rigid-footing settlement",
+          "Homogeneous isotropic linear elastic infinite half-space; small displacement",
+          "No layer averaging, finite-depth correction, embedment, moments, contact loss, shear or nonlinear response",
+          "Unit weight and groundwater are stored references only; no pore-pressure/effective-stress or consolidation calculation",
+          "No bearing capacity, allowable settlement, construction recommendation, IS/US compliance or engineering safety approval"
+        ]
+      }
+    },
+    {
+      "name": "rectangular 1x2 m",
+      "result": {
+        "status": "VERIFIED_SYNTHETIC",
+        "method": "flexible-rectangle-centre-halfspace/1",
+        "centre_settlement_m": 0.0034847194487791265,
+        "uniform_pressure_pa": 50000.0,
+        "applied_load_n": 100000.0,
+        "area_m2": 2.0,
+        "force_balance_residual_n": 0.0,
+        "E_pa": 20000000.0,
+        "poisson": 0.3,
+        "influence_integral_m": 4.8121182505960345,
+        "numerical_reference": [
+          {
+            "angular_cells": 512,
+            "radial_points": 8,
+            "integrated_area_m2": 1.9999673086564687,
+            "integrated_load_n": 99998.36543282343,
+            "centre_settlement_m": 0.0034846981079381363,
+            "load_relative_error": 1.6345671765782832e-05
+          },
+          {
+            "angular_cells": 2048,
+            "radial_points": 8,
+            "integrated_area_m2": 1.9999960181813325,
+            "integrated_load_n": 99999.80090906663,
+            "centre_settlement_m": 0.0034847168714448058,
+            "load_relative_error": 1.990909333726698e-06
+          },
+          {
+            "angular_cells": 8192,
+            "radial_points": 8,
+            "integrated_area_m2": 2.0000006036295437,
+            "integrated_load_n": 100000.0301814772,
+            "centre_settlement_m": 0.0034847198397513013,
+            "load_relative_error": 3.0181477206348006e-07
+          }
+        ],
+        "reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+        "formula": "s_center=q(1-nu\u00b2)/(pi E) * 4[a asinh(b/a)+b asinh(a/b)], a=B/2, b=L/2. Derived by integrating Boussinesq surface point-load kernel (1-nu\u00b2)/(pi E r).",
+        "profile": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "borehole_id": "SYNTHETIC-BH-01",
+          "location_enu_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ground_reference_up_m": 0.0,
+          "reference_source_id": "verification",
+          "groundwater_depth_m": 3.0,
+          "groundwater_source_id": "verification",
+          "sources": [
+            {
+              "id": "verification",
+              "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+              "investigation": "Independent elastic Green-function integration and hand worked benchmark; groundwater display reference only"
+            }
+          ],
+          "layers": [
+            {
+              "id": "soil-1",
+              "description": "Synthetic homogeneous isotropic elastic half-space",
+              "top_depth_m": 0.0,
+              "bottom_depth_m": null,
+              "extent": "UNBOUNDED_IDEALIZATION",
+              "extent_source_id": "verification",
+              "extent_kind": "SYNTHETIC",
+              "unit_weight_kn_m3": {
+                "value": 18.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "E_mpa": {
+                "value": 20.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "poisson": {
+                "value": 0.3,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              }
+            }
+          ],
+          "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+        },
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 1.0,
+          "L_m": 2.0,
+          "N_n": 100000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        },
+        "winkler_stiffness": "NOT_DERIVED",
+        "winkler_displacement": "NOT_USED_OR_ADDED",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "limitations": [
+          "Flexible uniformly loaded surface patch centre displacement only, not rigid-footing settlement",
+          "Homogeneous isotropic linear elastic infinite half-space; small displacement",
+          "No layer averaging, finite-depth correction, embedment, moments, contact loss, shear or nonlinear response",
+          "Unit weight and groundwater are stored references only; no pore-pressure/effective-stress or consolidation calculation",
+          "No bearing capacity, allowable settlement, construction recommendation, IS/US compliance or engineering safety approval"
+        ]
+      }
+    },
+    {
+      "name": "double modulus",
+      "result": {
+        "status": "VERIFIED_SYNTHETIC",
+        "method": "flexible-rectangle-centre-halfspace/1",
+        "centre_settlement_m": 0.0025530043281432697,
+        "uniform_pressure_pa": 50000.0,
+        "applied_load_n": 200000.0,
+        "area_m2": 4.0,
+        "force_balance_residual_n": 0.0,
+        "E_pa": 40000000.0,
+        "poisson": 0.3,
+        "influence_integral_m": 7.050988696156344,
+        "numerical_reference": [
+          {
+            "angular_cells": 512,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9998996100104316,
+            "integrated_load_n": 199994.98050052155,
+            "centre_settlement_m": 0.002552978624534104,
+            "load_relative_error": 2.5097497392323476e-05
+          },
+          {
+            "angular_cells": 2048,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999937251089657,
+            "integrated_load_n": 199999.68625544827,
+            "centre_settlement_m": 0.0025530027215949344,
+            "load_relative_error": 1.5687227586935748e-06
+          },
+          {
+            "angular_cells": 8192,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999996078172915,
+            "integrated_load_n": 199999.9803908646,
+            "centre_settlement_m": 0.002553004227733714,
+            "load_relative_error": 9.804567702165201e-08
+          }
+        ],
+        "reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+        "formula": "s_center=q(1-nu\u00b2)/(pi E) * 4[a asinh(b/a)+b asinh(a/b)], a=B/2, b=L/2. Derived by integrating Boussinesq surface point-load kernel (1-nu\u00b2)/(pi E r).",
+        "profile": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "borehole_id": "SYNTHETIC-BH-01",
+          "location_enu_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ground_reference_up_m": 0.0,
+          "reference_source_id": "verification",
+          "groundwater_depth_m": 3.0,
+          "groundwater_source_id": "verification",
+          "sources": [
+            {
+              "id": "verification",
+              "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+              "investigation": "Independent elastic Green-function integration and hand worked benchmark; groundwater display reference only"
+            }
+          ],
+          "layers": [
+            {
+              "id": "soil-1",
+              "description": "Synthetic homogeneous isotropic elastic half-space",
+              "top_depth_m": 0.0,
+              "bottom_depth_m": null,
+              "extent": "UNBOUNDED_IDEALIZATION",
+              "extent_source_id": "verification",
+              "extent_kind": "SYNTHETIC",
+              "unit_weight_kn_m3": {
+                "value": 18.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "E_mpa": {
+                "value": 40.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "poisson": {
+                "value": 0.3,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              }
+            }
+          ],
+          "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+        },
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        },
+        "winkler_stiffness": "NOT_DERIVED",
+        "winkler_displacement": "NOT_USED_OR_ADDED",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "limitations": [
+          "Flexible uniformly loaded surface patch centre displacement only, not rigid-footing settlement",
+          "Homogeneous isotropic linear elastic infinite half-space; small displacement",
+          "No layer averaging, finite-depth correction, embedment, moments, contact loss, shear or nonlinear response",
+          "Unit weight and groundwater are stored references only; no pore-pressure/effective-stress or consolidation calculation",
+          "No bearing capacity, allowable settlement, construction recommendation, IS/US compliance or engineering safety approval"
+        ]
+      }
+    }
+  ],
+  "latest_saved_result": {
+    "id": 495,
+    "project_id": 799,
+    "model_revision_id": 114,
+    "terrain_version_id": null,
+    "analysis_type": "ELASTIC_SETTLEMENT_RESULT",
+    "algorithm_version": "soil-profile-halfspace/1",
+    "constraint_versions_json": "[]",
+    "dependency_ids_json": "[]",
+    "status": "VERIFIED_SYNTHETIC",
+    "result_json": {
+      "inputs": {
+        "model_revision_id": 114,
+        "profile_id": 493,
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        }
+      },
+      "profile_sha256": "ec11d89d5973e9930be03154aeb032d6dedf8ea27d861ee7cafb384078f98458",
+      "profile": {
+        "classification": "SYNTHETIC_VERIFICATION",
+        "borehole_id": "SYNTHETIC-BH-browser-1791996697992",
+        "location_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ground_reference_up_m": 0.0,
+        "reference_source_id": "verification",
+        "groundwater_depth_m": 3.0,
+        "groundwater_source_id": "verification",
+        "sources": [
+          {
+            "id": "verification",
+            "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+            "investigation": "Independent Green-function integration and hand calculations. Groundwater/unit weight are synthetic display references only."
+          }
+        ],
+        "layers": [
+          {
+            "id": "soil-1",
+            "description": "Synthetic homogeneous isotropic elastic half-space",
+            "top_depth_m": 0.0,
+            "bottom_depth_m": null,
+            "extent": "UNBOUNDED_IDEALIZATION",
+            "extent_source_id": "verification",
+            "extent_kind": "SYNTHETIC",
+            "unit_weight_kn_m3": {
+              "value": 18.0,
+              "kind": "SYNTHETIC",
+              "source_id": "verification"
+            },
+            "E_mpa": {
+              "value": 40.0,
+              "kind": "SYNTHETIC",
+              "source_id": "verification"
+            },
+            "poisson": {
+              "value": 0.3,
+              "kind": "SYNTHETIC",
+              "source_id": "verification"
+            }
+          }
+        ],
+        "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+      },
+      "binding": {
+        "audit": {
+          "model_revision_id": 114,
+          "source_project_id": 794,
+          "source_revision_id": 105,
+          "source_analysis_id": 431,
+          "source_analysis_sha256": "a46e7adb70e43f3fe80aec1b44b06dc726f800f308be61afc6f169fa2d935f45",
+          "model_sha256": "e796f5485197e7e9e26f472e298bec52b329f4a965edc8d8d8217ed1c3b01986",
+          "rows": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "column_name": "CAD column SW",
+              "base_enu_m": [
+                0.15,
+                0.15,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+              "source_node_id": 1,
+              "compression_n": 29953.701030133314,
+              "shear_east_n": 9961.989188777927,
+              "moment_negative_north_nm": -10857.803904079845,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:9A",
+                  "name": "CAD footing SW",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    0.15,
+                    0.15,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:9A",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:9A",
+                  "handle": "9A",
+                  "plan_points_m": [
+                    [
+                      -0.45,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      0.75,
+                      0.0
+                    ],
+                    [
+                      -0.45,
+                      0.75,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": -0.36248622142408826,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "column_name": "CAD column SE",
+              "base_enu_m": [
+                5.85,
+                0.15,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+              "source_node_id": 4,
+              "compression_n": 30046.29896986668,
+              "shear_east_n": -9961.989188777947,
+              "moment_negative_north_nm": 10593.899775839793,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:AC",
+                  "name": "CAD footing SE",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    5.85,
+                    0.15,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:AC",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:AC",
+                  "handle": "AC",
+                  "plan_points_m": [
+                    [
+                      5.25,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      0.75,
+                      0.0
+                    ],
+                    [
+                      5.25,
+                      0.75,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": 0.3525858471442481,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:A5",
+              "column_name": "CAD column NW",
+              "base_enu_m": [
+                0.15,
+                3.85,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+              "source_node_id": 1,
+              "compression_n": 29953.701030133314,
+              "shear_east_n": 9961.989188777927,
+              "moment_negative_north_nm": -10857.803904079845,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:A3",
+                  "name": "CAD footing NW",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    0.15,
+                    3.85,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:A3",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:A3",
+                  "handle": "A3",
+                  "plan_points_m": [
+                    [
+                      -0.45,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      4.45,
+                      0.0
+                    ],
+                    [
+                      -0.45,
+                      4.45,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": -0.36248622142408826,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:B7",
+              "column_name": "CAD column NE",
+              "base_enu_m": [
+                5.85,
+                3.85,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+              "source_node_id": 4,
+              "compression_n": 30046.29896986668,
+              "shear_east_n": -9961.989188777947,
+              "moment_negative_north_nm": 10593.899775839793,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:B5",
+                  "name": "CAD footing NE",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    5.85,
+                    3.85,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:B5",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:B5",
+                  "handle": "B5",
+                  "plan_points_m": [
+                    [
+                      5.25,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      4.45,
+                      0.0
+                    ],
+                    [
+                      5.25,
+                      4.45,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": 0.3525858471442481,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            }
+          ],
+          "source_dxf_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+          "source_reference_record_id": 483,
+          "source_reference_record_sha256": "f96bb951ecc3f5601b441a72eddbb470251792774ed23a98c6bc52df22ae9616",
+          "drawing_review_record_id": 484,
+          "drawing_review_sha256": "c79351956fae6de8aecea1f0b00d245ecec1a08c5563c77c7b8ab95e92ed5ae9",
+          "status": "BLOCKED_ACTUAL_FOUNDATION_SOIL_INPUTS",
+          "engineering_approval": "DISABLED",
+          "code_checks": "DISABLED"
+        },
+        "source_transport_id": 464,
+        "source_transport_sha256": "5fdfe2364ee6925ea8cb54938c0b5073794c86c31d1fae37bf25562cad036ad4",
+        "actual_demands": [
+          {
+            "column_id": "drawing-cad:614f117ae2a74794:9C",
+            "footing_id": "drawing-cad:614f117ae2a74794:9A",
+            "source_reaction": {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "column_name": "CAD column SW",
+              "base_enu_m": [
+                0.15,
+                0.15,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+              "source_node_id": 1,
+              "compression_n": 29953.701030133314,
+              "shear_east_n": 9961.989188777927,
+              "moment_negative_north_nm": -10857.803904079845,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:9A",
+                  "name": "CAD footing SW",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    0.15,
+                    0.15,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:9A",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:9A",
+                  "handle": "9A",
+                  "plan_points_m": [
+                    [
+                      -0.45,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      0.75,
+                      0.0
+                    ],
+                    [
+                      -0.45,
+                      0.75,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": -0.36248622142408826,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            "link": {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "footing_id": "drawing-cad:614f117ae2a74794:9A",
+              "column_reference_m": [
+                0.15,
+                0.15,
+                0.0
+              ],
+              "plate_reference_m": [
+                0.15,
+                0.15,
+                0.0
+              ],
+              "footing_reference_m": [
+                0.15,
+                0.15,
+                -0.45
+              ],
+              "source": "Changed sourced mapping review; stale results must be blocked until reauthorization",
+              "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+              "reviewed": true
+            },
+            "plate_demand": {
+              "force_enu_n": [
+                -9961.989188777927,
+                0,
+                -29953.701030133314
+              ],
+              "moment_enu_nm": [
+                0.0,
+                -10857.803904079845,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "footing_demand": {
+              "force_enu_n": [
+                -9961.989188777927,
+                0,
+                -29953.701030133314
+              ],
+              "moment_enu_nm": [
+                0.0,
+                -15340.699039029912,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                -4482.895134950068,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "compression_n": 29953.701030133314,
+            "horizontal_shear_enu_n": [
+              -9961.989188777927,
+              0
+            ],
+            "Mx_nm": 0.0,
+            "My_nm": -15340.699039029912,
+            "torsion_Mz_nm": 0.0,
+            "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+          },
+          {
+            "column_id": "drawing-cad:614f117ae2a74794:AE",
+            "footing_id": "drawing-cad:614f117ae2a74794:AC",
+            "source_reaction": {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "column_name": "CAD column SE",
+              "base_enu_m": [
+                5.85,
+                0.15,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:96",
+              "source_node_id": 4,
+              "compression_n": 30046.29896986668,
+              "shear_east_n": -9961.989188777947,
+              "moment_negative_north_nm": 10593.899775839793,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:AC",
+                  "name": "CAD footing SE",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    5.85,
+                    0.15,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:AC",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:AC",
+                  "handle": "AC",
+                  "plan_points_m": [
+                    [
+                      5.25,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      -0.45,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      0.75,
+                      0.0
+                    ],
+                    [
+                      5.25,
+                      0.75,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": 0.3525858471442481,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            "link": {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "footing_id": "drawing-cad:614f117ae2a74794:AC",
+              "column_reference_m": [
+                5.85,
+                0.15,
+                0.0
+              ],
+              "plate_reference_m": [
+                5.85,
+                0.15,
+                0.0
+              ],
+              "footing_reference_m": [
+                5.85,
+                0.15,
+                -0.45
+              ],
+              "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+              "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+              "reviewed": true
+            },
+            "plate_demand": {
+              "force_enu_n": [
+                9961.989188777947,
+                0,
+                -30046.29896986668
+              ],
+              "moment_enu_nm": [
+                0.0,
+                10593.899775839793,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "footing_demand": {
+              "force_enu_n": [
+                9961.989188777947,
+                0,
+                -30046.29896986668
+              ],
+              "moment_enu_nm": [
+                0.0,
+                15076.794910789868,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                4482.895134950076,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "compression_n": 30046.29896986668,
+            "horizontal_shear_enu_n": [
+              9961.989188777947,
+              0
+            ],
+            "Mx_nm": 0.0,
+            "My_nm": 15076.794910789868,
+            "torsion_Mz_nm": 0.0,
+            "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+          },
+          {
+            "column_id": "drawing-cad:614f117ae2a74794:A5",
+            "footing_id": "drawing-cad:614f117ae2a74794:A3",
+            "source_reaction": {
+              "column_id": "drawing-cad:614f117ae2a74794:A5",
+              "column_name": "CAD column NW",
+              "base_enu_m": [
+                0.15,
+                3.85,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+              "source_node_id": 1,
+              "compression_n": 29953.701030133314,
+              "shear_east_n": 9961.989188777927,
+              "moment_negative_north_nm": -10857.803904079845,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:A3",
+                  "name": "CAD footing NW",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    0.15,
+                    3.85,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:A3",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:A3",
+                  "handle": "A3",
+                  "plan_points_m": [
+                    [
+                      -0.45,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      0.75,
+                      4.45,
+                      0.0
+                    ],
+                    [
+                      -0.45,
+                      4.45,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": -0.36248622142408826,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            "link": {
+              "column_id": "drawing-cad:614f117ae2a74794:A5",
+              "footing_id": "drawing-cad:614f117ae2a74794:A3",
+              "column_reference_m": [
+                0.15,
+                3.85,
+                0.0
+              ],
+              "plate_reference_m": [
+                0.15,
+                3.85,
+                0.0
+              ],
+              "footing_reference_m": [
+                0.15,
+                3.85,
+                -0.45
+              ],
+              "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+              "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+              "reviewed": true
+            },
+            "plate_demand": {
+              "force_enu_n": [
+                -9961.989188777927,
+                0,
+                -29953.701030133314
+              ],
+              "moment_enu_nm": [
+                0.0,
+                -10857.803904079845,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "footing_demand": {
+              "force_enu_n": [
+                -9961.989188777927,
+                0,
+                -29953.701030133314
+              ],
+              "moment_enu_nm": [
+                0.0,
+                -15340.699039029912,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                -4482.895134950068,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "compression_n": 29953.701030133314,
+            "horizontal_shear_enu_n": [
+              -9961.989188777927,
+              0
+            ],
+            "Mx_nm": 0.0,
+            "My_nm": -15340.699039029912,
+            "torsion_Mz_nm": 0.0,
+            "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+          },
+          {
+            "column_id": "drawing-cad:614f117ae2a74794:B7",
+            "footing_id": "drawing-cad:614f117ae2a74794:B5",
+            "source_reaction": {
+              "column_id": "drawing-cad:614f117ae2a74794:B7",
+              "column_name": "CAD column NE",
+              "base_enu_m": [
+                5.85,
+                3.85,
+                0.0
+              ],
+              "source_beam_id": "drawing-cad:614f117ae2a74794:97",
+              "source_node_id": 4,
+              "compression_n": 30046.29896986668,
+              "shear_east_n": -9961.989188777947,
+              "moment_negative_north_nm": 10593.899775839793,
+              "observed_footing_candidates": [
+                {
+                  "footing_id": "drawing-cad:614f117ae2a74794:B5",
+                  "name": "CAD footing NE",
+                  "size_m": [
+                    1.2,
+                    1.2,
+                    0.45
+                  ],
+                  "position_enu_m": [
+                    5.85,
+                    3.85,
+                    -0.225
+                  ],
+                  "source_entity_id": "dxf:614f117ae2a74794:B5",
+                  "definition": "SYNTHETIC_UNVERIFIED_OUTLINE"
+                }
+              ],
+              "source_footing_outlines": [
+                {
+                  "entity_id": "dxf:614f117ae2a74794:B5",
+                  "handle": "B5",
+                  "plan_points_m": [
+                    [
+                      5.25,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      3.25,
+                      0.0
+                    ],
+                    [
+                      6.45,
+                      4.45,
+                      0.0
+                    ],
+                    [
+                      5.25,
+                      4.45,
+                      0.0
+                    ]
+                  ]
+                }
+              ],
+              "reference_only_eccentricity_m": 0.3525858471442481,
+              "nominal_outline_kern_m": 0.19999999999999998,
+              "contact_warning": "OUTSIDE_OUTLINE_KERN_REFERENCE_ONLY",
+              "connection": "NOT_DECLARED",
+              "actual_analysis": "BLOCKED",
+              "missing": [
+                "Explicit column-to-footing stable identity link and reviewed load path",
+                "Reviewed footing dimensions and reference/contact elevations",
+                "Sourced concrete properties and reinforcement information",
+                "Sourced soil bearing/contact assumptions and applicability",
+                "Moment/shear transfer across physical connection and reference-plane translation; no silent omission"
+              ]
+            },
+            "link": {
+              "column_id": "drawing-cad:614f117ae2a74794:B7",
+              "footing_id": "drawing-cad:614f117ae2a74794:B5",
+              "column_reference_m": [
+                5.85,
+                3.85,
+                0.0
+              ],
+              "plate_reference_m": [
+                5.85,
+                3.85,
+                0.0
+              ],
+              "footing_reference_m": [
+                5.85,
+                3.85,
+                -0.45
+              ],
+              "source": "Synthetic reviewed saved ENU geometry and exact OpenSees reaction revision; no physical properties invented",
+              "assumption": "Static equivalent wrench transport at explicitly declared interface and footing underside; no verified physical plate, anchors, concrete or soil resistance",
+              "reviewed": true
+            },
+            "plate_demand": {
+              "force_enu_n": [
+                9961.989188777947,
+                0,
+                -30046.29896986668
+              ],
+              "moment_enu_nm": [
+                0.0,
+                10593.899775839793,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "footing_demand": {
+              "force_enu_n": [
+                9961.989188777947,
+                0,
+                -30046.29896986668
+              ],
+              "moment_enu_nm": [
+                0.0,
+                15076.794910789868,
+                0.0
+              ],
+              "r_old_minus_new_m": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "offset_couple_nm": [
+                -0.0,
+                4482.895134950076,
+                0.0
+              ],
+              "equilibrium_residual_nm": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "sign_convention": "r = old reference - new reference; M_new = M_old + r \u00d7 F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.",
+              "status": "VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY",
+              "physical_connection_capacity": "NOT_VERIFIED",
+              "soil_pressure": "BLOCKED"
+            },
+            "compression_n": 30046.29896986668,
+            "horizontal_shear_enu_n": [
+              9961.989188777947,
+              0
+            ],
+            "Mx_nm": 0.0,
+            "My_nm": 15076.794910789868,
+            "torsion_Mz_nm": 0.0,
+            "missing": "Physical plate/anchors/connection resistance, concrete/reinforcement and sourced soil/contact behavior unverified; actual soil pressure BLOCKED"
+          }
+        ],
+        "actual_soil_analysis": "BLOCKED",
+        "missing": [
+          "Sourced site investigation and layer properties",
+          "Supported rigid footing/load-transfer assumptions",
+          "Site applicability and geotechnical engineer review"
+        ],
+        "model_revision_id": 114
+      },
+      "engineering_approval": "DISABLED",
+      "scope": "Synthetic flexible surface-patch centre settlement only; no rigid-footing or Winkler settlement",
+      "computed": {
+        "status": "VERIFIED_SYNTHETIC",
+        "method": "flexible-rectangle-centre-halfspace/1",
+        "centre_settlement_m": 0.0025530043281432697,
+        "uniform_pressure_pa": 50000.0,
+        "applied_load_n": 200000.0,
+        "area_m2": 4.0,
+        "force_balance_residual_n": 0.0,
+        "E_pa": 40000000.0,
+        "poisson": 0.3,
+        "influence_integral_m": 7.050988696156344,
+        "numerical_reference": [
+          {
+            "angular_cells": 512,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9998996100104316,
+            "integrated_load_n": 199994.98050052155,
+            "centre_settlement_m": 0.002552978624534104,
+            "load_relative_error": 2.5097497392323476e-05
+          },
+          {
+            "angular_cells": 2048,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999937251089657,
+            "integrated_load_n": 199999.68625544827,
+            "centre_settlement_m": 0.0025530027215949344,
+            "load_relative_error": 1.5687227586935748e-06
+          },
+          {
+            "angular_cells": 8192,
+            "radial_points": 8,
+            "integrated_area_m2": 3.9999996078172915,
+            "integrated_load_n": 199999.9803908646,
+            "centre_settlement_m": 0.002553004227733714,
+            "load_relative_error": 9.804567702165201e-08
+          }
+        ],
+        "reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+        "formula": "s_center=q(1-nu\u00b2)/(pi E) * 4[a asinh(b/a)+b asinh(a/b)], a=B/2, b=L/2. Derived by integrating Boussinesq surface point-load kernel (1-nu\u00b2)/(pi E r).",
+        "profile": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "borehole_id": "SYNTHETIC-BH-browser-1791996697992",
+          "location_enu_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ground_reference_up_m": 0.0,
+          "reference_source_id": "verification",
+          "groundwater_depth_m": 3.0,
+          "groundwater_source_id": "verification",
+          "sources": [
+            {
+              "id": "verification",
+              "reference": "GeoAI prescribed synthetic half-space benchmark, not site investigation",
+              "investigation": "Independent Green-function integration and hand calculations. Groundwater/unit weight are synthetic display references only."
+            }
+          ],
+          "layers": [
+            {
+              "id": "soil-1",
+              "description": "Synthetic homogeneous isotropic elastic half-space",
+              "top_depth_m": 0.0,
+              "bottom_depth_m": null,
+              "extent": "UNBOUNDED_IDEALIZATION",
+              "extent_source_id": "verification",
+              "extent_kind": "SYNTHETIC",
+              "unit_weight_kn_m3": {
+                "value": 18.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "E_mpa": {
+                "value": 40.0,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              },
+              "poisson": {
+                "value": 0.3,
+                "kind": "SYNTHETIC",
+                "source_id": "verification"
+              }
+            }
+          ],
+          "applicability": "Homogeneous isotropic linear elastic infinite half-space; uniform flexible surface loading; no effective-stress, consolidation or groundwater coupling."
+        },
+        "load": {
+          "classification": "SYNTHETIC_VERIFICATION",
+          "B_m": 2.0,
+          "L_m": 2.0,
+          "N_n": 200000.0,
+          "reference_up_m": 0.0,
+          "source": "Prescribed synthetic uniform patch load, not transferred CAD footing demand",
+          "idealization": "uniform_flexible_rectangular_surface_patch",
+          "reviewed_assumptions": true
+        },
+        "winkler_stiffness": "NOT_DERIVED",
+        "winkler_displacement": "NOT_USED_OR_ADDED",
+        "engineering_approval": "DISABLED",
+        "actual_project_analysis": "BLOCKED",
+        "limitations": [
+          "Flexible uniformly loaded surface patch centre displacement only, not rigid-footing settlement",
+          "Homogeneous isotropic linear elastic infinite half-space; small displacement",
+          "No layer averaging, finite-depth correction, embedment, moments, contact loss, shear or nonlinear response",
+          "Unit weight and groundwater are stored references only; no pore-pressure/effective-stress or consolidation calculation",
+          "No bearing capacity, allowable settlement, construction recommendation, IS/US compliance or engineering safety approval"
+        ]
+      },
+      "authorized_proposal_id": 494,
+      "computed_sha256": "442c756414b91d7ef20c2028f1cfd1d2e44434a73e04c0bb0663ac7c3389e9c9"
+    },
+    "actor_user_id": 1,
+    "created_at": "2026-10-14 16:52:35.152144",
+    "content_sha256": "4b8de6ec5caf45e3a2335c0b4d1414d2a72879fb75ea62a42c04d17ad3f8e526"
+  },
+  "source_transport_result_id": 464,
+  "actual_project_analysis": "BLOCKED",
+  "engineering_approval": "DISABLED",
+  "method_reference": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/05152/chapt2.cfm",
+  "reference_scope": "FHWA background on Boussinesq half-space/point-load displacement; rectangle centre expression independently derived by surface-kernel integration, not attributed as a published FHWA rectangle formula."
+}

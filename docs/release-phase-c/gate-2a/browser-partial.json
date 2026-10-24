@@ -1,0 +1,101 @@
+[
+  {
+    "width": 1280,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  },
+  {
+    "width": 1600,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  },
+  {
+    "width": 390,
+    "screens": [
+      {
+        "route": "/login",
+        "title": "Login | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | StruvoCivil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": [],
+    "blocked": []
+  }
+]

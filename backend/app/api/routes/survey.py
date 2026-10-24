@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from zipfile import BadZipFile
 from typing import Any
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
@@ -12,6 +13,7 @@ from sqlalchemy.orm import Session
 from app.api.routes.projects import get_owned_project
 from app.core.disclaimer import DISCLAIMER
 from app.core.security import get_current_user_id
+from app.services.upload_limits import SURVEY_UPLOAD_MAX_BYTES
 from app.db.models import (
     AccuracyReport,
     EngineeringLayer,
@@ -195,8 +197,12 @@ async def import_survey_data(
 ):
     require_postgis()
     project = get_owned_project(project_id, db, user_id)
-    content = await file.read()
     fmt = format.lower().strip()
+    if fmt not in ('geojson', 'json', 'shapefile', 'shp', 'zip', 'geotiff', 'tif', 'tiff', 'gcp_csv', 'las', 'laz', 'dxf'):
+        raise HTTPException(422, 'Unsupported survey format')
+    content = await file.read(SURVEY_UPLOAD_MAX_BYTES + 1)
+    if len(content) > SURVEY_UPLOAD_MAX_BYTES:
+        raise HTTPException(413, 'Survey upload exceeds the 32 MiB limit')
 
     try:
         if fmt in ("geojson", "json"):
@@ -227,10 +233,12 @@ async def import_survey_data(
             db.commit()
             return {"type": "layers", "layers": [_layer_out(l) for l in layers]}
         raise HTTPException(422, f"Unsupported format: {format}")
+    except BadZipFile:
+        raise HTTPException(422, 'Invalid survey archive') from None
     except ValueError as e:
         raise HTTPException(422, str(e)) from e
     except RuntimeError as e:
-        raise HTTPException(503, str(e)) from e
+        raise HTTPException(503, 'Survey parser unavailable; review supported formats and server configuration') from e
 
 
 @router.post("/import/osm-context")

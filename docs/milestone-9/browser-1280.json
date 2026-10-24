@@ -1,0 +1,69 @@
+{
+  "width": 1280,
+  "height": 900,
+  "isolatedProject": 991280,
+  "savedRevision": 991601,
+  "explicitSaves": 1,
+  "mockedTurns": 7,
+  "paidInferenceRequests": 0,
+  "forbidden": [],
+  "errors": [],
+  "outcomes": [
+    {
+      "task_id": "38130a69-fe3c-4fb9-a9ba-be4c2d95c800",
+      "action_id": "fea6a4a9b4e97c2c96336cc4ee76cbc38b065771af5a7f3e2024b8b8edf18c3b",
+      "ok": true,
+      "message": "Temporary beam preview rendered. This receipt records a preview only; current approval status is shown in the editor.",
+      "taskId": "38130a69-fe3c-4fb9-a9ba-be4c2d95c800",
+      "actionId": "fea6a4a9b4e97c2c96336cc4ee76cbc38b065771af5a7f3e2024b8b8edf18c3b"
+    },
+    {
+      "task_id": "d2bcd36d-58be-458e-bde2-a93cdf486a36",
+      "action_id": "fea6a4a9b4e97c2c96336cc4ee76cbc38b065771af5a7f3e2024b8b8edf18c3b",
+      "ok": false,
+      "message": "Duplicate proposal replay rejected. Request a new proposal.",
+      "taskId": "d2bcd36d-58be-458e-bde2-a93cdf486a36",
+      "actionId": "fea6a4a9b4e97c2c96336cc4ee76cbc38b065771af5a7f3e2024b8b8edf18c3b"
+    },
+    {
+      "task_id": "d2c94d80-2333-4305-a961-b359ee4d45e7",
+      "action_id": "15f6043f8162e8bc3a41739a2445055b24fac896632bb0768c5694253de7a54b",
+      "ok": true,
+      "message": "Temporary beam preview rendered. This receipt records a preview only; current approval status is shown in the editor.",
+      "taskId": "d2c94d80-2333-4305-a961-b359ee4d45e7",
+      "actionId": "15f6043f8162e8bc3a41739a2445055b24fac896632bb0768c5694253de7a54b"
+    },
+    {
+      "task_id": "6673f89a-c982-4bc0-8533-8a6c10f85757",
+      "action_id": "4dac58f3affe3dde7778a079e0237600bcce5d09c401e27020b48038df5d5e05",
+      "ok": true,
+      "message": "Temporary component proposal cancelled. No model change was applied or saved.",
+      "taskId": "6673f89a-c982-4bc0-8533-8a6c10f85757",
+      "actionId": "4dac58f3affe3dde7778a079e0237600bcce5d09c401e27020b48038df5d5e05"
+    },
+    {
+      "task_id": "5cd90ffb-88eb-46ed-b206-a5733d35b71c",
+      "action_id": "b7e8a2de9f0af68b9b009b73b9aa849b875446168955abb17dfa5c9d1d2bacee",
+      "ok": true,
+      "message": "Temporary beam preview rendered. This receipt records a preview only; current approval status is shown in the editor.",
+      "taskId": "5cd90ffb-88eb-46ed-b206-a5733d35b71c",
+      "actionId": "b7e8a2de9f0af68b9b009b73b9aa849b875446168955abb17dfa5c9d1d2bacee"
+    },
+    {
+      "task_id": "70cdc912-0cd5-4bd8-b4fe-c3940b35ca11",
+      "action_id": "529acb756f765980c2c59017ccff4958485155dad9ae4e4c863de6c57f1a39bc",
+      "ok": true,
+      "message": "Temporary beam preview rendered. This receipt records a preview only; current approval status is shown in the editor.",
+      "taskId": "70cdc912-0cd5-4bd8-b4fe-c3940b35ca11",
+      "actionId": "529acb756f765980c2c59017ccff4958485155dad9ae4e4c863de6c57f1a39bc"
+    },
+    {
+      "task_id": "7ee0c2b6-28e7-4d0b-8fde-efa125dbd181",
+      "action_id": "4dac58f3affe3dde7778a079e0237600bcce5d09c401e27020b48038df5d5e05",
+      "ok": false,
+      "message": "No temporary component preview is active. Applied or saved geometry was not removed.",
+      "taskId": "7ee0c2b6-28e7-4d0b-8fde-efa125dbd181",
+      "actionId": "4dac58f3affe3dde7778a079e0237600bcce5d09c401e27020b48038df5d5e05"
+    }
+  ]
+}

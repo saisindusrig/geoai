@@ -1,0 +1,50 @@
+flowchart TD
+  subgraph Browser["Browser - Next.js / React"]
+    U["User clicks Save or Generate"] --> H["React event handler"]
+    H --> C["lib/api.ts: fetch JSON<br/>Optional Bearer token from localStorage"]
+    UI["Zustand job state, toast feedback<br/>Reload project and render map / 3D model"]
+  end
+  subgraph API["FastAPI backend"]
+    C --> M["CORS and request logging"]
+    M --> V["Pydantic validation and auth dependencies<br/>Project ownership and route-specific checks"]
+    V --> R{"Action"}
+    R -->|"Save boundary / alignment / location"| S["PUT /api/projects/{id}<br/>Update Project; sync PostGIS geometry when applicable"]
+    S --> T["SQLAlchemy Session<br/>commit and refresh"]
+    R -->|"Generate design"| G["POST /api/projects/{id}/design/generate<br/>Check asset support, rate and usage limits"]
+    G --> SC["Commit DesignScenario with running status"]
+    SC --> J["jobs.submit_design_generation"]
+    J --> ACK["Return job_id and scenario_id"]
+    ACK --> P["Browser polls GET /api/jobs/{job_id}<br/>Every 1 second"]
+    V -->|"Invalid input / denied access"| E["HTTP error -> ApiError -> UI feedback"]
+  end
+  subgraph Jobs["Background generation"]
+    J --> Q{"Arq enabled and Redis available?"}
+    Q -->|Yes| AR["Redis queue -> Arq worker"]
+    Q -->|"No, or enqueue fails"| IN["In-process async task"]
+    AR --> RUN["run_design_job: new database session"]
+    IN --> RUN
+    RUN --> O["AI orchestrator<br/>Site / terrain context -> design resolution"]
+    O --> GEN["Geometry generators and 3D preview<br/>Deterministic quantities, BOQ and cost"]
+    GEN --> FILE["Export GLB files"]
+    FILE --> SAVE["Commit scenario output, ModelRevision,<br/>QuantityEstimate, GeneratedFile metadata<br/>and Project status"]
+    SAVE --> DONE["Mark job completed"]
+    RUN -->|"Failure / timeout / cancellation"| FAIL["Rollback pending work<br/>Persist scenario failure / cancellation state"]
+    FAIL --> STATUS
+    DONE --> STATUS["Job status: Redis with 24h TTL<br/>In-memory fallback when Redis unavailable"]
+    O -.->|Progress| STATUS
+    GEN -.->|Preview ready| STATUS
+  end
+  subgraph Persistence["Persistence"]
+    DB[("PostgreSQL + PostGIS<br/>SQLite for local / demo fallback")]
+    FS[("S3 / MinIO object storage<br/>Local filesystem fallback")]
+  end
+  T --> DB
+  T -->|"Saved project JSON"| UI
+  SC --> DB
+  SAVE --> DB
+  FAIL --> DB
+  FILE -->|"Binary model files"| FS
+  STATUS -->|"Status response"| P
+  P -->|"Preview ready / completed: reload saved data"| UI
+  DB -->|"Project / scenario / revision read APIs"| UI
+  FS -->|"Model URLs / authenticated file route"| UI

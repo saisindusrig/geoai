@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 25232,
+    "ProcessName": "node",
+    "Path": "C:\\Program Files\\nodejs\\node.exe",
+    "StartTime": "2026-10-22T15:37:56.9156196+05:30",
+    "WorkingSet64": 109793280,
+    "PrivateMemorySize64": 126578688
+  },
+  {
+    "Id": 27680,
+    "ProcessName": "node",
+    "Path": "C:\\Program Files\\nodejs\\node.exe",
+    "StartTime": "2026-10-22T15:37:56.8982452+05:30",
+    "WorkingSet64": 59076608,
+    "PrivateMemorySize64": 92073984
+  },
+  {
+    "Id": 24056,
+    "ProcessName": "python",
+    "Path": "D:\\layout project\\backend\\.venv\\Scripts\\python.exe",
+    "StartTime": "2026-10-22T15:27:13.6582595+05:30",
+    "WorkingSet64": 4460544,
+    "PrivateMemorySize64": 827392
+  }
+]

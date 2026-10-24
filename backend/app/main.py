@@ -15,7 +15,7 @@ from app.core.exception_handlers import (
     validation_exception_handler,
 )
 from app.core.logging import setup_logging
-from app.core.production import log_startup_warnings, production_readiness
+from app.core.production import enforce_production_security, log_startup_warnings, production_readiness
 from app.core.sentry import init_sentry
 from app.db.init_db import init_db
 from app.middleware.request_logging import RequestLoggingMiddleware
@@ -26,6 +26,7 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging()
+    enforce_production_security()
     init_sentry()
     init_db()
     log_startup_warnings()
@@ -40,7 +41,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="sitegeoai API",
+    title="StruvoCivil API",
     description=f"Preliminary construction planning API. {DISCLAIMER}",
     version="0.1.0",
     lifespan=lifespan,
@@ -60,6 +61,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Disposition", "X-Request-ID"],
 )
 logger.info(
     "CORS origins=%s netlify_regex=%s",
@@ -135,3 +137,69 @@ app.include_router(site_workspace.router)
 app.include_router(geoai.router)
 from app.api.routes import cad_experimental
 app.include_router(cad_experimental.router)
+from app.api.routes import opensees
+app.include_router(opensees.router)
+from app.api.routes import physical_columns
+app.include_router(physical_columns.router)
+from app.api.routes import column_agent
+app.include_router(column_agent.router)
+from app.api.routes import elastic_frames
+app.include_router(elastic_frames.router)
+
+from app.api.routes import physical_frames
+app.include_router(physical_frames.router)
+
+from app.api.routes import slab_transfers
+app.include_router(slab_transfers.router)
+
+from app.api.routes import foundation_interfaces
+app.include_router(foundation_interfaces.router)
+
+from app.api.routes import anchor_contacts
+app.include_router(anchor_contacts.router)
+
+from app.api.routes import anchor_contacts_3d
+app.include_router(anchor_contacts_3d.router)
+from app.api.routes import connection_inputs
+app.include_router(connection_inputs.router)
+from app.api.routes import engineering_study
+app.include_router(engineering_study.router)
+from app.api.routes import drawing_cad
+app.include_router(drawing_cad.router)
+from app.api.routes import cad_frames
+app.include_router(cad_frames.router)
+
+from app.api.routes import cad_soil
+app.include_router(cad_soil.router)
+
+from app.api.routes import footing_transport
+app.include_router(footing_transport.router)
+
+from app.api.routes import soil_contact
+app.include_router(soil_contact.router)
+
+from app.api.routes import soil_profile
+app.include_router(soil_profile.router)
+
+from app.api.routes import bearing_capacity
+app.include_router(bearing_capacity.router)
+
+from app.api.routes import footing_flexure
+app.include_router(footing_flexure.router)
+
+from app.api.routes import rc_flexure
+app.include_router(rc_flexure.router)
+from app.api.routes import foundation_system
+app.include_router(foundation_system.router)
+
+from app.api.routes import spatial_frames
+app.include_router(spatial_frames.router)
+from app.api.routes import coupled_floors
+app.include_router(coupled_floors.router)
+from app.api.routes import analysis_capabilities
+app.include_router(analysis_capabilities.router)
+
+from app.api.routes import runtime_diagnostics
+app.include_router(runtime_diagnostics.router)
+from app.api.routes import site_assistant
+app.include_router(site_assistant.router)

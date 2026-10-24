@@ -1,8 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { ContentSkeleton, InlineSpinner } from "@/components/ui/loading-feedback";
 import { Badge } from "@/components/ui/badge";
+import { TableScrollRegion } from "@/components/ui/table-scroll-region";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ApiErrorDetails from "@/components/ui/api-error-details";
@@ -32,12 +34,17 @@ interface AuditResponse {
 
 export default function AuditLogPage() {
   const { isAdmin, loading: authLoading } = useAuthUser();
+  const pending = useRef(false);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState<AuditResponse | null>(null);
   const [error, setError] = useState<ParsedApiError | null>(null);
 
-  const load = useCallback(() => {
+  const load = useCallback((offset = 0) => {
+    if (pending.current) return;
+    pending.current = true;
+    setLoading(true);
     api
-      .get<AuditResponse>("/api/admin/audit?limit=100")
+      .get<AuditResponse>(`/api/admin/audit?limit=100&offset=${offset}`)
       .then((next) => {
         setData(next);
         setError(null);
@@ -45,7 +52,7 @@ export default function AuditLogPage() {
       .catch((e) => {
         if (e instanceof ApiError) setError(e.toParsed());
         else setError({ status: 0, message: String(e instanceof Error ? e.message : e) });
-      });
+      }).finally(() => { pending.current = false; setLoading(false); });
   }, []);
 
   useEffect(() => {
@@ -56,7 +63,7 @@ export default function AuditLogPage() {
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-6xl mx-auto w-full px-6 py-8 space-y-5">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / administration</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / administration</p>
           <h1 className="mt-3 border-b border-border pb-5 text-[36px] font-medium tracking-[-0.045em]">Audit Log</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Admin actions and security-relevant events.
@@ -64,6 +71,8 @@ export default function AuditLogPage() {
           </p>
         </div>
 
+        {error && <p role="alert" className="text-sm text-destructive">Could not load audit events. Retry to reconnect.</p>}
+        {loading && !data && <ContentSkeleton label="Loading audit events…" layout="rows" />}
         {error && (
           <Card className="border-destructive/30 bg-destructive/5 p-4 space-y-3">
             <ApiErrorDetails error={error} />
@@ -79,14 +88,15 @@ export default function AuditLogPage() {
                 Check that the API is running and `NEXT_PUBLIC_API_URL` is correct, then retry.
               </p>
             )}
-            <Button size="sm" variant="outline" onClick={load}>
+            <Button size="sm" variant="outline" onClick={() => load(data?.offset ?? 0)} disabled={loading}>
               Retry
             </Button>
           </Card>
         )}
 
         <Card float className="overflow-hidden">
-          <CardContent className="p-0 overflow-x-auto">
+          <CardContent className="p-0">
+            <TableScrollRegion label="Audit events table">
             <table className="data-table w-full min-w-[720px]">
               <thead>
                 <tr>
@@ -117,11 +127,17 @@ export default function AuditLogPage() {
                 ))}
               </tbody>
             </table>
-            {!data?.entries.length && !error && (
+          </TableScrollRegion>
+            {data && !loading && !data.entries.length && !error && (
               <p className="p-6 text-sm text-muted-foreground text-center">No audit entries yet.</p>
             )}
           </CardContent>
         </Card>
+        {data && <nav aria-label="Event pages" aria-busy={loading} className="flex flex-wrap items-center gap-3">
+          <Button variant="outline" disabled={loading || data.offset === 0} onClick={() => load(Math.max(0, data.offset - data.limit))}>Previous</Button>
+          <span role="status" className="text-sm text-muted-foreground">{loading ? <><InlineSpinner /> Loading events…</> : `${data.total ? data.offset + 1 : 0}–${data.offset + data.entries.length} of ${data.total}`}</span>
+          <Button variant="outline" disabled={loading || data.offset + data.limit >= data.total} onClick={() => load(data.offset + data.limit)}>Next</Button>
+        </nav>}
       </div>
     </div>
   );

@@ -1,0 +1,18 @@
+{
+  "model_revisions": {
+    "rows": 10,
+    "sha256": "7909ec98abfa562191c8953dae65af9c7a33359a0c2f3ced9ce86f0dd6962d96"
+  },
+  "engineering_analyses": {
+    "rows": 49,
+    "sha256": "aa1c6c1dddce1f4cb390c0bbf940ca12b67e36fee4bec3873475708227bb163a"
+  },
+  "engineering_audit_events": {
+    "rows": 8,
+    "sha256": "69a6e72e0ae1d8c69fd63e433d74823e9c7faafaf513869640902278a8510566"
+  },
+  "usage_events": {
+    "rows": 1935,
+    "sha256": "a798eb6687a7d287326ba8cc84c0e71742f17fdd240e3e2a31813f8ef1a23d89"
+  }
+}

@@ -13,7 +13,6 @@ const FOOTER_LINKS = {
     { label: "Demo Project", href: "/dashboard" },
   ],
   Legal: [
-    { label: "Contact", href: "mailto:support@sitegeoai.example" },
     { label: "Privacy", href: "/privacy" },
   ],
 };
@@ -56,7 +55,7 @@ export default function Footer() {
 
         <div className="mt-12 flex items-center justify-between gap-2 border-t border-border pt-8">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} GeoAI. Preliminary planning only — not for construction
+            © {new Date().getFullYear()} StruvoCivil. Preliminary planning only — not for construction
             approval.
           </p>
           <p className="text-xs text-muted-foreground">

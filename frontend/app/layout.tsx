@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
+import { BRAND_NAME, SITE_TITLE, SITE_DESCRIPTION, publicSiteUrl } from "@/lib/brand";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import DashboardShell from "@/components/layout/DashboardShell";
 import Toaster from "@/components/ui/toaster";
 import SiteUtilities from "@/components/layout/SiteUtilities";
-import DocumentTitle from "@/components/layout/DocumentTitle";
+import SiteAssistant from "@/components/ai/SiteAssistant";
 import { inter, jetbrainsMono } from "@/lib/fonts";
+import SessionBoundary from "@/components/auth/SessionBoundary";
 
 export const metadata: Metadata = {
-  title: { default: "GeoAI | Infrastructure Planning", template: "%s | GeoAI" },
-  description:
-    "GeoAI helps civil engineering teams explore site-aware infrastructure concepts using real-world terrain, maps, and preliminary engineering parameters.",
-  icons: { icon: "/icon.svg" },
-  openGraph: { title: "GeoAI | Infrastructure Planning", description: "Site-aware, conceptual infrastructure planning for engineering teams.", type: "website" },
+  metadataBase: publicSiteUrl(),
+  title: { default: SITE_TITLE, template: `%s | ${BRAND_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: BRAND_NAME,
+  icons: { icon: "/icon.svg", apple: "/brand/app-icon-180.png" },
+  manifest: "/manifest.webmanifest",
+  openGraph: { title: SITE_TITLE, description: SITE_DESCRIPTION, siteName: BRAND_NAME, type: "website", images: [{ url: "/brand-social.png", width: 1200, height: 630, alt: SITE_TITLE }] },
+  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/brand-social.png"] },
 };
 
 export default function RootLayout({
@@ -34,21 +39,12 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ThemeProvider>
-          <DocumentTitle />
+          <SessionBoundary>
           <DashboardShell>{children}</DashboardShell>
           <Toaster />
           <SiteUtilities />
-          <div className="desktop-only-notice" role="alert">
-            <div>
-              <p className="text-lg font-semibold">
-                GeoAI is built for desktop
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                Use a screen at least 1280px wide to plan, inspect, and save
-                construction concepts.
-              </p>
-            </div>
-          </div>
+          <SiteAssistant />
+          </SessionBoundary>
         </ThemeProvider>
       </body>
     </html>

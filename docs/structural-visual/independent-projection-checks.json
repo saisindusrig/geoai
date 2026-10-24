@@ -1,0 +1,143 @@
+{
+  "checked_cases": 8,
+  "equilibrium_tolerance_n_n_nm": 0.001,
+  "checks": [
+    {
+      "project_id": 793,
+      "case": "Linear sum",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        3.637978807091713e-11,
+        1.4551915228366852e-11,
+        -5.820766091346741e-11
+      ],
+      "max_displacement_mm": 0.5655372298750062,
+      "max_absolute_moment_knm": 28.809725652999848,
+      "samples": 102
+    },
+    {
+      "project_id": 793,
+      "case": "Horizontal",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        3.637978807091713e-11,
+        1.3642420526593924e-12,
+        -1.127773430198431e-10
+      ],
+      "max_displacement_mm": 0.42724256797253,
+      "max_absolute_moment_knm": 21.79639991827766,
+      "samples": 102
+    },
+    {
+      "project_id": 793,
+      "case": "Gravity",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -2.7284841053187847e-12,
+        0.0,
+        7.275957614183426e-12
+      ],
+      "max_displacement_mm": 0.11090520969449046,
+      "max_absolute_moment_knm": 5.257919054565224,
+      "samples": 102
+    },
+    {
+      "project_id": 793,
+      "case": "Self weight",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -5.4569682106375694e-12,
+        -3.637978807091713e-12,
+        8.731149137020111e-11
+      ],
+      "max_displacement_mm": 0.2578134482919544,
+      "max_absolute_moment_knm": 12.147476443176716,
+      "samples": 102
+    },
+    {
+      "project_id": 794,
+      "case": "Slab tributary",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -2.000888343900442e-11,
+        -7.275957614183426e-12,
+        2.9103830456733704e-11
+      ],
+      "max_displacement_mm": 0.5536288553306308,
+      "max_absolute_moment_knm": 26.289509933168535,
+      "samples": 102
+    },
+    {
+      "project_id": 794,
+      "case": "Slab tributary",
+      "frame_origin_enu_m": [
+        0.15,
+        0.15,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -2.000888343900442e-11,
+        -7.275957614183426e-12,
+        2.9103830456733704e-11
+      ],
+      "max_displacement_mm": 0.5536288553306308,
+      "max_absolute_moment_knm": 26.289509933168535,
+      "samples": 102
+    },
+    {
+      "project_id": 794,
+      "case": "Slab tributary",
+      "frame_origin_enu_m": [
+        0.15,
+        3.85,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -2.000888343900442e-11,
+        -7.275957614183426e-12,
+        2.9103830456733704e-11
+      ],
+      "max_displacement_mm": 0.5536288553306308,
+      "max_absolute_moment_knm": 26.289509933168535,
+      "samples": 102
+    },
+    {
+      "project_id": 794,
+      "case": "Slab tributary",
+      "frame_origin_enu_m": [
+        0.15,
+        3.85,
+        0.0
+      ],
+      "independent_residual_n_n_nm": [
+        -2.000888343900442e-11,
+        -7.275957614183426e-12,
+        2.9103830456733704e-11
+      ],
+      "max_displacement_mm": 0.5536288553306308,
+      "max_absolute_moment_knm": 26.289509933168535,
+      "samples": 102
+    }
+  ],
+  "note": "Independent summation of saved applied nodal/distributed loads and support reactions. No new solver response, design combination or capacity calculation."
+}

@@ -1,0 +1,180 @@
+- link "Skip to main content":
+  - /url: "#main-content"
+- alert
+- banner:
+  - link "GeoAI home":
+    - /url: /
+    - text: GeoAI
+  - heading "Typed isolated flyover fixture" [level=1]
+  - link "3D Sandbox editor":
+    - /url: /projects/999999/workspace?local=1
+  - link "Projects":
+    - /url: /dashboard
+  - button "Save site geometry"
+  - link "Export":
+    - /url: /projects/2/report
+    - button "Export"
+  - link "New concept":
+    - /url: /projects/new
+    - button "New concept"
+  - link "Open settings":
+    - /url: /settings
+- main:
+  - button "1 Site"
+  - group: Workflow help
+  - group: 2 Create / Import
+  - button "3 Review 3D"
+  - button "4 Edit"
+  - button "5 Analyze / Results"
+  - button "6 Review"
+  - status: Saved · v1
+  - button "Save model" [disabled]
+  - text: 12.00100° N · 77.00100° E
+  - button "Select" [pressed]
+  - button "Orbit"
+  - button "Pan"
+  - button "Mouse controls"
+  - button "Model view" [pressed]
+  - text: /
+  - button "Site view"
+  - text: Illustrative finishes · not material evidence
+  - group: Standard views
+  - button "Focus Structure"
+  - button "Fit All"
+  - button "Fit selection"
+  - button "Dimensions off"
+  - group: Display legend
+  - button "Full screen"
+  - complementary "Workspace tools":
+    - group "Object editing":
+      - text: Edit
+      - button "Select object" [pressed]
+      - text: Click to select and inspect · Ctrl to add · V
+      - button "Move selection"
+      - text: Move selected objects · G · changes geometry; undo with Ctrl+Z
+      - button "Rotate selection"
+      - text: Rotate selected objects · R · review local/global axes
+      - button "Scale selection"
+      - text: Scale selected objects · S · changes dimensions; engineering results may become stale
+    - group "Site geometry":
+      - text: Site
+      - button "Draw rectangular boundary"
+      - text: Draw a rectangular site boundary
+      - button "Draw site boundary"
+      - text: Draw a closed site boundary
+      - button "Edit site boundary"
+      - text: Drag existing boundary vertices
+      - button "Draw alignment"
+      - text: Draw a road or infrastructure centerline
+      - button "Edit alignment"
+      - text: Drag existing alignment vertices
+    - text: View
+    - button "Measure"
+    - text: Measure distance, elevation, slope, area or clearance · M
+    - button "Frame selection"
+    - text: Focus the selected object · F Actions
+    - button "Duplicate selection"
+    - text: Duplicate selected objects
+    - button "Delete selection"
+    - text: Delete selected objects · Del
+    - button "Undo" [disabled]
+    - text: Undo · No object edits to undo
+    - button "Redo" [disabled]
+    - text: Redo · No object edits to redo
+  - status:
+    - paragraph: 1 selected · select
+    - button "Inspect selection"
+    - paragraph: Step 0.5 m · Esc cancels · Ctrl+Z undoes
+    - button "Move west one step": E−
+    - button "Move east one step": E+
+    - button "Move north one step": N+
+    - button "Clear selection"
+  - button "Scene / Sun study"
+  - button "Search workspace"
+  - group: Import
+  - button "Show AI Copilot panel": Assistant
+  - group "Camera orientation gizmo":
+    - button "Positive X axis view": +X
+    - button "Positive Y axis view": +Y
+    - button "Positive Z axis view": +Z
+    - button "Negative X axis view": −X
+    - button "Negative Y axis view": −Y
+    - button "Negative Z axis view" [disabled]: −Z
+  - separator "Resize panel width"
+  - complementary:
+    - text: Inspect
+    - button "Close inspector"
+    - tabpanel "Inspect":
+      - region "Object summary":
+        - heading "Deck seg 1" [level=3]
+        - paragraph: deck · Editable
+        - term: Dimensions · metres
+        - definition: 206.515 × 12.000 × 0.600 m
+        - term: Position · East / North / Up · m
+        - definition: 0.000 / 0.000 / 5.800
+        - term: Orientation · X / Y / Z · degrees
+        - definition: 0.0 / 0.0 / 32.6
+        - term: Geometry source
+        - definition: Saved geometry · source evidence not recorded
+        - term: Material verification
+        - definition: Unverified · appearance is not engineering evidence · engineering properties missing here
+        - term: Stable component ID
+        - definition: deck-deck-seg-1
+        - term: Appearance finish · illustrative
+        - definition: Concrete appearance
+        - term: Declared engineering material
+        - definition: Not declared in this visual component. Review Analysis inputs.
+        - paragraph: Saved v1 · Engineering Unverified
+        - button "Fit selection"
+        - button "Edit"
+        - button "Existing analysis"
+        - button "Isolate"
+        - button "Hide"
+        - button "Restore visibility"
+      - group: Assembly tools and parameters
+      - heading "Edit component" [level=3]
+      - paragraph: "Local axes: East / North / Up · metres. Changes remain pending until Apply, then Save model."
+      - text: Component name
+      - textbox "Component name": deck_seg_1
+      - paragraph: Dimensions · metres
+      - text: Dimensions · metres X
+      - textbox "Dimensions · metres X": "206.515055"
+      - text: Dimensions · metres Y
+      - textbox "Dimensions · metres Y": "12"
+      - text: Dimensions · metres Z
+      - textbox "Dimensions · metres Z": "0.6"
+      - paragraph: Position · metres
+      - text: Position · metres East
+      - textbox "Position · metres East": "0"
+      - text: Position · metres North
+      - textbox "Position · metres North": "0"
+      - text: Position · metres Up
+      - textbox "Position · metres Up": "5.8"
+      - paragraph: Rotation · degrees
+      - text: Rotation · degrees X
+      - textbox "Rotation · degrees X": "0"
+      - text: Rotation · degrees Y
+      - textbox "Rotation · degrees Y": "0"
+      - text: Rotation · degrees Z
+      - textbox "Rotation · degrees Z": "32.577164"
+      - group: Scale and appearance
+      - status: No pending changes
+      - button "Preview" [disabled]
+      - button "Apply" [disabled]
+      - button "Cancel"
+      - group: Identity and source references
+    - tablist "Inspector views":
+      - tab "Layers"
+      - tab "Inspect" [selected]
+      - tab "History"
+      - tab "Analysis"
+      - tab "Review"
+  - region "Engineering dock":
+    - button "Engineering dock"
+    - button "Cost 9.23 Cr INR"
+    - button "Cement 38,369.6 bags"
+    - button "Steel 586,202.6 kg"
+    - button "Excavation —"
+    - button "Duration ~5.2 mo"
+    - button "Area 48,188.1 m²"
+    - button "Risk 7/10"

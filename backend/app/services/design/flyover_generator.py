@@ -19,6 +19,7 @@ from app.services.design.alignment_geometry import (
 )
 from app.services.design.elevation_profile import ElevationProfile
 from app.services.design.geometry_utils import box
+from app.services.design.geometry_metadata import geometry_spec_metadata as _geometry_spec_meta
 
 logger = logging.getLogger(__name__)
 
@@ -127,27 +128,6 @@ def _quantities_and_boq(
     return quantities, boq_inputs, derived
 
 
-def _geometry_spec_meta(
-    length: float,
-    geometry_mode: str,
-    alignment_ctx: AlignmentContext | None,
-    elevation_profile: ElevationProfile | None = None,
-) -> dict:
-    meta: dict = {
-        "objects": [],
-        "frame": "local_meters",
-        "length_m": length,
-        "geometry_mode": geometry_mode,
-    }
-    if alignment_ctx is not None:
-        meta["alignment_anchor"] = {
-            "center_lng": alignment_ctx.center_lng,
-            "center_lat": alignment_ctx.center_lat,
-        }
-        meta["centerline_xy"] = [list(pt) for pt in alignment_ctx.centerline_xy]
-    if elevation_profile is not None:
-        meta.update(elevation_profile.to_spec_metadata())
-    return meta
 
 
 def _ground_z(profile: ElevationProfile | None, station_m: float) -> float:

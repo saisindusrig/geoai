@@ -1,0 +1,7 @@
+import {expect,it} from 'vitest';
+import {componentDisplayName} from './component-presentation';
+import {componentOverlaps} from './component-overlaps';
+import type {EditableModelComponent} from './types';
+const c={id:'a',name:'column-nw',category:'column',visible:true,locked:false,geometry:{kind:'box',size:[1,1,2]},transform:{position:[0,0,0],rotation_deg:[0,0,0],scale:[1,1,1]},material:{name:'Concept',color:'#808080',roughness:.5,metalness:0}} as EditableModelComponent;
+it('uses source names and stable tread indices without altering identity or documents',()=>{const before=JSON.stringify(c);expect(componentDisplayName(c)).toBe('Column NW');expect(componentDisplayName({...c,id:'addon:abc:tread-2',name:'stairs uuid'})).toBe('Stair 02 · tread');expect(componentDisplayName({...c,category:'foundation',metadata:{references:['platform:column-sw']}})).toBe('Footing SW');expect(JSON.stringify(c)).toBe(before);});
+it('distinguishes identical geometry, envelope overlaps and touching boundaries without edits',()=>{const dup={...c,id:'b'},overlap={...c,id:'o',transform:{...c.transform,position:[.5,0,0] as [number,number,number]}},touch={...c,id:'t',transform:{...c.transform,position:[0,0,2] as [number,number,number]}};const before=JSON.stringify([c,dup,overlap,touch]);expect(componentOverlaps([c,dup])[0].kind).toBe('duplicate');expect(componentOverlaps([c,overlap])[0].kind).toBe('envelope overlap');expect(componentOverlaps([c,touch])).toEqual([]);expect(JSON.stringify([c,dup,overlap,touch])).toBe(before);});

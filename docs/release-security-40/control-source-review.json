@@ -1,0 +1,21 @@
+{
+  "customer_payment_integration": {
+    "matching_paths": [],
+    "limitation": "Source-pattern inventory only; not proof about external infrastructure or generated/runtime integrations."
+  },
+  "application_cookie_session": {
+    "matching_paths": [],
+    "limitation": "Source-pattern inventory only; not proof about external infrastructure or generated/runtime integrations."
+  },
+  "recovery_bot_implementation": {
+    "matching_paths": [],
+    "limitation": "Source-pattern inventory only; not proof about external infrastructure or generated/runtime integrations."
+  },
+  "scope": {
+    "application_source_files_scanned": 500,
+    "git_operations": false,
+    "live_service_calls": false,
+    "credential_files_opened": false,
+    "secret_values_emitted": false
+  }
+}

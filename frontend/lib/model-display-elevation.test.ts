@@ -14,6 +14,13 @@ describe("model and city elevation consistency", () => {
     expect(modelDisplayElevation(0, null, null)).toBe(0);
     expect(modelDisplayElevation(0, null, NaN)).toBe(0);
   });
+  it("shows an unresolved concept on context ground without changing its saved elevation", () => {
+    const placement = { elevation: null, offset: 0, status: "REVIEW_REQUIRED" };
+    expect(modelDisplayElevation(0, placement, 920)).toBe(920);
+    expect(placement.elevation).toBeNull();
+    expect(modelDisplayElevation(0, placement, null)).toBe(0);
+    expect(modelDisplayElevation(120, placement, 920)).toBe(120);
+  });
   it("preserves legacy display placement without treating null as a measured zero", () => {
     expect(modelDisplayElevation(120, { elevation: null, offset: 9 }, 900)).toBe(120);
     expect(modelDisplayElevation(120, { elevation: null, offset: 9, legacy_display_elevation: 0 }, 900)).toBe(9);

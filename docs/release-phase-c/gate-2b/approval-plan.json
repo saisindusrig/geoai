@@ -1,0 +1,267 @@
+{
+  "phase": "Gate 2B",
+  "date": "2026-10-24",
+  "timezone": "Asia/Calcutta",
+  "purpose": "APPROVAL_PREPARATION_ONLY",
+  "firebase_enabled": false,
+  "project_accessed": false,
+  "credentials_accessed": false,
+  "live_acceptance_authorized": false,
+  "public_launch": "BLOCKED",
+  "project_decision": "UNRESOLVED",
+  "approved_project_id": null,
+  "approved_web_app_id": null,
+  "approved_operator": null,
+  "approved_origin": null,
+  "proposed_origin": "http://localhost:3017",
+  "proposed_backend": "http://127.0.0.1:8003",
+  "proposed_auth_domain": "<approved-project-id>.firebaseapp.com",
+  "existing_project_eligible": "UNKNOWN_UNTIL_OWNER_ATTESTATION",
+  "provider_proposal": "EMAIL_PASSWORD_ONLY",
+  "persistence_proposal": "IN_MEMORY_PER_TAB",
+  "data_topology": "NEW_STAGING_DB_WITH_USERS_AUDITS_AND_IDENTITY_LINKS_COLOCATED",
+  "provisioning_performed": false,
+  "genuine_test_results": false,
+  "proposed_test_envelope": {
+    "firebase_accounts": 4,
+    "sdk_operations": 100,
+    "backend_requests": 300,
+    "recovery_messages": 6,
+    "initiated_operations_per_second": 2,
+    "expiry_window_minutes": 75,
+    "hard_billing_cap": false
+  },
+  "approvals": [
+    {
+      "id": "G2B-01",
+      "decision": "Project and product",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-02",
+      "decision": "Provider and service configuration",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-03",
+      "decision": "Origin and domain",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-04",
+      "decision": "IAM and credentials",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-05",
+      "decision": "Clean data, bootstrap and linking",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-06",
+      "decision": "Session policy",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-07",
+      "decision": "Sensitive acceptance operations",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-08",
+      "decision": "Live acceptance execution",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-09",
+      "decision": "Costs and availability",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    },
+    {
+      "id": "G2B-10",
+      "decision": "Rollback, retention and restart",
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null
+    }
+  ],
+  "acceptance_cases": [
+    {
+      "id": "F01",
+      "name": "Sign-in and verified identity",
+      "identities": [
+        "A",
+        "B",
+        "U"
+      ],
+      "operation": "Official SDK sign-in; backend token/project/lifetime verification; direct signup-denial negative; conditional genuine wrong-project token.",
+      "expected": "Linked exact internal identities; 401 invalid/expired, 403 unlinked, 503 unavailable; no signup or fallback.",
+      "failure": "Wrong identity or token accepted, automatic linking, service signup, or fallback.",
+      "additional_approval": "Live sign-in and subject provisioning; helper issuer needs independent approval; natural expiry window.",
+      "approval_ids": [
+        "G2B-01",
+        "G2B-02",
+        "G2B-03",
+        "G2B-04",
+        "G2B-05",
+        "G2B-06",
+        "G2B-08",
+        "G2B-09"
+      ],
+      "unresolved": "Valid wrong-project issuer unavailable; no second project implicitly authorized.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F02",
+      "name": "Revocation, disable/delete and outages",
+      "identities": [
+        "A",
+        "B",
+        "D"
+      ],
+      "operation": "Retain pre-action token in memory; revoke, disable/re-enable, independently approved D deletion; isolated service/certificate failures.",
+      "expected": "No protected access with old tokens; revoked/disabled 401; service unavailable 503; deleted status observed without assuming 401.",
+      "failure": "Old token authorizes, skipped revocation, outage fallback or unrelated account affected.",
+      "additional_approval": "Exact subject/actions, deletion separately opt-in, scoped network faults and operator permissions.",
+      "approval_ids": [
+        "G2B-04",
+        "G2B-05",
+        "G2B-07",
+        "G2B-08",
+        "G2B-09",
+        "G2B-10"
+      ],
+      "unresolved": "Live revocation/outage/deleted-subject status unqualified.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F03",
+      "name": "Logout",
+      "identities": [
+        "A",
+        "B"
+      ],
+      "operation": "SDK logout, back navigation, no-token requests and delayed reads/streams, account switch and independent second tab.",
+      "expected": "Local private state cleared, stale results rejected, no-token 401; other tab independent; no global-revocation claim.",
+      "failure": "Previous-account cache, resurrected sign-in, fallback or false global logout.",
+      "additional_approval": "Live session tests; separate G2B-07 authorization if server-wide revocation is required.",
+      "approval_ids": [
+        "G2B-06",
+        "G2B-08",
+        "G2B-09"
+      ],
+      "unresolved": "Live session semantics not run.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F04",
+      "name": "Password change/reset",
+      "identities": [
+        "A",
+        "OWNED_UNKNOWN_INBOX"
+      ],
+      "operation": "Approved reset requests and official hosted handler; expiry, single-use, recipient/domain scope and old-session checks.",
+      "expected": "Generic known/unknown outcome; genuine action binding/expiry/replay enforcement; approved old-session policy enforced.",
+      "failure": "Enumeration, action replay, expiry acceptance, old-token authorization or mail outside approved inboxes.",
+      "additional_approval": "Real mail, recipient/action host, password changes and timed expiry; no application change-password UI exists.",
+      "approval_ids": [
+        "G2B-02",
+        "G2B-03",
+        "G2B-05",
+        "G2B-07",
+        "G2B-08",
+        "G2B-09"
+      ],
+      "unresolved": "Delivery, real expiry and provider abuse protections unqualified.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F05",
+      "name": "Recovery/account change",
+      "identities": [
+        "A",
+        "P0"
+      ],
+      "operation": "Approved real reauthentication/recovery and identity-change procedure; link/audit/approver revocation.",
+      "expected": "Exact UID association; no email merge or ownership transfer; revoked approvals deny access.",
+      "failure": "Self-approved elevation, stale link, overwritten historical approval or false completed recovery workflow.",
+      "additional_approval": "Recovery identity policy and reviewed linking/account-change procedure/tooling before writes.",
+      "approval_ids": [
+        "G2B-05",
+        "G2B-07",
+        "G2B-08",
+        "G2B-10"
+      ],
+      "unresolved": "Complete application recovery/reauthentication/account-change and link-approval workflow not implemented.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F06",
+      "name": "Cross-user ownership",
+      "identities": [
+        "A",
+        "B",
+        "U"
+      ],
+      "operation": "New synthetic project/file/result-identity/history own versus cross-user reads and safe metadata probes.",
+      "expected": "Own access only; 401 invalid/missing, 403 or policy 404 other owner; no forged role/ID, stale substitution or private history.",
+      "failure": "Cross-user access, original-data/ledger reference, role escalation or execution of prohibited workloads.",
+      "additional_approval": "New fixtures and reviewed harmless probes; no solver/import/export execution tests even as denial probes.",
+      "approval_ids": [
+        "G2B-05",
+        "G2B-08",
+        "G2B-09"
+      ],
+      "unresolved": "Live ownership unqualified; synthetic records do not qualify engineering truth or cloud durability.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "F07",
+      "name": "Browser session policy",
+      "identities": [
+        "A",
+        "B"
+      ],
+      "operation": "Reload/close/multiple tabs, token refresh/real expiry, rejected sessions, stale async boundaries and persistence inspection.",
+      "expected": "Memory-only per tab, re-login after reload, no legacy/cookie fallback, no account bleed; revocation on next protected request.",
+      "failure": "Durable Firebase tokens, old private data, unintended tab sharing or unauthorized/replayed requests.",
+      "additional_approval": "Session limitations and live timed window; server-wide revocation separately approved.",
+      "approval_ids": [
+        "G2B-06",
+        "G2B-08",
+        "G2B-09"
+      ],
+      "unresolved": "Real browser/provider lifecycle and production HTTPS/XSS qualification remain pending.",
+      "status": "NOT_RUN"
+    }
+  ],
+  "runtime_permission_candidate": [
+    "firebaseauth.users.get"
+  ],
+  "current_credential_boundary": "CERTIFICATE_FILE_ONLY_NOT_ADC_WIF",
+  "documents": [
+    "RESULTS.md",
+    "STAGING-CONFIGURATION.md",
+    "IAM-CREDENTIALS-AND-COSTS.md",
+    "ACCEPTANCE-AND-ROLLBACK.md",
+    "APPROVAL-CHECKLIST.md"
+  ]
+}

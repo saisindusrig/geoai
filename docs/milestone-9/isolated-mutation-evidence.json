@@ -1,0 +1,39 @@
+{
+  "projects": [
+    {
+      "project": 981280,
+      "immutable_initial_revision": 981280,
+      "saved_revisions": [
+        981601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 981600,
+      "immutable_initial_revision": 981600,
+      "saved_revisions": [
+        981602
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 991280,
+      "immutable_initial_revision": 991280,
+      "saved_revisions": [
+        991601
+      ],
+      "all_original_components_unchanged": true
+    },
+    {
+      "project": 991600,
+      "immutable_initial_revision": 991600,
+      "saved_revisions": [
+        991602
+      ],
+      "all_original_components_unchanged": true
+    }
+  ],
+  "engineering_analyses": 0,
+  "download_or_usage_events": 0,
+  "original_database_never_attached": true
+}

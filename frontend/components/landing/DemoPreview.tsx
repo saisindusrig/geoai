@@ -238,7 +238,7 @@ export default function DemoPreview() {
               <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
             </div>
             <span className="text-[10px] font-mono text-muted-foreground ml-2">
-              sitegeoai · AI Design Studio
+              StruvoCivil · AI Design Studio
             </span>
           </div>
 

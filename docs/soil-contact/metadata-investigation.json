@@ -1,0 +1,55 @@
+{
+  "changes": [
+    {
+      "table": "projects",
+      "id": 792,
+      "differences": {
+        "updated_at": {
+          "before": "2026-10-14 07:56:00.661063",
+          "after": "2026-10-14 15:51:08.413187"
+        }
+      }
+    },
+    {
+      "table": "projects",
+      "id": 796,
+      "differences": {
+        "updated_at": {
+          "before": "2026-10-14 15:29:02.668431",
+          "after": "2026-10-14 15:48:06.689294"
+        }
+      }
+    },
+    {
+      "table": "project_conversations",
+      "id": "5905405a-4de7-5543-a63a-3c84d50d30e4",
+      "differences": {
+        "next_sequence": {
+          "before": 1,
+          "after": 2
+        }
+      }
+    }
+  ],
+  "causes": {
+    "project_796": "Conversation created at 2026-10-14 15:48:06 UTC; POST /api/projects/796/conversations logged at 21:18:06 IST. ConversationService.create calls lock_project; SQLAlchemy Project.updated_at onupdate is triggered by UPDATE projects SET id=id.",
+    "project_792": "User message sequence 1 saved at 2026-10-14 15:51:08 UTC; POST messages 202 logged at 21:21:08 IST. submit calls lock_project, advancing updated_at. Run failed AI_PROVIDER_UNAVAILABLE; no model/calculation change.",
+    "conversation_counter": "ConversationService.submit increments next_sequence 1 -> 2 after inserting the USER message. This is expected persistent message sequencing."
+  },
+  "evidence": {
+    "conversation_796_id": "7d8c5f6c-453e-5abc-8f66-ff1e3426dc60",
+    "message_792_id": "af0aae5e-1eec-592c-8890-ffc211dfcaa0",
+    "run_792_id": "4c09cd8e-ab48-54c3-aae9-5d82b5b40dc3",
+    "logs": [
+      ".cache/cad-soil-path/backend-final.stderr.log:347",
+      ".cache/footing-transport/backend.stderr.log:140"
+    ],
+    "code": [
+      "backend/app/services/assistant/storage.py:39",
+      "backend/app/services/assistant/conversations.py:45,65,136",
+      "backend/app/db/models.py:79"
+    ]
+  },
+  "limitations": "Request identity and saved actor ID are available, but logs do not establish which human or browser tab initiated the requests. No unsupported actor attribution.",
+  "restoration": "None; legitimate activity metadata and message preserved."
+}

@@ -1,0 +1,1700 @@
+[
+  {
+    "path": "backend/tests/__pycache__/conftest.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 2671,
+    "source": "backend/tests/conftest.py",
+    "sha256": "2199f27cd99ce74d43b359e853ca9b760137128fdca0365073b81f849626ae1d"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_analysis_capabilities.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 24348,
+    "source": "backend/tests/test_analysis_capabilities.py",
+    "sha256": "73710d0306531046d8d882a28e3cd8f2d2e29e8a16b4a28a41b72d2a4ce2890a"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_assistant_ui_status.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 4326,
+    "source": "backend/tests/test_assistant_ui_status.py",
+    "sha256": "8ab8f7cd9fa2f4508ee4f9dc56e2b153aec93bf5f92a5b3b6bc26db66b72ae07"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_auth_ownership.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 25174,
+    "source": "backend/tests/test_auth_ownership.py",
+    "sha256": "e4eb79086da82bd626449d82bf31ca51218cb5654524865cc953bc86638a7253"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_composition_export.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 4332,
+    "source": "backend/tests/test_composition_export.py",
+    "sha256": "5fe298c1ba4a0f0fb70d27448b1c30ac726a4793d59dddad2a8180c6f94127ef"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_drawing_cad.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 29485,
+    "source": "backend/tests/test_drawing_cad.py",
+    "sha256": "009852e191afb46f0dec8d1f6160ec3e7ad4fb476e499a8b34084dd2c423b192"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_drawing_strength.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 42852,
+    "source": "backend/tests/test_drawing_strength.py",
+    "sha256": "0f3ed616c676542f486acb5631101953a8c78e59920cf262d46806888d662d8c"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_durability_readiness.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 30755,
+    "source": "backend/tests/test_durability_readiness.py",
+    "sha256": "97b025c3997e25c183b817143f7e8b8aabb24a89b4487c851b3f56e6261ad52a"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_engineering_guidance.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 26135,
+    "source": "backend/tests/test_engineering_guidance.py",
+    "sha256": "63a0ba13347895a8c9669f9c51b34352f56632800ca24ea628e5f50da94ccb2a"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_firebase_auth.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 74481,
+    "source": "backend/tests/test_firebase_auth.py",
+    "sha256": "c1ef66e444f6a3f8950f484218d32a4a7f9481b89d32b5919a44de2f40530bab"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_firebase_keyless_gate.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 14405,
+    "source": "backend/tests/test_firebase_keyless_gate.py",
+    "sha256": "b6fe8f761a91191f193cc888a2ab33894d88c34ca6e476cf66295747ed91644b"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_foundation_production_safety.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 20665,
+    "source": "backend/tests/test_foundation_production_safety.py",
+    "sha256": "1d03282d6d8af41356fdf85faa9b5d69d02df5fcce58e04c835125e74c53ab07"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_model_revisions.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 24836,
+    "source": "backend/tests/test_model_revisions.py",
+    "sha256": "11deba1e244581cede538c08354fb9b70e80414f1a6bbbb9a240382103a37273"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_nebius_configuration.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 35283,
+    "source": "backend/tests/test_nebius_configuration.py",
+    "sha256": "4bdde4eeb495b5f564e13a1a1accbb5e8199ae8c89fd0decfab2b6f24a2a402f"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_physical_column.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 38211,
+    "source": "backend/tests/test_physical_column.py",
+    "sha256": "3d80ab40a4b63e8987caa27b7446f0b1c1083574b0c10f3afc7c9e4bc8e278c3"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_physical_frame.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 39859,
+    "source": "backend/tests/test_physical_frame.py",
+    "sha256": "853a7ed4084804503c4bc6d3b524ec9605269adc708d4be490229f65651ee95b"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_private_beta_security.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 51262,
+    "source": "backend/tests/test_private_beta_security.py",
+    "sha256": "85028b25152952c16a2fbeccda26b896ab8dc8342bf8492c1a455ece6c2d7659"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_release_clean_boundary.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 4983,
+    "source": "backend/tests/test_release_clean_boundary.py",
+    "sha256": "f921c921a1546d203ded758657e2645d3d89bdb0a705db30942195e23d3fdef5"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_release_phase_b.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 46763,
+    "source": "backend/tests/test_release_phase_b.py",
+    "sha256": "b571b399b2bfe956e29ed52c6adbca7da738c4fcd3c7e0a11a3e9de2505f0fd9"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_runtime_diagnostics.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 28319,
+    "source": "backend/tests/test_runtime_diagnostics.py",
+    "sha256": "77902a7ee783cc9d348340f05087228a3577a4d8aec70eddd1633053c8ce3b4c"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_security_release.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 44406,
+    "source": "backend/tests/test_security_release.py",
+    "sha256": "9538740716ee1653e721edb7f38c604e0d0a2fa0ce1d9a7328f2200f1fea73b5"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_site_assistant.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 68024,
+    "source": "backend/tests/test_site_assistant.py",
+    "sha256": "27c8e6d4c9dff890489b351607894321fafd8716600d8bcaf2fd184abd81eee5"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_site_assistant_quota.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 52660,
+    "source": "backend/tests/test_site_assistant_quota.py",
+    "sha256": "751dcecc71b1068db30c04f886b6e50ba2ad1ec99b9c4720206aa7d69a13ba9e"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_site_workspace.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 83153,
+    "source": "backend/tests/test_site_workspace.py",
+    "sha256": "403a848ec022a627d7ed0213e18a8190d9a8f13e4b3239852c16bf2dc0531bd7"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_storage.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 9028,
+    "source": "backend/tests/test_storage.py",
+    "sha256": "ccb963cfe7179796cb3f239e0059d684c9cd9c9aab2931614c54840d9e8997f1"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_supervised_beam.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 25847,
+    "source": "backend/tests/test_supervised_beam.py",
+    "sha256": "44897a97b04f5983609fab426090353866ad9741ce617cd57b3539f1baad55b7"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_supervised_primitive.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 24316,
+    "source": "backend/tests/test_supervised_primitive.py",
+    "sha256": "0cb2000dd101c9710cd584055efd487eecdab850258d3d0421bcb877cb6f8003"
+  },
+  {
+    "path": "backend/tests/__pycache__/test_workspace_assistant.cpython-313-pytest-9.0.3.pyc",
+    "bytes": 26244,
+    "source": "backend/tests/test_workspace_assistant.py",
+    "sha256": "d223ea10e45a5af5f466e23dbf4b28851bb950fd8a1d132c4819d4e0ac734eb1"
+  },
+  {
+    "path": "backend/scripts/__pycache__/export_stage1_contracts.cpython-313.pyc",
+    "bytes": 5777,
+    "source": "backend/scripts/export_stage1_contracts.py",
+    "sha256": "419bff24b256ebbc5e1958caedf2b7dd958421dd16c05ba94542d80d8b6d9cf4"
+  },
+  {
+    "path": "backend/scripts/__pycache__/project_cleanup_audit.cpython-313.pyc",
+    "bytes": 9503,
+    "source": "backend/scripts/project_cleanup_audit.py",
+    "sha256": "ef6edd86239be7aed1474d998610e0f364e0b1b0c1d56236f17c0906a81618aa"
+  },
+  {
+    "path": "backend/scripts/__pycache__/serve_beam_frame_local.cpython-313.pyc",
+    "bytes": 703,
+    "source": "backend/scripts/serve_beam_frame_local.py",
+    "sha256": "89838262f1d591272b3bfbcbd5f32d6551303824a0189dfffbf4a24f94371a25"
+  },
+  {
+    "path": "backend/scripts/__pycache__/serve_beam_review_local.cpython-313.pyc",
+    "bytes": 7349,
+    "source": "backend/scripts/serve_beam_review_local.py",
+    "sha256": "63479bf61090eb825fd125555f16a55d26be392ece22592cdf4cefcd651bacb6"
+  },
+  {
+    "path": "backend/scripts/__pycache__/serve_phase1_local.cpython-313.pyc",
+    "bytes": 1704,
+    "source": "backend/scripts/serve_phase1_local.py",
+    "sha256": "0bff2587623b664c7c9fcfa2749bf3e5fd82b13960baefd71261324f730507f9"
+  },
+  {
+    "path": "backend/app/__pycache__/main.cpython-313.pyc",
+    "bytes": 8917,
+    "source": "backend/app/main.py",
+    "sha256": "374aa43072511f96c63b57e5d44f1dccbba12c1334825cc7fb9ffa1850fc3392"
+  },
+  {
+    "path": "backend/app/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 138,
+    "source": "backend/app/__init__.py",
+    "sha256": "a0d50a1464593f916d26bb6f8b1b3ef6d60280ea55e9992d77b4a3311b7d83f5"
+  },
+  {
+    "path": "backend/app/services/__pycache__/audit.cpython-313.pyc",
+    "bytes": 3689,
+    "source": "backend/app/services/audit.py",
+    "sha256": "d8aecb57e8e3d420e023bf340f8834b058eafaa0c31076d4c2ca57b55d02b325"
+  },
+  {
+    "path": "backend/app/services/__pycache__/generation_telemetry.cpython-313.pyc",
+    "bytes": 2019,
+    "source": "backend/app/services/generation_telemetry.py",
+    "sha256": "fe060ccd3f308b4110826e2f50ff710e1627f632fcdf67a51b33d8a307856ab1"
+  },
+  {
+    "path": "backend/app/services/__pycache__/identity_links.cpython-313.pyc",
+    "bytes": 3515,
+    "source": "backend/app/services/identity_links.py",
+    "sha256": "ef853a97760aeb0b9ae24912ee9a071116768e21bffa7e2e3a4c47f8951882a6"
+  },
+  {
+    "path": "backend/app/services/__pycache__/jobs.cpython-313.pyc",
+    "bytes": 20906,
+    "source": "backend/app/services/jobs.py",
+    "sha256": "d64850f88fba1c0dfbbbcd318e947adcfe49f7b7e26cbfca526b7bcb9fb0bc32"
+  },
+  {
+    "path": "backend/app/services/__pycache__/job_errors.cpython-313.pyc",
+    "bytes": 2959,
+    "source": "backend/app/services/job_errors.py",
+    "sha256": "88a276319812ed1237b226591829535ecec8880493026a23ede8681072a81ef8"
+  },
+  {
+    "path": "backend/app/services/__pycache__/project_validation.cpython-313.pyc",
+    "bytes": 13566,
+    "source": "backend/app/services/project_validation.py",
+    "sha256": "0af0c3812a32269479733d81fcfd38653188832c1051e000f3c17de847b3671a"
+  },
+  {
+    "path": "backend/app/services/__pycache__/rate_limit.cpython-313.pyc",
+    "bytes": 6495,
+    "source": "backend/app/services/rate_limit.py",
+    "sha256": "b3348d743e979bd621135ac6703f34f1d3348ec50d7d130935ae8d52ab837eb9"
+  },
+  {
+    "path": "backend/app/services/__pycache__/recovery_policy.cpython-313.pyc",
+    "bytes": 2179,
+    "source": "backend/app/services/recovery_policy.py",
+    "sha256": "f8f1a4312b7c1cebb10cbd2781be40209fcaec4883f9ece4261de8314eec7997"
+  },
+  {
+    "path": "backend/app/services/__pycache__/storage.cpython-313.pyc",
+    "bytes": 9230,
+    "source": "backend/app/services/storage.py",
+    "sha256": "495e73bd3059522f5abbe14e06c6d888478bc3d627133673a3e759f1a189691c"
+  },
+  {
+    "path": "backend/app/services/__pycache__/upload_limits.cpython-313.pyc",
+    "bytes": 5959,
+    "source": "backend/app/services/upload_limits.py",
+    "sha256": "c53d394dd784e3ad170edb1fd4e77dd12d14234cb0f7e4aa0e98059455656a19"
+  },
+  {
+    "path": "backend/app/services/__pycache__/usage.cpython-313.pyc",
+    "bytes": 11174,
+    "source": "backend/app/services/usage.py",
+    "sha256": "ae95a071e7a7d8294e5595779c5cd495b881095721c55f9a3f518020e78bd52f"
+  },
+  {
+    "path": "backend/app/services/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 147,
+    "source": "backend/app/services/__init__.py",
+    "sha256": "f803f1ab11a6628e4c56a4b25142a3a2b4a47fef5de21185f37ee18475697377"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/constants.cpython-313.pyc",
+    "bytes": 1059,
+    "source": "backend/app/services/survey/constants.py",
+    "sha256": "ae853ecc2324925cbb27f84d035fb3f4b69f18fb85245d607121d3fcee276883"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/cut_fill.cpython-313.pyc",
+    "bytes": 6025,
+    "source": "backend/app/services/survey/cut_fill.py",
+    "sha256": "a1dc9e051c334fee6f5286a1da13036f732edd80f93eb590bdec71cc43797b0c"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/engineering_analysis.cpython-313.pyc",
+    "bytes": 6364,
+    "source": "backend/app/services/survey/engineering_analysis.py",
+    "sha256": "7008bc09fac23083598dfe66af6acc1e64131d54589c034b77fb28da182c6dd4"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/engineering_evidence.cpython-313.pyc",
+    "bytes": 7654,
+    "source": "backend/app/services/survey/engineering_evidence.py",
+    "sha256": "de75949448527004fc7b8b1836cf27d443d910f048c41f8d900f2faf9946bb07"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/gcp_adjustment.cpython-313.pyc",
+    "bytes": 7953,
+    "source": "backend/app/services/survey/gcp_adjustment.py",
+    "sha256": "bd084283c4ee199f4c7a6754b22ec9b001a095463cc2cb6caca10f01046a540a"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/ground_resolver.cpython-313.pyc",
+    "bytes": 3567,
+    "source": "backend/app/services/survey/ground_resolver.py",
+    "sha256": "07ce9f08636cb05dd9f7cb12b057a99521a3ec7faf1f110cfdc07c95d7c73048"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/import_pipeline.cpython-313.pyc",
+    "bytes": 18414,
+    "source": "backend/app/services/survey/import_pipeline.py",
+    "sha256": "0ef47588533096c607bbd0e1e47413c852c68d74e44948891cf270a62a829eab"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/legacy_sync.cpython-313.pyc",
+    "bytes": 1614,
+    "source": "backend/app/services/survey/legacy_sync.py",
+    "sha256": "4129db8c5d5bf51242c09114da9e2c0583918966468ef0c71ea3963ef5f91b9a"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/project_helpers.cpython-313.pyc",
+    "bytes": 3586,
+    "source": "backend/app/services/survey/project_helpers.py",
+    "sha256": "0dbb66620e6701882c1e2a65398d48f1a304fc156a22602409dfc14523634be1"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/terrain_activation.cpython-313.pyc",
+    "bytes": 4721,
+    "source": "backend/app/services/survey/terrain_activation.py",
+    "sha256": "f7b10ea99b56a2fba09084b06fa492ed2e61808da1cb1870642374d4ccc06dc6"
+  },
+  {
+    "path": "backend/app/services/survey/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 204,
+    "source": "backend/app/services/survey/__init__.py",
+    "sha256": "51d5caf92e32c5bd2bb4b8f5324ac93f19b59071ab063defaefafa660eefbf94"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/derivation.cpython-313.pyc",
+    "bytes": 12117,
+    "source": "backend/app/services/site_profiles/derivation.py",
+    "sha256": "f4f5b6dba53df137a805436c816d77f83a01dee8c7bd513e9b25266a7853232c"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/evidence.cpython-313.pyc",
+    "bytes": 4791,
+    "source": "backend/app/services/site_profiles/evidence.py",
+    "sha256": "b4d1ae2dada03ae0040ca72dc3d2a7c323963bf89de5b58ddf8bc43006fee829"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/retrieval.cpython-313.pyc",
+    "bytes": 14156,
+    "source": "backend/app/services/site_profiles/retrieval.py",
+    "sha256": "8c7188893a2eecbf4490577d4f934434d56afeb991c7d5effb2aae460a6ab260"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/selection.cpython-313.pyc",
+    "bytes": 6577,
+    "source": "backend/app/services/site_profiles/selection.py",
+    "sha256": "2960ea004833ac6571309a2c3e0e36078561324403652e8fb48dd982d4d189d3"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/service.cpython-313.pyc",
+    "bytes": 27511,
+    "source": "backend/app/services/site_profiles/service.py",
+    "sha256": "27164e831dbbb004af0e783852473dbc21e4d7672544bb9c1154f3ff74bb3935"
+  },
+  {
+    "path": "backend/app/services/site_profiles/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 221,
+    "source": "backend/app/services/site_profiles/__init__.py",
+    "sha256": "3db4cc4dde0c3ee45303689a749921491d906a2c272fc57a3eee84db95d74205"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/crs.cpython-313.pyc",
+    "bytes": 4200,
+    "source": "backend/app/services/geospatial/crs.py",
+    "sha256": "2f5905264d50974f59d688fe84522b33ae3513f884e4f83a210a860d2112151e"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/geocoding.cpython-313.pyc",
+    "bytes": 3956,
+    "source": "backend/app/services/geospatial/geocoding.py",
+    "sha256": "8740be21dabda1d3ae6089b2dafd961e326b15746b05d919b63a84d6c721bc0e"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/osm_overpass.cpython-313.pyc",
+    "bytes": 4361,
+    "source": "backend/app/services/geospatial/osm_overpass.py",
+    "sha256": "2882d2c49315138b823e7aeb1b67a62d362ad30a2dfe35b494efe7eb1f5ae468"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/spatial_analysis.cpython-313.pyc",
+    "bytes": 4578,
+    "source": "backend/app/services/geospatial/spatial_analysis.py",
+    "sha256": "2e2e007a8b779c0dcb14cfab9262ff6a4842762f6209e1f2d18995208a3d74c6"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/terrain.cpython-313.pyc",
+    "bytes": 1998,
+    "source": "backend/app/services/geospatial/terrain.py",
+    "sha256": "035575167810cafd7943f26a8672842316a5bfbb41e8873521fe0ca5207ca92c"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/tiles.cpython-313.pyc",
+    "bytes": 3449,
+    "source": "backend/app/services/geospatial/tiles.py",
+    "sha256": "df33b9040867588c8ebf251530e1f9bfdd6a8ad680853dffab47dbc2c67747a2"
+  },
+  {
+    "path": "backend/app/services/geospatial/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 158,
+    "source": "backend/app/services/geospatial/__init__.py",
+    "sha256": "6d9ff714efca284ef95971b93be7ba716c1b0e120589dff8ebbe18fae9d6670a"
+  },
+  {
+    "path": "backend/app/services/exports/__pycache__/csv_export.cpython-313.pyc",
+    "bytes": 1586,
+    "source": "backend/app/services/exports/csv_export.py",
+    "sha256": "3e67304edc2d45bdbcdbf649fea76f024c3b6dc35fdc984eceea9d23ac5dc222"
+  },
+  {
+    "path": "backend/app/services/exports/__pycache__/geojson_export.cpython-313.pyc",
+    "bytes": 1275,
+    "source": "backend/app/services/exports/geojson_export.py",
+    "sha256": "3eb1ad0dc00949a97667adcc01955b4825ee1f0facd023dec83492aa32bce5cc"
+  },
+  {
+    "path": "backend/app/services/exports/__pycache__/gltf_export.cpython-313.pyc",
+    "bytes": 5871,
+    "source": "backend/app/services/exports/gltf_export.py",
+    "sha256": "28443d4d36142ca35faac613759bc0e776cba233654cebb7c57d19a692ac0895"
+  },
+  {
+    "path": "backend/app/services/exports/__pycache__/pdf_report.cpython-313.pyc",
+    "bytes": 18010,
+    "source": "backend/app/services/exports/pdf_report.py",
+    "sha256": "283d7c110cb6d4ab553295d94d9034154f0752372fe7fa93e60d4ca5fff6cfd7"
+  },
+  {
+    "path": "backend/app/services/exports/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 155,
+    "source": "backend/app/services/exports/__init__.py",
+    "sha256": "8264e8032476a62402b9c72cc437043888cad2671d0a1bf02bba473b8d5eb6b9"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/alignment_geometry.cpython-313.pyc",
+    "bytes": 10001,
+    "source": "backend/app/services/design/alignment_geometry.py",
+    "sha256": "c6ba751b964a35a0e660db6298df89e3ff876a713037622e881b5c1a79373b54"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/anchor_contact.cpython-313.pyc",
+    "bytes": 16230,
+    "source": "backend/app/services/design/anchor_contact.py",
+    "sha256": "ca03c4ad4b9dac143c9d96d6d7b07c603b5aad8ce027fcdc45fe4178a052e331"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/anchor_contact_3d.cpython-313.pyc",
+    "bytes": 24106,
+    "source": "backend/app/services/design/anchor_contact_3d.py",
+    "sha256": "b339512e13298b2c427dcf2a50992e18c54c3c3b40ddb6d6bb8088fbb5d234bd"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/bearing_capacity.cpython-313.pyc",
+    "bytes": 8357,
+    "source": "backend/app/services/design/bearing_capacity.py",
+    "sha256": "7e6485fc674ee413f44c237730d9370d6073ed48a3de00945eb09bb03698d137"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/building_generator.cpython-313.pyc",
+    "bytes": 5308,
+    "source": "backend/app/services/design/building_generator.py",
+    "sha256": "7f76555f1f7793495a47248deb4216ad050fcc647831fd976c9189469afa6016"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/cad_frame.cpython-313.pyc",
+    "bytes": 7327,
+    "source": "backend/app/services/design/cad_frame.py",
+    "sha256": "7f62740f3a1e94ed124ebc87d1a4cf4d290bdbeda2cf6a8a078a6a6ca7ba0fd4"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/connection_inputs.cpython-313.pyc",
+    "bytes": 16351,
+    "source": "backend/app/services/design/connection_inputs.py",
+    "sha256": "1360edccfec7d4d200bbb1bb40b4eaaa4fea3f3762a16a8500879ce3941e9234"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/coupled_floor.cpython-313.pyc",
+    "bytes": 28336,
+    "source": "backend/app/services/design/coupled_floor.py",
+    "sha256": "8f951b81323b037b93ac27e713208d6090554844a0bb1c7b51732662c8f49b23"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/demand_transport.cpython-313.pyc",
+    "bytes": 5590,
+    "source": "backend/app/services/design/demand_transport.py",
+    "sha256": "2cdf54cfe492889ecb91ab0d5dbe7bf32cfe2f723b7d63f53b90a41823d144bf"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/design_review.cpython-313.pyc",
+    "bytes": 3139,
+    "source": "backend/app/services/design/design_review.py",
+    "sha256": "6256da2bbf07c75e350a3010a808d46bb298a819cbb29b8bb94bbd498c4d62af"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/design_validator.cpython-313.pyc",
+    "bytes": 12989,
+    "source": "backend/app/services/design/design_validator.py",
+    "sha256": "8aebaf9f3f8553fe86c04cea637bed51df44076f018f8b1691e776dea9841843"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/drawing_cad.cpython-313.pyc",
+    "bytes": 20098,
+    "source": "backend/app/services/design/drawing_cad.py",
+    "sha256": "048ccfe91a8f2e94c8b75b28381ccbe91861d93500abf038271d656f9be6f9f7"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/drawing_review.cpython-313.pyc",
+    "bytes": 15778,
+    "source": "backend/app/services/design/drawing_review.py",
+    "sha256": "441b81fb8eaddd6b3de92ae6a81ab98b06474c6e28ae7db7de88f6712b60bf9e"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/eccentric_frame.cpython-313.pyc",
+    "bytes": 5270,
+    "source": "backend/app/services/design/eccentric_frame.py",
+    "sha256": "808b9a1de604a326ff23f8f07993a2589142d4109c3a7ecb40fb1c0a5abed274"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/editable_model.cpython-313.pyc",
+    "bytes": 22649,
+    "source": "backend/app/services/design/editable_model.py",
+    "sha256": "d2856c181181434b8ca3f977b21b88ba1a6542dab497ceb5d26116355a486c9f"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/elastic_frame.cpython-313.pyc",
+    "bytes": 46160,
+    "source": "backend/app/services/design/elastic_frame.py",
+    "sha256": "1b94d9eb28235bbc80fd04f6880c02ad7e6870488603078ad2802f4dc87140c9"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/elastic_settlement.cpython-313.pyc",
+    "bytes": 16015,
+    "source": "backend/app/services/design/elastic_settlement.py",
+    "sha256": "2c984774c586b41e6a9d996add44d74cbc3922bc26d41d1bfc1c8f8e8f5c7139"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/elevation_profile.cpython-313.pyc",
+    "bytes": 9623,
+    "source": "backend/app/services/design/elevation_profile.py",
+    "sha256": "cebe3fbc9fa01270e4322d1cb3737a0ce59342c2ebd936b6b988f017c9cf24ec"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/engineering_codes.cpython-313.pyc",
+    "bytes": 10222,
+    "source": "backend/app/services/design/engineering_codes.py",
+    "sha256": "42555827751a1a2947acc632aa68304d48534ed6e240a8bce5b7130be06784f5"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/flyover_generator.cpython-313.pyc",
+    "bytes": 13283,
+    "source": "backend/app/services/design/flyover_generator.py",
+    "sha256": "578cb4eb6cd01fe4328d7898279dabfe0feb5043c2a838ad0a9cae997d8c3270"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/footing_bearing.cpython-313.pyc",
+    "bytes": 3050,
+    "source": "backend/app/services/design/footing_bearing.py",
+    "sha256": "15c36e7beddcf1a494f330d26861353fd7407467583e8092a67967cb7fc37adc"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/footing_flexure.cpython-313.pyc",
+    "bytes": 16708,
+    "source": "backend/app/services/design/footing_flexure.py",
+    "sha256": "b79a0b79b820a7b5ac7741b87021a2ab72e948948c292a40e90793b63e95365a"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/foundation_interface.cpython-313.pyc",
+    "bytes": 26561,
+    "source": "backend/app/services/design/foundation_interface.py",
+    "sha256": "48473348f07bb9bac08c8d9839c5514cec427136c001e513414680458ed2255b"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/foundation_system.cpython-313.pyc",
+    "bytes": 28255,
+    "source": "backend/app/services/design/foundation_system.py",
+    "sha256": "9cb6a27a2f5f7bd5e07dead31be7d51d0948657f1a743bb824c93acca034d1ab"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/frame_loads.cpython-313.pyc",
+    "bytes": 10721,
+    "source": "backend/app/services/design/frame_loads.py",
+    "sha256": "2a4e3f223a8d606d99276572e75c4088b9898daec9c25acbcfa0e99ed164c423"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/generation_cache.cpython-313.pyc",
+    "bytes": 2582,
+    "source": "backend/app/services/design/generation_cache.py",
+    "sha256": "81a5fcc48cb614bf69985f4ea5fb95ea9808e92d3de6b564921f1c061725f082"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/geometry_metadata.cpython-313.pyc",
+    "bytes": 1346,
+    "source": "backend/app/services/design/geometry_metadata.py",
+    "sha256": "79f5523886ffa560f9980d6c2b274155c8028fc1695b35809290730e4ad946d5"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/geometry_simplify.cpython-313.pyc",
+    "bytes": 2881,
+    "source": "backend/app/services/design/geometry_simplify.py",
+    "sha256": "aa6b56fd1a1e99662cef0c62217dbae216d3830842e2bcbe8f692c355cabbfcb"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/geometry_utils.cpython-313.pyc",
+    "bytes": 3411,
+    "source": "backend/app/services/design/geometry_utils.py",
+    "sha256": "39745ffb55e4949abb74016b31147b6921b66ef806d0cafdfc7018c5ba575890"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/gravity_frame.cpython-313.pyc",
+    "bytes": 5058,
+    "source": "backend/app/services/design/gravity_frame.py",
+    "sha256": "dad613c8df9740d6c2f83d2bb63a9ab94c81cb8d8df5d1cb148de1ee18df1b06"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/opensees_benchmark.cpython-313.pyc",
+    "bytes": 18113,
+    "source": "backend/app/services/design/opensees_benchmark.py",
+    "sha256": "840d75c1dc249a2668e0aeba19f1422ed2470d1570e35949fe67bc34d79cc2e1"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/physical_column.cpython-313.pyc",
+    "bytes": 9473,
+    "source": "backend/app/services/design/physical_column.py",
+    "sha256": "ed479c6c28289d42d129b94dc947f55977a6daeb0da885d182be563b90f724b3"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/physical_frame.cpython-313.pyc",
+    "bytes": 32121,
+    "source": "backend/app/services/design/physical_frame.py",
+    "sha256": "8ccf415308a30eaa9dd2848c53e7da223937db6f5c2eb39cf49c344a91be7719"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/pipeline_generator.cpython-313.pyc",
+    "bytes": 4814,
+    "source": "backend/app/services/design/pipeline_generator.py",
+    "sha256": "ace655a8acdf1a7af628112cc339ebeda9b657ff4d1c78cf28b06fd245e6b93b"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/plate_contact.cpython-313.pyc",
+    "bytes": 8690,
+    "source": "backend/app/services/design/plate_contact.py",
+    "sha256": "9555e203f141ad6ff0ac0b9b5ea20a22fa6ed92454c495babf3266ebd6103ec3"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/platform_attachments.cpython-313.pyc",
+    "bytes": 19375,
+    "source": "backend/app/services/design/platform_attachments.py",
+    "sha256": "e5a442503cd45254831adeede9b3163e606034d509818041d14fde67d45fa3f2"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/rc_flexure.cpython-313.pyc",
+    "bytes": 14953,
+    "source": "backend/app/services/design/rc_flexure.py",
+    "sha256": "a76bd2190745b6da337634706357a7c0fe6b96e7fccce01de5ba542a357ab76e"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/rectangular_bearing.cpython-313.pyc",
+    "bytes": 9038,
+    "source": "backend/app/services/design/rectangular_bearing.py",
+    "sha256": "b7b6a53eb250c46512c3caece44d3dc8c198e6c5660d6ab3049563b6788c259c"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/road_generator.cpython-313.pyc",
+    "bytes": 11393,
+    "source": "backend/app/services/design/road_generator.py",
+    "sha256": "f1f85c5f7773b11660589b238ee665260edbf9979d1e361ee98129652008af8e"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/scenario_summary.cpython-313.pyc",
+    "bytes": 16869,
+    "source": "backend/app/services/design/scenario_summary.py",
+    "sha256": "991b9e855be59b33998d8ba2db0ca37948fbcdc6039e7f6b791d1c67379df256"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/slab_transfer.cpython-313.pyc",
+    "bytes": 29392,
+    "source": "backend/app/services/design/slab_transfer.py",
+    "sha256": "ba933bf805d752cf46a68f4203aeb8b60e70506e0e87ce4b9b94bfe37b33d7de"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/soil_contact.cpython-313.pyc",
+    "bytes": 10048,
+    "source": "backend/app/services/design/soil_contact.py",
+    "sha256": "fee307dd96c1f947f6d1096d1bce2a1ff0c607d8be5156a70aac01bc110de470"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/spatial_frame.cpython-313.pyc",
+    "bytes": 36441,
+    "source": "backend/app/services/design/spatial_frame.py",
+    "sha256": "2d5487e44bce7eab0c7133aa964403d049f043cd8e20b0eef69e60f62fe2c77d"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/spatial_review.cpython-313.pyc",
+    "bytes": 10777,
+    "source": "backend/app/services/design/spatial_review.py",
+    "sha256": "e65baaa0fd46e9ec979052d9d7b9f2a8f22cb914c3333a73acab9e132b9dcea4"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/structural_layout.cpython-313.pyc",
+    "bytes": 8953,
+    "source": "backend/app/services/design/structural_layout.py",
+    "sha256": "28b8541c902ae518eeaa380fa2244dbe46b7b1c7cb93ff21913d65aa67ba07c6"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/validation_schemas.cpython-313.pyc",
+    "bytes": 2171,
+    "source": "backend/app/services/design/validation_schemas.py",
+    "sha256": "fc7ffceff29521bf2adbc1e2619ab58069ac095e289beb055cc22aad3c571981"
+  },
+  {
+    "path": "backend/app/services/design/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 154,
+    "source": "backend/app/services/design/__init__.py",
+    "sha256": "b12d63ed94b59f08d004d558368a96808d72e56afaf5c79c9f88d5cc9cfcb583"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/boq.cpython-313.pyc",
+    "bytes": 870,
+    "source": "backend/app/services/calculations/boq.py",
+    "sha256": "faf6218273263440b21acecfc5299f35ad782f2be22805a724e21fa85d88a7e3"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/concrete.cpython-313.pyc",
+    "bytes": 3119,
+    "source": "backend/app/services/calculations/concrete.py",
+    "sha256": "c8c0089aaa3036fad9911d976ca70615f455273a91940b907a5843b986857297"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/cost.cpython-313.pyc",
+    "bytes": 2943,
+    "source": "backend/app/services/calculations/cost.py",
+    "sha256": "80b4cefd5668ce593265873144a8e7b9641c75d2fa80d178c4290d6cf0482aaf"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/earthwork.cpython-313.pyc",
+    "bytes": 1285,
+    "source": "backend/app/services/calculations/earthwork.py",
+    "sha256": "21fa4a81fccfc4ffafcd88a725e40d43dc46dd75744803fb334a44ad33b71bfb"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/steel.cpython-313.pyc",
+    "bytes": 963,
+    "source": "backend/app/services/calculations/steel.py",
+    "sha256": "d64f3456ba6d6fd1472633ff71ab466827cf36b53d69fa6f68de07a7606d146a"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/timeline.cpython-313.pyc",
+    "bytes": 1329,
+    "source": "backend/app/services/calculations/timeline.py",
+    "sha256": "3b25b49a596be3fc2c2524e5f09483e9927cabb82db9aa034baabe5ec0ea7b11"
+  },
+  {
+    "path": "backend/app/services/calculations/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 160,
+    "source": "backend/app/services/calculations/__init__.py",
+    "sha256": "6a102a97c9c97b00a55837ef8e8c99c619fcf4623349329c533b08b0e0c717ea"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/ai3d_executor.cpython-313.pyc",
+    "bytes": 10899,
+    "source": "backend/app/services/assistant/ai3d_executor.py",
+    "sha256": "2c5e0340ce9065195425ab65d833b1c4cf9c8f53ff0b14fe47c9dff0631d6405"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/ai3d_geometry.cpython-313.pyc",
+    "bytes": 17362,
+    "source": "backend/app/services/assistant/ai3d_geometry.py",
+    "sha256": "05d0f519033baa6bc44bfecfd821a2ffdca81f66604c66172e2ea5c710a2a5cb"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/ai3d_validation.cpython-313.pyc",
+    "bytes": 14894,
+    "source": "backend/app/services/assistant/ai3d_validation.py",
+    "sha256": "096abbcdd1136938ff159747fadedab7bff68d12fa6e79e0bcbabbe7eedd4665"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/beam_proposal.cpython-313.pyc",
+    "bytes": 3432,
+    "source": "backend/app/services/assistant/beam_proposal.py",
+    "sha256": "d5b3ef5e3cef637046ae0b06e2c7f91f62ec472cfae6a9c8a3e1fe82a439ac5e"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/building_specialist.cpython-313.pyc",
+    "bytes": 23209,
+    "source": "backend/app/services/assistant/building_specialist.py",
+    "sha256": "5179fae17e36017aaed83ed7d77c633024f3fe6f096c4101322dd8fbb651d062"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/composition.cpython-313.pyc",
+    "bytes": 7498,
+    "source": "backend/app/services/assistant/composition.py",
+    "sha256": "b4a16ecac4f3ca54d1f12d22f2c633ac565f3576c47fade52e9f9485a347f57f"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/context.cpython-313.pyc",
+    "bytes": 8148,
+    "source": "backend/app/services/assistant/context.py",
+    "sha256": "eb019edc9b47aba7f57d4e1bd30068cb49e21cd3dfbe0db824ad5ed612bdb2f1"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/conversations.cpython-313.pyc",
+    "bytes": 18772,
+    "source": "backend/app/services/assistant/conversations.py",
+    "sha256": "b9cb603d5a6be36c119a76be1196aabcff2c0fb26e4f67929ef93dd8c61fba13"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/decomposition.cpython-313.pyc",
+    "bytes": 3887,
+    "source": "backend/app/services/assistant/decomposition.py",
+    "sha256": "e06c9e871eda4564ce98f8e6efcd0071a148bffad3a5f667b3556dff474bde44"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/decomposition_compatibility.cpython-313.pyc",
+    "bytes": 10891,
+    "source": "backend/app/services/assistant/decomposition_compatibility.py",
+    "sha256": "64739120cc3dc3826f61a0a88df8a33cc4f4947a43c422277f192e15e66f9cde"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/engineering_guidance.cpython-313.pyc",
+    "bytes": 32870,
+    "source": "backend/app/services/assistant/engineering_guidance.py",
+    "sha256": "01dd7cfdcd90b0165fb02ed6fb63bd04a623e37c5b437cef6290f5e0ee74bd94"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/foundation.cpython-313.pyc",
+    "bytes": 5770,
+    "source": "backend/app/services/assistant/foundation.py",
+    "sha256": "9d88f52dbe59296f59a006609ae625e239d0f4a5a6a90a65599c921576863df6"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/memory.cpython-313.pyc",
+    "bytes": 13118,
+    "source": "backend/app/services/assistant/memory.py",
+    "sha256": "361ae1fa3792ad7aa245a22a70c3d285b19a6d3feaf5937d00c5d0f22f6f031e"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/policy.cpython-313.pyc",
+    "bytes": 7160,
+    "source": "backend/app/services/assistant/policy.py",
+    "sha256": "07765ed9221174ced55714b0d9a7994573ea3c00827904a3ac9b0dbb62d5479b"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/prompts.cpython-313.pyc",
+    "bytes": 6759,
+    "source": "backend/app/services/assistant/prompts.py",
+    "sha256": "daa1309478bcc76d293c7dbc04decabf0149129f55251b6694d2a62cdffcfa53"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/proposals.cpython-313.pyc",
+    "bytes": 43356,
+    "source": "backend/app/services/assistant/proposals.py",
+    "sha256": "b9fc6610ea719f6e3e07f1392c352593af5fb70bb62321f8b94f154ccff1c9a2"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/runtime.cpython-313.pyc",
+    "bytes": 25505,
+    "source": "backend/app/services/assistant/runtime.py",
+    "sha256": "69ae0f9188cd1ad31d1b874a49af1329c4633065ca653ce3fafa5dc19b709870"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/site_provider.cpython-313.pyc",
+    "bytes": 12336,
+    "source": "backend/app/services/assistant/site_provider.py",
+    "sha256": "9743a0affab82b936b077d4354049a29e2cc4bb4f932f4a3cd22dbaef9bff19f"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/site_store.cpython-313.pyc",
+    "bytes": 12789,
+    "source": "backend/app/services/assistant/site_store.py",
+    "sha256": "af0b8aba76111d5f05abfbb2ae9d4df494f263ccb866dca6443df16aada28832"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/site_tools.cpython-313.pyc",
+    "bytes": 12463,
+    "source": "backend/app/services/assistant/site_tools.py",
+    "sha256": "f329049b60f27919d17ce777bbfffaa40ddeea58e1b71d7f475eb574850cb4db"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/specialists.cpython-313.pyc",
+    "bytes": 8567,
+    "source": "backend/app/services/assistant/specialists.py",
+    "sha256": "168e4e777b3566bd29ce09571abaf4e988343b8a8216f768855be2ee75f6a3c3"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/storage.cpython-313.pyc",
+    "bytes": 5083,
+    "source": "backend/app/services/assistant/storage.py",
+    "sha256": "d7dc5a3894775bb7ab5408e700f29ed00d8e92cd9478477a04b1841d0e5424c1"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/tools.cpython-313.pyc",
+    "bytes": 15890,
+    "source": "backend/app/services/assistant/tools.py",
+    "sha256": "4654f19ccaa8d1245b1e2c803469ff8a24da5afa7aed216b6f1391c8eecffbb3"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/tool_boundary.cpython-313.pyc",
+    "bytes": 6334,
+    "source": "backend/app/services/assistant/tool_boundary.py",
+    "sha256": "00b70ddffe2c5996ca90be67c729b71bd5ea56c97cf337dd0ef5e6d9451e7b4d"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/tool_contracts.cpython-313.pyc",
+    "bytes": 1753,
+    "source": "backend/app/services/assistant/tool_contracts.py",
+    "sha256": "99c819d6409a175a40d8b0ae24fc641fffb036d212c51085cf3853e5bf3191c0"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/workspace_history.cpython-313.pyc",
+    "bytes": 3016,
+    "source": "backend/app/services/assistant/workspace_history.py",
+    "sha256": "143b2c2d924691392d0e73ede6ef5fb3764b349b3a72cdc2df55b3a430d2df6d"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/workspace_tools.cpython-313.pyc",
+    "bytes": 21877,
+    "source": "backend/app/services/assistant/workspace_tools.py",
+    "sha256": "832e7cbc0e55349bf62c746a41aa8ed33092253592d9f17f23d0bf337284132f"
+  },
+  {
+    "path": "backend/app/services/assistant/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 249,
+    "source": "backend/app/services/assistant/__init__.py",
+    "sha256": "f84fc1605286c4bd0f008a069b8e4c901d7c3c7efe2e52f07a1c2eff42292b42"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/building_plan.cpython-313.pyc",
+    "bytes": 17992,
+    "source": "backend/app/services/ai/building_plan.py",
+    "sha256": "e536126bdbc044017d748c0d23c1c460c88154d1c58c2af5546b4e231c2f8808"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/civicspan.cpython-313.pyc",
+    "bytes": 15998,
+    "source": "backend/app/services/ai/civicspan.py",
+    "sha256": "43d17b450ab4bfa98659dfb2dc98f2bbe4426e22c47deb737b8bac5446bac690"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/column_agent.cpython-313.pyc",
+    "bytes": 21507,
+    "source": "backend/app/services/ai/column_agent.py",
+    "sha256": "37bb6d4925b612bce6e5c9917fb48b9d594f9a4158eb5b0cff775e7ea9bf9922"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/copilot.cpython-313.pyc",
+    "bytes": 13319,
+    "source": "backend/app/services/ai/copilot.py",
+    "sha256": "ad1c29f46135cf4b93d86e0b258fe2e7c71d83094227b2f94d2afa40632dbe99"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/design_planner.cpython-313.pyc",
+    "bytes": 17158,
+    "source": "backend/app/services/ai/design_planner.py",
+    "sha256": "2955d66e4393fe2a66cf397a7cc75b7a36bff6df077b81bfde43c28bc5d7353a"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/design_plan_schemas.cpython-313.pyc",
+    "bytes": 6302,
+    "source": "backend/app/services/ai/design_plan_schemas.py",
+    "sha256": "9e664746f7a65ea20f0fb009594b2d7c6a86883766e84e9d0288293eba70267f"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/nebius.cpython-313.pyc",
+    "bytes": 14414,
+    "source": "backend/app/services/ai/nebius.py",
+    "sha256": "3007e2a3d54dda93d75ab5b81cf5af90fcd06d91e60a9c9d91bcc63c10b3790f"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/nebius_config.cpython-313.pyc",
+    "bytes": 8731,
+    "source": "backend/app/services/ai/nebius_config.py",
+    "sha256": "f195d19aac87fb76997b946a34e262df4be6ccbdb1bd5f69d2f894e36d96bb4a"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/ollama_client.cpython-313.pyc",
+    "bytes": 6590,
+    "source": "backend/app/services/ai/ollama_client.py",
+    "sha256": "89e7cb63b7012515a0183dd83dad749a2efdb7157102c21f6e42735fed45fee8"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/orchestrator.cpython-313.pyc",
+    "bytes": 26540,
+    "source": "backend/app/services/ai/orchestrator.py",
+    "sha256": "fc258e0377f41e0e3e88aaada58fb5d501319ddb01f50906ff42e1fbf6bebaa1"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/provider.cpython-313.pyc",
+    "bytes": 9074,
+    "source": "backend/app/services/ai/provider.py",
+    "sha256": "8b42988b5b01e75600fae7722f0ba93d2c82d193d6971a2b0db22f0187611f64"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/providers.cpython-313.pyc",
+    "bytes": 17184,
+    "source": "backend/app/services/ai/providers.py",
+    "sha256": "dc69ecf82d1d8c679431af13033191d5510cb4265f8d4fe94eaa466f5f91f9e6"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/response_metadata.cpython-313.pyc",
+    "bytes": 4629,
+    "source": "backend/app/services/ai/response_metadata.py",
+    "sha256": "939b970864d85fb48b8b90d40df8567e497741e381fd93e4d96f49f28285dfea"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/safety_guardrails.cpython-313.pyc",
+    "bytes": 2277,
+    "source": "backend/app/services/ai/safety_guardrails.py",
+    "sha256": "ec965b645ec8f786d08ed10b24259e7d64a4d58ad6bb67bcc2d0734720200efa"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/schemas.cpython-313.pyc",
+    "bytes": 1346,
+    "source": "backend/app/services/ai/schemas.py",
+    "sha256": "c96ad08b8d80f6019f30c5704d7b2f4a8aa882e4b69aad45a67e7a708791238f"
+  },
+  {
+    "path": "backend/app/services/ai/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 150,
+    "source": "backend/app/services/ai/__init__.py",
+    "sha256": "6a9866fbea7a0be3113b0f74899ad7c7596fd3483a68a20bbb142ed9d4ccb435"
+  },
+  {
+    "path": "backend/app/middleware/__pycache__/request_logging.cpython-313.pyc",
+    "bytes": 5126,
+    "source": "backend/app/middleware/request_logging.py",
+    "sha256": "3a7ecb1040fc246474d259f57fffe38fcf2603f023938a66805dbefce0fefa65"
+  },
+  {
+    "path": "backend/app/experimental/__pycache__/cad_artifacts.cpython-313.pyc",
+    "bytes": 13596,
+    "source": "backend/app/experimental/cad_artifacts.py",
+    "sha256": "aee2eaedbb9a2f7e50e05c69e145104c694c770ce19c23ff43e0ce5363d8af2c"
+  },
+  {
+    "path": "backend/app/experimental/__pycache__/cad_capability.cpython-313.pyc",
+    "bytes": 1721,
+    "source": "backend/app/experimental/cad_capability.py",
+    "sha256": "db8598a1e17544685bb691e282bd68fd22d3e5cb396a79cc21f1a78d3d7fd39c"
+  },
+  {
+    "path": "backend/app/experimental/__pycache__/cad_contract.cpython-313.pyc",
+    "bytes": 19905,
+    "source": "backend/app/experimental/cad_contract.py",
+    "sha256": "1f810fc593c13019f7097198de1b71d1ecef456e0476cce6dfb82d129314549b"
+  },
+  {
+    "path": "backend/app/experimental/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 236,
+    "source": "backend/app/experimental/__init__.py",
+    "sha256": "ac3d3bc11c0d5e45a4b034f4ba7a63d3c130cbc627b28445dd5c2d82c4f09cc9"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/ai3d.cpython-313.pyc",
+    "bytes": 8463,
+    "source": "backend/app/domain/ai3d.py",
+    "sha256": "43aad038ae7173b073fcee357ae710ba97d68a5205da43229977493911410449"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/assistant_design_input.cpython-313.pyc",
+    "bytes": 3099,
+    "source": "backend/app/domain/assistant_design_input.py",
+    "sha256": "43d6c77fb6594cae020b12d06eeeec9c505691ff0fc75f5a32e568ba961344a8"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/assistant_runtime.cpython-313.pyc",
+    "bytes": 9893,
+    "source": "backend/app/domain/assistant_runtime.py",
+    "sha256": "7a12a96bc34769dcdaeffed2b8d231751e1701897992acc14a18fa249610826e"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/bim.cpython-313.pyc",
+    "bytes": 7674,
+    "source": "backend/app/domain/bim.py",
+    "sha256": "4fbea6398c6a1bd216d23119eaa6fd19762a1c70edd8960fa5d04a3fecfa5fdb"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/building_patch.cpython-313.pyc",
+    "bytes": 3949,
+    "source": "backend/app/domain/building_patch.py",
+    "sha256": "acbf7c2413f584d63e77d5726290660e4eccdb6aa046450c10e510d332a7cd1c"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/building_primitives.cpython-313.pyc",
+    "bytes": 4080,
+    "source": "backend/app/domain/building_primitives.py",
+    "sha256": "d86c05a0aec93163a15d113018f8b326cd8d4d067f2bea40cf5ddc4b0f2061fa"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/building_specialist.cpython-313.pyc",
+    "bytes": 3671,
+    "source": "backend/app/domain/building_specialist.py",
+    "sha256": "f42524a5792b591bd64e040cde1f484983acf9139a6bd68415ea284d6a72fa84"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/composition.cpython-313.pyc",
+    "bytes": 7259,
+    "source": "backend/app/domain/composition.py",
+    "sha256": "7663042673d97fb10211f471ff65db3464e0a5e55300fec1408b5b4b96f1b172"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/site_workspace.cpython-313.pyc",
+    "bytes": 24046,
+    "source": "backend/app/domain/site_workspace.py",
+    "sha256": "fb3b489a880dd94603337170defcf2e6ca88e13cf0e0b9cf5e155bae33c04e67"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/specialist_metadata.cpython-313.pyc",
+    "bytes": 871,
+    "source": "backend/app/domain/specialist_metadata.py",
+    "sha256": "c79b28a0734350a2ec6ab1729d28506ea293f4acd0d1931c5feba61ca11b4b72"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/stage1.cpython-313.pyc",
+    "bytes": 34307,
+    "source": "backend/app/domain/stage1.py",
+    "sha256": "db9790a9780b9216b20d70d12938bdc69efd76df28b4c504938331b8a123e30c"
+  },
+  {
+    "path": "backend/app/domain/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 233,
+    "source": "backend/app/domain/__init__.py",
+    "sha256": "6d275579402c98a95060670133187b1be0eb11461a0a885a3fad981afaa06bd4"
+  },
+  {
+    "path": "backend/app/db/__pycache__/demo_seed.cpython-313.pyc",
+    "bytes": 10473,
+    "source": "backend/app/db/demo_seed.py",
+    "sha256": "d7e9ec10340afcd1eba63ec70895fbd1cd294cd0278c05a7f00f0849c13ea03e"
+  },
+  {
+    "path": "backend/app/db/__pycache__/init_db.cpython-313.pyc",
+    "bytes": 11243,
+    "source": "backend/app/db/init_db.py",
+    "sha256": "1b03d78e4f39d8bd057fac0a8d648ec985ebf2ec549999f107fcaa99f8bbcb42"
+  },
+  {
+    "path": "backend/app/db/__pycache__/models.cpython-313.pyc",
+    "bytes": 29823,
+    "source": "backend/app/db/models.py",
+    "sha256": "aabe8686cb8aac1c41d1cd5579941ae423023f76f026e31d0b33e927397c3fff"
+  },
+  {
+    "path": "backend/app/db/__pycache__/session.cpython-313.pyc",
+    "bytes": 2829,
+    "source": "backend/app/db/session.py",
+    "sha256": "e9225c6a689c68dda106580bfd3cfbe6f00cb4205f8a08019a895935067e1aad"
+  },
+  {
+    "path": "backend/app/db/__pycache__/stage1_composition_schema.cpython-313.pyc",
+    "bytes": 1504,
+    "source": "backend/app/db/stage1_composition_schema.py",
+    "sha256": "393ee8fd28be174acebafbe99167cd1c1e111285080bd5f4e691311a11f12337"
+  },
+  {
+    "path": "backend/app/db/__pycache__/stage1_elevation_v1.cpython-313.pyc",
+    "bytes": 5760,
+    "source": "backend/app/db/stage1_elevation_v1.py",
+    "sha256": "074710d3246ce38c23b6f00543f5e21d2308e8c1c7422be6c025cd21fc868c7a"
+  },
+  {
+    "path": "backend/app/db/__pycache__/stage1_schema_v1.cpython-313.pyc",
+    "bytes": 20266,
+    "source": "backend/app/db/stage1_schema_v1.py",
+    "sha256": "76768be2c7f9b61e75c94ed029ad3833fd9d63879113a0ffb5afbba131529945"
+  },
+  {
+    "path": "backend/app/db/__pycache__/stage1_workspace_schema.cpython-313.pyc",
+    "bytes": 2507,
+    "source": "backend/app/db/stage1_workspace_schema.py",
+    "sha256": "06e8892e7796dfb8b9978e1da300a70de1ec077a651123d54546b6015428d5e7"
+  },
+  {
+    "path": "backend/app/db/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 141,
+    "source": "backend/app/db/__init__.py",
+    "sha256": "9c710d21471751329434bcd2df4b9d5427a9042f5cb3d61448e6967c0c088f99"
+  },
+  {
+    "path": "backend/app/core/__pycache__/asset_families.cpython-313.pyc",
+    "bytes": 8553,
+    "source": "backend/app/core/asset_families.py",
+    "sha256": "46fa31e7656e779d09a87e33015b338681280134f2ce0ab0f1aca24ba6dc8287"
+  },
+  {
+    "path": "backend/app/core/__pycache__/config.cpython-313.pyc",
+    "bytes": 5375,
+    "source": "backend/app/core/config.py",
+    "sha256": "d62e1586ff9f4efa0ad63512dcdabfa57a900fe9b785903b9c54c0cd0f35cd3d"
+  },
+  {
+    "path": "backend/app/core/__pycache__/cors.cpython-313.pyc",
+    "bytes": 1638,
+    "source": "backend/app/core/cors.py",
+    "sha256": "ad920d5c5a7266eacca9577f4f0fbc431009b68af9fc015a5733a6d81f1433c2"
+  },
+  {
+    "path": "backend/app/core/__pycache__/disclaimer.cpython-313.pyc",
+    "bytes": 608,
+    "source": "backend/app/core/disclaimer.py",
+    "sha256": "235c066dd2a299f35dfe5f65805ad199d7d5a691667238b0665ee7c167d8d1c7"
+  },
+  {
+    "path": "backend/app/core/__pycache__/exception_handlers.cpython-313.pyc",
+    "bytes": 2703,
+    "source": "backend/app/core/exception_handlers.py",
+    "sha256": "a366cb071c35217e050fafc3348a004b602668efb36d848d45f36aa0a61cd636"
+  },
+  {
+    "path": "backend/app/core/__pycache__/firebase_auth.cpython-313.pyc",
+    "bytes": 8217,
+    "source": "backend/app/core/firebase_auth.py",
+    "sha256": "885f09c1fbca83fb835e88c444380b9358f28a45d15c3dc138e9688d912c865d"
+  },
+  {
+    "path": "backend/app/core/__pycache__/infrastructure.cpython-313.pyc",
+    "bytes": 5372,
+    "source": "backend/app/core/infrastructure.py",
+    "sha256": "6467f280f540df86d4d569044fa70265d6d889e4a376bb9d82ddf32b72f27a54"
+  },
+  {
+    "path": "backend/app/core/__pycache__/logging.cpython-313.pyc",
+    "bytes": 663,
+    "source": "backend/app/core/logging.py",
+    "sha256": "73e751b0c5c63555a3f1b2b89c314f82fa4b4621a162ff0278d09a41c4e1fcf5"
+  },
+  {
+    "path": "backend/app/core/__pycache__/passwords.cpython-313.pyc",
+    "bytes": 1713,
+    "source": "backend/app/core/passwords.py",
+    "sha256": "667e3535cec88bbcfb2f00472f847e2b80c1398bb684a520bf857d6799949555"
+  },
+  {
+    "path": "backend/app/core/__pycache__/plans.cpython-313.pyc",
+    "bytes": 1524,
+    "source": "backend/app/core/plans.py",
+    "sha256": "abd2816d2f96481a7a4e51688f82724d4317b8796765829368a8d6b2e260d75a"
+  },
+  {
+    "path": "backend/app/core/__pycache__/production.cpython-313.pyc",
+    "bytes": 9661,
+    "source": "backend/app/core/production.py",
+    "sha256": "7407b136e2f2a9f63605304b641d333aef60ce1bee6aa30e3e602f4a316a9378"
+  },
+  {
+    "path": "backend/app/core/__pycache__/project_catalog.cpython-313.pyc",
+    "bytes": 1948,
+    "source": "backend/app/core/project_catalog.py",
+    "sha256": "559012f19d09161d95d30fc1f80d5ad812e260680ec04d13dc88b089c200c9b2"
+  },
+  {
+    "path": "backend/app/core/__pycache__/request_context.cpython-313.pyc",
+    "bytes": 1834,
+    "source": "backend/app/core/request_context.py",
+    "sha256": "f4063736f4e53b4461a191e4720af4fb338a2f8ebb579e64fee9ec9b8ed75618"
+  },
+  {
+    "path": "backend/app/core/__pycache__/security.cpython-313.pyc",
+    "bytes": 5511,
+    "source": "backend/app/core/security.py",
+    "sha256": "82294de90d0d63bbe1f2a083ddf6d7e568c20cbc0fcbca70bd7d932484b78b6d"
+  },
+  {
+    "path": "backend/app/core/__pycache__/sentry.cpython-313.pyc",
+    "bytes": 2042,
+    "source": "backend/app/core/sentry.py",
+    "sha256": "6d03a72b8b166ee6ebc201461ce5c3716925ec0f5d8b061e99ff13a29c96af58"
+  },
+  {
+    "path": "backend/app/core/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 143,
+    "source": "backend/app/core/__init__.py",
+    "sha256": "706489913d9c3413530466398858b9e3577ab15fb57e19568a4cf97b563fddf6"
+  },
+  {
+    "path": "backend/app/api/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 142,
+    "source": "backend/app/api/__init__.py",
+    "sha256": "9ac9213359c09321472691e94cb470a2c8e5d2a3cdfef02194f21aa6cc624701"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/admin_usage.cpython-313.pyc",
+    "bytes": 3340,
+    "source": "backend/app/api/routes/admin_usage.py",
+    "sha256": "24850046a8ec9fa946f015b9edf6a524f5bc27f833eabe85ddd111fbd77746a4"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/ai.cpython-313.pyc",
+    "bytes": 1558,
+    "source": "backend/app/api/routes/ai.py",
+    "sha256": "f934d721ec614d2bde2c4cbca05a624d37e5d41d2d67d18ec3be90e585a7e1c3"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/analysis_capabilities.cpython-313.pyc",
+    "bytes": 12378,
+    "source": "backend/app/api/routes/analysis_capabilities.py",
+    "sha256": "a62259f04fe1d94c8e55f95c8c5b5027b77aa2d438361590b629ae7df54cc9a5"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/anchor_contacts.cpython-313.pyc",
+    "bytes": 14774,
+    "source": "backend/app/api/routes/anchor_contacts.py",
+    "sha256": "e812a67c7fd1183b2634dd1276c6b13f675a032058c1e75b0071f9bac0cc4ce2"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/anchor_contacts_3d.cpython-313.pyc",
+    "bytes": 14215,
+    "source": "backend/app/api/routes/anchor_contacts_3d.py",
+    "sha256": "c94ed61da6351a46c86ff4a7e2cb204da304c31964e4d7273d587dea1fb14ab4"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/audit.cpython-313.pyc",
+    "bytes": 2877,
+    "source": "backend/app/api/routes/audit.py",
+    "sha256": "5474ff31bf9643949699402e48dbf1583b70a7fd35c7d08a774f71d08f267aa8"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/auth.cpython-313.pyc",
+    "bytes": 8335,
+    "source": "backend/app/api/routes/auth.py",
+    "sha256": "2ac42c01dd595c3d6b4617b691222a33db7ae5458b5d9de01b0b319e88dcdae1"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/bearing_capacity.cpython-313.pyc",
+    "bytes": 11999,
+    "source": "backend/app/api/routes/bearing_capacity.py",
+    "sha256": "083eb07393853f77ddc0db84c2005f35d9071066d988388a1532ceab2324a82b"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/building_plans.cpython-313.pyc",
+    "bytes": 13395,
+    "source": "backend/app/api/routes/building_plans.py",
+    "sha256": "945440b00972643abbf212c07fa5cd206a87733c4bbce526e21ab1d2c251d02f"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/cad_experimental.cpython-313.pyc",
+    "bytes": 12992,
+    "source": "backend/app/api/routes/cad_experimental.py",
+    "sha256": "1aeb03cbbc4a10f7413d2ef8672a677c84784451c42c34c7179e284365f0ee80"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/cad_frames.cpython-313.pyc",
+    "bytes": 13794,
+    "source": "backend/app/api/routes/cad_frames.py",
+    "sha256": "18b8403c3459462e038546c7e0ad6325d7fe337a0d08de8f600c9d7bc25e4e75"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/cad_soil.cpython-313.pyc",
+    "bytes": 21986,
+    "source": "backend/app/api/routes/cad_soil.py",
+    "sha256": "6d41be25eba8b13c2eeb47f7daea797228e135e9242b9647bc01b9f405596883"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/civicspan.cpython-313.pyc",
+    "bytes": 3199,
+    "source": "backend/app/api/routes/civicspan.py",
+    "sha256": "efd23fcfaf102c1bd8e75d48a8c0e65a502228ca14cabc78806fe8a17ddc5ae7"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/column_agent.cpython-313.pyc",
+    "bytes": 28963,
+    "source": "backend/app/api/routes/column_agent.py",
+    "sha256": "aeadcf142bc72b0894a3944d2a393efb826eed20398e254ac3ba5bb3d61a5574"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/connection_inputs.cpython-313.pyc",
+    "bytes": 11984,
+    "source": "backend/app/api/routes/connection_inputs.py",
+    "sha256": "b7239621ddb567c73a99409293bbfd3e3770f94f83930b73849fea6b44c977cb"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/coupled_floors.cpython-313.pyc",
+    "bytes": 14456,
+    "source": "backend/app/api/routes/coupled_floors.py",
+    "sha256": "5603a8393b7da9bf1ef36a77428d567b8702fe0a4cb0bc4f123e2a570ddb027b"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/design_generate.cpython-313.pyc",
+    "bytes": 7774,
+    "source": "backend/app/api/routes/design_generate.py",
+    "sha256": "49e73051b1e000191755d4d10adb353632a981d667aad1ffcfffd8f2ce958a04"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/drawing_cad.cpython-313.pyc",
+    "bytes": 13467,
+    "source": "backend/app/api/routes/drawing_cad.py",
+    "sha256": "2a1b2d38f4cde49645008f27c40be0aabb622107904eb4eb60b818464520a736"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/elastic_frames.cpython-313.pyc",
+    "bytes": 19065,
+    "source": "backend/app/api/routes/elastic_frames.py",
+    "sha256": "10ce5c45cc75e67cb7f3a3d12e364378cc77e0b0ce8730e57be0a65ef05b47b1"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/engineering.cpython-313.pyc",
+    "bytes": 42242,
+    "source": "backend/app/api/routes/engineering.py",
+    "sha256": "18c968742d2698a39ed00344fe91ee7b9715631052f8b5191da9dc6c2f35ef80"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/engineering_study.cpython-313.pyc",
+    "bytes": 22960,
+    "source": "backend/app/api/routes/engineering_study.py",
+    "sha256": "89618cdf1cc11a0d1038ddb1450ac5cbe2482d34db34bbedc114df37bb7ba647"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/estimates.cpython-313.pyc",
+    "bytes": 5114,
+    "source": "backend/app/api/routes/estimates.py",
+    "sha256": "616d4eac6b06e0ffe161f64da5a7e31eb43fd90ec1ba8e4cdec9c6a91be504b5"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/exports.cpython-313.pyc",
+    "bytes": 15706,
+    "source": "backend/app/api/routes/exports.py",
+    "sha256": "1e599f4c3e002346178b02d6b53fb667dc0c603972defc2509096ebfbe0b4293"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/files.cpython-313.pyc",
+    "bytes": 4383,
+    "source": "backend/app/api/routes/files.py",
+    "sha256": "daf6fe895cd499c85a2760f4fb66b8bb4eeac9029729acfb6de8da851b19c44f"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/footing_flexure.cpython-313.pyc",
+    "bytes": 12258,
+    "source": "backend/app/api/routes/footing_flexure.py",
+    "sha256": "9309b8fa278aeb155721f1da79ffd0e103e8da84f84a6411f515d8735d7c3c21"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/footing_transport.cpython-313.pyc",
+    "bytes": 15334,
+    "source": "backend/app/api/routes/footing_transport.py",
+    "sha256": "a29e75d705468402ed1681a57c51297688ba7452092b88a02be83c0a8928f225"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/foundation_interfaces.cpython-313.pyc",
+    "bytes": 16573,
+    "source": "backend/app/api/routes/foundation_interfaces.py",
+    "sha256": "3bc0a12e21a2fbe6ec88f75c6f52bc32fcaeae6b563dacb80f04a0bf7af99750"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/foundation_system.cpython-313.pyc",
+    "bytes": 32826,
+    "source": "backend/app/api/routes/foundation_system.py",
+    "sha256": "13036cc38ffb00f02b5424b8096e658225bee57776334e26451d8a083866b8d6"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/geocode.cpython-313.pyc",
+    "bytes": 1528,
+    "source": "backend/app/api/routes/geocode.py",
+    "sha256": "73f98ce192c02aaaa8d6bf354770f182e657ce7a36e3ce92bb366bba4f38a105"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/jobs.cpython-313.pyc",
+    "bytes": 2174,
+    "source": "backend/app/api/routes/jobs.py",
+    "sha256": "9c89a957204081c60df7a0f49e2f2ac7f6d09f4056e8d2ae8ecf6968ac157e09"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/model_revisions.cpython-313.pyc",
+    "bytes": 16708,
+    "source": "backend/app/api/routes/model_revisions.py",
+    "sha256": "9719052712c5b710d9617d6695e9138acfa7ecbe20d6e77810d8a0fc0a2fd607"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/opensees.cpython-313.pyc",
+    "bytes": 8711,
+    "source": "backend/app/api/routes/opensees.py",
+    "sha256": "0d02b76e51247786d8c59ce7a28254eeeb9aae2f3c03d83a90fbdd7208485296"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/physical_columns.cpython-313.pyc",
+    "bytes": 15079,
+    "source": "backend/app/api/routes/physical_columns.py",
+    "sha256": "ec513cd8f8a2a39cb3a7413876d7ce073edc5be33c823fa09a472682f2f5aba8"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/physical_frames.cpython-313.pyc",
+    "bytes": 29058,
+    "source": "backend/app/api/routes/physical_frames.py",
+    "sha256": "8819ef46eb42a871e236b195e0bd6965c52ca66802b637f69262610b110eab19"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/projects.cpython-313.pyc",
+    "bytes": 17619,
+    "source": "backend/app/api/routes/projects.py",
+    "sha256": "2437f58cd83da588dd33f2d5f622d2af0b31d158c359d83a66908fd75e266b0c"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/project_folders.cpython-313.pyc",
+    "bytes": 6000,
+    "source": "backend/app/api/routes/project_folders.py",
+    "sha256": "84092bcca31b7f9ec8a9824237bd33a9fcf6b571e31a3cdfd777d231199dc97a"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/rates.cpython-313.pyc",
+    "bytes": 5075,
+    "source": "backend/app/api/routes/rates.py",
+    "sha256": "a0b6d5ac6eb84a52153e8bfb8aef6e9703e004bfaf97abd7cf12abea6ecede9c"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/rc_flexure.cpython-313.pyc",
+    "bytes": 12770,
+    "source": "backend/app/api/routes/rc_flexure.py",
+    "sha256": "05ceb6ab39b0d2973954e90a1706ef533ca2cc631b76ddf19b5da2a7dbf0ec8d"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/runtime_diagnostics.cpython-313.pyc",
+    "bytes": 9282,
+    "source": "backend/app/api/routes/runtime_diagnostics.py",
+    "sha256": "a9b74f8cac50acaf6c11aa9f01c64d5c44ddb52c97b8370de9c2cb6621ddd89f"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/site_analysis.cpython-313.pyc",
+    "bytes": 9633,
+    "source": "backend/app/api/routes/site_analysis.py",
+    "sha256": "84d0d597b0cdc1793bbebf075818ba1d38054228e6a4a33779466fe9ec95a395"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/site_assistant.cpython-313.pyc",
+    "bytes": 33021,
+    "source": "backend/app/api/routes/site_assistant.py",
+    "sha256": "0137fd78aacf634b9a7d5c26f1495a514907bef052da8102f94fd2e8230dcb19"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/site_suggestions.cpython-313.pyc",
+    "bytes": 6854,
+    "source": "backend/app/api/routes/site_suggestions.py",
+    "sha256": "d3138fdc7a378f1a81162871869d1077f31a17836478068ef1e89455746abbc5"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/site_workspace.cpython-313.pyc",
+    "bytes": 23864,
+    "source": "backend/app/api/routes/site_workspace.py",
+    "sha256": "13e5e0fdd540389953e0d92bbbe2e9a88d1350e3d72d8cbb7170afa1d98aef2f"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/slab_transfers.cpython-313.pyc",
+    "bytes": 23079,
+    "source": "backend/app/api/routes/slab_transfers.py",
+    "sha256": "b868a841feac985b3d74c1175c29c54f0a4efda9bbcfa676be6235cf1cfd5baf"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/soil_contact.cpython-313.pyc",
+    "bytes": 10044,
+    "source": "backend/app/api/routes/soil_contact.py",
+    "sha256": "d63f230b352f8f16727ee00865e07b8f01189bf3324fc643bf470fe630366347"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/soil_profile.cpython-313.pyc",
+    "bytes": 13759,
+    "source": "backend/app/api/routes/soil_profile.py",
+    "sha256": "5574f46670dcebe923f7ca04ddb3fee688b9a6ba9e570c6df73150dd59cb7243"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/spatial_frames.cpython-313.pyc",
+    "bytes": 16335,
+    "source": "backend/app/api/routes/spatial_frames.py",
+    "sha256": "503e799770c4dd82a2bd579942e7588758d35412a6b6f454c7acf44255210105"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/structural_layout.cpython-313.pyc",
+    "bytes": 12699,
+    "source": "backend/app/api/routes/structural_layout.py",
+    "sha256": "6b032a75753ea631a606ea7e1941cf39515ca86acd7fbfe0c280f28b4927eb86"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/survey.cpython-313.pyc",
+    "bytes": 21291,
+    "source": "backend/app/api/routes/survey.py",
+    "sha256": "a056b967ff7a514178cfda452e337f49e200955b35c6b15f61b1bc4cd5bd3f03"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/system.cpython-313.pyc",
+    "bytes": 5057,
+    "source": "backend/app/api/routes/system.py",
+    "sha256": "6da09ff81e18b5f00febe30b5a870026eedf6b1bea5a1457d8af72c926794981"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/templates.cpython-313.pyc",
+    "bytes": 5306,
+    "source": "backend/app/api/routes/templates.py",
+    "sha256": "8e6b8c1e51f66bdbb59944ae8bf76156604c60985eb1ed5ec724b229a009cdb4"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/tiles.cpython-313.pyc",
+    "bytes": 2144,
+    "source": "backend/app/api/routes/tiles.py",
+    "sha256": "b92b2e0f3fcae480c908d54914043da956eeff10d185a036e850a8e918667be1"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/usage.cpython-313.pyc",
+    "bytes": 886,
+    "source": "backend/app/api/routes/usage.py",
+    "sha256": "6c53bbd81df498fb24de0390b98665c27360c53765bf8a70c1152dcd129ee445"
+  },
+  {
+    "path": "backend/app/api/routes/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 149,
+    "source": "backend/app/api/routes/__init__.py",
+    "sha256": "6c5f25b1922833103226dfc471694eb290fb98702a37fac472d5da3941048c93"
+  },
+  {
+    "path": "backend/alembic/__pycache__/env.cpython-313.pyc",
+    "bytes": 1980,
+    "source": "backend/alembic/env.py",
+    "sha256": "0820c550c9d194bd74198f09b85e24caa8ac36a7d44e62ebee68e32d3c3be63b"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/001_initial.cpython-313.pyc",
+    "bytes": 1717,
+    "source": "backend/alembic/versions/001_initial.py",
+    "sha256": "f9b33f96f62d233f84557ae0b026b88fef51cb4295cd6fb32a63f9a995c3499f"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/002_survey_schema.cpython-313.pyc",
+    "bytes": 16868,
+    "source": "backend/alembic/versions/002_survey_schema.py",
+    "sha256": "10f9f0092c6dce6728f193057f14a6adb92a0f64f2566a17cbb242823454c52b"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/003_auth_usage.cpython-313.pyc",
+    "bytes": 5697,
+    "source": "backend/alembic/versions/003_auth_usage.py",
+    "sha256": "0ba5a44e56aba58a9327620ef36cdf7b0691877b089a5adea01065ec30b2cfa8"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/004_project_folders.cpython-313.pyc",
+    "bytes": 3632,
+    "source": "backend/alembic/versions/004_project_folders.py",
+    "sha256": "d57e70783073b9caec9198a3de7825ed8962e31674ccbc6924d70e25a46647cc"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/005_model_revisions.cpython-313.pyc",
+    "bytes": 4502,
+    "source": "backend/alembic/versions/005_model_revisions.py",
+    "sha256": "414f4986d88ec7208c8532495d63aa41c7d5e8f28b30baa01afb435c110286fa"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/006_engineering_evidence.cpython-313.pyc",
+    "bytes": 2627,
+    "source": "backend/alembic/versions/006_engineering_evidence.py",
+    "sha256": "65d5c592961aa25e971aa2b5715644424dbbb65c354479f96e7b3c2bfbbcf447"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/007_building_plans.cpython-313.pyc",
+    "bytes": 3109,
+    "source": "backend/alembic/versions/007_building_plans.py",
+    "sha256": "9d281d99af73fa3f2e473a2a2db1dc736dacdf23f5bec2e3b9246771bf64c42c"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/008_stage1_foundation.cpython-313.pyc",
+    "bytes": 2155,
+    "source": "backend/alembic/versions/008_stage1_foundation.py",
+    "sha256": "4888c96935377a7a9490ae57a748a75ab4efe744bfca5f571dc430ebe834c27f"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/009_placement_elevation_provenance.cpython-313.pyc",
+    "bytes": 2157,
+    "source": "backend/alembic/versions/009_placement_elevation_provenance.py",
+    "sha256": "06b8cad759637cbb367f593640e680d4a93e899bdd132a9655a13a38499ca346"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/010_site_workspace.cpython-313.pyc",
+    "bytes": 1819,
+    "source": "backend/alembic/versions/010_site_workspace.py",
+    "sha256": "eff50f32d231b0ae5dfc5aa4b3a3131d989a7bd1889c7c36e440bc969b3b7bde"
+  },
+  {
+    "path": "backend/alembic/versions/__pycache__/011_composition_relationships.cpython-313.pyc",
+    "bytes": 2964,
+    "source": "backend/alembic/versions/011_composition_relationships.py",
+    "sha256": "38ef9ab8210f5327b939cd97abb09e5742b5b3d334731abb9c79182a600b8e4b"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "project_id": 793,
+    "revision_id": 103,
+    "maximum_bytes": 12000,
+    "actual_bytes": 9118,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 11,
+    "truncated": true
+  },
+  {
+    "project_id": 793,
+    "revision_id": 103,
+    "maximum_bytes": 24000,
+    "actual_bytes": 12921,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 19,
+    "truncated": true
+  },
+  {
+    "project_id": 794,
+    "revision_id": 105,
+    "maximum_bytes": 12000,
+    "actual_bytes": 7850,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 5,
+    "truncated": true
+  },
+  {
+    "project_id": 794,
+    "revision_id": 105,
+    "maximum_bytes": 24000,
+    "actual_bytes": 8711,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 5,
+    "truncated": true
+  },
+  {
+    "project_id": 804,
+    "revision_id": 124,
+    "maximum_bytes": 12000,
+    "actual_bytes": 7240,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 0,
+    "truncated": false
+  },
+  {
+    "project_id": 804,
+    "revision_id": 124,
+    "maximum_bytes": 24000,
+    "actual_bytes": 7240,
+    "selected_ids": [
+      "drawing-cad:614f117ae2a74794:9C"
+    ],
+    "selected_identity_preserved": true,
+    "document_hash_preserved": true,
+    "analysis_records_returned": 0,
+    "truncated": false
+  }
+]

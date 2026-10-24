@@ -1,0 +1,2356 @@
+{
+  "schema_version": 1,
+  "project_id": 1,
+  "scenario_id": 1,
+  "project_type": "unclassified",
+  "units": "metric",
+  "origin": {
+    "lng": 77.59516745544197,
+    "lat": 12.970659741605996,
+    "heading_deg": 0,
+    "elevation_m": null
+  },
+  "generator_parameters": {
+    "maintenance_platform": {
+      "version": 1,
+      "parameters": {
+        "length": 5,
+        "width": 3,
+        "height": 3,
+        "slabThickness": 0.2,
+        "beamWidth": 0.3,
+        "beamDepth": 0.2,
+        "columnWidth": 0.3,
+        "columnDepth": 0.3
+      },
+      "status": "conceptual_unverified"
+    },
+    "platform_attachments": {
+      "version": 1,
+      "items": [
+        {
+          "id": "foundation-sw",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "base_plate-sw",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-sw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "connection-sw",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "foundation-se",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "base_plate-se",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-se"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "connection-se",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:beam-south"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "foundation-nw",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "base_plate-nw",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "connection-nw",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-nw",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "foundation-ne",
+          "kind": "foundation",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 1.2,
+            "depth": 1.2,
+            "thickness": 0.45
+          }
+        },
+        {
+          "id": "base_plate-ne",
+          "kind": "base_plate",
+          "refs": [
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "width": 0.65,
+            "depth": 0.65,
+            "thickness": 0.025
+          }
+        },
+        {
+          "id": "connection-ne",
+          "kind": "connection",
+          "refs": [
+            "industrial-platform-5x3:column-ne",
+            "industrial-platform-5x3:beam-north"
+          ],
+          "parameters": {
+            "width": 0.5,
+            "depth": 0.5,
+            "thickness": 0.12
+          }
+        },
+        {
+          "id": "brace-w",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-sw",
+            "industrial-platform-5x3:column-nw"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "brace-e",
+          "kind": "brace",
+          "refs": [
+            "industrial-platform-5x3:column-se",
+            "industrial-platform-5x3:column-ne"
+          ],
+          "parameters": {
+            "radius": 0.04
+          }
+        },
+        {
+          "id": "stairs-south",
+          "kind": "stairs",
+          "refs": [
+            "industrial-platform-5x3:platform-deck"
+          ],
+          "parameters": {
+            "width": 1,
+            "going": 0.28,
+            "maxRiser": 0.18,
+            "treadThickness": 0.04,
+            "stringerRadius": 0.05
+          }
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "id": "industrial-platform-5x3:beam-east",
+      "parent_id": null,
+      "name": "beam-east",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          2.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          0.000011522042748281695,
+          2.6999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-north",
+      "parent_id": null,
+      "name": "beam-north",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          1.3500115220427484,
+          2.6999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-south",
+      "parent_id": null,
+      "name": "beam-south",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -1.3499884779572517,
+          2.6999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-west",
+      "parent_id": null,
+      "name": "beam-west",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          2.4000000000000004,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          0.000011522042748281695,
+          2.6999999999999997
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-ne",
+      "parent_id": null,
+      "name": "column-ne",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.5999999999999996
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.3500115220427484,
+          1.2999999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-nw",
+      "parent_id": null,
+      "name": "column-nw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.5999999999999996
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.3500115220427484,
+          1.2999999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-se",
+      "parent_id": null,
+      "name": "column-se",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.5999999999999996
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          -1.3499884779572517,
+          1.2999999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-sw",
+      "parent_id": null,
+      "name": "column-sw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.5999999999999996
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          -1.3499884779572517,
+          1.2999999999999998
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:platform-deck",
+      "parent_id": null,
+      "name": "platform-deck",
+      "category": "slab",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5,
+          3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          0.000011522042748281695,
+          2.9
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:foundation-sw:body",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "foundation foundation-sw · body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          -1.3499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "foundation-sw",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-sw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:base_plate-sw:body",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "base plate base_plate-sw · body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          -1.3499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "base_plate-sw",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-sw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:connection-sw:joint",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "connection connection-sw · joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          -1.3499884779572517,
+          2.5999999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "connection-sw",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-sw",
+          "industrial-platform-5x3:beam-south"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:foundation-se:body",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "foundation foundation-se · body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          -1.3499884779572517,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "foundation-se",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-se"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:base_plate-se:body",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "base plate base_plate-se · body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          -1.3499884779572517,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "base_plate-se",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-se"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:connection-se:joint",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "connection connection-se · joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          -1.3499884779572517,
+          2.5999999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "connection-se",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-se",
+          "industrial-platform-5x3:beam-south"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:foundation-nw:body",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "foundation foundation-nw · body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.3500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "foundation-nw",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:base_plate-nw:body",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "base plate base_plate-nw · body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.3500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "base_plate-nw",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:connection-nw:joint",
+      "parent_id": "industrial-platform-5x3:column-nw",
+      "name": "connection connection-nw · joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.3500115220427484,
+          2.5999999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "connection-nw",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-nw",
+          "industrial-platform-5x3:beam-north"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:foundation-ne:body",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "foundation foundation-ne · body",
+      "category": "foundation",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1.2,
+          1.2,
+          0.45
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.3500115220427484,
+          -0.25
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#a8a29e",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "foundation-ne",
+        "attachment_kind": "foundation",
+        "references": [
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:base_plate-ne:body",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "base plate base_plate-ne · body",
+      "category": "base_plate",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.65,
+          0.65,
+          0.025
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.3500115220427484,
+          -0.0125
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#cbd5e1",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "base_plate-ne",
+        "attachment_kind": "base_plate",
+        "references": [
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:connection-ne:joint",
+      "parent_id": "industrial-platform-5x3:column-ne",
+      "name": "connection connection-ne · joint",
+      "category": "connection",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.5,
+          0.5,
+          0.12
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.3500115220427484,
+          2.5999999999999996
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#d8b4fe",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "connection-ne",
+        "attachment_kind": "connection",
+        "references": [
+          "industrial-platform-5x3:column-ne",
+          "industrial-platform-5x3:beam-north"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:brace-w:diagonal",
+      "parent_id": "industrial-platform-5x3:column-sw",
+      "name": "brace brace-w · diagonal",
+      "category": "bracing",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          -2.35,
+          -1.35,
+          0
+        ],
+        "end": [
+          -2.35,
+          1.35,
+          2.5999999999999996
+        ],
+        "radius_m": 0.04
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          0.000011522042748281695,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#f59e0b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "brace-w",
+        "attachment_kind": "brace",
+        "references": [
+          "industrial-platform-5x3:column-sw",
+          "industrial-platform-5x3:column-nw"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:brace-e:diagonal",
+      "parent_id": "industrial-platform-5x3:column-se",
+      "name": "brace brace-e · diagonal",
+      "category": "bracing",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          2.35,
+          -1.35,
+          0
+        ],
+        "end": [
+          2.35,
+          1.35,
+          2.5999999999999996
+        ],
+        "radius_m": 0.04
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          0.000011522042748281695,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#f59e0b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "brace-e",
+        "attachment_kind": "brace",
+        "references": [
+          "industrial-platform-5x3:column-se",
+          "industrial-platform-5x3:column-ne"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -6.119988477957252,
+          0.15647058823529414
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-2",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-2",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -5.839988477957252,
+          0.33294117647058824
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-3",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-3",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -5.559988477957252,
+          0.5094117647058823
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-4",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-4",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -5.279988477957252,
+          0.6858823529411765
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-5",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-5",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -4.999988477957252,
+          0.8623529411764707
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-6",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-6",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -4.719988477957252,
+          1.0388235294117647
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-7",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-7",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -4.439988477957252,
+          1.2152941176470589
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-8",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-8",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -4.159988477957252,
+          1.391764705882353
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-9",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-9",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -3.879988477957252,
+          1.5682352941176472
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-10",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-10",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -3.5999884779572517,
+          1.7447058823529413
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-11",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-11",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -3.319988477957252,
+          1.9211764705882355
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-12",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-12",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -3.0399884779572517,
+          2.0976470588235294
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-13",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-13",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -2.759988477957252,
+          2.274117647058824
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-14",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-14",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -2.4799884779572516,
+          2.4505882352941177
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-15",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-15",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -2.199988477957252,
+          2.627058823529412
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-16",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-16",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -1.9199884779572516,
+          2.803529411764706
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:tread-17",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · tread-17",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          1,
+          0.28,
+          0.04
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          -1.6399884779572518,
+          2.98
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#94a3b8",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:stringer--1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · stringer--1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          -0.4,
+          -6.336533333333334,
+          0
+        ],
+        "end": [
+          -0.4,
+          -1.6400000000000001,
+          2.96
+        ],
+        "radius_m": 0.05
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          0.000011522042748281695,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#64748b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    },
+    {
+      "id": "platform-addon:stairs-south:stringer-1",
+      "parent_id": "industrial-platform-5x3:platform-deck",
+      "name": "stairs stairs-south · stringer-1",
+      "category": "stairs",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "cylinder",
+        "start": [
+          0.4,
+          -6.336533333333334,
+          0
+        ],
+        "end": [
+          0.4,
+          -1.6400000000000001,
+          2.96
+        ],
+        "radius_m": 0.05
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-9,
+          0.000011522042748281695,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Conceptual / unverified",
+        "color": "#64748b",
+        "roughness": 0.75,
+        "metalness": 0.3
+      },
+      "quantity": {
+        "included": false
+      },
+      "metadata": {
+        "parametric_attachment": "stairs-south",
+        "attachment_kind": "stairs",
+        "references": [
+          "industrial-platform-5x3:platform-deck"
+        ],
+        "engineering_status": "conceptual_unverified"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "ai_generate",
+    "frame": "local_enu_meters",
+    "ai3dProposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+    "ai3dDesignId": "industrial-platform-5x3",
+    "ai3dValidation": {
+      "status": "DESIGN_VALID",
+      "geometryStatus": "GEOMETRY_VALID",
+      "engineeringStatus": "UNVALIDATED",
+      "issues": [],
+      "constraintChecks": [
+        {
+          "id": "platform-within-site",
+          "kind": "WITHIN_AREA",
+          "status": "SATISFIED"
+        }
+      ],
+      "componentCount": 9,
+      "relationshipStatus": "RECORDED_NOT_ENGINEERING_VALIDATED"
+    },
+    "referencePlane": "LOCAL_VISUAL_REFERENCE",
+    "generatedAt": "2026-10-11T12:17:34.270131+00:00",
+    "elevation_known": false,
+    "placementProvenance": {
+      "project_id": 727,
+      "anchor_longitude": 77.59516745544197,
+      "anchor_latitude": 12.970659741605996,
+      "anchor_elevation": null,
+      "anchor_heading_deg": 0,
+      "elevation_offset": 0,
+      "placement_mode": "GROUND_RELATIVE",
+      "height_reference": "TERRAIN",
+      "elevation_resolution": "UNKNOWN",
+      "anchor_locked": true,
+      "legacy_placement": false,
+      "local_transform_json": {},
+      "elevation_provenance_json": {
+        "source": "UNKNOWN",
+        "anchorSource": "SELECTED_GEOMETRY_CENTROID",
+        "selectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2"
+      },
+      "placement_state": "REVIEW_REQUIRED"
+    },
+    "ai3dRelationships": []
+  },
+  "structural_layout": {
+    "rule_preset": {},
+    "assumptions": [
+      "Preliminary geometry; no engineering validation."
+    ]
+  }
+}

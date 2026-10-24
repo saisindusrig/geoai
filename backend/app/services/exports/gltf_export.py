@@ -15,7 +15,9 @@ PREVIEW_SKIP_LAYERS = {"barrier", "barriers", "drains", "drainage", "facade", "m
 def _make_box(obj: dict) -> trimesh.Trimesh:
     mesh = trimesh.creation.box(extents=obj["size"])
     rot = obj.get("rotation_z_deg", 0.0)
-    if rot:
+    if 'rotation_deg' in obj:
+        mesh.apply_transform(trimesh.transformations.euler_matrix(*np.radians(obj['rotation_deg']),axes='rxyz'))
+    elif rot:
         mesh.apply_transform(trimesh.transformations.rotation_matrix(np.radians(rot), [0, 0, 1]))
     mesh.apply_translation(obj["center"])
     return mesh

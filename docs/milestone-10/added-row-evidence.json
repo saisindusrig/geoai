@@ -1,0 +1,13 @@
+{
+  "usage_events": [
+    {
+      "id": 2490,
+      "user_id": 1,
+      "project_id": 5,
+      "event_type": "file.download",
+      "units": 1,
+      "metadata_json": "{\"file_name\": \"excavation.glb\"}",
+      "created_at": "2026-10-23 12:22:03.383503"
+    }
+  ]
+}

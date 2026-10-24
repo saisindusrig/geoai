@@ -1,0 +1,11 @@
+{
+  "mode": "turbopack",
+  "limit_seconds": 180,
+  "elapsed_seconds": 180.46,
+  "timed_out": true,
+  "exit_code": 15,
+  "peak_sampled_tree_rss_bytes": 1405231104,
+  "normal_next_config_exact": true,
+  "physical_dependencies": true,
+  "environment": "isolated local review API port 8003; no credential files; inference/auth disabled"
+}

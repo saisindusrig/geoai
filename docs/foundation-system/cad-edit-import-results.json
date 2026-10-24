@@ -1,0 +1,28 @@
+{
+  "attestation": {
+    "mode": "foundation-isolated-20261015",
+    "database": "D:\\layout project\\docs\\foundation-system\\isolated\\foundation.db",
+    "paid_inference": false,
+    "port": 18001
+  },
+  "study": {
+    "project_id": 813,
+    "scenario_id": 601,
+    "model_revision_id": 136,
+    "source_project_id": 804,
+    "engineering_approval": "DISABLED"
+  },
+  "authorized_geometry_proposal": 633,
+  "saved_revision": 137,
+  "preserved_component_id": "drawing-cad:614f117ae2a74794:9A",
+  "dimensions_m": [
+    1.5,
+    1.5,
+    0.54
+  ],
+  "old_result_stale": true,
+  "recomputed_net_pressure_kpa": 96,
+  "actual_dxf_import_record": 636,
+  "imported_entities": 73,
+  "original_source_project_unchanged": true
+}

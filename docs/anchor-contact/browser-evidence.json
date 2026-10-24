@@ -1,0 +1,2657 @@
+{
+  "original": {
+    "id": 317,
+    "model_revision_id": 89,
+    "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+    "result": {
+      "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+      "inputs": {
+        "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+        "width_east_m": 0.6,
+        "length_north_m": 0.5,
+        "compression_n": 16100,
+        "moment_negative_north_nm": 5876,
+        "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+        "contact_stiffness_n_m3": 1000000000,
+        "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+        "anchors": [
+          {
+            "id": "benchmark-anchor-1",
+            "x_east_m": -0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-2",
+            "x_east_m": -0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-3",
+            "x_east_m": 0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-4",
+            "x_east_m": 0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          }
+        ],
+        "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+        "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+        "fixed_anchor_ground_assumption": true,
+        "horizontal_shear_excluded": true,
+        "no_pretension": true,
+        "engineer_idealization_reviewed": true
+      },
+      "translation_down_m": 1.1321885767658701e-17,
+      "rotation_slope_rad": -0.000999999999999969,
+      "compression_resultant_n": 22500.000000001,
+      "compression_first_moment_nm": -4500.0000000001155,
+      "contact_interval_east_m": [
+        -0.3,
+        1.1321885767659051e-14
+      ],
+      "anchors": [
+        {
+          "id": "benchmark-anchor-1",
+          "x_east_m": -0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.24,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 10000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-2",
+          "x_east_m": -0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.2,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 20000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-3",
+          "x_east_m": 0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.2,
+          "opening_m": 0.00019999999999998247,
+          "tension_n": 3999.9999999996494,
+          "axial_stiffness_n_m": 20000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-4",
+          "x_east_m": 0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.24,
+          "opening_m": 0.00023999999999998122,
+          "tension_n": 2399.999999999812,
+          "axial_stiffness_n_m": 10000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        }
+      ],
+      "pressure_samples": [
+        {
+          "x_east_m": -0.3,
+          "pressure_pa": 300000.00000000204
+        },
+        {
+          "x_east_m": -0.28125,
+          "pressure_pa": 281250.0000000026
+        },
+        {
+          "x_east_m": -0.2625,
+          "pressure_pa": 262500.0000000032
+        },
+        {
+          "x_east_m": -0.24375,
+          "pressure_pa": 243750.00000000378
+        },
+        {
+          "x_east_m": -0.22499999999999998,
+          "pressure_pa": 225000.00000000434
+        },
+        {
+          "x_east_m": -0.20625,
+          "pressure_pa": 206250.00000000492
+        },
+        {
+          "x_east_m": -0.1875,
+          "pressure_pa": 187500.00000000553
+        },
+        {
+          "x_east_m": -0.16874999999999998,
+          "pressure_pa": 168750.00000000608
+        },
+        {
+          "x_east_m": -0.15,
+          "pressure_pa": 150000.0000000067
+        },
+        {
+          "x_east_m": -0.13125,
+          "pressure_pa": 131250.00000000725
+        },
+        {
+          "x_east_m": -0.11249999999999999,
+          "pressure_pa": 112500.00000000781
+        },
+        {
+          "x_east_m": -0.09375,
+          "pressure_pa": 93750.00000000841
+        },
+        {
+          "x_east_m": -0.07500000000000001,
+          "pressure_pa": 75000.00000000901
+        },
+        {
+          "x_east_m": -0.056249999999999994,
+          "pressure_pa": 56250.000000009575
+        },
+        {
+          "x_east_m": -0.03749999999999998,
+          "pressure_pa": 37500.00000001014
+        },
+        {
+          "x_east_m": -0.01874999999999999,
+          "pressure_pa": 18750.000000010732
+        },
+        {
+          "x_east_m": 0,
+          "pressure_pa": 1.1321885767658701e-8
+        },
+        {
+          "x_east_m": 0.01874999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.03749999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.05625000000000002,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.07500000000000001,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.09375,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.11249999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.13124999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.14999999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.16875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.1875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.20625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.22500000000000003,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.24374999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.2625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.28124999999999994,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.3,
+          "pressure_pa": 0
+        }
+      ],
+      "pressure_max_kpa": 300.00000000000205,
+      "compression_centroid_east_m": -0.19999999999999624,
+      "total_anchor_tension_n": 6399.999999999462,
+      "force_residual_n": 1.5352270565927029e-9,
+      "moment_residual_nm": 0,
+      "independent_quadrature_compression_n": 22500.000000000997,
+      "independent_quadrature_first_moment_nm": -4500.000000000115,
+      "iterations": [
+        {
+          "iteration": 0,
+          "residual_force_n": 5174.344671356179,
+          "residual_moment_nm": 1205.8087446636991
+        },
+        {
+          "iteration": 1,
+          "residual_force_n": 1226.6121094570772,
+          "residual_moment_nm": 71.59115509648746
+        },
+        {
+          "iteration": 2,
+          "residual_force_n": 27.498282109176216,
+          "residual_moment_nm": 0.19799683396104228
+        },
+        {
+          "iteration": 3,
+          "residual_force_n": 0.010642101024131989,
+          "residual_moment_nm": 0.0000014646266208728775
+        },
+        {
+          "iteration": 4,
+          "residual_force_n": 1.5370460459962487e-9,
+          "residual_moment_nm": 0
+        }
+      ],
+      "formulas": [
+        "w(x)=u+θx, downward positive [m]",
+        "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+        "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+        "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+      ],
+      "limitations": [
+        "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+        "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+        "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+        "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+        "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+        "Horizontal shear transfer excluded; no engineering approval"
+      ],
+      "engineering_approval": "DISABLED",
+      "physical_capacity": "NOT_YET_VERIFIED",
+      "benchmark": {
+        "status": "VERIFIED",
+        "hand": {
+          "u_m": 0,
+          "theta_rad": -0.001,
+          "contact_width_m": 0.3,
+          "compression_n": 22500,
+          "centroid_east_m": -0.2,
+          "pressure_max_kpa": 300,
+          "anchor_tensions_n": [
+            0,
+            0,
+            4000,
+            2400
+          ],
+          "total_tension_n": 6400,
+          "net_axial_n": 16100,
+          "contact_moment_nm": -4500,
+          "anchor_moment_nm": -1376,
+          "applied_moment_nm": 5876,
+          "formula": "C=0.5×300000Pa×0.3m×0.5m=22500N; Q=C×(-0.2m)=-4500Nm; T(.20)=20MN/m×0.2mm=4000N; T(.24)=10MN/m×0.24mm=2400N; N=C−6400=16100N; M=4500+800+576=5876Nm"
+        },
+        "computed": {
+          "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+          "inputs": {
+            "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+            "width_east_m": 0.6,
+            "length_north_m": 0.5,
+            "compression_n": 16100,
+            "moment_negative_north_nm": 5876,
+            "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+            "contact_stiffness_n_m3": 1000000000,
+            "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+            "anchors": [
+              {
+                "id": "benchmark-anchor-1",
+                "x_east_m": -0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-2",
+                "x_east_m": -0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-3",
+                "x_east_m": 0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-4",
+                "x_east_m": 0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              }
+            ],
+            "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+            "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+            "fixed_anchor_ground_assumption": true,
+            "horizontal_shear_excluded": true,
+            "no_pretension": true,
+            "engineer_idealization_reviewed": true
+          },
+          "translation_down_m": 1.1321885767658701e-17,
+          "rotation_slope_rad": -0.000999999999999969,
+          "compression_resultant_n": 22500.000000001,
+          "compression_first_moment_nm": -4500.0000000001155,
+          "contact_interval_east_m": [
+            -0.3,
+            1.1321885767659051e-14
+          ],
+          "anchors": [
+            {
+              "id": "benchmark-anchor-1",
+              "x_east_m": -0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.24,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 10000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-2",
+              "x_east_m": -0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.2,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 20000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-3",
+              "x_east_m": 0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.2,
+              "opening_m": 0.00019999999999998247,
+              "tension_n": 3999.9999999996494,
+              "axial_stiffness_n_m": 20000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-4",
+              "x_east_m": 0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.24,
+              "opening_m": 0.00023999999999998122,
+              "tension_n": 2399.999999999812,
+              "axial_stiffness_n_m": 10000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            }
+          ],
+          "pressure_samples": [
+            {
+              "x_east_m": -0.3,
+              "pressure_pa": 300000.00000000204
+            },
+            {
+              "x_east_m": -0.28125,
+              "pressure_pa": 281250.0000000026
+            },
+            {
+              "x_east_m": -0.2625,
+              "pressure_pa": 262500.0000000032
+            },
+            {
+              "x_east_m": -0.24375,
+              "pressure_pa": 243750.00000000378
+            },
+            {
+              "x_east_m": -0.22499999999999998,
+              "pressure_pa": 225000.00000000434
+            },
+            {
+              "x_east_m": -0.20625,
+              "pressure_pa": 206250.00000000492
+            },
+            {
+              "x_east_m": -0.1875,
+              "pressure_pa": 187500.00000000553
+            },
+            {
+              "x_east_m": -0.16874999999999998,
+              "pressure_pa": 168750.00000000608
+            },
+            {
+              "x_east_m": -0.15,
+              "pressure_pa": 150000.0000000067
+            },
+            {
+              "x_east_m": -0.13125,
+              "pressure_pa": 131250.00000000725
+            },
+            {
+              "x_east_m": -0.11249999999999999,
+              "pressure_pa": 112500.00000000781
+            },
+            {
+              "x_east_m": -0.09375,
+              "pressure_pa": 93750.00000000841
+            },
+            {
+              "x_east_m": -0.07500000000000001,
+              "pressure_pa": 75000.00000000901
+            },
+            {
+              "x_east_m": -0.056249999999999994,
+              "pressure_pa": 56250.000000009575
+            },
+            {
+              "x_east_m": -0.03749999999999998,
+              "pressure_pa": 37500.00000001014
+            },
+            {
+              "x_east_m": -0.01874999999999999,
+              "pressure_pa": 18750.000000010732
+            },
+            {
+              "x_east_m": 0,
+              "pressure_pa": 1.1321885767658701e-8
+            },
+            {
+              "x_east_m": 0.01874999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.03749999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.05625000000000002,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.07500000000000001,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.09375,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.11249999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.13124999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.14999999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.16875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.1875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.20625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.22500000000000003,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.24374999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.2625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.28124999999999994,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.3,
+              "pressure_pa": 0
+            }
+          ],
+          "pressure_max_kpa": 300.00000000000205,
+          "compression_centroid_east_m": -0.19999999999999624,
+          "total_anchor_tension_n": 6399.999999999462,
+          "force_residual_n": 1.5352270565927029e-9,
+          "moment_residual_nm": 0,
+          "independent_quadrature_compression_n": 22500.000000000997,
+          "independent_quadrature_first_moment_nm": -4500.000000000115,
+          "iterations": [
+            {
+              "iteration": 0,
+              "residual_force_n": 5174.344671356179,
+              "residual_moment_nm": 1205.8087446636991
+            },
+            {
+              "iteration": 1,
+              "residual_force_n": 1226.6121094570772,
+              "residual_moment_nm": 71.59115509648746
+            },
+            {
+              "iteration": 2,
+              "residual_force_n": 27.498282109176216,
+              "residual_moment_nm": 0.19799683396104228
+            },
+            {
+              "iteration": 3,
+              "residual_force_n": 0.010642101024131989,
+              "residual_moment_nm": 0.0000014646266208728775
+            },
+            {
+              "iteration": 4,
+              "residual_force_n": 1.5370460459962487e-9,
+              "residual_moment_nm": 0
+            }
+          ],
+          "formulas": [
+            "w(x)=u+θx, downward positive [m]",
+            "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+            "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+            "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+          ],
+          "limitations": [
+            "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+            "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+            "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+            "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+            "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+            "Horizontal shear transfer excluded; no engineering approval"
+          ],
+          "engineering_approval": "DISABLED",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        }
+      },
+      "model_document_sha256": "33f19a821461a2e1976092726d116af0600184bfba0d6d4300742eb1b6c04f90",
+      "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601",
+      "scenario_id": 574,
+      "input_record_id": 316,
+      "actual_project_audit": {
+        "status": "ACTUAL_PROJECT_BLOCKED_MISSING_MECHANICS",
+        "source_interface_analysis_id": 315,
+        "source_project_id": 785,
+        "source_revision_id": 88,
+        "geometry": {
+          "objects": [
+            {
+              "component_id": "industrial-platform-5x3:column-sw",
+              "name": "column-sw",
+              "category": "column",
+              "size_m": [
+                0.3,
+                0.3,
+                3.1999999999999997
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                1.5999999999999999
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 · body",
+              "category": "base_plate",
+              "size_m": [
+                0.65,
+                0.65,
+                0.025
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.0125
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 · body",
+              "category": "foundation",
+              "size_m": [
+                1.2,
+                1.2,
+                0.45
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.25
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            }
+          ],
+          "column_base_enu_m": [
+            -2.8500000033479043,
+            -1.8499884779572517,
+            0
+          ],
+          "plate_contact_z_m": -0.025,
+          "contact_area_m2": 0.42250000000000004,
+          "saved_anchor_ids": [],
+          "anchor_geometry_status": "NOT_SAVED",
+          "reinforcement_geometry_status": "NOT_SAVED",
+          "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about −North",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        },
+        "demand": {
+          "column_id": "industrial-platform-5x3:column-sw",
+          "node": 1,
+          "compression_n": 29999.999999999996,
+          "demand_on_interface_enu_force_n": [
+            -10765.080571577306,
+            0,
+            -29999.999999999996
+          ],
+          "demand_on_interface_enu_moment_nm": [
+            0,
+            -11753.693592818216,
+            0
+          ],
+          "horizontal_shear_east_n": -10765.080571577306,
+          "moment_about_negative_north_nm": 11753.693592818216,
+          "support_reaction_si": {
+            "node": 1,
+            "fx_n": 10765.080571577306,
+            "fy_n": 29999.999999999996,
+            "moment_nm": -11753.693592818216
+          },
+          "solver_version": "3.8.0",
+          "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+          "source_frame_inputs": {
+            "component_ids": [
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:column-se"
+            ],
+            "sections": [
+              {
+                "component_id": "industrial-platform-5x3:column-sw",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-south",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.06,
+                "inertia_m4": 0.00020000000000000006,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-se",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              }
+            ],
+            "connections": [
+              {
+                "column_id": "industrial-platform-5x3:column-sw",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "left",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  -0.1499999999999999,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              },
+              {
+                "column_id": "industrial-platform-5x3:column-se",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "right",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  0.14999999999999947,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              }
+            ],
+            "supports": "both_column_bases_fixed",
+            "support_source": "Synthetic fixed bases; no foundation adequacy",
+            "load_pattern": null,
+            "load_n": null,
+            "load_source": null,
+            "load_cases": [
+              {
+                "name": "Slab tributary",
+                "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+                "horizontal_n": 0,
+                "vertical_nodal_loads": [],
+                "beam_uniform_n_per_m": -10000,
+                "self_weight": null
+              }
+            ],
+            "combination": null,
+            "purpose": "VERIFICATION_ONLY",
+            "elements_per_member": 2,
+            "units": "SI"
+          },
+          "source_model_revision_id": 86,
+          "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+          "solver_artifact_sha256": {
+            "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+            "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+            "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+            "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+            "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+            "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+          },
+          "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=−Rx; M about −North=−Rmoment.",
+          "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+          "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+        },
+        "declared_anchors": {
+          "status": "synthetic_engineer_declared_unverified",
+          "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+          "items": [
+            {
+              "id": "synthetic-anchor-1",
+              "position_enu_m": [
+                -3.090000003347904,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-2",
+              "position_enu_m": [
+                -3.090000003347904,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-3",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-4",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            }
+          ]
+        },
+        "missing": [
+          "Effective concrete-contact stiffness kc [N/m³] and calibration/assumption source",
+          "Individual anchor axial stiffnesses ki [N/m] with sources",
+          "Verified/declarative fixed anchor-ground tension load path",
+          "Engineer-approved effective lever arms and mechanical active-plane selection",
+          "synthetic-anchor-1: no axial stiffness defined",
+          "synthetic-anchor-2: no axial stiffness defined",
+          "synthetic-anchor-3: no axial stiffness defined",
+          "synthetic-anchor-4: no axial stiffness defined"
+        ],
+        "unsupported": [
+          "Actual anchors have nonzero North offsets; the benchmark supports only anchors on one North centerline, with no biaxial coupling",
+          "Actual full N/M is not substituted into the benchmark. No force or resistance distribution for the actual project is calculated",
+          "Horizontal shear transfer, embedment resistance, breakout, plate/weld/footing/soil capacities and code checks NOT VERIFIED"
+        ],
+        "engineering_approval": "DISABLED",
+        "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601"
+      },
+      "authorization": {
+        "actor_user_id": 1,
+        "authorized_at": "2026-10-12T06:18:25.597800+00:00",
+        "scope": "Separate synthetic planar unilateral mechanical benchmark only; not actual project design"
+      }
+    }
+  },
+  "half": {
+    "id": 319,
+    "model_revision_id": 89,
+    "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+    "result": {
+      "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+      "inputs": {
+        "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+        "width_east_m": 0.6,
+        "length_north_m": 0.5,
+        "compression_n": 8050,
+        "moment_negative_north_nm": 2938,
+        "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+        "contact_stiffness_n_m3": 1000000000,
+        "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+        "anchors": [
+          {
+            "id": "benchmark-anchor-1",
+            "x_east_m": -0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-2",
+            "x_east_m": -0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-3",
+            "x_east_m": 0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-4",
+            "x_east_m": 0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          }
+        ],
+        "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+        "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+        "fixed_anchor_ground_assumption": true,
+        "horizontal_shear_excluded": true,
+        "no_pretension": true,
+        "engineer_idealization_reviewed": true
+      },
+      "translation_down_m": 5.6609428838293504e-18,
+      "rotation_slope_rad": -0.0004999999999999845,
+      "compression_resultant_n": 11250.0000000005,
+      "compression_first_moment_nm": -2250.0000000000578,
+      "contact_interval_east_m": [
+        -0.3,
+        1.1321885767659051e-14
+      ],
+      "anchors": [
+        {
+          "id": "benchmark-anchor-1",
+          "x_east_m": -0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.24,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 10000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-2",
+          "x_east_m": -0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.2,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 20000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-3",
+          "x_east_m": 0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.2,
+          "opening_m": 0.00009999999999999124,
+          "tension_n": 1999.9999999998247,
+          "axial_stiffness_n_m": 20000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-4",
+          "x_east_m": 0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.24,
+          "opening_m": 0.00011999999999999061,
+          "tension_n": 1199.999999999906,
+          "axial_stiffness_n_m": 10000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        }
+      ],
+      "pressure_samples": [
+        {
+          "x_east_m": -0.3,
+          "pressure_pa": 150000.00000000102
+        },
+        {
+          "x_east_m": -0.28125,
+          "pressure_pa": 140625.0000000013
+        },
+        {
+          "x_east_m": -0.2625,
+          "pressure_pa": 131250.0000000016
+        },
+        {
+          "x_east_m": -0.24375,
+          "pressure_pa": 121875.00000000189
+        },
+        {
+          "x_east_m": -0.22499999999999998,
+          "pressure_pa": 112500.00000000217
+        },
+        {
+          "x_east_m": -0.20625,
+          "pressure_pa": 103125.00000000246
+        },
+        {
+          "x_east_m": -0.1875,
+          "pressure_pa": 93750.00000000276
+        },
+        {
+          "x_east_m": -0.16874999999999998,
+          "pressure_pa": 84375.00000000304
+        },
+        {
+          "x_east_m": -0.15,
+          "pressure_pa": 75000.00000000335
+        },
+        {
+          "x_east_m": -0.13125,
+          "pressure_pa": 65625.00000000362
+        },
+        {
+          "x_east_m": -0.11249999999999999,
+          "pressure_pa": 56250.00000000391
+        },
+        {
+          "x_east_m": -0.09375,
+          "pressure_pa": 46875.000000004206
+        },
+        {
+          "x_east_m": -0.07500000000000001,
+          "pressure_pa": 37500.000000004504
+        },
+        {
+          "x_east_m": -0.056249999999999994,
+          "pressure_pa": 28125.000000004788
+        },
+        {
+          "x_east_m": -0.03749999999999998,
+          "pressure_pa": 18750.00000000507
+        },
+        {
+          "x_east_m": -0.01874999999999999,
+          "pressure_pa": 9375.000000005366
+        },
+        {
+          "x_east_m": 0,
+          "pressure_pa": 5.6609428838293504e-9
+        },
+        {
+          "x_east_m": 0.01874999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.03749999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.05625000000000002,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.07500000000000001,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.09375,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.11249999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.13124999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.14999999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.16875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.1875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.20625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.22500000000000003,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.24374999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.2625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.28124999999999994,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.3,
+          "pressure_pa": 0
+        }
+      ],
+      "pressure_max_kpa": 150.00000000000102,
+      "compression_centroid_east_m": -0.19999999999999624,
+      "total_anchor_tension_n": 3199.999999999731,
+      "force_residual_n": 7.676135282963514e-10,
+      "moment_residual_nm": 0,
+      "independent_quadrature_compression_n": 11250.000000000498,
+      "independent_quadrature_first_moment_nm": -2250.0000000000573,
+      "iterations": [
+        {
+          "iteration": 0,
+          "residual_force_n": 2587.1723356780894,
+          "residual_moment_nm": 602.9043723318496
+        },
+        {
+          "iteration": 1,
+          "residual_force_n": 613.3060547285386,
+          "residual_moment_nm": 35.79557754824373
+        },
+        {
+          "iteration": 2,
+          "residual_force_n": 13.749141054588108,
+          "residual_moment_nm": 0.09899841698052114
+        },
+        {
+          "iteration": 3,
+          "residual_force_n": 0.0053210505120659946,
+          "residual_moment_nm": 7.323133104364388e-7
+        },
+        {
+          "iteration": 4,
+          "residual_force_n": 7.685230229981244e-10,
+          "residual_moment_nm": 0
+        }
+      ],
+      "formulas": [
+        "w(x)=u+θx, downward positive [m]",
+        "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+        "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+        "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+      ],
+      "limitations": [
+        "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+        "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+        "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+        "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+        "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+        "Horizontal shear transfer excluded; no engineering approval"
+      ],
+      "engineering_approval": "DISABLED",
+      "physical_capacity": "NOT_YET_VERIFIED",
+      "benchmark": {
+        "status": "VERIFIED",
+        "hand": {
+          "u_m": 0,
+          "theta_rad": -0.001,
+          "contact_width_m": 0.3,
+          "compression_n": 22500,
+          "centroid_east_m": -0.2,
+          "pressure_max_kpa": 300,
+          "anchor_tensions_n": [
+            0,
+            0,
+            4000,
+            2400
+          ],
+          "total_tension_n": 6400,
+          "net_axial_n": 16100,
+          "contact_moment_nm": -4500,
+          "anchor_moment_nm": -1376,
+          "applied_moment_nm": 5876,
+          "formula": "C=0.5×300000Pa×0.3m×0.5m=22500N; Q=C×(-0.2m)=-4500Nm; T(.20)=20MN/m×0.2mm=4000N; T(.24)=10MN/m×0.24mm=2400N; N=C−6400=16100N; M=4500+800+576=5876Nm"
+        },
+        "computed": {
+          "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+          "inputs": {
+            "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+            "width_east_m": 0.6,
+            "length_north_m": 0.5,
+            "compression_n": 16100,
+            "moment_negative_north_nm": 5876,
+            "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+            "contact_stiffness_n_m3": 1000000000,
+            "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+            "anchors": [
+              {
+                "id": "benchmark-anchor-1",
+                "x_east_m": -0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-2",
+                "x_east_m": -0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-3",
+                "x_east_m": 0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-4",
+                "x_east_m": 0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              }
+            ],
+            "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+            "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+            "fixed_anchor_ground_assumption": true,
+            "horizontal_shear_excluded": true,
+            "no_pretension": true,
+            "engineer_idealization_reviewed": true
+          },
+          "translation_down_m": 1.1321885767658701e-17,
+          "rotation_slope_rad": -0.000999999999999969,
+          "compression_resultant_n": 22500.000000001,
+          "compression_first_moment_nm": -4500.0000000001155,
+          "contact_interval_east_m": [
+            -0.3,
+            1.1321885767659051e-14
+          ],
+          "anchors": [
+            {
+              "id": "benchmark-anchor-1",
+              "x_east_m": -0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.24,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 10000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-2",
+              "x_east_m": -0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.2,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 20000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-3",
+              "x_east_m": 0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.2,
+              "opening_m": 0.00019999999999998247,
+              "tension_n": 3999.9999999996494,
+              "axial_stiffness_n_m": 20000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-4",
+              "x_east_m": 0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.24,
+              "opening_m": 0.00023999999999998122,
+              "tension_n": 2399.999999999812,
+              "axial_stiffness_n_m": 10000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            }
+          ],
+          "pressure_samples": [
+            {
+              "x_east_m": -0.3,
+              "pressure_pa": 300000.00000000204
+            },
+            {
+              "x_east_m": -0.28125,
+              "pressure_pa": 281250.0000000026
+            },
+            {
+              "x_east_m": -0.2625,
+              "pressure_pa": 262500.0000000032
+            },
+            {
+              "x_east_m": -0.24375,
+              "pressure_pa": 243750.00000000378
+            },
+            {
+              "x_east_m": -0.22499999999999998,
+              "pressure_pa": 225000.00000000434
+            },
+            {
+              "x_east_m": -0.20625,
+              "pressure_pa": 206250.00000000492
+            },
+            {
+              "x_east_m": -0.1875,
+              "pressure_pa": 187500.00000000553
+            },
+            {
+              "x_east_m": -0.16874999999999998,
+              "pressure_pa": 168750.00000000608
+            },
+            {
+              "x_east_m": -0.15,
+              "pressure_pa": 150000.0000000067
+            },
+            {
+              "x_east_m": -0.13125,
+              "pressure_pa": 131250.00000000725
+            },
+            {
+              "x_east_m": -0.11249999999999999,
+              "pressure_pa": 112500.00000000781
+            },
+            {
+              "x_east_m": -0.09375,
+              "pressure_pa": 93750.00000000841
+            },
+            {
+              "x_east_m": -0.07500000000000001,
+              "pressure_pa": 75000.00000000901
+            },
+            {
+              "x_east_m": -0.056249999999999994,
+              "pressure_pa": 56250.000000009575
+            },
+            {
+              "x_east_m": -0.03749999999999998,
+              "pressure_pa": 37500.00000001014
+            },
+            {
+              "x_east_m": -0.01874999999999999,
+              "pressure_pa": 18750.000000010732
+            },
+            {
+              "x_east_m": 0,
+              "pressure_pa": 1.1321885767658701e-8
+            },
+            {
+              "x_east_m": 0.01874999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.03749999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.05625000000000002,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.07500000000000001,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.09375,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.11249999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.13124999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.14999999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.16875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.1875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.20625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.22500000000000003,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.24374999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.2625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.28124999999999994,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.3,
+              "pressure_pa": 0
+            }
+          ],
+          "pressure_max_kpa": 300.00000000000205,
+          "compression_centroid_east_m": -0.19999999999999624,
+          "total_anchor_tension_n": 6399.999999999462,
+          "force_residual_n": 1.5352270565927029e-9,
+          "moment_residual_nm": 0,
+          "independent_quadrature_compression_n": 22500.000000000997,
+          "independent_quadrature_first_moment_nm": -4500.000000000115,
+          "iterations": [
+            {
+              "iteration": 0,
+              "residual_force_n": 5174.344671356179,
+              "residual_moment_nm": 1205.8087446636991
+            },
+            {
+              "iteration": 1,
+              "residual_force_n": 1226.6121094570772,
+              "residual_moment_nm": 71.59115509648746
+            },
+            {
+              "iteration": 2,
+              "residual_force_n": 27.498282109176216,
+              "residual_moment_nm": 0.19799683396104228
+            },
+            {
+              "iteration": 3,
+              "residual_force_n": 0.010642101024131989,
+              "residual_moment_nm": 0.0000014646266208728775
+            },
+            {
+              "iteration": 4,
+              "residual_force_n": 1.5370460459962487e-9,
+              "residual_moment_nm": 0
+            }
+          ],
+          "formulas": [
+            "w(x)=u+θx, downward positive [m]",
+            "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+            "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+            "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+          ],
+          "limitations": [
+            "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+            "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+            "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+            "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+            "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+            "Horizontal shear transfer excluded; no engineering approval"
+          ],
+          "engineering_approval": "DISABLED",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        }
+      },
+      "model_document_sha256": "33f19a821461a2e1976092726d116af0600184bfba0d6d4300742eb1b6c04f90",
+      "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601",
+      "scenario_id": 574,
+      "input_record_id": 318,
+      "actual_project_audit": {
+        "status": "ACTUAL_PROJECT_BLOCKED_MISSING_MECHANICS",
+        "source_interface_analysis_id": 315,
+        "source_project_id": 785,
+        "source_revision_id": 88,
+        "geometry": {
+          "objects": [
+            {
+              "component_id": "industrial-platform-5x3:column-sw",
+              "name": "column-sw",
+              "category": "column",
+              "size_m": [
+                0.3,
+                0.3,
+                3.1999999999999997
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                1.5999999999999999
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 · body",
+              "category": "base_plate",
+              "size_m": [
+                0.65,
+                0.65,
+                0.025
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.0125
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 · body",
+              "category": "foundation",
+              "size_m": [
+                1.2,
+                1.2,
+                0.45
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.25
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            }
+          ],
+          "column_base_enu_m": [
+            -2.8500000033479043,
+            -1.8499884779572517,
+            0
+          ],
+          "plate_contact_z_m": -0.025,
+          "contact_area_m2": 0.42250000000000004,
+          "saved_anchor_ids": [],
+          "anchor_geometry_status": "NOT_SAVED",
+          "reinforcement_geometry_status": "NOT_SAVED",
+          "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about −North",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        },
+        "demand": {
+          "column_id": "industrial-platform-5x3:column-sw",
+          "node": 1,
+          "compression_n": 29999.999999999996,
+          "demand_on_interface_enu_force_n": [
+            -10765.080571577306,
+            0,
+            -29999.999999999996
+          ],
+          "demand_on_interface_enu_moment_nm": [
+            0,
+            -11753.693592818216,
+            0
+          ],
+          "horizontal_shear_east_n": -10765.080571577306,
+          "moment_about_negative_north_nm": 11753.693592818216,
+          "support_reaction_si": {
+            "node": 1,
+            "fx_n": 10765.080571577306,
+            "fy_n": 29999.999999999996,
+            "moment_nm": -11753.693592818216
+          },
+          "solver_version": "3.8.0",
+          "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+          "source_frame_inputs": {
+            "component_ids": [
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:column-se"
+            ],
+            "sections": [
+              {
+                "component_id": "industrial-platform-5x3:column-sw",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-south",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.06,
+                "inertia_m4": 0.00020000000000000006,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-se",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              }
+            ],
+            "connections": [
+              {
+                "column_id": "industrial-platform-5x3:column-sw",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "left",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  -0.1499999999999999,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              },
+              {
+                "column_id": "industrial-platform-5x3:column-se",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "right",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  0.14999999999999947,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              }
+            ],
+            "supports": "both_column_bases_fixed",
+            "support_source": "Synthetic fixed bases; no foundation adequacy",
+            "load_pattern": null,
+            "load_n": null,
+            "load_source": null,
+            "load_cases": [
+              {
+                "name": "Slab tributary",
+                "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+                "horizontal_n": 0,
+                "vertical_nodal_loads": [],
+                "beam_uniform_n_per_m": -10000,
+                "self_weight": null
+              }
+            ],
+            "combination": null,
+            "purpose": "VERIFICATION_ONLY",
+            "elements_per_member": 2,
+            "units": "SI"
+          },
+          "source_model_revision_id": 86,
+          "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+          "solver_artifact_sha256": {
+            "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+            "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+            "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+            "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+            "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+            "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+          },
+          "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=−Rx; M about −North=−Rmoment.",
+          "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+          "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+        },
+        "declared_anchors": {
+          "status": "synthetic_engineer_declared_unverified",
+          "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+          "items": [
+            {
+              "id": "synthetic-anchor-1",
+              "position_enu_m": [
+                -3.090000003347904,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-2",
+              "position_enu_m": [
+                -3.090000003347904,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-3",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-4",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            }
+          ]
+        },
+        "missing": [
+          "Effective concrete-contact stiffness kc [N/m³] and calibration/assumption source",
+          "Individual anchor axial stiffnesses ki [N/m] with sources",
+          "Verified/declarative fixed anchor-ground tension load path",
+          "Engineer-approved effective lever arms and mechanical active-plane selection",
+          "synthetic-anchor-1: no axial stiffness defined",
+          "synthetic-anchor-2: no axial stiffness defined",
+          "synthetic-anchor-3: no axial stiffness defined",
+          "synthetic-anchor-4: no axial stiffness defined"
+        ],
+        "unsupported": [
+          "Actual anchors have nonzero North offsets; the benchmark supports only anchors on one North centerline, with no biaxial coupling",
+          "Actual full N/M is not substituted into the benchmark. No force or resistance distribution for the actual project is calculated",
+          "Horizontal shear transfer, embedment resistance, breakout, plate/weld/footing/soil capacities and code checks NOT VERIFIED"
+        ],
+        "engineering_approval": "DISABLED",
+        "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601"
+      },
+      "authorization": {
+        "actor_user_id": 1,
+        "authorized_at": "2026-10-12T06:18:40.707032+00:00",
+        "scope": "Separate synthetic planar unilateral mechanical benchmark only; not actual project design"
+      }
+    }
+  },
+  "current": {
+    "id": 321,
+    "model_revision_id": 89,
+    "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+    "result": {
+      "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+      "inputs": {
+        "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+        "width_east_m": 0.6,
+        "length_north_m": 0.5,
+        "compression_n": 16100,
+        "moment_negative_north_nm": 5876,
+        "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+        "contact_stiffness_n_m3": 1000000000,
+        "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+        "anchors": [
+          {
+            "id": "benchmark-anchor-1",
+            "x_east_m": -0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-2",
+            "x_east_m": -0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": -0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-3",
+            "x_east_m": 0.2,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.2,
+            "axial_stiffness_n_m": 20000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          },
+          {
+            "id": "benchmark-anchor-4",
+            "x_east_m": 0.24,
+            "y_north_m": 0,
+            "effective_lever_arm_m": 0.24,
+            "axial_stiffness_n_m": 10000000,
+            "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+          }
+        ],
+        "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+        "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+        "fixed_anchor_ground_assumption": true,
+        "horizontal_shear_excluded": true,
+        "no_pretension": true,
+        "engineer_idealization_reviewed": true
+      },
+      "translation_down_m": 1.1321885767658701e-17,
+      "rotation_slope_rad": -0.000999999999999969,
+      "compression_resultant_n": 22500.000000001,
+      "compression_first_moment_nm": -4500.0000000001155,
+      "contact_interval_east_m": [
+        -0.3,
+        1.1321885767659051e-14
+      ],
+      "anchors": [
+        {
+          "id": "benchmark-anchor-1",
+          "x_east_m": -0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.24,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 10000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-2",
+          "x_east_m": -0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": -0.2,
+          "opening_m": 0,
+          "tension_n": 0,
+          "axial_stiffness_n_m": 20000000,
+          "status": "SLACK_ZERO_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-3",
+          "x_east_m": 0.2,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.2,
+          "opening_m": 0.00019999999999998247,
+          "tension_n": 3999.9999999996494,
+          "axial_stiffness_n_m": 20000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        },
+        {
+          "id": "benchmark-anchor-4",
+          "x_east_m": 0.24,
+          "y_north_m": 0,
+          "effective_lever_arm_m": 0.24,
+          "opening_m": 0.00023999999999998122,
+          "tension_n": 2399.999999999812,
+          "axial_stiffness_n_m": 10000000,
+          "status": "ACTIVE_TENSION",
+          "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+        }
+      ],
+      "pressure_samples": [
+        {
+          "x_east_m": -0.3,
+          "pressure_pa": 300000.00000000204
+        },
+        {
+          "x_east_m": -0.28125,
+          "pressure_pa": 281250.0000000026
+        },
+        {
+          "x_east_m": -0.2625,
+          "pressure_pa": 262500.0000000032
+        },
+        {
+          "x_east_m": -0.24375,
+          "pressure_pa": 243750.00000000378
+        },
+        {
+          "x_east_m": -0.22499999999999998,
+          "pressure_pa": 225000.00000000434
+        },
+        {
+          "x_east_m": -0.20625,
+          "pressure_pa": 206250.00000000492
+        },
+        {
+          "x_east_m": -0.1875,
+          "pressure_pa": 187500.00000000553
+        },
+        {
+          "x_east_m": -0.16874999999999998,
+          "pressure_pa": 168750.00000000608
+        },
+        {
+          "x_east_m": -0.15,
+          "pressure_pa": 150000.0000000067
+        },
+        {
+          "x_east_m": -0.13125,
+          "pressure_pa": 131250.00000000725
+        },
+        {
+          "x_east_m": -0.11249999999999999,
+          "pressure_pa": 112500.00000000781
+        },
+        {
+          "x_east_m": -0.09375,
+          "pressure_pa": 93750.00000000841
+        },
+        {
+          "x_east_m": -0.07500000000000001,
+          "pressure_pa": 75000.00000000901
+        },
+        {
+          "x_east_m": -0.056249999999999994,
+          "pressure_pa": 56250.000000009575
+        },
+        {
+          "x_east_m": -0.03749999999999998,
+          "pressure_pa": 37500.00000001014
+        },
+        {
+          "x_east_m": -0.01874999999999999,
+          "pressure_pa": 18750.000000010732
+        },
+        {
+          "x_east_m": 0,
+          "pressure_pa": 1.1321885767658701e-8
+        },
+        {
+          "x_east_m": 0.01874999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.03749999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.05625000000000002,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.07500000000000001,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.09375,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.11249999999999999,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.13124999999999998,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.14999999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.16875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.1875,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.20625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.22500000000000003,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.24374999999999997,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.2625,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.28124999999999994,
+          "pressure_pa": 0
+        },
+        {
+          "x_east_m": 0.3,
+          "pressure_pa": 0
+        }
+      ],
+      "pressure_max_kpa": 300.00000000000205,
+      "compression_centroid_east_m": -0.19999999999999624,
+      "total_anchor_tension_n": 6399.999999999462,
+      "force_residual_n": 1.5352270565927029e-9,
+      "moment_residual_nm": 0,
+      "independent_quadrature_compression_n": 22500.000000000997,
+      "independent_quadrature_first_moment_nm": -4500.000000000115,
+      "iterations": [
+        {
+          "iteration": 0,
+          "residual_force_n": 5174.344671356179,
+          "residual_moment_nm": 1205.8087446636991
+        },
+        {
+          "iteration": 1,
+          "residual_force_n": 1226.6121094570772,
+          "residual_moment_nm": 71.59115509648746
+        },
+        {
+          "iteration": 2,
+          "residual_force_n": 27.498282109176216,
+          "residual_moment_nm": 0.19799683396104228
+        },
+        {
+          "iteration": 3,
+          "residual_force_n": 0.010642101024131989,
+          "residual_moment_nm": 0.0000014646266208728775
+        },
+        {
+          "iteration": 4,
+          "residual_force_n": 1.5370460459962487e-9,
+          "residual_moment_nm": 0
+        }
+      ],
+      "formulas": [
+        "w(x)=u+θx, downward positive [m]",
+        "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+        "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+        "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+      ],
+      "limitations": [
+        "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+        "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+        "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+        "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+        "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+        "Horizontal shear transfer excluded; no engineering approval"
+      ],
+      "engineering_approval": "DISABLED",
+      "physical_capacity": "NOT_YET_VERIFIED",
+      "benchmark": {
+        "status": "VERIFIED",
+        "hand": {
+          "u_m": 0,
+          "theta_rad": -0.001,
+          "contact_width_m": 0.3,
+          "compression_n": 22500,
+          "centroid_east_m": -0.2,
+          "pressure_max_kpa": 300,
+          "anchor_tensions_n": [
+            0,
+            0,
+            4000,
+            2400
+          ],
+          "total_tension_n": 6400,
+          "net_axial_n": 16100,
+          "contact_moment_nm": -4500,
+          "anchor_moment_nm": -1376,
+          "applied_moment_nm": 5876,
+          "formula": "C=0.5×300000Pa×0.3m×0.5m=22500N; Q=C×(-0.2m)=-4500Nm; T(.20)=20MN/m×0.2mm=4000N; T(.24)=10MN/m×0.24mm=2400N; N=C−6400=16100N; M=4500+800+576=5876Nm"
+        },
+        "computed": {
+          "status": "VERIFIED_SYNTHETIC_MECHANICAL_BENCHMARK_ONLY",
+          "inputs": {
+            "scope": "SEPARATE_SYNTHETIC_BENCHMARK_NOT_ACTUAL_PROJECT",
+            "width_east_m": 0.6,
+            "length_north_m": 0.5,
+            "compression_n": 16100,
+            "moment_negative_north_nm": 5876,
+            "load_source": "Synthetic independently worked N=16.1 kN, M=5.876 kNm; not actual project demand",
+            "contact_stiffness_n_m3": 1000000000,
+            "contact_stiffness_source": "Explicit synthetic nominal compression stiffness 1e9 N/m3; not inferred from concrete strength",
+            "anchors": [
+              {
+                "id": "benchmark-anchor-1",
+                "x_east_m": -0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-2",
+                "x_east_m": -0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": -0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-3",
+                "x_east_m": 0.2,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.2,
+                "axial_stiffness_n_m": 20000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              },
+              {
+                "id": "benchmark-anchor-4",
+                "x_east_m": 0.24,
+                "y_north_m": 0,
+                "effective_lever_arm_m": 0.24,
+                "axial_stiffness_n_m": 10000000,
+                "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+              }
+            ],
+            "mechanical_assumption": "PLANAR_MASSLESS_RIGID_PLATE_ELASTIC_WINKLER_COMPRESSION_AND_INDEPENDENT_TENSION_SPRINGS",
+            "mechanical_source": "Explicit synthetic idealization: nominal elastic compression bed, four separate zero-pretension tension springs, fixed spring ground; no resistance or capacity claims",
+            "fixed_anchor_ground_assumption": true,
+            "horizontal_shear_excluded": true,
+            "no_pretension": true,
+            "engineer_idealization_reviewed": true
+          },
+          "translation_down_m": 1.1321885767658701e-17,
+          "rotation_slope_rad": -0.000999999999999969,
+          "compression_resultant_n": 22500.000000001,
+          "compression_first_moment_nm": -4500.0000000001155,
+          "contact_interval_east_m": [
+            -0.3,
+            1.1321885767659051e-14
+          ],
+          "anchors": [
+            {
+              "id": "benchmark-anchor-1",
+              "x_east_m": -0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.24,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 10000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-2",
+              "x_east_m": -0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": -0.2,
+              "opening_m": 0,
+              "tension_n": 0,
+              "axial_stiffness_n_m": 20000000,
+              "status": "SLACK_ZERO_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-3",
+              "x_east_m": 0.2,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.2,
+              "opening_m": 0.00019999999999998247,
+              "tension_n": 3999.9999999996494,
+              "axial_stiffness_n_m": 20000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            },
+            {
+              "id": "benchmark-anchor-4",
+              "x_east_m": 0.24,
+              "y_north_m": 0,
+              "effective_lever_arm_m": 0.24,
+              "opening_m": 0.00023999999999998122,
+              "tension_n": 2399.999999999812,
+              "axial_stiffness_n_m": 10000000,
+              "status": "ACTIVE_TENSION",
+              "source": "Explicit independent synthetic axial stiffness, fixed spring ground"
+            }
+          ],
+          "pressure_samples": [
+            {
+              "x_east_m": -0.3,
+              "pressure_pa": 300000.00000000204
+            },
+            {
+              "x_east_m": -0.28125,
+              "pressure_pa": 281250.0000000026
+            },
+            {
+              "x_east_m": -0.2625,
+              "pressure_pa": 262500.0000000032
+            },
+            {
+              "x_east_m": -0.24375,
+              "pressure_pa": 243750.00000000378
+            },
+            {
+              "x_east_m": -0.22499999999999998,
+              "pressure_pa": 225000.00000000434
+            },
+            {
+              "x_east_m": -0.20625,
+              "pressure_pa": 206250.00000000492
+            },
+            {
+              "x_east_m": -0.1875,
+              "pressure_pa": 187500.00000000553
+            },
+            {
+              "x_east_m": -0.16874999999999998,
+              "pressure_pa": 168750.00000000608
+            },
+            {
+              "x_east_m": -0.15,
+              "pressure_pa": 150000.0000000067
+            },
+            {
+              "x_east_m": -0.13125,
+              "pressure_pa": 131250.00000000725
+            },
+            {
+              "x_east_m": -0.11249999999999999,
+              "pressure_pa": 112500.00000000781
+            },
+            {
+              "x_east_m": -0.09375,
+              "pressure_pa": 93750.00000000841
+            },
+            {
+              "x_east_m": -0.07500000000000001,
+              "pressure_pa": 75000.00000000901
+            },
+            {
+              "x_east_m": -0.056249999999999994,
+              "pressure_pa": 56250.000000009575
+            },
+            {
+              "x_east_m": -0.03749999999999998,
+              "pressure_pa": 37500.00000001014
+            },
+            {
+              "x_east_m": -0.01874999999999999,
+              "pressure_pa": 18750.000000010732
+            },
+            {
+              "x_east_m": 0,
+              "pressure_pa": 1.1321885767658701e-8
+            },
+            {
+              "x_east_m": 0.01874999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.03749999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.05625000000000002,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.07500000000000001,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.09375,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.11249999999999999,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.13124999999999998,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.14999999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.16875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.1875,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.20625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.22500000000000003,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.24374999999999997,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.2625,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.28124999999999994,
+              "pressure_pa": 0
+            },
+            {
+              "x_east_m": 0.3,
+              "pressure_pa": 0
+            }
+          ],
+          "pressure_max_kpa": 300.00000000000205,
+          "compression_centroid_east_m": -0.19999999999999624,
+          "total_anchor_tension_n": 6399.999999999462,
+          "force_residual_n": 1.5352270565927029e-9,
+          "moment_residual_nm": 0,
+          "independent_quadrature_compression_n": 22500.000000000997,
+          "independent_quadrature_first_moment_nm": -4500.000000000115,
+          "iterations": [
+            {
+              "iteration": 0,
+              "residual_force_n": 5174.344671356179,
+              "residual_moment_nm": 1205.8087446636991
+            },
+            {
+              "iteration": 1,
+              "residual_force_n": 1226.6121094570772,
+              "residual_moment_nm": 71.59115509648746
+            },
+            {
+              "iteration": 2,
+              "residual_force_n": 27.498282109176216,
+              "residual_moment_nm": 0.19799683396104228
+            },
+            {
+              "iteration": 3,
+              "residual_force_n": 0.010642101024131989,
+              "residual_moment_nm": 0.0000014646266208728775
+            },
+            {
+              "iteration": 4,
+              "residual_force_n": 1.5370460459962487e-9,
+              "residual_moment_nm": 0
+            }
+          ],
+          "formulas": [
+            "w(x)=u+θx, downward positive [m]",
+            "p(x)=kc max(w,0) [Pa]; C=∫p dA; Q=∫x p dA",
+            "Ti=ki max(−w(xi),0) [N], each anchor stiffness declared individually",
+            "C−ΣTi=N; Q−ΣxiTi+Mapplied=0"
+          ],
+          "limitations": [
+            "Synthetic planar massless rigid plate and elastic nominal compression bed only; not contact FEA or concrete material calibration",
+            "All anchors on the North centerline; biaxial force/moment coupling unsupported",
+            "No pretension, prying, bolt/footing flexibility beyond individually declared axial springs, gaps or contact holes",
+            "Fixed spring-ground load path must be explicitly declared; no embedment resistance inferred",
+            "Anchor strength, concrete breakout/crushing, plate bending, welds, footing/soil and code compliance NOT VERIFIED",
+            "Horizontal shear transfer excluded; no engineering approval"
+          ],
+          "engineering_approval": "DISABLED",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        }
+      },
+      "model_document_sha256": "33f19a821461a2e1976092726d116af0600184bfba0d6d4300742eb1b6c04f90",
+      "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601",
+      "scenario_id": 574,
+      "input_record_id": 320,
+      "actual_project_audit": {
+        "status": "ACTUAL_PROJECT_BLOCKED_MISSING_MECHANICS",
+        "source_interface_analysis_id": 315,
+        "source_project_id": 785,
+        "source_revision_id": 88,
+        "geometry": {
+          "objects": [
+            {
+              "component_id": "industrial-platform-5x3:column-sw",
+              "name": "column-sw",
+              "category": "column",
+              "size_m": [
+                0.3,
+                0.3,
+                3.1999999999999997
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                1.5999999999999999
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+              "name": "base plate 44d566cb-7ca0-4c95-bf4d-1d574f788df0 · body",
+              "category": "base_plate",
+              "size_m": [
+                0.65,
+                0.65,
+                0.025
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.0125
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            },
+            {
+              "component_id": "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+              "name": "foundation c9e0e256-1608-4be2-b1ab-adafa10424c0 · body",
+              "category": "foundation",
+              "size_m": [
+                1.2,
+                1.2,
+                0.45
+              ],
+              "position_enu_m": [
+                -2.8500000033479043,
+                -1.8499884779572517,
+                -0.25
+              ],
+              "engineering_status": "conceptual_unverified",
+              "definition": "CONCEPTUAL_PLACEHOLDER"
+            }
+          ],
+          "column_base_enu_m": [
+            -2.8500000033479043,
+            -1.8499884779572517,
+            0
+          ],
+          "plate_contact_z_m": -0.025,
+          "contact_area_m2": 0.42250000000000004,
+          "saved_anchor_ids": [],
+          "anchor_geometry_status": "NOT_SAVED",
+          "reinforcement_geometry_status": "NOT_SAVED",
+          "coordinate_mapping": "Local [East,North,Up] meters; source frame [X,Y] = [East,Up], positive moment about −North",
+          "physical_capacity": "NOT_YET_VERIFIED"
+        },
+        "demand": {
+          "column_id": "industrial-platform-5x3:column-sw",
+          "node": 1,
+          "compression_n": 29999.999999999996,
+          "demand_on_interface_enu_force_n": [
+            -10765.080571577306,
+            0,
+            -29999.999999999996
+          ],
+          "demand_on_interface_enu_moment_nm": [
+            0,
+            -11753.693592818216,
+            0
+          ],
+          "horizontal_shear_east_n": -10765.080571577306,
+          "moment_about_negative_north_nm": 11753.693592818216,
+          "support_reaction_si": {
+            "node": 1,
+            "fx_n": 10765.080571577306,
+            "fy_n": 29999.999999999996,
+            "moment_nm": -11753.693592818216
+          },
+          "solver_version": "3.8.0",
+          "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+          "source_frame_inputs": {
+            "component_ids": [
+              "industrial-platform-5x3:column-sw",
+              "industrial-platform-5x3:beam-south",
+              "industrial-platform-5x3:column-se"
+            ],
+            "sections": [
+              {
+                "component_id": "industrial-platform-5x3:column-sw",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-south",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.06,
+                "inertia_m4": 0.00020000000000000006,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-se",
+                "shape": "solid_rectangle",
+                "elastic_modulus_pa": 200000000000,
+                "area_m2": 0.09,
+                "inertia_m4": 0.0006749999999999998,
+                "material_name": "Synthetic steel",
+                "material_source": "Synthetic E=200 GPa verification assumption",
+                "section_source": "Explicit saved solid rectangular verification section"
+              }
+            ],
+            "connections": [
+              {
+                "column_id": "industrial-platform-5x3:column-sw",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "left",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  -0.1499999999999999,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              },
+              {
+                "column_id": "industrial-platform-5x3:column-se",
+                "beam_id": "industrial-platform-5x3:beam-south",
+                "column_endpoint": "top",
+                "beam_endpoint": "right",
+                "behavior": "rigid_offset",
+                "offset_m": [
+                  0.14999999999999947,
+                  0.10000000000000009
+                ],
+                "idealization_approved": true,
+                "source": "Synthetic massless rigid-arm idealization; capacity unverified"
+              }
+            ],
+            "supports": "both_column_bases_fixed",
+            "support_source": "Synthetic fixed bases; no foundation adequacy",
+            "load_pattern": null,
+            "load_n": null,
+            "load_source": null,
+            "load_cases": [
+              {
+                "name": "Slab tributary",
+                "source": "Synthetic uniform imposed pressure, excludes slab self-weight",
+                "horizontal_n": 0,
+                "vertical_nodal_loads": [],
+                "beam_uniform_n_per_m": -10000,
+                "self_weight": null
+              }
+            ],
+            "combination": null,
+            "purpose": "VERIFICATION_ONLY",
+            "elements_per_member": 2,
+            "units": "SI"
+          },
+          "source_model_revision_id": 86,
+          "solver_input_sha256": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+          "solver_artifact_sha256": {
+            "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+            "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+            "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+            "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+            "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+            "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+          },
+          "conversion": "Interface action is opposite support reaction. N compression=Ry; VEast=−Rx; M about −North=−Rmoment.",
+          "reference_point": "Saved column base / solver retained support node; full shear/moment translation to plate underside and footing is NOT YET VERIFIED.",
+          "verification_status": "VERIFIED_NUMERICAL_DEMAND_NOT_CAPACITY"
+        },
+        "declared_anchors": {
+          "status": "synthetic_engineer_declared_unverified",
+          "information": "Four newly declared synthetic locations; originals have no anchor geometry. Holes/contact-area deductions and bolt capacities are not modeled.",
+          "items": [
+            {
+              "id": "synthetic-anchor-1",
+              "position_enu_m": [
+                -3.090000003347904,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-2",
+              "position_enu_m": [
+                -3.090000003347904,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-3",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -2.0899884779572515,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            },
+            {
+              "id": "synthetic-anchor-4",
+              "position_enu_m": [
+                -2.6100000033479045,
+                -1.6099884779572518,
+                0
+              ],
+              "diameter_m": 0.02,
+              "embedment_m": 0.3,
+              "source": "Explicit synthetic anchor placement only, not saved physical bolts or capacity"
+            }
+          ]
+        },
+        "missing": [
+          "Effective concrete-contact stiffness kc [N/m³] and calibration/assumption source",
+          "Individual anchor axial stiffnesses ki [N/m] with sources",
+          "Verified/declarative fixed anchor-ground tension load path",
+          "Engineer-approved effective lever arms and mechanical active-plane selection",
+          "synthetic-anchor-1: no axial stiffness defined",
+          "synthetic-anchor-2: no axial stiffness defined",
+          "synthetic-anchor-3: no axial stiffness defined",
+          "synthetic-anchor-4: no axial stiffness defined"
+        ],
+        "unsupported": [
+          "Actual anchors have nonzero North offsets; the benchmark supports only anchors on one North centerline, with no biaxial coupling",
+          "Actual full N/M is not substituted into the benchmark. No force or resistance distribution for the actual project is calculated",
+          "Horizontal shear transfer, embedment resistance, breakout, plate/weld/footing/soil capacities and code checks NOT VERIFIED"
+        ],
+        "engineering_approval": "DISABLED",
+        "source_evidence_sha256": "183650c3cfb6e73beffe617f1a8904c966b0fb452b7bf73d103761c787199601"
+      },
+      "authorization": {
+        "actor_user_id": 1,
+        "authorized_at": "2026-10-12T06:18:49.692068+00:00",
+        "scope": "Separate synthetic planar unilateral mechanical benchmark only; not actual project design"
+      }
+    }
+  },
+  "missing_stiffness_status": 422,
+  "forged_authorization_status": 409,
+  "errors": []
+}

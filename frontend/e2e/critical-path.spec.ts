@@ -44,14 +44,14 @@ test.describe(`Critical path ${viewport.width}px`, () => {
     await page.keyboard.press("Escape");
     await expect(page.getByLabel("Measurement tools")).toHaveCount(0);
     await expect(starter).toBeVisible();
-    await starter.getByRole("button", {name:"Ask GeoAI", exact:true}).click();
+    await starter.getByRole("button", {name:"Ask StruvoCivil Assistant", exact:true}).click();
     await expect(page.getByRole("tab", {name:"Assistant", exact:true})).toHaveAttribute("aria-selected", "true");
     await expect(starter).toHaveCount(0);
-    // Reload to exercise the other first-run action, without sending an AI message.
+    // Dismissed coaching stays dismissed after reload; real site tools remain available.
     await page.reload();
-    await expect(starter).toBeVisible({ timeout: 30_000 });
+    await expect(starter).toHaveCount(0);
     await expect(canvas).toHaveAttribute("data-scene-camera", /.+/, { timeout: 30_000 });
-    await starter.getByRole("button", {name:"Draw / select site", exact:true}).click();
+    await page.getByRole("button", {name:"Draw site boundary", exact:true}).click();
     await expect(starter).toHaveCount(0);
     await expect(page.getByRole("button", {name:"Draw site boundary", exact:true})).toHaveAttribute("aria-pressed", "true");
     const drawing = page.getByLabel("Drawing tool options");

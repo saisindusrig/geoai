@@ -1,0 +1,221 @@
+{
+  "frontend_tests": 392,
+  "frontend_files": 80,
+  "new_workflow_tests": 10,
+  "relevant_backend_tests": 298,
+  "backend_regression_tests": 275,
+  "backend_guidance_and_elastic_tests": 23,
+  "browser_workflows": 17,
+  "viewports": [
+    1280,
+    1600
+  ],
+  "read_only_browser_matrix": [
+    {
+      "project": 793,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 794,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 804,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 814,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 823,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 822,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 828,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 829,
+      "width": 1280,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 793,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 794,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 804,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 814,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 823,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 822,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 828,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": true,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 829,
+      "width": 1600,
+      "keyboard": true,
+      "read_only": true,
+      "reopened_results": false,
+      "advanced_access": true,
+      "writes": [],
+      "errors": []
+    }
+  ],
+  "isolated_full_workflow": {
+    "isolated_database": "D:\\layout project\\docs\\foundation-system\\isolated\\foundation.db",
+    "project": 830,
+    "explicit_authorization": true,
+    "technical_accordions_used": 0,
+    "writes": [
+      "http://127.0.0.1:18001/api/projects/830/engineering/assembly/preview",
+      "http://127.0.0.1:18001/api/projects/830/engineering/assembly/inputs",
+      "http://127.0.0.1:18001/api/projects/830/engineering/assembly/proposals",
+      "http://127.0.0.1:18001/api/projects/830/engineering/assembly/authorize-run"
+    ],
+    "errors": []
+  },
+  "typescript": "PASS",
+  "scoped_eslint": "PASS",
+  "normal_preservation": {
+    "all_rows_and_schemas_exactly_unchanged": true,
+    "rows": 10245
+  },
+  "isolated_preservation": {
+    "existing_isolated_rows_unchanged": true,
+    "preexisting_isolated_rows": 10484,
+    "isolated_rows": 10500,
+    "appended_rows": {
+      "projects": 2,
+      "design_scenarios": 2,
+      "model_revisions": 2,
+      "engineering_analyses": 10
+    },
+    "existing_spatial_solver_files_unchanged": true,
+    "spatial_solver_files": 635,
+    "no_restore_delete_or_preexisting_record_updates": true
+  },
+  "original_storage_files": 55296,
+  "original_proof_files": 2090,
+  "original_database_schemas": 264,
+  "previous_coupled_native_files_verified": 21,
+  "preexisting_stale_spatial_project_preserved": 823,
+  "video": {
+    "duration_seconds": 47.64,
+    "width": 1600,
+    "height": 1000
+  },
+  "backend_numerical_methods_changed": false,
+  "automatic_solver_authorization": false,
+  "engineering_approval": "DISABLED"
+}

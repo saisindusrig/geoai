@@ -1,0 +1,15 @@
+{
+  "all_preexisting_rows_and_files_preserved": true,
+  "all_database_schemas_preserved": true,
+  "strict_baseline_fingerprints_identical": false,
+  "strict_mismatch_report": "preservation-manifests.json",
+  "unchanged_original_databases": 263,
+  "development_db_append_only": true,
+  "added_rows_by_table": {
+    "projects": 1,
+    "design_scenarios": 1,
+    "model_revisions": 1,
+    "engineering_analyses": 3
+  },
+  "note": "Separate study805 and its drawing-reference/review/proposal records are additional to the older baseline. Origin is not established by fingerprint checks. They were retained; no deletion or restoration was attempted."
+}

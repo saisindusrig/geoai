@@ -1,0 +1,7 @@
+
+Running 1 test using 1 worker
+
+
+
+[1/1] [chromium] › e2e\soil-contact.spec.ts:7:5 › synthetic soil authorization partial contact reload invalid inputs and stale results
+  1 passed (1.2m)

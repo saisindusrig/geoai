@@ -58,7 +58,8 @@ describe("site data panel", () => {
 });
 
 function scene() {
-  const viewer = { isDestroyed: () => false, clock: { currentTime: "", shouldAnimate: false, multiplier: 1 }, scene: { globe: {}, verticalExaggeration: 2, requestRender: vi.fn() }, shadowMap: {} };
+  const imagery = { saturation: 1, brightness: 1 };
+  const viewer = { imageryLayers: { length: 1, get: () => imagery, layerAdded: { addEventListener: vi.fn(() => vi.fn()) } }, isDestroyed: () => false, clock: { currentTime: "", shouldAnimate: false, multiplier: 1 }, scene: { globe: {}, screenSpaceCameraController: {}, postUpdate: { addEventListener: vi.fn(() => vi.fn()) }, verticalExaggeration: 2, requestRender: vi.fn() }, shadowMap: {} };
   const Cesium = { JulianDate: { fromIso8601: (value: string) => value, toIso8601: () => "2026-10-03T09:30:00.000Z" }, ClockStep: { SYSTEM_CLOCK_MULTIPLIER: 1 }, ShadowMode: { DISABLED: 0, ENABLED: 1 }, Simon1994PlanetaryPositions: { computeSunPositionInEarthInertialFrame: () => ({}) }, Transforms: { computeIcrfToCentralBodyFixedMatrix: () => undefined } };
   return { viewer, Cesium };
 }
@@ -70,6 +71,7 @@ describe("scene and sunlight panel", () => {
     fireEvent.click(screen.getByRole("tab", { name: "Sun" }));
     fireEvent.click(screen.getByRole("button", { name: "Enable sun lighting & shadows" }));
     expect(viewer.scene.globe).toMatchObject({ enableLighting: true });
+    expect(viewer.imageryLayers.get()).toMatchObject({ saturation: 1, brightness: 1 });
     expect(viewer).toMatchObject({ shadows: true });
     expect(viewer.scene.verticalExaggeration).toBe(2);
     fireEvent.click(screen.getByRole("tab", { name: "Sun" }));

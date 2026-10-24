@@ -1,0 +1,63 @@
+{
+  "operational_metadata_changes": [
+    {
+      "table": "projects",
+      "key": [
+        792
+      ],
+      "changed_fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        796
+      ],
+      "changed_fields": [
+        "updated_at"
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "5905405a-4de7-5543-a63a-3c84d50d30e4"
+      ],
+      "changed_fields": [
+        "next_sequence"
+      ]
+    }
+  ],
+  "unexpected_data_changes": [],
+  "original_rows_checked": 9850,
+  "changed_original_rows": [
+    {
+      "table": "projects",
+      "key": [
+        792
+      ]
+    },
+    {
+      "table": "projects",
+      "key": [
+        796
+      ]
+    },
+    {
+      "table": "project_conversations",
+      "key": [
+        "5905405a-4de7-5543-a63a-3c84d50d30e4"
+      ]
+    }
+  ],
+  "missing_original_rows": [],
+  "all_original_54_components_unchanged": true,
+  "added_ids": [
+    "drawing-cad:614f117ae2a74794:A3",
+    "drawing-cad:614f117ae2a74794:B5"
+  ],
+  "copy_model_revision_count": 2,
+  "component_count": 56,
+  "drawing_bytes_preserved": true,
+  "paid_inference_calls": 0
+}

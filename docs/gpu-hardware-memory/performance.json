@@ -1,0 +1,1030 @@
+[
+  {
+    "count": 10,
+    "renderer": {
+      "webgl2": true,
+      "software": false,
+      "hardwareVendorMatched": true,
+      "timerQuery": true
+    },
+    "repetitions": [
+      {
+        "run": 1,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 30,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 1000.0999999996275,
+          "meanCpuSubmitMs": 0.39999999944120646,
+          "gpuElapsedMs": [
+            1.36192,
+            4.897792
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.09661900000000001
+        },
+        "orbit": {
+          "elapsedMs": 1284.9000000003725,
+          "renderedFrames": 214,
+          "drawCalls": 3210,
+          "renderFps": 166.54992606423687,
+          "meanFrameIntervalMs": 5.761502347414343,
+          "meanCpuSubmitMs": 0.3808411214605113,
+          "gpuElapsedMs": [
+            29.374464,
+            13.566976,
+            9.735168,
+            0.55296,
+            0.567296,
+            0.592896
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1284.2999999988824,
+          "renderedFrames": 219,
+          "drawCalls": 3285,
+          "renderFps": 170.52090633044503,
+          "meanFrameIntervalMs": 5.838073394491995,
+          "meanCpuSubmitMs": 0.24657534244023774,
+          "gpuElapsedMs": [
+            1.465344,
+            1.28,
+            1.25952,
+            1.304576,
+            1.308672,
+            1.251328
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1284.5999999996275,
+          "renderedFrames": 222,
+          "drawCalls": 3330,
+          "renderFps": 172.81644091551019,
+          "meanFrameIntervalMs": 5.708144796380091,
+          "meanCpuSubmitMs": 0.2572072072810418,
+          "gpuElapsedMs": [
+            1.030144,
+            1.635328,
+            1.572864,
+            1.57184,
+            1.21344,
+            1.974272
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 2,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 8,
+          "drawCalls": 120,
+          "renderFps": 4,
+          "meanFrameIntervalMs": 156.40000000010644,
+          "meanCpuSubmitMs": 0.3000000005122274,
+          "gpuElapsedMs": [
+            1.67424,
+            1.478656,
+            1.476608,
+            1.145856,
+            1.98144,
+            1.703936
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.07955900000000016
+        },
+        "orbit": {
+          "elapsedMs": 1284.699999999255,
+          "renderedFrames": 217,
+          "drawCalls": 3255,
+          "renderFps": 168.91102981250552,
+          "meanFrameIntervalMs": 5.558333333340232,
+          "meanCpuSubmitMs": 0.26221198164578957,
+          "gpuElapsedMs": [
+            1.160192,
+            0.70144,
+            0.55808,
+            0.551936,
+            2.675712,
+            2.266112
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1284.0999999996275,
+          "renderedFrames": 219,
+          "drawCalls": 3285,
+          "renderFps": 170.54746515073867,
+          "meanFrameIntervalMs": 5.8362385321135095,
+          "meanCpuSubmitMs": 0.20867579910887157,
+          "gpuElapsedMs": [
+            1.668096,
+            1.626112,
+            2.475008,
+            1.147904,
+            1.550336,
+            1.54624
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1283.9000000003725,
+          "renderedFrames": 222,
+          "drawCalls": 3330,
+          "renderFps": 172.9106628241573,
+          "meanFrameIntervalMs": 5.757466063341674,
+          "meanCpuSubmitMs": 0.2261261261395506,
+          "gpuElapsedMs": [
+            1.371136,
+            1.794048,
+            1.73568,
+            1.770496,
+            1.88928,
+            1.378304
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 3,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 6,
+          "drawCalls": 90,
+          "renderFps": 3,
+          "meanFrameIntervalMs": 366.73999999985097,
+          "meanCpuSubmitMs": 0.33333333271245164,
+          "gpuElapsedMs": [
+            2.188288,
+            1.311744,
+            1.219584,
+            1.753088,
+            1.144832,
+            3.939328
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.07944899999999944
+        },
+        "orbit": {
+          "elapsedMs": 1285,
+          "renderedFrames": 217,
+          "drawCalls": 3255,
+          "renderFps": 168.8715953307393,
+          "meanFrameIntervalMs": 5.55787037037037,
+          "meanCpuSubmitMs": 0.2654377879480475,
+          "gpuElapsedMs": [
+            1.94048,
+            1.257472,
+            0.620544,
+            0.549888,
+            2.438144,
+            2.637824
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1283.8999999985099,
+          "renderedFrames": 217,
+          "drawCalls": 3255,
+          "renderFps": 169.01627852656114,
+          "meanFrameIntervalMs": 5.555092592594317,
+          "meanCpuSubmitMs": 0.20645161290665925,
+          "gpuElapsedMs": [
+            2.184192,
+            0.986112,
+            1.695744,
+            1.651712,
+            1.570816,
+            1.610752
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1283.300000000745,
+          "renderedFrames": 222,
+          "drawCalls": 3330,
+          "renderFps": 172.99150627278976,
+          "meanFrameIntervalMs": 5.706334841627274,
+          "meanCpuSubmitMs": 0.220720720729111,
+          "gpuElapsedMs": [
+            1.214464,
+            1.764352,
+            1.321984,
+            1.538048,
+            1.37728,
+            1.536
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      }
+    ],
+    "qualities": [
+      {
+        "mode": "performance",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 15,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 0.40000000037252903,
+        "gpuElapsedMs": [
+          1.256448
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          802,
+          494
+        ]
+      },
+      {
+        "mode": "balanced",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 15,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 0.40000000037252903,
+        "gpuElapsedMs": [
+          5.389312
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      },
+      {
+        "mode": "high",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 17,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 0.7999999988824129,
+        "gpuElapsedMs": [
+          10.620928
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1542,
+          950
+        ]
+      },
+      {
+        "mode": "auto",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 15,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 0.40000000037252903,
+        "gpuElapsedMs": [
+          13.478912
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      }
+    ],
+    "selection": {
+      "receiptLatencyMs": 109.80000000074506,
+      "focusWaitIncludingAnimationMs": 1125,
+      "cameraMoveEndMs": 930
+    },
+    "recovery": null
+  },
+  {
+    "count": 100,
+    "renderer": {
+      "webgl2": true,
+      "software": false,
+      "hardwareVendorMatched": true,
+      "timerQuery": true
+    },
+    "repetitions": [
+      {
+        "run": 1,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 210,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 998.7000000011176,
+          "meanCpuSubmitMs": 1.800000000745058,
+          "gpuElapsedMs": [
+            1.62304,
+            5.202944
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.09327200000000069
+        },
+        "orbit": {
+          "elapsedMs": 1280.9000000003725,
+          "renderedFrames": 214,
+          "drawCalls": 22470,
+          "renderFps": 167.070028885891,
+          "meanFrameIntervalMs": 5.975117370897266,
+          "meanCpuSubmitMs": 0.6939252336622677,
+          "gpuElapsedMs": [
+            13.43488,
+            15.245312,
+            13.381632,
+            12.220416,
+            0.62464,
+            0.673792
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1284.5,
+          "renderedFrames": 219,
+          "drawCalls": 22995,
+          "renderFps": 170.49435578045933,
+          "meanFrameIntervalMs": 5.783027522940906,
+          "meanCpuSubmitMs": 0.673972602814572,
+          "gpuElapsedMs": [
+            0.857088,
+            2.44224,
+            2.149376,
+            1.406976,
+            2.060288,
+            2.295808
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1284.7000000011176,
+          "renderedFrames": 217,
+          "drawCalls": 22785,
+          "renderFps": 168.91102981226064,
+          "meanFrameIntervalMs": 5.550925925925926,
+          "meanCpuSubmitMs": 0.5626728110581911,
+          "gpuElapsedMs": [
+            3.759104,
+            0.934912,
+            1.787904,
+            0.98816,
+            1.1264,
+            1.000448
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 2,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 210,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 999.4000000003725,
+          "meanCpuSubmitMs": 1.0499999998137355,
+          "gpuElapsedMs": [
+            2.577408,
+            3.762176
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.07716300000000054
+        },
+        "orbit": {
+          "elapsedMs": 1280.199999999255,
+          "renderedFrames": 216,
+          "drawCalls": 22680,
+          "renderFps": 168.7236369318276,
+          "meanFrameIntervalMs": 5.557209302320383,
+          "meanCpuSubmitMs": 0.587037037031863,
+          "gpuElapsedMs": [
+            1.24416,
+            0.801792,
+            1.651712,
+            1.020928,
+            1.030144,
+            1.020928
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1284.5999999996275,
+          "renderedFrames": 218,
+          "drawCalls": 22890,
+          "renderFps": 169.70263116928479,
+          "meanFrameIntervalMs": 5.729953917052408,
+          "meanCpuSubmitMs": 0.4862385321442687,
+          "gpuElapsedMs": [
+            1.831936,
+            1.29536,
+            1.763328,
+            1.77664,
+            1.38752,
+            1.318912
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1284.5999999996275,
+          "renderedFrames": 217,
+          "drawCalls": 22785,
+          "renderFps": 168.92417873272842,
+          "meanFrameIntervalMs": 5.554629629624456,
+          "meanCpuSubmitMs": 0.47649769590575297,
+          "gpuElapsedMs": [
+            2.63168,
+            1.153024,
+            1.155072,
+            2.628608,
+            1.173504,
+            1.152
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 3,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 210,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 1005.7000000011176,
+          "meanCpuSubmitMs": 1.800000000745058,
+          "gpuElapsedMs": [
+            3.990528,
+            5.377024
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.09087000000000067
+        },
+        "orbit": {
+          "elapsedMs": 1285.5,
+          "renderedFrames": 217,
+          "drawCalls": 22785,
+          "renderFps": 168.8059120964605,
+          "meanFrameIntervalMs": 5.556944444439271,
+          "meanCpuSubmitMs": 0.5589861751529753,
+          "gpuElapsedMs": [
+            2.212864,
+            2.907136,
+            0.596992,
+            1.128448,
+            2.671616,
+            2.72896
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1284.699999999255,
+          "renderedFrames": 218,
+          "drawCalls": 22890,
+          "renderFps": 169.68942165495946,
+          "meanFrameIntervalMs": 5.731336405526521,
+          "meanCpuSubmitMs": 0.5206422018177739,
+          "gpuElapsedMs": [
+            1.206272,
+            1.037312,
+            1.281024,
+            1.291264,
+            2.536448,
+            2.2784
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1285.2000000011176,
+          "renderedFrames": 217,
+          "drawCalls": 22785,
+          "renderFps": 168.8453159039926,
+          "meanFrameIntervalMs": 5.55787037037037,
+          "meanCpuSubmitMs": 0.505990783473657,
+          "gpuElapsedMs": [
+            2.875392,
+            3.069952,
+            1.214464,
+            1.216512,
+            1.212416,
+            1.221632
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      }
+    ],
+    "qualities": [
+      {
+        "mode": "performance",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 105,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 1.099999999627471,
+        "gpuElapsedMs": [
+          0.569344
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          802,
+          494
+        ]
+      },
+      {
+        "mode": "balanced",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 105,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 1.299999998882413,
+        "gpuElapsedMs": [
+          5.630976
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      },
+      {
+        "mode": "high",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 107,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 1.299999998882413,
+        "gpuElapsedMs": [
+          11.836416
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1542,
+          950
+        ]
+      },
+      {
+        "mode": "auto",
+        "elapsedMs": 1100,
+        "renderedFrames": 2,
+        "drawCalls": 210,
+        "renderFps": 1.8181818181818181,
+        "meanFrameIntervalMs": 994.5,
+        "meanCpuSubmitMs": 1.049999998882413,
+        "gpuElapsedMs": [
+          12.679168,
+          14.426112
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      }
+    ],
+    "selection": {
+      "receiptLatencyMs": 125.80000000074506,
+      "focusWaitIncludingAnimationMs": 1142,
+      "cameraMoveEndMs": null
+    },
+    "recovery": null
+  },
+  {
+    "count": 400,
+    "renderer": {
+      "webgl2": true,
+      "software": false,
+      "hardwareVendorMatched": true,
+      "timerQuery": true
+    },
+    "repetitions": [
+      {
+        "run": 1,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 810,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 994.8000000007451,
+          "meanCpuSubmitMs": 1.8500000005587935,
+          "gpuElapsedMs": [
+            2.604864,
+            6.136832
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.09311199999999786
+        },
+        "orbit": {
+          "elapsedMs": 1282.0999999996275,
+          "renderedFrames": 215,
+          "drawCalls": 87075,
+          "renderFps": 167.69362764219832,
+          "meanFrameIntervalMs": 5.566822429910023,
+          "meanCpuSubmitMs": 1.6632558139604192,
+          "gpuElapsedMs": [
+            8.82688,
+            7.79264,
+            4.576256,
+            4.574208,
+            4.608,
+            4.727808
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1281.699999999255,
+          "renderedFrames": 220,
+          "drawCalls": 89100,
+          "renderFps": 171.6470312866723,
+          "meanFrameIntervalMs": 5.794977168948071,
+          "meanCpuSubmitMs": 1.4813636363653298,
+          "gpuElapsedMs": [
+            7.257088,
+            8.595456,
+            3.191808,
+            3.789824,
+            2.947072,
+            3.405824
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1282,
+          "renderedFrames": 217,
+          "drawCalls": 87885,
+          "renderFps": 169.26677067082682,
+          "meanFrameIntervalMs": 5.638888888888889,
+          "meanCpuSubmitMs": 1.588479262686545,
+          "gpuElapsedMs": [
+            3.966976,
+            4.570112,
+            4.440064,
+            5.578752,
+            2.629632,
+            4.591616
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 2,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 810,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 1000.5,
+          "meanCpuSubmitMs": 1.6499999994412065,
+          "gpuElapsedMs": [
+            3.980288,
+            3.437568
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.08871299999999849
+        },
+        "orbit": {
+          "elapsedMs": 1281.7999999988824,
+          "renderedFrames": 215,
+          "drawCalls": 87075,
+          "renderFps": 167.7328756437724,
+          "meanFrameIntervalMs": 5.571495327106286,
+          "meanCpuSubmitMs": 1.5790697674505239,
+          "gpuElapsedMs": [
+            8.180736,
+            5.4528,
+            2.358272,
+            1.701888,
+            2.379776,
+            2.976768
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1281,
+          "renderedFrames": 216,
+          "drawCalls": 87480,
+          "renderFps": 168.61826697892272,
+          "meanFrameIntervalMs": 5.5418604651162795,
+          "meanCpuSubmitMs": 1.4703703704117626,
+          "gpuElapsedMs": [
+            7.561216,
+            8.449024,
+            1.291264,
+            1.630208,
+            1.906688,
+            2.14528
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1281.2999999988824,
+          "renderedFrames": 217,
+          "drawCalls": 87885,
+          "renderFps": 169.35924451743486,
+          "meanFrameIntervalMs": 5.890740740742466,
+          "meanCpuSubmitMs": 1.4649769585442296,
+          "gpuElapsedMs": [
+            2.956288,
+            4.685824,
+            5.098496,
+            4.504576,
+            5.61152,
+            2.765824
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      },
+      {
+        "run": 3,
+        "idle": {
+          "elapsedMs": 2000,
+          "renderedFrames": 2,
+          "drawCalls": 810,
+          "renderFps": 1,
+          "meanFrameIntervalMs": 1000,
+          "meanCpuSubmitMs": 4.049999998882413,
+          "gpuElapsedMs": [
+            5.881856,
+            7.501824
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ],
+          "rendererTaskSeconds": 0.10855500000000262
+        },
+        "orbit": {
+          "elapsedMs": 1282.2000000011176,
+          "renderedFrames": 213,
+          "drawCalls": 86265,
+          "renderFps": 166.12072999517576,
+          "meanFrameIntervalMs": 5.624056603777099,
+          "meanCpuSubmitMs": 1.6056338028431358,
+          "gpuElapsedMs": [
+            7.933952,
+            6.765568,
+            2.589696,
+            3.047424,
+            3.999744,
+            2.873344
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "pan": {
+          "elapsedMs": 1281,
+          "renderedFrames": 217,
+          "drawCalls": 87885,
+          "renderFps": 169.39890710382514,
+          "meanFrameIntervalMs": 5.671759259266158,
+          "meanCpuSubmitMs": 1.5221198156201345,
+          "gpuElapsedMs": [
+            7.547904,
+            7.973888,
+            1.287168,
+            1.743872,
+            1.50528,
+            1.87904
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        },
+        "zoom": {
+          "elapsedMs": 1281.1000000014901,
+          "renderedFrames": 217,
+          "drawCalls": 87885,
+          "renderFps": 169.38568417746282,
+          "meanFrameIntervalMs": 5.8759259259311,
+          "meanCpuSubmitMs": 1.4769585253627893,
+          "gpuElapsedMs": [
+            8.100864,
+            7.606272,
+            1.202176,
+            2.470912,
+            1.451008,
+            1.83808
+          ],
+          "gpuDisjoint": false,
+          "buffer": [
+            1234,
+            760
+          ]
+        }
+      }
+    ],
+    "qualities": [
+      {
+        "mode": "performance",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 405,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 2.199999999254942,
+        "gpuElapsedMs": [
+          2.473984
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          802,
+          494
+        ]
+      },
+      {
+        "mode": "balanced",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 405,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 3.199999999254942,
+        "gpuElapsedMs": [
+          3.520512
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      },
+      {
+        "mode": "high",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 407,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 3.200000001117587,
+        "gpuElapsedMs": [
+          13.23008
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1542,
+          950
+        ]
+      },
+      {
+        "mode": "auto",
+        "elapsedMs": 1100,
+        "renderedFrames": 1,
+        "drawCalls": 405,
+        "renderFps": 0.9090909090909091,
+        "meanFrameIntervalMs": null,
+        "meanCpuSubmitMs": 3.699999999254942,
+        "gpuElapsedMs": [
+          16.249856
+        ],
+        "gpuDisjoint": false,
+        "buffer": [
+          1234,
+          760
+        ]
+      }
+    ],
+    "selection": {
+      "receiptLatencyMs": 515.2999999988824,
+      "focusWaitIncludingAnimationMs": 1186,
+      "cameraMoveEndMs": 908.2999999988824
+    },
+    "recovery": {
+      "restored": true
+    }
+  }
+]

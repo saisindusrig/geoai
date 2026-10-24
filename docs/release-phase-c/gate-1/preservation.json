@@ -1,0 +1,10 @@
+{
+  "exact_before_after_database_row_and_schema_match": true,
+  "rows": {
+    "dev.db": 10283,
+    "assistant-history.db": 3
+  },
+  "data_schema_accounting_changes": 0,
+  "original_engineering_files": "No writes; fresh manifests checked separately",
+  "original_env_or_credential_files_opened": false
+}

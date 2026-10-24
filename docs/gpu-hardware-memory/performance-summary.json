@@ -1,0 +1,134 @@
+[
+  {
+    "components": 10,
+    "repetitions": 3,
+    "idle": {
+      "drawCallsRange": [
+        30,
+        120
+      ],
+      "medianFPS": 3,
+      "cpuSubmitMedianMs": 0.333,
+      "gpuElapsedMedianMs": 1.576,
+      "gpuSamples": 14
+    },
+    "orbit": {
+      "drawCallsRange": [
+        3210,
+        3255
+      ],
+      "medianFPS": 168.87,
+      "cpuSubmitMedianMs": 0.265,
+      "gpuElapsedMedianMs": 1.209,
+      "gpuSamples": 18
+    },
+    "pan": {
+      "drawCallsRange": [
+        3255,
+        3285
+      ],
+      "medianFPS": 170.52,
+      "cpuSubmitMedianMs": 0.209,
+      "gpuElapsedMedianMs": 1.548,
+      "gpuSamples": 18
+    },
+    "zoom": {
+      "drawCallsRange": [
+        3330,
+        3330
+      ],
+      "medianFPS": 172.91,
+      "cpuSubmitMedianMs": 0.226,
+      "gpuElapsedMedianMs": 1.555,
+      "gpuSamples": 18
+    }
+  },
+  {
+    "components": 100,
+    "repetitions": 3,
+    "idle": {
+      "drawCallsRange": [
+        210,
+        210
+      ],
+      "medianFPS": 1,
+      "cpuSubmitMedianMs": 1.8,
+      "gpuElapsedMedianMs": 3.876,
+      "gpuSamples": 6
+    },
+    "orbit": {
+      "drawCallsRange": [
+        22470,
+        22785
+      ],
+      "medianFPS": 168.72,
+      "cpuSubmitMedianMs": 0.587,
+      "gpuElapsedMedianMs": 1.448,
+      "gpuSamples": 18
+    },
+    "pan": {
+      "drawCallsRange": [
+        22890,
+        22995
+      ],
+      "medianFPS": 169.7,
+      "cpuSubmitMedianMs": 0.521,
+      "gpuElapsedMedianMs": 1.585,
+      "gpuSamples": 18
+    },
+    "zoom": {
+      "drawCallsRange": [
+        22785,
+        22785
+      ],
+      "medianFPS": 168.91,
+      "cpuSubmitMedianMs": 0.506,
+      "gpuElapsedMedianMs": 1.213,
+      "gpuSamples": 18
+    }
+  },
+  {
+    "components": 400,
+    "repetitions": 3,
+    "idle": {
+      "drawCallsRange": [
+        810,
+        810
+      ],
+      "medianFPS": 1,
+      "cpuSubmitMedianMs": 1.85,
+      "gpuElapsedMedianMs": 4.931,
+      "gpuSamples": 6
+    },
+    "orbit": {
+      "drawCallsRange": [
+        86265,
+        87075
+      ],
+      "medianFPS": 167.69,
+      "cpuSubmitMedianMs": 1.606,
+      "gpuElapsedMedianMs": 4.575,
+      "gpuSamples": 18
+    },
+    "pan": {
+      "drawCallsRange": [
+        87480,
+        89100
+      ],
+      "medianFPS": 169.4,
+      "cpuSubmitMedianMs": 1.481,
+      "gpuElapsedMedianMs": 3.069,
+      "gpuSamples": 18
+    },
+    "zoom": {
+      "drawCallsRange": [
+        87885,
+        87885
+      ],
+      "medianFPS": 169.36,
+      "cpuSubmitMedianMs": 1.477,
+      "gpuElapsedMedianMs": 4.472,
+      "gpuSamples": 18
+    }
+  }
+]

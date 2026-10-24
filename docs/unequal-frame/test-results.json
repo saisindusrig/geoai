@@ -1,0 +1,13 @@
+{
+  "backend_regression": {"passed": 322, "failed": 0, "new_unequal_tests": 19},
+  "final_unequal_numerical_and_rejection_tests": {"passed": 19, "failed": 0},
+  "browser_full_workflow": {"spec": "frontend/e2e/unequal-frame.spec.ts", "passed": 1, "failed": 0},
+  "browser_saved_review": {"spec": "frontend/e2e/unequal-frame-review.spec.ts", "passed": 1, "failed": 0},
+  "frontend_comparison_staleness_tests": {"passed": 2, "failed": 0},
+  "typescript_no_emit": "PASSED",
+  "targeted_eslint": "PASSED",
+  "geometry_modifications": 0,
+  "new_live_inference_calls": 0,
+  "engineering_approval": "DISABLED",
+  "code_checks": "DISABLED"
+}

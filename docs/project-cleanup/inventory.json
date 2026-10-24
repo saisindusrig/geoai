@@ -1,0 +1,2000 @@
+{
+  ".cache/analysis-workspace": {
+    "files": 2,
+    "bytes": 25237322,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/anchor-contact": {
+    "files": 5,
+    "bytes": 35146434,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/anchor-contact-3d": {
+    "files": 5,
+    "bytes": 35372750,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/assembly": {
+    "files": 1580,
+    "bytes": 24519407,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/beam-frame": {
+    "files": 635,
+    "bytes": 22903502,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/bearing-capacity": {
+    "files": 325,
+    "bytes": 50411031,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/cad-drawing-3d": {
+    "files": 12,
+    "bytes": 40006083,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/cad-frame": {
+    "files": 14,
+    "bytes": 41218716,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/cad-slab-path": {
+    "files": 20,
+    "bytes": 46621244,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/cad-soil-path": {
+    "files": 24,
+    "bytes": 47601924,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/component-inspection": {
+    "files": 2,
+    "bytes": 51550913,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/copilot-m2-verification": {
+    "files": 8,
+    "bytes": 51046978,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/drawing-strength": {
+    "files": 7,
+    "bytes": 39503891,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/eccentric": {
+    "files": 6,
+    "bytes": 25443342,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/engineering-inputs": {
+    "files": 5,
+    "bytes": 38731994,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/footing-flexure": {
+    "files": 5,
+    "bytes": 52625901,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/footing-transport": {
+    "files": 19,
+    "bytes": 48157360,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/foundation-interface": {
+    "files": 7,
+    "bytes": 34761403,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/gravity": {
+    "files": 11,
+    "bytes": 30695319,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/live-nebius": {
+    "files": 949,
+    "bytes": 22157879,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/milestone2": {
+    "files": 18,
+    "bytes": 19684786,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/model-visualization": {
+    "files": 1,
+    "bytes": 51548160,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/nebius-agent": {
+    "files": 637,
+    "bytes": 21606007,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/opensees": {
+    "files": 6,
+    "bytes": 99134327,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/opensees-milestone": {
+    "files": 609,
+    "bytes": 19811610,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/phase1": {
+    "files": 25,
+    "bytes": 16278442,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/phase2": {
+    "files": 8,
+    "bytes": 18988844,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/physical-column": {
+    "files": 319,
+    "bytes": 20154940,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/plate-contact": {
+    "files": 4,
+    "bytes": 35067869,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/rc-flexure": {
+    "files": 4,
+    "bytes": 53107664,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/rectangular-bearing": {
+    "files": 6,
+    "bytes": 51559534,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/slab-transfer": {
+    "files": 7,
+    "bytes": 33365962,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/soil-contact": {
+    "files": 325,
+    "bytes": 49538533,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/soil-profile": {
+    "files": 323,
+    "bytes": 49925313,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/unequal-frame": {
+    "files": 15,
+    "bytes": 42248534,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/unequal-gravity": {
+    "files": 15,
+    "bytes": 43931765,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cache/workspace-quality": {
+    "files": 1,
+    "bytes": 51548160,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  ".cleanup-backup-path": {
+    "files": 1,
+    "bytes": 50,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  ".env": {
+    "files": 1,
+    "bytes": 1782,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  ".env.example": {
+    "files": 1,
+    "bytes": 4150,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  ".github/workflows": {
+    "files": 3,
+    "bytes": 7786,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  ".gitignore": {
+    "files": 1,
+    "bytes": 1357,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  ".pytest_cache/.gitignore": {
+    "files": 1,
+    "bytes": 39,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  ".pytest_cache/CACHEDIR.TAG": {
+    "files": 1,
+    "bytes": 191,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  ".pytest_cache/README.md": {
+    "files": 1,
+    "bytes": 310,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  "AI_BUILDING_ASSISTANT.md": {
+    "files": 1,
+    "bytes": 3298,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "ASSET_CATALOGUE.md": {
+    "files": 1,
+    "bytes": 1330,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "DEPLOYMENT.md": {
+    "files": 1,
+    "bytes": 11115,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "DISK_AUDIT.md": {
+    "files": 1,
+    "bytes": 33747,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "ENGINEERING_WORKSPACE.md": {
+    "files": 1,
+    "bytes": 8323,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "LOCAL_SETUP.md": {
+    "files": 1,
+    "bytes": 6981,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "MANUAL_QA.md": {
+    "files": 1,
+    "bytes": 5690,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "PROFILE_README_DRAFT.md": {
+    "files": 1,
+    "bytes": 648,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "README.md": {
+    "files": 1,
+    "bytes": 8875,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "STAGING_CHECKLIST.md": {
+    "files": 1,
+    "bytes": 5238,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "STORAGE_SETUP.md": {
+    "files": 1,
+    "bytes": 5572,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.cad-proof-deps": {
+    "files": 2094,
+    "bytes": 848405505,
+    "purpose": "Installed dependencies; retained; removal requires environment verification",
+    "safe_to_remove": false
+  },
+  "backend/.cad-proof-output": {
+    "files": 119298,
+    "bytes": 6375292920,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.env": {
+    "files": 1,
+    "bytes": 251,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/.pytest_cache": {
+    "files": 130,
+    "bytes": 32604713,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  "backend/.test-4cr-final-projections": {
+    "files": 91,
+    "bytes": 1844318,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4cr-focused": {
+    "files": 198,
+    "bytes": 2653030,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4cr-focused-final": {
+    "files": 198,
+    "bytes": 2653030,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4cr-full": {
+    "files": 266,
+    "bytes": 11243380,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4cr-initial": {
+    "files": 91,
+    "bytes": 1844318,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4ct": {
+    "files": 2,
+    "bytes": 1156,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4ct-verified": {
+    "files": 120,
+    "bytes": 1971099,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4d": {
+    "files": 123,
+    "bytes": 1972323,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4d-budget": {
+    "files": 134,
+    "bytes": 2227512,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4d-budget-final": {
+    "files": 12,
+    "bytes": 294912,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4d-live-prepare": {
+    "files": 167,
+    "bytes": 2443343,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-4d-live-prepare-final": {
+    "files": 164,
+    "bytes": 2439379,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-auth-restoration": {
+    "files": 4,
+    "bytes": 187,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-auth-restoration-final": {
+    "files": 5,
+    "bytes": 228,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-current": {
+    "files": 89,
+    "bytes": 1818830,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-final-unit": {
+    "files": 91,
+    "bytes": 1844318,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-first": {
+    "files": 74,
+    "bytes": 1611391,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-focused-final": {
+    "files": 201,
+    "bytes": 2602657,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-focused-seeded": {
+    "files": 205,
+    "bytes": 2654912,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-full": {
+    "files": 266,
+    "bytes": 11243391,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-4b-second": {
+    "files": 84,
+    "bytes": 1753186,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-authoring-4a-fixed": {
+    "files": 1,
+    "bytes": 39394,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-authoring-full": {
+    "files": 175,
+    "bytes": 9399102,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-bim-authoring-regressions": {
+    "files": 115,
+    "bytes": 817654,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-canonical": {
+    "files": 1,
+    "bytes": 7061,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-focused-final": {
+    "files": 1,
+    "bytes": 7061,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-full": {
+    "files": 53,
+    "bytes": 8189435,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-native": {
+    "files": 1,
+    "bytes": 7061,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-native-final": {
+    "files": 1,
+    "bytes": 7061,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-proof-pilot-default": {
+    "files": 7,
+    "bytes": 391964,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-regression-final-verified": {
+    "files": 175,
+    "bytes": 9359426,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace": {
+    "files": 2,
+    "bytes": 35282,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-accept": {
+    "files": 24,
+    "bytes": 175669,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-expanded": {
+    "files": 73,
+    "bytes": 529637,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-expanded2": {
+    "files": 74,
+    "bytes": 530865,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-expanded3": {
+    "files": 81,
+    "bytes": 592095,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-final": {
+    "files": 106,
+    "bytes": 768992,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-final2": {
+    "files": 106,
+    "bytes": 768992,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-full": {
+    "files": 150,
+    "bytes": 9182486,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-full2": {
+    "files": 150,
+    "bytes": 9182490,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-full3": {
+    "files": 150,
+    "bytes": 9182491,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-report": {
+    "files": 105,
+    "bytes": 768986,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-cad-workspace-verified": {
+    "files": 106,
+    "bytes": 768992,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-canary-4ch": {
+    "files": 26,
+    "bytes": 84820,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-canary-4ch-final": {
+    "files": 226,
+    "bytes": 2740088,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-canary-4ch-full": {
+    "files": 292,
+    "bytes": 11328519,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-canary-4ch-seeded": {
+    "files": 292,
+    "bytes": 11328527,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-hardening-extra": {
+    "files": 2,
+    "bytes": 1407,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-hardening-focused": {
+    "files": 1,
+    "bytes": 97,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-hardening-focused-final": {
+    "files": 3,
+    "bytes": 1504,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-live-authenticated-preflight": {
+    "files": 6,
+    "bytes": 1538,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-live-capture-final": {
+    "files": 2,
+    "bytes": 1407,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-live-postflight": {
+    "files": 2,
+    "bytes": 1265,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-platform-demo": {
+    "files": 131,
+    "bytes": 2226288,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-runtime-hardening-final": {
+    "files": 59,
+    "bytes": 8577206,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-runtime-hardening-full": {
+    "files": 53,
+    "bytes": 4022362,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-focus-verified": {
+    "files": 4,
+    "bytes": 3006,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-focused": {
+    "files": 4,
+    "bytes": 2916,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-focused-final": {
+    "files": 4,
+    "bytes": 3006,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-regression": {
+    "files": 60,
+    "bytes": 8581368,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-regression-final": {
+    "files": 60,
+    "bytes": 8581390,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stabilize-regression-verified": {
+    "files": 60,
+    "bytes": 8581494,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-stage1-regression.db": {
+    "files": 1,
+    "bytes": 421888,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-universal-baseline": {
+    "files": 53,
+    "bytes": 8569088,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-universal-full": {
+    "files": 53,
+    "bytes": 8575632,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-universal-full-final": {
+    "files": 53,
+    "bytes": 8575654,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-v2-capture-final": {
+    "files": 3,
+    "bytes": 2819,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.test-v2-preflight": {
+    "files": 3,
+    "bytes": 1991,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/.venv": {
+    "files": 21504,
+    "bytes": 1253868028,
+    "purpose": "Installed dependencies; retained; removal requires environment verification",
+    "safe_to_remove": false
+  },
+  "backend/.venv-civicspan": {
+    "files": 7613,
+    "bytes": 210085660,
+    "purpose": "Installed dependencies; retained; removal requires environment verification",
+    "safe_to_remove": false
+  },
+  "backend/Dockerfile.cad-worker": {
+    "files": 1,
+    "bytes": 2036,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/Dockerfile.cad-worker.dockerignore": {
+    "files": 1,
+    "bytes": 562,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/__pycache__": {
+    "files": 1,
+    "bytes": 3286,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  "backend/alembic": {
+    "files": 25,
+    "bytes": 81072,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/alembic.ini": {
+    "files": 1,
+    "bytes": 552,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/app": {
+    "files": 465,
+    "bytes": 3742151,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/auth-server-error.log": {
+    "files": 1,
+    "bytes": 50816,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/auth-server.log": {
+    "files": 1,
+    "bytes": 19816,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/cad-notices": {
+    "files": 5,
+    "bytes": 41873,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/civicspan_app.py": {
+    "files": 1,
+    "bytes": 2400,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/civicspan_tests": {
+    "files": 2,
+    "bytes": 2359,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/dev.db": {
+    "files": 1,
+    "bytes": 53600256,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/evals": {
+    "files": 118,
+    "bytes": 1943383,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/hardening-focused-final.log": {
+    "files": 1,
+    "bytes": 742,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/hardening-focused.log": {
+    "files": 1,
+    "bytes": 742,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/hardening-server-error.log": {
+    "files": 1,
+    "bytes": 187175,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/hardening-server.log": {
+    "files": 1,
+    "bytes": 77666,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/live-results": {
+    "files": 20,
+    "bytes": 1383633,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/package-lock.json": {
+    "files": 1,
+    "bytes": 86,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/planning.db": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/pytest.ini": {
+    "files": 1,
+    "bytes": 27,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/requirements-cad-proof.txt": {
+    "files": 1,
+    "bytes": 102,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/requirements-cad-worker.txt": {
+    "files": 1,
+    "bytes": 256,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/requirements-civicspan.txt": {
+    "files": 1,
+    "bytes": 147,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/requirements.txt": {
+    "files": 1,
+    "bytes": 512,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/runtime-hardening-final.log": {
+    "files": 1,
+    "bytes": 2162,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/runtime-hardening-full.log": {
+    "files": 1,
+    "bytes": 622,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/runtime.txt": {
+    "files": 1,
+    "bytes": 14,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/scripts": {
+    "files": 46,
+    "bytes": 186728,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-backend-final.log": {
+    "files": 1,
+    "bytes": 2162,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-backend-verified.log": {
+    "files": 1,
+    "bytes": 2162,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-backend.log": {
+    "files": 1,
+    "bytes": 3603,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-focus-verified.log": {
+    "files": 1,
+    "bytes": 823,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-focused-final.log": {
+    "files": 1,
+    "bytes": 823,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stabilization-focused.log": {
+    "files": 1,
+    "bytes": 823,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stage1-pre-migration-20261008-015346.db": {
+    "files": 1,
+    "bytes": 1445888,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/stage45-pre-migration-20261008-151702.db": {
+    "files": 1,
+    "bytes": 1552384,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/storage": {
+    "files": 57195,
+    "bytes": 688665262,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "backend/tests": {
+    "files": 113,
+    "bytes": 718896,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-baseline.log": {
+    "files": 1,
+    "bytes": 3311,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-core.log": {
+    "files": 1,
+    "bytes": 578,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-fixture.log": {
+    "files": 1,
+    "bytes": 550,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-focused.log": {
+    "files": 1,
+    "bytes": 6595,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-full-final.log": {
+    "files": 1,
+    "bytes": 2081,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-full.log": {
+    "files": 1,
+    "bytes": 2081,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-geometry.log": {
+    "files": 1,
+    "bytes": 579,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-preserve.log": {
+    "files": 1,
+    "bytes": 660,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-server-error.log": {
+    "files": 1,
+    "bytes": 183648,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/universal-server.log": {
+    "files": 1,
+    "bytes": 89113,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/uvicorn-live.err.log": {
+    "files": 1,
+    "bytes": 10439,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/uvicorn-live.out.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/uvicorn.err.log": {
+    "files": 1,
+    "bytes": 3327,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "backend/uvicorn.out.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "docker-compose.yml": {
+    "files": 1,
+    "bytes": 864,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "docs/BIM_ASSEMBLY_AUTHORING_4A.md": {
+    "files": 1,
+    "bytes": 13111,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_AUTHORING_ORCHESTRATION_4B.md": {
+    "files": 1,
+    "bytes": 14213,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_AUTHORING_TRUNCATION_DIAGNOSIS_4CR.md": {
+    "files": 1,
+    "bytes": 12527,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_BILLING_VERIFICATION_4DB1.md": {
+    "files": 1,
+    "bytes": 9447,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_CANARY_HARNESS_DIAGNOSIS_4CH.md": {
+    "files": 1,
+    "bytes": 3529,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_FIRST_COMPARISON_PREPARATION_4D.md": {
+    "files": 1,
+    "bytes": 5550,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_FOUNDATION_V1.md": {
+    "files": 1,
+    "bytes": 7818,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_FRESH_CANARY_PREPARATION_4CH2.md": {
+    "files": 1,
+    "bytes": 5437,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_MODEL_EVALUATION_4D.md": {
+    "files": 1,
+    "bytes": 13850,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_TESTING_BUDGET_4D.md": {
+    "files": 1,
+    "bytes": 8806,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_THINKING_STRUCTURED_OUTPUT_4CT.md": {
+    "files": 1,
+    "bytes": 13241,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_UNDERSTAND_CANARY_EXECUTION.md": {
+    "files": 1,
+    "bytes": 1759,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_UNDERSTAND_CANARY_EXECUTION_4CH2.md": {
+    "files": 1,
+    "bytes": 3449,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BIM_UNDERSTAND_CANARY_PREPARATION.md": {
+    "files": 1,
+    "bytes": 3040,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BUILDING_PATCH_V1.md": {
+    "files": 1,
+    "bytes": 6658,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BUILDING_SPECIALIST_V1.md": {
+    "files": 1,
+    "bytes": 9498,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/BUILDING_WORKSPACE_ACCEPTANCE.md": {
+    "files": 1,
+    "bytes": 5951,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_INTEGRATION_FOUNDATION_3B1.md": {
+    "files": 1,
+    "bytes": 14477,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_KERNEL_PROOF_3A.md": {
+    "files": 1,
+    "bytes": 18018,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_LINUX_ACCEPTANCE_FINAL_3B2A.md": {
+    "files": 1,
+    "bytes": 10047,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_LINUX_RUNTIME_INVENTORY_3B2A.json": {
+    "files": 1,
+    "bytes": 2012933,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_WINDOWS_RUNTIME_INVENTORY_3B2A.json": {
+    "files": 1,
+    "bytes": 113466,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_WORKER_DEPLOYMENT_3B2A.md": {
+    "files": 1,
+    "bytes": 13019,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CAD_WORKSPACE_ACCEPTANCE_3B2B.md": {
+    "files": 1,
+    "bytes": 17546,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/CORE_ASSISTANT_V1.md": {
+    "files": 1,
+    "bytes": 7756,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/GENERIC_3D_EXECUTOR_V1.md": {
+    "files": 1,
+    "bytes": 17599,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_AI3D_RUNTIME_HARDENING_V1.md": {
+    "files": 1,
+    "bytes": 12547,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.html": {
+    "files": 1,
+    "bytes": 4813,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.md": {
+    "files": 1,
+    "bytes": 7476,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_GEOAI_3D_FLOW_V1.md": {
+    "files": 1,
+    "bytes": 10683,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_GEOAI_3D_FLOW_V1_AUTHENTICATED.md": {
+    "files": 1,
+    "bytes": 17233,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/LIVE_GEOAI_FLOW_STABILIZATION_V2.md": {
+    "files": 1,
+    "bytes": 12257,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/MODEL_SELECTION.md": {
+    "files": 1,
+    "bytes": 4095,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/NEBIUS_AUTH_RESTORATION.md": {
+    "files": 1,
+    "bytes": 5602,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/PROJECT_CLEANUP_REPORT.md": {
+    "files": 1,
+    "bytes": 15792,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/REAL_LIVE_GEOAI_3D_ACCEPTANCE_V2.md": {
+    "files": 1,
+    "bytes": 11606,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/REPOSITORY_CLEANUP_AUDIT.md": {
+    "files": 1,
+    "bytes": 15708,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/STAGE_1_ARCHITECTURE.md": {
+    "files": 1,
+    "bytes": 66654,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/STAGE_1_ASSISTANT_RUNTIME.md": {
+    "files": 1,
+    "bytes": 16166,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/STAGE_1_FOUNDATION.md": {
+    "files": 1,
+    "bytes": 6380,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/STAGE_1_SITE_WORKSPACE.md": {
+    "files": 1,
+    "bytes": 9864,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/analysis-workspace": {
+    "files": 10,
+    "bytes": 1368908,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/anchor-contact": {
+    "files": 12,
+    "bytes": 1660879,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/anchor-contact-3d": {
+    "files": 15,
+    "bytes": 5570979,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/assembly": {
+    "files": 14,
+    "bytes": 8052486,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/assistant-chat-scene.md": {
+    "files": 1,
+    "bytes": 6442,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/beam-frame": {
+    "files": 13,
+    "bytes": 2582597,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/bearing-capacity": {
+    "files": 10,
+    "bytes": 882400,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/cad-drawing-3d": {
+    "files": 10,
+    "bytes": 1536120,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/cad-frame": {
+    "files": 19,
+    "bytes": 3567975,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/cad-slab-path": {
+    "files": 28,
+    "bytes": 4690072,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/cad-soil-path": {
+    "files": 10,
+    "bytes": 794750,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/component-inspection": {
+    "files": 16,
+    "bytes": 2986420,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/contracts": {
+    "files": 5,
+    "bytes": 297184,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/copilot-m2-verification": {
+    "files": 38,
+    "bytes": 3526318,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/copilot-milestone-1": {
+    "files": 35,
+    "bytes": 2644871,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/copilot-milestone-2": {
+    "files": 51,
+    "bytes": 5171867,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/drawing-strength": {
+    "files": 15,
+    "bytes": 1144915,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/eccentric": {
+    "files": 12,
+    "bytes": 4746323,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/engineering-analysis": {
+    "files": 14,
+    "bytes": 914165,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/engineering-inputs": {
+    "files": 11,
+    "bytes": 1353603,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/footing-flexure": {
+    "files": 13,
+    "bytes": 1428859,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/footing-transport": {
+    "files": 15,
+    "bytes": 1777106,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/foundation-interface": {
+    "files": 22,
+    "bytes": 3800140,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/gravity": {
+    "files": 23,
+    "bytes": 7416273,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/live-nebius": {
+    "files": 12,
+    "bytes": 1837547,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/milestone2": {
+    "files": 6,
+    "bytes": 770034,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/minimal-ui": {
+    "files": 42,
+    "bytes": 3215701,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/model-visualization": {
+    "files": 53,
+    "bytes": 12449179,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/mouse-milestone": {
+    "files": 14,
+    "bytes": 993576,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/nebius-agent": {
+    "files": 9,
+    "bytes": 1733137,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/offline-platform-website.md": {
+    "files": 1,
+    "bytes": 2530,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/phase1": {
+    "files": 5,
+    "bytes": 625939,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/phase2": {
+    "files": 4,
+    "bytes": 435149,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/physical-column": {
+    "files": 6,
+    "bytes": 938970,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/pipeline.mmd": {
+    "files": 1,
+    "bytes": 2605,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/plate-contact": {
+    "files": 19,
+    "bytes": 2769961,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/project-cleanup": {
+    "files": 90,
+    "bytes": 8859344,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/rc-flexure": {
+    "files": 10,
+    "bytes": 2333349,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/rectangular-bearing": {
+    "files": 13,
+    "bytes": 1343255,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/slab-transfer": {
+    "files": 20,
+    "bytes": 4392269,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/soil-contact": {
+    "files": 12,
+    "bytes": 1689461,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/soil-profile": {
+    "files": 10,
+    "bytes": 1104102,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/unequal-frame": {
+    "files": 19,
+    "bytes": 3246468,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/unequal-gravity": {
+    "files": 20,
+    "bytes": 4529021,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/ux-milestone": {
+    "files": 22,
+    "bytes": 2216084,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/ux-milestone-2": {
+    "files": 32,
+    "bytes": 1946301,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "docs/workspace-quality": {
+    "files": 28,
+    "bytes": 2522720,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "frontend/.cache": {
+    "files": 7,
+    "bytes": 3196840,
+    "purpose": "Data, fixtures or engineering evidence; retained; manual review required",
+    "safe_to_remove": false
+  },
+  "frontend/.env.local": {
+    "files": 1,
+    "bytes": 80,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/.gitignore": {
+    "files": 1,
+    "bytes": 480,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/.next": {
+    "files": 5015,
+    "bytes": 1981560815,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  "frontend/.next-phase1": {
+    "files": 4832,
+    "bytes": 1135730449,
+    "purpose": "Generated cache; retain active builds; only verified bytecode eligible",
+    "safe_to_remove": false
+  },
+  "frontend/AGENTS.md": {
+    "files": 1,
+    "bytes": 327,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/CLAUDE.md": {
+    "files": 1,
+    "bytes": 11,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/README.md": {
+    "files": 1,
+    "bytes": 1017,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/app": {
+    "files": 37,
+    "bytes": 217290,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/components": {
+    "files": 223,
+    "bytes": 1745494,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/e2e": {
+    "files": 85,
+    "bytes": 477328,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/eslint.config.mjs": {
+    "files": 1,
+    "bytes": 644,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hardening-build.log": {
+    "files": 1,
+    "bytes": 1451,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hardening-frontend.log": {
+    "files": 1,
+    "bytes": 4624,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hardening-lint.log": {
+    "files": 1,
+    "bytes": 88,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hardening-review.log": {
+    "files": 1,
+    "bytes": 422,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hardening-ts.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/hooks": {
+    "files": 9,
+    "bytes": 72930,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/lib": {
+    "files": 116,
+    "bytes": 587630,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-dev-3001.err.log": {
+    "files": 1,
+    "bytes": 384,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-dev-3001.out.log": {
+    "files": 1,
+    "bytes": 654,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-dev.err.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-dev.out.log": {
+    "files": 1,
+    "bytes": 2513,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-env.d.ts": {
+    "files": 1,
+    "bytes": 258,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-start-ui.err.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next-start-ui.out.log": {
+    "files": 1,
+    "bytes": 116,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/next.config.ts": {
+    "files": 1,
+    "bytes": 1020,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/node_modules": {
+    "files": 57653,
+    "bytes": 1041376049,
+    "purpose": "Installed dependencies; retained; removal requires environment verification",
+    "safe_to_remove": false
+  },
+  "frontend/package-lock.json": {
+    "files": 1,
+    "bytes": 419454,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/package.json": {
+    "files": 1,
+    "bytes": 2115,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/playwright.config.ts": {
+    "files": 1,
+    "bytes": 1001,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/postcss.config.mjs": {
+    "files": 1,
+    "bytes": 94,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/public": {
+    "files": 408,
+    "bytes": 105709286,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/scripts": {
+    "files": 4,
+    "bytes": 4810,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-build-verified.log": {
+    "files": 1,
+    "bytes": 1451,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-build.log": {
+    "files": 1,
+    "bytes": 1451,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-lint-verified.log": {
+    "files": 1,
+    "bytes": 88,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-lint.log": {
+    "files": 1,
+    "bytes": 88,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-tests-verified.log": {
+    "files": 1,
+    "bytes": 4351,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-tests.log": {
+    "files": 1,
+    "bytes": 4629,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-ts-verified.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stabilization-ts.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/stores": {
+    "files": 2,
+    "bytes": 18101,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/test-results": {
+    "files": 3,
+    "bytes": 314073,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/tsconfig.json": {
+    "files": 1,
+    "bytes": 787,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/tsconfig.tsbuildinfo": {
+    "files": 1,
+    "bytes": 638926,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-build-final.log": {
+    "files": 1,
+    "bytes": 1450,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-e2e.log": {
+    "files": 1,
+    "bytes": 371,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-frontend-final.log": {
+    "files": 1,
+    "bytes": 4015,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-frontend.log": {
+    "files": 1,
+    "bytes": 4254,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-lint-final.log": {
+    "files": 1,
+    "bytes": 88,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-lint.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-server-error.log": {
+    "files": 1,
+    "bytes": 167163,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-server.log": {
+    "files": 1,
+    "bytes": 21211,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-ts-final.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/universal-ts.log": {
+    "files": 1,
+    "bytes": 0,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/vitest.config.ts": {
+    "files": 1,
+    "bytes": 527,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "frontend/vitest.setup.ts": {
+    "files": 1,
+    "bytes": 43,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "github-update.bat": {
+    "files": 1,
+    "bytes": 1283,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "run-website.bat": {
+    "files": 1,
+    "bytes": 1158,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  },
+  "start-copilot-review.ps1": {
+    "files": 1,
+    "bytes": 2889,
+    "purpose": "Source/configuration/assets; retained unless independently proven redundant",
+    "safe_to_remove": false
+  }
+}

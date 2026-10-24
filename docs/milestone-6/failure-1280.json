@@ -1,0 +1,11 @@
+{
+  "width": 1280,
+  "height": 900,
+  "real_disabled_backend": true,
+  "sends": 2,
+  "no_fabricated_messages": true,
+  "manual_retry": true,
+  "errors": [],
+  "unexpected": [],
+  "inference_requests": 0
+}

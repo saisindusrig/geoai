@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+from urllib.parse import urlsplit
 
 from app.core.config import settings
 from app.core.sentry import sentry_enabled
@@ -21,6 +22,27 @@ def _warning(code: str, message: str, *, severity: str = "warning") -> dict:
 
 def _is_production() -> bool:
     return settings.ENVIRONMENT.lower() in ("production", "prod")
+
+
+def enforce_production_security() -> None:
+    """Fail before initializing any production data with development access."""
+    if not _is_production():
+        return
+    if not settings.AUTH_REQUIRE_JWT:
+        raise RuntimeError('Production startup requires AUTH_REQUIRE_JWT=true.')
+    if settings.APP_SECRET in DEV_SECRETS or len(settings.APP_SECRET.strip()) < 32:
+        raise RuntimeError('Production startup requires a non-default APP_SECRET of at least 32 characters.')
+    if not settings.RATE_LIMITING_ENABLED:
+        raise RuntimeError('Production startup requires rate limiting.')
+    if settings.CORS_ALLOW_NETLIFY:
+        raise RuntimeError('Production requires explicit CORS origins; wildcard preview access is forbidden.')
+    origins = [settings.NEXT_PUBLIC_APP_URL, *filter(None, (s.strip() for s in settings.CORS_ALLOWED_ORIGINS.split(',')))]
+    for origin in origins:
+        parsed = urlsplit(origin)
+        if (parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password
+                or parsed.path not in ('', '/') or parsed.query or parsed.fragment or '*' in origin
+                or parsed.hostname in ('localhost', '127.0.0.1', '::1')):
+            raise RuntimeError('Production requires explicit HTTPS public origins without credentials or wildcards.')
 
 
 def file_access_mode() -> str:

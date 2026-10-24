@@ -1,0 +1,54 @@
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":23280}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":19820}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":23280}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":7232}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":1328}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":12376}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":3048}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":2260}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24708}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":13208}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":16868}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":16980}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":25060}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24344}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":21264}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":17728}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":22224}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":22724}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_22_18_805Z-debug-0.log","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_23_58_304Z-debug-0.log","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_27_09_560Z-debug-0.log","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_29_07_666Z-debug-0.log","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_38_08_535Z-debug-0.log","pid":10740}
+{"kind":"blocked-write","detail":"C:\\Users\\ADMIN\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T11_38_17_545Z-debug-0.log","pid":10740}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":25024}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24240}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":20424}
+{"kind":"blocked-dns","detail":"registry.npmjs.org","pid":20424}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":3268}
+{"kind":"allowed-owned-turbopack-ipc","detail":{"port":1131,"parentPid":20424},"pid":3268}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":3268}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":19772}
+{"kind":"allowed-owned-turbopack-ipc","detail":{"port":1133,"parentPid":20424},"pid":19772}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":19772}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":20676}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":25260}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24852}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24964}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":9776}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":23828}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":24160}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":25448}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":18960}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":12584}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":20640}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":16716}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":14052}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":15392}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":9548}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":13936}
+{"kind":"runtime","detail":{"version":"v24.22.1","execPath":"D:\\layout project\\.local-tooling\\node-24.22.1-validation\\runtime\\node-v24.22.1-win-x64\\node.exe"},"pid":21180}

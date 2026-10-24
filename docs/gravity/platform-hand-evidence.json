@@ -1,0 +1,1110 @@
+{
+  "method": "Independent symmetric three-DOF strain energy condensation, distinct from full member stiffness assembly. Kuu=24Bc/H\u00b3+4EAb/L, Ku\u03b8=12Bc/H\u00b2\u22124EAb h/L, K\u03b8\u03b8=8Bc/H+4EAb h\u00b2/L+4Bb/L, F\u03b8=w(L\u00b2/6\u2212La), Fv=wL+sumFy+wcH. See REPORT for displacement and reaction equations. All components/materials/loads remain explicitly synthetic.",
+  "verified_runs": 4,
+  "runs": [
+    {
+      "analysis_id": 281,
+      "revision_id": 83,
+      "run_id": "6b4bb8b4-eca9-448b-bcfb-cd89c05b2338",
+      "units": "SI",
+      "mesh": 2,
+      "case_evidence": [
+        {
+          "name": "Gravity",
+          "hand_head_si": [
+            -2.0551375313407735e-06,
+            -1.2444444444444445e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_head_si": [
+            -2.05513753134081e-06,
+            -1.24444444444444e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_beam_end_si": [
+            5.382540285788658e-07,
+            2.645642895435009e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_beam_end_si": [
+            5.38254028578826e-07,
+            2.645642895435008e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_midspan_v_m": -0.00020500523050335956,
+          "actual_midspan_v_m": -0.00020500523050335948,
+          "hand_reaction_si": [
+            2153.0161143154623,
+            7000.0,
+            -2350.7387185636417
+          ],
+          "actual_reaction_si": [
+            2153.0161143154605,
+            6999.999999999999,
+            -2350.7387185636417
+          ],
+          "physical_end_moment_nm": 5654.21445867738,
+          "hand_offset_couple_nm": -1115.3016114315458,
+          "retained_joint_moment_nm": 4538.912847245834,
+          "equilibrium_residual_si": [
+            -9.094947017729282e-13,
+            9.094947017729282e-13,
+            3.637978807091713e-12
+          ],
+          "self_weight_evidence": [],
+          "applied_loads": {
+            "name": "Gravity",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                -1000.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                -1000.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                0.0
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -2000.0
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                0.0
+              ]
+            },
+            "self_weight_evidence": [],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        },
+        {
+          "name": "Self weight",
+          "hand_head_si": [
+            -4.747891757467679e-06,
+            -4.4356896e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_head_si": [
+            -4.74789175746774e-06,
+            -4.4356896e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_beam_end_si": [
+            1.2435040607944677e-06,
+            4.551404127393206e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_beam_end_si": [
+            1.2435040607944e-06,
+            4.551404127393196e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_midspan_v_m": -0.00047517506439653887,
+          "actual_midspan_v_m": -0.0004751750643965387,
+          "hand_reaction_si": [
+            4974.016243177868,
+            36039.978,
+            -5430.805878255246
+          ],
+          "actual_reaction_si": [
+            4974.016243177865,
+            36039.977999999996,
+            -5430.805878255246
+          ],
+          "physical_end_moment_nm": 13062.677224231713,
+          "hand_offset_couple_nm": -2576.631124317786,
+          "retained_joint_moment_nm": 10486.046099913927,
+          "equilibrium_residual_si": [
+            -4.547473508864641e-12,
+            3.637978807091713e-12,
+            2.9103830456733704e-11
+          ],
+          "self_weight_evidence": [
+            {
+              "component_id": "industrial-platform-5x3:column-nw",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-north",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.06,
+              "mass_per_m_kg": 471.0,
+              "length_m": 6,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 4620.51,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-ne",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            }
+          ],
+          "applied_loads": {
+            "name": "Self weight",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                -6930.765
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -4620.51
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                -6930.765
+              ]
+            },
+            "self_weight_evidence": [
+              {
+                "component_id": "industrial-platform-5x3:column-nw",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-north",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.06,
+                "mass_per_m_kg": 471.0,
+                "length_m": 6,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 4620.51,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-ne",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              }
+            ],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        }
+      ],
+      "superposition": {
+        "passed": true,
+        "factors": [
+          {
+            "case_name": "Horizontal",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Gravity",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Self weight",
+            "factor": 1.0
+          }
+        ],
+        "checks": 575,
+        "max_errors": {
+          "offset_moment": 5.3660187404602766e-11,
+          "nodes": 2.168404344971009e-19,
+          "elements": 5.366018740460277e-10,
+          "reactions": 1.4551915228366852e-11,
+          "sample_displacement": 4.336808689942018e-19,
+          "diagrams": 5.366018740460277e-10
+        },
+        "method": "Actual independently solved cases multiplied by explicitly declared factors; compared with a separate actual combined-load OpenSees solve including nodal/sample displacement, local forces, diagrams, reactions and offset moments. Linear elastic superposition only; no code combination or approval."
+      },
+      "solver_version": "3.8.0",
+      "global_equilibrium_residual_si": [
+        7.021299097687006e-10,
+        3.637978807091713e-12,
+        -2.255546860396862e-09
+      ],
+      "file_hashes_verified": true,
+      "case_solver_run_ids": {
+        "Horizontal": "cb8fda21-2edd-49f2-bcdd-20b11ea9f676",
+        "Gravity": "236128f4-8e0a-4f89-9ed6-660c25a560fe",
+        "Self weight": "eb28a270-411e-4b95-a52e-9d6fe3e2174e"
+      }
+    },
+    {
+      "analysis_id": 284,
+      "revision_id": 83,
+      "run_id": "d2e32666-b53a-4ff6-a087-3f083a595559",
+      "units": "SI",
+      "mesh": 2,
+      "case_evidence": [
+        {
+          "name": "Gravity",
+          "hand_head_si": [
+            -2.0551375313407735e-06,
+            -1.2444444444444445e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_head_si": [
+            -2.05513753134081e-06,
+            -1.24444444444444e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_beam_end_si": [
+            5.382540285788658e-07,
+            2.645642895435009e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_beam_end_si": [
+            5.38254028578826e-07,
+            2.645642895435008e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_midspan_v_m": -0.00020500523050335956,
+          "actual_midspan_v_m": -0.00020500523050335948,
+          "hand_reaction_si": [
+            2153.0161143154623,
+            7000.0,
+            -2350.7387185636417
+          ],
+          "actual_reaction_si": [
+            2153.0161143154605,
+            6999.999999999999,
+            -2350.7387185636417
+          ],
+          "physical_end_moment_nm": 5654.21445867738,
+          "hand_offset_couple_nm": -1115.3016114315458,
+          "retained_joint_moment_nm": 4538.912847245834,
+          "equilibrium_residual_si": [
+            -9.094947017729282e-13,
+            9.094947017729282e-13,
+            3.637978807091713e-12
+          ],
+          "self_weight_evidence": [],
+          "applied_loads": {
+            "name": "Gravity",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                -1000.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                -1000.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                0.0
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -2000.0
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                0.0
+              ]
+            },
+            "self_weight_evidence": [],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        },
+        {
+          "name": "Self weight",
+          "hand_head_si": [
+            -4.747891757467679e-06,
+            -4.4356896e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_head_si": [
+            -4.74789175746774e-06,
+            -4.4356896e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_beam_end_si": [
+            1.2435040607944677e-06,
+            4.551404127393206e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_beam_end_si": [
+            1.2435040607944e-06,
+            4.551404127393196e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_midspan_v_m": -0.00047517506439653887,
+          "actual_midspan_v_m": -0.0004751750643965387,
+          "hand_reaction_si": [
+            4974.016243177868,
+            36039.978,
+            -5430.805878255246
+          ],
+          "actual_reaction_si": [
+            4974.016243177865,
+            36039.977999999996,
+            -5430.805878255246
+          ],
+          "physical_end_moment_nm": 13062.677224231713,
+          "hand_offset_couple_nm": -2576.631124317786,
+          "retained_joint_moment_nm": 10486.046099913927,
+          "equilibrium_residual_si": [
+            -4.547473508864641e-12,
+            3.637978807091713e-12,
+            2.9103830456733704e-11
+          ],
+          "self_weight_evidence": [
+            {
+              "component_id": "industrial-platform-5x3:column-nw",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-north",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.06,
+              "mass_per_m_kg": 471.0,
+              "length_m": 6,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 4620.51,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-ne",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            }
+          ],
+          "applied_loads": {
+            "name": "Self weight",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                -6930.765
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -4620.51
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                -6930.765
+              ]
+            },
+            "self_weight_evidence": [
+              {
+                "component_id": "industrial-platform-5x3:column-nw",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-north",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.06,
+                "mass_per_m_kg": 471.0,
+                "length_m": 6,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 4620.51,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-ne",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              }
+            ],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        }
+      ],
+      "superposition": {
+        "passed": true,
+        "factors": [
+          {
+            "case_name": "Horizontal",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Gravity",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Self weight",
+            "factor": 1.0
+          }
+        ],
+        "checks": 575,
+        "max_errors": {
+          "sample_displacement": 4.336808689942018e-19,
+          "offset_moment": 5.3660187404602766e-11,
+          "diagrams": 5.366018740460277e-10,
+          "elements": 5.366018740460277e-10,
+          "nodes": 2.168404344971009e-19,
+          "reactions": 1.4551915228366852e-11
+        },
+        "method": "Actual independently solved cases multiplied by explicitly declared factors; compared with a separate actual combined-load OpenSees solve including nodal/sample displacement, local forces, diagrams, reactions and offset moments. Linear elastic superposition only; no code combination or approval."
+      },
+      "solver_version": "3.8.0",
+      "global_equilibrium_residual_si": [
+        7.021299097687006e-10,
+        3.637978807091713e-12,
+        -2.255546860396862e-09
+      ],
+      "file_hashes_verified": true,
+      "case_solver_run_ids": {
+        "Horizontal": "ea32ee0a-f944-4a43-8a13-444c63dce685",
+        "Gravity": "9fc7d0d4-b267-4e1c-829c-3a42b5ba1361",
+        "Self weight": "b00712c2-176d-49ba-b653-dccf9c8a249e"
+      }
+    },
+    {
+      "analysis_id": 287,
+      "revision_id": 83,
+      "run_id": "ad2ba60a-ee50-414b-84f4-84e46e759893",
+      "units": "N-mm",
+      "mesh": 4,
+      "case_evidence": [
+        {
+          "name": "Gravity",
+          "hand_head_si": [
+            -2.0551375313407735e-06,
+            -1.2444444444444445e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_head_si": [
+            -2.0551375313410505e-06,
+            -1.244444444444392e-06,
+            -2.59339155991962e-05
+          ],
+          "hand_beam_end_si": [
+            5.382540285788658e-07,
+            2.645642895435009e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_beam_end_si": [
+            5.382540285785719e-07,
+            2.645642895435036e-06,
+            -2.59339155991962e-05
+          ],
+          "hand_midspan_v_m": -0.00020500523050335956,
+          "actual_midspan_v_m": -0.00020500523050335967,
+          "hand_reaction_si": [
+            2153.0161143154623,
+            7000.0,
+            -2350.7387185636417
+          ],
+          "actual_reaction_si": [
+            2153.0161143154546,
+            6999.999999999481,
+            -2350.738718563644
+          ],
+          "physical_end_moment_nm": 5654.214458677395,
+          "hand_offset_couple_nm": -1115.301611431547,
+          "retained_joint_moment_nm": 4538.912847245848,
+          "equilibrium_residual_si": [
+            -1.2732925824820995e-11,
+            8.649294613860548e-10,
+            7.885319064371288e-09
+          ],
+          "self_weight_evidence": [],
+          "applied_loads": {
+            "name": "Gravity",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                -1000.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                -1000.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                0.0
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -2000.0
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                0.0
+              ]
+            },
+            "self_weight_evidence": [],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        },
+        {
+          "name": "Self weight",
+          "hand_head_si": [
+            -4.747891757467679e-06,
+            -4.4356896e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_head_si": [
+            -4.74789175746833e-06,
+            -4.43568959999978e-06,
+            -5.9913958182621e-05
+          ],
+          "hand_beam_end_si": [
+            1.2435040607944677e-06,
+            4.551404127393206e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_beam_end_si": [
+            1.2435040607937757e-06,
+            4.551404127393365e-06,
+            -5.9913958182621e-05
+          ],
+          "hand_midspan_v_m": -0.00047517506439653887,
+          "actual_midspan_v_m": -0.0004751750643965393,
+          "hand_reaction_si": [
+            4974.016243177868,
+            36039.978,
+            -5430.805878255246
+          ],
+          "actual_reaction_si": [
+            4974.016243177833,
+            36039.977999998766,
+            -5430.80587825524
+          ],
+          "physical_end_moment_nm": 13062.67722423174,
+          "hand_offset_couple_nm": -2576.6311243177906,
+          "retained_joint_moment_nm": 10486.04609991395,
+          "equilibrium_residual_si": [
+            -2.3646862246096134e-11,
+            1.9590515876188874e-09,
+            1.8164428183808923e-08
+          ],
+          "self_weight_evidence": [
+            {
+              "component_id": "industrial-platform-5x3:column-nw",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-north",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.06,
+              "mass_per_m_kg": 471.0,
+              "length_m": 6,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 4620.51,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-ne",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            }
+          ],
+          "applied_loads": {
+            "name": "Self weight",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                -6930.765
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -4620.51
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                -6930.765
+              ]
+            },
+            "self_weight_evidence": [
+              {
+                "component_id": "industrial-platform-5x3:column-nw",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-north",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.06,
+                "mass_per_m_kg": 471.0,
+                "length_m": 6,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 4620.51,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-ne",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              }
+            ],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        }
+      ],
+      "superposition": {
+        "passed": true,
+        "factors": [
+          {
+            "case_name": "Horizontal",
+            "factor": 0.5
+          },
+          {
+            "case_name": "Gravity",
+            "factor": 0.5
+          },
+          {
+            "case_name": "Self weight",
+            "factor": 0.5
+          }
+        ],
+        "checks": 1139,
+        "max_errors": {
+          "sample_displacement": 1.6263032587282567e-19,
+          "offset_moment": 5.4569682106375694e-12,
+          "diagrams": 4.3291947804391384e-10,
+          "elements": 4.31100488640368e-10,
+          "nodes": 1.2197274440461925e-19,
+          "reactions": 6.730260793119669e-11
+        },
+        "method": "Actual independently solved cases multiplied by explicitly declared factors; compared with a separate actual combined-load OpenSees solve including nodal/sample displacement, local forces, diagrams, reactions and offset moments. Linear elastic superposition only; no code combination or approval."
+      },
+      "solver_version": "3.8.0",
+      "global_equilibrium_residual_si": [
+        -2.2919266484677792e-10,
+        1.6561898519285023e-09,
+        1.3331373338587582e-08
+      ],
+      "file_hashes_verified": true,
+      "case_solver_run_ids": {
+        "Horizontal": "2eaa69cc-62da-4dbe-8828-2eb283bafeff",
+        "Gravity": "0a1d2e37-9277-4a0e-965c-55a5af62987a",
+        "Self weight": "baaf34e9-83b9-4aa5-b1dd-5fc0730cc7e3"
+      }
+    },
+    {
+      "analysis_id": 290,
+      "revision_id": 84,
+      "run_id": "5eeee328-1588-41f5-9441-c766d3a0d514",
+      "units": "SI",
+      "mesh": 2,
+      "case_evidence": [
+        {
+          "name": "Gravity",
+          "hand_head_si": [
+            -2.0551375313407735e-06,
+            -1.2444444444444445e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_head_si": [
+            -2.05513753134081e-06,
+            -1.24444444444444e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_beam_end_si": [
+            5.382540285788658e-07,
+            2.645642895435009e-06,
+            -2.5933915599196372e-05
+          ],
+          "actual_beam_end_si": [
+            5.38254028578826e-07,
+            2.645642895435008e-06,
+            -2.593391559919634e-05
+          ],
+          "hand_midspan_v_m": -0.00020500523050335956,
+          "actual_midspan_v_m": -0.00020500523050335948,
+          "hand_reaction_si": [
+            2153.0161143154623,
+            7000.0,
+            -2350.7387185636417
+          ],
+          "actual_reaction_si": [
+            2153.0161143154605,
+            6999.999999999999,
+            -2350.7387185636417
+          ],
+          "physical_end_moment_nm": 5654.21445867738,
+          "hand_offset_couple_nm": -1115.3016114315458,
+          "retained_joint_moment_nm": 4538.912847245834,
+          "equilibrium_residual_si": [
+            -9.094947017729282e-13,
+            9.094947017729282e-13,
+            3.637978807091713e-12
+          ],
+          "self_weight_evidence": [],
+          "applied_loads": {
+            "name": "Gravity",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                -1000.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                -1000.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                0.0
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -2000.0
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                0.0
+              ]
+            },
+            "self_weight_evidence": [],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        },
+        {
+          "name": "Self weight",
+          "hand_head_si": [
+            -4.747891757467679e-06,
+            -4.4356896e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_head_si": [
+            -4.74789175746774e-06,
+            -4.4356896e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_beam_end_si": [
+            1.2435040607944677e-06,
+            4.551404127393206e-06,
+            -5.991395818262141e-05
+          ],
+          "actual_beam_end_si": [
+            1.2435040607944e-06,
+            4.551404127393196e-06,
+            -5.991395818262134e-05
+          ],
+          "hand_midspan_v_m": -0.00047517506439653887,
+          "actual_midspan_v_m": -0.0004751750643965387,
+          "hand_reaction_si": [
+            4974.016243177868,
+            36039.978,
+            -5430.805878255246
+          ],
+          "actual_reaction_si": [
+            4974.016243177865,
+            36039.977999999996,
+            -5430.805878255246
+          ],
+          "physical_end_moment_nm": 13062.677224231713,
+          "hand_offset_couple_nm": -2576.631124317786,
+          "retained_joint_moment_nm": 10486.046099913927,
+          "equilibrium_residual_si": [
+            -4.547473508864641e-12,
+            3.637978807091713e-12,
+            2.9103830456733704e-11
+          ],
+          "self_weight_evidence": [
+            {
+              "component_id": "industrial-platform-5x3:column-nw",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:beam-north",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.06,
+              "mass_per_m_kg": 471.0,
+              "length_m": 6,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 4620.51,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            },
+            {
+              "component_id": "industrial-platform-5x3:column-ne",
+              "density_kg_m3": 7850.0,
+              "area_m2": 0.09,
+              "mass_per_m_kg": 706.5,
+              "length_m": 3.1999999999999997,
+              "gravity_m_s2": 9.81,
+              "direction": "local_enu_negative_up",
+              "weight_n_per_m": 6930.765,
+              "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+              "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+            }
+          ],
+          "applied_loads": {
+            "name": "Self weight",
+            "source": "Explicit synthetic verification load case; only selected members; no slab distribution",
+            "nodal_loads_si": {
+              "2": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "3": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "uniform_global_by_component_n_per_m": {
+              "industrial-platform-5x3:column-nw": [
+                0.0,
+                -6930.765
+              ],
+              "industrial-platform-5x3:beam-north": [
+                0.0,
+                -4620.51
+              ],
+              "industrial-platform-5x3:column-ne": [
+                0.0,
+                -6930.765
+              ]
+            },
+            "self_weight_evidence": [
+              {
+                "component_id": "industrial-platform-5x3:column-nw",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:beam-north",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.06,
+                "mass_per_m_kg": 471.0,
+                "length_m": 6,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 4620.51,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              },
+              {
+                "component_id": "industrial-platform-5x3:column-ne",
+                "density_kg_m3": 7850.0,
+                "area_m2": 0.09,
+                "mass_per_m_kg": 706.5,
+                "length_m": 3.1999999999999997,
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "weight_n_per_m": 6930.765,
+                "source": "Explicit synthetic steel density 7850 kg/m3; actual member material not certified",
+                "gravity_source": "Explicit synthetic g=9.81 m/s2 toward saved local negative Up"
+              }
+            ],
+            "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+            "scope": "Selected members only; no automatic slab distribution"
+          }
+        }
+      ],
+      "superposition": {
+        "passed": true,
+        "factors": [
+          {
+            "case_name": "Horizontal",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Gravity",
+            "factor": 1.0
+          },
+          {
+            "case_name": "Self weight",
+            "factor": 1.0
+          }
+        ],
+        "checks": 575,
+        "max_errors": {
+          "sample_displacement": 4.336808689942018e-19,
+          "offset_moment": 5.3660187404602766e-11,
+          "diagrams": 5.366018740460277e-10,
+          "elements": 5.366018740460277e-10,
+          "nodes": 2.168404344971009e-19,
+          "reactions": 1.4551915228366852e-11
+        },
+        "method": "Actual independently solved cases multiplied by explicitly declared factors; compared with a separate actual combined-load OpenSees solve including nodal/sample displacement, local forces, diagrams, reactions and offset moments. Linear elastic superposition only; no code combination or approval."
+      },
+      "solver_version": "3.8.0",
+      "global_equilibrium_residual_si": [
+        7.021299097687006e-10,
+        3.637978807091713e-12,
+        -2.255546860396862e-09
+      ],
+      "file_hashes_verified": true,
+      "case_solver_run_ids": {
+        "Horizontal": "eeea527b-92f7-42c8-a1fa-97c2acc02085",
+        "Gravity": "b32bbf15-b4d4-4181-a9d7-5c7e698ceb10",
+        "Self weight": "378be042-0f67-4286-bcaf-6fa8e10f844a"
+      }
+    }
+  ]
+}

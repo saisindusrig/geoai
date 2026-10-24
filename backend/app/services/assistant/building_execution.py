@@ -21,10 +21,10 @@ def _build(db,project_id,version_id):
     owned_row(db,"design_proposal_versions",project_id,version_id)
     for revision in db.query(ModelRevision).filter_by(project_id=project_id,source="building_specialist").all():
         if revision.document_json.get("metadata",{}).get("buildingProposalVersionId")==version_id:
-            db.commit();return {"modelRevisionId":str(revision.id),"status":"BUILT"}
+            db.commit();return {"modelRevisionId":str(revision.id),"scenarioId":revision.design_scenario_id,"status":"BUILT"}
     for revision in db.query(ModelRevision).filter_by(project_id=project_id).all():
         if version_id in {revision.document_json.get("metadata",{}).get("buildingPatchProposalVersionId"),revision.document_json.get("metadata",{}).get("ai3dProposalVersionId")}:
-            db.commit();return {"modelRevisionId":str(revision.id),"status":"BUILT"}
+            db.commit();return {"modelRevisionId":str(revision.id),"scenarioId":revision.design_scenario_id,"status":"BUILT"}
     svc=ProposalService();view=svc.assert_build_current(db,project_id,version_id)
     routing=ExecutionRouter().route_approved(db,project_id,version_id)
     if not routing["canBuildAll"]:error(409,"GENERATION_UNAVAILABLE","Every asset must have a supported specialist adapter.")
@@ -117,4 +117,4 @@ def _build(db,project_id,version_id):
     scenario.design_output_json={**(scenario.design_output_json or {}),"editable_model_revision_id":revision.id,
         "editable_model_revision_number":number,"building_proposal_version_id":version_id,"concept_only":True}
     svc.transition(db,project_id,version_id,"BUILT");db.commit()
-    return {"modelRevisionId":str(revision.id),"status":"BUILT"}
+    return {"modelRevisionId":str(revision.id),"scenarioId":revision.design_scenario_id,"status":"BUILT"}

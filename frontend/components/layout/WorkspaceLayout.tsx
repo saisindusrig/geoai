@@ -1,9 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Menu, Minimize2, X } from "lucide-react";
+import { Menu, Minimize2, X } from "lucide-react";
 import { useCallback, useEffect, useLayoutEffect, useState, type ReactNode } from "react";
-import ModernAssistantPanel from "@/components/ai/ModernAssistantPanel";
 import { WorkspaceMapProvider } from "@/components/layout/WorkspaceMapContext";
 import { PanelResizeHandle } from "@/components/ui/panel-resize-handle";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { useProjectStore } from "@/stores/projectStore";
 
 const LEFT_WIDTH = 304;
-const RIGHT_WIDTH_DEFAULT = 380;
+const RIGHT_WIDTH_DEFAULT = 440;
 const RIGHT_WIDTH_MIN = 340;
 const RIGHT_WIDTH_MAX = 560;
 
@@ -21,20 +20,10 @@ function focusKey(projectId: number) {
   return `project-${projectId}-focus-mode`;
 }
 
-function copilotPanelKey(projectId: number) {
-  return `project-${projectId}-copilot-panel`;
-}
-
 function readStoredFocus(projectId: number, defaultFocus: boolean) {
   if (typeof window === "undefined") return defaultFocus;
   const stored = localStorage.getItem(focusKey(projectId));
   return stored !== null ? stored === "true" : defaultFocus;
-}
-
-function readStoredCopilotVisible(projectId: number) {
-  if (typeof window === "undefined") return true;
-  const stored = localStorage.getItem(copilotPanelKey(projectId));
-  return stored !== null ? stored === "true" : true;
 }
 
 interface AiProps {
@@ -58,12 +47,13 @@ interface WorkspaceLayoutProps {
   mapBottomControls?: ReactNode;
   mapCreditsContainer?: HTMLDivElement | null;
   rightPanel?: ReactNode;
+  compactInspector?: boolean;
+  inspectorOpen?: boolean;
   defaultFocus?: boolean;
 }
 
 export default function WorkspaceLayout({
   projectId,
-  ai,
   leftPanel,
   map,
   toolbar,
@@ -72,17 +62,17 @@ export default function WorkspaceLayout({
   mapBottomControls,
   mapCreditsContainer,
   rightPanel,
+  compactInspector = false,
+  inspectorOpen = false,
   defaultFocus = false,
 }: WorkspaceLayoutProps) {
   const [focusMode, setFocusMode] = useState(() => readStoredFocus(projectId, defaultFocus));
   const [focusProjectId, setFocusProjectId] = useState(projectId);
+  const [analysisMode,setAnalysisMode] = useState(false);
+  useEffect(()=>{const handler=(event:Event)=>setAnalysisMode(!!(event as CustomEvent<{active:boolean}>).detail?.active);window.addEventListener("geoai:analysis-workspace",handler);return()=>window.removeEventListener("geoai:analysis-workspace",handler);},[]);
   const [leftOpen, setLeftOpen] = useState(false);
-  const [rightOpen, setRightOpen] = useState(false);
   const [leftControlsContainer, setLeftControlsContainer] = useState<HTMLDivElement | null>(null);
   const [rightControlsContainer, setRightControlsContainer] = useState<HTMLDivElement | null>(null);
-  const [copilotPanelVisible, setCopilotPanelVisible] = useState(() =>
-    readStoredCopilotVisible(projectId),
-  );
   const setWorkspaceFullscreen = useProjectStore((s) => s.setWorkspaceFullscreen);
   const { size: rightWidth, onResizePointerDown: onRightWidthPointerDown } = useHorizontalPanelResize({
     storageKey: "geoai-workspace-right-width",
@@ -91,10 +81,11 @@ export default function WorkspaceLayout({
     maxSize: RIGHT_WIDTH_MAX,
   });
 
+  const {size: inspectorWidth,onResizePointerDown: onInspectorResize}=useHorizontalPanelResize({storageKey:"geoai-inspector-width",defaultSize:344,minSize:320,maxSize:520});
+
   if (projectId !== focusProjectId) {
     setFocusProjectId(projectId);
     setFocusMode(readStoredFocus(projectId, defaultFocus));
-    setCopilotPanelVisible(readStoredCopilotVisible(projectId));
   }
 
   useLayoutEffect(() => {
@@ -109,43 +100,17 @@ export default function WorkspaceLayout({
       localStorage.setItem(focusKey(projectId), String(next));
       if (next) {
         setLeftOpen(false);
-        setRightOpen(false);
       }
       return next;
     });
   }, [projectId]);
 
-  const toggleCopilotPanel = useCallback(() => {
-    setCopilotPanelVisible((prev) => {
-      const next = !prev;
-      localStorage.setItem(copilotPanelKey(projectId), String(next));
-      if (!next) setRightOpen(false);
-      return next;
-    });
-  }, [projectId]);
-
-  useEffect(() => {
-    const onOpenCopilot = () => {
-      setCopilotPanelVisible(true);
-      localStorage.setItem(copilotPanelKey(projectId), "true");
-      setRightOpen(true);
-    };
-    const onToggleCopilot = () => toggleCopilotPanel();
-    window.addEventListener("geoai:open-copilot", onOpenCopilot);
-    window.addEventListener("geoai:toggle-copilot", onToggleCopilot);
-    return () => {
-      window.removeEventListener("geoai:open-copilot", onOpenCopilot);
-      window.removeEventListener("geoai:toggle-copilot", onToggleCopilot);
-    };
-  }, [projectId, toggleCopilotPanel]);
-
   useEffect(() => {
     if (!focusMode) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (leftOpen || rightOpen) {
+        if (leftOpen) {
           setLeftOpen(false);
-          setRightOpen(false);
         } else {
           toggleFocus();
         }
@@ -153,10 +118,10 @@ export default function WorkspaceLayout({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [focusMode, leftOpen, rightOpen, toggleFocus]);
+  }, [focusMode, leftOpen, toggleFocus]);
 
   useEffect(() => {
-    if (!focusMode || (!leftOpen && !rightOpen)) return;
+    if (!focusMode || !leftOpen) return;
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     const prevOverflow = document.body.style.overflow;
     const prevPadding = document.body.style.paddingRight;
@@ -168,11 +133,11 @@ export default function WorkspaceLayout({
       document.body.style.overflow = prevOverflow;
       document.body.style.paddingRight = prevPadding;
     };
-  }, [focusMode, leftOpen, rightOpen]);
+  }, [focusMode, leftOpen]);
 
   const hasLeftPanel = Boolean(leftPanel);
-  const showInlineLeft = !focusMode && hasLeftPanel;
-  const showInlineRight = !focusMode && copilotPanelVisible;
+  const showInlineLeft = !focusMode && Boolean(leftPanel);
+  const showInlineRight = !focusMode && Boolean(rightPanel);
 
   return (
     <div
@@ -193,7 +158,7 @@ export default function WorkspaceLayout({
 
       <div className="flex flex-1 min-h-0 overflow-hidden relative">
         {showInlineLeft && (
-          <aside className="hidden lg:flex w-[304px] shrink-0 min-h-0 flex-col border-r border-border bg-sidebar overflow-hidden">
+          <aside aria-label="Engineering tools sidebar" className={cn("hidden lg:flex shrink-0 min-h-0 flex-col border-r border-border bg-sidebar overflow-hidden", "w-[304px]")}>
             {leftPanel}
           </aside>
         )}
@@ -205,17 +170,13 @@ export default function WorkspaceLayout({
             creditsContainer: mapCreditsContainer,
             focusMode,
             toolsOpen: hasLeftPanel && leftOpen,
-            copilotOpen: rightOpen,
-            copilotPanelVisible,
+            copilotOpen: false,
+            copilotPanelVisible: false,
             onOpenTools: () => {
               if (hasLeftPanel) setLeftOpen(true);
             },
-            onOpenCopilot: () => {
-              setCopilotPanelVisible(true);
-              localStorage.setItem(copilotPanelKey(projectId), "true");
-              setRightOpen(true);
-            },
-            onToggleCopilotPanel: toggleCopilotPanel,
+            onOpenCopilot: () => window.dispatchEvent(new Event("geoai:open-site-assistant")),
+            onToggleCopilotPanel: () => window.dispatchEvent(new Event("geoai:open-site-assistant")),
           }}
         >
           <div className="workspace-map-viewport flex-1 min-w-0 min-h-0 relative overflow-hidden">
@@ -257,39 +218,21 @@ export default function WorkspaceLayout({
               </div>
             )}
             {!focusMode && mapBottomControls && <div className="workspace-bottom-controls absolute bottom-10 right-3 z-40">{mapBottomControls}</div>}
-
-            {!focusMode && !copilotPanelVisible && (
-              <div className="absolute bottom-20 right-3 z-30 pointer-events-auto hidden md:block">
-                <Button
-                  size="sm"
-                  className="h-auto min-w-[2.75rem] flex-col gap-0.5 py-2 px-1.5 panel-glass border-primary/30 shadow-md"
-                  title="Show AI Copilot"
-                  onClick={() => {
-                    setCopilotPanelVisible(true);
-                    localStorage.setItem(copilotPanelKey(projectId), "true");
-                  }}
-                  aria-label="Show AI Copilot panel"
-                >
-                  <Bot className="h-4 w-4 text-primary" />
-                  <span className="text-[8px] font-semibold leading-none">Copilot</span>
-                </Button>
-              </div>
-            )}
           </div>
         </WorkspaceMapProvider>
 
         {showInlineRight && (
           <div
-            className="hidden md:flex relative shrink-0 min-h-0"
-            style={{ width: rightWidth }}
+            className={cn("hidden md:flex relative shrink-0 min-h-0", compactInspector && "workspace-inspector-slot")}
+            style={{ width: compactInspector ? (inspectorOpen ? (analysisMode ? "min(484px, calc(42vw + 44px))" : `min(${inspectorWidth}px, 45vw)`) : 44) : rightWidth }}
           >
-            <PanelResizeHandle
+            {(!compactInspector || inspectorOpen && !analysisMode) && <PanelResizeHandle
               orientation="vertical"
-              onPointerDown={onRightWidthPointerDown}
-              className="absolute left-0 top-0 bottom-0 z-10 -translate-x-1/2"
-            />
-            <aside className="flex w-full min-h-0 flex-col border-l border-border bg-background-secondary overflow-hidden">
-              <div className="min-h-0 flex-1">{rightPanel ?? <ModernAssistantPanel {...ai} />}</div>
+              onPointerDown={compactInspector ? onInspectorResize : onRightWidthPointerDown}
+              className="absolute left-0 top-0 bottom-0 z-50 -translate-x-1/2"
+            />}
+            <aside className={cn("flex w-full min-h-0 flex-col border-l border-border bg-background-secondary", compactInspector ? "overflow-visible" : "overflow-hidden")}>
+              <div className="min-h-0 flex-1">{rightPanel}</div>
             </aside>
           </div>
         )}
@@ -329,42 +272,6 @@ export default function WorkspaceLayout({
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {focusMode && rightOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 modal-overlay"
-              onClick={() => setRightOpen(false)}
-            />
-            <motion.aside
-              initial={{ x: rightWidth + 20 }}
-              animate={{ x: 0 }}
-              exit={{ x: rightWidth + 20 }}
-              transition={{ type: "spring", stiffness: 400, damping: 35 }}
-              style={{ width: rightWidth }}
-              className="fixed inset-y-0 right-0 z-50 flex max-w-[94vw] flex-col border-l border-border bg-background-secondary shadow-xl"
-            >
-              <div className="flex items-center justify-between px-3 py-2 border-b border-border shrink-0">
-                <span className="text-xs font-semibold">AI Copilot</span>
-                <button
-                  title="Close"
-                  type="button"
-                  onClick={() => setRightOpen(false)}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-              <div className="flex-1 min-h-0 overflow-hidden">
-                {rightPanel ?? <ModernAssistantPanel {...ai} />}
-              </div>
-            </motion.aside>
-          </>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

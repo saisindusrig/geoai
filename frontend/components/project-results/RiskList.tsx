@@ -14,9 +14,12 @@ export default function RiskList({
   items,
   emptyMessage = "No critical issues detected yet.",
 }: {
-  items: unknown[];
+  items?: unknown[] | null;
   emptyMessage?: string;
 }) {
+  if (!Array.isArray(items)) {
+    return <p role="status" className="text-xs text-warning-text">Risk information is unavailable. Engineering review is still required.</p>;
+  }
   const parsed = items.map((item) => ({
     text: formatRiskText(item),
     severity: riskSeverity(item),

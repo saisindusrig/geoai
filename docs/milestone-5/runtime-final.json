@@ -1,0 +1,122 @@
+{
+  "versions": {
+    "next": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "eslint-config-next": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "@next/bundle-analyzer": {
+      "declared": "16.4.2",
+      "locked": "16.4.2",
+      "installed": "16.4.2"
+    },
+    "react": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    },
+    "react-dom": {
+      "declared": "19.2.4",
+      "locked": "19.2.4",
+      "installed": "19.2.4"
+    },
+    "sharp": {
+      "declared": null,
+      "locked": "0.35.5",
+      "installed": "0.35.5"
+    }
+  },
+  "build_id": "z03qelLoEw_t6b7q7BqQc",
+  "http_build_id_matches": true,
+  "frontend_pid": 7092,
+  "frontend_binding": "127.0.0.1:3001",
+  "backend_binding": "127.0.0.1:8001",
+  "health": {
+    "checked_at": "2026-10-22T18:35:17.046370+00:00",
+    "checks": [
+      {
+        "name": "Backend",
+        "status": "HEALTHY",
+        "summary": "API request reached the running backend. This is liveness, not engineering approval.",
+        "action": "No recovery action needed."
+      },
+      {
+        "name": "Database",
+        "status": "HEALTHY",
+        "summary": "Read-only connection succeeded; schema current.",
+        "action": "No recovery action needed."
+      },
+      {
+        "name": "Local solver",
+        "status": "HEALTHY",
+        "summary": "OpenSees 3.8.0 answered a version-only probe. No FEA was run.",
+        "action": "No recovery action needed."
+      },
+      {
+        "name": "AI controls",
+        "status": "HEALTHY",
+        "summary": "Offline deterministic modes; engineering budget disabled; cloud credentials absent from this process.",
+        "action": "No inference was requested."
+      },
+      {
+        "name": "Production qualification",
+        "status": "BLOCKED",
+        "summary": "4 existing configuration warnings; production operations and release qualification remain unverified.",
+        "action": "Review docs/PRODUCTION_BETA_READINESS.md and existing system readiness evidence. Healthy local services do not approve a release."
+      },
+      {
+        "name": "Saved model / results",
+        "status": "HEALTHY",
+        "summary": "Saved context is accessible; 1 current result(s). Historical, failed and stale evidence is excluded from current visualization.",
+        "action": "Return to Analysis to select an exact saved result and case; review missing inputs or stale evidence there."
+      }
+    ],
+    "methods": [
+      {
+        "method": "frame",
+        "status": "SUPPORTED",
+        "current_results": 1,
+        "historical_results": 2
+      },
+      {
+        "method": "slab",
+        "status": "MISSING_INPUTS",
+        "current_results": 0,
+        "historical_results": 0
+      },
+      {
+        "method": "spatial",
+        "status": "UNSUPPORTED",
+        "current_results": 0,
+        "historical_results": 0
+      },
+      {
+        "method": "coupled",
+        "status": "UNSUPPORTED",
+        "current_results": 0,
+        "historical_results": 0
+      },
+      {
+        "method": "foundation",
+        "status": "UNSUPPORTED",
+        "current_results": 0,
+        "historical_results": 0
+      }
+    ],
+    "warning_codes": [
+      "insecure_app_secret",
+      "redis_unavailable",
+      "local_storage",
+      "map_tokens_missing"
+    ],
+    "engineering_approval": "DISABLED",
+    "inference_requested": false
+  },
+  "firebase_product_calls": 0,
+  "paid_inference_calls": 0
+}

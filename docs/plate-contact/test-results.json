@@ -1,0 +1,20 @@
+{
+  "backend_tests_passed": 139,
+  "new_contact_tests": 21,
+  "contact_and_interface_tests_passed": 55,
+  "browser_workflows_passed": 4,
+  "browser_tests": [
+    "plate-contact.spec.ts",
+    "plate-contact-review.spec.ts",
+    "plate-contact-legacy.spec.ts",
+    "plate-contact-slab.spec.ts"
+  ],
+  "typescript": "PASS",
+  "targeted_eslint": "PASS",
+  "analysis_id": 315,
+  "revision_id": 88,
+  "source_analysis_id": 301,
+  "paid_inference_calls": 0,
+  "engineering_approval": "DISABLED",
+  "local_url": "http://localhost:3001/projects/785/workspace"
+}

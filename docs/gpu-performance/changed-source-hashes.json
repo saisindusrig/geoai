@@ -1,0 +1,6 @@
+{
+  "frontend/components/map/CesiumView.tsx": "c8279b02a97c20f6e92b8028dc0f1eecf50dc76dc1399af4dddcfe6ae0679f1b",
+  "frontend/components/map/SunStudyControls.tsx": "9f8201584ae6a475f9a8ff2ef30de2ae35ad2d4b8caa677514380d3f9b61dec4",
+  "frontend/lib/workspace-graphics.ts": "c71ab97f7ed61de9c4b548243b227f0c9ebe609ce85c1893d6c95a54cebf2243",
+  "frontend/lib/workspace-graphics.test.tsx": "73f0a752dbaaa7019ee62bd06e1d43e81528b371c429551e032e867c92da2457"
+}

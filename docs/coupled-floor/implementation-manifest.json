@@ -1,0 +1,15 @@
+{
+  "backend/app/main.py": "a524c4e3a3ba66a238b4afb6af4120e46d15b91129ebdbffb552c182a39a98b6",
+  "backend/app/api/routes/coupled_floors.py": "96ea4be925c2e136e0c24919ebf1c79e90fce8ddf9fe389d03014dbe483b6cd0",
+  "backend/app/services/design/coupled_floor.py": "30d946990edd8f9f799bf838c08cc22149aba28a2a14e5e776095cd7614b95fb",
+  "backend/app/services/design/coupled_ritz.py": "4f76efb701c186cdfeec2465e3d5d784990b39f7405dda6a9db5160419e28172",
+  "backend/tests/test_coupled_floor.py": "1b8688000d383040d5190063cd8cf8fde9c2d023bd4c81e5364367bb19873cfa",
+  "frontend/lib/coupled-floor.ts": "0260d2dae2ff0c382bf0c9e7c5b958af6027f2aced05ec00792308cf899c662d",
+  "frontend/lib/coupled-floor.test.ts": "6d43c01b940134b8834b9a7126cc35fff274727da0483c4587c455e29c65d37f",
+  "frontend/lib/structural-visual.ts": "ecbb76c8e1ecb67c75aff4764b2bdec32e3622a1a3343fffd1d14305b8594cea",
+  "frontend/components/map/CesiumView.tsx": "5f455227f9159a28f55e02300f751fc1d199807eb7aaf514ea90a28f83dff776",
+  "frontend/components/model-editor/CoupledFloorPanel.tsx": "7c4541770dc1ad9e832463f1dd52d58ba0d6c724d85c2b345a4980d52ad9f351",
+  "frontend/components/model-editor/CoupledFloorPanel.test.tsx": "55dadc0120dff96cfd7aac09ef6c0573c4f45718c5b70c4c071a38bdf818ed05",
+  "frontend/components/model-editor/ProfessionalModelEditor.tsx": "d30704799bd8f0fc7929b1e1e2d8553286f2ee352265bd9f3316f782530932e6",
+  "frontend/e2e/coupled-floor.spec.ts": "7098263fed7ecf4923239e4bd44f41918ab332440f10b0f80afb9746eaf1011b"
+}

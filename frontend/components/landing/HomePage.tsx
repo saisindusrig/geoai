@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { BRAND_TAGLINE } from "@/lib/brand";
+import BrandLogo from "@/components/brand/BrandLogo";
+import BrandWordmark from "./BrandWordmark";
 import dynamic from "next/dynamic";
 import { ArrowDown, ArrowUpRight, Check, Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -19,19 +22,19 @@ const systems = [
   { name:"Dam", code:"DM", title:"Work with the watershed.", description:"Explore a retaining structure and its upstream water boundary within the valley context.", length:"160 m", slope:"—", extra:"Conceptual impoundment" },
 ];
 const faqs = [
-  ["What terrain does GeoAI use?", "Terrain depends on the elevation sources configured for your project location. Coverage and resolution vary. This homepage uses a synthetic demonstration site; inspect source metadata in your project before relying on measurements."],
+  ["What terrain does StruvoCivil use?", "Terrain depends on the elevation sources configured for your project location. Coverage and resolution vary. This homepage uses a synthetic demonstration site; inspect source metadata in your project before relying on measurements."],
   ["Can I use my own survey data?", "The workspace includes survey import. Supply the coordinate reference system and vertical datum, then review validation results before using the survey as an engineering reference."],
-  ["Are GeoAI measurements engineering-grade?", "Accuracy depends on the source data, coordinate system and validation status. Visual map context is not survey-grade evidence. Concept outputs require professional verification before construction."],
+  ["Are StruvoCivil measurements engineering-grade?", "Accuracy depends on the source data, coordinate system and validation status. Visual map context is not survey-grade evidence. Concept outputs require professional verification before construction."],
   ["Can I edit generated concepts manually?", "Yes. The workspace provides geometry, alignment and parameter editing tools. Available controls depend on the infrastructure type and project workflow."],
-  ["Does GeoAI automatically change designs?", "You initiate generation and editing actions. Review proposed changes and the resulting geometry before saving a revision; AI assistance does not replace engineering approval."],
+  ["Does StruvoCivil automatically change designs?", "You initiate generation and editing actions. Review proposed changes and the resulting geometry before saving a revision; AI assistance does not replace engineering approval."],
   ["How are revisions tracked?", "Saved model revisions provide a record of geometry and parameter changes. Use revision comparison to review what changed, while checking the terrain and survey source attached to the project."],
   ["What infrastructure types are supported?", "Explore roads, bridges, pipelines, dams and other civil infrastructure concepts. The four systems above demonstrate different structures within the same illustrative terrain."],
-  ["Can GeoAI work without premium map data?", "Available map and terrain sources depend on your deployment configuration. Premium imagery is not the same as validated survey data. Review source availability and use survey inputs where engineering accuracy is required."],
+  ["Can StruvoCivil work without premium map data?", "Available map and terrain sources depend on your deployment configuration. Premium imagery is not the same as validated survey data. Review source availability and use survey inputs where engineering accuracy is required."],
 ];
 
-function Brand() { return <span className="geo-brand"><svg width="27" height="29" viewBox="0 0 27 29" fill="none" aria-hidden="true"><path d="M2 23 13.5 3 25 23H2Z M8 23l5.5-10L19 23 M2 23l11.5 4L25 23" stroke="currentColor" strokeWidth="1.3"/></svg>GeoAI<span className="geo-brand-dot"/></span>; }
+function Brand() { return <BrandWordmark size="nav"/>; }
 function Eyebrow({ n, children }: { n: string; children: React.ReactNode }) { return <p className="geo-eyebrow"><span>{n}</span><i/>{children}</p>; }
-function Launch({ small = false, label = "Launch GeoAI" }: { small?: boolean; label?: string }) { return <Link href={appEntryPath("/projects/new")} className={`geo-launch ${small ? "geo-launch-small" : ""}`}>{label} <ArrowUpRight size={small?16:20}/></Link>; }
+function Launch({ small = false, label = "Launch StruvoCivil" }: { small?: boolean; label?: string }) { return <Link href={appEntryPath("/projects/new")} className={`geo-launch ${small ? "geo-launch-small" : ""}`}>{label} <ArrowUpRight size={small?16:20}/></Link>; }
 export default function HomePage() {
   const root = useRef<HTMLDivElement>(null);
   const pointer = useRef({x:0,y:0});
@@ -84,13 +87,13 @@ export default function HomePage() {
   const selected = systems[system];
   const chapterIndex = chapter.storytelling ? 1 : ({ 0: 0, 5: 2, 9: 3, 12: 4 } as Record<number, number>)[chapter.stage] ?? 0;
   return <div ref={root} className="geo-home" data-motion-paused={paused||reduced} data-active-scene={chapter.stage} onPointerMove={e=>{pointer.current={x:e.clientX/window.innerWidth-.5,y:e.clientY/window.innerHeight-.5};}}>
-    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="GeoAI home"><Brand/></a><nav aria-label="Homepage"><a href="#how-it-works">Workflow</a><a href="#projects">Infrastructure</a><a href="#design-basis">Design basis</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
+    <header className={`geo-nav ${scrolled ? "geo-nav-solid" : ""}`}><a href="#earth" aria-label="StruvoCivil home"><Brand/></a><nav aria-label="Homepage"><a href="#how-it-works">Workflow</a><a href="#projects">Infrastructure</a><a href="#design-basis">Design basis</a></nav><div className="geo-nav-actions"><Launch small/></div></header>
     <div className="geo-journey">
       <div className="geo-persistent-scene" aria-hidden="true"><Terrain state={sceneState} pointer={pointer}/><div className={`geo-scene-shade ${chapter.stage===5 || chapter.stage===7 ? "geo-shade-light" : ""}`}/><div className="geo-scene-grain"/></div>
 
       <section id="earth" data-chapter="0" className="geo-chapter geo-hero">
-        <div className="geo-hero-topline"><span><i/> SPATIAL INTELLIGENCE, ENGINEERED.</span><span>CONCEPT PLANNING PLATFORM / V.01</span></div>
-        <div className="geo-hero-copy"><p className="geo-product-label">GEOAI / INFRASTRUCTURE CONCEPT SYSTEM</p><h1>Real terrain.<br/>Considered<br/><em>infrastructure.</em></h1><div className="geo-hero-description"><p>Plan infrastructure against real terrain, site constraints and spatial data — then refine it inside a precision 3D engineering workspace.</p></div><div className="geo-hero-actions"><Launch/><a className="geo-text-link" href="#how-it-works">See how it works <ArrowDown size={15}/></a></div></div>
+        <div className="geo-hero-topline"><span><i/> {BRAND_TAGLINE}</span><span>CONCEPT PLANNING PLATFORM / V.01</span></div>
+        <div className="geo-hero-copy"><p className="geo-product-label">STRUVOCIVIL / STRUCTURAL ENGINEERING SOFTWARE</p><h1>Model.<br/>Analyze.<br/><em>Design.</em></h1><div className="geo-hero-description"><p>Plan infrastructure against real terrain, site constraints and spatial data — then refine it inside a precision 3D engineering workspace.</p></div><div className="geo-hero-actions"><Launch/><a className="geo-text-link" href="#how-it-works">See how it works <ArrowDown size={15}/></a></div></div>
         <div className="geo-survey-label geo-hero-label"><span>PROJECT CORRIDOR / A—01</span><strong>ALIGNMENT A—01 / CONCEPT</strong><span>17°26′18″N &nbsp; 78°22′04″E</span></div>
         <div className="geo-hero-scale"><span>N ↑</span><div/><span>NATURAL TERRAIN / CONCEPT VIEW</span></div>
         <div className="geo-hero-bottom"><a href="#how-it-works"><span className="geo-scroll-icon"><ArrowDown size={14}/></span>SCROLL TO EXPLORE</a><span className="geo-demo-note">ILLUSTRATIVE SITE / PRELIMINARY CONCEPT</span></div>
@@ -106,11 +109,11 @@ export default function HomePage() {
       <section data-chapter="12" className="geo-chapter geo-final"><Eyebrow n="05">YOUR NEXT PROJECT STARTS HERE</Eyebrow><h2>START WITH<br/><em>THE SITE.</em></h2><p>Create an infrastructure concept against real terrain.</p><Launch/><span className="geo-final-caption">MAPS · TERRAIN · AI · 3D · ENGINEERING QUANTITIES</span>{chapter.stage===12&&<div className="geo-survey-label geo-final-label"><span>CONCEPT A—01 / COMPLETE</span><strong>READY FOR EXPLORATION ↗</strong></div>}</section>
       <footer className="geo-footer geo-opaque">
         <div className="geo-footer-main">
-          <div className="geo-footer-brand"><a href="#earth" aria-label="Back to GeoAI home"><Brand/></a><p>From real terrain to considered infrastructure.</p><span className="geo-footer-systems">Roads · Bridges · Pipelines · Dams</span></div>
-          <nav className="geo-footer-links" aria-label="Footer"><span className="geo-footer-label">Explore GeoAI</span><a href="#how-it-works">Workflow <ArrowUpRight size={14}/></a><a href="#projects">Infrastructure <ArrowUpRight size={14}/></a><a href="#design-basis">Design basis <ArrowUpRight size={14}/></a></nav>
+          <div className="geo-footer-brand"><a href="#earth" aria-label="Back to StruvoCivil home"><BrandLogo variant="main" className="w-52 h-auto"/></a><p>{BRAND_TAGLINE}</p><span className="geo-footer-systems">Roads · Bridges · Pipelines · Dams</span></div>
+          <nav className="geo-footer-links" aria-label="Footer"><span className="geo-footer-label">Explore StruvoCivil</span><a href="#how-it-works">Workflow <ArrowUpRight size={14}/></a><a href="#projects">Infrastructure <ArrowUpRight size={14}/></a><a href="#design-basis">Design basis <ArrowUpRight size={14}/></a></nav>
           <div className="geo-footer-workspace"><span className="geo-footer-label">Your next project</span><p>Plan, inspect and refine in one 3D workspace.</p><Launch small label="Start a project"/></div>
         </div>
-        <div className="geo-footer-bottom"><span>© {new Date().getFullYear()} GeoAI</span><span className="geo-footer-note">Concept outputs require professional verification before construction.</span><a href="#earth" className="geo-footer-top">Back to top <ArrowUpRight size={15}/></a></div>
+        <div className="geo-footer-bottom"><span>© {new Date().getFullYear()} StruvoCivil</span><span className="geo-footer-note">Concept outputs require professional verification before construction.</span><a href="#earth" className="geo-footer-top">Back to top <ArrowUpRight size={15}/></a></div>
       </footer>
     </div>
     <div className="geo-chapter-indicator"><span>{String(chapterIndex+1).padStart(2,"0")}</span><i/><span>{chapterNames[chapterIndex]}</span></div>

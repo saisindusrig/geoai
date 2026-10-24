@@ -1,0 +1,2556 @@
+[
+  {
+    "label": "initial-400",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114143
+    },
+    "usedBytes": 115229624,
+    "totalBytes": 116645888,
+    "embedderHeapUsedBytes": 4420984,
+    "backingStorageBytes": 12013082,
+    "documents": 6,
+    "nodes": 1281,
+    "jsEventListeners": 1062,
+    "scenesAlive": 1,
+    "scenesDestroyed": 0,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 1,
+    "resources": [
+      {
+        "Texture": 412,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "loaded-1",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114143
+    },
+    "usedBytes": 115321896,
+    "totalBytes": 117170176,
+    "embedderHeapUsedBytes": 4293952,
+    "backingStorageBytes": 12013081,
+    "documents": 6,
+    "nodes": 1281,
+    "jsEventListeners": 1062,
+    "scenesAlive": 1,
+    "scenesDestroyed": 0,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 1,
+    "resources": [
+      {
+        "Texture": 412,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-1",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 61
+    },
+    "usedBytes": 32236940,
+    "totalBytes": 33349632,
+    "embedderHeapUsedBytes": 3767952,
+    "backingStorageBytes": 12630523,
+    "documents": 6,
+    "nodes": 1616,
+    "jsEventListeners": 1090,
+    "scenesAlive": 1,
+    "scenesDestroyed": 1,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 6,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "loaded-2",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114171
+    },
+    "usedBytes": 123754452,
+    "totalBytes": 126607360,
+    "embedderHeapUsedBytes": 5710560,
+    "backingStorageBytes": 13400119,
+    "documents": 6,
+    "nodes": 2725,
+    "jsEventListeners": 1724,
+    "scenesAlive": 2,
+    "scenesDestroyed": 1,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 7,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 413,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-2",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 89
+    },
+    "usedBytes": 39337772,
+    "totalBytes": 40689664,
+    "embedderHeapUsedBytes": 4963256,
+    "backingStorageBytes": 13431799,
+    "documents": 6,
+    "nodes": 3060,
+    "jsEventListeners": 1738,
+    "scenesAlive": 2,
+    "scenesDestroyed": 2,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 12,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "loaded-3",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114190
+    },
+    "usedBytes": 129954256,
+    "totalBytes": 132112384,
+    "embedderHeapUsedBytes": 6032056,
+    "backingStorageBytes": 14196412,
+    "documents": 6,
+    "nodes": 3109,
+    "jsEventListeners": 1786,
+    "scenesAlive": 3,
+    "scenesDestroyed": 2,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 13,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 413,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-3",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 108
+    },
+    "usedBytes": 45120328,
+    "totalBytes": 46456832,
+    "embedderHeapUsedBytes": 5581728,
+    "backingStorageBytes": 14227778,
+    "documents": 6,
+    "nodes": 3444,
+    "jsEventListeners": 1800,
+    "scenesAlive": 3,
+    "scenesDestroyed": 3,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 18,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "loaded-4",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114209
+    },
+    "usedBytes": 135286804,
+    "totalBytes": 137093120,
+    "embedderHeapUsedBytes": 6785200,
+    "backingStorageBytes": 14993669,
+    "documents": 6,
+    "nodes": 3494,
+    "jsEventListeners": 1848,
+    "scenesAlive": 4,
+    "scenesDestroyed": 3,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 19,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 413,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-4",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 127
+    },
+    "usedBytes": 50585032,
+    "totalBytes": 52224000,
+    "embedderHeapUsedBytes": 6184720,
+    "backingStorageBytes": 15025022,
+    "documents": 6,
+    "nodes": 3829,
+    "jsEventListeners": 1862,
+    "scenesAlive": 4,
+    "scenesDestroyed": 4,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 24,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "loaded-5",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114228
+    },
+    "usedBytes": 140865780,
+    "totalBytes": 143122432,
+    "embedderHeapUsedBytes": 7414800,
+    "backingStorageBytes": 15790683,
+    "documents": 6,
+    "nodes": 3878,
+    "jsEventListeners": 1910,
+    "scenesAlive": 5,
+    "scenesDestroyed": 4,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 25,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 413,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-5",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 146
+    },
+    "usedBytes": 56307484,
+    "totalBytes": 57991168,
+    "embedderHeapUsedBytes": 6793544,
+    "backingStorageBytes": 15822060,
+    "documents": 6,
+    "nodes": 4213,
+    "jsEventListeners": 1924,
+    "scenesAlive": 5,
+    "scenesDestroyed": 5,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 30,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "loaded-6",
+    "cesiumReachableInstances": {
+      "Entity": 5200,
+      "EntityCollection": 9,
+      "Event": 114247
+    },
+    "usedBytes": 146372016,
+    "totalBytes": 148365312,
+    "embedderHeapUsedBytes": 8044152,
+    "backingStorageBytes": 16586486,
+    "documents": 6,
+    "nodes": 4263,
+    "jsEventListeners": 1972,
+    "scenesAlive": 6,
+    "scenesDestroyed": 5,
+    "canvasCount": 1,
+    "entityCount": 400,
+    "primitiveGroups": 2,
+    "contextsAlive": 31,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 413,
+        "Buffer": 3225,
+        "VertexArray": 406,
+        "Renderbuffer": 2,
+        "Framebuffer": 7,
+        "Shader": 0,
+        "Program": 10,
+        "Query": 0
+      }
+    ],
+    "globalListenerAddMinusRemove": 230
+  },
+  {
+    "label": "disposed-6",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 165
+    },
+    "usedBytes": 61734180,
+    "totalBytes": 63234048,
+    "embedderHeapUsedBytes": 7523504,
+    "backingStorageBytes": 16617839,
+    "documents": 6,
+    "nodes": 4598,
+    "jsEventListeners": 1986,
+    "scenesAlive": 6,
+    "scenesDestroyed": 6,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 36,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  },
+  {
+    "label": "final-disposed",
+    "cesiumReachableInstances": {
+      "Entity": 0,
+      "EntityCollection": 0,
+      "Event": 184
+    },
+    "usedBytes": 66971384,
+    "totalBytes": 69001216,
+    "embedderHeapUsedBytes": 8272968,
+    "backingStorageBytes": 17413618,
+    "documents": 6,
+    "nodes": 4982,
+    "jsEventListeners": 2048,
+    "scenesAlive": 7,
+    "scenesDestroyed": 7,
+    "canvasCount": 0,
+    "entityCount": null,
+    "primitiveGroups": 0,
+    "contextsAlive": 42,
+    "resources": [
+      {
+        "Texture": 1,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0,
+        "Query": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 0,
+        "Program": 0,
+        "Shader": 0,
+        "VertexArray": 0
+      },
+      {
+        "Texture": 2,
+        "Buffer": 0,
+        "VertexArray": 0,
+        "Renderbuffer": 0,
+        "Framebuffer": 1,
+        "Shader": 0,
+        "Program": 0
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 86,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 22
+      },
+      {
+        "Texture": 5,
+        "Framebuffer": 3,
+        "Buffer": 62,
+        "Program": 2,
+        "Shader": 0,
+        "VertexArray": 16
+      }
+    ],
+    "globalListenerAddMinusRemove": 186
+  }
+]

@@ -1,0 +1,35 @@
+# Gate 2F — dual-provider and linking boundary
+
+The owner reports that `struvocivil-918c9` has Google and Email/Password enabled, public signup and self-deletion disabled, enumeration protection enabled and minimum password length 15. These are **owner-reported settings**, not live API/Console evidence. No Gate 2E report was found under `docs/release-phase-c`; this work does not invent its evidence. No Web app configuration, credential or real account was accessed.
+
+## Current implementation
+
+An explicit browser Google-provider flag joins the existing backend/browser/project/configuration gates. Both providers remain unavailable unless every applicable gate passes. The normal defaults remain disabled, and the current blocked backend ADC implementation was not changed. Google uses the installed official modular `GoogleAuthProvider` and `signInWithPopup` with `prompt: select_account` and the explicit browser popup resolver. There is no redirect recovery, durable-persistence workaround or extracted Google OAuth token. The existing transport calls only `User.getIdToken()` for the API bearer.
+
+The login calls `/api/auth/me` after either provider; only a verified, audit-linked internal identity permits navigation. An unlinked account receives a safe access-denied message and local sign-out. Profile name, email, picture and provider are never internal authorization keys. Account switching clears existing caches and cancels stale requests through the existing session revision boundary. Existing logout clears this tab; it is not Google-wide logout or global Firebase revocation.
+
+The login form preserves its pending/error state through identity changes, while protected project/assistant views still remount and clear caches. Popup closure/blocking, provider collisions and admin-restricted signup are sanitized; no auto-link/registration call is made. Ordinary Firebase SDK user-change events do not prove backend authorization; backend gates remain authoritative for every protected request.
+
+In-memory persistence remains explicit. Reload loses the browser session; tabs are independent. No refresh token is copied to localStorage. Popup handling can still depend on browser popup/cookie settings and authorized domains; offline mocks cannot establish real provider behavior. [Google popup flow](https://firebase.google.com/docs/auth/web/google-signin), [explicit popup dependency](https://firebase.google.com/docs/auth/web/custom-dependencies).
+
+## Why pre-creation is insufficient
+
+Enabling Google does not guarantee that a pre-created password user has Google provider credentials linked to the same UID. Firebase's one-account-per-email and provider trust policies can affect collisions/automatic provider behavior; the application must not implement its own email-based merge or rely on a particular result without genuine qualification. Service-side signup denial can reject an attempted first Google sign-in that would otherwise create a new Firebase user. A collision is a stop requiring the approved method/administrator, not permission to save a pending OAuth credential or create another internal account. [Provider collision behavior](https://firebase.google.com/docs/auth/web/google-signin), [service-side user actions](https://docs.cloud.google.com/identity-platform/docs/concepts-manage-users).
+
+## Proposed explicit workflow — not implemented or activated
+
+1. A named internal administrator approves one existing verified Firebase UID, its exact issuer, the already approved internal link, the provider to add and a short operation window. Email/name similarity is not identity proof. Approval must be audited and distinct from the user's browser request.
+2. The user signs in with the already approved provider; the backend verifies the current Firebase ID token, revocation/account status, existing link and administrator approval. Require recent reauthentication with that original provider and a fresh SDK ID token, with a reviewed server-side auth-time policy.
+3. Only a separately approved linking UI may call the official `linkWithPopup(currentUser, new GoogleAuthProvider(), resolver)` or appropriate password credential link, preserving the **same UID**. No linking endpoint/UI exists in this milestone. Never disable signup restrictions to make linking work. Whether the chosen service configuration permits this precise link operation must be established by separately authorized isolated live evidence.
+4. Force-refresh the Firebase ID token, reverify it server-side and verify the same UID/internal association and expected provider linkage. Record an audit outcome without OAuth credentials, tokens, passwords or raw popup payloads. Do not modify project ownership or historical identity approvals.
+5. On collision, changed UID, reused credential, stale approval or unavailable verifier, deny the application operation; do not merge/delete accounts, retry mutations or rewrite links. A provider mutation may already have occurred before a later application failure, so preserve its status and stop for operator review rather than claiming automatic rollback. Unlinking, recovery and any reversal need separate approval and evidence.
+
+Firebase supports multiple linked providers on one UID; linking differs from sign-in. This design adds administrator approval and recent reauthentication, but it is not implemented by merely exposing `linkWithPopup`. [Official linking API](https://firebase.google.com/docs/auth/web/account-linking), [reauthentication](https://docs.cloud.google.com/identity-platform/docs/web/reauth).
+
+## Next approvals and blockers
+
+The smallest prerequisite is approval to review an **existing** Web app's public configuration and exact test origin without registering an app, changing settings or revealing keys in chat. No configuration value was guessed. Separately approve the managed credential solution/implementation and isolated staging data/link bootstrap; ADC is still blocked. Cloud Run/billing/Blaze remain unauthorized and are not required or enabled by this frontend change.
+
+Only after those prerequisites, approve a bounded real acceptance scope naming synthetic linked Google and password subjects, an unlinked subject, approved origins, operator, network/request/time limits and rollback authority. If no already-linked dual-provider UID exists, user creation/linking requires its own explicit authorization and the workflow above; this phase authorizes neither. No live test is implied by provider-enable confirmation.
+
+F01–F07 remain NOT RUN: actual signatures, Google popup/browser policy, signup denial, disabled/revoked accounts, collisions/linking, provider abuse controls, reset expiry/mail, complete recovery, durable clean staging storage and real cross-user/session evidence remain open. Keep the existing [Gate 2B acceptance/rollback plan](../gate-2b/ACCEPTANCE-AND-ROLLBACK.md). Stop staging ingress before disabling Firebase; never reopen legacy authentication as a reachable staging fallback. Public launch remains BLOCKED.

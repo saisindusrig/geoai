@@ -1,0 +1,12 @@
+{
+  "inference_requests": 0,
+  "credentials_resolved": true,
+  "official_endpoint": true,
+  "ledger": {
+    "tasks": 0,
+    "accounted_usd": 0,
+    "accounting_blocked": false,
+    "running": 0
+  },
+  "project_context_available": true
+}

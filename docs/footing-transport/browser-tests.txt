@@ -1,0 +1,3 @@
+footing-geometry.spec.ts: 1 passed (48.9 seconds)
+footing-transport.spec.ts final: 1 passed (47.6 seconds)
+Actual local source-linked geometry preview/authorization/undo-redo/save/reload/comparison; four reviewed reference mappings, static equilibrium, invalid mapping/references, forged/obsolete authorization, staleness and responsive layout.

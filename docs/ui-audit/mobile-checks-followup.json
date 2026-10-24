@@ -1,0 +1,50 @@
+[
+  {
+    "route": "/",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/login",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/settings",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/privacy",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/projects/805/cost",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/projects/805/timeline",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/admin/usage",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  },
+  {
+    "route": "/admin/templates",
+    "mainIds": 1,
+    "scrollWidth": 384,
+    "width": 390
+  }
+]

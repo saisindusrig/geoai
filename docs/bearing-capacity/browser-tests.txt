@@ -1,0 +1,7 @@
+
+Running 1 test using 1 worker
+
+
+
+[1/1] [chromium] › e2e\bearing-capacity.spec.ts:4:5 › synthetic strip bearing exact authorization units unsupported inputs stale source reload schematic
+  1 passed (1.6m)

@@ -218,7 +218,7 @@ function GeoAIStudioContent({ project }: GeoAIStudioProps) {
           </div>
           <div className="min-w-0">
             <h1 className="truncate font-semibold tracking-tight">
-              {project?.name || "GeoAI"}
+              {project?.name || "StruvoCivil"}
             </h1>
             <p className="truncate text-xs text-muted-foreground">
               {project
@@ -245,7 +245,7 @@ function GeoAIStudioContent({ project }: GeoAIStudioProps) {
             <h2 className="text-xl font-semibold">Place a crossing</h2>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
               Choose the endpoint mode, then click the map or use your location.
-              GeoAI uses the selected location as visual context—not survey
+              StruvoCivil uses the selected location as visual context—not survey
               data.
             </p>
           </div>

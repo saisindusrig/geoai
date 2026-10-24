@@ -1,0 +1,5 @@
+{
+ "kind":"workspace_action","actionId":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","operation":"prepare_primitive_preview","projectId":7,"projectName":"Synthetic fixture","revisionId":1,"documentHash":"fixture-hash","componentIds":[],
+ "candidate":{"id":"assistant-column:aaaaaaaaaaaaaaaaaaaaaaaa","parent_id":null,"name":"Explicit column","category":"column","visible":true,"locked":false,"geometry":{"kind":"box","size":[0.4,0.5,3]},"transform":{"position":[3,0,1.5],"rotation_deg":[0,0,15],"scale":[1,1,1]},"material":{"name":"Conceptual geometry only","color":"#E879F9","roughness":0.75,"metalness":0},"quantity":{"included":false},"metadata":{"source":"assistant_supervised_primitive","provenance":"user_dimensions_conceptual","base_revision_id":1,"engineering":"UNVERIFIED_GEOMETRY_ONLY"}},
+ "validation":{"name":"prepare_primitive_preview","arguments":{"project_id":7,"revision_id":1,"primitive":"column","name":"Explicit column","units":"mm","dimensions":[400,500,3000],"position":[3000,0,1500],"position_reference":"local_enu_center","rotation_deg":[0,0,15],"parent_id":null,"provenance":"user_dimensions_conceptual"}}
+}

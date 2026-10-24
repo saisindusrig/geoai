@@ -1,0 +1,63 @@
+{
+  "model_revisions": {
+    "originalCount": 115,
+    "currentCount": 117,
+    "originalRowsUnchanged": true,
+    "addedIds": [
+      116,
+      117
+    ]
+  },
+  "engineering_analyses": {
+    "originalCount": 509,
+    "currentCount": 509,
+    "originalRowsUnchanged": true,
+    "addedIds": []
+  },
+  "engineering_audit_events": {
+    "originalCount": 96,
+    "currentCount": 98,
+    "originalRowsUnchanged": true,
+    "addedIds": [
+      97,
+      98
+    ]
+  },
+  "conversation_messages": {
+    "originalCount": 144,
+    "currentCount": 154,
+    "originalRowsUnchanged": true,
+    "addedIds": [
+      "02c3ab87-6277-50b6-9dcb-65e64ff72500",
+      "1709dcc8-62e2-5e40-953d-b994740593f3",
+      "25430787-bf51-51fd-b042-1fe2db1f7b23",
+      "2e2325ff-7ac4-5c88-862e-6e22cdba461a",
+      "485e44f6-695c-5377-a4a4-64e7f75aef3b",
+      "5055d1c0-6188-5f99-a0c3-84c4d5aeb67d",
+      "51e0101e-7675-5f4f-8cea-6add28114bc4",
+      "754ed68d-7664-52e6-9ec8-f2f403bb186a",
+      "9aa57a9d-a7a1-5ae3-8005-3dad6bd20270",
+      "a41ee205-0345-5357-9687-11efd6418a49"
+    ]
+  },
+  "project_conversations": {
+    "originalCount": 119,
+    "currentCount": 119,
+    "originalRowsUnchanged": false,
+    "addedIds": []
+  },
+  "usage_events": {
+    "originalCount": 1936,
+    "currentCount": 1936,
+    "originalRowsUnchanged": true,
+    "addedIds": []
+  },
+  "qa": {
+    "projectId": 795,
+    "savedRevisionIds": [
+      116,
+      117
+    ],
+    "finalComponentsEqualOriginal": true
+  }
+}

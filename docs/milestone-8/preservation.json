@@ -1,0 +1,10 @@
+{
+  "database": {
+    "all_rows_and_schemas_exactly_unchanged": true,
+    "rows": 10269
+  },
+  "assistant-history": {
+    "all_rows_and_schemas_exactly_unchanged": true,
+    "rows": 3
+  }
+}

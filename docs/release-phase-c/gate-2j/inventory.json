@@ -1,0 +1,5036 @@
+{
+  "files": 270220,
+  "bytes": 15767940549,
+  "groups": {
+    ".cache/analysis-workspace": {
+      "files": 2,
+      "bytes": 25237322,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/anchor-contact": {
+      "files": 5,
+      "bytes": 35146434,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/anchor-contact-3d": {
+      "files": 5,
+      "bytes": 35372750,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/assembly": {
+      "files": 320,
+      "bytes": 23162040,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/assistant-brand.py": {
+      "files": 1,
+      "bytes": 908,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/beam-frame": {
+      "files": 5,
+      "bytes": 22224610,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/bearing-capacity": {
+      "files": 325,
+      "bytes": 50411031,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/black-background.py": {
+      "files": 1,
+      "bytes": 725,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/blue-accent-changed.json": {
+      "files": 1,
+      "bytes": 883,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/blue-accent.py": {
+      "files": 1,
+      "bytes": 1458,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/blue-lint.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/blue-typescript.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/browser-config.py": {
+      "files": 1,
+      "bytes": 440,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/browser-fix.py": {
+      "files": 1,
+      "bytes": 556,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/browser-renderer.py": {
+      "files": 1,
+      "bytes": 312,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/cad-drawing-3d": {
+      "files": 11,
+      "bytes": 39958884,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/cad-frame": {
+      "files": 12,
+      "bytes": 41124318,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/cad-slab-path": {
+      "files": 20,
+      "bytes": 46621244,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/cad-soil-path": {
+      "files": 24,
+      "bytes": 47601924,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/change-brand-green-bytes.py": {
+      "files": 1,
+      "bytes": 541,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/change-brand-green.py": {
+      "files": 1,
+      "bytes": 736,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/check-diff.py": {
+      "files": 1,
+      "bytes": 723,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/chosen-palette.py": {
+      "files": 1,
+      "bytes": 1853,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/component-inspection": {
+      "files": 2,
+      "bytes": 51550913,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/copilot-m2-verification": {
+      "files": 8,
+      "bytes": 51046978,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/custom-forest-palette.py": {
+      "files": 1,
+      "bytes": 1349,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/custom-palette.py": {
+      "files": 1,
+      "bytes": 1466,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/drawing-strength": {
+      "files": 7,
+      "bytes": 39503891,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/earth-palette.py": {
+      "files": 1,
+      "bytes": 3585,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/eccentric": {
+      "files": 6,
+      "bytes": 25443342,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/engineering-inputs": {
+      "files": 5,
+      "bytes": 38731994,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/exact-custom-tokens.py": {
+      "files": 1,
+      "bytes": 1255,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/exact-primary.py": {
+      "files": 1,
+      "bytes": 365,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/final-audit.py": {
+      "files": 1,
+      "bytes": 889,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/fix-action-palette.py": {
+      "files": 1,
+      "bytes": 295,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/fix-palette-overrides.py": {
+      "files": 1,
+      "bytes": 602,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/footing-flexure": {
+      "files": 5,
+      "bytes": 52625901,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/footing-transport": {
+      "files": 19,
+      "bytes": 48157360,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/forest-stone.py": {
+      "files": 1,
+      "bytes": 1435,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/foundation-interface": {
+      "files": 7,
+      "bytes": 34761403,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/generate-official-logo.py": {
+      "files": 1,
+      "bytes": 3844,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/gravity": {
+      "files": 11,
+      "bytes": 30695319,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/green-dev-error.log": {
+      "files": 1,
+      "bytes": 176,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/green-dev.log": {
+      "files": 1,
+      "bytes": 498,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/integrate-official-logo.py": {
+      "files": 1,
+      "bytes": 1783,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/ivory-buttons.py": {
+      "files": 1,
+      "bytes": 737,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/last-brand-copy.py": {
+      "files": 1,
+      "bytes": 467,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/live-nebius": {
+      "files": 4,
+      "bytes": 21139529,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/logo-asset-record.py": {
+      "files": 1,
+      "bytes": 516,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/logo-delivery-manifest.py": {
+      "files": 1,
+      "bytes": 896,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/logo-final-evidence.py": {
+      "files": 1,
+      "bytes": 523,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/logo-final-integration.py": {
+      "files": 1,
+      "bytes": 1748,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/logo-raster-final.py": {
+      "files": 1,
+      "bytes": 285,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/milestone2": {
+      "files": 14,
+      "bytes": 19638058,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/model-visualization": {
+      "files": 1,
+      "bytes": 51548160,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/monochrome-palette.py": {
+      "files": 1,
+      "bytes": 1711,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/monochrome-surfaces.py": {
+      "files": 1,
+      "bytes": 548,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/nebius-agent": {
+      "files": 7,
+      "bytes": 20927106,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/opensees": {
+      "files": 6,
+      "bytes": 99134327,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/opensees-milestone": {
+      "files": 2,
+      "bytes": 19271738,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/palette-dev-error.log": {
+      "files": 1,
+      "bytes": 53338,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/palette-dev.log": {
+      "files": 1,
+      "bytes": 13560,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/phase1": {
+      "files": 20,
+      "bytes": 16225386,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/phase2": {
+      "files": 8,
+      "bytes": 18988844,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/physical-column": {
+      "files": 4,
+      "bytes": 19815486,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/plate-contact": {
+      "files": 4,
+      "bytes": 35067869,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/preserve-9-1.py": {
+      "files": 1,
+      "bytes": 578,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/production-beta": {
+      "files": 6699,
+      "bytes": 150550128,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rc-flexure": {
+      "files": 4,
+      "bytes": 53107664,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rebrand-9-1.py": {
+      "files": 1,
+      "bytes": 1547,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rebrand-finish.py": {
+      "files": 1,
+      "bytes": 2123,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rebrand-meta.py": {
+      "files": 1,
+      "bytes": 2773,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rebrand-polish.py": {
+      "files": 1,
+      "bytes": 1542,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rebrand-selectors.py": {
+      "files": 1,
+      "bytes": 379,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/rectangular-bearing": {
+      "files": 6,
+      "bytes": 51559534,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/reference-palette.py": {
+      "files": 1,
+      "bytes": 2885,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/refine-logo.py": {
+      "files": 1,
+      "bytes": 1514,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/repair-rebrand-encoding.py": {
+      "files": 1,
+      "bytes": 967,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/report-finalize.py": {
+      "files": 1,
+      "bytes": 475,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/requested-palette.py": {
+      "files": 1,
+      "bytes": 1233,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/restore-lemon-theme.py": {
+      "files": 1,
+      "bytes": 1025,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/restore-sitewide-lemon.py": {
+      "files": 1,
+      "bytes": 2016,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/route-metadata.py": {
+      "files": 1,
+      "bytes": 1304,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/sitewide-palette.py": {
+      "files": 1,
+      "bytes": 1589,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/sitewide-reference.py": {
+      "files": 1,
+      "bytes": 2265,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/slab-transfer": {
+      "files": 7,
+      "bytes": 33365962,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/social-meta.py": {
+      "files": 1,
+      "bytes": 801,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/soil-contact": {
+      "files": 325,
+      "bytes": 49538533,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/soil-profile": {
+      "files": 323,
+      "bytes": 49925313,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/test-brand-selectors.py": {
+      "files": 1,
+      "bytes": 344,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/undo-earth-palette.py": {
+      "files": 1,
+      "bytes": 2956,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/undo-palette-aliases.py": {
+      "files": 1,
+      "bytes": 362,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/unequal-frame": {
+      "files": 13,
+      "bytes": 42154136,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/unequal-gravity": {
+      "files": 15,
+      "bytes": 43931765,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/update-olive-accent.py": {
+      "files": 1,
+      "bytes": 498,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/verify-logo-report.py": {
+      "files": 1,
+      "bytes": 519,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/wordmark-responsive.py": {
+      "files": 1,
+      "bytes": 339,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/workspace-palette.py": {
+      "files": 1,
+      "bytes": 297,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/workspace-quality": {
+      "files": 1,
+      "bytes": 51548160,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cache/workspace-reference.py": {
+      "files": 1,
+      "bytes": 486,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cleanup-backup-path": {
+      "files": 1,
+      "bytes": 50,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    ".cleanup-backups/20261015-132113": {
+      "files": 1,
+      "bytes": 354831055,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cleanup-backups/RESTORE.txt": {
+      "files": 1,
+      "bytes": 809,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".cleanup-backups/retained-backups-20261022.zip": {
+      "files": 1,
+      "bytes": 131538562,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    ".env": {
+      "files": 1,
+      "bytes": 1782,
+      "classification": "NEVER DELETE AUTOMATICALLY: configuration/secrets"
+    },
+    ".env.example": {
+      "files": 1,
+      "bytes": 5255,
+      "classification": "NEVER DELETE AUTOMATICALLY: configuration/secrets"
+    },
+    ".github/workflows": {
+      "files": 3,
+      "bytes": 7786,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 1484,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    ".local-tooling/node-24.22.1-validation": {
+      "files": 80595,
+      "bytes": 5433847631,
+      "classification": "REVIEW BEFORE CLEANING: tooling/build/test working copies"
+    },
+    "AI_BUILDING_ASSISTANT.md": {
+      "files": 1,
+      "bytes": 3298,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "ASSET_CATALOGUE.md": {
+      "files": 1,
+      "bytes": 1330,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "DEPLOYMENT.md": {
+      "files": 1,
+      "bytes": 11115,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "DISK_AUDIT.md": {
+      "files": 1,
+      "bytes": 33747,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "ENGINEERING_WORKSPACE.md": {
+      "files": 1,
+      "bytes": 8323,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "LOCAL_SETUP.md": {
+      "files": 1,
+      "bytes": 6981,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "MANUAL_QA.md": {
+      "files": 1,
+      "bytes": 5690,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "PROFILE_README_DRAFT.md": {
+      "files": 1,
+      "bytes": 648,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 9074,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "STAGING_CHECKLIST.md": {
+      "files": 1,
+      "bytes": 5238,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "STORAGE_SETUP.md": {
+      "files": 1,
+      "bytes": 5572,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/.cad-proof-deps": {
+      "files": 1408,
+      "bytes": 633261721,
+      "classification": "RETAIN: installed dependencies; not cleanup candidates"
+    },
+    "backend/.cad-proof-output": {
+      "files": 1744,
+      "bytes": 204743630,
+      "classification": "NEVER DELETE AUTOMATICALLY: CAD/results/evidence"
+    },
+    "backend/.env": {
+      "files": 1,
+      "bytes": 251,
+      "classification": "NEVER DELETE AUTOMATICALLY: configuration/secrets"
+    },
+    "backend/.pytest_cache": {
+      "files": 5,
+      "bytes": 40474,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/.test-stage1-regression.db": {
+      "files": 1,
+      "bytes": 421888,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/.venv": {
+      "files": 23513,
+      "bytes": 1289671056,
+      "classification": "RETAIN: installed dependencies; not cleanup candidates"
+    },
+    "backend/.venv-civicspan": {
+      "files": 7613,
+      "bytes": 210085660,
+      "classification": "RETAIN: installed dependencies; not cleanup candidates"
+    },
+    "backend/Dockerfile.cad-worker": {
+      "files": 1,
+      "bytes": 2036,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/Dockerfile.cad-worker.dockerignore": {
+      "files": 1,
+      "bytes": 562,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/alembic": {
+      "files": 25,
+      "bytes": 81072,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/alembic.ini": {
+      "files": 1,
+      "bytes": 552,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/app": {
+      "files": 523,
+      "bytes": 4420787,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/assistant-history.db": {
+      "files": 1,
+      "bytes": 77824,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/auth-server-error.log": {
+      "files": 1,
+      "bytes": 50816,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/auth-server.log": {
+      "files": 1,
+      "bytes": 19816,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/cad-notices": {
+      "files": 5,
+      "bytes": 41873,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/civicspan_app.py": {
+      "files": 1,
+      "bytes": 2400,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/civicspan_tests": {
+      "files": 2,
+      "bytes": 2359,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/dev.db": {
+      "files": 1,
+      "bytes": 53878784,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/evals": {
+      "files": 118,
+      "bytes": 1943737,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/hardening-focused-final.log": {
+      "files": 1,
+      "bytes": 742,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/hardening-focused.log": {
+      "files": 1,
+      "bytes": 742,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/hardening-server-error.log": {
+      "files": 1,
+      "bytes": 187175,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/hardening-server.log": {
+      "files": 1,
+      "bytes": 77666,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/live-results": {
+      "files": 20,
+      "bytes": 1383633,
+      "classification": "NEVER DELETE AUTOMATICALLY: CAD/results/evidence"
+    },
+    "backend/package-lock.json": {
+      "files": 1,
+      "bytes": 86,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/planning.db": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/pytest.ini": {
+      "files": 1,
+      "bytes": 27,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/requirements-cad-proof.txt": {
+      "files": 1,
+      "bytes": 102,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/requirements-cad-worker.txt": {
+      "files": 1,
+      "bytes": 256,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/requirements-civicspan.txt": {
+      "files": 1,
+      "bytes": 147,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/requirements.txt": {
+      "files": 1,
+      "bytes": 534,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/runtime-hardening-final.log": {
+      "files": 1,
+      "bytes": 2162,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/runtime-hardening-full.log": {
+      "files": 1,
+      "bytes": 622,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/runtime.txt": {
+      "files": 1,
+      "bytes": 14,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/scripts": {
+      "files": 62,
+      "bytes": 239865,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-backend-final.log": {
+      "files": 1,
+      "bytes": 2162,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-backend-verified.log": {
+      "files": 1,
+      "bytes": 2162,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-backend.log": {
+      "files": 1,
+      "bytes": 3603,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-focus-verified.log": {
+      "files": 1,
+      "bytes": 823,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-focused-final.log": {
+      "files": 1,
+      "bytes": 823,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stabilization-focused.log": {
+      "files": 1,
+      "bytes": 823,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/stage1-pre-migration-20261008-015346.db": {
+      "files": 1,
+      "bytes": 1445888,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/stage45-pre-migration-20261008-151702.db": {
+      "files": 1,
+      "bytes": 1552384,
+      "classification": "NEVER DELETE AUTOMATICALLY: database or journal"
+    },
+    "backend/storage": {
+      "files": 73140,
+      "bytes": 878879775,
+      "classification": "NEVER DELETE AUTOMATICALLY: CAD/results/evidence"
+    },
+    "backend/tests": {
+      "files": 163,
+      "bytes": 1771414,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-baseline.log": {
+      "files": 1,
+      "bytes": 3311,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-core.log": {
+      "files": 1,
+      "bytes": 578,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-fixture.log": {
+      "files": 1,
+      "bytes": 550,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-focused.log": {
+      "files": 1,
+      "bytes": 6595,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-full-final.log": {
+      "files": 1,
+      "bytes": 2081,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-full.log": {
+      "files": 1,
+      "bytes": 2081,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-geometry.log": {
+      "files": 1,
+      "bytes": 579,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-preserve.log": {
+      "files": 1,
+      "bytes": 660,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-server-error.log": {
+      "files": 1,
+      "bytes": 183648,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/universal-server.log": {
+      "files": 1,
+      "bytes": 89113,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/uvicorn-live.err.log": {
+      "files": 1,
+      "bytes": 10439,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/uvicorn-live.out.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/uvicorn.err.log": {
+      "files": 1,
+      "bytes": 3327,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "backend/uvicorn.out.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "docker-compose.yml": {
+      "files": 1,
+      "bytes": 864,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "docs/BIM_ASSEMBLY_AUTHORING_4A.md": {
+      "files": 1,
+      "bytes": 13111,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_AUTHORING_ORCHESTRATION_4B.md": {
+      "files": 1,
+      "bytes": 14213,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_AUTHORING_TRUNCATION_DIAGNOSIS_4CR.md": {
+      "files": 1,
+      "bytes": 12527,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_BILLING_VERIFICATION_4DB1.md": {
+      "files": 1,
+      "bytes": 9447,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_CANARY_HARNESS_DIAGNOSIS_4CH.md": {
+      "files": 1,
+      "bytes": 3529,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_FIRST_COMPARISON_PREPARATION_4D.md": {
+      "files": 1,
+      "bytes": 5550,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_FOUNDATION_V1.md": {
+      "files": 1,
+      "bytes": 7818,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_FRESH_CANARY_PREPARATION_4CH2.md": {
+      "files": 1,
+      "bytes": 5437,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_MODEL_EVALUATION_4D.md": {
+      "files": 1,
+      "bytes": 13850,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_TESTING_BUDGET_4D.md": {
+      "files": 1,
+      "bytes": 8806,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_THINKING_STRUCTURED_OUTPUT_4CT.md": {
+      "files": 1,
+      "bytes": 13241,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_UNDERSTAND_CANARY_EXECUTION.md": {
+      "files": 1,
+      "bytes": 1759,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_UNDERSTAND_CANARY_EXECUTION_4CH2.md": {
+      "files": 1,
+      "bytes": 3449,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BIM_UNDERSTAND_CANARY_PREPARATION.md": {
+      "files": 1,
+      "bytes": 3040,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BUILDING_PATCH_V1.md": {
+      "files": 1,
+      "bytes": 6658,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BUILDING_SPECIALIST_V1.md": {
+      "files": 1,
+      "bytes": 9498,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/BUILDING_WORKSPACE_ACCEPTANCE.md": {
+      "files": 1,
+      "bytes": 5951,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_INTEGRATION_FOUNDATION_3B1.md": {
+      "files": 1,
+      "bytes": 14477,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_KERNEL_PROOF_3A.md": {
+      "files": 1,
+      "bytes": 18018,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_LINUX_ACCEPTANCE_FINAL_3B2A.md": {
+      "files": 1,
+      "bytes": 10047,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_LINUX_RUNTIME_INVENTORY_3B2A.json": {
+      "files": 1,
+      "bytes": 2012933,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_WINDOWS_RUNTIME_INVENTORY_3B2A.json": {
+      "files": 1,
+      "bytes": 113466,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_WORKER_DEPLOYMENT_3B2A.md": {
+      "files": 1,
+      "bytes": 13019,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CAD_WORKSPACE_ACCEPTANCE_3B2B.md": {
+      "files": 1,
+      "bytes": 17546,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/CORE_ASSISTANT_V1.md": {
+      "files": 1,
+      "bytes": 7756,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/DISK_SPACE_OPTIMIZATION_REPORT.md": {
+      "files": 1,
+      "bytes": 13964,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/GENERIC_3D_EXECUTOR_V1.md": {
+      "files": 1,
+      "bytes": 17599,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_AI3D_RUNTIME_HARDENING_V1.md": {
+      "files": 1,
+      "bytes": 12547,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.html": {
+      "files": 1,
+      "bytes": 4813,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.md": {
+      "files": 1,
+      "bytes": 7476,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_GEOAI_3D_FLOW_V1.md": {
+      "files": 1,
+      "bytes": 10683,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_GEOAI_3D_FLOW_V1_AUTHENTICATED.md": {
+      "files": 1,
+      "bytes": 17233,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/LIVE_GEOAI_FLOW_STABILIZATION_V2.md": {
+      "files": 1,
+      "bytes": 12257,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/MODEL_SELECTION.md": {
+      "files": 1,
+      "bytes": 4095,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/NEBIUS_AUTH_RESTORATION.md": {
+      "files": 1,
+      "bytes": 5602,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/PRODUCTION_BETA_READINESS.md": {
+      "files": 1,
+      "bytes": 21291,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/PROJECT_CLEANUP_REPORT.md": {
+      "files": 1,
+      "bytes": 16729,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/REAL_LIVE_GEOAI_3D_ACCEPTANCE_V2.md": {
+      "files": 1,
+      "bytes": 11606,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/REPOSITORY_CLEANUP_AUDIT.md": {
+      "files": 1,
+      "bytes": 15708,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/STAGE_1_ARCHITECTURE.md": {
+      "files": 1,
+      "bytes": 66654,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/STAGE_1_ASSISTANT_RUNTIME.md": {
+      "files": 1,
+      "bytes": 16166,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/STAGE_1_FOUNDATION.md": {
+      "files": 1,
+      "bytes": 6380,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/STAGE_1_SITE_WORKSPACE.md": {
+      "files": 1,
+      "bytes": 9864,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/analysis-workflow": {
+      "files": 110,
+      "bytes": 27345979,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/analysis-workspace": {
+      "files": 10,
+      "bytes": 1368908,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/anchor-contact": {
+      "files": 12,
+      "bytes": 1660879,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/anchor-contact-3d": {
+      "files": 15,
+      "bytes": 5570979,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/assembly": {
+      "files": 14,
+      "bytes": 8052486,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/assistant-chat-scene.md": {
+      "files": 1,
+      "bytes": 6442,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/assistant-single-ui": {
+      "files": 7,
+      "bytes": 179389,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/assistant-ui": {
+      "files": 59,
+      "bytes": 3046120,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/beam-frame": {
+      "files": 13,
+      "bytes": 2582597,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/bearing-capacity": {
+      "files": 10,
+      "bytes": 882400,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/cad-drawing-3d": {
+      "files": 10,
+      "bytes": 1536120,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/cad-frame": {
+      "files": 19,
+      "bytes": 3567975,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/cad-slab-path": {
+      "files": 28,
+      "bytes": 4690072,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/cad-soil-path": {
+      "files": 10,
+      "bytes": 794750,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/capability-reliability": {
+      "files": 16,
+      "bytes": 2026600,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/component-inspection": {
+      "files": 16,
+      "bytes": 2986420,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/contracts": {
+      "files": 5,
+      "bytes": 297184,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/copilot-m2-verification": {
+      "files": 38,
+      "bytes": 3526318,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/copilot-milestone-1": {
+      "files": 35,
+      "bytes": 2644871,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/copilot-milestone-2": {
+      "files": 53,
+      "bytes": 5171867,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/coupled-floor": {
+      "files": 187,
+      "bytes": 43232326,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/disk-optimization": {
+      "files": 37,
+      "bytes": 16633052,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/drawing-strength": {
+      "files": 15,
+      "bytes": 1144915,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/eccentric": {
+      "files": 12,
+      "bytes": 4746323,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/engineering-analysis": {
+      "files": 14,
+      "bytes": 914165,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/engineering-inputs": {
+      "files": 11,
+      "bytes": 1353603,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/firebase": {
+      "files": 1,
+      "bytes": 13541,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/floor-system": {
+      "files": 125,
+      "bytes": 26072459,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/footing-flexure": {
+      "files": 13,
+      "bytes": 1428859,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/footing-transport": {
+      "files": 15,
+      "bytes": 1777106,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/foundation-interface": {
+      "files": 22,
+      "bytes": 3800140,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/foundation-system": {
+      "files": 87,
+      "bytes": 70801285,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/foundation-visual": {
+      "files": 88,
+      "bytes": 17094319,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/gpu-hardware-memory": {
+      "files": 67,
+      "bytes": 1887549,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/gpu-performance": {
+      "files": 82,
+      "bytes": 8985163,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/gravity": {
+      "files": 23,
+      "bytes": 7416273,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/live-nebius": {
+      "files": 12,
+      "bytes": 1837547,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/logo-integration": {
+      "files": 35,
+      "bytes": 3483433,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-10": {
+      "files": 44,
+      "bytes": 4236857,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-11": {
+      "files": 44,
+      "bytes": 4424950,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-12": {
+      "files": 53,
+      "bytes": 4813063,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-5": {
+      "files": 91,
+      "bytes": 4280487,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-6": {
+      "files": 68,
+      "bytes": 3009844,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-6.1": {
+      "files": 58,
+      "bytes": 1696481,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-6.2": {
+      "files": 16,
+      "bytes": 209647,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-7": {
+      "files": 55,
+      "bytes": 1733455,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-8": {
+      "files": 51,
+      "bytes": 3448800,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-9": {
+      "files": 50,
+      "bytes": 4084807,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-9.1": {
+      "files": 64,
+      "bytes": 7689078,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-9.1-final": {
+      "files": 33,
+      "bytes": 4068438,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone-9.1-request": {
+      "files": 55,
+      "bytes": 6635821,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/milestone2": {
+      "files": 6,
+      "bytes": 770034,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/minimal-ui": {
+      "files": 42,
+      "bytes": 3215701,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/model-visualization": {
+      "files": 53,
+      "bytes": 12449179,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/mouse-milestone": {
+      "files": 14,
+      "bytes": 993576,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/nebius-agent": {
+      "files": 9,
+      "bytes": 1733137,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/offline-platform-website.md": {
+      "files": 1,
+      "bytes": 2530,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/phase1": {
+      "files": 5,
+      "bytes": 625939,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/phase2": {
+      "files": 4,
+      "bytes": 435149,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/physical-column": {
+      "files": 6,
+      "bytes": 938970,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/pipeline.mmd": {
+      "files": 1,
+      "bytes": 2605,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/plate-contact": {
+      "files": 19,
+      "bytes": 2769961,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/private-beta-security": {
+      "files": 47,
+      "bytes": 10936228,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/production-beta": {
+      "files": 77,
+      "bytes": 29311368,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/project-cleanup": {
+      "files": 91,
+      "bytes": 8868149,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/rc-flexure": {
+      "files": 10,
+      "bytes": 2335668,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/rectangular-bearing": {
+      "files": 13,
+      "bytes": 1343255,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/release": {
+      "files": 346,
+      "bytes": 29529608,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/release-phase-b": {
+      "files": 53,
+      "bytes": 3616207,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/release-phase-c": {
+      "files": 621,
+      "bytes": 23800649,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/release-security-40": {
+      "files": 29,
+      "bytes": 16491222,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/runtime-diagnostics": {
+      "files": 64,
+      "bytes": 3189064,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/slab-transfer": {
+      "files": 20,
+      "bytes": 4392269,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/soil-contact": {
+      "files": 12,
+      "bytes": 1689461,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/soil-profile": {
+      "files": 10,
+      "bytes": 1104102,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/spatial-frame": {
+      "files": 686,
+      "bytes": 42800868,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/structural-polish": {
+      "files": 103,
+      "bytes": 44585750,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/structural-visual": {
+      "files": 71,
+      "bytes": 20278601,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/ui-audit": {
+      "files": 445,
+      "bytes": 31698440,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/unequal-frame": {
+      "files": 19,
+      "bytes": 3246468,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/unequal-gravity": {
+      "files": 20,
+      "bytes": 4529021,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/ux-milestone": {
+      "files": 22,
+      "bytes": 2216084,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/ux-milestone-2": {
+      "files": 32,
+      "bytes": 1946301,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/workspace-controls": {
+      "files": 9,
+      "bytes": 378985,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/workspace-placement": {
+      "files": 9,
+      "bytes": 378698,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "docs/workspace-quality": {
+      "files": 28,
+      "bytes": 2522720,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "frontend/.cache": {
+      "files": 7,
+      "bytes": 3196840,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical screenshots"
+    },
+    "frontend/.env.example": {
+      "files": 1,
+      "bytes": 123,
+      "classification": "NEVER DELETE AUTOMATICALLY: configuration/secrets"
+    },
+    "frontend/.env.local": {
+      "files": 1,
+      "bytes": 80,
+      "classification": "NEVER DELETE AUTOMATICALLY: configuration/secrets"
+    },
+    "frontend/.gitignore": {
+      "files": 1,
+      "bytes": 480,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/.next": {
+      "files": 966,
+      "bytes": 1578296852,
+      "classification": "REVIEW BEFORE CLEANING: generated build; normal runtime may depend on it"
+    },
+    "frontend/.next-phase1": {
+      "files": 1606,
+      "bytes": 1499914995,
+      "classification": "REVIEW BEFORE CLEANING: generated build; normal runtime may depend on it"
+    },
+    "frontend/AGENTS.md": {
+      "files": 1,
+      "bytes": 679,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/CLAUDE.md": {
+      "files": 1,
+      "bytes": 11,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/README.md": {
+      "files": 1,
+      "bytes": 1029,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/app": {
+      "files": 68,
+      "bytes": 258137,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/components": {
+      "files": 263,
+      "bytes": 1946625,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/debug.log": {
+      "files": 1,
+      "bytes": 2370,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/e2e": {
+      "files": 107,
+      "bytes": 644278,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/eslint.config.mjs": {
+      "files": 1,
+      "bytes": 644,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hardening-build.log": {
+      "files": 1,
+      "bytes": 1451,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hardening-frontend.log": {
+      "files": 1,
+      "bytes": 4624,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hardening-lint.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hardening-review.log": {
+      "files": 1,
+      "bytes": 422,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hardening-ts.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/hooks": {
+      "files": 17,
+      "bytes": 100025,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/lib": {
+      "files": 162,
+      "bytes": 756623,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-dev-3001.err.log": {
+      "files": 1,
+      "bytes": 384,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-dev-3001.out.log": {
+      "files": 1,
+      "bytes": 654,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-dev.err.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-dev.out.log": {
+      "files": 1,
+      "bytes": 2513,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-env.d.ts": {
+      "files": 1,
+      "bytes": 310,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-start-ui.err.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next-start-ui.out.log": {
+      "files": 1,
+      "bytes": 116,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/next.config.ts": {
+      "files": 1,
+      "bytes": 2111,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/node_modules": {
+      "files": 64117,
+      "bytes": 1124672520,
+      "classification": "RETAIN: installed dependencies; not cleanup candidates"
+    },
+    "frontend/package-lock.json": {
+      "files": 1,
+      "bytes": 471174,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/package.json": {
+      "files": 1,
+      "bytes": 2167,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/playwright.beta.config.ts": {
+      "files": 1,
+      "bytes": 688,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/playwright.config.ts": {
+      "files": 1,
+      "bytes": 1001,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/postcss.config.mjs": {
+      "files": 1,
+      "bytes": 94,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/public": {
+      "files": 437,
+      "bytes": 106142477,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/scripts": {
+      "files": 19,
+      "bytes": 95891,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-build-verified.log": {
+      "files": 1,
+      "bytes": 1451,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-build.log": {
+      "files": 1,
+      "bytes": 1451,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-lint-verified.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-lint.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-tests-verified.log": {
+      "files": 1,
+      "bytes": 4351,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-tests.log": {
+      "files": 1,
+      "bytes": 4629,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-ts-verified.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stabilization-ts.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/stores": {
+      "files": 2,
+      "bytes": 18101,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/tsconfig.json": {
+      "files": 1,
+      "bytes": 855,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/tsconfig.tsbuildinfo": {
+      "files": 1,
+      "bytes": 612118,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-build.log": {
+      "files": 1,
+      "bytes": 1489,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-dashboard-final.log": {
+      "files": 1,
+      "bytes": 593,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-device-tests.log": {
+      "files": 1,
+      "bytes": 585,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-final-lint.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-followup-build.log": {
+      "files": 1,
+      "bytes": 1489,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-followup-focused.log": {
+      "files": 1,
+      "bytes": 806,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-followup-full.log": {
+      "files": 1,
+      "bytes": 10121,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-followup-lint.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-followup-types.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-lint.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-provider-final.log": {
+      "files": 1,
+      "bytes": 414,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-provider-lint.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-rates.log": {
+      "files": 1,
+      "bytes": 408,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-recovery.log": {
+      "files": 1,
+      "bytes": 478,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-regression.log": {
+      "files": 1,
+      "bytes": 660,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-tests-full.log": {
+      "files": 1,
+      "bytes": 9047,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-tests.log": {
+      "files": 1,
+      "bytes": 686,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/ui-audit-typecheck.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-build-final.log": {
+      "files": 1,
+      "bytes": 1450,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-e2e.log": {
+      "files": 1,
+      "bytes": 371,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-frontend-final.log": {
+      "files": 1,
+      "bytes": 4015,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-frontend.log": {
+      "files": 1,
+      "bytes": 4254,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-lint-final.log": {
+      "files": 1,
+      "bytes": 88,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-lint.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-server-error.log": {
+      "files": 1,
+      "bytes": 167163,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-server.log": {
+      "files": 1,
+      "bytes": 21211,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-ts-final.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/universal-ts.log": {
+      "files": 1,
+      "bytes": 0,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/vitest.config.ts": {
+      "files": 1,
+      "bytes": 527,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "frontend/vitest.setup.ts": {
+      "files": 1,
+      "bytes": 43,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "github-update.bat": {
+      "files": 1,
+      "bytes": 4515,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "pytest-of-unknown/pytest-1": {
+      "files": 1,
+      "bytes": 5,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    },
+    "run-website.bat": {
+      "files": 1,
+      "bytes": 3122,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "scripts/verify-local-node.cjs": {
+      "files": 1,
+      "bytes": 3454,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "start-copilot-review.ps1": {
+      "files": 1,
+      "bytes": 3709,
+      "classification": "RETAIN: application source/assets/configuration or unclassified"
+    },
+    "struvocivil-gate1d-v4c5a_2i/.cache": {
+      "files": 1,
+      "bytes": 26777,
+      "classification": "NEVER DELETE AUTOMATICALLY: historical evidence/fixtures/backup"
+    }
+  },
+  "build_roots": {
+    ".local-tooling/node-24.22.1-validation/work/frontend/.next-phase1": {
+      "files": 461,
+      "bytes": 1010567169
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-beta": {
+      "files": 378,
+      "bytes": 971953906
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-default-first-timeout-evidence": {
+      "files": 24,
+      "bytes": 928569
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-gate1b-qualified-retained": {
+      "files": 877,
+      "bytes": 247881734
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-gate2a": {
+      "files": 894,
+      "bytes": 262239376
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-gate2f": {
+      "files": 901,
+      "bytes": 252099476
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-gate2f-ui-fixture": {
+      "files": 858,
+      "bytes": 249019069
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-gate2h": {
+      "files": 853,
+      "bytes": 251775698
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/.next-phase1": {
+      "files": 1277,
+      "bytes": 367320249
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/probe/.next-phase1": {
+      "files": 171,
+      "bytes": 25764694
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/probe/.next-postcss-ipc-denied-evidence": {
+      "files": 45,
+      "bytes": 9901453
+    },
+    ".local-tooling/node-24.22.1-validation/work/gate1b/probe/.next-postcss-system-node-evidence": {
+      "files": 60,
+      "bytes": 23083497
+    },
+    "frontend/.next": {
+      "files": 966,
+      "bytes": 1578296852
+    },
+    "frontend/.next-phase1": {
+      "files": 1606,
+      "bytes": 1499914995
+    }
+  },
+  "reparse_points_not_followed": [
+    {
+      "path": "backend/.cad-proof-output/workspace-production/node_modules",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-production/public",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-frontend/node_modules",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/gate1c/launch-capture/.local-tooling/node-24.22.1-validation/runtime/node-v24.22.1-win-x64",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/gate1b/probe/node_modules",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/gate1b/.local-tooling/node-24.22.1-validation/runtime/node-v24.22.1-win-x64",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/a5-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/acorn",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/acorn-jsx",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/acorn-walk",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ajv",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ansi-regex",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ansi-styles",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/anynum",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/apache-arrow",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/argparse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/aria-query",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array-back",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array-buffer-byte-length",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array-includes",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array.prototype.findlast",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array.prototype.findlastindex",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array.prototype.flat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array.prototype.flatmap",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/array.prototype.tosorted",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/arraybuffer.prototype.slice",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/assertion-error",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ast-types-flow",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/async-function",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/autolinker",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/available-typed-arrays",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/axe-core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/axobject-query",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/balanced-match",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/base64-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/baseline-browser-mapping",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/bidi-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/bitmap-sdf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/brace-expansion",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/braces",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/brotli",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/browserslist",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/buf-compare",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/cac",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/call-bind",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/call-bind-apply-helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/call-bound",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/callsites",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/caniuse-lite",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/cesium",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/chai",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/chalk",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/chalk-template",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/charenc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/check-error",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/class-variance-authority",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/client-only",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/cliui",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/clsx",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/color-convert",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/color-name",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/command-line-args",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/command-line-usage",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/commander",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/concat-map",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/convert-source-map",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/core-assert",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/core-util-is",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/cross-spawn",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/crypt",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/css-tree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/css.escape",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/csstype",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/cursor-style",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-array",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-color",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-ease",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-format",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-interpolate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-path",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-scale",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-shape",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-time",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-time-format",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/d3-timer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/damerau-levenshtein",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/data-urls",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/data-view-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/data-view-byte-length",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/data-view-byte-offset",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/debounce",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/debug",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/decimal.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/decimal.js-light",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/deep-eql",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/deep-is",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/deep-strict-equal",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/define-data-property",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/define-properties",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/dequal",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/detect-libc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/doctrine",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/dom-accessibility-api",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/dompurify",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/draco3d",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/dunder-proto",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/duplexer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/earcut",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/electron-to-chromium",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/emoji-regex",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/enhanced-resolve",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/entities",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-abstract",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-define-property",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-errors",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-iterator-helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-module-lexer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-object-atoms",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-set-tostringtag",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-shim-unscopables",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-to-primitive",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/es-toolkit",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/esbuild",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/escalade",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/escape-string-regexp",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-config-next",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-import-resolver-node",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-import-resolver-typescript",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-module-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-plugin-import",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-plugin-jsx-a11y",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-plugin-react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-plugin-react-hooks",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-scope",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eslint-visitor-keys",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/espree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/esquery",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/esrecurse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/estraverse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/estree-walker",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/esutils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/eventemitter3",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/expect-type",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-deep-equal",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-glob",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-json-stable-stringify",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-levenshtein",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-xml-builder",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fast-xml-parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fastq",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/faye-websocket",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fflate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/file-entry-cache",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/fill-range",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/find-replace",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/find-up",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/firebase",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/flat-cache",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/flatbuffers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/flatted",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/for-each",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/framer-motion",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/function-bind",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/function.prototype.name",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/functions-have-names",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/generator-function",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/gensync",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/get-caller-file",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/get-intrinsic",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/get-proto",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/get-symbol-description",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/get-tsconfig",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/gl-matrix",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/glob-parent",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/globals",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/globalthis",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/gopd",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/graceful-fs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/grapheme-splitter",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/gzip-size",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/h3-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-bigints",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-flag",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-property-descriptors",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-proto",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-symbols",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/has-tostringtag",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/hasown",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/hermes-estree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/hermes-parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/html-encoding-sniffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/html-escaper",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/http-parser-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/idb",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ieee754",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ignore",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/image-size",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/immediate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/immer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/import-fresh",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/imurmurhash",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/indent-string",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/inherits",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/internal-slot",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/internmap",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-array-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-async-function",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-bigint",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-boolean-object",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-bun-module",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-callable",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-core-module",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-data-view",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-date-object",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-document.all",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-error",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-extglob",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-finalizationregistry",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-fullwidth-code-point",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-generator-function",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-glob",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-map",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-negative-zero",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-number",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-number-object",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-plain-object",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-potential-custom-element-name",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-regex",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-set",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-shared-array-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-string",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-symbol",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-typed-array",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-weakmap",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-weakref",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/is-weakset",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/isarray",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/isexe",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/iterator.prototype",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/its-fine",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jiti",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/js-tokens",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/js-yaml",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jsdom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jsep",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jsesc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json-bignum",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json-schema-traverse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json-stable-stringify-without-jsonify",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json-stringify-pretty-compact",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/json5",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jsx-ast-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/jszip",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/kdbush",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/keyv",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ktx-parse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/language-subtag-registry",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/language-tags",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lerc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/levn",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lie",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lightningcss",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lightningcss-win32-x64-msvc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/locate-path",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lodash.camelcase",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lodash.merge",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/long",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/loose-envify",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/loupe",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lru-cache",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lucide-react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lz-string",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/lz4js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/magic-string",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/maplibre-gl",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/math-intrinsics",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/md5",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/mdn-data",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/merge2",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/mersenne-twister",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/meshoptimizer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/micromatch",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/min-indent",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/minimatch",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/minimist",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/mjolnir.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/motion-dom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/motion-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/mrmime",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ms",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/murmurhash-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/nanoid",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/napi-postinstall",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/natural-compare",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/next",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/next-themes",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/node-exports-info",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/node-releases",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/nosleep.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object-assign",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object-inspect",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object-keys",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object.assign",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object.entries",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object.fromentries",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object.groupby",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/object.values",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ogl",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/opener",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/optionator",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/own-keys",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/p-limit",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/p-locate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/pako",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/parent-module",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/parse5",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/path-exists",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/path-expression-matcher",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/path-key",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/path-parse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/pathe",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/pathval",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/pbf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/picocolors",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/picomatch",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/playwright",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/playwright-core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/possible-typed-array-names",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/postcss",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/potpack",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/prelude-ls",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/pretty-format",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/process-nextick-args",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/prop-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/protobufjs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/protocol-buffers-schema",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/punycode",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/queue-microtask",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/quickselect",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/rbush",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/re2js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react-dom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react-hook-form",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react-is",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react-redux",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/react-use-measure",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/readable-stream",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/recharts",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/redent",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/redux",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/redux-thunk",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/reflect.getprototypeof",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/regexp.prototype.flags",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/require-directory",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/require-from-string",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/reselect",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/resolve",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/resolve-from",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/resolve-pkg-maps",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/resolve-protobuf-schema",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/reusify",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/rollup",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/run-parallel",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/safe-array-concat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/safe-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/safe-push-apply",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/safe-regex-test",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/saxes",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/scheduler",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/semver",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/set-function-length",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/set-function-name",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/set-proto",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/setimmediate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/sharp",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/shebang-command",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/shebang-regex",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/side-channel",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/side-channel-list",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/side-channel-map",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/side-channel-weakmap",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/siginfo",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/sirv",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/snappyjs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/source-map-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/sprintf-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/stable-hash",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/stackback",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/std-env",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/stop-iteration-iterator",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string-width",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.includes",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.matchall",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.repeat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.trim",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.trimend",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string.prototype.trimstart",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/string_decoder",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strip-ansi",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strip-bom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strip-indent",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strip-json-comments",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strip-literal",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/strnum",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/styled-jsx",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/supports-color",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/supports-preserve-symlinks-flag",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/suspend-react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/symbol-tree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/table-layout",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tailwind-merge",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tailwindcss",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tapable",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/terra-draw",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/terra-draw-maplibre-gl-adapter",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/texture-compressor",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/three",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tiny-invariant",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinybench",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinyexec",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinyglobby",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinypool",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinyqueue",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinyrainbow",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tinyspy",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tldts",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tldts-core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/to-regex-range",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/topojson-client",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/totalist",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tough-cookie",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tr46",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ts-api-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tsconfig-paths",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/tslib",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/type-check",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typed-array-buffer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typed-array-byte-length",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typed-array-byte-offset",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typed-array-length",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typescript",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typescript-eslint",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/typical",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/unbox-primitive",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/undici",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/undici-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/unrs-resolver",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/update-browserslist-db",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/uri-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/urijs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/use-sync-external-store",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/util-deprecate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/victory-vendor",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/vite",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/vite-node",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/vitest",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/w3c-xmlserializer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/web-vitals",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/webidl-conversions",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/webpack-bundle-analyzer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/websocket-driver",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/websocket-extensions",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/whatwg-mimetype",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/whatwg-url",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/which",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/which-boxed-primitive",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/which-builtin-type",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/which-collection",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/which-typed-array",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/why-is-node-running",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/word-wrap",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/wordwrapjs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/wrap-ansi",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/ws",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/xml-name-validator",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/xml-naming",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/xmlchars",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/y18n",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/yallist",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/yargs",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/yargs-parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/yocto-queue",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/zod",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/zod-validation-error",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/zstd-codec",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/zustand",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@zip.js/zip.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@watergis/maplibre-gl-terradraw",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/expect",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/mocker",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/pretty-format",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/runner",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/snapshot",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/spy",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@vitest/utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@unrs/resolver-binding-win32-x64-msvc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/eslint-plugin",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/project-service",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/scope-manager",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/tsconfig-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/type-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/typescript-estree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@typescript-eslint/visitor-keys",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/aria-query",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/brotli",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/chai",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/command-line-args",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/command-line-usage",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/crypto-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-array",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-color",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-ease",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-interpolate",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-path",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-scale",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-shape",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-time",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/d3-timer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/deep-eql",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/estree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/geojson",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/json-schema",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/json5",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/node",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/offscreencanvas",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/pako",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/react-dom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/react-reconciler",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/stats.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/three",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/trusted-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/use-sync-external-store",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@types/webxr",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tybys/wasm-util",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tweenjs/tween.js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/boolean-clockwise",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/clone",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/invariant",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/meta",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@turf/rewind",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@testing-library/dom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@testing-library/jest-dom",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@testing-library/react",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@testing-library/user-event",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tailwindcss/node",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tailwindcss/oxide",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tailwindcss/oxide-win32-x64-msvc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@tailwindcss/postcss",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@swc/helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@standard-schema/spec",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@standard-schema/utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@spz-loader/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@rtsao/scc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@rollup/rollup-win32-x64-gnu",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@rollup/rollup-win32-x64-msvc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@reduxjs/toolkit",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@react-three/fiber",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/aspromise",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/base64",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/codegen",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/eventemitter",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/fetch",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/float",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/path",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/pool",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@protobufjs/utf8",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@probe.gl/env",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@probe.gl/log",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@probe.gl/stats",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@polka/url",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@playwright/test",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@nolyfill/is-core-module",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@nodelib/fs.scandir",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@nodelib/fs.stat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@nodelib/fs.walk",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@nodable/entities",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@next/bundle-analyzer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@next/env",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@next/eslint-plugin-next",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@next/swc-win32-x64-msvc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@napi-rs/wasm-runtime",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/culling",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/geospatial",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/polygon",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/sun",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@math.gl/web-mercator",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@maplibre/geojson-vt",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@maplibre/maplibre-gl-style-spec",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@maplibre/mlt",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@maplibre/vt-pbf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/jsonlint-lines-primitives",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/martini",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/point-geometry",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/tiny-sdf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/unitbezier",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/vector-tile",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@mapbox/whoots-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@luma.gl/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@luma.gl/engine",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@luma.gl/gltf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@luma.gl/shadertools",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@luma.gl/webgl",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/3d-tiles",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/compression",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/crypto",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/draco",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/geoarrow",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/gis",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/gltf",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/images",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/loader-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/math",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/mvt",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/schema",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/schema-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/terrain",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/textures",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/tiles",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/wms",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/worker-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/xml",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@loaders.gl/zip",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@jridgewell/gen-mapping",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@jridgewell/remapping",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@jridgewell/resolve-uri",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@jridgewell/sourcemap-codec",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@jridgewell/trace-mapping",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@img/colour",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@img/sharp-wasm32",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@img/sharp-win32-x64",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@humanwhocodes/module-importer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@humanwhocodes/retry",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@humanfs/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@humanfs/node",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@humanfs/types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@hookform/resolvers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@grpc/grpc-js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@grpc/proto-loader",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/ai",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/analytics",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/analytics-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/analytics-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-check",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-check-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-check-interop-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-check-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/app-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/auth-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/auth-interop-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/auth-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/component",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/data-connect",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/database",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/database-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/database-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/firestore",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/firestore-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/firestore-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/functions",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/functions-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/functions-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/installations",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/installations-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/installations-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/logger",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/messaging",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/messaging-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/messaging-interop-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/performance",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/performance-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/performance-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/remote-config",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/remote-config-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/remote-config-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/storage",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/storage-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/storage-types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/util",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@firebase/webchannel-wrapper",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@exodus/bytes",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint-community/eslint-utils",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint-community/regexpp",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/config-array",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/config-helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/eslintrc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/js",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/object-schema",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@eslint/plugin-kit",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@esbuild/win32-x64",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@emnapi/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@emnapi/runtime",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@emnapi/wasi-threads",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@discoveryjs/json-ext",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@dimforge/rapier3d-compat",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/extensions",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/geo-layers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/layers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/mapbox",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@deck.gl/mesh-layers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/color-helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/css-calc",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/css-color-parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/css-parser-algorithms",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/css-syntax-patches-for-csstree",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@csstools/css-tokenizer",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@cesium/engine",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@cesium/wasm-splats",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@cesium/widgets",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@bramus/specificity",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/code-frame",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/compat-data",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/core",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/generator",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-compilation-targets",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-globals",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-module-imports",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-module-transforms",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-string-parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-validator-identifier",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helper-validator-option",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/helpers",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/parser",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/runtime",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/template",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/traverse",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@babel/types",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@asamuzakjp/css-color",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@asamuzakjp/dom-selector",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@asamuzakjp/generational-cache",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@asamuzakjp/nwsapi",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@alloc/quick-lru",
+      "type": "reparse_point_not_followed"
+    },
+    {
+      "path": ".local-tooling/node-24.22.1-validation/work/frontend/node_modules/@adobe/css-tools",
+      "type": "reparse_point_not_followed"
+    }
+  ],
+  "errors": [],
+  "own_new_evidence_excluded": true,
+  "elapsed_seconds": 35.9,
+  "root_git_excluded": true
+}

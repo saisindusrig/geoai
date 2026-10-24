@@ -1,0 +1,155 @@
+{
+  "method": "Independent Decimal mm-to-m geometry checks; not structural analysis",
+  "source_classification": "SYNTHETIC_VERIFICATION",
+  "engineering_approval": "DISABLED",
+  "components": [
+    {
+      "id": "drawing-cad:614f117ae2a74794:9C",
+      "size_m": [
+        0.3,
+        0.3,
+        3.2
+      ],
+      "center_m": [
+        0.15,
+        0.15,
+        1.6
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:9C"
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:AE",
+      "size_m": [
+        0.3,
+        0.3,
+        3.2
+      ],
+      "center_m": [
+        5.85,
+        0.15,
+        1.6
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:AE"
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:96",
+      "size_m": [
+        6.0,
+        0.2,
+        0.3
+      ],
+      "center_m": [
+        3.0,
+        0.15,
+        3.25
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:96"
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:95",
+      "size_m": [
+        6.0,
+        4.0,
+        0.2
+      ],
+      "center_m": [
+        3.0,
+        2.0,
+        3.5
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:95"
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:9A",
+      "size_m": [
+        1.2,
+        1.2,
+        0.45
+      ],
+      "center_m": [
+        0.15,
+        0.15,
+        -0.225
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:9A"
+    },
+    {
+      "id": "drawing-cad:614f117ae2a74794:AC",
+      "size_m": [
+        1.2,
+        1.2,
+        0.45
+      ],
+      "center_m": [
+        5.85,
+        0.15,
+        -0.225
+      ],
+      "source_entity_id": "dxf:614f117ae2a74794:AC"
+    }
+  ],
+  "attachments": [
+    {
+      "id": "attachment-0",
+      "from_entity_id": "dxf:614f117ae2a74794:9A",
+      "to_entity_id": "dxf:614f117ae2a74794:9C",
+      "point_mm": [
+        150,
+        150,
+        0
+      ],
+      "behavior": "DECLARED_GEOMETRIC_ATTACHMENT_NOT_ANALYTICAL_JOINT",
+      "source": "Explicit synthetic common point only; no joint stiffness or capacity"
+    },
+    {
+      "id": "attachment-1",
+      "from_entity_id": "dxf:614f117ae2a74794:9C",
+      "to_entity_id": "dxf:614f117ae2a74794:96",
+      "point_mm": [
+        150,
+        150,
+        3200
+      ],
+      "behavior": "DECLARED_GEOMETRIC_ATTACHMENT_NOT_ANALYTICAL_JOINT",
+      "source": "Explicit synthetic common point only; no joint stiffness or capacity"
+    },
+    {
+      "id": "attachment-2",
+      "from_entity_id": "dxf:614f117ae2a74794:AC",
+      "to_entity_id": "dxf:614f117ae2a74794:AE",
+      "point_mm": [
+        5850,
+        150,
+        0
+      ],
+      "behavior": "DECLARED_GEOMETRIC_ATTACHMENT_NOT_ANALYTICAL_JOINT",
+      "source": "Explicit synthetic common point only; no joint stiffness or capacity"
+    },
+    {
+      "id": "attachment-3",
+      "from_entity_id": "dxf:614f117ae2a74794:AE",
+      "to_entity_id": "dxf:614f117ae2a74794:96",
+      "point_mm": [
+        5850,
+        150,
+        3200
+      ],
+      "behavior": "DECLARED_GEOMETRIC_ATTACHMENT_NOT_ANALYTICAL_JOINT",
+      "source": "Explicit synthetic common point only; no joint stiffness or capacity"
+    },
+    {
+      "id": "attachment-4",
+      "from_entity_id": "dxf:614f117ae2a74794:96",
+      "to_entity_id": "dxf:614f117ae2a74794:95",
+      "point_mm": [
+        3000,
+        150,
+        3400
+      ],
+      "behavior": "DECLARED_GEOMETRIC_ATTACHMENT_NOT_ANALYTICAL_JOINT",
+      "source": "Explicit synthetic common point only; no joint stiffness or capacity"
+    }
+  ],
+  "formula": "sizeZ=(top_mm-bottom_mm)/1000; centerZ=(top_mm+bottom_mm)/2000; East/North values /1000",
+  "independent_checks": "Decimal arithmetic independently checks extents and elevations; 5 entered attachment points independently bounded in both envelopes"
+}

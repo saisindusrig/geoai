@@ -1,0 +1,4 @@
+cad-slab-geometry.spec.ts: 1 passed (51.3 seconds)
+cad-slab-analysis.spec.ts: 1 passed (3.2 minutes)
+cad-slab-review.spec.ts: 1 passed (42.8 seconds)
+Local Chromium, offline AI, actual saved geometry and local OpenSees 3.8.0.

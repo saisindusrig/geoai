@@ -1,0 +1,13 @@
+{
+  "dev.db": {
+    "exact_rows_and_schema_match": true,
+    "rows": 10283
+  },
+  "assistant-history.db": {
+    "exact_rows_and_schema_match": true,
+    "rows": 3
+  },
+  "application_source_unchanged": true,
+  "manifests_requirements_launchers_unchanged": true,
+  "original_static_fixture_files_unchanged": true
+}

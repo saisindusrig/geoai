@@ -1,0 +1,26 @@
+{
+  "backend": {
+    "passed": 84,
+    "new_slab_tests": 24,
+    "existing_solver_regressions": 60,
+    "real_solver": "OpenSees 3.8.0",
+    "final_joint_guard_recheck_passed": 24,
+    "warning": "Existing Starlette/httpx deprecation only"
+  },
+  "browser": {
+    "passed": 3,
+    "tests": [
+      "slab-transfer.spec.ts: full authorization, edits, load scaling, member diagrams, undo/redo, save/reload and staleness",
+      "slab-transfer-review.spec.ts: saved evidence, camera after reload, responsive screenshots",
+      "slab-transfer-legacy.spec.ts: existing frame workspace regression"
+    ],
+    "final_saved_review_recheck": "PASS (37.2 seconds)",
+    "in_app_browser_limitation": "Local API/Cesium asset loading failed; completed tests used local Chromium"
+  },
+  "typescript": "PASS",
+  "targeted_eslint": "PASS",
+  "paid_inference_calls": 0,
+  "local_url": "http://localhost:3001/projects/784/workspace",
+  "saved_analysis_id": 301,
+  "saved_revision_id": 86
+}

@@ -1,0 +1,15 @@
+{
+  "gate": "2I",
+  "offline_qualification": "COMPLETE",
+  "tests_passed": 12,
+  "owner_console_reference_match": "ALL_FOUR_EXACT",
+  "firebase_enabled": false,
+  "recovery_enabled": false,
+  "both_providers_preserved": true,
+  "analytics_initialized": false,
+  "backend_changed": false,
+  "original_data_unchanged": true,
+  "live_services_accessed": false,
+  "real_authentication": "NOT_RUN",
+  "public_launch": "BLOCKED"
+}

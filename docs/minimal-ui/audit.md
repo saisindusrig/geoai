@@ -1,0 +1,11 @@
+# Minimal UI audit — fresh browser observations
+
+1. **Ask why analysis is blocked (788, 1280/1600).** The header exposes model IDs and revision IDs. A large 233-input card repeats the following answer; completion messages and warnings repeat. Multiple actions compete. The composer remains visible and the panel resizes, which should be retained. Evidence: before-788-chat-1280/1600.jpg.
+2. **Open Analysis (788, 1280/1600).** Dense component dimensions, raw BLOCKED_MISSING_ENGINEERING_INPUTS, warnings and many disclosure rows precede any manageable form task. A novice must interpret technical structure to begin. Evidence: before-788-analysis-1280/1600.jpg.
+3. **Inspect frame/load evidence (793).** Conversation has repeated provenance and three actions. Analysis opens the CAD geometry audit before the saved numerical results. The model appears small at 1280 px. Evidence: before-793-chat-1280/1600.jpg and before-793-analysis-1280.jpg.
+4. **Inspect slab load evidence (784).** The short load explanation still includes record IDs, repeated qualifications and secondary actions. A camera state after route/viewport changes could place the model outside the useful view; Fit model restored it. The incomplete capture was rejected and replaced. Evidence: before-784-chat-1280/1600.jpg.
+5. **Review drawing identities (789).** Ordinary replies expose saved revision/record wording and extended warnings. The visible model preference is more prominent than the conversation task. Evidence: before-789-chat-1280/1600.jpg.
+
+Accessibility observations: named fields and controls exist, but small text, dense nested disclosures and competing actions increase reading and navigation effort. Keyboard flow and focus will be tested after changes; screenshots do not establish full accessibility compliance.
+
+Chosen implementation: preserve existing visual language and engineering architecture. Use a short Assistant header with Settings, a single saved-data response summary and next action, compact task-based connection forms, an Analysis overview with advanced tools collapsed, and safer model framing. No external image generation or new solver methods are required for these existing code surfaces.

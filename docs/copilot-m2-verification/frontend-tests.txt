@@ -1,0 +1,533 @@
+
+ RUN  v3.2.7 D:/layout project/frontend
+
+ ✓ components/model-editor/UnequalFrameComparisonPanel.test.tsx (2 tests) 1952ms
+   ✓ saved unequal comparison applicability > removes an old comparison when active solver result changes and blocks unmatched baseline  1771ms
+ ✓ components/workspace/EmptyProjectStarter.test.tsx (8 tests) 2582ms
+   ✓ keeps dismissed coaching hidden after reopening the workspace  1577ms
+   ✓ opens Ask GeoAI without blocking the workspace  409ms
+ ✓ components/map/CameraViewControls.test.tsx (2 tests) 196ms
+ ✓ components/model-editor/EngineeringDockPanel.test.tsx (3 tests) 6583ms
+   ✓ engineering dock > shows unsupported quantities as unavailable and real readiness  3525ms
+   ✓ engineering dock > sections rendered geometry, applies view-only clipping and restores clipping on unmount  327ms
+   ✓ engineering dock > keeps failed terrain profiles explicit instead of adding fabricated stations  2729ms
+ ✓ components/scenarios/ScenarioSelector.test.tsx (2 tests) 219ms
+ ✓ hooks/useEditableModelEditor.test.tsx (18 tests) 6700ms
+   ✓ local sandbox editor > keeps parameter previews separate, blocks saving and discards stale previews  555ms
+   ✓ local sandbox editor > autosaves and restores the layout and view without backend calls  1802ms
+   ✓ model editor history and validation > blocks reference deletion and free transforms that detach generated geometry  1014ms
+   ✓ model editor history and validation > keeps proposals read-only until Apply, with one reversible undo action  379ms
+   ✓ model editor history and validation > blocks numeric lock bypasses even when visibility is included  942ms
+ ✓ components/workspace/ProposalReview.test.tsx (6 tests) 9695ms
+   ✓ requires explicit review and acknowledgment for exact approval without building  2860ms
+   ✓ generates only an approved eligible building and reports its saved revision  2464ms
+   ✓ summarizes a typed opening patch and blocks application with unsaved edits  1854ms
+   ✓ reviews a generic composition and requires saved state before generation  1994ms
+ ✓ components/model-editor/ConnectionInputNavigation.test.tsx (1 test) 229ms
+ ✓ components/model-editor/AnalysisOverview.test.tsx (2 tests) 199ms
+ ❯ components/workspace/AssistantPanel.test.tsx (4 tests | 1 failed) 10517ms
+   × never invokes a model writer for assistant response null 6658ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ never invokes a model writer for assistant response {"type":"update_parameters","parameters":{"floors":5}}  1354ms
+   ✓ never invokes a model writer for assistant response {"type":"regenerate"}  2221ms
+   ✓ never invokes a model writer for assistant response {"type":"delete_objects"} 283ms
+ ❯ components/map/WorkspaceMouseControls.test.tsx (10 tests | 2 failed) 8590ms
+   × workspace gesture ownership > waits to open the inspector until a double click has fitted the original target 1203ms
+     → expected "spy" to be called once, but got 0 times
+   ✓ workspace gesture ownership > selects once on release and never gives a camera gesture to selection 35ms
+   ✓ workspace gesture ownership > pans with Shift-middle and restores controls after lost capture 10ms
+   ✓ workspace gesture ownership > leaves transform handles and drawing clicks to their existing owners 160ms
+   ✓ workspace gesture ownership > cancels a rectangle on blur without selection and restores prior disabled controls 165ms
+   ✓ workspace gesture ownership > ignores focus shortcuts typed outside the viewport  1004ms
+   × workspace gesture ownership > zooms through the pointer ray without selecting and exposes object actions 5136ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ workspace gesture ownership > applies rectangle modifiers atomically 246ms
+   ✓ workspace gesture ownership > keeps locked objects inspectable but disables editing in the context menu  618ms
+   ✓ workspace gesture ownership > orients around model bounds instead of hidden terrain 8ms
+ ❯ components/workspace/BuildingAssistant.test.tsx (4 tests | 1 failed) 13639ms
+   ✓ requires a saved boundary and saved model edits  2860ms
+   × reviews and revises a plan before explicitly approving generation 6963ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ restores saved plans and blocks stale approval  2417ms
+   ✓ shows provider errors without generating a model  1397ms
+ ❯ components/ai/ModernAssistantPanel.test.tsx (2 tests | 1 failed) 12777ms
+   × rejects streamed model-changing actions while retaining the explicit manual regenerate control 10254ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ keeps the existing read-only site analysis action available  2522ms
+ ❯ components/map/WorkspacePanels.test.tsx (5 tests | 1 failed) 15466ms
+   × site data panel > explains missing evidence and prevents unsupported placement requests 8295ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ site data panel > resamples the accepted anchor, preserves its offset and uses the saved elevation  2522ms
+   ✓ site data panel > shows failed sampling without moving the model  949ms
+   ✓ scene and sunlight panel > enables lighting and shadows with the sun preset without resetting terrain scale  3071ms
+   ✓ scene and sunlight panel > makes loading failures visible on the Scene tab and supports retry  626ms
+ ✓ components/auth/RequireAuth.test.tsx (5 tests) 1613ms
+   ✓ useRequireAuth > redirects to login when JWT required and no token  557ms
+   ✓ useRequireAuth > does not redirect on public paths  1010ms
+ ✓ lib/api-transport.test.ts (2 tests) 72ms
+ ✓ components/landing/engineeringSite.test.ts (4 tests) 68ms
+ ❯ components/layout/UserMenu.test.tsx (3 tests | 1 failed) 5808ms
+   × UserMenu > shows Sign in when unauthenticated 5587ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ UserMenu > shows user name when authenticated 196ms
+   ✓ UserMenu > shows loading skeleton while auth resolves 24ms
+ ✓ lib/local-sandbox.test.ts (7 tests) 19ms
+ ✓ hooks/useActiveJobPolling.test.ts (1 test) 46ms
+ ✓ components/model-editor/PhysicalFramePanel.test.tsx (1 test) 383ms
+   ✓ recovers saved input forms after an initial read failure without an edit or solver request  382ms
+ ✓ components/model-editor/ComponentIdentity.test.tsx (2 tests) 192ms
+ ❯ components/workspace/WorkspaceToolRail.test.tsx (7 tests | 1 failed) 23123ms
+   × starts site drawing from the first-run action and leaves measurement mode 6970ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ draws an alignment as a line rather than replacing the site boundary  3474ms
+   ✓ cancels drawing with Escape while a drawing option has focus  2662ms
+   ✓ prevents editing locked selections through buttons and keyboard shortcuts  2794ms
+   ✓ provides area measurement in the shared measurement menu and resets modes on selection  5665ms
+   ✓ preserves text-field undo and uses drawing undo for vertices instead of object history  1245ms
+   ✓ frames the selection and fits the project when nothing is selected  304ms
+ ✓ components/map/MapViewerArea.geometry.test.tsx (4 tests) 1428ms
+   ✓ preserves unsaved model edits when a site boundary is confirmed  821ms
+   ✓ retains failed boundary saves for retry and persists once through the refresh callback  445ms
+ ✓ lib/sun-study.test.ts (3 tests) 68ms
+ ❯ lib/api-read-retry.test.ts (4 tests | 3 failed) 39ms
+   × retries a failed read transport once 11ms
+     → Cannot reach the local API. Check that the backend is running, then Retry. Your draft has been kept; no request was automatically repeated.
+   × does not repeat a write after a transport failure 22ms
+     → expected [Function] to throw error including 'Failed to fetch' but got 'Cannot reach the local API. Check tha…'
+   × retries a read when the response body transport fails 2ms
+     → Cannot read properties of undefined (reading 'get')
+   ✓ does not retry an HTTP rejection or convert missing optional resources 2ms
+ ✓ lib/asset-types.test.ts (4 tests) 74ms
+ ✓ lib/platform-attachments.test.ts (21 tests) 164ms
+ ✓ lib/map-imagery.test.ts (3 tests) 48ms
+ ✓ lib/parametric-platform.test.ts (8 tests) 49ms
+ ✓ lib/component-edit.test.ts (3 tests) 7ms
+ ✓ components/model-editor/NumberField.test.tsx (3 tests) 2355ms
+   ✓ precision numeric confirmation > commits once on Enter, never on keystrokes  1046ms
+   ✓ precision numeric confirmation > shows an inline error without clamping and Escape restores the original value  972ms
+   ✓ precision numeric confirmation > rounds display noise without changing stored coordinates on blur  332ms
+ ✓ lib/cesium-transform.test.ts (15 tests) 264ms
+ ✓ lib/automatic-terrain.test.ts (5 tests) 23ms
+ ✓ lib/cesium-photorealistic-tiles.test.ts (3 tests) 24ms
+ ✓ lib/sandbox-geometry.test.ts (3 tests) 14ms
+ ✓ hooks/usePointerResize.test.tsx (1 test) 89ms
+ ✓ lib/model-url-resolution.test.ts (16 tests) 9ms
+ ✓ lib/engineering-guidance.test.ts (3 tests) 9ms
+ ✓ lib/editor-transform.test.ts (10 tests) 18ms
+ ✓ lib/cad-mesh.test.ts (4 tests) 100ms
+ ✓ stores/projectStore.drawing.test.ts (4 tests) 10ms
+ ✓ components/model-editor/PropertiesPanel.test.tsx (3 tests) 4105ms
+   ✓ staged inspector edits > previews without committing, then applies all fields once  2219ms
+   ✓ staged inspector edits > cancel discards pending edits without creating an undo operation  594ms
+   ✓ staged inspector edits > blocks a partial Apply with invalid fields and Cancel resets those fields  1290ms
+ ✓ lib/viewport-interaction.test.ts (4 tests) 8ms
+ ✓ lib/model-display-elevation.test.ts (6 tests) 7ms
+ ❯ components/workspace/PersistentAssistant.test.tsx (21 tests | 3 failed) 28306ms
+   × persistent project Assistant > stops run-status polling after a transport failure and resumes only through Retry 8697ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   × persistent project Assistant > keeps preferences and full requirement counts out of the normal conversation 6346ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   × persistent project Assistant > sends once on Enter, keeps Shift+Enter multiline and ignores composing Enter 5698ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ persistent project Assistant > restores composer focus after confirmed submission  559ms
+   ✓ persistent project Assistant > explains unavailable mock chat in the saved turn without provider retries  621ms
+   ✓ persistent project Assistant > settles a running profile to Current without a second refresh  2014ms
+   ✓ persistent project Assistant > keeps the saved selection/profile pair without creating a selection on send 284ms
+   ✓ persistent project Assistant > blocks changed geometry and explains refreshing the saved site 284ms
+   ✓ persistent project Assistant > labels offline engineering guidance without implying template or paid inference 224ms
+   ✓ persistent project Assistant > requires a fresh message for stale model context instead of retrying 229ms
+   ✓ persistent project Assistant > loads an assistant reply and clarification after reload  323ms
+   ✓ persistent project Assistant > retries the persisted run and displays capability limitations 232ms
+   ✓ persistent project Assistant > persists a message and reloads it from the server  533ms
+   ✓ persistent project Assistant > shows current selection and unknown site readiness without claiming zero elevation 275ms
+   ✓ persistent project Assistant > retries exactly the original message context after selection changes  474ms
+   ✓ persistent project Assistant > requires the explicit Accept action for proposed memory 232ms
+   ✓ persistent project Assistant > requires the explicit Reject action for proposed memory 273ms
+   ✓ persistent project Assistant > shows real work progress and allows composing the next request without submitting concurrently 273ms
+   ✓ persistent project Assistant > offers a retry when loading conversation history fails 291ms
+   ✓ persistent project Assistant > pins the explicitly selected model preference to an offline request 217ms
+   ✓ persistent project Assistant > identifies offline provenance and disables stale result navigation 205ms
+ ✓ lib/engineering-measurement.test.ts (5 tests) 10ms
+ ✓ lib/revision-comparison.test.ts (2 tests) 7ms
+ ✓ lib/editable-model.test.ts (3 tests) 7ms
+ ✓ lib/editor-analysis.test.ts (8 tests) 4872ms
+   ✓ non-destructive scene analysis > profiles the actual placed model and keeps stations outside geometry unknown  4794ms
+ ✓ lib/engineering-snap.test.ts (2 tests) 7ms
+ ✓ lib/boundary-validation.test.ts (9 tests) 6ms
+ ✓ lib/auth-routes.test.ts (5 tests) 6ms
+ ✓ lib/cesium-scene.test.ts (3 tests) 8ms
+ ✓ lib/api-errors.test.ts (5 tests) 7ms
+ ✓ lib/camera-surface.test.ts (2 tests) 7ms
+ ✓ lib/engineering-presentation.test.ts (3 tests) 9ms
+ ✓ lib/model-framing.test.ts (1 test) 4ms
+ ✓ lib/map-view-mode.test.ts (1 test) 6ms
+ ❯ app/dashboard/page.test.tsx (15 tests | 3 failed) 30600ms
+   × validates and trims folder names and prevents duplicate folder requests 4963ms
+     → Unable to find an element with the text: No projects yet. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"geo-dashboard-hub "[39m
+    [36m>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"hub-sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"hub-brand"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/"[39m
+            [33mtitle[39m=[32m"GeoAI home"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-label[39m=[32m"GeoAI"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-2 tracking-[-0.04em] text-foreground text-sm"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"h-[1.15em] w-[1.1em] text-foreground-secondary"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"29"[39m
+                [33mviewBox[39m=[32m"0 0 27 29"[39m
+                [33mwidth[39m=[32m"27"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 23 13.5 3 25 23H2Z M8 23l5.5-10L19 23 M2 23l11.5 4L25 23"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"1.3"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"font-medium"[39m
+              [36m>[39m
+                [0mGeoAI[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"-ml-1 mt-1 size-1 self-start rounded-full bg-primary"[39m
+              [36m/>[39m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Collapse sidebar"[39m
+            [33mtitle[39m=[32m"Collapse sidebar"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-panel-left-close lucide-sidebar-close"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"18"[39m
+                [33mrx[39m=[32m"2"[39m
+                [33mwidth[39m=[32m"18"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M9 3v18"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 15-3-3 3-3"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"hub-micro hub-sidebar-label"[39m
+        [36m>[39m
+          [0mWORKSPACE[0m
+        [36m</span>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Dashboard navigation"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mtitle[39m=[32m"Overview"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"9"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"5"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"14"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"9"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"14"[39m
+                [33my[39m=[32m"12"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"5"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mOverview[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mtitle[39m=[32m"Projects"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-layers lucide-layers-3"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mProjects[0m
+            [36m<...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"geo-dashboard-hub "[39m
+    [36m>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"hub-sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"hub-brand"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/"[39m
+            [33mtitle[39m=[32m"GeoAI home"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-label[39m=[32m"GeoAI"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-2 tracking-[-0.04em] text-foreground text-sm"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"h-[1.15em] w-[1.1em] text-foreground-secondary"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"29"[39m
+                [33mviewBox[39m=[32m"0 0 27 29"[39m
+                [33mwidth[39m=[32m"27"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 23 13.5 3 25 23H2Z M8 23l5.5-10L19 23 M2 23l11.5 4L25 23"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"1.3"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"font-medium"[39m
+              [36m>[39m
+                [0mGeoAI[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"-ml-1 mt-1 size-1 self-start rounded-full bg-primary"[39m
+              [36m/>[39m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Collapse sidebar"[39m
+            [33mtitle[39m=[32m"Collapse sidebar"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-panel-left-close lucide-sidebar-close"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"18"[39m
+                [33mrx[39m=[32m"2"[39m
+                [33mwidth[39m=[32m"18"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M9 3v18"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 15-3-3 3-3"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"hub-micro hub-sidebar-label"[39m
+        [36m>[39m
+          [0mWORKSPACE[0m
+        [36m</span>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Dashboard navigation"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mtitle[39m=[32m"Overview"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"9"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"5"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"14"[39m
+                [33my[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"9"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"14"[39m
+                [33my[39m=[32m"12"[39m
+              [36m/>[39m
+              [36m<rect[39m
+                [33mheight[39m=[32m"5"[39m
+                [33mrx[39m=[32m"1"[39m
+                [33mwidth[39m=[32m"7"[39m
+                [33mx[39m=[32m"3"[39m
+                [33my[39m=[32m"16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mOverview[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mtitle[39m=[32m"Projects"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-layers lucide-layers-3"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mProjects[0m
+            [36m<...
+   × restores focus to the folder trigger when Escape closes the dialog 5025ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   × name-only project entry > opens a compact dialog with only a project name 8843ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ name-only project entry > trims the name and Enter opens the workspace directly  4992ms
+   ✓ name-only project entry > requires a non-whitespace name and keeps the length limit  578ms
+   ✓ name-only project entry > Escape closes and returns focus to the primary action  307ms
+   ✓ name-only project entry > keeps the project name focused when global search is requested inside the dialog  570ms
+   ✓ name-only project entry > Cancel closes without creating a project  730ms
+   ✓ name-only project entry > preserves entered name and displays failed requests in the dialog  983ms
+   ✓ name-only project entry > prevents duplicate submissions while the API request is pending  326ms
+   ✓ name-only project entry > keeps Tab within the dialog  575ms
+   ✓ name-only project entry > uses the same dialog for the compatibility creation URL 119ms
+   ✓ compact project dashboard > continues the latest project and preserves workspace links  427ms
+   ✓ compact project dashboard > preserves project search and folder filtering  2033ms
+   ✓ compact project dashboard > reports load errors without showing a false empty state 123ms
+
+ Test Files  10 failed | 50 passed (60)
+      Tests  17 failed | 299 passed (316)
+     Errors  2 errors
+   Start at  11:06:05
+   Duration  42.03s (transform 100.03s, setup 40.49s, collect 221.36s, tests 193.44s, environment 69.46s, prepare 21.35s)
+

@@ -14,10 +14,12 @@ export default function ProjectValidationPanel({
   projectId,
   compact,
   className,
+  readOnly = false,
 }: {
   projectId: number;
   compact?: boolean;
   className?: string;
+  readOnly?: boolean;
   /** @deprecated Details are always visible in compact mode */
   defaultDetailsOpen?: boolean;
 }) {
@@ -140,7 +142,7 @@ export default function ProjectValidationPanel({
       {nextStep && (
         <div className="space-y-1.5 border-t border-border/50 pt-2">
           <p className="text-[10px] text-primary/90 leading-snug">Next: {nextStep}</p>
-          <div className="grid grid-cols-1 gap-1">
+          {!readOnly && <div className="grid grid-cols-1 gap-1">
             {["Import survey DEM", "Draw alignment", "Run site analysis"].map((label) => (
               <button
                 key={label}
@@ -150,7 +152,7 @@ export default function ProjectValidationPanel({
                 {label}
               </button>
             ))}
-          </div>
+          </div>}
         </div>
       )}
     </>

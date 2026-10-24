@@ -1,0 +1,3946 @@
+{
+  "status": "VERIFIED",
+  "method": "Actual OpenSees uniform-load fixed-fixed beam; closed form at every sample plus independent consistent-load stiffness; 2/4 meshes, N-mm, half load",
+  "cases": [
+    {
+      "run_id": "376e9769-adda-464d-ab64-d3fa5c0b68be",
+      "timestamp": "2026-10-12T04:00:58.633356+00:00",
+      "inputs": {
+        "kind": "fixed_beam",
+        "length_m": 4.0,
+        "height_m": 3.0,
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.01,
+        "inertia_m4": 8e-06,
+        "load_n": 1000.0,
+        "material_source": "Explicit synthetic elastic verification material",
+        "section_source": "Explicit synthetic A and Iz; not actual project sections",
+        "load_source": "Synthetic tip load downward",
+        "joints": "rigid",
+        "restraints": "fixed_base",
+        "purpose": "VERIFICATION_ONLY",
+        "elements_per_member": 2,
+        "units": "SI",
+        "_verification_loads": {},
+        "_uniform_global_by_member": {
+          "1": [
+            0,
+            -2000
+          ]
+        }
+      },
+      "inputs_sha256": "df9018e4d265c5769c02a5fe748d339f73ede92a445bc17c6714f9b1ffd05b6e",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "canonical_input_text_sha256": "66e456e0cf4e06e3672331817df83af60c49a7d63e0b8655a5b1b9d7e6906490",
+      "input_file_sha256": "66e456e0cf4e06e3672331817df83af60c49a7d63e0b8655a5b1b9d7e6906490",
+      "status": "VERIFIED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "limitations": [
+        "2D small-displacement linear Euler-Bernoulli elasticity only",
+        "No shear deformation, geometric stiffness, buckling, nonlinear or dynamic analysis",
+        "Rigid joints and fixed bases are explicit verification assumptions",
+        "No actual platform-wide mapping, foundation or connection capacity analysis",
+        "IS/US design checks and engineering approval disabled"
+      ],
+      "exit_code": 0,
+      "verified": true,
+      "solver_version": "3.8.0",
+      "convergence_code": 0,
+      "nodes": [
+        {
+          "id": 1,
+          "position_m": [
+            0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 2,
+          "position_m": [
+            4.0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 3,
+          "position_m": [
+            2.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.0008333333333333334,
+            0.0
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "id": 1,
+          "i": 1,
+          "j": 3,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            4000.0,
+            2666.666666666667,
+            0.0,
+            -2.2737368e-13,
+            1333.3333333333335
+          ],
+          "samples": [
+            {
+              "position_m": [
+                0.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.666666666667,
+              "shear_n": 4000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552084e-05
+              ],
+              "moment_nm": -2182.291666666667,
+              "shear_n": 3750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.57763671875e-05
+              ],
+              "moment_nm": -1729.166666666667,
+              "shear_n": 3500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171875e-05
+              ],
+              "moment_nm": -1307.291666666667,
+              "shear_n": 3250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015950520833333333
+              ],
+              "moment_nm": -916.666666666667,
+              "shear_n": 3000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023174285888671878
+              ],
+              "moment_nm": -557.291666666667,
+              "shear_n": 2750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003094482421875
+              ],
+              "moment_nm": -229.16666666666697,
+              "shear_n": 2500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003894170125325521
+              ],
+              "moment_nm": 67.70833333333303,
+              "shear_n": 2250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046875000000000004
+              ],
+              "moment_nm": 333.33333333333303,
+              "shear_n": 2000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492187
+              ],
+              "moment_nm": 567.708333333333,
+              "shear_n": 1750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208334
+              ],
+              "moment_nm": 770.833333333333,
+              "shear_n": 1500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367189
+              ],
+              "moment_nm": 942.708333333333,
+              "shear_n": 1250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218750000001
+              ],
+              "moment_nm": 1083.333333333333,
+              "shear_n": 1000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007757695515950521
+              ],
+              "moment_nm": 1192.708333333333,
+              "shear_n": 750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171875001
+              ],
+              "moment_nm": 1270.833333333333,
+              "shear_n": 500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242188
+              ],
+              "moment_nm": 1317.708333333333,
+              "shear_n": 250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333334
+              ],
+              "moment_nm": 1333.333333333333,
+              "shear_n": 0.0,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "i": 3,
+          "j": 2,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            -2.2737368e-13,
+            -1333.3333333333335,
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ],
+          "samples": [
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333334
+              ],
+              "moment_nm": 1333.3333333333335,
+              "shear_n": -2.2737368e-13,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242188
+              ],
+              "moment_nm": 1317.7083333333335,
+              "shear_n": -250.00000000000023,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171875001
+              ],
+              "moment_nm": 1270.8333333333335,
+              "shear_n": -500.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007757695515950521
+              ],
+              "moment_nm": 1192.7083333333335,
+              "shear_n": -750.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218750000001
+              ],
+              "moment_nm": 1083.3333333333333,
+              "shear_n": -1000.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367189
+              ],
+              "moment_nm": 942.7083333333333,
+              "shear_n": -1250.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208334
+              ],
+              "moment_nm": 770.8333333333333,
+              "shear_n": -1500.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492187
+              ],
+              "moment_nm": 567.7083333333333,
+              "shear_n": -1750.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046875000000000004
+              ],
+              "moment_nm": 333.33333333333326,
+              "shear_n": -2000.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003894170125325521
+              ],
+              "moment_nm": 67.70833333333326,
+              "shear_n": -2250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003094482421875
+              ],
+              "moment_nm": -229.16666666666674,
+              "shear_n": -2500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023174285888671878
+              ],
+              "moment_nm": -557.2916666666667,
+              "shear_n": -2750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015950520833333333
+              ],
+              "moment_nm": -916.666666666667,
+              "shear_n": -3000.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171875e-05
+              ],
+              "moment_nm": -1307.291666666667,
+              "shear_n": -3250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.57763671875e-05
+              ],
+              "moment_nm": -1729.166666666667,
+              "shear_n": -3500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552084e-05
+              ],
+              "moment_nm": -2182.291666666667,
+              "shear_n": -3750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                4.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.666666666667,
+              "shear_n": -4000.0000000000005,
+              "axial_n": -0.0
+            }
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "node": 1,
+          "fx_n": 0.0,
+          "fy_n": 4000.0,
+          "moment_nm": 2666.666666666667
+        },
+        {
+          "node": 2,
+          "fx_n": 0.0,
+          "fy_n": 4000.0,
+          "moment_nm": -2666.666666666667
+        }
+      ],
+      "rigid_offset_transfers": [],
+      "joint_equilibrium_residuals_si": {
+        "1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          -4.5474736e-13,
+          0.0
+        ]
+      },
+      "equilibrium_residual_si": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "comparisons": {
+        "nodes": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 4.556767954008787e-21,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 4.5474736e-13,
+          "passed": true
+        }
+      },
+      "independent_reference": {
+        "nodes": {
+          "1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "3": [
+            0.0,
+            -0.0008333333333333334,
+            0.0
+          ]
+        },
+        "reactions": {
+          "1": [
+            0.0,
+            4000.0,
+            2666.666666666667
+          ],
+          "2": [
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ]
+        },
+        "forces": {
+          "1": [
+            0.0,
+            4000.0,
+            2666.666666666667,
+            0.0,
+            -2.2737367544323206e-13,
+            1333.3333333333335
+          ],
+          "2": [
+            0.0,
+            -2.2737367544323206e-13,
+            -1333.3333333333335,
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ]
+        },
+        "stiffness_si": [
+          [
+            1000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            2400000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            2400000.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            1600000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            -2400000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            3200000.0,
+            0.0,
+            2400000.0,
+            1600000.0
+          ],
+          [
+            -1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0,
+            2000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            2400000.0,
+            0.0,
+            4800000.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            1600000.0,
+            0.0,
+            -2400000.0,
+            1600000.0,
+            0.0,
+            0.0,
+            6400000.0
+          ]
+        ],
+        "load_vector_si": [
+          0.0,
+          -2000.0,
+          -666.6666666666666,
+          0.0,
+          -2000.0,
+          666.6666666666666,
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "formulation": "Independent 2D EA/L and EI Euler-Bernoulli 6x6 stiffness, consistent uniform loads [qxL/2,qyL/2,qyL\u00b2/12,qxL/2,qyL/2,-qyL\u00b2/12], rigid-arm transformed assembly; Kff uf=Ff, R=Ku-F, end forces=k ulocal-fe"
+      },
+      "artifact_sha256": {
+        "model.tcl": "66e456e0cf4e06e3672331817df83af60c49a7d63e0b8655a5b1b9d7e6906490",
+        "nodes.tsv": "0aacae605e30a5a2f50d5bcddc0b7d862578c0a8998760e2960387a0d0c98e5e",
+        "forces.tsv": "4858b60036593a3d62d9e6c39d808c6d0b3a10ecf7bbb054bff7a9fe98e3c718",
+        "reactions.tsv": "c17f883e60c8b41897bddce7e7fc166e40e7f31a26ae11e1daf4befe0d23a591",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      },
+      "uniform_load_hand_verification": {
+        "passed": true,
+        "reference": {
+          "reaction_y_n": 4000.0,
+          "left_end_moment_nm": 2666.6666666666665,
+          "right_end_moment_nm": -2666.6666666666665,
+          "midspan_displacement_m": -0.0008333333333333334,
+          "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+        },
+        "sample_error_max_m_n_nm": 9.094947017729282e-13
+      }
+    },
+    {
+      "run_id": "0d121cf3-9789-42e9-bf42-61cb56951ea6",
+      "timestamp": "2026-10-12T04:00:58.714045+00:00",
+      "inputs": {
+        "kind": "fixed_beam",
+        "length_m": 4.0,
+        "height_m": 3.0,
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.01,
+        "inertia_m4": 8e-06,
+        "load_n": 1000.0,
+        "material_source": "Explicit synthetic elastic verification material",
+        "section_source": "Explicit synthetic A and Iz; not actual project sections",
+        "load_source": "Synthetic tip load downward",
+        "joints": "rigid",
+        "restraints": "fixed_base",
+        "purpose": "VERIFICATION_ONLY",
+        "elements_per_member": 4,
+        "units": "SI",
+        "_verification_loads": {},
+        "_uniform_global_by_member": {
+          "1": [
+            0,
+            -2000
+          ]
+        }
+      },
+      "inputs_sha256": "ee68eb141b8238322da77d4eb83b256fff78f81be2674c4347627eb618db1861",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "canonical_input_text_sha256": "a403dd8724f3dd90ad7c55bcda52d440f6bafcffabae6ef021a72e15b021117b",
+      "input_file_sha256": "a403dd8724f3dd90ad7c55bcda52d440f6bafcffabae6ef021a72e15b021117b",
+      "status": "VERIFIED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "limitations": [
+        "2D small-displacement linear Euler-Bernoulli elasticity only",
+        "No shear deformation, geometric stiffness, buckling, nonlinear or dynamic analysis",
+        "Rigid joints and fixed bases are explicit verification assumptions",
+        "No actual platform-wide mapping, foundation or connection capacity analysis",
+        "IS/US design checks and engineering approval disabled"
+      ],
+      "exit_code": 0,
+      "verified": true,
+      "solver_version": "3.8.0",
+      "convergence_code": 0,
+      "nodes": [
+        {
+          "id": 1,
+          "position_m": [
+            0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 2,
+          "position_m": [
+            4.0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 3,
+          "position_m": [
+            1.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.00046874999999999993,
+            -0.0006249999999999999
+          ]
+        },
+        {
+          "id": 4,
+          "position_m": [
+            2.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.0008333333333333332,
+            0.0
+          ]
+        },
+        {
+          "id": 5,
+          "position_m": [
+            3.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.00046874999999999993,
+            0.0006249999999999998
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "id": 1,
+          "i": 1,
+          "j": 3,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            3999.999999999999,
+            2666.666666666666,
+            0.0,
+            -1999.999999999999,
+            333.33333333333326
+          ],
+          "samples": [
+            {
+              "position_m": [
+                0.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.666666666666,
+              "shear_n": 3999.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.0625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -3.154277801513672e-06
+              ],
+              "moment_nm": -2420.572916666666,
+              "shear_n": 3874.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552083e-05
+              ],
+              "moment_nm": -2182.291666666666,
+              "shear_n": 3749.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.1875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -2.6614665985107414e-05
+              ],
+              "moment_nm": -1951.8229166666663,
+              "shear_n": 3624.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.5776367187499986e-05
+              ],
+              "moment_nm": -1729.1666666666663,
+              "shear_n": 3499.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.3125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -6.916125615437825e-05
+              ],
+              "moment_nm": -1514.3229166666663,
+              "shear_n": 3374.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171874e-05
+              ],
+              "moment_nm": -1307.2916666666665,
+              "shear_n": 3249.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.4375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00012652158737182614
+              ],
+              "moment_nm": -1108.0729166666665,
+              "shear_n": 3124.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0001595052083333333
+              ],
+              "moment_nm": -916.6666666666665,
+              "shear_n": 2999.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.5625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00019472837448120117
+              ],
+              "moment_nm": -733.0729166666665,
+              "shear_n": 2874.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0002317428588867187
+              ],
+              "moment_nm": -557.2916666666665,
+              "shear_n": 2749.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.6875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00027011950810750315
+              ],
+              "moment_nm": -389.3229166666665,
+              "shear_n": 2624.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00030944824218749996
+              ],
+              "moment_nm": -229.16666666666697,
+              "shear_n": 2499.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.8125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003493380546569823
+              ],
+              "moment_nm": -76.82291666666697,
+              "shear_n": 2374.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000389417012532552
+              ],
+              "moment_nm": 67.70833333333303,
+              "shear_n": 2249.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.9375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004293322563171386
+              ],
+              "moment_nm": 204.42708333333303,
+              "shear_n": 2124.999999999999,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046874999999999993
+              ],
+              "moment_nm": 333.33333333333303,
+              "shear_n": 1999.999999999999,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "i": 3,
+          "j": 4,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            1999.9999999999982,
+            -333.33333333333405,
+            0.0,
+            1.70530257e-12,
+            1333.3333333333323
+          ],
+          "samples": [
+            {
+              "position_m": [
+                1.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046874999999999993
+              ],
+              "moment_nm": 333.33333333333405,
+              "shear_n": 1999.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.0625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005073555310567218
+              ],
+              "moment_nm": 454.42708333333394,
+              "shear_n": 1874.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492186
+              ],
+              "moment_nm": 567.7083333333338,
+              "shear_n": 1749.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.1875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005809664726257323
+              ],
+              "moment_nm": 673.1770833333337,
+              "shear_n": 1624.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208332
+              ],
+              "moment_nm": 770.8333333333336,
+              "shear_n": 1499.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.3125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006480288505554199
+              ],
+              "moment_nm": 860.6770833333335,
+              "shear_n": 1374.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367187
+              ],
+              "moment_nm": 942.7083333333335,
+              "shear_n": 1249.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.4375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007067116101582843
+              ],
+              "moment_nm": 1016.9270833333333,
+              "shear_n": 1124.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218749999999
+              ],
+              "moment_nm": 1083.333333333333,
+              "shear_n": 999.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.5625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007554888725280761
+              ],
+              "moment_nm": 1141.927083333333,
+              "shear_n": 874.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000775769551595052
+              ],
+              "moment_nm": 1192.708333333333,
+              "shear_n": 749.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.6875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007931399345397948
+              ],
+              "moment_nm": 1235.6770833333326,
+              "shear_n": 624.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171874998
+              ],
+              "moment_nm": 1270.8333333333326,
+              "shear_n": 499.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.8125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008187492688496906
+              ],
+              "moment_nm": 1298.1770833333326,
+              "shear_n": 374.9999999999982,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242186
+              ],
+              "moment_nm": 1317.7083333333326,
+              "shear_n": 249.99999999999818,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.9375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008317065238952635
+              ],
+              "moment_nm": 1329.4270833333321,
+              "shear_n": 124.99999999999818,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333332
+              ],
+              "moment_nm": 1333.3333333333321,
+              "shear_n": -1.8189894035458565e-12,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "i": 4,
+          "j": 5,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            3.4106051e-13,
+            -1333.3333333333328,
+            0.0,
+            1999.9999999999995,
+            333.33333333333314
+          ],
+          "samples": [
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333332
+              ],
+              "moment_nm": 1333.3333333333328,
+              "shear_n": 3.4106051e-13,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.0625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008317065238952635
+              ],
+              "moment_nm": 1329.4270833333328,
+              "shear_n": -124.99999999999966,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242186
+              ],
+              "moment_nm": 1317.7083333333328,
+              "shear_n": -249.99999999999966,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.1875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008187492688496907
+              ],
+              "moment_nm": 1298.1770833333328,
+              "shear_n": -374.99999999999966,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171874998
+              ],
+              "moment_nm": 1270.8333333333328,
+              "shear_n": -499.99999999999966,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.3125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007931399345397948
+              ],
+              "moment_nm": 1235.6770833333328,
+              "shear_n": -624.9999999999997,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000775769551595052
+              ],
+              "moment_nm": 1192.708333333333,
+              "shear_n": -749.9999999999997,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.4375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000755488872528076
+              ],
+              "moment_nm": 1141.927083333333,
+              "shear_n": -874.9999999999997,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218749999998
+              ],
+              "moment_nm": 1083.333333333333,
+              "shear_n": -999.9999999999997,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.5625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007067116101582843
+              ],
+              "moment_nm": 1016.927083333333,
+              "shear_n": -1124.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367187
+              ],
+              "moment_nm": 942.708333333333,
+              "shear_n": -1249.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.6875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006480288505554198
+              ],
+              "moment_nm": 860.677083333333,
+              "shear_n": -1374.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208332
+              ],
+              "moment_nm": 770.833333333333,
+              "shear_n": -1499.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.8125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005809664726257324
+              ],
+              "moment_nm": 673.177083333333,
+              "shear_n": -1624.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492187
+              ],
+              "moment_nm": 567.708333333333,
+              "shear_n": -1749.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.9375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000507355531056722
+              ],
+              "moment_nm": 454.42708333333303,
+              "shear_n": -1874.9999999999998,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046874999999999993
+              ],
+              "moment_nm": 333.33333333333303,
+              "shear_n": -1999.9999999999998,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "i": 5,
+          "j": 2,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            -2000.0000000000005,
+            -333.33333333333394,
+            0.0,
+            4000.0000000000005,
+            -2666.6666666666665
+          ],
+          "samples": [
+            {
+              "position_m": [
+                3.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046874999999999993
+              ],
+              "moment_nm": 333.33333333333394,
+              "shear_n": -2000.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.0625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004293322563171386
+              ],
+              "moment_nm": 204.4270833333339,
+              "shear_n": -2125.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.000389417012532552
+              ],
+              "moment_nm": 67.70833333333388,
+              "shear_n": -2250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.1875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00034933805465698237
+              ],
+              "moment_nm": -76.82291666666617,
+              "shear_n": -2375.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00030944824218749996
+              ],
+              "moment_nm": -229.16666666666617,
+              "shear_n": -2500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.3125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0002701195081075032
+              ],
+              "moment_nm": -389.3229166666662,
+              "shear_n": -2625.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023174285888671872
+              ],
+              "moment_nm": -557.2916666666663,
+              "shear_n": -2750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.4375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00019472837448120117
+              ],
+              "moment_nm": -733.0729166666663,
+              "shear_n": -2875.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0001595052083333333
+              ],
+              "moment_nm": -916.6666666666663,
+              "shear_n": -3000.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.5625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00012652158737182616
+              ],
+              "moment_nm": -1108.0729166666663,
+              "shear_n": -3125.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171875e-05
+              ],
+              "moment_nm": -1307.2916666666663,
+              "shear_n": -3250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.6875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -6.916125615437825e-05
+              ],
+              "moment_nm": -1514.3229166666663,
+              "shear_n": -3375.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.577636718749999e-05
+              ],
+              "moment_nm": -1729.1666666666665,
+              "shear_n": -3500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.8125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -2.661466598510742e-05
+              ],
+              "moment_nm": -1951.8229166666665,
+              "shear_n": -3625.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552083e-05
+              ],
+              "moment_nm": -2182.2916666666665,
+              "shear_n": -3750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.9375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -3.1542778015136724e-06
+              ],
+              "moment_nm": -2420.5729166666665,
+              "shear_n": -3875.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                4.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.6666666666665,
+              "shear_n": -4000.0000000000005,
+              "axial_n": -0.0
+            }
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "node": 1,
+          "fx_n": 0.0,
+          "fy_n": 3999.999999999999,
+          "moment_nm": 2666.666666666666
+        },
+        {
+          "node": 2,
+          "fx_n": 0.0,
+          "fy_n": 4000.0000000000005,
+          "moment_nm": -2666.6666666666665
+        }
+      ],
+      "rigid_offset_transfers": [],
+      "joint_equilibrium_residuals_si": {
+        "1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          -9.094947017729282e-13,
+          -7.958078640513122e-13
+        ],
+        "4": [
+          0.0,
+          2.04636308e-12,
+          -4.547473508864641e-13
+        ],
+        "5": [
+          0.0,
+          -9.094947017729282e-13,
+          -7.958078640513122e-13
+        ]
+      },
+      "equilibrium_residual_si": [
+        0.0,
+        0.0,
+        1.8189894035458565e-12
+      ],
+      "comparisons": {
+        "nodes": {
+          "max_absolute_error": 2.168404344971009e-19,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 9.094947017729282e-13,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 1.8189894035458565e-12,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 2.04636308e-12,
+          "passed": true
+        }
+      },
+      "independent_reference": {
+        "nodes": {
+          "1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "3": [
+            0.0,
+            -0.0004687499999999998,
+            -0.0006249999999999997
+          ],
+          "4": [
+            0.0,
+            -0.000833333333333333,
+            9.473903143468002e-20
+          ],
+          "5": [
+            0.0,
+            -0.0004687499999999998,
+            0.0006249999999999997
+          ]
+        },
+        "reactions": {
+          "1": [
+            0.0,
+            3999.999999999999,
+            2666.6666666666656
+          ],
+          "2": [
+            0.0,
+            3999.9999999999995,
+            -2666.6666666666656
+          ]
+        },
+        "forces": {
+          "1": [
+            0.0,
+            3999.999999999999,
+            2666.6666666666656,
+            0.0,
+            -1999.999999999999,
+            333.3333333333335
+          ],
+          "2": [
+            0.0,
+            2000.0,
+            -333.33333333333337,
+            0.0,
+            0.0,
+            1333.3333333333333
+          ],
+          "3": [
+            0.0,
+            1.8189894035458565e-12,
+            -1333.3333333333314,
+            0.0,
+            1999.9999999999982,
+            333.33333333333337
+          ],
+          "4": [
+            0.0,
+            -1999.999999999999,
+            -333.33333333333337,
+            0.0,
+            3999.999999999999,
+            -2666.6666666666656
+          ]
+        },
+        "stiffness_si": [
+          [
+            2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            19200000.0,
+            9600000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            9600000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9600000.0,
+            6400000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            19200000.0,
+            -9600000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            -9600000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -9600000.0,
+            6400000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            9600000.0,
+            3200000.0
+          ],
+          [
+            -2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4000000000.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -19200000.0,
+            -9600000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            38400000.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            9600000.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            12800000.0,
+            0.0,
+            -9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0,
+            4000000000.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            -9600000.0,
+            0.0,
+            38400000.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            9600000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            12800000.0,
+            0.0,
+            -9600000.0,
+            3200000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2000000000.0,
+            0.0,
+            0.0,
+            4000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            9600000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -19200000.0,
+            -9600000.0,
+            0.0,
+            38400000.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            9600000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            12800000.0
+          ]
+        ],
+        "load_vector_si": [
+          0.0,
+          -1000.0,
+          -166.66666666666666,
+          0.0,
+          -1000.0,
+          166.66666666666666,
+          0.0,
+          -2000.0,
+          0.0,
+          0.0,
+          -2000.0,
+          0.0,
+          0.0,
+          -2000.0,
+          0.0
+        ],
+        "formulation": "Independent 2D EA/L and EI Euler-Bernoulli 6x6 stiffness, consistent uniform loads [qxL/2,qyL/2,qyL\u00b2/12,qxL/2,qyL/2,-qyL\u00b2/12], rigid-arm transformed assembly; Kff uf=Ff, R=Ku-F, end forces=k ulocal-fe"
+      },
+      "artifact_sha256": {
+        "model.tcl": "a403dd8724f3dd90ad7c55bcda52d440f6bafcffabae6ef021a72e15b021117b",
+        "nodes.tsv": "57d2ef2b4d265c361acb6509e66d12080dbe454eb79454908ed262a61f1bb407",
+        "forces.tsv": "4beaff5db0c6cca022a7809ff9585cec48201466fdd264785ae5d0daf2049cf9",
+        "reactions.tsv": "03170aae26893c995de3e92c89f7b654a9bbd4ccd0df9d875a67909428498a6b",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      },
+      "uniform_load_hand_verification": {
+        "passed": true,
+        "reference": {
+          "reaction_y_n": 4000.0,
+          "left_end_moment_nm": 2666.6666666666665,
+          "right_end_moment_nm": -2666.6666666666665,
+          "midspan_displacement_m": -0.0008333333333333334,
+          "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+        },
+        "sample_error_max_m_n_nm": 1.8189894035458565e-12
+      }
+    },
+    {
+      "run_id": "94740a63-1f4b-4b40-8074-a35fe481c212",
+      "timestamp": "2026-10-12T04:00:58.791269+00:00",
+      "inputs": {
+        "kind": "fixed_beam",
+        "length_m": 4.0,
+        "height_m": 3.0,
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.01,
+        "inertia_m4": 8e-06,
+        "load_n": 1000.0,
+        "material_source": "Explicit synthetic elastic verification material",
+        "section_source": "Explicit synthetic A and Iz; not actual project sections",
+        "load_source": "Synthetic tip load downward",
+        "joints": "rigid",
+        "restraints": "fixed_base",
+        "purpose": "VERIFICATION_ONLY",
+        "elements_per_member": 2,
+        "units": "N-mm",
+        "_verification_loads": {},
+        "_uniform_global_by_member": {
+          "1": [
+            0,
+            -2000
+          ]
+        }
+      },
+      "inputs_sha256": "a9757b76dcdcb5387a926ed58aa6c893404956ceb0c2e3c5a6092edbe251f8f4",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "canonical_input_text_sha256": "e9565529b19d166cf79e7d6ace85014a88cd3766b018a9fe7011538a17077a61",
+      "input_file_sha256": "e9565529b19d166cf79e7d6ace85014a88cd3766b018a9fe7011538a17077a61",
+      "status": "VERIFIED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "limitations": [
+        "2D small-displacement linear Euler-Bernoulli elasticity only",
+        "No shear deformation, geometric stiffness, buckling, nonlinear or dynamic analysis",
+        "Rigid joints and fixed bases are explicit verification assumptions",
+        "No actual platform-wide mapping, foundation or connection capacity analysis",
+        "IS/US design checks and engineering approval disabled"
+      ],
+      "exit_code": 0,
+      "verified": true,
+      "solver_version": "3.8.0",
+      "convergence_code": 0,
+      "nodes": [
+        {
+          "id": 1,
+          "position_m": [
+            0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 2,
+          "position_m": [
+            4.0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 3,
+          "position_m": [
+            2.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.0008333333333333334,
+            0.0
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "id": 1,
+          "i": 1,
+          "j": 3,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            4000.0,
+            2666.666666666667,
+            0.0,
+            -2.2737368e-13,
+            1333.3333333333335
+          ],
+          "samples": [
+            {
+              "position_m": [
+                0.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.666666666667,
+              "shear_n": 4000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552084e-05
+              ],
+              "moment_nm": -2182.291666666667,
+              "shear_n": 3750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.57763671875e-05
+              ],
+              "moment_nm": -1729.166666666667,
+              "shear_n": 3500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171875e-05
+              ],
+              "moment_nm": -1307.291666666667,
+              "shear_n": 3250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015950520833333333
+              ],
+              "moment_nm": -916.666666666667,
+              "shear_n": 3000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023174285888671878
+              ],
+              "moment_nm": -557.291666666667,
+              "shear_n": 2750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003094482421875
+              ],
+              "moment_nm": -229.16666666666697,
+              "shear_n": 2500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003894170125325521
+              ],
+              "moment_nm": 67.70833333333303,
+              "shear_n": 2250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046875000000000004
+              ],
+              "moment_nm": 333.33333333333303,
+              "shear_n": 2000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492187
+              ],
+              "moment_nm": 567.708333333333,
+              "shear_n": 1750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208334
+              ],
+              "moment_nm": 770.833333333333,
+              "shear_n": 1500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367189
+              ],
+              "moment_nm": 942.708333333333,
+              "shear_n": 1250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218750000001
+              ],
+              "moment_nm": 1083.333333333333,
+              "shear_n": 1000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007757695515950521
+              ],
+              "moment_nm": 1192.708333333333,
+              "shear_n": 750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171875001
+              ],
+              "moment_nm": 1270.833333333333,
+              "shear_n": 500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242188
+              ],
+              "moment_nm": 1317.708333333333,
+              "shear_n": 250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333334
+              ],
+              "moment_nm": 1333.333333333333,
+              "shear_n": 0.0,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "i": 3,
+          "j": 2,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -2000
+          ],
+          "local_end_forces_si": [
+            0.0,
+            -2.2737368e-13,
+            -1333.3333333333335,
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ],
+          "samples": [
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008333333333333334
+              ],
+              "moment_nm": 1333.3333333333335,
+              "shear_n": -2.2737368e-13,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008268356323242188
+              ],
+              "moment_nm": 1317.7083333333335,
+              "shear_n": -250.00000000000023,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0008074951171875001
+              ],
+              "moment_nm": 1270.8333333333335,
+              "shear_n": -500.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007757695515950521
+              ],
+              "moment_nm": 1192.7083333333335,
+              "shear_n": -750.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0007324218750000001
+              ],
+              "moment_nm": 1083.3333333333333,
+              "shear_n": -1000.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006785202026367189
+              ],
+              "moment_nm": 942.7083333333333,
+              "shear_n": -1250.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0006154378255208334
+              ],
+              "moment_nm": 770.8333333333333,
+              "shear_n": -1500.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0005448532104492187
+              ],
+              "moment_nm": 567.7083333333333,
+              "shear_n": -1750.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00046875000000000004
+              ],
+              "moment_nm": 333.33333333333326,
+              "shear_n": -2000.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003894170125325521
+              ],
+              "moment_nm": 67.70833333333326,
+              "shear_n": -2250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003094482421875
+              ],
+              "moment_nm": -229.16666666666674,
+              "shear_n": -2500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023174285888671878
+              ],
+              "moment_nm": -557.2916666666667,
+              "shear_n": -2750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015950520833333333
+              ],
+              "moment_nm": -916.666666666667,
+              "shear_n": -3000.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -9.624481201171875e-05
+              ],
+              "moment_nm": -1307.291666666667,
+              "shear_n": -3250.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.57763671875e-05
+              ],
+              "moment_nm": -1729.166666666667,
+              "shear_n": -3500.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -1.2219746907552084e-05
+              ],
+              "moment_nm": -2182.291666666667,
+              "shear_n": -3750.0000000000005,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                4.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -2666.666666666667,
+              "shear_n": -4000.0000000000005,
+              "axial_n": -0.0
+            }
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "node": 1,
+          "fx_n": 0.0,
+          "fy_n": 4000.0,
+          "moment_nm": 2666.666666666667
+        },
+        {
+          "node": 2,
+          "fx_n": 0.0,
+          "fy_n": 4000.0,
+          "moment_nm": -2666.666666666667
+        }
+      ],
+      "rigid_offset_transfers": [],
+      "joint_equilibrium_residuals_si": {
+        "1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          -4.5474736e-13,
+          0.0
+        ]
+      },
+      "equilibrium_residual_si": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "comparisons": {
+        "nodes": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 4.556767954008787e-21,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 4.5474736e-13,
+          "passed": true
+        }
+      },
+      "independent_reference": {
+        "nodes": {
+          "1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "3": [
+            0.0,
+            -0.0008333333333333334,
+            0.0
+          ]
+        },
+        "reactions": {
+          "1": [
+            0.0,
+            4000.0,
+            2666.666666666667
+          ],
+          "2": [
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ]
+        },
+        "forces": {
+          "1": [
+            0.0,
+            4000.0,
+            2666.666666666667,
+            0.0,
+            -2.2737367544323206e-13,
+            1333.3333333333335
+          ],
+          "2": [
+            0.0,
+            -2.2737367544323206e-13,
+            -1333.3333333333335,
+            0.0,
+            4000.0,
+            -2666.666666666667
+          ]
+        },
+        "stiffness_si": [
+          [
+            1000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            2400000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            2400000.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            1600000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            -2400000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            3200000.0,
+            0.0,
+            2400000.0,
+            1600000.0
+          ],
+          [
+            -1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0,
+            2000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            2400000.0,
+            0.0,
+            4800000.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            1600000.0,
+            0.0,
+            -2400000.0,
+            1600000.0,
+            0.0,
+            0.0,
+            6400000.0
+          ]
+        ],
+        "load_vector_si": [
+          0.0,
+          -2000.0,
+          -666.6666666666666,
+          0.0,
+          -2000.0,
+          666.6666666666666,
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "formulation": "Independent 2D EA/L and EI Euler-Bernoulli 6x6 stiffness, consistent uniform loads [qxL/2,qyL/2,qyL\u00b2/12,qxL/2,qyL/2,-qyL\u00b2/12], rigid-arm transformed assembly; Kff uf=Ff, R=Ku-F, end forces=k ulocal-fe"
+      },
+      "artifact_sha256": {
+        "model.tcl": "e9565529b19d166cf79e7d6ace85014a88cd3766b018a9fe7011538a17077a61",
+        "nodes.tsv": "dda500c9e199b3542b8d19ba0de97dad7ed54be7d926d769869ddee9c0353c62",
+        "forces.tsv": "124733296c0ff61a97e3e62adde71298df58d610f4af7f1b84d236df31c62979",
+        "reactions.tsv": "dcc436d23c25860f66ae87f03deaac4a7805280b067b5c3d286d224cb833374d",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      },
+      "uniform_load_hand_verification": {
+        "passed": true,
+        "reference": {
+          "reaction_y_n": 4000.0,
+          "left_end_moment_nm": 2666.6666666666665,
+          "right_end_moment_nm": -2666.6666666666665,
+          "midspan_displacement_m": -0.0008333333333333334,
+          "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+        },
+        "sample_error_max_m_n_nm": 9.094947017729282e-13
+      }
+    },
+    {
+      "run_id": "43090edc-137d-4241-92c1-0b87cc5d56e4",
+      "timestamp": "2026-10-12T04:00:58.854422+00:00",
+      "inputs": {
+        "kind": "fixed_beam",
+        "length_m": 4.0,
+        "height_m": 3.0,
+        "elastic_modulus_pa": 200000000000.0,
+        "area_m2": 0.01,
+        "inertia_m4": 8e-06,
+        "load_n": 1000.0,
+        "material_source": "Explicit synthetic elastic verification material",
+        "section_source": "Explicit synthetic A and Iz; not actual project sections",
+        "load_source": "Synthetic tip load downward",
+        "joints": "rigid",
+        "restraints": "fixed_base",
+        "purpose": "VERIFICATION_ONLY",
+        "elements_per_member": 2,
+        "units": "SI",
+        "_verification_loads": {},
+        "_uniform_global_by_member": {
+          "1": [
+            0,
+            -1000.0
+          ]
+        }
+      },
+      "inputs_sha256": "3df7b2d775f90af4f3baa5a55f46a362443127ab3f5219bd923bac52fafa35c8",
+      "solver": {
+        "name": "OpenSees",
+        "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+        "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+      },
+      "canonical_input_text_sha256": "db0b85a16f419d90d4d65b75db101974e9f7d044503296ce0ec18429c7b3e826",
+      "input_file_sha256": "db0b85a16f419d90d4d65b75db101974e9f7d044503296ce0ec18429c7b3e826",
+      "status": "VERIFIED",
+      "engineering_approval": "DISABLED",
+      "code_checks": "DISABLED",
+      "limitations": [
+        "2D small-displacement linear Euler-Bernoulli elasticity only",
+        "No shear deformation, geometric stiffness, buckling, nonlinear or dynamic analysis",
+        "Rigid joints and fixed bases are explicit verification assumptions",
+        "No actual platform-wide mapping, foundation or connection capacity analysis",
+        "IS/US design checks and engineering approval disabled"
+      ],
+      "exit_code": 0,
+      "verified": true,
+      "solver_version": "3.8.0",
+      "convergence_code": 0,
+      "nodes": [
+        {
+          "id": 1,
+          "position_m": [
+            0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 2,
+          "position_m": [
+            4.0,
+            0
+          ],
+          "displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 3,
+          "position_m": [
+            2.0,
+            0.0
+          ],
+          "displacement_m": [
+            0.0,
+            -0.0004166666666666667,
+            0.0
+          ]
+        }
+      ],
+      "elements": [
+        {
+          "id": 1,
+          "i": 1,
+          "j": 3,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -1000.0
+          ],
+          "local_end_forces_si": [
+            0.0,
+            2000.0,
+            1333.3333333333335,
+            0.0,
+            -1.1368684e-13,
+            666.6666666666667
+          ],
+          "samples": [
+            {
+              "position_m": [
+                0.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -1333.3333333333335,
+              "shear_n": 2000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -6.109873453776042e-06
+              ],
+              "moment_nm": -1091.1458333333335,
+              "shear_n": 1875.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -2.288818359375e-05
+              ],
+              "moment_nm": -864.5833333333335,
+              "shear_n": 1750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.8122406005859376e-05
+              ],
+              "moment_nm": -653.6458333333335,
+              "shear_n": 1625.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -7.975260416666667e-05
+              ],
+              "moment_nm": -458.3333333333335,
+              "shear_n": 1500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00011587142944335939
+              ],
+              "moment_nm": -278.6458333333335,
+              "shear_n": 1375.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015472412109375
+              ],
+              "moment_nm": -114.58333333333348,
+              "shear_n": 1250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                0.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00019470850626627606
+              ],
+              "moment_nm": 33.854166666666515,
+              "shear_n": 1125.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023437500000000002
+              ],
+              "moment_nm": 166.66666666666652,
+              "shear_n": 1000.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00027242660522460934
+              ],
+              "moment_nm": 283.8541666666665,
+              "shear_n": 875.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003077189127604167
+              ],
+              "moment_nm": 385.4166666666665,
+              "shear_n": 750.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00033926010131835944
+              ],
+              "moment_nm": 471.3541666666665,
+              "shear_n": 625.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00036621093750000005
+              ],
+              "moment_nm": 541.6666666666665,
+              "shear_n": 500.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00038788477579752606
+              ],
+              "moment_nm": 596.3541666666665,
+              "shear_n": 375.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00040374755859375007
+              ],
+              "moment_nm": 635.4166666666665,
+              "shear_n": 250.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                1.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004134178161621094
+              ],
+              "moment_nm": 658.8541666666665,
+              "shear_n": 125.0,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004166666666666667
+              ],
+              "moment_nm": 666.6666666666665,
+              "shear_n": 0.0,
+              "axial_n": -0.0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "i": 3,
+          "j": 2,
+          "member": 1,
+          "uniform_global_n_per_m": [
+            0,
+            -1000.0
+          ],
+          "local_end_forces_si": [
+            0.0,
+            -1.1368684e-13,
+            -666.6666666666667,
+            0.0,
+            2000.0,
+            -1333.3333333333335
+          ],
+          "samples": [
+            {
+              "position_m": [
+                2.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004166666666666667
+              ],
+              "moment_nm": 666.6666666666667,
+              "shear_n": -1.1368684e-13,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0004134178161621094
+              ],
+              "moment_nm": 658.8541666666667,
+              "shear_n": -125.00000000000011,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00040374755859375007
+              ],
+              "moment_nm": 635.4166666666667,
+              "shear_n": -250.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00038788477579752606
+              ],
+              "moment_nm": 596.3541666666667,
+              "shear_n": -375.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00036621093750000005
+              ],
+              "moment_nm": 541.6666666666666,
+              "shear_n": -500.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00033926010131835944
+              ],
+              "moment_nm": 471.35416666666663,
+              "shear_n": -625.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.0003077189127604167
+              ],
+              "moment_nm": 385.41666666666663,
+              "shear_n": -750.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                2.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00027242660522460934
+              ],
+              "moment_nm": 283.85416666666663,
+              "shear_n": -875.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00023437500000000002
+              ],
+              "moment_nm": 166.66666666666663,
+              "shear_n": -1000.0000000000001,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.125,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00019470850626627606
+              ],
+              "moment_nm": 33.85416666666663,
+              "shear_n": -1125.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.25,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00015472412109375
+              ],
+              "moment_nm": -114.58333333333337,
+              "shear_n": -1250.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.375,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -0.00011587142944335939
+              ],
+              "moment_nm": -278.64583333333337,
+              "shear_n": -1375.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.5,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -7.975260416666667e-05
+              ],
+              "moment_nm": -458.3333333333335,
+              "shear_n": -1500.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.625,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -4.8122406005859376e-05
+              ],
+              "moment_nm": -653.6458333333335,
+              "shear_n": -1625.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.75,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -2.288818359375e-05
+              ],
+              "moment_nm": -864.5833333333335,
+              "shear_n": -1750.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                3.875,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                -6.109873453776042e-06
+              ],
+              "moment_nm": -1091.1458333333335,
+              "shear_n": -1875.0000000000002,
+              "axial_n": -0.0
+            },
+            {
+              "position_m": [
+                4.0,
+                0.0
+              ],
+              "displacement_m": [
+                0.0,
+                0.0
+              ],
+              "moment_nm": -1333.3333333333335,
+              "shear_n": -2000.0000000000002,
+              "axial_n": -0.0
+            }
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "node": 1,
+          "fx_n": 0.0,
+          "fy_n": 2000.0,
+          "moment_nm": 1333.3333333333335
+        },
+        {
+          "node": 2,
+          "fx_n": 0.0,
+          "fy_n": 2000.0,
+          "moment_nm": -1333.3333333333335
+        }
+      ],
+      "rigid_offset_transfers": [],
+      "joint_equilibrium_residuals_si": {
+        "1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          -2.2737368e-13,
+          0.0
+        ]
+      },
+      "equilibrium_residual_si": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "comparisons": {
+        "nodes": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 0.0,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 2.2783839770043936e-21,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 2.2737368e-13,
+          "passed": true
+        }
+      },
+      "independent_reference": {
+        "nodes": {
+          "1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "3": [
+            0.0,
+            -0.0004166666666666667,
+            0.0
+          ]
+        },
+        "reactions": {
+          "1": [
+            0.0,
+            2000.0,
+            1333.3333333333335
+          ],
+          "2": [
+            0.0,
+            2000.0,
+            -1333.3333333333335
+          ]
+        },
+        "forces": {
+          "1": [
+            0.0,
+            2000.0,
+            1333.3333333333335,
+            0.0,
+            -1.1368683772161603e-13,
+            666.6666666666667
+          ],
+          "2": [
+            0.0,
+            -1.1368683772161603e-13,
+            -666.6666666666667,
+            0.0,
+            2000.0,
+            -1333.3333333333335
+          ]
+        },
+        "stiffness_si": [
+          [
+            1000000000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            2400000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            2400000.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            3200000.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            1600000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            -2400000.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2400000.0,
+            3200000.0,
+            0.0,
+            2400000.0,
+            1600000.0
+          ],
+          [
+            -1000000000.0,
+            0.0,
+            0.0,
+            -1000000000.0,
+            0.0,
+            0.0,
+            2000000000.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -2400000.0,
+            -2400000.0,
+            0.0,
+            -2400000.0,
+            2400000.0,
+            0.0,
+            4800000.0,
+            0.0
+          ],
+          [
+            0.0,
+            2400000.0,
+            1600000.0,
+            0.0,
+            -2400000.0,
+            1600000.0,
+            0.0,
+            0.0,
+            6400000.0
+          ]
+        ],
+        "load_vector_si": [
+          0.0,
+          -1000.0,
+          -333.3333333333333,
+          0.0,
+          -1000.0,
+          333.3333333333333,
+          0.0,
+          -2000.0,
+          0.0
+        ],
+        "formulation": "Independent 2D EA/L and EI Euler-Bernoulli 6x6 stiffness, consistent uniform loads [qxL/2,qyL/2,qyL\u00b2/12,qxL/2,qyL/2,-qyL\u00b2/12], rigid-arm transformed assembly; Kff uf=Ff, R=Ku-F, end forces=k ulocal-fe"
+      },
+      "artifact_sha256": {
+        "model.tcl": "db0b85a16f419d90d4d65b75db101974e9f7d044503296ce0ec18429c7b3e826",
+        "nodes.tsv": "aa9f3099a0470b8b6ff761aec37fe45438fb316eb5dc9aced156388ae025a54e",
+        "forces.tsv": "aabb803cd62ed80a5ee1edc590981e5b03136a736381c61d3edb0edb21e0bf3c",
+        "reactions.tsv": "55e09abfbbc9c89f0d073d37262f7984503235e031f3a21990891acc88841f5b",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      },
+      "uniform_load_hand_verification": {
+        "passed": true,
+        "reference": {
+          "reaction_y_n": 2000.0,
+          "left_end_moment_nm": 1333.3333333333333,
+          "right_end_moment_nm": -1333.3333333333333,
+          "midspan_displacement_m": -0.0004166666666666667,
+          "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+        },
+        "sample_error_max_m_n_nm": 4.547473508864641e-13
+      }
+    }
+  ]
+}

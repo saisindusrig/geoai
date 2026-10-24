@@ -1,0 +1,38 @@
+[
+  {
+    "project_id": 775,
+    "scenario_id": 563,
+    "revision_id": 72,
+    "component_count": 45,
+    "category_counts": {
+      "beam": 4,
+      "column": 4,
+      "slab": 1,
+      "foundation": 4,
+      "base_plate": 4,
+      "connection": 4,
+      "bracing": 2,
+      "stairs": 22
+    },
+    "source_project": 768,
+    "source_revision": 59
+  },
+  {
+    "project_id": 776,
+    "scenario_id": 564,
+    "revision_id": 73,
+    "component_count": 135,
+    "category_counts": {
+      "beam": 12,
+      "column": 12,
+      "slab": 3,
+      "foundation": 12,
+      "base_plate": 12,
+      "connection": 12,
+      "bracing": 6,
+      "stairs": 66
+    },
+    "source_project": 768,
+    "source_revision": 59
+  }
+]

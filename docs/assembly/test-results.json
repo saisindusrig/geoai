@@ -1,0 +1,12 @@
+{
+  "backend_passed": 111,
+  "browser_passed": 2,
+  "typescript": "passed",
+  "targeted_eslint": "passed",
+  "live_inference_calls": 0,
+  "saved_analysis_id": 234,
+  "model_revision_id": 79,
+  "actual_input_sha256": "b0736febc9bd51b31d66ba9da2ed3c28a426e7d85e91a4f0cde98f69528e6814",
+  "artifact_input_sha256": "b0736febc9bd51b31d66ba9da2ed3c28a426e7d85e91a4f0cde98f69528e6814",
+  "input_hash_matches_artifact": true
+}

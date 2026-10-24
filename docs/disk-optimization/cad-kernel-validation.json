@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "cad-platform-proof/1",
+  "platform": "Windows-11-10.0.26340-SP0",
+  "python": "3.13.6",
+  "libc": [
+    "",
+    ""
+  ],
+  "packages": {
+    "cadquery-ocp": "8.0.1.1.0",
+    "cadquery-ocp-proxy": "8.0.1.1.0",
+    "vtk": "9.6.2"
+  },
+  "solids": {
+    "concrete-beam": {
+      "volumeM3": 0.75,
+      "boundsM": [
+        -0.15,
+        -0.25,
+        0.0,
+        0.15,
+        0.25,
+        5.0
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 6
+    },
+    "steel-I-beam": {
+      "volumeM3": 0.13399999999999995,
+      "boundsM": [
+        -0.15,
+        -0.25,
+        0.0,
+        0.15,
+        0.25,
+        5.0
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 14
+    },
+    "circular-column": {
+      "volumeM3": 0.37699111843077515,
+      "boundsM": [
+        -0.2,
+        -0.2,
+        0.0,
+        0.2,
+        0.2,
+        3.0
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 3
+    },
+    "slab-opening": {
+      "volumeM3": 2.904,
+      "boundsM": [
+        -2.5,
+        -1.5,
+        0.0,
+        2.5,
+        1.5,
+        0.2
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 10
+    },
+    "plate-hole": {
+      "volumeM3": 0.003099469035085127,
+      "boundsM": [
+        -0.2,
+        -0.2,
+        0.0,
+        0.2,
+        0.2,
+        0.020000000000000018
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 7
+    },
+    "tapered-member": {
+      "volumeM3": 0.4666666666666668,
+      "boundsM": [
+        -0.20000010000000001,
+        -0.20000010000000001,
+        -1e-07,
+        0.20000010000000001,
+        0.20000010000000001,
+        5.0000001
+      ],
+      "solidCount": 1,
+      "valid": true,
+      "units": "m",
+      "faceCount": 6
+    }
+  },
+  "before": {
+    "column-0": {
+      "boundsM": [
+        -0.2,
+        -0.2,
+        0.0,
+        0.2,
+        0.2,
+        3.0
+      ],
+      "volumeM3": 0.37699111843077515,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-1": {
+      "boundsM": [
+        4.8,
+        -0.2,
+        0.0,
+        5.2,
+        0.2,
+        3.0
+      ],
+      "volumeM3": 0.3769911184307754,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-2": {
+      "boundsM": [
+        -0.2,
+        2.8,
+        0.0,
+        0.2,
+        3.2,
+        3.0
+      ],
+      "volumeM3": 0.37699111843077515,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-3": {
+      "boundsM": [
+        4.8,
+        2.8,
+        0.0,
+        5.2,
+        3.2,
+        3.0
+      ],
+      "volumeM3": 0.3769911184307754,
+      "solidCount": 1,
+      "valid": true
+    },
+    "primary-0": {
+      "boundsM": [
+        -3.3306690738754695e-17,
+        -0.15000000000000008,
+        2.749999999999999,
+        5.000000000000001,
+        0.15000000000000008,
+        3.25
+      ],
+      "volumeM3": 0.13399999999999976,
+      "solidCount": 1,
+      "valid": true
+    },
+    "primary-1": {
+      "boundsM": [
+        -3.3306690738754695e-17,
+        2.85,
+        2.749999999999999,
+        5.000000000000001,
+        3.15,
+        3.25
+      ],
+      "volumeM3": 0.13400000000000029,
+      "solidCount": 1,
+      "valid": true
+    },
+    "secondary-0": {
+      "boundsM": [
+        -2.7755575615628914e-17,
+        0.8749999999999999,
+        2.799999999999999,
+        5.000000000000001,
+        1.125,
+        3.2
+      ],
+      "volumeM3": 0.5000000000000004,
+      "solidCount": 1,
+      "valid": true
+    },
+    "secondary-1": {
+      "boundsM": [
+        -2.7755575615628914e-17,
+        1.875,
+        2.799999999999999,
+        5.000000000000001,
+        2.125,
+        3.2
+      ],
+      "volumeM3": 0.5000000000000002,
+      "solidCount": 1,
+      "valid": true
+    },
+    "platform": {
+      "boundsM": [
+        0.0,
+        0.0,
+        3.25,
+        5.0,
+        3.0,
+        3.45
+      ],
+      "volumeM3": 2.9040000000000026,
+      "solidCount": 1,
+      "valid": true
+    },
+    "plate": {
+      "boundsM": [
+        -0.2,
+        -0.2,
+        3.26,
+        0.2,
+        0.2,
+        3.28
+      ],
+      "volumeM3": 0.0030994690350851298,
+      "solidCount": 1,
+      "valid": true
+    }
+  },
+  "after": {
+    "column-0": {
+      "boundsM": [
+        -0.2,
+        -0.2,
+        0.0,
+        0.2,
+        0.2,
+        3.0
+      ],
+      "volumeM3": 0.37699111843077515,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-1": {
+      "boundsM": [
+        4.8,
+        -0.2,
+        0.0,
+        5.2,
+        0.2,
+        3.0
+      ],
+      "volumeM3": 0.3769911184307754,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-2": {
+      "boundsM": [
+        -0.2,
+        2.8,
+        0.0,
+        0.2,
+        3.2,
+        3.0
+      ],
+      "volumeM3": 0.37699111843077515,
+      "solidCount": 1,
+      "valid": true
+    },
+    "column-3": {
+      "boundsM": [
+        4.8,
+        2.8,
+        0.0,
+        5.2,
+        3.2,
+        3.0
+      ],
+      "volumeM3": 0.3769911184307754,
+      "solidCount": 1,
+      "valid": true
+    },
+    "primary-0": {
+      "boundsM": [
+        -3.3306690738754695e-17,
+        -0.15000000000000008,
+        2.7499999999999982,
+        6.000000000000002,
+        0.15000000000000008,
+        3.25
+      ],
+      "volumeM3": 0.16079999999999967,
+      "solidCount": 1,
+      "valid": true
+    },
+    "primary-1": {
+      "boundsM": [
+        -3.3306690738754695e-17,
+        2.85,
+        2.7499999999999982,
+        6.000000000000002,
+        3.15,
+        3.25
+      ],
+      "volumeM3": 0.16080000000000025,
+      "solidCount": 1,
+      "valid": true
+    },
+    "secondary-0": {
+      "boundsM": [
+        -2.7755575615628914e-17,
+        0.8749999999999999,
+        2.799999999999999,
+        5.000000000000001,
+        1.125,
+        3.2
+      ],
+      "volumeM3": 0.5000000000000004,
+      "solidCount": 1,
+      "valid": true
+    },
+    "secondary-1": {
+      "boundsM": [
+        -2.7755575615628914e-17,
+        1.875,
+        2.799999999999999,
+        5.000000000000001,
+        2.125,
+        3.2
+      ],
+      "volumeM3": 0.5000000000000002,
+      "solidCount": 1,
+      "valid": true
+    },
+    "platform": {
+      "boundsM": [
+        0.0,
+        0.0,
+        3.25,
+        5.0,
+        3.0,
+        3.45
+      ],
+      "volumeM3": 2.9040000000000026,
+      "solidCount": 1,
+      "valid": true
+    },
+    "plate": {
+      "boundsM": [
+        -0.2,
+        -0.2,
+        3.26,
+        0.2,
+        0.2,
+        3.28
+      ],
+      "volumeM3": 0.0030994690350851298,
+      "solidCount": 1,
+      "valid": true
+    }
+  },
+  "dirty": [
+    "primary-0",
+    "primary-1"
+  ]
+}

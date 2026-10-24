@@ -19,4 +19,10 @@ describe("precision numeric confirmation", () => {
     expect(screen.getByRole("alert")).toHaveTextContent("greater than zero"); expect(commit).not.toHaveBeenCalled(); expect(input).toHaveValue("-2");
     await user.click(input); await user.keyboard("{Escape}"); expect(input).toHaveValue("1");
   });
+  it("rounds display noise without changing stored coordinates on blur", async () => {
+    const commit=vi.fn(); const user=userEvent.setup();
+    render(<NumberField label="Up m" value={1.5999999999999999} onChange={commit}/>);
+    const input=screen.getByLabelText("Up m"); expect(input).toHaveValue("1.6");
+    await user.click(input); await user.tab(); expect(commit).not.toHaveBeenCalled();
+  });
 });

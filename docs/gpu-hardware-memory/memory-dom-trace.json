@@ -1,0 +1,74 @@
+[
+  {
+    "label": "initial-400",
+    "usedBytes": 112209200,
+    "totalBytes": 113827840,
+    "embedderHeapUsedBytes": 3967808,
+    "backingStorageBytes": 11946936,
+    "documents": 6,
+    "nodes": 1282,
+    "jsEventListeners": 1056,
+    "canvasCount": 1,
+    "cesiumCanvasCount": 1
+  },
+  {
+    "label": "loaded-1",
+    "usedBytes": 112480888,
+    "totalBytes": 113303552,
+    "embedderHeapUsedBytes": 3876896,
+    "backingStorageBytes": 11982786,
+    "documents": 6,
+    "nodes": 1304,
+    "jsEventListeners": 1056,
+    "canvasCount": 1,
+    "cesiumCanvasCount": 1
+  },
+  {
+    "label": "disposed-1",
+    "usedBytes": 31110740,
+    "totalBytes": 34660352,
+    "embedderHeapUsedBytes": 3988816,
+    "backingStorageBytes": 12608609,
+    "documents": 6,
+    "nodes": 1634,
+    "jsEventListeners": 1072,
+    "canvasCount": 5,
+    "cesiumCanvasCount": 0
+  },
+  {
+    "label": "loaded-2",
+    "usedBytes": 117288140,
+    "totalBytes": 119070720,
+    "embedderHeapUsedBytes": 5057800,
+    "backingStorageBytes": 12577524,
+    "documents": 6,
+    "nodes": 2763,
+    "jsEventListeners": 1716,
+    "canvasCount": 1,
+    "cesiumCanvasCount": 1
+  },
+  {
+    "label": "disposed-2",
+    "usedBytes": 33906752,
+    "totalBytes": 34922496,
+    "embedderHeapUsedBytes": 4620424,
+    "backingStorageBytes": 12671311,
+    "documents": 6,
+    "nodes": 3093,
+    "jsEventListeners": 1738,
+    "canvasCount": 5,
+    "cesiumCanvasCount": 0
+  },
+  {
+    "label": "final-disposed",
+    "usedBytes": 35316548,
+    "totalBytes": 36757504,
+    "embedderHeapUsedBytes": 4893936,
+    "backingStorageBytes": 12639057,
+    "documents": 6,
+    "nodes": 3458,
+    "jsEventListeners": 1792,
+    "canvasCount": 5,
+    "cesiumCanvasCount": 0
+  }
+]

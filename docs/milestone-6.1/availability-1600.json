@@ -1,0 +1,15 @@
+{
+  "width": 1600,
+  "height": 900,
+  "states": [
+    "AVAILABLE",
+    "RATE_LIMITED",
+    "DISABLED",
+    "AWAITING_SPENDING_APPROVAL"
+  ],
+  "mocked": true,
+  "inference_requests": 0,
+  "sends": 1,
+  "errors": [],
+  "writes": []
+}

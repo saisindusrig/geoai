@@ -1,0 +1,1904 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Foundation calculation evidence</title><style>body{max-width:1000px;margin:2em auto;font:15px system-ui;padding:1em}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}h1{font-size:24px}section{break-inside:avoid}strong{color:#9b2518}@media print{body{margin:0}}</style><h1>Foundation calculation evidence</h1><strong>INCOMPLETE ENGINEERING REVIEW — NOT A SAFETY CERTIFICATE</strong><p>Project 810; result 618; revision 132; status REVIEWED_SYNTHETIC_CALCULATION. </p><section><h2>Inputs and sources</h2><pre>{
+  &quot;model_revision_id&quot;: 132,
+  &quot;inputs&quot;: {
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+    &quot;profile&quot;: &quot;IS456-2000-A1A2&quot;,
+    &quot;jurisdiction&quot;: &quot;Synthetic local verification; no adopted site jurisdiction&quot;,
+    &quot;load_standard&quot;: &quot;MANUALLY_DECLARED_NO_AUTOMATIC_COMBINATIONS&quot;,
+    &quot;factored_column_kn&quot;: 216.0,
+    &quot;factored_action_source&quot;: &quot;SYNTHETIC fixture action only: 1.5 times reference for a numerical example. Not an adopted code combination or actual project factored action.&quot;,
+    &quot;concrete_cylinder_mpa&quot;: 25.0,
+    &quot;concrete_cube_mpa&quot;: 25,
+    &quot;steel_yield_mpa&quot;: 500.0,
+    &quot;steel_modulus_mpa&quot;: 200000.0,
+    &quot;concrete_unit_weight_kn_m3&quot;: 25.0,
+    &quot;steel_density_kg_m3&quot;: 7850.0,
+    &quot;cover_mm&quot;: 75.0,
+    &quot;aggregate_mm&quot;: 20.0,
+    &quot;east_west&quot;: {
+      &quot;diameter_mm&quot;: 20.0,
+      &quot;count&quot;: 8
+    },
+    &quot;north_south&quot;: {
+      &quot;diameter_mm&quot;: 20.0,
+      &quot;count&quot;: 8
+    },
+    &quot;stiffness_kn_m3&quot;: 20000.0,
+    &quot;undrained_strength_kpa&quot;: 75.0,
+    &quot;soil_global_factor&quot;: 3.0,
+    &quot;material_source&quot;: &quot;Synthetic independently declared cylinder/cube/steel strengths and densities; no material certificates or conversions.&quot;,
+    &quot;soil_source&quot;: &quot;Synthetic homogeneous surface phi-zero undrained idealization; no groundwater. Explicit stiffness and strength are independent inputs; no site investigation.&quot;,
+    &quot;detailing_source&quot;: &quot;Synthetic uncoated straight deformed uniform bottom mats, East-West below North-South. No hooks, curtailment, laps or dowels.&quot;,
+    &quot;reviewed_synthetic_patch&quot;: true
+  },
+  &quot;reaction_link&quot;: null
+}</pre></section><section><h2>Evidence binding and implementation hashes</h2><pre>{
+  &quot;model_revision_id&quot;: 132,
+  &quot;model_document_sha256&quot;: &quot;91601ffbd0fbb803f5068cfa018326f35077f8d17d56f3974fcf4819d35d6779&quot;,
+  &quot;source&quot;: {
+    &quot;source_project_id&quot;: 804,
+    &quot;source_revision_id&quot;: 124,
+    &quot;source_binding_sha256&quot;: &quot;bf32d23928e168dcd283cc422fb0d54a31c8f7e39834b39d8268dca273c2e06f&quot;,
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;
+  },
+  &quot;source_current_binding&quot;: {
+    &quot;model_revision_id&quot;: 124,
+    &quot;model_sha256&quot;: &quot;708aafe1413c4727b34ed79c85b31541c4d23d1ab9e42b61daaeefb5dc9463cf&quot;,
+    &quot;drawing_id&quot;: 564,
+    &quot;drawing_sha256&quot;: &quot;5b0cea2487e1b776c86dffbbeff859888217faeab6e87a7a14853446cb93fa01&quot;,
+    &quot;review_id&quot;: 565,
+    &quot;review_sha256&quot;: &quot;496df2f946ce11eda3c2abddb7b61f829c72a7f61862fa2f1c82ac003215af78&quot;,
+    &quot;source_project_id&quot;: 803,
+    &quot;source_revision_id&quot;: 123,
+    &quot;demand_result_id&quot;: 563,
+    &quot;demand_sha256&quot;: &quot;8080065a111d4a0d496ebdedf8860022d1d5f88c0d9196f0da76b0f4ef6db262&quot;,
+    &quot;source_binding_sha256&quot;: &quot;7b93ad7705636c52c06de73db2a164e38f9d880e50068b5386978523df0272da&quot;
+  },
+  &quot;method_manifest&quot;: {
+    &quot;app.services.design.foundation_system&quot;: &quot;cd3090d8b42660923f672d8c5d0c655c5f85274120312cf3040e36187dd9dfa6&quot;,
+    &quot;app.services.design.footing_flexure&quot;: &quot;aab704d6649eaff2064914a99d58073daf8f4180c2023863924b159287306bff&quot;,
+    &quot;app.services.design.rc_flexure&quot;: &quot;4b75f349b135e205dd2024c8de8c94decc740dd14bde69ab8619b0dede224fdd&quot;,
+    &quot;app.services.design.soil_contact&quot;: &quot;ff4d27d21c26692db4e4c007c5fcb80413908fe5be65d56b3b38208da0c1a599&quot;,
+    &quot;app.services.design.rectangular_bearing&quot;: &quot;7752afca846d94cdc34654333267f3ed16b092759f1e0df84e4536739c2a7567&quot;,
+    &quot;app.services.design.demand_transport&quot;: &quot;b5eb52c7c3fab45c1738b054ea96ebe7ac70dbce256cda272b3774fe1e4950c6&quot;,
+    &quot;foundation_api&quot;: &quot;f4b936b289a8b1806a4a56d1de424ef0178c16f7ff478fad9cd33b7ba6d63327&quot;
+  }
+}</pre></section><section><h2>Review authorization</h2><pre>{
+  &quot;actor_user_id&quot;: 1,
+  &quot;scope&quot;: &quot;Calculation evidence only; no model change or safety approval&quot;
+}</pre></section><section><h2>Actions and assumptions</h2><pre>{
+  &quot;service_column_kn&quot;: 144.0,
+  &quot;service_footing_weight_kn&quot;: 16.2,
+  &quot;service_gross_soil_kn&quot;: 160.2,
+  &quot;factored_column_kn&quot;: 216.0,
+  &quot;factored_net_pressure_kpa&quot;: 150.0,
+  &quot;factored_source&quot;: &quot;SYNTHETIC fixture action only: 1.5 times reference for a numerical example. Not an adopted code combination or actual project factored action.&quot;,
+  &quot;load_combination_status&quot;: &quot;DISABLED_MANUAL_ACTION_ONLY&quot;,
+  &quot;note&quot;: &quot;Uniform footing weight acts downward and cancels its own uniform upward reaction in NET RC cuts. Service soil checks use gross actions. No automatic load factors.&quot;
+}</pre></section><section><h2>Geometry and static transport</h2><pre>{
+  &quot;geometry&quot;: {
+    &quot;footing_id&quot;: &quot;drawing-cad:614f117ae2a74794:9A&quot;,
+    &quot;column_id&quot;: &quot;drawing-cad:614f117ae2a74794:9C&quot;,
+    &quot;footing_source&quot;: &quot;dxf:614f117ae2a74794:9A&quot;,
+    &quot;column_source&quot;: &quot;dxf:614f117ae2a74794:9C&quot;,
+    &quot;center_east_north_m&quot;: [
+      0.15,
+      0.15
+    ],
+    &quot;footing_size_m&quot;: [
+      1.2,
+      1.2,
+      0.45
+    ],
+    &quot;column_size_m&quot;: [
+      0.3,
+      0.3,
+      3.26
+    ],
+    &quot;bearing_up_m&quot;: -0.45,
+    &quot;column_face_up_m&quot;: 0.0,
+    &quot;connection_status&quot;: &quot;SYNTHETIC_PATCH_ONLY_ACTUAL_CONNECTION_UNVERIFIED&quot;
+  },
+  &quot;transfer&quot;: {
+    &quot;force_enu_n&quot;: [
+      0,
+      0,
+      -144000.0
+    ],
+    &quot;moment_enu_nm&quot;: [
+      0.0,
+      0.0,
+      0
+    ],
+    &quot;r_old_minus_new_m&quot;: [
+      0,
+      0,
+      0.45
+    ],
+    &quot;offset_couple_nm&quot;: [
+      -0.0,
+      0.0,
+      0
+    ],
+    &quot;equilibrium_residual_nm&quot;: [
+      0.0,
+      0.0,
+      0
+    ],
+    &quot;sign_convention&quot;: &quot;r = old reference - new reference; M_new = M_old + r × F. Right-handed East/North/Up. Source analytical moment about -North maps to ENU My=-M_source.&quot;,
+    &quot;status&quot;: &quot;VERIFIED_STATIC_DEMAND_TRANSPORT_ONLY&quot;,
+    &quot;physical_connection_capacity&quot;: &quot;NOT_VERIFIED&quot;,
+    &quot;soil_pressure&quot;: &quot;BLOCKED&quot;
+  }
+}</pre></section><section><h2>Soil pressure and Winkler displacement</h2><pre>{
+  &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+  &quot;engineering_approval&quot;: &quot;DISABLED&quot;,
+  &quot;actual_project_analysis&quot;: &quot;BLOCKED&quot;,
+  &quot;inputs&quot;: {
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+    &quot;B_m&quot;: 1.2,
+    &quot;L_m&quot;: 1.2,
+    &quot;N_n&quot;: 160200.0,
+    &quot;My_nm&quot;: 0.0,
+    &quot;k_n_m3&quot;: 20000000.0,
+    &quot;contact_law&quot;: &quot;uniform_linear_compression_only_winkler&quot;,
+    &quot;reference_up_m&quot;: -0.45,
+    &quot;source&quot;: &quot;Synthetic homogeneous surface phi-zero undrained idealization; no groundwater. Explicit stiffness and strength are independent inputs; no site investigation.&quot;,
+    &quot;applicability&quot;: &quot;Synthetic homogeneous rigid footing, uniform Winkler stiffness, concentric service gross actions only.&quot;,
+    &quot;reviewed&quot;: true
+  },
+  &quot;sign_convention&quot;: &quot;East x; applied My positive; soil upward reaction has My=-integral(x*p*dA). w downward=delta+theta*x; theta about positive North.&quot;,
+  &quot;applicability_bounds&quot;: {
+    &quot;dimensions_m&quot;: [
+      0.001,
+      20
+    ],
+    &quot;stiffness_n_m3&quot;: [
+      1,
+      1000000000000.0
+    ],
+    &quot;rotation_rad&quot;: 0.05
+  },
+  &quot;limitations&quot;: [
+    &quot;Uniform independent linear springs and rigid footing; no continuum soil interaction&quot;,
+    &quot;Synthetic stiffness is not a measured soil modulus or allowable settlement&quot;,
+    &quot;No shear, torsion, biaxial contact, capacity, concrete/reinforcement, groundwater, IS/US checks or physical transfer approval&quot;
+  ],
+  &quot;eccentricity_m&quot;: 0.0,
+  &quot;kern_halfwidth_m&quot;: 0.19999999999999998,
+  &quot;footprint_halfwidth_m&quot;: 0.6,
+  &quot;state&quot;: &quot;FULL_CONTACT&quot;,
+  &quot;verification&quot;: &quot;VERIFIED_SYNTHETIC_MECHANICS_ONLY&quot;,
+  &quot;contact_interval_east_m&quot;: [
+    -0.6,
+    0.6
+  ],
+  &quot;contact_area_m2&quot;: 1.44,
+  &quot;pmin_pa&quot;: 111250.0,
+  &quot;pmax_pa&quot;: 111250.0,
+  &quot;delta_down_m&quot;: 0.0055625,
+  &quot;theta_north_rad&quot;: 0.0,
+  &quot;opposite_edge_gap_m&quot;: 0,
+  &quot;force_integral_n&quot;: 160200.0,
+  &quot;moment_integral_nm&quot;: 0.0,
+  &quot;residual_n_nm&quot;: [
+    0.0,
+    0.0
+  ],
+  &quot;numerical_reference&quot;: [
+    {
+      &quot;cells&quot;: 200,
+      &quot;iterations&quot;: 1,
+      &quot;delta_m&quot;: 0.0055625,
+      &quot;theta_rad&quot;: 0.0,
+      &quot;contact_area_m2&quot;: 1.44,
+      &quot;force_n&quot;: 160200.0,
+      &quot;moment_nm&quot;: 0.0,
+      &quot;pmax_pa&quot;: 111250.0
+    },
+    {
+      &quot;cells&quot;: 400,
+      &quot;iterations&quot;: 1,
+      &quot;delta_m&quot;: 0.0055625,
+      &quot;theta_rad&quot;: 0.0,
+      &quot;contact_area_m2&quot;: 1.44,
+      &quot;force_n&quot;: 160200.0,
+      &quot;moment_nm&quot;: 0.0,
+      &quot;pmax_pa&quot;: 111250.0
+    },
+    {
+      &quot;cells&quot;: 800,
+      &quot;iterations&quot;: 1,
+      &quot;delta_m&quot;: 0.0055625,
+      &quot;theta_rad&quot;: -1.6468333930378254e-18,
+      &quot;contact_area_m2&quot;: 1.44,
+      &quot;force_n&quot;: 160200.0,
+      &quot;moment_nm&quot;: -3.3527612686157226e-12,
+      &quot;pmax_pa&quot;: 111250.00000000001
+    }
+  ],
+  &quot;pressure_samples&quot;: [
+    {
+      &quot;x_m&quot;: -0.6,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.57,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.54,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.51,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.48,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.44999999999999996,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.42,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.38999999999999996,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.36,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.33,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.3,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.27,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.24,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.20999999999999996,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.17999999999999994,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.14999999999999997,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.12,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.08999999999999997,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.06000000000000005,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: -0.029999999999999916,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.0,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.030000000000000027,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.05999999999999994,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.08999999999999997,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.12,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.15000000000000002,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.18000000000000005,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.20999999999999996,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.2400000000000001,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.2699999999999999,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.30000000000000004,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.32999999999999996,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.36,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.39,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.42000000000000004,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.45000000000000007,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.47999999999999987,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.5099999999999999,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.5400000000000001,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.57,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    },
+    {
+      &quot;x_m&quot;: 0.6,
+      &quot;p_pa&quot;: 111250.0,
+      &quot;down_m&quot;: 0.0055625
+    }
+  ],
+  &quot;formulas&quot;: &quot;Full: delta=N/(kBL), theta=M/(k LB^3/12). Partial: a=3(B/2-|M/N|), pmax=2N/(La), theta=sign(M)*pmax/(ka), delta=pmax/(ka)*(a-B/2).&quot;
+}</pre></section><section><h2>Bearing strength reference</h2><pre>{
+  &quot;status&quot;: &quot;VERIFIED_SYNTHETIC_FORMULA_IMPLEMENTATION&quot;,
+  &quot;method_version&quot;: &quot;FHWA_SURFACE_RECTANGLE_PHI_ZERO_V1&quot;,
+  &quot;inputs&quot;: {
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+    &quot;method&quot;: &quot;FHWA_SURFACE_RECTANGLE_PHI_ZERO_V1&quot;,
+    &quot;geometry&quot;: &quot;SQUARE&quot;,
+    &quot;B_m&quot;: 1.2,
+    &quot;foundation_depth_m&quot;: 0.0,
+    &quot;su_kpa&quot;: 75.0,
+    &quot;phi_deg&quot;: 0.0,
+    &quot;unit_weight_kn_m3&quot;: 18.0,
+    &quot;strength_basis&quot;: &quot;TOTAL_STRESS_UNDRAINED&quot;,
+    &quot;soil_extent&quot;: &quot;HOMOGENEOUS_INFINITE_IDEALIZATION&quot;,
+    &quot;groundwater&quot;: &quot;EXCLUDED_SYNTHETIC_IDEALIZATION&quot;,
+    &quot;groundwater_correction&quot;: false,
+    &quot;loading&quot;: &quot;VERTICAL_CONCENTRIC_TOTAL&quot;,
+    &quot;vertical_load_kn&quot;: 160.2,
+    &quot;shear_east_kn&quot;: 0.0,
+    &quot;moment_east_knm&quot;: 0.0,
+    &quot;ground_slope_deg&quot;: 0.0,
+    &quot;interface&quot;: &quot;ROUGH_HORIZONTAL_RIGID_RECTANGLE&quot;,
+    &quot;reference_up_m&quot;: -0.45,
+    &quot;resistance_method&quot;: &quot;GLOBAL_FS_ON_NET_ULTIMATE&quot;,
+    &quot;global_factor&quot;: 3.0,
+    &quot;strength_source&quot;: &quot;Synthetic homogeneous surface phi-zero undrained idealization; no groundwater. Explicit stiffness and strength are independent inputs; no site investigation.&quot;,
+    &quot;geometry_source&quot;: &quot;Saved synthetic CAD footing envelope; explicitly reviewed dimensions in metres; no capacity evidence.&quot;,
+    &quot;groundwater_source&quot;: &quot;Synthetic homogeneous surface phi-zero undrained idealization; no groundwater. Explicit stiffness and strength are independent inputs; no site investigation.&quot;,
+    &quot;load_source&quot;: &quot;Explicit synthetic concentric downward column load; footing self-weight deliberately excluded from this verification case.&quot;,
+    &quot;factor_source&quot;: &quot;Synthetic homogeneous surface phi-zero undrained idealization; no groundwater. Explicit stiffness and strength are independent inputs; no site investigation.&quot;,
+    &quot;applicability&quot;: &quot;Synthetic surface undrained homogeneous phi-zero square footing. No site soil capacity or settlement qualification.&quot;,
+    &quot;reviewed_assumptions&quot;: true,
+    &quot;L_m&quot;: 1.2,
+    &quot;ground_reference_up_m&quot;: -0.45,
+    &quot;shear_north_kn&quot;: 0.0,
+    &quot;moment_north_knm&quot;: 0.0,
+    &quot;torsion_knm&quot;: 0.0,
+    &quot;eccentricity_east_m&quot;: 0.0,
+    &quot;eccentricity_north_m&quot;: 0.0,
+    &quot;total_load_includes_footing&quot;: true,
+    &quot;load_path&quot;: &quot;SYNTHETIC_DIRECT_VERTICAL_AT_BEARING_PLANE&quot;,
+    &quot;reference_source&quot;: &quot;Saved footing bottom and top Up references; pressure at bottom and hypothetical column patch at top.&quot;
+  },
+  &quot;factors&quot;: {
+    &quot;Nc&quot;: 5.141592653589793,
+    &quot;Nq&quot;: 1,
+    &quot;Ngamma&quot;: 0,
+    &quot;sc&quot;: 1.2,
+    &quot;sq&quot;: 1,
+    &quot;sgamma&quot;: 1,
+    &quot;depth&quot;: 1,
+    &quot;inclination&quot;: 1
+  },
+  &quot;area_m2&quot;: 1.44,
+  &quot;aspect_B_over_L&quot;: 1.0,
+  &quot;overburden_kpa&quot;: 0,
+  &quot;ultimate_net_kpa&quot;: 462.74333882308133,
+  &quot;ultimate_gross_kpa&quot;: 462.74333882308133,
+  &quot;ultimate_resistance_kn&quot;: 666.3504079052371,
+  &quot;strength_only_allowable_gross_kpa&quot;: 154.2477796076938,
+  &quot;strength_only_allowable_kn&quot;: 222.11680263507904,
+  &quot;applied_pressure_kpa&quot;: 111.25,
+  &quot;applied_to_strength_reference_ratio&quot;: 0.7212421487229689,
+  &quot;independent_factors&quot;: [
+    {
+      &quot;phi_step_rad&quot;: 0.01,
+      &quot;Nc_limit&quot;: 5.143825109574147,
+      &quot;Nq_zero&quot;: 0.9999999999999998,
+      &quot;Ngamma_zero&quot;: -0.0
+    },
+    {
+      &quot;phi_step_rad&quot;: 0.001,
+      &quot;Nc_limit&quot;: 5.141614974132769,
+      &quot;Nq_zero&quot;: 0.9999999999999998,
+      &quot;Ngamma_zero&quot;: -0.0
+    },
+    {
+      &quot;phi_step_rad&quot;: 0.0001,
+      &quot;Nc_limit&quot;: 5.141592876793258,
+      &quot;Nq_zero&quot;: 0.9999999999999998,
+      &quot;Ngamma_zero&quot;: -0.0
+    },
+    {
+      &quot;phi_step_rad&quot;: 1e-05,
+      &quot;Nc_limit&quot;: 5.141592655828063,
+      &quot;Nq_zero&quot;: 0.9999999999999998,
+      &quot;Ngamma_zero&quot;: -0.0
+    }
+  ],
+  &quot;decimal_hand&quot;: {
+    &quot;base_strip_pressure_kpa&quot;: &quot;385.6194490192344928846982537459627163148&quot;,
+    &quot;shape_increment_kpa&quot;: &quot;77.12388980384689857693965074919254326297&quot;,
+    &quot;ultimate_kpa&quot;: &quot;462.7433388230813914616379044951552595778&quot;,
+    &quot;ultimate_force_N&quot;: &quot;666350.4079052372037047585824730235737920&quot;,
+    &quot;applied_N_per_mm2&quot;: &quot;0.11125&quot;
+  },
+  &quot;formula&quot;: &quot;Nc=pi+2; sc=1+B/(5L); q_ult=su*Nc*sc; A=B*L; Q_ult=q_ult*A; q_reference=q_ult/FS; q_applied=N_total/A. Df=0, phi=0: surcharge and unit-weight terms zero.&quot;,
+  &quot;reference&quot;: &quot;https://www.fhwa.dot.gov/engineering/geotech/pubs/010943.pdf&quot;,
+  &quot;reference_note&quot;: &quot;FHWA GEC 6 (2002), printed pp.51-56; Eq.5-2, Table5-1 and Table5-2 phi=0 row; sc=1+B/(5L), sq=sgamma=1. This is an implemented reference formulation, not AASHTO/IS/US code compliance.&quot;,
+  &quot;units&quot;: &quot;B,L,elevations m; su and pressures kPa=kN/m2; total loads and resistance kN; moments kN*m; gamma kN/m3.&quot;,
+  &quot;engineering_approval&quot;: &quot;DISABLED&quot;,
+  &quot;actual_cad_capacity&quot;: &quot;BLOCKED&quot;,
+  &quot;design_code_resistance&quot;: &quot;NOT_IMPLEMENTED&quot;,
+  &quot;limitations&quot;: [
+    &quot;Synthetic direct load at bearing plane only; no actual column/plate/footing transfer inferred&quot;,
+    &quot;Surface rectangular/square rough horizontal footing; B&lt;=L&lt;5B; homogeneous phi=0 undrained total stress only&quot;,
+    &quot;No layering, groundwater correction, embedment, inclination, eccentricity, shear, moments, slopes or nearby-footing effects&quot;,
+    &quot;Strength-only reference uses a declared global factor; not site allowable capacity, settlement or safety&quot;,
+    &quot;Shape correction is an established empirical formulation; hand verification is not a new physical validation experiment&quot;,
+    &quot;Failure schematic is illustrative, not computed collapse, soil stress or deformation&quot;,
+    &quot;Footing/anchor/concrete capacity, IS/US compliance, soil suitability and engineering approval disabled&quot;
+  ]
+}</pre></section><section><h2>Unfactored bending</h2><pre>{
+  &quot;method_version&quot;: &quot;CAD_FOOTING_CANTILEVER_DEMAND_V1&quot;,
+  &quot;status&quot;: &quot;VERIFIED_SYNTHETIC_DEMAND_ONLY&quot;,
+  &quot;inputs&quot;: {
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+    &quot;method&quot;: &quot;CAD_FOOTING_CANTILEVER_DEMAND_V1&quot;,
+    &quot;footing_id&quot;: &quot;drawing-cad:614f117ae2a74794:9A&quot;,
+    &quot;column_id&quot;: &quot;drawing-cad:614f117ae2a74794:9C&quot;,
+    &quot;B_m&quot;: 1.2,
+    &quot;L_m&quot;: 1.2,
+    &quot;thickness_m&quot;: 0.45,
+    &quot;column_east_m&quot;: 0.3,
+    &quot;column_north_m&quot;: 0.3,
+    &quot;column_load_kn&quot;: 144.0,
+    &quot;uniform_net_pressure_kpa&quot;: 100.0,
+    &quot;bearing_reference_up_m&quot;: -0.45,
+    &quot;load_reference_up_m&quot;: 0.0,
+    &quot;eccentricity_east_m&quot;: 0,
+    &quot;eccentricity_north_m&quot;: 0,
+    &quot;horizontal_shear_kn&quot;: 0,
+    &quot;applied_moment_knm&quot;: 0,
+    &quot;soil_reaction&quot;: &quot;PRESCRIBED_UNIFORM_UPWARD_FULL_CONTACT&quot;,
+    &quot;self_weight&quot;: &quot;EXCLUDED_SYNTHETIC_NET_PRESSURE_BENCHMARK&quot;,
+    &quot;load_path&quot;: &quot;REVIEWED_HYPOTHETICAL_DIRECT_COLUMN_PATCH&quot;,
+    &quot;reviewed_footprint&quot;: true,
+    &quot;reviewed_assumptions&quot;: true,
+    &quot;geometry_source&quot;: &quot;Saved synthetic CAD footing envelope; explicitly reviewed dimensions in metres; no capacity evidence.&quot;,
+    &quot;footprint_source&quot;: &quot;Saved CAD column envelope reviewed only as a hypothetical concentric loading patch, not a base plate or RC connection.&quot;,
+    &quot;load_source&quot;: &quot;Explicit synthetic concentric downward column load; footing self-weight deliberately excluded from this verification case.&quot;,
+    &quot;pressure_source&quot;: &quot;Explicit synthetic uniform NET upward pressure, independent of all bearing-capacity and soil-profile results.&quot;,
+    &quot;reference_source&quot;: &quot;Saved footing bottom and top Up references; pressure at bottom and hypothetical column patch at top.&quot;,
+    &quot;load_path_source&quot;: &quot;Reviewed hypothetical direct distributed column patch solely for synthetic demand verification. Actual steel-column/base-plate/concrete transfer remains unsupported.&quot;,
+    &quot;applicability&quot;: &quot;Symmetric square footing and square centered patch; prescribed uniform net upward pressure, zero eccentricity/shear/moments; no self-weight, uplift, capacity or code checks.&quot;
+  },
+  &quot;faces&quot;: [
+    {
+      &quot;face&quot;: &quot;East&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 10.124999999999998,
+      &quot;full_cut_moment_knm&quot;: 12.149999999999997,
+      &quot;upward_cut_force_kn&quot;: 53.99999999999999,
+      &quot;external_moment_axis&quot;: &quot;north&quot;,
+      &quot;external_moment_sign&quot;: -1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 10.124999999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 9.137812499999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 8.20125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 7.315312499999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 6.48
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 5.695312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 4.961249999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 4.2778125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 3.644999999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 3.0628124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 2.5312499999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 2.050312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 1.62
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.2403124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 0.9112500000000001
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.6328124999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.40499999999999975
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.22781250000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.10124999999999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.02531250000000004
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;West&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 10.124999999999998,
+      &quot;full_cut_moment_knm&quot;: 12.149999999999997,
+      &quot;upward_cut_force_kn&quot;: 53.99999999999999,
+      &quot;external_moment_axis&quot;: &quot;north&quot;,
+      &quot;external_moment_sign&quot;: 1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 10.124999999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 9.137812499999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 8.20125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 7.315312499999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 6.48
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 5.695312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 4.961249999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 4.2778125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 3.644999999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 3.0628124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 2.5312499999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 2.050312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 1.62
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.2403124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 0.9112500000000001
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.6328124999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.40499999999999975
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.22781250000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.10124999999999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.02531250000000004
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;North&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 10.124999999999998,
+      &quot;full_cut_moment_knm&quot;: 12.149999999999997,
+      &quot;upward_cut_force_kn&quot;: 53.99999999999999,
+      &quot;external_moment_axis&quot;: &quot;east&quot;,
+      &quot;external_moment_sign&quot;: 1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 10.124999999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 9.137812499999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 8.20125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 7.315312499999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 6.48
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 5.695312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 4.961249999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 4.2778125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 3.644999999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 3.0628124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 2.5312499999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 2.050312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 1.62
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.2403124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 0.9112500000000001
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.6328124999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.40499999999999975
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.22781250000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.10124999999999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.02531250000000004
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;South&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 10.124999999999998,
+      &quot;full_cut_moment_knm&quot;: 12.149999999999997,
+      &quot;upward_cut_force_kn&quot;: 53.99999999999999,
+      &quot;external_moment_axis&quot;: &quot;east&quot;,
+      &quot;external_moment_sign&quot;: -1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 10.124999999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 9.137812499999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 8.20125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 7.315312499999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 6.48
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 5.695312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 4.961249999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 4.2778125
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 3.644999999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 3.0628124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 2.5312499999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 2.050312499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 1.62
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.2403124999999997
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 0.9112500000000001
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.6328124999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.40499999999999975
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.22781250000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.10124999999999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.02531250000000004
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    }
+  ],
+  &quot;upward_force_kn&quot;: 144.0,
+  &quot;column_load_kn&quot;: 144.0,
+  &quot;force_residual_kn&quot;: 0.0,
+  &quot;global_moment_residual_knm&quot;: [
+    0.0,
+    -1.609823385706477e-15
+  ],
+  &quot;independent_integration&quot;: [
+    {
+      &quot;cells_per_axis&quot;: 1,
+      &quot;upward_force_kn&quot;: 144.0,
+      &quot;moment_about_east_knm&quot;: 0.0,
+      &quot;moment_about_north_knm&quot;: 0.0,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 2,
+      &quot;upward_force_kn&quot;: 144.0,
+      &quot;moment_about_east_knm&quot;: -3.552713678800501e-15,
+      &quot;moment_about_north_knm&quot;: 3.552713678800501e-15,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999997
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 8,
+      &quot;upward_force_kn&quot;: 144.0,
+      &quot;moment_about_east_knm&quot;: -2.220446049250313e-16,
+      &quot;moment_about_north_knm&quot;: 4.440892098500626e-16,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 32,
+      &quot;upward_force_kn&quot;: 144.0,
+      &quot;moment_about_east_knm&quot;: 0.0,
+      &quot;moment_about_north_knm&quot;: -1.609823385706477e-15,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 53.99999999999999,
+          &quot;face_moment_knm&quot;: 12.149999999999999
+        }
+      }
+    }
+  ],
+  &quot;decimal_hand&quot;: {
+    &quot;moment_knm_per_m&quot;: &quot;10.12500&quot;,
+    &quot;one_metre_strip_Nmm&quot;: &quot;10125000.00000&quot;
+  },
+  &quot;formula&quot;: &quot;a_EW=(B-cE)/2; a_NS=(L-cN)/2; for each full-width cut: w=q_net*b; V=w*a; M_face=w*a^2/2; per metre m=q_net*a^2/2; m(s)=q_net*(a-s)^2/2 from face toward free edge. q_net*B*L=N.&quot;,
+  &quot;sign_convention&quot;: &quot;ENU axes; upward pressure +Up. External face moment is r cross F: East -My, West +My, North +Mx, South -Mx. Report positive demand magnitudes; internal resisting cut moment is opposite. No capacity/sign-of-reinforcement verdict.&quot;,
+  &quot;reference&quot;: &quot;https://www.vdot.virginia.gov/media/vdotvirginiagov/doing-business/technical-guidance-and-support/technical-guidance-documents/structure-and-bridge/VDMASD.pdf&quot;,
+  &quot;reference_note&quot;: &quot;VDOT ASD manual section4.4.11.1.1: isolated footing as cantilever; column-face section; integrate forces on one side. Used solely to document the mechanics idealization, not compliance.&quot;,
+  &quot;limitations&quot;: [
+    &quot;Demand only; no reinforcement area, effective depth or material strengths inferred&quot;,
+    &quot;Orthogonal full-width cuts overlap in area: never sum their four upward forces as separate reactions or their magnitudes as one global moment&quot;,
+    &quot;Prescribed uniform NET upward pressure with footing self-weight deliberately excluded from this synthetic equilibrium benchmark&quot;,
+    &quot;No plate/shell FEA, cracking, stiffness, deflection, nonuniform reaction, uplift, eccentricity, shear or physical connection transfer&quot;,
+    &quot;Actual steel-column/base-plate/RC-footing behavior remains unverified; the reviewed column envelope is only a hypothetical load patch&quot;,
+    &quot;No reinforcement adequacy, one-way shear, punching, footing/soil safety or IS/US code checks&quot;
+  ],
+  &quot;actual_foundation_safety&quot;: &quot;BLOCKED&quot;,
+  &quot;engineering_approval&quot;: &quot;DISABLED&quot;,
+  &quot;reinforcement_capacity&quot;: &quot;NOT_IMPLEMENTED&quot;,
+  &quot;shear_capacity&quot;: &quot;NOT_IMPLEMENTED&quot;,
+  &quot;design_code_checks&quot;: &quot;DISABLED&quot;
+}</pre></section><section><h2>Factored bending</h2><pre>{
+  &quot;method_version&quot;: &quot;CAD_FOOTING_CANTILEVER_DEMAND_V1&quot;,
+  &quot;status&quot;: &quot;VERIFIED_SYNTHETIC_DEMAND_ONLY&quot;,
+  &quot;inputs&quot;: {
+    &quot;classification&quot;: &quot;SYNTHETIC_VERIFICATION&quot;,
+    &quot;method&quot;: &quot;CAD_FOOTING_CANTILEVER_DEMAND_V1&quot;,
+    &quot;footing_id&quot;: &quot;drawing-cad:614f117ae2a74794:9A&quot;,
+    &quot;column_id&quot;: &quot;drawing-cad:614f117ae2a74794:9C&quot;,
+    &quot;B_m&quot;: 1.2,
+    &quot;L_m&quot;: 1.2,
+    &quot;thickness_m&quot;: 0.45,
+    &quot;column_east_m&quot;: 0.3,
+    &quot;column_north_m&quot;: 0.3,
+    &quot;column_load_kn&quot;: 216.0,
+    &quot;uniform_net_pressure_kpa&quot;: 150.0,
+    &quot;bearing_reference_up_m&quot;: -0.45,
+    &quot;load_reference_up_m&quot;: 0.0,
+    &quot;eccentricity_east_m&quot;: 0,
+    &quot;eccentricity_north_m&quot;: 0,
+    &quot;horizontal_shear_kn&quot;: 0,
+    &quot;applied_moment_knm&quot;: 0,
+    &quot;soil_reaction&quot;: &quot;PRESCRIBED_UNIFORM_UPWARD_FULL_CONTACT&quot;,
+    &quot;self_weight&quot;: &quot;EXCLUDED_SYNTHETIC_NET_PRESSURE_BENCHMARK&quot;,
+    &quot;load_path&quot;: &quot;REVIEWED_HYPOTHETICAL_DIRECT_COLUMN_PATCH&quot;,
+    &quot;reviewed_footprint&quot;: true,
+    &quot;reviewed_assumptions&quot;: true,
+    &quot;geometry_source&quot;: &quot;Saved synthetic CAD footing envelope; explicitly reviewed dimensions in metres; no capacity evidence.&quot;,
+    &quot;footprint_source&quot;: &quot;Saved CAD column envelope reviewed only as a hypothetical concentric loading patch, not a base plate or RC connection.&quot;,
+    &quot;load_source&quot;: &quot;SYNTHETIC fixture action only: 1.5 times reference for a numerical example. Not an adopted code combination or actual project factored action.&quot;,
+    &quot;pressure_source&quot;: &quot;Independent factored column action divided by saved area; uniform net reaction benchmark&quot;,
+    &quot;reference_source&quot;: &quot;Saved footing bottom and top Up references; pressure at bottom and hypothetical column patch at top.&quot;,
+    &quot;load_path_source&quot;: &quot;Reviewed hypothetical direct distributed column patch solely for synthetic demand verification. Actual steel-column/base-plate/concrete transfer remains unsupported.&quot;,
+    &quot;applicability&quot;: &quot;Symmetric square footing and square centered patch; prescribed uniform net upward pressure, zero eccentricity/shear/moments; no self-weight, uplift, capacity or code checks.&quot;
+  },
+  &quot;faces&quot;: [
+    {
+      &quot;face&quot;: &quot;East&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 15.187499999999998,
+      &quot;full_cut_moment_knm&quot;: 18.224999999999998,
+      &quot;upward_cut_force_kn&quot;: 81.0,
+      &quot;external_moment_axis&quot;: &quot;north&quot;,
+      &quot;external_moment_sign&quot;: -1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 15.187499999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 13.706718749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 12.301874999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 10.972968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 9.72
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 8.542968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 7.441874999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 6.41671875
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 5.467499999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 4.5942187500000005
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 3.7968749999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 3.075468749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 2.43
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.8604687499999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 1.3668750000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.9492187499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.6074999999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.34171875000000007
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.1518749999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.037968750000000065
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;West&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 15.187499999999998,
+      &quot;full_cut_moment_knm&quot;: 18.224999999999998,
+      &quot;upward_cut_force_kn&quot;: 81.0,
+      &quot;external_moment_axis&quot;: &quot;north&quot;,
+      &quot;external_moment_sign&quot;: 1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 15.187499999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 13.706718749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 12.301874999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 10.972968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 9.72
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 8.542968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 7.441874999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 6.41671875
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 5.467499999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 4.5942187500000005
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 3.7968749999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 3.075468749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 2.43
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.8604687499999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 1.3668750000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.9492187499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.6074999999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.34171875000000007
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.1518749999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.037968750000000065
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;North&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 15.187499999999998,
+      &quot;full_cut_moment_knm&quot;: 18.224999999999998,
+      &quot;upward_cut_force_kn&quot;: 81.0,
+      &quot;external_moment_axis&quot;: &quot;east&quot;,
+      &quot;external_moment_sign&quot;: 1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 15.187499999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 13.706718749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 12.301874999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 10.972968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 9.72
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 8.542968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 7.441874999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 6.41671875
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 5.467499999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 4.5942187500000005
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 3.7968749999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 3.075468749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 2.43
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.8604687499999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 1.3668750000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.9492187499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.6074999999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.34171875000000007
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.1518749999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.037968750000000065
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    },
+    {
+      &quot;face&quot;: &quot;South&quot;,
+      &quot;projection_m&quot;: 0.44999999999999996,
+      &quot;cut_width_m&quot;: 1.2,
+      &quot;moment_knm_per_m&quot;: 15.187499999999998,
+      &quot;full_cut_moment_knm&quot;: 18.224999999999998,
+      &quot;upward_cut_force_kn&quot;: 81.0,
+      &quot;external_moment_axis&quot;: &quot;east&quot;,
+      &quot;external_moment_sign&quot;: -1,
+      &quot;diagram&quot;: [
+        {
+          &quot;distance_from_face_m&quot;: 0.0,
+          &quot;moment_knm_per_m&quot;: 15.187499999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.0225,
+          &quot;moment_knm_per_m&quot;: 13.706718749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.045,
+          &quot;moment_knm_per_m&quot;: 12.301874999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.06749999999999999,
+          &quot;moment_knm_per_m&quot;: 10.972968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.09,
+          &quot;moment_knm_per_m&quot;: 9.72
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.1125,
+          &quot;moment_knm_per_m&quot;: 8.542968749999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.13499999999999998,
+          &quot;moment_knm_per_m&quot;: 7.441874999999998
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.15749999999999997,
+          &quot;moment_knm_per_m&quot;: 6.41671875
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.18,
+          &quot;moment_knm_per_m&quot;: 5.467499999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.20249999999999999,
+          &quot;moment_knm_per_m&quot;: 4.5942187500000005
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.225,
+          &quot;moment_knm_per_m&quot;: 3.7968749999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.24749999999999997,
+          &quot;moment_knm_per_m&quot;: 3.075468749999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.26999999999999996,
+          &quot;moment_knm_per_m&quot;: 2.43
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.2925,
+          &quot;moment_knm_per_m&quot;: 1.8604687499999994
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.31499999999999995,
+          &quot;moment_knm_per_m&quot;: 1.3668750000000003
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.33749999999999997,
+          &quot;moment_knm_per_m&quot;: 0.9492187499999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.36,
+          &quot;moment_knm_per_m&quot;: 0.6074999999999996
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.38249999999999995,
+          &quot;moment_knm_per_m&quot;: 0.34171875000000007
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.40499999999999997,
+          &quot;moment_knm_per_m&quot;: 0.1518749999999999
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.42749999999999994,
+          &quot;moment_knm_per_m&quot;: 0.037968750000000065
+        },
+        {
+          &quot;distance_from_face_m&quot;: 0.45,
+          &quot;moment_knm_per_m&quot;: 0.0
+        }
+      ]
+    }
+  ],
+  &quot;upward_force_kn&quot;: 216.0,
+  &quot;column_load_kn&quot;: 216.0,
+  &quot;force_residual_kn&quot;: 0.0,
+  &quot;global_moment_residual_knm&quot;: [
+    -2.7755575615628914e-17,
+    -1.6375789613221059e-15
+  ],
+  &quot;independent_integration&quot;: [
+    {
+      &quot;cells_per_axis&quot;: 1,
+      &quot;upward_force_kn&quot;: 216.0,
+      &quot;moment_about_east_knm&quot;: 0.0,
+      &quot;moment_about_north_knm&quot;: 0.0,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 2,
+      &quot;upward_force_kn&quot;: 216.0,
+      &quot;moment_about_east_knm&quot;: -7.105427357601002e-15,
+      &quot;moment_about_north_knm&quot;: 7.105427357601002e-15,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 8,
+      &quot;upward_force_kn&quot;: 216.0,
+      &quot;moment_about_east_knm&quot;: 0.0,
+      &quot;moment_about_north_knm&quot;: -4.884981308350689e-15,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999994
+        }
+      }
+    },
+    {
+      &quot;cells_per_axis&quot;: 32,
+      &quot;upward_force_kn&quot;: 216.0,
+      &quot;moment_about_east_knm&quot;: -2.7755575615628914e-17,
+      &quot;moment_about_north_knm&quot;: -1.6375789613221059e-15,
+      &quot;faces&quot;: {
+        &quot;East&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999998
+        },
+        &quot;West&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999998
+        },
+        &quot;North&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999998
+        },
+        &quot;South&quot;: {
+          &quot;force_kn&quot;: 80.99999999999999,
+          &quot;face_moment_knm&quot;: 18.224999999999998
+        }
+      }
+    }
+  ],
+  &quot;decimal_hand&quot;: {
+    &quot;moment_knm_per_m&quot;: &quot;15.18750&quot;,
+    &quot;one_metre_strip_Nmm&quot;: &quot;15187500.000000&quot;
+  },
+  &quot;formula&quot;: &quot;a_EW=(B-cE)/2; a_NS=(L-cN)/2; for each full-width cut: w=q_net*b; V=w*a; M_face=w*a^2/2; per metre m=q_net*a^2/2; m(s)=q_net*(a-s)^2/2 from face toward free edge. q_net*B*L=N.&quot;,
+  &quot;sign_convention&quot;: &quot;ENU axes; upward pressure +Up. External face moment is r cross F: East -My, West +My, North +Mx, South -Mx. Report positive demand magnitudes; internal resisting cut moment is opposite. No capacity/sign-of-reinforcement verdict.&quot;,
+  &quot;reference&quot;: &quot;https://www.vdot.virginia.gov/media/vdotvirginiagov/doing-business/technical-guidance-and-support/technical-guidance-documents/structure-and-bridge/VDMASD.pdf&quot;,
+  &quot;reference_note&quot;: &quot;VDOT ASD manual section4.4.11.1.1: isolated footing as cantilever; column-face section; integrate forces on one side. Used solely to document the mechanics idealization, not compliance.&quot;,
+  &quot;limitations&quot;: [
+    &quot;Demand only; no reinforcement area, effective depth or material strengths inferred&quot;,
+    &quot;Orthogonal full-width cuts overlap in area: never sum their four upward forces as separate reactions or their magnitudes as one global moment&quot;,
+    &quot;Prescribed uniform NET upward pressure with footing self-weight deliberately excluded from this synthetic equilibrium benchmark&quot;,
+    &quot;No plate/shell FEA, cracking, stiffness, deflection, nonuniform reaction, uplift, eccentricity, shear or physical connection transfer&quot;,
+    &quot;Actual steel-column/base-plate/RC-footing behavior remains unverified; the reviewed column envelope is only a hypothetical load patch&quot;,
+    &quot;No reinforcement adequacy, one-way shear, punching, footing/soil safety or IS/US code checks&quot;
+  ],
+  &quot;actual_foundation_safety&quot;: &quot;BLOCKED&quot;,
+  &quot;engineering_approval&quot;: &quot;DISABLED&quot;,
+  &quot;reinforcement_capacity&quot;: &quot;NOT_IMPLEMENTED&quot;,
+  &quot;shear_capacity&quot;: &quot;NOT_IMPLEMENTED&quot;,
+  &quot;design_code_checks&quot;: &quot;DISABLED&quot;
+}</pre></section><section><h2>RC strength, reinforcement, detailing and quantities</h2><pre>{
+  &quot;layers&quot;: [
+    {
+      &quot;direction&quot;: &quot;EAST_WEST_LOWER&quot;,
+      &quot;effective_depth_mm&quot;: 365.0,
+      &quot;steel_area_mm2&quot;: 2513.2741228718346,
+      &quot;bar_diameter_mm&quot;: 20.0,
+      &quot;bar_count&quot;: 8,
+      &quot;spacing_mm&quot;: 147.14285714285714,
+      &quot;clear_spacing_mm&quot;: 127.14285714285714,
+      &quot;straight_length_m&quot;: 1.05,
+      &quot;nominal&quot;: {
+        &quot;steel_area_mm2&quot;: 2513.2741228718346,
+        &quot;block_depth_a_mm&quot;: 49.279884762192836,
+        &quot;neutral_axis_c_mm&quot;: 57.976335014344514,
+        &quot;tension_strain&quot;: 0.01588701656855465,
+        &quot;yield_strain&quot;: 0.0025,
+        &quot;steel_stress_mpa&quot;: 500.0,
+        &quot;compression_N&quot;: 1256637.0614359174,
+        &quot;tension_N&quot;: 1256637.0614359174,
+        &quot;force_residual_N&quot;: 0.0,
+        &quot;lever_arm_mm&quot;: 340.36005761890357,
+        &quot;nominal_moment_knm&quot;: 427.7090626363785,
+        &quot;independent_c_mm&quot;: 57.97633501434453
+      },
+      &quot;one_way_demand_kn&quot;: 15.3,
+      &quot;one_way_section_from_center_mm&quot;: 515.0,
+      &quot;flexure&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 18.224999999999998,
+        &quot;resistance&quot;: 352.56320997160515,
+        &quot;unit&quot;: &quot;kN m&quot;,
+        &quot;ratio&quot;: 0.05169285814440993,
+        &quot;clause&quot;: &quot;IS456:2000 38.1; design stress block, not nominal strength&quot;,
+        &quot;neutral_axis_mm&quot;: 101.22909661567112,
+        &quot;neutral_axis_limit_mm&quot;: 167.9
+      },
+      &quot;required_steel&quot;: {
+        &quot;status&quot;: &quot;SUPPORTED_DEFORMED_STEEL&quot;,
+        &quot;flexural_mm2&quot;: 115.40230875374223,
+        &quot;minimum_mm2&quot;: 648.0,
+        &quot;required_mm2&quot;: 648.0,
+        &quot;minimum_bar_count&quot;: 3
+      },
+      &quot;steel_area&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 648.0,
+        &quot;resistance&quot;: 2513.2741228718346,
+        &quot;unit&quot;: &quot;mm2&quot;,
+        &quot;ratio&quot;: 0.2578310078088704,
+        &quot;clause&quot;: &quot;IS456 26.5.2.1,34.3; square uniform distribution&quot;
+      },
+      &quot;one_way&quot;: {
+        &quot;status&quot;: &quot;DISABLED&quot;,
+        &quot;reason&quot;: &quot;Available primary scan has ambiguous 34.2.4.1 wording; amendment verification required before enabling resistance&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;minimum_clear&quot;: {
+          &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+          &quot;demand&quot;: 25.0,
+          &quot;resistance&quot;: 127.14285714285714,
+          &quot;unit&quot;: &quot;mm&quot;,
+          &quot;ratio&quot;: 0.19662921348314608,
+          &quot;clause&quot;: &quot;IS456 26.3.2; no placement exception used&quot;
+        },
+        &quot;maximum_centres&quot;: {
+          &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+          &quot;demand&quot;: 147.14285714285714,
+          &quot;resistance&quot;: 300,
+          &quot;unit&quot;: &quot;mm&quot;,
+          &quot;ratio&quot;: 0.49047619047619045,
+          &quot;clause&quot;: &quot;IS456 26.3.3(b)(1)&quot;
+        }
+      },
+      &quot;cover&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 50,
+        &quot;resistance&quot;: 75.0,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 0.6666666666666666,
+        &quot;clause&quot;: &quot;IS456 26.4.2.2; footing minimum only, exposure/fire qualification excluded&quot;
+      },
+      &quot;diameter&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 20.0,
+        &quot;resistance&quot;: 56.25,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 0.35555555555555557,
+        &quot;clause&quot;: &quot;IS456 26.5.2.2&quot;
+      },
+      &quot;development&quot;: {
+        &quot;status&quot;: &quot;EXCEEDS_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 970.982142857143,
+        &quot;resistance&quot;: 375.0,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 2.589285714285715,
+        &quot;clause&quot;: &quot;IS456 26.2.1,26.2.1.1,34.2.4.3; full design stress, deformed straight bars, no curtailment&quot;,
+        &quot;required_mm&quot;: 970.982142857143,
+        &quot;available_mm&quot;: 375.0,
+        &quot;bond_mpa&quot;: 2.2399999999999998
+      }
+    },
+    {
+      &quot;direction&quot;: &quot;NORTH_SOUTH_UPPER&quot;,
+      &quot;effective_depth_mm&quot;: 345.0,
+      &quot;steel_area_mm2&quot;: 2513.2741228718346,
+      &quot;bar_diameter_mm&quot;: 20.0,
+      &quot;bar_count&quot;: 8,
+      &quot;spacing_mm&quot;: 147.14285714285714,
+      &quot;clear_spacing_mm&quot;: 127.14285714285714,
+      &quot;straight_length_m&quot;: 1.05,
+      &quot;nominal&quot;: {
+        &quot;steel_area_mm2&quot;: 2513.2741228718346,
+        &quot;block_depth_a_mm&quot;: 49.279884762192836,
+        &quot;neutral_axis_c_mm&quot;: 57.976335014344514,
+        &quot;tension_strain&quot;: 0.014852111551099603,
+        &quot;yield_strain&quot;: 0.0025,
+        &quot;steel_stress_mpa&quot;: 500.0,
+        &quot;compression_N&quot;: 1256637.0614359174,
+        &quot;tension_N&quot;: 1256637.0614359174,
+        &quot;force_residual_N&quot;: 0.0,
+        &quot;lever_arm_mm&quot;: 320.36005761890357,
+        &quot;nominal_moment_knm&quot;: 402.5763214076602,
+        &quot;independent_c_mm&quot;: 57.97633501434453
+      },
+      &quot;one_way_demand_kn&quot;: 18.9,
+      &quot;one_way_section_from_center_mm&quot;: 495.0,
+      &quot;flexure&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 18.224999999999998,
+        &quot;resistance&quot;: 330.6977251026202,
+        &quot;unit&quot;: &quot;kN m&quot;,
+        &quot;ratio&quot;: 0.0551107510471822,
+        &quot;clause&quot;: &quot;IS456:2000 38.1; design stress block, not nominal strength&quot;,
+        &quot;neutral_axis_mm&quot;: 101.22909661567112,
+        &quot;neutral_axis_limit_mm&quot;: 158.70000000000002
+      },
+      &quot;required_steel&quot;: {
+        &quot;status&quot;: &quot;SUPPORTED_DEFORMED_STEEL&quot;,
+        &quot;flexural_mm2&quot;: 122.17114878686553,
+        &quot;minimum_mm2&quot;: 648.0,
+        &quot;required_mm2&quot;: 648.0,
+        &quot;minimum_bar_count&quot;: 3
+      },
+      &quot;steel_area&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 648.0,
+        &quot;resistance&quot;: 2513.2741228718346,
+        &quot;unit&quot;: &quot;mm2&quot;,
+        &quot;ratio&quot;: 0.2578310078088704,
+        &quot;clause&quot;: &quot;IS456 26.5.2.1,34.3; square uniform distribution&quot;
+      },
+      &quot;one_way&quot;: {
+        &quot;status&quot;: &quot;DISABLED&quot;,
+        &quot;reason&quot;: &quot;Available primary scan has ambiguous 34.2.4.1 wording; amendment verification required before enabling resistance&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;minimum_clear&quot;: {
+          &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+          &quot;demand&quot;: 25.0,
+          &quot;resistance&quot;: 127.14285714285714,
+          &quot;unit&quot;: &quot;mm&quot;,
+          &quot;ratio&quot;: 0.19662921348314608,
+          &quot;clause&quot;: &quot;IS456 26.3.2; no placement exception used&quot;
+        },
+        &quot;maximum_centres&quot;: {
+          &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+          &quot;demand&quot;: 147.14285714285714,
+          &quot;resistance&quot;: 300,
+          &quot;unit&quot;: &quot;mm&quot;,
+          &quot;ratio&quot;: 0.49047619047619045,
+          &quot;clause&quot;: &quot;IS456 26.3.3(b)(1)&quot;
+        }
+      },
+      &quot;cover&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 50,
+        &quot;resistance&quot;: 75.0,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 0.6666666666666666,
+        &quot;clause&quot;: &quot;IS456 26.4.2.2; footing minimum only, exposure/fire qualification excluded&quot;
+      },
+      &quot;diameter&quot;: {
+        &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 20.0,
+        &quot;resistance&quot;: 56.25,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 0.35555555555555557,
+        &quot;clause&quot;: &quot;IS456 26.5.2.2&quot;
+      },
+      &quot;development&quot;: {
+        &quot;status&quot;: &quot;EXCEEDS_IMPLEMENTED_CHECK&quot;,
+        &quot;demand&quot;: 970.982142857143,
+        &quot;resistance&quot;: 375.0,
+        &quot;unit&quot;: &quot;mm&quot;,
+        &quot;ratio&quot;: 2.589285714285715,
+        &quot;clause&quot;: &quot;IS456 26.2.1,26.2.1.1,34.2.4.3; full design stress, deformed straight bars, no curtailment&quot;,
+        &quot;required_mm&quot;: 970.982142857143,
+        &quot;available_mm&quot;: 375.0,
+        &quot;bond_mpa&quot;: 2.2399999999999998
+      }
+    }
+  ],
+  &quot;punching&quot;: {
+    &quot;status&quot;: &quot;WITHIN_IMPLEMENTED_CHECK&quot;,
+    &quot;demand&quot;: 153.59625,
+    &quot;resistance&quot;: 1112.625,
+    &quot;unit&quot;: &quot;kN&quot;,
+    &quot;ratio&quot;: 0.13804853387259858,
+    &quot;clause&quot;: &quot;IS456 31.6.3.1,34.2.4.1(b); ks=1 for square patch; conservative smaller d&quot;,
+    &quot;demand_kn&quot;: 153.59625,
+    &quot;perimeter_mm&quot;: 2580.0,
+    &quot;effective_depth_mm&quot;: 345.0,
+    &quot;offset_from_column_face_mm&quot;: 172.5
+  },
+  &quot;quantities&quot;: {
+    &quot;concrete_gross_m3&quot;: 0.648,
+    &quot;steel_volume_m3&quot;: 0.0052778756580308525,
+    &quot;steel_mass_kg&quot;: 41.431323915542194,
+    &quot;concrete_net_displacement_m3&quot;: 0.6427221243419692,
+    &quot;note&quot;: &quot;Straight bottom mats only. No dowels, hooks, laps, chairs, waste, excavations or procurement allowance.&quot;
+  },
+  &quot;methods&quot;: {
+    &quot;units&quot;: &quot;B,c,h,d,bo,cover,spacing in mm; As mm2; strengths MPa=N/mm2; pressure kPa; actions kN/kN m&quot;,
+    &quot;depth&quot;: &quot;EW d=h-cover-diaEW/2; NS d=h-cover-diaEW-diaNS/2. Orthogonal touching bottom layers, EW lower.&quot;,
+    &quot;demands&quot;: &quot;a=(B-c)/2; Vu_oneway=q_u*(B/1000)*max(a-d,0)/1000; bo=4*(c+min(dEW,dNS)); Vu_punch=q_u*(B^2-(c+d)^2)/1e6. No unbalanced moment.&quot;,
+    &quot;ACI_shear&quot;: &quot;Original IN-LB coefficients: Vc_1=2*sqrt(fc_psi)*b_in*d_in lbf; vc_p=min(4,2+4/beta,40*d/bo+2)*sqrt(fc_psi) psi; beta=1, lambda=1, phi_v=.75. Convert using 25.4mm/in and 4.4482216152605N/lbf.&quot;,
+    &quot;ACI_flexure&quot;: &quot;Existing nominal section service, alpha=beta1=.85, epsilon_cu=.003, fc cylinder20..28MPa. phi=.9 only if epsilon_t&gt;=.005. Existing nominal solver strain-domain ceiling .05 retained.&quot;,
+    &quot;IS_flexure&quot;: &quot;T=.87fy*As; xu=T/(.36fck*b); Mdesign=T*(d-.42xu); xu/d &lt;=.48 Fe415 or .46 Fe500. Cube fck is independently declared; no nominal/design conversion.&quot;,
+    &quot;IS_punching&quot;: &quot;ks=min(.5+shortColumn/longColumn,1)=1; tau_design=.25*sqrt(fck); Vdesign=tau_design*bo*d/1000. Smaller orthogonal d used conservatively.&quot;,
+    &quot;IS_development&quot;: &quot;Ld=dia*(.87fy)/(4*tau_bd); deformed tension tau_bd=1.6*[1.2,1.4,1.5,1.7,1.9] for M20/25/30/35/40. Straight available length from column face to end =a-cover; no hooks/curtailment/dowels.&quot;,
+    &quot;references&quot;: [
+      &quot;https://www.concrete.org/portals/0/files/pdf/318-example-1_rf_r1.pdf&quot;,
+      &quot;https://law.resource.org/pub/in/bis/S03/is.456.2000.pdf&quot;
+    ]
+  },
+  &quot;independent_benchmark_registry&quot;: {
+    &quot;ACI_318_14_published_example&quot;: {
+      &quot;B_in&quot;: 144,
+      &quot;c_in&quot;: 24,
+      &quot;h_in&quot;: 30,
+      &quot;upper_d_in&quot;: 25.5,
+      &quot;fc_psi&quot;: 4000,
+      &quot;net_qu_ksf&quot;: 6.7,
+      &quot;oneway_Vu_kip&quot;: 231.15,
+      &quot;oneway_phiVc_kip&quot;: 348.3565070441,
+      &quot;punching_Vu_kip&quot;: 850.7953125,
+      &quot;punching_phiVc_kip&quot;: 957.9803943714,
+      &quot;straight_Ld_in&quot;: 28.4604989415,
+      &quot;note&quot;: &quot;Independent Decimal arithmetic from declared inputs. Published rounded values: 231/348 kip and 851/958 kip. Tests also verify SI pressure integration, inverse flexure, separate cube/cylinder declarations and quantities.&quot;
+    },
+    &quot;tests&quot;: &quot;backend/tests/test_foundation_system.py; backend/tests/test_foundation_system_api.py; see local validation logs for execution results&quot;
+  }
+}</pre></section><section><h2>Edition profile and limitations</h2><pre>{
+  &quot;profile&quot;: {
+    &quot;country&quot;: &quot;INDIA&quot;,
+    &quot;edition&quot;: &quot;2000; scan includes amendments 1 and 2&quot;,
+    &quot;source&quot;: &quot;https://law.resource.org/pub/in/bis/S03/is.456.2000.pdf&quot;,
+    &quot;scope&quot;: &quot;Bounded published provisions; not verification of later amendments&quot;
+  },
+  &quot;limitations&quot;: [
+    &quot;Synthetic reviewed column patch only; actual steel plate, anchors, dowels and connection capacity remain unverified&quot;,
+    &quot;Winkler displacement is not consolidation/continuum settlement or a settlement acceptance check&quot;,
+    &quot;Surface homogeneous undrained bearing idealization; no geotechnical site design or code capacity&quot;,
+    &quot;No eccentric, biaxial, edge/corner, sloping/stepped, pile, opening, shear reinforcement or seismic detailing support&quot;,
+    &quot;Durability, crack width, fatigue, construction tolerances and complete detailing are not established&quot;,
+    &quot;Country/edition selection enables only listed verified subsets. ASCE/IS automatic load combinations disabled&quot;,
+    &quot;Concrete cylinder and cube strengths are independent declarations; no conversion inferred&quot;
+  ],
+  &quot;engineering_approval&quot;: &quot;DISABLED&quot;,
+  &quot;actual_foundation_safety&quot;: &quot;BLOCKED&quot;,
+  &quot;computed_sha256&quot;: &quot;cd141808d1b6f063664cb6845c04ab145088996db471c2700441bab9a5db7263&quot;
+}</pre></section><p>Primary requirements: <a href="https://www.concrete.org/portals/0/files/pdf/318-example-1_rf_r1.pdf">ACI published 318-14 footing example</a>; <a href="https://law.resource.org/pub/in/bis/S03/is.456.2000.pdf">BIS IS456:2000 scan</a>. Only listed subsets implemented. Independent benchmarks are maintained with the local foundation module tests.</p></html>

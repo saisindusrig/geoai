@@ -1,0 +1,110 @@
+[
+  {
+    "file": "frontend\\public\\brand\\animated-dark.png",
+    "bytes": 17721
+  },
+  {
+    "file": "frontend\\public\\brand\\animated-dark.svg",
+    "bytes": 8014
+  },
+  {
+    "file": "frontend\\public\\brand\\animated-light.png",
+    "bytes": 16811
+  },
+  {
+    "file": "frontend\\public\\brand\\animated-light.svg",
+    "bytes": 8014
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-16.png",
+    "bytes": 1569
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-180.png",
+    "bytes": 23687
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-192.png",
+    "bytes": 25252
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-32.png",
+    "bytes": 3194
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-512.png",
+    "bytes": 78204
+  },
+  {
+    "file": "frontend\\public\\brand\\app-icon-64.png",
+    "bytes": 5939
+  },
+  {
+    "file": "frontend\\public\\brand\\geometry.json",
+    "bytes": 441
+  },
+  {
+    "file": "frontend\\public\\brand\\main-dark.png",
+    "bytes": 22636
+  },
+  {
+    "file": "frontend\\public\\brand\\main-dark.svg",
+    "bytes": 23802
+  },
+  {
+    "file": "frontend\\public\\brand\\main-light.png",
+    "bytes": 22185
+  },
+  {
+    "file": "frontend\\public\\brand\\main-light.svg",
+    "bytes": 23802
+  },
+  {
+    "file": "frontend\\public\\brand\\secondary-dark.png",
+    "bytes": 17721
+  },
+  {
+    "file": "frontend\\public\\brand\\secondary-dark.svg",
+    "bytes": 7463
+  },
+  {
+    "file": "frontend\\public\\brand\\secondary-light.png",
+    "bytes": 16811
+  },
+  {
+    "file": "frontend\\public\\brand\\secondary-light.svg",
+    "bytes": 7463
+  },
+  {
+    "file": "frontend\\public\\brand\\simplified-dark.png",
+    "bytes": 14236
+  },
+  {
+    "file": "frontend\\public\\brand\\simplified-dark.svg",
+    "bytes": 8366
+  },
+  {
+    "file": "frontend\\public\\brand\\simplified-light.png",
+    "bytes": 13583
+  },
+  {
+    "file": "frontend\\public\\brand\\simplified-light.svg",
+    "bytes": 8366
+  },
+  {
+    "file": "frontend\\public\\brand\\submark-dark.png",
+    "bytes": 9970
+  },
+  {
+    "file": "frontend\\public\\brand\\submark-dark.svg",
+    "bytes": 1380
+  },
+  {
+    "file": "frontend\\public\\brand\\submark-light.png",
+    "bytes": 10185
+  },
+  {
+    "file": "frontend\\public\\brand\\submark-light.svg",
+    "bytes": 1380
+  }
+]

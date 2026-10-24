@@ -1,0 +1,100 @@
+{
+  "project_id": 794,
+  "source_member_picking": true,
+  "explicit_three_member_audit": true,
+  "load_path_equilibrium": {
+    "passed": true,
+    "force_residual_enu_n": [
+      -4.001776687800884e-11,
+      0,
+      -7.275957614183426e-12
+    ],
+    "moment_residual_enu_nm": [
+      -2.9103830456733704e-11,
+      0,
+      7.275957614183426e-11
+    ],
+    "bases": [
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:9C",
+        "position_enu_m": [
+          0.15,
+          0.15,
+          0
+        ],
+        "force_enu_n": [
+          9961.989188777927,
+          0,
+          29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0,
+          10857.803904079845,
+          0
+        ]
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:AE",
+        "position_enu_m": [
+          5.85,
+          0.15,
+          0
+        ],
+        "force_enu_n": [
+          -9961.989188777947,
+          0,
+          30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0,
+          -10593.899775839793,
+          0
+        ]
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:A5",
+        "position_enu_m": [
+          0.15,
+          3.85,
+          0
+        ],
+        "force_enu_n": [
+          9961.989188777927,
+          0,
+          29953.701030133314
+        ],
+        "moment_enu_nm": [
+          0,
+          10857.803904079845,
+          0
+        ]
+      },
+      {
+        "component_id": "drawing-cad:614f117ae2a74794:B7",
+        "position_enu_m": [
+          5.85,
+          3.85,
+          0
+        ],
+        "force_enu_n": [
+          -9961.989188777947,
+          0,
+          30046.29896986668
+        ],
+        "moment_enu_nm": [
+          0,
+          -10593.899775839793,
+          0
+        ]
+      }
+    ],
+    "applied_pressure_resultant_n": 120000,
+    "pressure_centroid_enu_m": [
+      3,
+      2,
+      3.5
+    ],
+    "method": "Independent full-slab uniform-pressure resultant pLW at the saved centroid; sum actual base forces and r cross F plus base couples in saved ENU. Analytical positive rotation is about -North. Global statics only, not 3D stiffness or slab shell analysis."
+  },
+  "errors": []
+}

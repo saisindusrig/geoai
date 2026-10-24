@@ -1,0 +1,22 @@
+{
+  "archive_sha256": "6cb15e065c592cbed1bbc00084a6cdb05fb2de20879cf9f9969ce94d6500cf53",
+  "files": [
+    {
+      "path": "docs/release-phase-c/gate-2i/README.md",
+      "bytes": 2140,
+      "sha256": "121a37abb4297f996ba42d4fa758f4bba4f4bb0ca6b99e8afb9199521210e411"
+    },
+    {
+      "path": "docs/release-phase-c/gate-2i/VALIDATION.json",
+      "bytes": 867,
+      "sha256": "5a5e27f675c779b0f472a98e934c7a4ae6a44dda4bb7cddf01c8be2e47fc6d3f"
+    },
+    {
+      "path": "docs/release-phase-c/gate-2i/frontend.staging.env.review",
+      "bytes": 935,
+      "sha256": "844a5b5a8f4b72a8306bc0c6b048cdeff59732ade447df7c27241d7d0bad541e"
+    }
+  ],
+  "archive_instructions_executed": false,
+  "only_fixed_document_paths_written": true
+}

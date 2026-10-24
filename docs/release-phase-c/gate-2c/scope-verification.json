@@ -1,0 +1,23 @@
+{
+  "approved_changed_application_inputs": [
+    "backend/app/core/config.py",
+    "backend/app/core/firebase_auth.py"
+  ],
+  "unchanged_prior_inputs": 28,
+  "graphics_sources_unchanged": 4,
+  "installed_distributions_unchanged": 106,
+  "firebase_admin_version": "7.7.0",
+  "syntax_and_whitespace_checked": [
+    "backend/app/core/config.py",
+    "backend/app/core/firebase_auth.py",
+    "backend/tests/test_firebase_keyless_gate.py",
+    "docs/release-phase-c/gate-2c/check_preservation.py",
+    "docs/release-phase-c/gate-2c/verify_archive_preservation.py",
+    "docs/release-phase-c/gate-2c/verify_offline.py",
+    "docs/release-phase-c/gate-2c/verify_scope.py",
+    "docs/release-phase-c/gate-2c/verify_solver_preservation.py"
+  ],
+  "frontend_changed": false,
+  "frontend_checks_rerun": false,
+  "real_credentials_or_firebase_access": false
+}

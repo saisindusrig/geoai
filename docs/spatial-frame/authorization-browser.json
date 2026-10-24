@@ -1,0 +1,10 @@
+{
+  "project": 827,
+  "reviewed": true,
+  "authorized_exact_hash": true,
+  "writes": [
+    "http://127.0.0.1:18001/api/projects/827/engineering/spatial-frame/review",
+    "http://127.0.0.1:18001/api/projects/827/engineering/spatial-frame/authorize-run"
+  ],
+  "errors": []
+}

@@ -1,0 +1,119 @@
+{
+  "identical_file_groups": [
+    [
+      "frontend/lib/asset-types.generated.json",
+      "backend/app/core/asset-types.json"
+    ],
+    [
+      "frontend/app/projects/[id]/error.tsx",
+      "frontend/app/dashboard/error.tsx"
+    ],
+    [
+      "backend/app/__init__.py",
+      "backend/app/workers/__init__.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/geospatial/__init__.py",
+      "backend/app/services/exports/__init__.py",
+      "backend/app/services/design/__init__.py",
+      "backend/app/services/calculations/__init__.py",
+      "backend/app/services/ai/__init__.py",
+      "backend/app/db/__init__.py",
+      "backend/app/core/__init__.py",
+      "backend/app/api/__init__.py",
+      "backend/app/api/routes/__init__.py"
+    ]
+  ],
+  "identical_function_body_groups": [
+    [
+      {
+        "path": "backend/app/api/routes/anchor_contacts.py",
+        "line": 37,
+        "function": "output"
+      },
+      {
+        "path": "backend/app/api/routes/anchor_contacts_3d.py",
+        "line": 36,
+        "function": "output"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/anchor_contacts.py",
+        "line": 46,
+        "function": "owned"
+      },
+      {
+        "path": "backend/app/api/routes/anchor_contacts_3d.py",
+        "line": 45,
+        "function": "owned"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/anchor_contacts.py",
+        "line": 57,
+        "function": "save"
+      },
+      {
+        "path": "backend/app/api/routes/anchor_contacts_3d.py",
+        "line": 56,
+        "function": "save"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/anchor_contacts.py",
+        "line": 76,
+        "function": "history"
+      },
+      {
+        "path": "backend/app/api/routes/connection_inputs.py",
+        "line": 49,
+        "function": "history"
+      },
+      {
+        "path": "backend/app/api/routes/foundation_interfaces.py",
+        "line": 93,
+        "function": "history"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/coupled_floors.py",
+        "line": 33,
+        "function": "out"
+      },
+      {
+        "path": "backend/app/api/routes/spatial_frames.py",
+        "line": 27,
+        "function": "out"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/elastic_frames.py",
+        "line": 53,
+        "function": "owned"
+      },
+      {
+        "path": "backend/app/api/routes/physical_frames.py",
+        "line": 56,
+        "function": "owned"
+      }
+    ],
+    [
+      {
+        "path": "backend/app/api/routes/footing_flexure.py",
+        "line": 44,
+        "function": "preview"
+      },
+      {
+        "path": "backend/app/api/routes/rc_flexure.py",
+        "line": 52,
+        "function": "preview"
+      }
+    ]
+  ],
+  "confirmed_unused_files": [],
+  "automatic_deletion_permitted": false
+}

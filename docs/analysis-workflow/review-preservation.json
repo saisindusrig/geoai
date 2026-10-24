@@ -1,0 +1,14 @@
+{
+  "existing_isolated_rows_unchanged": true,
+  "preexisting_isolated_rows": 10484,
+  "isolated_rows": 10500,
+  "appended_rows": {
+    "projects": 2,
+    "design_scenarios": 2,
+    "model_revisions": 2,
+    "engineering_analyses": 10
+  },
+  "existing_spatial_solver_files_unchanged": true,
+  "spatial_solver_files": 635,
+  "no_restore_delete_or_preexisting_record_updates": true
+}

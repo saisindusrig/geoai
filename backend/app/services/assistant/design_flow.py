@@ -27,7 +27,7 @@ def normalize_proposal(db,p,message,arguments):
     if 'design' not in arguments:return arguments
     summary=site_summary(db,p,message['context'])
     return ProposalToolArguments.model_validate({'title':text_of(message)[:255],'rationale':text_of(message)[:4000],
-        'assets':[{'assetType':'AI3D_DESIGN','name':'GeoAI 3D concept','ai3dDesign':stamp_design(arguments['design'],summary,identity(message['id'],'generic-design'))}],
+        'assets':[{'assetType':'AI3D_DESIGN','name':'StruvoCivil 3D concept','ai3dDesign':stamp_design(arguments['design'],summary,identity(message['id'],'generic-design'))}],
         'parentVersionId':message['context'].get('proposalVersionId')}).model_dump(mode='json',by_alias=True,exclude_unset=True)
 
 def design_intent(design):

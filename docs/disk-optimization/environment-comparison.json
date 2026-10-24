@@ -1,0 +1,151 @@
+{
+  "active_environment": ".venv",
+  "active_packages": 85,
+  "secondary_packages": 51,
+  "secondary_only": {
+    "opentelemetry-api": "1.45.0"
+  },
+  "different_versions": {
+    "alembic": {
+      "secondary": "1.20.0",
+      "active": "1.18.4"
+    },
+    "annotated-doc": {
+      "secondary": "0.0.5",
+      "active": "0.0.4"
+    },
+    "annotated-types": {
+      "secondary": "0.8.0",
+      "active": "0.7.0"
+    },
+    "anyio": {
+      "secondary": "4.15.1",
+      "active": "4.13.0"
+    },
+    "certifi": {
+      "secondary": "2026.7.22",
+      "active": "2026.5.20"
+    },
+    "cffi": {
+      "secondary": "2.1.1",
+      "active": "2.0.0"
+    },
+    "charset-normalizer": {
+      "secondary": "3.5.2",
+      "active": "3.4.7"
+    },
+    "click": {
+      "secondary": "8.5.0",
+      "active": "8.4.1"
+    },
+    "cryptography": {
+      "secondary": "50.0.2",
+      "active": "48.0.1"
+    },
+    "fastapi": {
+      "secondary": "0.142.2",
+      "active": "0.136.3"
+    },
+    "greenlet": {
+      "secondary": "3.5.6",
+      "active": "3.5.1"
+    },
+    "idna": {
+      "secondary": "3.20",
+      "active": "3.18"
+    },
+    "mako": {
+      "secondary": "1.4.1",
+      "active": "1.3.12"
+    },
+    "markupsafe": {
+      "secondary": "3.0.4",
+      "active": "3.0.3"
+    },
+    "numpy": {
+      "secondary": "2.5.3",
+      "active": "2.4.6"
+    },
+    "packaging": {
+      "secondary": "26.3",
+      "active": "26.2"
+    },
+    "pillow": {
+      "secondary": "12.3.0",
+      "active": "12.2.0"
+    },
+    "pip": {
+      "secondary": "25.3",
+      "active": "25.2"
+    },
+    "pyasn1": {
+      "secondary": "0.6.4",
+      "active": "0.6.3"
+    },
+    "pydantic": {
+      "secondary": "2.13.5",
+      "active": "2.13.4"
+    },
+    "pydantic_core": {
+      "secondary": "2.46.5",
+      "active": "2.46.4"
+    },
+    "pydantic-settings": {
+      "secondary": "2.15.0",
+      "active": "2.14.1"
+    },
+    "pygments": {
+      "secondary": "2.21.0",
+      "active": "2.20.0"
+    },
+    "pyproj": {
+      "secondary": "3.8.0",
+      "active": "3.7.2"
+    },
+    "pytest": {
+      "secondary": "9.1.1",
+      "active": "9.0.3"
+    },
+    "python-dotenv": {
+      "secondary": "1.2.4",
+      "active": "1.2.2"
+    },
+    "reportlab": {
+      "secondary": "5.0.1",
+      "active": "4.5.1"
+    },
+    "sqlalchemy": {
+      "secondary": "2.1.3",
+      "active": "2.0.50"
+    },
+    "starlette": {
+      "secondary": "1.7.0",
+      "active": "1.3.0"
+    },
+    "trimesh": {
+      "secondary": "5.1.0",
+      "active": "4.12.2"
+    },
+    "typing_extensions": {
+      "secondary": "4.16.0",
+      "active": "4.15.0"
+    },
+    "typing-inspection": {
+      "secondary": "0.4.4",
+      "active": "0.4.2"
+    },
+    "uvicorn": {
+      "secondary": "0.54.0",
+      "active": "0.49.0"
+    },
+    "watchfiles": {
+      "secondary": "1.3.0",
+      "active": "1.2.0"
+    },
+    "websockets": {
+      "secondary": "17.1",
+      "active": "16.0"
+    }
+  },
+  "decision": "Both retained. Secondary is not byte/version equivalent; removal requires review of version-specific workflows."
+}

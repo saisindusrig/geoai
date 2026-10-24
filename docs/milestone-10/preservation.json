@@ -1,0 +1,18 @@
+{
+  "dev.db": {
+    "all_original_rows_unchanged": true,
+    "schema_unchanged": true,
+    "original_rows": 10282,
+    "added_rows": {
+      "usage_events": 1
+    },
+    "exact_entry_comparison": false
+  },
+  "assistant-history.db": {
+    "all_original_rows_unchanged": true,
+    "schema_unchanged": true,
+    "original_rows": 3,
+    "added_rows": {},
+    "exact_entry_comparison": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "Local offline production-beta audit, 2026-10-22",
+  "release_recommendation": "INTERNAL PREVIEW ONLY",
+  "features": [
+    {"feature":"Projects","status":"VERIFIED_NORMAL_FLOW","evidence":"journey.json"},
+    {"feature":"DXF reference import","status":"VERIFIED_NORMAL_SAVED_MODEL","evidence":"drawing-reference.png","limitation":"No inferred structural semantics or real-project analytical conversion"},
+    {"feature":"3D editor, Layers, Inspector, revisions","status":"VERIFIED_NORMAL_FLOW","evidence":"journey-browser.log"},
+    {"feature":"Planar native OpenSees","status":"VERIFIED_BOUNDED_SYNTHETIC_INPUTS","evidence":"saved-frame-report.json","limitation":"Selected three-member planar elastic graph only; approval disabled"},
+    {"feature":"Multi-storey spatial frames","status":"IMPLEMENTED_BACKEND_REGRESSION_ONLY_THIS_REVIEW","limitation":"Prior isolated demonstration not migrated; fresh spatial browser qualification outstanding"},
+    {"feature":"Slab/floor load paths","status":"BOUNDED_LOAD_ONLY","limitation":"Unsupported coupling, diaphragm, slab stresses and connection capacity disabled"},
+    {"feature":"Foundation workflow","status":"VERIFIED_EXISTING_SYNTHETIC_REFERENCE","evidence":"foundation-acceptance.json","limitation":"Reference 804 prerequisite; no real-site geotechnical approval"},
+    {"feature":"RC calculations","status":"BOUNDED_EXISTING_METHODS","evidence":"backend-targeted.log","limitation":"Restricted nominal/provision subsets, not complete design approval"},
+    {"feature":"Engineering Copilot","status":"OFFLINE_SAVED_EVIDENCE","evidence":"foundation-copilot.png","limitation":"Live paid inference disabled; no reasoning capability claim"},
+    {"feature":"Reports","status":"VERIFIED_FRAME_AND_FOUNDATION_DOWNLOADS","evidence":"saved-frame-report.json"},
+    {"feature":"Production authentication","status":"FAIL_CLOSED_GUARD_TESTED_CONFIGURATION_UNQUALIFIED","evidence":"backend-validation.log"},
+    {"feature":"Production backup/restore, workers and monitoring","status":"LAUNCH_BLOCKER_UNVERIFIED"},
+    {"feature":"Dependency security","status":"LAUNCH_BLOCKER","evidence":"npm-audit.json"}
+  ]
+}

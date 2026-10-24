@@ -66,6 +66,9 @@ def test_failed_required_dependency_blocks_production(monkeypatch,dependency):
     monkeypatch.setattr(settings,"AUTH_REQUIRE_JWT",True)
     monkeypatch.setattr(settings,"APP_SECRET","safe-production-secret-with-32-characters")
     monkeypatch.setattr("app.core.production.collect_production_warnings",lambda:[])
+    # This is a readiness aggregation unit test, not a live storage/Redis probe.
+    monkeypatch.setattr("app.core.production.file_access_mode",lambda:"s3_presigned")
+    monkeypatch.setattr("app.core.production.rate_limit_backend_available",lambda:True)
     deps=healthy()
     assert production_readiness(deps)["production_ready"]
     if dependency=="postgis":deps["database"]["postgis"]=False

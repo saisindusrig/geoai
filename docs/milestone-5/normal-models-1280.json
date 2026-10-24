@@ -1,0 +1,19 @@
+{
+  "width": 1280,
+  "height": 900,
+  "projects": [
+    793,
+    794,
+    804
+  ],
+  "dashboard": true,
+  "cesium_worker": "chunk-2X5O55FT.js",
+  "asset": {
+    "status": 200,
+    "bytes": 2442
+  },
+  "writes": [],
+  "errors": [],
+  "external_requests_blocked": [],
+  "no_inference": true
+}

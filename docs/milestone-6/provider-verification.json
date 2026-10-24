@@ -1,0 +1,16 @@
+{
+  "inference_requests": 0,
+  "catalogue_only": true,
+  "requested_ids": {
+    "zai-org/GLM-5.3-Flash": true,
+    "zai-org/GLM-5.3": true
+  },
+  "api_schema": {
+    "stream": true,
+    "stream_options": true,
+    "tools": true,
+    "tool_choice": true,
+    "max_tokens": true,
+    "reasoning_effort": true
+  }
+}

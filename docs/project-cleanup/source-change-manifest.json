@@ -1,0 +1,109 @@
+[
+  {
+    "path": "LOCAL_SETUP.md",
+    "status": "changed"
+  },
+  {
+    "path": "README.md",
+    "status": "changed"
+  },
+  {
+    "path": "start-copilot-review.ps1",
+    "status": "changed"
+  },
+  {
+    "path": "backend/app/core/config.py",
+    "status": "changed"
+  },
+  {
+    "path": "backend/app/services/storage.py",
+    "status": "changed"
+  },
+  {
+    "path": "backend/app/services/design/flyover_generator.py",
+    "status": "changed"
+  },
+  {
+    "path": "backend/app/services/design/road_generator.py",
+    "status": "changed"
+  },
+  {
+    "path": "docs/contracts/stage1.schema.json",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/package.json",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/playwright.config.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/README.md",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/tsconfig.tsbuildinfo",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/components/model-editor/FootingFlexurePanel.tsx",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/components/model-editor/RCFlexurePanel.tsx",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/components/model-editor/RectangularBearingPanel.test.tsx",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/components/model-editor/RectangularBearingPanel.tsx",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/components/model-editor/SceneLayersPanel.tsx",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/e2e/cad-soil-path.spec.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/e2e/drawing-cad.spec.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/e2e/footing-transport.spec.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/hooks/useActiveJobPolling.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/lib/api.ts",
+    "status": "changed"
+  },
+  {
+    "path": "frontend/lib/generated/stage1.ts",
+    "status": "changed"
+  },
+  {
+    "path": "backend/app/services/design/geometry_metadata.py",
+    "status": "added",
+    "sha256": "d5b7eabe9663564ecf92c187552da7d3853d3271bf11bb1edb5b7e010fca5964"
+  },
+  {
+    "path": "backend/scripts/project_cleanup_audit.py",
+    "status": "added",
+    "sha256": "66ce483d7298d01db94af85859dd2a2655dc78a1b998fe1a502d7bee9aeda803"
+  },
+  {
+    "path": "frontend/hooks/useActiveJobPolling.test.tsx",
+    "status": "added",
+    "sha256": "35a120bef795f4252318c4672141e4bff329eb73659dda064e5280d53c8322cb"
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "source": "docs\\floor-system\\mechanics_benchmarks.py",
+  "source_sha256": "7d0119c5ab3a0493b4342fa5b3db025c2a4e3c46a856dc49e45942ade9819881",
+  "diaphragm": {
+    "status": "BENCHMARK_VERIFIED",
+    "run_folder": "docs\\coupled-floor\\prerequisite-evidence\\5f8579de-de24-485b-a10c-df430d0098b0",
+    "condensed_stiffness": [
+      [
+        3000000.0,
+        0.0,
+        -2000000.0
+      ],
+      [
+        0.0,
+        6000000.0,
+        0.0
+      ],
+      [
+        -2000000.0,
+        0.0,
+        20000000.0
+      ]
+    ],
+    "expected": [
+      [
+        0.0003678571428571429,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        0.0001869047619047619,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        -2.0238095238095247e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.00026428571428571435,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ]
+    ],
+    "actual": [
+      [
+        0.0003678571428571429,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        0.0001869047619047619,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        -2.023809523809525e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.00026428571428571435,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ]
+    ],
+    "max_abs_error": 3.3881317890172014e-21,
+    "production_enabled": false,
+    "scope": "Small-rotation rigid-plane kinematics with prescribed linear springs; not actual slab rigidity/capacity."
+  },
+  "plates": [
+    {
+      "mesh": 4,
+      "run_folder": "docs\\coupled-floor\\prerequisite-evidence\\2c53e668-d327-4124-b9b7-8ec46320c5d3",
+      "center_displacement_m": -0.0005784361591188164,
+      "navier_center_m": -0.0005914785475665477,
+      "relative_error": 0.02205048433521395,
+      "total_reaction_n": 1600.0,
+      "expected_reaction_n": 1600,
+      "production_enabled": false
+    },
+    {
+      "mesh": 8,
+      "run_folder": "docs\\coupled-floor\\prerequisite-evidence\\37c15709-3932-4ab5-83fc-f1453aac9dff",
+      "center_displacement_m": -0.0005891789932508807,
+      "navier_center_m": -0.0005914785475665477,
+      "relative_error": 0.003887806793885784,
+      "total_reaction_n": 1600.0,
+      "expected_reaction_n": 1600,
+      "production_enabled": false
+    },
+    {
+      "mesh": 16,
+      "run_folder": "docs\\coupled-floor\\prerequisite-evidence\\ead0b796-7053-405c-9f9e-e51df6e2f7b5",
+      "center_displacement_m": -0.0005919079685246392,
+      "navier_center_m": -0.0005914785475665477,
+      "relative_error": 0.0007260127351333967,
+      "total_reaction_n": 1600.0,
+      "expected_reaction_n": 1600,
+      "production_enabled": false
+    }
+  ],
+  "scope": "Reused isolated prerequisites only; diaphragm coupled behavior remains disabled"
+}

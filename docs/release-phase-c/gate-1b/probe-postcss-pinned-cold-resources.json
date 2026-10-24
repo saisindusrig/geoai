@@ -1,0 +1,42 @@
+[
+  {
+    "elapsed_seconds": 0.0,
+    "visible_processes": 1,
+    "tree_rss_bytes": 4976640,
+    "visible_tree_cpu_seconds": 0.0,
+    "tree_read_bytes": 24196,
+    "tree_write_bytes": 0,
+    "output_files": 0,
+    "output_bytes": 0
+  },
+  {
+    "elapsed_seconds": 5.01,
+    "visible_processes": 1,
+    "tree_rss_bytes": 355717120,
+    "visible_tree_cpu_seconds": 4.45,
+    "tree_read_bytes": 13206349,
+    "tree_write_bytes": 891617,
+    "output_files": 25,
+    "output_bytes": 891191
+  },
+  {
+    "elapsed_seconds": 10.02,
+    "visible_processes": 1,
+    "tree_rss_bytes": 342491136,
+    "visible_tree_cpu_seconds": 4.56,
+    "tree_read_bytes": 13210087,
+    "tree_write_bytes": 891617,
+    "output_files": 25,
+    "output_bytes": 891191
+  },
+  {
+    "elapsed_seconds": 15.03,
+    "visible_processes": 1,
+    "tree_rss_bytes": 342495232,
+    "visible_tree_cpu_seconds": 4.56,
+    "tree_read_bytes": 13213825,
+    "tree_write_bytes": 891617,
+    "output_files": 25,
+    "output_bytes": 891191
+  }
+]

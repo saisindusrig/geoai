@@ -1,13 +1,14 @@
 /** Display-only ground preview. Never write this elevation into a model or survey record. */
 export function modelDisplayElevation(
   originElevation: number,
-  accepted: { elevation: number | null; offset: number; legacy_display_elevation?: number | null } | null,
+  accepted: { elevation: number | null; offset: number; status?: string; legacy_display_elevation?: number | null } | null,
   contextHeight: number | null,
 ): number {
   if (accepted) {
     if (accepted.elevation !== null && Number.isFinite(accepted.elevation)) return accepted.elevation + accepted.offset;
     // Preserve an audited legacy render transform without treating it as a measurement.
     if (accepted.legacy_display_elevation != null) return accepted.legacy_display_elevation + accepted.offset;
+    if (originElevation === 0 && accepted.status === "REVIEW_REQUIRED" && contextHeight !== null && Number.isFinite(contextHeight)) return contextHeight;
     return originElevation;
   }
   // Existing display origins stay fixed; their accuracy is established separately.

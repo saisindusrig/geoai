@@ -159,7 +159,7 @@ export function localSandboxProject(draft = readLocalSandboxDraft()): Project {
     created_at: "2026-01-01T00:00:00.000Z",
     updated_at: draft.updatedAt,
     disclaimer:
-      "Local sandbox only. No data, AI request, or project is sent to the GeoAI backend.",
+      "Local sandbox only. No data, AI request, or project is sent to the StruvoCivil backend.",
   };
 }
 

@@ -1,0 +1,43 @@
+{
+  "negative_cases": [
+    {
+      "case": "missing",
+      "launcher": "batch",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "case": "missing",
+      "launcher": "powershell",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "case": "node22",
+      "launcher": "batch",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "case": "node22",
+      "launcher": "powershell",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "case": "tampered-npm",
+      "launcher": "batch",
+      "rejected": true,
+      "exit_code": 1
+    },
+    {
+      "case": "tampered-npm",
+      "launcher": "powershell",
+      "rejected": true,
+      "exit_code": 1
+    }
+  ],
+  "actual_powershell_path_restored": true,
+  "batch_setlocal_present": true,
+  "normal_parent_node_unchanged": "v22.18.0"
+}

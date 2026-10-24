@@ -1,0 +1,201 @@
+{
+  "analysis_id": 301,
+  "revision_id": 86,
+  "slab_id": "industrial-platform-5x3:platform-deck",
+  "area_m2": 24,
+  "pressure_kn_m2": 5.0,
+  "applied_kn": 120.0,
+  "reaction_total_kn": 119.99999999999997,
+  "reaction_balance_error_kn": -2.842170943040401e-14,
+  "support_spacing_m": 3.7,
+  "overhangs_m": [
+    0.1499999999999999,
+    0.1499999999999999
+  ],
+  "excluded_stair_parts": 22,
+  "all_45_source_components_unchanged": true,
+  "frames": [
+    {
+      "beam_id": "industrial-platform-5x3:beam-south",
+      "solver_version": "3.8.0",
+      "run_id": "48260609-4c48-4a29-8bd4-723a82630cd2",
+      "hand": {
+        "left_head": [
+          -1.0275687656703868e-05,
+          -5.333333333333334e-06,
+          -0.00012966957799598187
+        ],
+        "left_beam_end": [
+          2.69127014289433e-06,
+          1.4117103366063934e-05,
+          -0.00012966957799598187
+        ],
+        "midspan_v": -0.0010241372636279086,
+        "left_reaction": [
+          10765.080571577306,
+          30000.0,
+          -11753.693592818208
+        ],
+        "formula": "Symmetric strain energy with rigid-arm kinematics: Kuu=24Bc/H\u00b3+4EAb/L; Ku\u03b8=12Bc/H\u00b2-4EAb h/L; K\u03b8\u03b8=8Bc/H+4EAb h\u00b2/L+4Bb/L; F\u03b8=w(L\u00b2/6-La); Fv=wL+sumFy+wcH; \u03b8=F\u03b8/(K\u03b8\u03b8-Ku\u03b8\u00b2/Kuu), u=-Ku\u03b8\u03b8/Kuu, v=Fv/(2EAc/H). Beam midpoint v-a\u03b8+L\u03b8/4+wL\u2074/(384Bb)."
+      },
+      "computed_midspan_mm": -1.0241372636279082,
+      "computed_left_reaction": {
+        "node": 1,
+        "fx_n": 10765.080571577306,
+        "fy_n": 29999.999999999996,
+        "moment_nm": -11753.693592818216
+      },
+      "computed_beam_moment_range_kn_m": [
+        -28.271072293386904,
+        16.728927706613092
+      ],
+      "computed_beam_shear_range_kn": [
+        -29.999999999999996,
+        29.999999999999993
+      ],
+      "computed_left_head": {
+        "id": 2,
+        "position_m": [
+          0,
+          3.1999999999999997
+        ],
+        "displacement_m": [
+          -1.027568765670426e-05,
+          -5.33333333333333e-06,
+          -0.00012966957799598168
+        ]
+      },
+      "equilibrium_residual_si": [
+        7.275957614183426e-12,
+        -1.0913936421275139e-11,
+        -4.3655745685100555e-11
+      ],
+      "solver_comparisons": {
+        "nodes": {
+          "max_absolute_error": 3.152945840023404e-19,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 1.8189894035458565e-11,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 1.8189894035458565e-11,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 1.4551915228366852e-11,
+          "passed": true
+        }
+      },
+      "verified_artifact_hashes": {
+        "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+        "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+        "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+        "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      }
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-north",
+      "solver_version": "3.8.0",
+      "run_id": "f64f40de-05c3-4d11-b7d5-2dc7562447eb",
+      "hand": {
+        "left_head": [
+          -1.0275687656703868e-05,
+          -5.333333333333334e-06,
+          -0.00012966957799598187
+        ],
+        "left_beam_end": [
+          2.69127014289433e-06,
+          1.4117103366063934e-05,
+          -0.00012966957799598187
+        ],
+        "midspan_v": -0.0010241372636279086,
+        "left_reaction": [
+          10765.080571577306,
+          30000.0,
+          -11753.693592818208
+        ],
+        "formula": "Symmetric strain energy with rigid-arm kinematics: Kuu=24Bc/H\u00b3+4EAb/L; Ku\u03b8=12Bc/H\u00b2-4EAb h/L; K\u03b8\u03b8=8Bc/H+4EAb h\u00b2/L+4Bb/L; F\u03b8=w(L\u00b2/6-La); Fv=wL+sumFy+wcH; \u03b8=F\u03b8/(K\u03b8\u03b8-Ku\u03b8\u00b2/Kuu), u=-Ku\u03b8\u03b8/Kuu, v=Fv/(2EAc/H). Beam midpoint v-a\u03b8+L\u03b8/4+wL\u2074/(384Bb)."
+      },
+      "computed_midspan_mm": -1.0241372636279082,
+      "computed_left_reaction": {
+        "node": 1,
+        "fx_n": 10765.080571577306,
+        "fy_n": 29999.999999999996,
+        "moment_nm": -11753.693592818216
+      },
+      "computed_beam_moment_range_kn_m": [
+        -28.271072293386904,
+        16.728927706613092
+      ],
+      "computed_beam_shear_range_kn": [
+        -29.999999999999996,
+        29.999999999999993
+      ],
+      "computed_left_head": {
+        "id": 2,
+        "position_m": [
+          0,
+          3.1999999999999997
+        ],
+        "displacement_m": [
+          -1.027568765670426e-05,
+          -5.33333333333333e-06,
+          -0.00012966957799598168
+        ]
+      },
+      "equilibrium_residual_si": [
+        7.275957614183426e-12,
+        -1.0913936421275139e-11,
+        -4.3655745685100555e-11
+      ],
+      "solver_comparisons": {
+        "nodes": {
+          "max_absolute_error": 3.152945840023404e-19,
+          "passed": true
+        },
+        "reactions": {
+          "max_absolute_error": 1.8189894035458565e-11,
+          "passed": true
+        },
+        "forces": {
+          "max_absolute_error": 1.8189894035458565e-11,
+          "passed": true
+        },
+        "joint_equilibrium": {
+          "max_absolute_error": 1.4551915228366852e-11,
+          "passed": true
+        }
+      },
+      "verified_artifact_hashes": {
+        "model.tcl": "4a9063ecdc41a396ab7caaa4ee19305ea6aa6cd88be03bce15f3f3d3425f76eb",
+        "nodes.tsv": "76b109f27efca2b2b71b1dbad894ccef3ce45a72ef962715a5a7f44d6e8aa229",
+        "forces.tsv": "e2dcfe2ede03c3d56bb0dbbe9724a42a956d5b093fee07f1758e443ddcb214ab",
+        "reactions.tsv": "d90f83aff6ca560ca441293e1f5360c7ff77f0b8b0a0fe3f196745df653e38ac",
+        "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+      }
+    }
+  ],
+  "beam_reference_hand": [
+    {
+      "reaction_y_n": 30000.0,
+      "left_end_moment_nm": 30000.0,
+      "right_end_moment_nm": -30000.0,
+      "midspan_displacement_m": -0.0008437499999999997,
+      "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+    },
+    {
+      "reaction_y_n": 30000.0,
+      "left_end_moment_nm": 30000.0,
+      "right_end_moment_nm": -30000.0,
+      "midspan_displacement_m": -0.0008437499999999997,
+      "formula": "Fixed-fixed Euler-Bernoulli: Ry=-wL/2; Mi=-wL\u00b2/12, Mj=+wL\u00b2/12; v(x)=w x\u00b2(L-x)\u00b2/(24EI); V(x)=-wL/2+w x; M(x)=wL\u00b2/12-wLx/2+w x\u00b2/2"
+    }
+  ]
+}

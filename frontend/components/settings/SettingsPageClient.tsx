@@ -19,6 +19,7 @@ type SectionLink = {
 };
 
 const BASE_SECTIONS: SectionLink[] = [
+  {href: "/diagnostics", icon: Server, title: "Runtime diagnostics", description: "Read-only runtime health, recovery actions and release blockers."},
   {
     href: "/settings/api-keys",
     icon: Key,
@@ -61,7 +62,7 @@ export default function SettingsPageClient() {
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-4xl mx-auto px-6 py-8 space-y-8">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">GeoAI / system</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">StruvoCivil / system</p>
           <h1 className="mt-3 border-b border-border pb-5 text-[36px] font-medium tracking-[-0.045em]">Settings</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Account, usage limits, infrastructure status, and provider configuration

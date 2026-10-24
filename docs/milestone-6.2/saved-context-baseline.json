@@ -1,0 +1,1882 @@
+{
+  "page": "/projects/793/workspace",
+  "clientContextUntrusted": true,
+  "project": {
+    "projectId": 793,
+    "projectName": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "revisionId": 103,
+    "revisionNumber": 2,
+    "latestRevisionId": 103,
+    "stale": false,
+    "editorDirty": false,
+    "documentHash": "09329c6f6b2048251f7db7d9138cc136de7f3c7033041b5fa1c0acf7e43fde19",
+    "selected": [],
+    "analysisVersionHash": "111fe83f38ce22b899e9837b710b2bf9004697e6687b9ac73e2be676792a0214",
+    "drawingReferences": [
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:9C",
+        "name": "CAD column SW",
+        "sourceEntityId": "dxf:614f117ae2a74794:9C",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "c6d66e9f71e501ebb12227b66481092bb6056f0ad3b4afc2ab154ae9c9d7bd0b"
+      },
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:AE",
+        "name": "CAD column SE",
+        "sourceEntityId": "dxf:614f117ae2a74794:AE",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "1bbc97b6333c9ca47418ea32a65965fc845b91785112b129180e976deeb695b2"
+      },
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:96",
+        "name": "CAD beam South",
+        "sourceEntityId": "dxf:614f117ae2a74794:96",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "470992c9d842fa64c23ebdd63b18c569e4f1698ccfdce12e34af17f98cefb469"
+      },
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:95",
+        "name": "CAD slab",
+        "sourceEntityId": "dxf:614f117ae2a74794:95",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "6707e688a3d7a61f690bc54e037b4ceacdbc6b704cdb2f7f1e7a80cc57d60a90"
+      },
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:9A",
+        "name": "CAD footing SW",
+        "sourceEntityId": "dxf:614f117ae2a74794:9A",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "166feea818ad4f153b3b1121c75e01030fd00d959e985f20e459091e91af16f8"
+      },
+      {
+        "componentId": "drawing-cad:614f117ae2a74794:AC",
+        "name": "CAD footing SE",
+        "sourceEntityId": "dxf:614f117ae2a74794:AC",
+        "sourceHash": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+        "geometryHash": "290306ace2a50100870ce57d6ac4aba30a522dde91fef48cbb2fc7772e80eed8"
+      }
+    ],
+    "analyses": [
+      {
+        "id": 421,
+        "type": "OPENSEES_PHYSICAL_FRAME",
+        "revisionId": 103,
+        "status": "VERIFIED",
+        "stale": false,
+        "solverVersion": "3.8.0",
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 419,
+        "limitations": [
+          "Selected saved solid-rectangular members only; XZ plane, vertical columns and horizontal beam",
+          "Explicit rigid centerline/short planar massless rigid-offset joints and fixed column bases are idealizations, not verified connection or foundation capacities",
+          "Explicit horizontal/vertical column-head nodal loads, vertical uniform beam loads, and selected-member self-weight with complete density/gravity declarations only; no automatic slab distribution",
+          "Linear Euler-Bernoulli elasticity and explicitly factored linear superposition only: no shear deformation, out-of-plane, buckling, nonlinear or whole-building analysis",
+          "Engineering approval and IS/US code checks DISABLED"
+        ],
+        "evidenceHash": "98c8e7399e8ffbf333c8a457966c3e176a912bb99f126091c1fd9dd4a09b3a1c",
+        "memberIds": [
+          "drawing-cad:614f117ae2a74794:96",
+          "drawing-cad:614f117ae2a74794:9C",
+          "drawing-cad:614f117ae2a74794:AE"
+        ],
+        "memberNames": {
+          "drawing-cad:614f117ae2a74794:96": "CAD beam South",
+          "drawing-cad:614f117ae2a74794:AE": "CAD column SE",
+          "drawing-cad:614f117ae2a74794:9C": "CAD column SW"
+        },
+        "selectionMatch": true,
+        "cases": [
+          {
+            "name": "Horizontal",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Gravity",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -2000.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Self weight",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  -6930.765
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -4620.51
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  -6930.765
+                ]
+              },
+              "self_weight_evidence": [
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:9C",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.26,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:96",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.06,
+                  "mass_per_m_kg": 471.0,
+                  "length_m": 6,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 4620.51,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:AE",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.2,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                }
+              ],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          }
+        ],
+        "moment_nm": {
+          "min": -28809.72565299985,
+          "max": 24756.664173621826,
+          "unit": "N\u00b7m"
+        },
+        "axial_n": {
+          "min": -46810.275089045266,
+          "max": -6739.496820819023,
+          "unit": "N"
+        },
+        "shear_n": {
+          "min": -23631.827089045255,
+          "max": 16739.496820819306,
+          "unit": "N"
+        },
+        "transfer": {},
+        "reactionTotalKn": null,
+        "reactionBalanceErrorKn": null
+      },
+      {
+        "id": 420,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "SOLVER_COMPLETED",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 419,
+        "limitations": [],
+        "evidenceHash": "266679ab1ddef8a50f15eb0ff5809506b6a853f3d13727f7ed02d78c88fac6e3"
+      },
+      {
+        "id": 419,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ba75444f9026c9456c5639c283209a316e296eb5f8dba3912debcc50563d93ad",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -2000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 418,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ef56078387c4e9e1c8408349dcde081066b5eabac343fcaae35f3fd4417e4111",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -1000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 417,
+        "type": "OPENSEES_PHYSICAL_FRAME",
+        "revisionId": 103,
+        "status": "VERIFIED",
+        "stale": true,
+        "solverVersion": "3.8.0",
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 415,
+        "limitations": [
+          "Selected saved solid-rectangular members only; XZ plane, vertical columns and horizontal beam",
+          "Explicit rigid centerline/short planar massless rigid-offset joints and fixed column bases are idealizations, not verified connection or foundation capacities",
+          "Explicit horizontal/vertical column-head nodal loads, vertical uniform beam loads, and selected-member self-weight with complete density/gravity declarations only; no automatic slab distribution",
+          "Linear Euler-Bernoulli elasticity and explicitly factored linear superposition only: no shear deformation, out-of-plane, buckling, nonlinear or whole-building analysis",
+          "Engineering approval and IS/US code checks DISABLED"
+        ],
+        "evidenceHash": "f18bceaf27889e44f9e1f67ef87810f6117e2cd23fada9f9870d9aa3793631ac",
+        "memberIds": [
+          "drawing-cad:614f117ae2a74794:96",
+          "drawing-cad:614f117ae2a74794:9C",
+          "drawing-cad:614f117ae2a74794:AE"
+        ],
+        "memberNames": {
+          "drawing-cad:614f117ae2a74794:96": "CAD beam South",
+          "drawing-cad:614f117ae2a74794:AE": "CAD column SE",
+          "drawing-cad:614f117ae2a74794:9C": "CAD column SW"
+        },
+        "selectionMatch": true,
+        "cases": [
+          {
+            "name": "Horizontal",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Gravity",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -2000.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Self weight",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  -6930.765
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -4620.51
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  -6930.765
+                ]
+              },
+              "self_weight_evidence": [
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:9C",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.26,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:96",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.06,
+                  "mass_per_m_kg": 471.0,
+                  "length_m": 6,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 4620.51,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:AE",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.2,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                }
+              ],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          }
+        ],
+        "moment_nm": {
+          "min": -28809.72565299985,
+          "max": 24756.664173621826,
+          "unit": "N\u00b7m"
+        },
+        "axial_n": {
+          "min": -46810.275089045266,
+          "max": -6739.496820819023,
+          "unit": "N"
+        },
+        "shear_n": {
+          "min": -23631.827089045255,
+          "max": 16739.496820819306,
+          "unit": "N"
+        },
+        "transfer": {},
+        "reactionTotalKn": null,
+        "reactionBalanceErrorKn": null
+      },
+      {
+        "id": 416,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "SOLVER_COMPLETED",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 415,
+        "limitations": [],
+        "evidenceHash": "3c1be9818c995aa80b7c1bd5baedcddf78a710f5ea5a7490c21029640127552b"
+      },
+      {
+        "id": 415,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ba75444f9026c9456c5639c283209a316e296eb5f8dba3912debcc50563d93ad",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -2000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 414,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 411,
+        "limitations": [],
+        "evidenceHash": "5ebf7d3ac0ae2e13788f6670629edf3124f7cd81af387184646abe6ccde0b66e"
+      },
+      {
+        "id": 413,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 411,
+        "limitations": [],
+        "evidenceHash": "0b28e1683ecff54833e43ffd48d33b3198e18b9a8cb4f68ffa6995bda2fd1a4c"
+      },
+      {
+        "id": 412,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 411,
+        "limitations": [],
+        "evidenceHash": "0b28e1683ecff54833e43ffd48d33b3198e18b9a8cb4f68ffa6995bda2fd1a4c"
+      },
+      {
+        "id": 411,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ba75444f9026c9456c5639c283209a316e296eb5f8dba3912debcc50563d93ad",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -2000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 410,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 408,
+        "limitations": [],
+        "evidenceHash": "1d3c2d2841285bd6531c5c88fb5ed1c3a011e6e53a28a705683912f075ad6b90"
+      },
+      {
+        "id": 409,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 408,
+        "limitations": [],
+        "evidenceHash": "1d3c2d2841285bd6531c5c88fb5ed1c3a011e6e53a28a705683912f075ad6b90"
+      },
+      {
+        "id": 408,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ba75444f9026c9456c5639c283209a316e296eb5f8dba3912debcc50563d93ad",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -2000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 407,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "AWAITING_AUTHORIZATION",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 404,
+        "limitations": [],
+        "evidenceHash": "cb2975cfd5c9970c0b2b1b5dd37669b1d5e902c70485258de5a1db46932a6cd3"
+      },
+      {
+        "id": 406,
+        "type": "OPENSEES_PHYSICAL_FRAME",
+        "revisionId": 103,
+        "status": "VERIFIED",
+        "stale": true,
+        "solverVersion": "3.8.0",
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 404,
+        "limitations": [
+          "Selected saved solid-rectangular members only; XZ plane, vertical columns and horizontal beam",
+          "Explicit rigid centerline/short planar massless rigid-offset joints and fixed column bases are idealizations, not verified connection or foundation capacities",
+          "Explicit horizontal/vertical column-head nodal loads, vertical uniform beam loads, and selected-member self-weight with complete density/gravity declarations only; no automatic slab distribution",
+          "Linear Euler-Bernoulli elasticity and explicitly factored linear superposition only: no shear deformation, out-of-plane, buckling, nonlinear or whole-building analysis",
+          "Engineering approval and IS/US code checks DISABLED"
+        ],
+        "evidenceHash": "ff1abdc3511598da40ed7af2f02c6a2d7d3bf995cec6e8b500158ab5dda4a83a",
+        "memberIds": [
+          "drawing-cad:614f117ae2a74794:96",
+          "drawing-cad:614f117ae2a74794:9C",
+          "drawing-cad:614f117ae2a74794:AE"
+        ],
+        "memberNames": {
+          "drawing-cad:614f117ae2a74794:96": "CAD beam South",
+          "drawing-cad:614f117ae2a74794:AE": "CAD column SE",
+          "drawing-cad:614f117ae2a74794:9C": "CAD column SW"
+        },
+        "selectionMatch": true,
+        "cases": [
+          {
+            "name": "Horizontal",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  10000.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Gravity",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  -1000.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  0.0
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -2000.0
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "self_weight_evidence": [],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          },
+          {
+            "name": "Self weight",
+            "kind": "INDEPENDENT_LINEAR_LOAD_CASE",
+            "appliedLoads": {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "nodal_loads_si": {
+                "2": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "3": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "uniform_global_by_component_n_per_m": {
+                "drawing-cad:614f117ae2a74794:9C": [
+                  0.0,
+                  -6930.765
+                ],
+                "drawing-cad:614f117ae2a74794:96": [
+                  0.0,
+                  -4620.51
+                ],
+                "drawing-cad:614f117ae2a74794:AE": [
+                  0.0,
+                  -6930.765
+                ]
+              },
+              "self_weight_evidence": [
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:9C",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.26,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:96",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.06,
+                  "mass_per_m_kg": 471.0,
+                  "length_m": 6,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 4620.51,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                },
+                {
+                  "component_id": "drawing-cad:614f117ae2a74794:AE",
+                  "density_kg_m3": 7850.0,
+                  "area_m2": 0.09,
+                  "mass_per_m_kg": 706.5,
+                  "length_m": 3.2,
+                  "gravity_m_s2": 9.81,
+                  "direction": "local_enu_negative_up",
+                  "weight_n_per_m": 6930.765,
+                  "source": "Synthetic verification inputs only, not measured engineering properties",
+                  "gravity_source": "Synthetic verification inputs only, not measured engineering properties"
+                }
+              ],
+              "units": "N, N/m, m, kg/m\u00b3, m/s\u00b2; +X East, +Y Up",
+              "scope": "Selected members only; no automatic slab distribution"
+            },
+            "solverVersion": "3.8.0"
+          }
+        ],
+        "moment_nm": {
+          "min": -28809.72565299985,
+          "max": 24756.664173621826,
+          "unit": "N\u00b7m"
+        },
+        "axial_n": {
+          "min": -46810.275089045266,
+          "max": -6739.496820819023,
+          "unit": "N"
+        },
+        "shear_n": {
+          "min": -23631.827089045255,
+          "max": 16739.496820819306,
+          "unit": "N"
+        },
+        "transfer": {},
+        "reactionTotalKn": null,
+        "reactionBalanceErrorKn": null
+      },
+      {
+        "id": 405,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "SOLVER_COMPLETED",
+        "stale": true,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": 404,
+        "limitations": [],
+        "evidenceHash": "b2ead48e54cf57ccd18ef738fb9d202fafc9fc642256ffb440baf63e564204c5"
+      },
+      {
+        "id": 404,
+        "type": "PHYSICAL_FRAME_INPUT",
+        "revisionId": 103,
+        "status": "INPUT_READY",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "ba75444f9026c9456c5639c283209a316e296eb5f8dba3912debcc50563d93ad",
+        "declaredInputs": {
+          "sections": [
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:9C",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:96",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.06,
+              "inertia_m4": 0.00044999999999999993,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            },
+            {
+              "component_id": "drawing-cad:614f117ae2a74794:AE",
+              "shape": "solid_rectangle",
+              "elastic_modulus_pa": 200000000000.0,
+              "area_m2": 0.09,
+              "inertia_m4": 0.0006749999999999998,
+              "material_name": "Synthetic solid rectangular steel",
+              "material_source": "Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data",
+              "section_source": "Explicit synthetic solid rectangle; nominal envelope alone does not establish a steel section"
+            }
+          ],
+          "supports": "both_column_bases_fixed",
+          "support_source": "Explicit synthetic fixed bases; no footing stiffness assumed",
+          "connections": [
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:9C",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "left",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                -0.15,
+                -0.009999999999999787
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            },
+            {
+              "column_id": "drawing-cad:614f117ae2a74794:AE",
+              "beam_id": "drawing-cad:614f117ae2a74794:96",
+              "column_endpoint": "top",
+              "beam_endpoint": "right",
+              "behavior": "rigid_offset",
+              "offset_m": [
+                0.15000000000000036,
+                0.04999999999999982
+              ],
+              "idealization_approved": true,
+              "source": "Explicit synthetic individually reviewed original unequal-column rigid offset; no capacity approval"
+            }
+          ],
+          "load_pattern": null,
+          "load_n": null,
+          "load_source": null,
+          "load_cases": [
+            {
+              "name": "Horizontal",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 20000.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": null
+            },
+            {
+              "name": "Gravity",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": -1000.0
+                }
+              ],
+              "beam_uniform_n_per_m": -2000.0,
+              "self_weight": null
+            },
+            {
+              "name": "Self weight",
+              "source": "Synthetic verification inputs only, not measured engineering properties",
+              "horizontal_n": 0.0,
+              "vertical_nodal_loads": [
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:9C",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                },
+                {
+                  "column_id": "drawing-cad:614f117ae2a74794:AE",
+                  "endpoint": "top",
+                  "fy_n": 0.0
+                }
+              ],
+              "beam_uniform_n_per_m": 0.0,
+              "self_weight": {
+                "densities": [
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:9C",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:96",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  },
+                  {
+                    "component_id": "drawing-cad:614f117ae2a74794:AE",
+                    "density_kg_m3": 7850.0,
+                    "source": "Synthetic verification inputs only, not measured engineering properties"
+                  }
+                ],
+                "gravity_m_s2": 9.81,
+                "direction": "local_enu_negative_up",
+                "source": "Synthetic verification inputs only, not measured engineering properties"
+              }
+            }
+          ],
+          "combination": {
+            "name": "Linear sum",
+            "source": "Synthetic unit-factor superposition, not code combination",
+            "factors": [
+              {
+                "case_name": "Horizontal",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Gravity",
+                "factor": 1.0
+              },
+              {
+                "case_name": "Self weight",
+                "factor": 1.0
+              }
+            ]
+          },
+          "units": "SI"
+        }
+      },
+      {
+        "id": 403,
+        "type": "AI_ASSEMBLY_PROPOSAL",
+        "revisionId": 103,
+        "status": "NEEDS_INPUT",
+        "stale": false,
+        "solverVersion": null,
+        "engineeringApproval": "DISABLED",
+        "inputRecordId": null,
+        "limitations": [],
+        "evidenceHash": "59794d1a6e2ab59be414718d75641c4ff171c3b03d10863df0d4cc717560dee7"
+      }
+    ],
+    "missing": [],
+    "missingTotal": 0,
+    "groups": [
+      "Geometry and section",
+      "Material properties",
+      "Loads",
+      "Supports and connections",
+      "Engineering assumptions",
+      "Analysis and results"
+    ],
+    "notice": "Saved evidence only. Appearance is not engineering material certification. Numerical verification is not structural approval."
+  },
+  "contextBounds": "Existing evidence adapter: latest 100 engineering records, up to 30 returned analyses, 100 selected objects and 100 CAD references. This is not a complete project inventory or a method validation.",
+  "capabilities": {
+    "read_context": "Read saved project, selected objects, CAD sources and engineering evidence. Never executes analyses.",
+    "list_projects": "List up to 50 projects owned by the authenticated user.",
+    "read_quantities": "Read existing saved quantities and cost estimates; no recalculation.",
+    "read_capabilities": "Read authoritative supported-method and current/stale saved-result gates. Does not run analyses.",
+    "read_diagnostics": "Read existing runtime diagnostics with a bounded solver version-only probe; no numerical analysis or inference.",
+    "navigate": "Prepare a link to an existing website tool. Analysis, imports, exports and saving require manual review in that tool.",
+    "prepare_position_preview": "Prepare a visual position preview for one selected editable component, in East/North/Up metres. Does not apply or save. User must review Preview, Apply, then Save model in the existing editor."
+  },
+  "limits": "Only bounded read tools and position previews. Saving, CAD/file operations and numerical analyses require explicit existing application review and authorization. Never claim execution from navigation.",
+  "projectFacts": {
+    "id": 793,
+    "name": "Unequal CAD frame \u2014 gravity and distributed load verification",
+    "type": "unclassified",
+    "units": "metric",
+    "status": "draft",
+    "location": "",
+    "hasBoundary": true,
+    "hasAlignment": false
+  }
+}

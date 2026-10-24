@@ -1,0 +1,20 @@
+{
+  "app/layout.tsx": "41d29f1b8e23f63d0e8929a998ddebc2301ac5e4fe38822a68b177030da4c6db",
+  "app/login/LoginPageInner.tsx": "937f0a932b8ba771c5144701edc775bf503b90bc569cab5f0159f07ed50743ab",
+  "components/auth/RequireAuth.tsx": "9bd17239ad524705705f28718101883b76558990e81ff63ca335396aff960204",
+  "components/auth/SessionBoundary.tsx": "37641a80eaa3e5f56130a723c07dfd041ca372474f0acc599517dd6f1d607d3a",
+  "components/auth/SessionBoundary.test.tsx": "cb03387407ddc4d9b3f478681562c818f55940edaed49ad5a2d9aa30c7b1b4fc",
+  "components/layout/UserMenu.tsx": "08d561d99ae988d4d838df587a813d5638f388a473aac1ffdab853b1e9f30303",
+  "hooks/useProjectData.ts": "6a7b5cf8adba83e192a3eab501e03907851214df40ec3f6fa0e2d5806dc11fce",
+  "hooks/useProjectData.session.test.tsx": "1239616a865330d1baefcd641d7e8f9115e535ad78f046b1d836aab588435579",
+  "lib/firebase-auth.ts": "823ef91ff95dbcdbef2cf6f083b0502d2c7fd06e00bd858787100801ebb17d36",
+  "lib/firebase-session.test.tsx": "ec1ed6fa631cda161a24207d5019f4b8d07af979ed75fbe3233cbb19b59b4656",
+  "lib/api.ts": "adde34f01d51160e338857a3827a89db2a4b2f90238c8ed5d309f773486aef5d",
+  "lib/useAuthUser.ts": "804b46e3ea740c64df0aa9edc16c422a1bb357d14699dffa86236072f00972d8",
+  "lib/site-assistant.ts": "318efcb818bc64d5972fd33e7ccd6ca2643e3c165561a028ae253ab466dfaf75",
+  "lib/site-assistant.test.ts": "603aefcd6f79acad854dfb193691fe02a31646cd0ee08afd3fcafd24bce5d129",
+  "lib/api-file-security.test.ts": "eeca3949adc6dcfae074a0558ae62abd44b3a224a40a6c06c5875337c525a235",
+  "lib/api-transport.test.ts": "f2c0a712be83e272917e083cf3d17c7eb2190d5c80b8a368aa1c7468f724d09c",
+  "lib/api-read-retry.test.ts": "b8af2e97bfd2cedb711cf887e5cd1a07ef536a0d7283bfee9cd53380dec16dcd",
+  "lib/download.test.ts": "d40c8bed52f005d769d84a22f7242f9855e3c26a04d434a614aa58fea7d3fd7b"
+}

@@ -1,0 +1,816 @@
+{
+  "analysis_id": 101,
+  "run_id": "291d7eea-69ee-4e5b-9093-d9baa772eadd",
+  "timestamp": "2026-10-11T16:42:39.952974+00:00",
+  "solver": {
+    "name": "OpenSees",
+    "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+    "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+  },
+  "inputs": {
+    "length_m": 3,
+    "area_m2": 0.01,
+    "elastic_modulus_pa": 200000000000.0,
+    "soil_stiffness_n_per_m": 100000000.0,
+    "compression_n": 100000.0,
+    "load_factor": 1.0,
+    "elements": 1,
+    "solver_units": "SI"
+  },
+  "inputs_sha256": "63e9db287900943a11784a19457f67061cd39f0e65f6a04a3d9a41889e535a09",
+  "input_file_sha256": "a16f7a64772d12a78ca69cca8f0cde2e04a7bbf13b6111fd88b2128ecc71d1e1",
+  "status": "VERIFIED",
+  "engineering_approval": "DISABLED",
+  "code_checks": "DISABLED",
+  "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+  "limitations": [
+    "Linear axial elasticity only",
+    "Rigid plate/footing idealization; anchors inactive",
+    "Prescribed soil spring; no soil capacity check",
+    "No bending, buckling, self-weight or design-code checks"
+  ],
+  "exit_code": 0,
+  "solver_version": "3.8.0",
+  "convergence_code": 0,
+  "verified": true,
+  "values_si": {
+    "column_shortening_m": 0.00014999999999999996,
+    "spring_settlement_m": 0.0009999999999999998,
+    "total_displacement_m": 0.0011499999999999998,
+    "compression_stress_pa": 9999999.999999998,
+    "reaction_n": 99999.99999999999
+  },
+  "comparisons": {
+    "column_shortening_m": {
+      "computed": 0.00014999999999999996,
+      "reference": 0.00015,
+      "relative_error": 1.8070036208091741e-16,
+      "passed": true
+    },
+    "spring_settlement_m": {
+      "computed": 0.0009999999999999998,
+      "reference": 0.001,
+      "relative_error": 2.1684043449710089e-16,
+      "passed": true
+    },
+    "total_displacement_m": {
+      "computed": 0.0011499999999999998,
+      "reference": 0.00115,
+      "relative_error": 1.8855689956269643e-16,
+      "passed": true
+    },
+    "compression_stress_pa": {
+      "computed": 9999999.999999998,
+      "reference": 10000000.0,
+      "relative_error": 1.862645149230957e-16,
+      "passed": true
+    },
+    "reaction_n": {
+      "computed": 99999.99999999999,
+      "reference": 100000.0,
+      "relative_error": 1.4551915228366853e-16,
+      "passed": true
+    }
+  },
+  "force_residual_n": 1.4551915228366852e-11,
+  "nodes": [
+    {
+      "id": 1,
+      "z_m": 0.0,
+      "displacement_m": 0.0
+    },
+    {
+      "id": 2,
+      "z_m": 0.0,
+      "displacement_m": -0.0009999999999999998
+    },
+    {
+      "id": 3,
+      "z_m": 3.0,
+      "displacement_m": -0.0011499999999999998
+    }
+  ],
+  "elements": [
+    {
+      "id": 2,
+      "axial_force_n": -99999.99999999999
+    }
+  ],
+  "artifact_sha256": {
+    "model.tcl": "ee45bf7d23f5fc2be66df44e0902962e5bfd8e29a79c3d83d56afee8431f76ef",
+    "nodes.tsv": "bcef79479846d31f9cb4bc0abf32ec96095f4305304a3e8e04916833e9a0f5ae",
+    "forces.tsv": "476839b3a7845cb28b3b7a3b7485b270e3fbe349e4ff60730e04f876aa3aa0ea",
+    "summary.tsv": "7f20d4529a51a3bcf57cc208fcfd8178475a2aa2965b0970fd4bbc2d1491b5ac",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+  },
+  "verification_suite": {
+    "status": "VERIFIED",
+    "cases": [
+      {
+        "run_id": "ad9dfd13-9c5a-4333-b1a9-4f8b9a37163b",
+        "timestamp": "2026-10-11T16:42:39.523304+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 100000.0,
+          "load_factor": 1.0,
+          "elements": 1,
+          "solver_units": "SI"
+        },
+        "inputs_sha256": "63e9db287900943a11784a19457f67061cd39f0e65f6a04a3d9a41889e535a09",
+        "input_file_sha256": "a16f7a64772d12a78ca69cca8f0cde2e04a7bbf13b6111fd88b2128ecc71d1e1",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 0.00014999999999999996,
+          "spring_settlement_m": 0.0009999999999999998,
+          "total_displacement_m": 0.0011499999999999998,
+          "compression_stress_pa": 9999999.999999998,
+          "reaction_n": 99999.99999999999
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 0.00014999999999999996,
+            "reference": 0.00015,
+            "relative_error": 1.8070036208091741e-16,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0009999999999999998,
+            "reference": 0.001,
+            "relative_error": 2.1684043449710089e-16,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0011499999999999998,
+            "reference": 0.00115,
+            "relative_error": 1.8855689956269643e-16,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 9999999.999999998,
+            "reference": 10000000.0,
+            "relative_error": 1.862645149230957e-16,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 99999.99999999999,
+            "reference": 100000.0,
+            "relative_error": 1.4551915228366853e-16,
+            "passed": true
+          }
+        },
+        "force_residual_n": 1.4551915228366852e-11,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0009999999999999998
+          },
+          {
+            "id": 3,
+            "z_m": 3.0,
+            "displacement_m": -0.0011499999999999998
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -99999.99999999999
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "ee45bf7d23f5fc2be66df44e0902962e5bfd8e29a79c3d83d56afee8431f76ef",
+          "nodes.tsv": "bcef79479846d31f9cb4bc0abf32ec96095f4305304a3e8e04916833e9a0f5ae",
+          "forces.tsv": "476839b3a7845cb28b3b7a3b7485b270e3fbe349e4ff60730e04f876aa3aa0ea",
+          "summary.tsv": "7f20d4529a51a3bcf57cc208fcfd8178475a2aa2965b0970fd4bbc2d1491b5ac",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      },
+      {
+        "run_id": "6622b1cd-0d93-4cd3-ab9d-07f250771d88",
+        "timestamp": "2026-10-11T16:42:39.597416+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 100000.0,
+          "load_factor": 1.0,
+          "elements": 2,
+          "solver_units": "SI"
+        },
+        "inputs_sha256": "de44364ae2b882c83aed6088003bc3c938aeddc3fed209f04c1fc6d7255e5c50",
+        "input_file_sha256": "f3cbe68e7b3650beb6d836556088816ed85b18e6b055d9df6565ba2a65d79509",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 0.00014999999999999996,
+          "spring_settlement_m": 0.0010000000000000009,
+          "total_displacement_m": 0.0011500000000000008,
+          "compression_stress_pa": 9999999.999999998,
+          "reaction_n": 100000.00000000009
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 0.00014999999999999996,
+            "reference": 0.00015,
+            "relative_error": 1.8070036208091741e-16,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0010000000000000009,
+            "reference": 0.001,
+            "relative_error": 8.673617379884035e-16,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0011500000000000008,
+            "reference": 0.00115,
+            "relative_error": 7.542275982507857e-16,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 9999999.999999998,
+            "reference": 10000000.0,
+            "relative_error": 1.862645149230957e-16,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 100000.00000000009,
+            "reference": 100000.0,
+            "relative_error": 8.731149137020111e-16,
+            "passed": true
+          }
+        },
+        "force_residual_n": 8.731149137020111e-11,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0010000000000000009
+          },
+          {
+            "id": 3,
+            "z_m": 1.5,
+            "displacement_m": -0.0010750000000000009
+          },
+          {
+            "id": 4,
+            "z_m": 3.0,
+            "displacement_m": -0.0011500000000000008
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -99999.99999999999
+          },
+          {
+            "id": 3,
+            "axial_force_n": -99999.99999999999
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "130d7884d03653e90660c725f473fb46b85b8eb6ed7776e9c938290a6fd1ec45",
+          "nodes.tsv": "9559427225485569d4f7ffa180e97d752eada4be5f1ddcdb49dd7788ec5f5498",
+          "forces.tsv": "8d9db226dd586acb99ce5d1b84e53f5b6aacb70a453b9ef02b8f9de727b5f53a",
+          "summary.tsv": "0b97c5fc49917ce7b8d966569acbeb3e2b52c62c471312b979d1275caead2b48",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      },
+      {
+        "run_id": "aa72dc29-043e-4da9-abab-836dc3bcce33",
+        "timestamp": "2026-10-11T16:42:39.669437+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 100000.0,
+          "load_factor": 1.0,
+          "elements": 4,
+          "solver_units": "SI"
+        },
+        "inputs_sha256": "e9939f2d42c96ccb8bc1e4548389254e2ca2fec92ae2513c67725e8fbf73f783",
+        "input_file_sha256": "352850568e6bcc8a70de0ed640385bd6825576fb18cbbc926085e1ae948259b4",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 0.0001500000000000004,
+          "spring_settlement_m": 0.0010000000000000063,
+          "total_displacement_m": 0.0011500000000000067,
+          "compression_stress_pa": 10000000.000000054,
+          "reaction_n": 100000.00000000063
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 0.0001500000000000004,
+            "reference": 0.00015,
+            "relative_error": 2.7105054312137615e-15,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0010000000000000063,
+            "reference": 0.001,
+            "relative_error": 6.288372600415926e-15,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0011500000000000067,
+            "reference": 0.00115,
+            "relative_error": 5.845263886443589e-15,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 10000000.000000054,
+            "reference": 10000000.0,
+            "relative_error": 5.401670932769776e-15,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 100000.00000000063,
+            "reference": 100000.0,
+            "relative_error": 6.257323548197746e-15,
+            "passed": true
+          }
+        },
+        "force_residual_n": 6.257323548197746e-10,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0010000000000000063
+          },
+          {
+            "id": 3,
+            "z_m": 0.75,
+            "displacement_m": -0.0010375000000000065
+          },
+          {
+            "id": 4,
+            "z_m": 1.5,
+            "displacement_m": -0.0010750000000000067
+          },
+          {
+            "id": 5,
+            "z_m": 2.25,
+            "displacement_m": -0.0011125000000000067
+          },
+          {
+            "id": 6,
+            "z_m": 3.0,
+            "displacement_m": -0.0011500000000000067
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -100000.00000000054
+          },
+          {
+            "id": 3,
+            "axial_force_n": -100000.00000000054
+          },
+          {
+            "id": 4,
+            "axial_force_n": -99999.99999999999
+          },
+          {
+            "id": 5,
+            "axial_force_n": -99999.99999999999
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "9e5b3f162cffaa40a3dbc8a7738e2d993ed8cd0065a86b9a7a4ad95d25445ae6",
+          "nodes.tsv": "04925f81bc61d8d82a6d0ed2572e9baaf3cb54e495e938edb911d6eb5a42922c",
+          "forces.tsv": "ec405346f2b7c3ed2819695cee997a39e94c444273f535617a325c70b994fcdf",
+          "summary.tsv": "d5f76eaa59eda704879bd52e0cfbda4c86dc380a9c32bc939f8aa7fc11758d5e",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      },
+      {
+        "run_id": "ad40b5b3-1b2f-46fd-857c-533448330bbb",
+        "timestamp": "2026-10-11T16:42:39.741224+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 50000.0,
+          "load_factor": 0.5,
+          "elements": 2,
+          "solver_units": "SI"
+        },
+        "inputs_sha256": "fada35e70139818ddb3966653ad598d13b7845ab7ed22199ad557e082a14402e",
+        "input_file_sha256": "c3e4ef2d2479315419e4f4733950172186f20ac17b2a979b17928e50fc60420e",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 7.499999999999998e-05,
+          "spring_settlement_m": 0.0005000000000000004,
+          "total_displacement_m": 0.0005750000000000004,
+          "compression_stress_pa": 4999999.999999999,
+          "reaction_n": 50000.000000000044
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 7.499999999999998e-05,
+            "reference": 7.5e-05,
+            "relative_error": 1.8070036208091741e-16,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0005000000000000004,
+            "reference": 0.0005,
+            "relative_error": 8.673617379884035e-16,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0005750000000000004,
+            "reference": 0.000575,
+            "relative_error": 7.542275982507857e-16,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 4999999.999999999,
+            "reference": 5000000.0,
+            "relative_error": 1.862645149230957e-16,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 50000.000000000044,
+            "reference": 50000.0,
+            "relative_error": 8.731149137020111e-16,
+            "passed": true
+          }
+        },
+        "force_residual_n": 4.3655745685100555e-11,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0005000000000000004
+          },
+          {
+            "id": 3,
+            "z_m": 1.5,
+            "displacement_m": -0.0005375000000000004
+          },
+          {
+            "id": 4,
+            "z_m": 3.0,
+            "displacement_m": -0.0005750000000000004
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -49999.99999999999
+          },
+          {
+            "id": 3,
+            "axial_force_n": -49999.99999999999
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "a1d4a3d8c299534843427ee36be55806d7979d913eb97aac213fcc0cb288fa5c",
+          "nodes.tsv": "aabf307842be4721194ae1274adfa461fde11a477c923ddeae9182c7dce52e41",
+          "forces.tsv": "5c978bee0886c3e3b6beb6a04306c02869ae919d7d2a691ccb77593333c902cd",
+          "summary.tsv": "d38b7da834e290e98c2efd591c8bf45a9f64199ce9f9503e26c7e5ed4f3f6b2a",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      },
+      {
+        "run_id": "e2b37843-05b6-4e7f-a445-db154c72fe7d",
+        "timestamp": "2026-10-11T16:42:39.818113+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 200000,
+          "load_factor": 2,
+          "elements": 2,
+          "solver_units": "SI"
+        },
+        "inputs_sha256": "c1f4260c9fc1192aeb7af543ff9a3bb3499345b9996daefca4551a6343d44493",
+        "input_file_sha256": "5be71deb3614706c8285756e5557d6c8ef9926288d1293ce62fe7c5350631b37",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 0.0002999999999999999,
+          "spring_settlement_m": 0.0020000000000000018,
+          "total_displacement_m": 0.0023000000000000017,
+          "compression_stress_pa": 19999999.999999996,
+          "reaction_n": 200000.00000000017
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 0.0002999999999999999,
+            "reference": 0.0003,
+            "relative_error": 1.8070036208091741e-16,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0020000000000000018,
+            "reference": 0.002,
+            "relative_error": 8.673617379884035e-16,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0023000000000000017,
+            "reference": 0.0023,
+            "relative_error": 7.542275982507857e-16,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 19999999.999999996,
+            "reference": 20000000.0,
+            "relative_error": 1.862645149230957e-16,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 200000.00000000017,
+            "reference": 200000,
+            "relative_error": 8.731149137020111e-16,
+            "passed": true
+          }
+        },
+        "force_residual_n": 1.7462298274040222e-10,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0020000000000000018
+          },
+          {
+            "id": 3,
+            "z_m": 1.5,
+            "displacement_m": -0.0021500000000000017
+          },
+          {
+            "id": 4,
+            "z_m": 3.0,
+            "displacement_m": -0.0023000000000000017
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -199999.99999999997
+          },
+          {
+            "id": 3,
+            "axial_force_n": -199999.99999999997
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "fa5d163333d87bfeafc5f9e43e5f95a9e6f0984c33f0c0c0415034270310c5d3",
+          "nodes.tsv": "06b2d40cd8b75be13db6341f23ac2c3cdea3e9c90617cf13d5dce688bfd8277c",
+          "forces.tsv": "b1d6c4204a137e04e14a6577a48c95c024ec09657409e140a94af6ec0308cabd",
+          "summary.tsv": "428847beb880a14b47bea995104511ac9b54735b15a2dcdb47509e59371ae28e",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      },
+      {
+        "run_id": "6ffa4470-36f3-42c5-be69-948037a9457a",
+        "timestamp": "2026-10-11T16:42:39.884747+00:00",
+        "solver": {
+          "name": "OpenSees",
+          "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+          "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+        },
+        "inputs": {
+          "length_m": 3,
+          "area_m2": 0.01,
+          "elastic_modulus_pa": 200000000000.0,
+          "soil_stiffness_n_per_m": 100000000.0,
+          "compression_n": 100000.0,
+          "load_factor": 1.0,
+          "elements": 2,
+          "solver_units": "N-mm"
+        },
+        "inputs_sha256": "4d704496dd5d04d3154b380bf92b177c219a6ccb744001a2bf65ef6d93d72f94",
+        "input_file_sha256": "af0afb08665eb9440f21a0e3b306c77f233af5396e5653d8ffed19d8206304f1",
+        "status": "VERIFIED",
+        "engineering_approval": "DISABLED",
+        "code_checks": "DISABLED",
+        "scope": "Isolated 3 m axial benchmark; not analysis of the platform or physical footing/anchors",
+        "limitations": [
+          "Linear axial elasticity only",
+          "Rigid plate/footing idealization; anchors inactive",
+          "Prescribed soil spring; no soil capacity check",
+          "No bending, buckling, self-weight or design-code checks"
+        ],
+        "exit_code": 0,
+        "solver_version": "3.8.0",
+        "convergence_code": 0,
+        "verified": true,
+        "values_si": {
+          "column_shortening_m": 0.00014999999999999996,
+          "spring_settlement_m": 0.0010000000000000009,
+          "total_displacement_m": 0.0011500000000000008,
+          "compression_stress_pa": 9999999.999999993,
+          "reaction_n": 100000.00000000009
+        },
+        "comparisons": {
+          "column_shortening_m": {
+            "computed": 0.00014999999999999996,
+            "reference": 0.00015,
+            "relative_error": 1.8070036208091741e-16,
+            "passed": true
+          },
+          "spring_settlement_m": {
+            "computed": 0.0010000000000000009,
+            "reference": 0.001,
+            "relative_error": 8.673617379884035e-16,
+            "passed": true
+          },
+          "total_displacement_m": {
+            "computed": 0.0011500000000000008,
+            "reference": 0.00115,
+            "relative_error": 7.542275982507857e-16,
+            "passed": true
+          },
+          "compression_stress_pa": {
+            "computed": 9999999.999999993,
+            "reference": 10000000.0,
+            "relative_error": 7.450580596923828e-16,
+            "passed": true
+          },
+          "reaction_n": {
+            "computed": 100000.00000000009,
+            "reference": 100000.0,
+            "relative_error": 8.731149137020111e-16,
+            "passed": true
+          }
+        },
+        "force_residual_n": 8.731149137020111e-11,
+        "nodes": [
+          {
+            "id": 1,
+            "z_m": 0.0,
+            "displacement_m": 0.0
+          },
+          {
+            "id": 2,
+            "z_m": 0.0,
+            "displacement_m": -0.0010000000000000009
+          },
+          {
+            "id": 3,
+            "z_m": 1.5,
+            "displacement_m": -0.0010750000000000009
+          },
+          {
+            "id": 4,
+            "z_m": 3.0,
+            "displacement_m": -0.0011500000000000008
+          }
+        ],
+        "elements": [
+          {
+            "id": 2,
+            "axial_force_n": -99999.99999999993
+          },
+          {
+            "id": 3,
+            "axial_force_n": -99999.99999999993
+          }
+        ],
+        "artifact_sha256": {
+          "model.tcl": "4434a48c0069d9fa2f5d5ed9f2c5c5f336324f9656ba93f3507d26f011be2458",
+          "nodes.tsv": "0ffc164fde5659b087f3d467fa104a5d0d0c8bdd6486541529c385157d4619ff",
+          "forces.tsv": "daee0846a4cc811ad0babc2251de9fe8bf3df0e229d3db4610f4bc7751a2240c",
+          "summary.tsv": "0b97c5fc49917ce7b8d966569acbeb3e2b52c62c471312b979d1275caead2b48",
+          "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+        }
+      }
+    ],
+    "engineering_approval": "DISABLED",
+    "code_checks": "DISABLED"
+  },
+  "model_document_sha256": "a9632336749ee498fff5d74b624ec92d533050a91e2c9affff3dea1ae77ebbb4",
+  "model_revision_id": 59,
+  "project_id": 768
+}

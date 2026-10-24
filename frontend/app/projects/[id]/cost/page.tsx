@@ -25,10 +25,11 @@ import ScenarioSelector from "@/components/scenarios/ScenarioSelector";
 import { StatusPill } from "@/components/project-results/StatusPill";
 import EmptyState from "@/components/ui/empty-state";
 import { GlassCard } from "@/components/ui/glass-card";
-import { Button } from "@/components/ui/button";
+import { DownloadButton } from "@/components/ui/download-button";
 import { Tabs } from "@/components/ui/tabs";
+import { TableScrollRegion } from "@/components/ui/table-scroll-region";
 import { useProjectData } from "@/hooks/useProjectData";
-import { api, apiUrl } from "@/lib/api";
+import { api } from "@/lib/api";
 import { pctDiff } from "@/lib/format-display";
 import { CHART } from "@/lib/chart-theme";
 import { formatCurrency } from "@/lib/utils";
@@ -115,12 +116,7 @@ export default function CostDashboardPage() {
         status={activeEstimate ? undefined : "Pending design"}
         actions={
           activeEstimate ? (
-            <a href={apiUrl(`/api/projects/${projectId}/exports/csv`)}>
-              <Button size="sm" variant="secondary" className="gap-1.5">
-                <Download className="h-3.5 w-3.5" />
-                Export Cost Summary
-              </Button>
-            </a>
+            <DownloadButton path={`/api/projects/${projectId}/exports/csv`} filename={`boq_project_${projectId}.csv`} size="sm" variant="secondary" className="gap-1.5"><Download className="h-3.5 w-3.5" />Export CSV</DownloadButton>
           ) : undefined
         }
       />
@@ -249,7 +245,7 @@ export default function CostDashboardPage() {
               <h3 className="text-sm font-semibold text-foreground">Line items</h3>
               <StatusPill label="Preliminary" variant="warning" />
             </div>
-            <div className="overflow-x-auto">
+            <TableScrollRegion label="Cost line items">
               <table className="data-table w-full min-w-[640px]">
                 <thead>
                   <tr>
@@ -297,7 +293,7 @@ export default function CostDashboardPage() {
                   </tr>
                 </tfoot>
               </table>
-            </div>
+            </TableScrollRegion>
           </GlassCard>
         </>
       )}

@@ -1,0 +1,30 @@
+{
+  "provider": "nebius",
+  "enabled": true,
+  "canSend": true,
+  "state": "AVAILABLE",
+  "code": "CONFIGURED",
+  "models": [
+    "zai-org/GLM-5.3-Flash"
+  ],
+  "defaultModel": "zai-org/GLM-5.3-Flash",
+  "message": "Available for an approved request. Live provider health is unverified; usage amounts are estimates, not actual charges.",
+  "usage": {
+    "accounted_usd": 0.0,
+    "daily_requests": 0,
+    "accounted_daily_tokens": 0,
+    "active_global": 0,
+    "active_user": 0,
+    "recent_requests": 0,
+    "accounting_blocked": false
+  },
+  "configuration": {
+    "credentialsConfigured": true,
+    "officialEndpoint": true
+  },
+  "actualCharges": "UNKNOWN",
+  "dailyTokenAllowance": 200000,
+  "maxToolCalls": 3,
+  "maxProviderRequests": 2,
+  "automaticRetries": 0
+}

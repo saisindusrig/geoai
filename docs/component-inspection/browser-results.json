@@ -1,0 +1,26 @@
+{
+  "baseline_passed": 3,
+  "final_passed": 3,
+  "projects": [
+    793,
+    794,
+    788
+  ],
+  "viewport": [
+    1280,
+    900
+  ],
+  "final_duration_seconds": 52.1,
+  "assertions": [
+    "readable names",
+    "layers selection",
+    "inspector dimensions/source/material status",
+    "isolate restore",
+    "hide restore after selection clears",
+    "selected filter",
+    "focus",
+    "canvas hover and click",
+    "automatic Inspect opening"
+  ],
+  "original_database_rows_unchanged": 10143
+}

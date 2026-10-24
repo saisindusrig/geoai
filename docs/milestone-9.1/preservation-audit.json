@@ -1,0 +1,11 @@
+{
+  "all_original_storage_and_proof_files_unchanged": true,
+  "original_storage_files": 55296,
+  "original_engineering_proof_files": 2090,
+  "live_database_schemas_verified": 66,
+  "historical_archived_only_database_fingerprints_verified": 198,
+  "older_database_fingerprints_identical_or_archived": 263,
+  "original_dev_database_rows_unchanged": 10269,
+  "added_rows_by_table": {},
+  "no_extract_restore_or_backup_write": true
+}

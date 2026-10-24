@@ -1,0 +1,14 @@
+{
+  "dev.db": {
+    "exact_rows_and_schema_unchanged": true,
+    "rows": 10283,
+    "added_rows": 0,
+    "removed_or_changed_rows": 0
+  },
+  "assistant-history.db": {
+    "exact_rows_and_schema_unchanged": true,
+    "rows": 3,
+    "added_rows": 0,
+    "removed_or_changed_rows": 0
+  }
+}

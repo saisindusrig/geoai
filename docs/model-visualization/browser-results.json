@@ -1,0 +1,30 @@
+{
+  "baseline": {
+    "passed": 6
+  },
+  "final": {
+    "passed": 6,
+    "duration_seconds": 144
+  },
+  "projects": [
+    793,
+    794,
+    788
+  ],
+  "widths": [
+    1280,
+    1600
+  ],
+  "height": 900,
+  "checks": [
+    "focus structure",
+    "fit all",
+    "front side top isometric",
+    "layer selection",
+    "canvas hover and click",
+    "selected member fit",
+    "stair fit",
+    "horizontal overflow"
+  ],
+  "final_database_comparison": "all original tables unchanged"
+}

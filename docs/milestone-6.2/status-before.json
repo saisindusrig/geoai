@@ -1,0 +1,31 @@
+{
+  "provider": "nebius",
+  "enabled": false,
+  "canSend": false,
+  "state": "AWAITING_SPENDING_APPROVAL",
+  "code": "SPENDING_APPROVAL_REQUIRED",
+  "models": [
+    "zai-org/GLM-5.3-Flash",
+    "zai-org/GLM-5.3"
+  ],
+  "defaultModel": "zai-org/GLM-5.3-Flash",
+  "message": "Awaiting explicit spending approval on the backend. Inference is disabled. No offline AI fallback.",
+  "usage": {
+    "accounted_usd": 0.0,
+    "daily_requests": 0,
+    "accounted_daily_tokens": 0,
+    "active_global": 0,
+    "active_user": 0,
+    "recent_requests": 0,
+    "accounting_blocked": false
+  },
+  "configuration": {
+    "credentialsConfigured": false,
+    "officialEndpoint": true
+  },
+  "actualCharges": "UNKNOWN",
+  "dailyTokenAllowance": 200000,
+  "maxToolCalls": 3,
+  "maxProviderRequests": 2,
+  "automaticRetries": 0
+}

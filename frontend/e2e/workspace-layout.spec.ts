@@ -5,6 +5,7 @@ for(const width of [1478,1280,1024])test(`workspace controls fit without overlap
   await page.route("**/api/geocode/map-runtime-config",route=>route.fulfill({json:{cesium_ion_token:null,google_maps_api_key:null}}));
   await page.goto("/projects/5/workspace");
   await expect(page.getByRole("button",{name:"Scene / Sun study",exact:true})).toBeVisible({timeout:60000});
+  await page.getByRole("tab",{name:"Layers",exact:true}).click();
   await expect(page.getByLabel("Search scene components")).toBeVisible();
   await expect(page.getByLabel("Filter scene objects")).toHaveCount(0);
   await expect(page.getByRole("button",{name:/^Site data/})).toHaveCount(0);

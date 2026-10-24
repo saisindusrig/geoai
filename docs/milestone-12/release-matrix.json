@@ -1,0 +1,82 @@
+[
+  {
+    "area": "Genuine Firebase sign-in and account lifecycle",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: test_firebase_auth.py; synthetic verifier only",
+    "required_remediation": "Install/configure official SDKs in separately approved staging; qualify linking, revocation, disabled accounts and recovery.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Secure multi-user project isolation",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: ownership, downloads, conversation isolation; fixes-final.log: protected CAD; security-final.log: concurrent saves",
+    "required_remediation": "Retain verified server ownership gates; qualify genuine identities and multi-instance isolation before shared access.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "PostgreSQL persistence and restore qualification",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "security-final.log: production database refuses SQLite and unavailable PostgreSQL; M11 recovery evidence",
+    "required_remediation": "Provision approved isolated PostgreSQL/PostGIS staging, test migrations/backups and measured restore without original migration.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Private Cloud Storage and file authorization",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: durability storage failure/ownership; isolation-negative-probes.json",
+    "required_remediation": "Qualify private bucket IAM, signed access expiry, object/database reconciliation and restore in separate staging.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Durable engineering jobs and recovery",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: test_durability_readiness.py; coupled-evidence-preservation.json",
+    "required_remediation": "Implement transactional durable job ownership/leases and atomic evidence publication; test worker crashes. Uncertain jobs require new authorization.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Distributed AI spending accounting",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: quota and duplicate/concurrency mocks; production shared limiter regression",
+    "required_remediation": "Qualify multi-instance durable reservations/reconciliation and shared limiter failure. Keep inference disabled.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Production HTTPS, headers and proxy policy",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "browser.json; frontend-tests.log; production CORS and secret configuration tests",
+    "required_remediation": "Qualify TLS/HSTS, full script CSP, explicit trusted proxy allowlist and deployed API/storage headers; current partial CSP is insufficient for full ASVS.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Monitoring, logging and incident response",
+    "severity": "Medium",
+    "status": "UNVERIFIED",
+    "evidence": "M4 sanitization tests and M11 diagnostics; local browser reports only",
+    "required_remediation": "Define alert thresholds, access/retention/redaction, incident ownership and recovery drill; test staging failures.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Dependency and resource-abuse exposure",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "dependency-review.json; pdf-reproduction-before.json; security-final.log",
+    "required_remediation": "Review current matching leaf advisories and fresh advisory feed separately; sandbox native parsers, bound multipart ingress/expanded geometry, qualify quotas and bounded staging load.",
+    "blocks_shared_or_public_access": true
+  },
+  {
+    "area": "Engineering scope and unsupported methods",
+    "severity": "High",
+    "status": "BLOCKED",
+    "evidence": "backend-tests.log: exact revision/results/approval; protected CAD and stale-save tests",
+    "required_remediation": "Independent engineering validation remains required; do not promote conceptual beams to analytical members or verified quantities. No unsupported method claims.",
+    "blocks_shared_or_public_access": true
+  }
+]

@@ -2,11 +2,12 @@ import type * as Cesium from "cesium";
 import * as THREE from "three";
 import type { EditableModelDocument,GeoJSONGeometry } from "./types";
 import { applyTransformDelta, cameraLease, snap, transformMatrix, transformPivot, type TransformSettings } from "./editor-transform";
+import { numericTransformValue } from "./viewport-interaction";
 import { engineeringSnapTargets, snapTranslationToTargets } from "./engineering-snap";
 
 type Patch = ReturnType<typeof applyTransformDelta>;
 export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, doc: EditableModelDocument, selectedIds: string[], settings: TransformSettings,
-  collection: Cesium.PrimitiveCollection, commit: (patches: Patch) => void, feedback: (message: string | null) => void, alignment?:GeoJSONGeometry|null) {
+  collection: Cesium.PrimitiveCollection, commit: (patches: Patch) => void, feedback: (message: string | null) => void, alignment?:GeoJSONGeometry|null, modelEntities: Cesium.Entity[] = [], pointerFeedback?: (point: {x:number;y:number} | null) => void) {
   const canvas = viewer.scene.canvas;
   const selected = selectedIds.map(id => doc.components.find(item => item.id === id)).filter((item): item is EditableModelDocument["components"][number] => !!item && item.visible && !item.locked && item.geometry.kind !== "asset_instance");
   if (!selected.length || settings.mode === "select") {
@@ -42,16 +43,16 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
   const toWorld = (point: THREE.Vector3) => { const world = point.clone().applyMatrix4(frame); return new C.Cartesian3(world.x, world.y, world.z); };
   const ds = new C.CustomDataSource("transform-handles");
   void viewer.dataSources.add(ds);
-  const length = Math.max(3, C.Cartesian3.distance(viewer.camera.positionWC, toWorld(pivot)) * 0.075);
+  let length = Math.max(.15, C.Cartesian3.distance(viewer.camera.positionWC, toWorld(pivot)) * 0.075);
   const axes = [new THREE.Vector3(1,0,0), new THREE.Vector3(0,1,0), new THREE.Vector3(0,0,1)].map(axis => settings.coordinates === "world" ? axis.transformDirection(inverse) : axis);
   const colors = ["#db6666", "#72b47c", "#659bd1"];
-  const handle = (id: string, position: THREE.Vector3, color: string) => ds.entities.add({ id: `transform:${id}`, position: toWorld(position), point: { pixelSize: 13, color: C.Color.fromCssColorString(color), outlineColor: C.Color.BLACK, outlineWidth: 1, disableDepthTestDistance: Infinity } });
+  const handle = (id: string, position: THREE.Vector3, color: string) => ds.entities.add({ id: `transform:${id}`, position: toWorld(position), point: { pixelSize: 20, color: C.Color.fromCssColorString(color), outlineColor: C.Color.BLACK, outlineWidth: 1, disableDepthTestDistance: Infinity }, label:{text:id === "uniform" ? "All" : id,font:"600 12px sans-serif",pixelOffset:new C.Cartesian2(14,-12),fillColor:C.Color.WHITE,showBackground:true,backgroundColor:C.Color.BLACK.withAlpha(.7),disableDepthTestDistance:Infinity} });
   ds.entities.add({ position: toWorld(pivot), point: { pixelSize: 8, color: C.Color.WHITE, disableDepthTestDistance: Infinity } });
   axes.forEach((axis, index) => {
     const name = "XYZ"[index];
     if (settings.mode === "rotate") {
       const u = axes[(index + 1) % 3], v = axes[(index + 2) % 3];
-      ds.entities.add({ id: `transform:${name}`, polyline: { positions: Array.from({length: 73}, (_, step) => toWorld(pivot.clone().addScaledVector(u, Math.cos(step * Math.PI / 36) * length).addScaledVector(v, Math.sin(step * Math.PI / 36) * length))), width: 5, material: C.Color.fromCssColorString(colors[index]), depthFailMaterial: C.Color.fromCssColorString(colors[index]) } });
+      ds.entities.add({ id: `transform:${name}`, polyline: { positions: Array.from({length: 73}, (_, step) => toWorld(pivot.clone().addScaledVector(u, Math.cos(step * Math.PI / 36) * length).addScaledVector(v, Math.sin(step * Math.PI / 36) * length))), width: 8, material: C.Color.fromCssColorString(colors[index]), depthFailMaterial: C.Color.fromCssColorString(colors[index]) } });
     } else {
       const supported = settings.mode !== "scale" || settings.coordinates === "local" && selected.every(item => item.transform.rotation_deg.every(value => value === 0));
       if (!supported) return;
@@ -60,10 +61,22 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
     }
   });
   if (settings.mode === "translate") for (const [i,j] of [[0,1],[0,2],[1,2]]) handle(`${"XYZ"[i]}${"XYZ"[j]}`, pivot.clone().addScaledVector(axes[i], length * 0.3).addScaledVector(axes[j], length * 0.3), "#9eaa92");
-  if (settings.mode === "scale") handle("uniform", pivot, "#c8ff32");
+  if (settings.mode === "scale") handle("uniform", pivot, "#60a5fa");
   const primitives = new Map<string, Cesium.Primitive>();
-  doc.components.filter(item => item.visible && item.geometry.kind !== "asset_instance").forEach((item,index) => primitives.set(item.id, collection.get(index)));
-  let drag: { pointer: number; name: string; plane: THREE.Plane; start: THREE.Vector3; x: number; axis: THREE.Vector3; release: () => void; patches: Patch } | null = null;
+  for (let index = 0; index < collection.length; index++) {
+    const primitive = collection.get(index) as Cesium.Primitive & {componentId?: string};
+    if (primitive.componentId) primitives.set(primitive.componentId, primitive);
+  }
+  const originals = modelEntities.flatMap(entity => {
+    const properties = entity.properties?.getValue(viewer.clock.currentTime);
+    if (!properties?.transformEdge || !selectedIds.includes(properties.editableComponentId)) return [];
+    const positions = entity.polyline?.positions?.getValue(viewer.clock.currentTime);
+    return positions ? [{ entity, positions: positions.map((p: Cesium.Cartesian3) => C.Cartesian3.clone(p)), id: String(properties.editableComponentId) }] : [];
+  });
+  const sameTransform = (patch: Patch[number]) => JSON.stringify(patch.transform) === JSON.stringify(selected.find(item => item.id === patch.id)?.transform);
+  let numeric = "";
+  let lastEvent: PointerEvent | null = null;
+  let drag: { pointer: number; name: string; plane: THREE.Plane; start: THREE.Vector3; x: number; y: number; axis: THREE.Vector3; release: () => void; patches: Patch } | null = null;
   let disposed = false;
   const ray = (event: PointerEvent) => {
     const rect = canvas.getBoundingClientRect();
@@ -75,18 +88,21 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
     const active = drag; drag = null;
     if (!active) return;
     try {
-      for (const item of selected) primitives.get(item.id)!.modelMatrix = C.Matrix4.clone(C.Matrix4.IDENTITY);
-      if (!cancel && active.patches.length) commit(active.patches);
+      for (const item of selected) { const primitive = primitives.get(item.id); if (primitive && !primitive.isDestroyed?.()) primitive.modelMatrix = C.Matrix4.clone(C.Matrix4.IDENTITY); }
+      for (const edge of originals) edge.entity.polyline!.positions = new C.ConstantProperty(edge.positions);
+      if (!cancel && active.patches.some(patch => !sameTransform(patch))) commit(active.patches);
     } catch (error) { feedback(error instanceof Error ? error.message : "Transform failed"); }
     finally {
-      active.release(); canvas.style.cursor = "";
-      if (canvas.hasPointerCapture(active.pointer)) canvas.releasePointerCapture(active.pointer);
+      active.release(); delete canvas.dataset.mouseOwner; numeric = ""; lastEvent = null; pointerFeedback?.(null); canvas.style.cursor = "";
+      if (active.pointer >= 0 && canvas.hasPointerCapture(active.pointer)) canvas.releasePointerCapture(active.pointer);
       if (!viewer.isDestroyed()) viewer.scene.requestRender();
       feedback(null);
     }
   };
   const down = (event: PointerEvent) => {
-    if (event.button !== 0 || disposed) return;
+    if (event.button !== 0 || disposed || canvas.dataset.mouseOwner && canvas.dataset.mouseOwner !== "transform") return;
+    if (drag?.pointer === -1) finish(true);
+    if (drag) return;
     const rect = canvas.getBoundingClientRect();
     const entity = viewer.scene.pick(new C.Cartesian2(event.clientX - rect.left,event.clientY - rect.top))?.id;
     const id: string = entity?.id ?? "";
@@ -101,11 +117,12 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
     const start = ray(event)?.intersectPlane(plane,new THREE.Vector3());
     if (!start) return;
     const release = cameraLease(viewer.scene.screenSpaceCameraController);
-    try { canvas.setPointerCapture(event.pointerId); drag = { pointer:event.pointerId,name,plane,start,x:event.clientX,axis,release,patches:[] }; canvas.style.cursor="grabbing"; }
+    try { canvas.setPointerCapture(event.pointerId); drag = { pointer:event.pointerId,name,plane,start,x:event.clientX,y:event.clientY,axis,release,patches:[] }; canvas.dataset.mouseOwner="transform"; lastEvent=event; feedback(`${settings.mode.toUpperCase()} ${name} · drag or type a value · Enter confirms · Esc cancels`); canvas.focus({preventScroll:true}); canvas.style.cursor="grabbing"; }
     catch (error) { release(); feedback(String(error)); }
   };
   const move = (event: PointerEvent) => {
     if (!drag) return;
+    lastEvent = event; pointerFeedback?.({x:event.clientX-canvas.getBoundingClientRect().left+18,y:event.clientY-canvas.getBoundingClientRect().top+18});
     event.stopImmediatePropagation();
     try {
       const point = ray(event)?.intersectPlane(drag.plane,new THREE.Vector3());
@@ -125,25 +142,80 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
         const target=snapTranslationToTargets(pivot,delta ?? drag.axis.clone().multiplyScalar(snap(amount,settings.translationSnap)),allowed,targets,Math.max(.25,settings.translationSnap));
         if(target){delta=target.delta;snapTarget=target.name;}
       }
-      drag.patches = applyTransformDelta(selected,settings, drag.name === "uniform" ? new THREE.Vector3() : drag.axis,amount,delta);
+      const exact = numericTransformValue(numeric, settings.mode);
+      if (numeric && exact === null) { feedback(`Enter a valid ${settings.mode === "scale" ? "positive scale multiplier" : settings.mode === "rotate" ? "angle in degrees" : "distance in metres"}`); return; }
+      if (exact !== null) { amount = exact; delta = undefined; snapTarget = null; }
+      const effectiveSettings = exact !== null ? {...settings, translationSnap:0, rotationSnap:0, scaleSnap:0} : settings;
+      drag.patches = applyTransformDelta(selected,effectiveSettings, drag.name === "uniform" ? new THREE.Vector3() : drag.axis,amount,delta);
       for (const patch of drag.patches) {
         const original = selected.find(item => item.id === patch.id)!;
         const matrix = frame.clone().multiply(transformMatrix(patch.transform)).multiply(transformMatrix(original.transform).invert()).multiply(inverse);
-        primitives.get(patch.id)!.modelMatrix = C.Matrix4.fromArray(matrix.elements);
+        const primitive = primitives.get(patch.id);
+        if (primitive) primitive.modelMatrix = C.Matrix4.fromArray(matrix.elements);
+        for (const edge of originals.filter(edge => edge.id === patch.id)) edge.entity.polyline!.positions = new C.ConstantProperty(edge.positions.map((p:Cesium.Cartesian3) => C.Matrix4.multiplyByPoint(C.Matrix4.fromArray(matrix.elements), p, new C.Cartesian3())));
       }
-      feedback(`${settings.mode.toUpperCase()} ${drag.name.toUpperCase()} · ${settings.mode === "rotate" ? `${snap(amount,settings.rotationSnap).toFixed(2)}°` : settings.mode === "scale" ? `${snap(amount,settings.scaleSnap).toFixed(3)}×` : `${(delta?.length() ?? snap(amount,settings.translationSnap)).toFixed(3)} m`}`);
+      const value = numeric || (settings.mode === "rotate" ? snap(amount,effectiveSettings.rotationSnap).toFixed(2) : settings.mode === "scale" ? snap(amount,effectiveSettings.scaleSnap).toFixed(3) : (delta?.length() ?? snap(amount,effectiveSettings.translationSnap)).toFixed(3));
+      feedback(`${numeric ? "EXACT " : ""}${settings.mode.toUpperCase()} ${drag.name.toUpperCase()} · ${value}${settings.mode === "rotate" ? "°" : settings.mode === "scale" ? "×" : " m"}`);
       viewer.scene.requestRender();
       if(snapTarget)feedback(`MOVE ${drag.name} · SNAP ${snapTarget}`);
     } catch (error) { finish(true); feedback(error instanceof Error ? error.message : "Transform failed"); }
   };
-  const up = () => finish(false), cancel = () => finish(true);
-  const key = (event: KeyboardEvent) => { if (event.key === "Escape" && drag) { event.preventDefault(); cancel(); } };
+  const up = (event: PointerEvent) => { if (drag && (event.pointerId === undefined || event.pointerId === drag.pointer) && !numeric) finish(false); }, cancel = () => finish(true);
+  const key = (event: KeyboardEvent) => {
+    if (document.activeElement !== canvas) return;
+    if (!drag && !event.ctrlKey && !event.metaKey && !event.altKey && (/^[xyz]$/i.test(event.key) || /^[0-9.+-]$/.test(event.key))) {
+      // Keyboard precision mode: G/R/S, optional axis, value, Enter.
+      const name = /^[xyz]$/i.test(event.key) ? event.key.toUpperCase() : settings.mode === "scale" ? "uniform" : settings.mode === "rotate" ? "Z" : "X";
+      const axis = axes[Math.max(0,"XYZ".indexOf(name))];
+      const screen = C.SceneTransforms.worldToWindowCoordinates(viewer.scene,toWorld(pivot));
+      if(!screen)return;
+      const rect=canvas.getBoundingClientRect();
+      const input={clientX:screen.x+rect.left,clientY:screen.y+rect.top,stopImmediatePropagation:()=>{}} as PointerEvent;
+      const direction=new THREE.Vector3(viewer.camera.directionWC.x,viewer.camera.directionWC.y,viewer.camera.directionWC.z).transformDirection(inverse);
+      const normal=settings.mode === "rotate" ? axis.clone() : direction.clone().addScaledVector(axis,-direction.dot(axis)).normalize();
+      if(normal.lengthSq()<.001)return;
+      const plane=new THREE.Plane().setFromNormalAndCoplanarPoint(normal,pivot),start=ray(input)?.intersectPlane(plane,new THREE.Vector3());if(!start)return;
+      drag={pointer:-1,name,axis,plane,start,x:input.clientX,y:input.clientY,release:cameraLease(viewer.scene.screenSpaceCameraController),patches:[]};
+      lastEvent=input;canvas.dataset.mouseOwner="transform";canvas.style.cursor="crosshair";
+      feedback(`${settings.mode.toUpperCase()} ${name} · type a value · Enter confirms · Esc cancels`);
+    }
+    if (!drag) return;
+    if (event.key === "Escape") { event.preventDefault(); event.stopImmediatePropagation(); cancel(); return; }
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.key === "Enter") { event.preventDefault(); event.stopImmediatePropagation(); if (!numeric || numericTransformValue(numeric,settings.mode) !== null) finish(false); return; }
+    if (/^[xyz]$/i.test(event.key)) {
+      event.preventDefault(); event.stopImmediatePropagation(); const name=event.key.toUpperCase(),axis=axes["XYZ".indexOf(name)];
+      const cameraDirection = new THREE.Vector3(viewer.camera.directionWC.x,viewer.camera.directionWC.y,viewer.camera.directionWC.z).transformDirection(inverse);
+      const normal=settings.mode === "rotate" ? axis.clone() : cameraDirection.clone().addScaledVector(axis,-cameraDirection.dot(axis)).normalize();
+      if(normal.lengthSq()<.001)return;
+      const plane=new THREE.Plane().setFromNormalAndCoplanarPoint(normal,pivot);
+      const start=ray({clientX:drag.x,clientY:drag.y} as PointerEvent)?.intersectPlane(plane,new THREE.Vector3());
+      if(start){drag.name=name;drag.axis=axis;drag.plane=plane;drag.start=start;if(lastEvent)move(lastEvent);}
+    } else if (/^[0-9.+-]$/.test(event.key) || event.key === "Backspace") {
+      event.preventDefault(); event.stopImmediatePropagation(); numeric=event.key === "Backspace" ? numeric.slice(0,-1) : numeric + event.key;
+      if(lastEvent)move(lastEvent);
+    }
+  };
   canvas.addEventListener("pointerdown",down,true); canvas.addEventListener("pointermove",move,true);
   window.addEventListener("pointerup",up); canvas.addEventListener("pointercancel",cancel); canvas.addEventListener("lostpointercapture",cancel);
-  window.addEventListener("blur",cancel); window.addEventListener("keydown",key);
+  window.addEventListener("blur",cancel); window.addEventListener("keydown",key,true);
+  canvas.addEventListener("blur",cancel);
   canvas.dataset.transformReady = "true";
   const removeDiagnostics=viewer.scene.postRender?.addEventListener(()=>{
     const handles:Record<string,{x:number;y:number}>={};
+    // Keep handles approximately 75 pixels long while navigating.
+    if (!drag && viewer.camera.getPixelSize) {
+      const nextLength = Math.max(.05, viewer.camera.getPixelSize(new C.BoundingSphere(toWorld(pivot),1),canvas.width,canvas.height) * 75 * canvas.width / Math.max(1,canvas.clientWidth));
+      if(Number.isFinite(nextLength) && nextLength>0 && Math.abs(nextLength-length)>.001){
+        const ratio=nextLength/length;
+        for(const entity of ds.entities.values){
+          const resize=(p:Cesium.Cartesian3)=>toWorld(new THREE.Vector3(p.x,p.y,p.z).applyMatrix4(inverse).sub(pivot).multiplyScalar(ratio).add(pivot));
+          const p=entity.position?.getValue(viewer.clock.currentTime);if(p)entity.position=new C.ConstantPositionProperty(resize(p));
+          const points=entity.polyline?.positions?.getValue(viewer.clock.currentTime);if(points)entity.polyline!.positions=new C.ConstantProperty(points.map(resize));
+        }
+        length=nextLength;
+      }
+    }
     const pivotScreen=C.SceneTransforms.worldToWindowCoordinates(viewer.scene,toWorld(pivot));
     if(pivotScreen)handles.pivot={x:pivotScreen.x,y:pivotScreen.y};
     for(const entity of ds.entities.values){
@@ -160,7 +232,8 @@ export function installCesiumTransform(C: typeof Cesium, viewer: Cesium.Viewer, 
     disposed = true; cancel(); delete canvas.dataset.transformReady;
     removeDiagnostics?.();delete canvas.dataset.transformHandles;delete canvas.dataset.transformCameraEnabled;
     canvas.removeEventListener("pointerdown",down,true); canvas.removeEventListener("pointermove",move,true); window.removeEventListener("pointerup",up);
-    canvas.removeEventListener("pointercancel",cancel); canvas.removeEventListener("lostpointercapture",cancel); window.removeEventListener("blur",cancel); window.removeEventListener("keydown",key);
+    canvas.removeEventListener("pointercancel",cancel); canvas.removeEventListener("lostpointercapture",cancel); window.removeEventListener("blur",cancel); window.removeEventListener("keydown",key,true);
+    canvas.removeEventListener("blur",cancel);
     if (!viewer.isDestroyed()) viewer.dataSources.remove(ds,true);
   };
 }

@@ -1,0 +1,2674 @@
+[
+  {
+    "route": "/",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 432,
+      "cls": 0,
+      "longTasks": [
+        132,
+        124,
+        352,
+        61,
+        86
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 56800000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 128,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 19300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 180,
+      "cls": 0,
+      "longTasks": [
+        74,
+        93
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 35100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0.013457233661358172,
+      "longTasks": [
+        99
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 152,
+      "cls": 0,
+      "longTasks": [
+        91
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 20500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 176,
+      "cls": 0.07944073251953125,
+      "longTasks": [
+        87
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 19300000,
+    "overflow": [
+      {
+        "tag": "TABLE",
+        "cls": "data-table w-full min-w-[640px] text-sm",
+        "text": "CodeItemUnitRateCurrencyAdd"
+      },
+      {
+        "tag": "THEAD",
+        "cls": "sticky top-0 bg-background-secondary z-10",
+        "text": "CodeItemUnitRateCurrency"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "CodeItemUnitRateCurrency"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": "Rate"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": "Currency"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": ""
+      },
+      {
+        "tag": "TBODY",
+        "cls": "",
+        "text": "Add"
+      },
+      {
+        "tag": "TR",
+        "cls": "border-t border-border bg-muted/20",
+        "text": "Add"
+      }
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 100,
+      "cls": 0,
+      "longTasks": [
+        87
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 228,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 76,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 76,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 246285,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 246340,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 246242,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 128,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 246243,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 192,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        89
+      ],
+      "events": []
+    },
+    "jsBytes": 482368,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 160,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        91
+      ],
+      "events": []
+    },
+    "jsBytes": 482188,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 236,
+      "cls": 0,
+      "longTasks": [
+        62,
+        94,
+        342,
+        57,
+        89
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 56800000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0,
+      "longTasks": [
+        90
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 19300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 128,
+      "cls": 0,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 4,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 180,
+      "cls": 0,
+      "longTasks": [
+        52,
+        214,
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0.054263989105224605,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 267884,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 20500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0.064483125,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 76,
+      "cls": 0,
+      "longTasks": [
+        86
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0,
+      "longTasks": [
+        86
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        93
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [
+        87
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0.00836,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 246285,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0.00836,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 246340,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0.00836,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 246242,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.00836,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 246243,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0.00836,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 482368,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 156,
+      "cls": 0.00836,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 482188,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 776,
+      "cls": 0,
+      "longTasks": [
+        88,
+        299,
+        52,
+        62,
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 47400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 128,
+      "cls": 0,
+      "longTasks": [
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 4,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 164,
+      "cls": 0,
+      "longTasks": [
+        200,
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0.06687109375,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 267884,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 172,
+      "cls": 0,
+      "longTasks": [
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0.06416244506835937,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 52,
+      "cls": 0,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 56,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 80,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 246285,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 246340,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 246242,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 104,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 246243,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 482368,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 152,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 482188,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 220,
+      "cls": 0,
+      "longTasks": [
+        91,
+        315,
+        53,
+        67,
+        50,
+        56,
+        51,
+        82,
+        50,
+        50
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 50400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 168,
+      "cls": 0,
+      "longTasks": [
+        199,
+        103,
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 44700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 267884,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 376,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 224,
+      "cls": 0,
+      "longTasks": [
+        92,
+        306,
+        72,
+        51,
+        52,
+        51,
+        51,
+        52,
+        53,
+        51,
+        51,
+        52,
+        50,
+        50,
+        50,
+        78,
+        51,
+        50
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 42100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 164,
+      "cls": 0,
+      "longTasks": [
+        50,
+        202,
+        102,
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 44700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.03381530864197531,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 267884,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0,
+      "longTasks": [
+        86
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0,
+      "longTasks": [
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0,
+      "longTasks": [
+        86
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0,
+      "longTasks": [
+        83
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 72,
+      "cls": 0,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0,
+      "longTasks": [
+        84
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 224,
+      "cls": 0,
+      "longTasks": [
+        93,
+        348,
+        83,
+        59,
+        60,
+        58,
+        59,
+        61,
+        60,
+        59,
+        61,
+        61,
+        63,
+        62,
+        64,
+        61,
+        66,
+        94,
+        60,
+        58,
+        61
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 148,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 255583,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 258417,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 168,
+      "cls": 0,
+      "longTasks": [
+        196,
+        102,
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 516816,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 72,
+      "cls": 0,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 267884,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261983,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0.018579581943617928,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261628,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 384,
+      "cls": 0,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 261107,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 261617,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 261667,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 92,
+      "cls": 0,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 506129,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 68,
+      "cls": 0,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 375722,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 88,
+      "cls": 0,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 379725,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  }
+]

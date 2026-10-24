@@ -1,3 +1,5 @@
+> Preferred offline local startup: `run-website.bat`. It uses localhost:3001 and localhost:8001, reuses healthy servers, and disables paid inference in its backend process. The manual setup below is retained for troubleshooting.
+
 # Local Setup — GeoAI 3D Construction Planner
 
 This guide covers running the platform locally for development and demo.
@@ -25,7 +27,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 alembic upgrade head
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 
 # New terminal — optional background worker (uses Redis when available)
 cd backend
@@ -39,8 +41,8 @@ npm run dev
 
 Open:
 
-- Frontend: http://localhost:3000
-- API docs: http://localhost:8000/docs
+- Frontend: http://localhost:3001
+- API docs: http://localhost:8001/docs
 - MinIO console: http://localhost:9001 (user `geoai`, password `geoai-secret`)
 
 ## Quick start (no Docker)
@@ -93,7 +95,7 @@ Copy `.env.example` to `.env` at the repo root. Key variables:
 | `REDIS_URL` | No | Job queue; omit for in-process jobs |
 | `S3_*` | No | MinIO/S3; omit for local filesystem |
 | `APP_SECRET` | Yes (prod) | JWT signing |
-| `NEXT_PUBLIC_API_URL` | Yes | Frontend → backend URL (e.g. `http://localhost:8000`) |
+| `NEXT_PUBLIC_API_URL` | Yes | Frontend → backend URL (e.g. `http://localhost:8001`) |
 | `OPENAI_API_KEY` etc. | No | Cloud AI; all blank + `AI_PROVIDER=mock` → mock provider |
 | `AI_PROVIDER` | No | `ollama` (local), `openai`, `anthropic`, `mock`, or `auto` |
 | `OLLAMA_*` | No | Local Ollama when `AI_PROVIDER=ollama` — see [Ollama setup](#ollama-local-ai) below |
@@ -114,17 +116,17 @@ docker compose up -d
 #   REDIS_URL=redis://localhost:6379/0
 
 cd backend && alembic upgrade head
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8001
 # separate terminal:
 arq app.workers.tasks.WorkerSettings
 
 # frontend/.env.local:
-#   NEXT_PUBLIC_API_URL=http://localhost:8000
+#   NEXT_PUBLIC_API_URL=http://localhost:8001
 #   NEXT_PUBLIC_AUTH_REQUIRE_JWT=true
 cd frontend && npm run dev
 ```
 
-Smoke test: `python backend/scripts/production_smoke.py --base-url http://localhost:8000`
+Smoke test: `python backend/scripts/production_smoke.py --base-url http://localhost:8001`
 
 See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for full production checklist.
 
@@ -203,9 +205,9 @@ These are shown in the workspace/map sidebar and Settings page.
 
 | Issue | Fix |
 |-------|-----|
-| Frontend can't reach API | Set `NEXT_PUBLIC_API_URL=http://localhost:8000` in `frontend/.env.local` |
+| Frontend can't reach API | Set `NEXT_PUBLIC_API_URL=http://localhost:8001` in `frontend/.env.local` |
 | Survey import fails | Start Docker PostGIS and set `DATABASE_URL` |
-| Port 3000 in use | Stop other Next.js dev servers |
+| Port 3001 in use | Stop other Next.js dev servers |
 | Empty demo project | Restart backend (seeds on startup) |
 
 ## Disclaimer

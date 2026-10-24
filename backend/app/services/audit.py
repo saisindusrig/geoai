@@ -45,9 +45,7 @@ def sanitize_metadata(metadata: dict[str, Any] | None) -> dict[str, Any] | None:
 def _client_ip(request: Request | None) -> str | None:
     if request is None:
         return None
-    forwarded = request.headers.get("x-forwarded-for")
-    if forwarded:
-        return forwarded.split(",")[0].strip()[:64]
+    # Use the ASGI peer after server-level trusted-proxy normalization.
     if request.client:
         return request.client.host[:64]
     return None

@@ -85,4 +85,4 @@ def execute_approved(db,project_id,version_id,view,row):
             proposal_version_id=version_id,specification_version_id=row["id"],model_revision_id=revision.id,object_id=component["id"],component_id=component["id"],
             generator_id="generic-3d",generator_version="1",payload=meta)
     scenario.status="completed";ProposalService().transition(db,project_id,version_id,"BUILT");db.commit()
-    return {"modelRevisionId":str(revision.id),"status":"BUILT"}
+    return {"modelRevisionId":str(revision.id),"scenarioId":revision.design_scenario_id,"status":"BUILT"}

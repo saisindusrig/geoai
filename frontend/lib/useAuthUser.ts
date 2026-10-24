@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { api, authRequired, getAuthToken } from "@/lib/api";
+import { firebaseMode, firebaseSignedIn } from "./firebase-auth";
 
 export type AuthUser = {
   id: number;
@@ -18,6 +19,7 @@ const DEV_MOCK_USER: AuthUser = {
 };
 
 function fetchAuthUser(): Promise<AuthUser | null> {
+  if (firebaseMode()) return firebaseSignedIn() ? api.get<AuthUser>("/api/auth/me").catch(() => null) : Promise.resolve(null);
   const token = getAuthToken();
   if (!token && authRequired()) {
     return Promise.resolve(null);

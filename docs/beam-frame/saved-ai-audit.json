@@ -1,0 +1,157 @@
+{
+  "live_calls_this_milestone": 0,
+  "rejected_count": 9,
+  "rejected": [
+    {
+      "label": "review-45-zai-org/GLM-5.3-Flash",
+      "ledger_id": 137,
+      "reason": "Incomplete response: output allowance exhausted",
+      "finish_reason": "length",
+      "estimated_usd": 0.0035563999999999995,
+      "original_final_response_available": false
+    },
+    {
+      "label": "review-45-zai-org/GLM-5.3",
+      "ledger_id": 138,
+      "reason": "Incomplete response: output allowance exhausted",
+      "finish_reason": "length",
+      "estimated_usd": 0.032100800000000006,
+      "original_final_response_available": false
+    },
+    {
+      "label": "review-135-zai-org/GLM-5.3-Flash",
+      "ledger_id": 139,
+      "reason": "Incomplete response: output allowance exhausted",
+      "finish_reason": "length",
+      "estimated_usd": 0.006218899999999999,
+      "original_final_response_available": false
+    },
+    {
+      "label": "review-135-zai-org/GLM-5.3",
+      "ledger_id": 140,
+      "reason": "Incomplete response: output allowance exhausted",
+      "finish_reason": "length",
+      "estimated_usd": 0.056950799999999996,
+      "original_final_response_available": false
+    },
+    {
+      "label": "updated-explain-zai-org/GLM-5.3-Flash",
+      "ledger_id": 168,
+      "reason": "Schema/evidence/prose validation failure; original final response and detailed cause were not retained",
+      "finish_reason": "stop",
+      "estimated_usd": 0.00023525,
+      "original_final_response_available": false
+    },
+    {
+      "label": "updated-explain-zai-org/GLM-5.3",
+      "ledger_id": 172,
+      "reason": "Schema/evidence/prose validation failure; original final response and detailed cause were not retained",
+      "finish_reason": "stop",
+      "estimated_usd": 0.004503399999999999,
+      "original_final_response_available": false
+    },
+    {
+      "label": "updated-project-review",
+      "ledger_id": 173,
+      "reason": "Schema/evidence/prose validation failure; original final response and detailed cause were not retained",
+      "finish_reason": "stop",
+      "estimated_usd": 0.0021995,
+      "original_final_response_available": false
+    },
+    {
+      "label": "diagnostic-review-flash",
+      "ledger_id": 176,
+      "reason": "AI cited a nonexistent component",
+      "finish_reason": "stop",
+      "estimated_usd": 0.0025591499999999996,
+      "original_final_response_available": false
+    },
+    {
+      "label": "final-current-review-primary",
+      "ledger_id": 177,
+      "reason": "Incomplete response: output allowance exhausted",
+      "finish_reason": "length",
+      "estimated_usd": 0.0872446,
+      "original_final_response_available": false
+    }
+  ],
+  "accepted_replay_count": 13,
+  "replayed": [
+    {
+      "label": "review-45-zai-org/GLM-5.3-Flash",
+      "schema": "project_review",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "review-45-zai-org/GLM-5.3",
+      "schema": "project_review",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "review-135-zai-org/GLM-5.3-Flash",
+      "schema": "project_review",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "review-135-zai-org/GLM-5.3",
+      "schema": "project_review",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "missing-zai-org/GLM-5.3-Flash",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "missing-zai-org/GLM-5.3",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "ready-zai-org/GLM-5.3-Flash",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "explain-zai-org/GLM-5.3-Flash",
+      "schema": "evidence_bound_explanation",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "ready-zai-org/GLM-5.3",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "explain-zai-org/GLM-5.3",
+      "schema": "evidence_bound_explanation",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "updated-ready-zai-org/GLM-5.3-Flash",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "updated-ready-zai-org/GLM-5.3",
+      "schema": "restricted_column_proposal",
+      "status": "VALIDATED_OFFLINE"
+    },
+    {
+      "label": "diagnostic-explain-primary",
+      "schema": "evidence_bound_explanation",
+      "status": "VALIDATED_OFFLINE"
+    }
+  ],
+  "limitations": [
+    "Rejected raw final model responses were not retained originally; exact causes cannot be reconstructed for three failures",
+    "No retry or paid inference performed",
+    "Semantic engineering truth still requires human review; schema validation cannot prove a load path"
+  ],
+  "improvements": [
+    "Duplicate JSON keys and NaN/Infinity rejected",
+    "Strict evidence/inventory IDs and counts; exact component references required",
+    "Bounded redacted final-response evidence plus hash captured for future failures, excluding reasoning text",
+    "Explicit missing-input/current-input checks and authorization gate retained"
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "frontend/node_modules/three/examples/fonts/MPLUSRounded1c/MPLUSRounded1c-Regular.typeface.json.zip",
+    "bytes": 4522713
+  },
+  {
+    "path": "docs/production-beta/recovery-results/production-beta-offline-Co-c9e91-it-retry-saves-one-exchange-chromium/trace.zip",
+    "bytes": 2957714
+  },
+  {
+    "path": "backend/evals/results.zip",
+    "bytes": 55122
+  },
+  {
+    "path": "backend/evals/results/fast_comparison_20261009_qwen.zip",
+    "bytes": 35975
+  },
+  {
+    "path": "backend/.venv-civicspan/Lib/site-packages/trimesh/resources/templates/viewer.zip",
+    "bytes": 173435
+  },
+  {
+    "path": "backend/.venv-civicspan/Lib/site-packages/trimesh/resources/schema/gltf2.schema.zip",
+    "bytes": 24785
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/trimesh/resources/templates/viewer.zip",
+    "bytes": 173435
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/trimesh/resources/schema/gltf2.schema.zip",
+    "bytes": 24785
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/dateutil/zoneinfo/dateutil-zoneinfo.tar.gz",
+    "bytes": 156400
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/cadquery_ocp-8.0.1.1.0.dist-info/WHEEL.bak",
+    "bytes": 100
+  },
+  {
+    "path": "backend/.cad-proof-output/linux-accepted.zip",
+    "bytes": 193955
+  },
+  {
+    "path": "backend/.cad-proof-output/linux-run2.zip",
+    "bytes": 191265
+  },
+  {
+    "path": "backend/.cad-proof-output/persistence-fix-38064020642/platform-evidence.zip",
+    "bytes": 347220
+  },
+  {
+    "path": "backend/.cad-proof-output/integration-38061870116/platform-evidence.zip",
+    "bytes": 1014608
+  },
+  {
+    "path": "backend/.cad-proof-deps/cadquery_ocp-8.0.1.1.0.dist-info/WHEEL.bak",
+    "bytes": 100
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/gate1b/frontend/node_modules/three/examples/fonts/MPLUSRounded1c/MPLUSRounded1c-Regular.typeface.json.zip",
+    "bytes": 4522713
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/downloads/node-v24.22.1-win-x64.zip",
+    "bytes": 37748064
+  },
+  {
+    "path": ".cleanup-backups/retained-backups-20261022.zip",
+    "bytes": 131538562
+  },
+  {
+    "path": ".cleanup-backups/20261015-132113/source.zip",
+    "bytes": 354831055
+  },
+  {
+    "path": ".cache/opensees/OpenSees3.8.0-x64.exe.zip",
+    "bytes": 37546324
+  }
+]

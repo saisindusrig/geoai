@@ -1,0 +1,372 @@
+[
+  {
+    "elapsed_seconds": 0.0,
+    "visible_processes": 1,
+    "tree_rss_bytes": 6950912,
+    "visible_tree_cpu_seconds": 0.0,
+    "tree_read_bytes": 0,
+    "tree_write_bytes": 0,
+    "output_files": 0,
+    "output_bytes": 0
+  },
+  {
+    "elapsed_seconds": 5.01,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1405120512,
+    "visible_tree_cpu_seconds": 29.7,
+    "tree_read_bytes": 39291021,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 10.02,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1405173760,
+    "visible_tree_cpu_seconds": 29.75,
+    "tree_read_bytes": 39294833,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 15.03,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1405231104,
+    "visible_tree_cpu_seconds": 29.78,
+    "tree_read_bytes": 39297692,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 20.03,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390297088,
+    "visible_tree_cpu_seconds": 29.84,
+    "tree_read_bytes": 39299598,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 25.04,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390252032,
+    "visible_tree_cpu_seconds": 29.84,
+    "tree_read_bytes": 39300551,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 30.05,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390292992,
+    "visible_tree_cpu_seconds": 29.86,
+    "tree_read_bytes": 39302457,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 35.06,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390247936,
+    "visible_tree_cpu_seconds": 29.86,
+    "tree_read_bytes": 39303410,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 40.06,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390284800,
+    "visible_tree_cpu_seconds": 29.88,
+    "tree_read_bytes": 39305316,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 45.08,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.89,
+    "tree_read_bytes": 39306269,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 50.08,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.89,
+    "tree_read_bytes": 39307222,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 55.09,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.89,
+    "tree_read_bytes": 39308175,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 60.1,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390280704,
+    "visible_tree_cpu_seconds": 29.89,
+    "tree_read_bytes": 39309128,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 65.12,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390280704,
+    "visible_tree_cpu_seconds": 29.91,
+    "tree_read_bytes": 39310081,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 70.13,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390280704,
+    "visible_tree_cpu_seconds": 29.91,
+    "tree_read_bytes": 39311034,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 75.14,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390280704,
+    "visible_tree_cpu_seconds": 29.91,
+    "tree_read_bytes": 39311987,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 80.15,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390284800,
+    "visible_tree_cpu_seconds": 29.92,
+    "tree_read_bytes": 39312940,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 85.16,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390284800,
+    "visible_tree_cpu_seconds": 29.92,
+    "tree_read_bytes": 39313893,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 90.17,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390301184,
+    "visible_tree_cpu_seconds": 29.92,
+    "tree_read_bytes": 39314846,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 95.18,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.94,
+    "tree_read_bytes": 39315799,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 100.19,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.94,
+    "tree_read_bytes": 39316752,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 105.19,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39317705,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 110.2,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39317705,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 115.21,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39318658,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 120.22,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39319611,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 125.23,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39320564,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 130.24,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390321664,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39320564,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 135.25,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390309376,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39321517,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 140.25,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390309376,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39322470,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 145.27,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390309376,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39322470,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 150.29,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39323423,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 155.3,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39324376,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 160.31,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39324376,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 165.32,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39325329,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 170.32,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39325329,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 175.33,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.95,
+    "tree_read_bytes": 39326282,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  },
+  {
+    "elapsed_seconds": 180.35,
+    "visible_processes": 1,
+    "tree_rss_bytes": 1390313472,
+    "visible_tree_cpu_seconds": 29.97,
+    "tree_read_bytes": 39327235,
+    "tree_write_bytes": 929093,
+    "output_files": 25,
+    "output_bytes": 928569
+  }
+]

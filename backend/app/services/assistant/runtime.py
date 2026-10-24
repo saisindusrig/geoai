@@ -99,9 +99,18 @@ async def process(db,p,run_id,provider=None):
     event(db,p,run_id,"CLASSIFYING","Reading request…");db.commit()
     message=owned_row(db,"conversation_messages",p,run["message_id"])
     try:
+        if run["context_snapshot"].get("assistantMode") == "ENGINEERING_OFFLINE":
+            from app.services.assistant.engineering_guidance import complete_offline
+            complete_offline(db,p,run,message)
+            return
         if provider is None:
             from app.services.assistant.offline_platform import provider_for_request
-            provider = provider_for_request(db, p, message) or NebiusProvider()
+            provider = provider_for_request(db, p, message)
+            if provider is None:
+                from app.core.config import settings
+                if settings.AI_PROVIDER == "mock":
+                    raise AssistantProviderError("AI_PROVIDER_UNAVAILABLE")
+                provider = NebiusProvider()
         async with asyncio.timeout(FLOW_TIMEOUT_SECONDS):
             preliminary=evaluate(message)
             from app.services.assistant.context_preflight import assert_current_model
@@ -179,7 +188,7 @@ async def process(db,p,run_id,provider=None):
             if not getattr(provider, "disable_proposal_fallback", False) and policy["allowedEffect"]=="PROPOSAL_ONLY" and not proposal_ids and message["context"].get("siteProfileVersionId"):
                 assets=policy["intent"]["assets"]
                 if len(assets)<=20:
-                    arguments={"title":"GeoAI concept proposal","rationale":text_of(message)[:4000],
+                    arguments={"title":"StruvoCivil concept proposal","rationale":text_of(message)[:4000],
                         "assets":[{"assetRequestId":a["id"],"assetType":a["assetType"],"name":a["requestedAssetName"],"requirements":a.get("requirements",[])[:30]} for a in assets]}
                     translation=policy["understanding"]["proposedTranslation"]
                     if translation:arguments["translation"]={k:translation[k] for k in ("objectIds","coordinateSystem","deltaM")}
@@ -192,10 +201,10 @@ async def process(db,p,run_id,provider=None):
             parts=[]
             if response.text:
                 import re
-                text=re.sub(r"\b(?:Qwen(?:/[\w.-]+)?|Nebius|ModelRouter)\b","GeoAI",response.text,flags=re.I)
-                if re.search(r"\b(?:I|we|GeoAI) (?:have |has |successfully )?(?:moved|generated|deleted|modified|translated|built)\b(?!\s+(?:a |the )?(?:proposal|plan|concept)\b)",text,re.I):
+                text=re.sub(r"\b(?:Qwen(?:/[\w.-]+)?|Nebius|ModelRouter)\b","StruvoCivil Assistant",response.text,flags=re.I)
+                if re.search(r"\b(?:I|we|GeoAI|Struvo Civil|Struvo Assistant|StruvoCivil|StruvoCivil Assistant) (?:have |has |successfully )?(?:moved|generated|deleted|modified|translated|built)\b(?!\s+(?:a |the )?(?:proposal|plan|concept)\b)",text,re.I):
                     raise AssistantProviderError("UNAUTHORIZED_MUTATION_CLAIM")
-                if text.lstrip().startswith(("{","[")):text="GeoAI prepared a response for review."
+                if text.lstrip().startswith(("{","[")):text="StruvoCivil Assistant prepared a response for review."
                 parts.append({"kind":"TEXT","text":text})
             if policy["intent"]["needsClarification"]:
                 parts=[{"kind":"QUESTION","questionId":identity(run_id,"question"),"text":policy["intent"]["clarificationQuestion"],"options":[]}]
@@ -206,7 +215,7 @@ async def process(db,p,run_id,provider=None):
             if proposal_ids and not parts:parts=[{"kind":"TEXT","text":"Review the concept proposal. Geometry is unchanged; specialist generation and engineering analysis require supported modules."}]
             if policy["intent"]["kind"]=="ANALYSIS_REQUEST":
                 # Server-owned notice, independent of the model's presentation.
-                parts=[{"kind":"TEXT","text":"GeoAI does not have a validated structural analysis module for this request and cannot determine safe or unsafe. I can help identify the inputs and specialist checks needed."}]
+                parts=[{"kind":"TEXT","text":"StruvoCivil does not have a validated structural analysis module for this request and cannot determine safe or unsafe. I can help identify the inputs and specialist checks needed."}]
             if policy["allowedEffect"]=="APPROVAL_UI_REQUIRED":
                 parts=[{"kind":"TEXT","text":"Review the exact proposal version and use Approve proposal. A chat message cannot approve or build it."}]
             parts.extend({"kind":"PROPOSAL","proposalVersionId":vid} for vid in dict.fromkeys(proposal_ids))

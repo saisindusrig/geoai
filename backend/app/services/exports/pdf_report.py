@@ -1,15 +1,18 @@
 """PDF report generation with ReportLab (all 14 sections from the spec)."""
 
 import io
+from pathlib import Path
 from datetime import datetime, timezone
+from xml.sax.saxutils import escape
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import cm
 from reportlab.platypus import (
+    Image,
     PageBreak,
-    Paragraph,
+    Paragraph as _MarkupParagraph,
     SimpleDocTemplate,
     Spacer,
     Table,
@@ -26,6 +29,11 @@ WARN = ParagraphStyle("warn", parent=BODY, textColor=colors.HexColor("#8a1f1f"),
 NOTE = ParagraphStyle("note", parent=BODY, textColor=colors.HexColor("#555555"), fontSize=9)
 
 
+def Paragraph(text, style):
+    """Report content is text, never executable ReportLab markup or URLs."""
+    return _MarkupParagraph(escape(str(text)), style)
+
+
 def _bullets(items: list[str]) -> list:
     if not items:
         return [Paragraph("Data not available. Upload survey data or generate a design scenario first.", NOTE)]
@@ -33,7 +41,7 @@ def _bullets(items: list[str]) -> list:
 
 
 def _kv_table(rows: list[tuple[str, str]]) -> Table:
-    table = Table([[Paragraph(f"<b>{k}</b>", BODY), Paragraph(str(v), BODY)] for k, v in rows],
+    table = Table([[_MarkupParagraph(f"<b>{escape(str(k))}</b>", BODY), Paragraph(str(v), BODY)] for k, v in rows],
                   colWidths=[6 * cm, 10 * cm])
     table.setStyle(TableStyle([
         ("GRID", (0, 0), (-1, -1), 0.4, colors.grey),
@@ -94,14 +102,14 @@ def _validation_section(validation: dict | None) -> list:
 
 def build_pdf(project, analysis, scenario, estimate, validation: dict | None = None) -> bytes:
     buf = io.BytesIO()
-    doc = SimpleDocTemplate(buf, pagesize=A4, title=f"sitegeoai Preliminary Plan - {project.name}")
+    doc = SimpleDocTemplate(buf, pagesize=A4, title=f"StruvoCivil Preliminary Plan - {project.name}")
     design = (scenario.design_output_json or {}) if scenario else {}
     calc = design.get("calculated", {})
     story = []
 
     # 1. Cover page
     story.append(Spacer(1, 5 * cm))
-    story.append(Paragraph("sitegeoai", H1))
+    story.append(Image(str(Path(__file__).parent / "assets" / "struvocivil-main-light.png"), width=7.6 * cm, height=5.2 * cm))
     story.append(Paragraph(f"Preliminary Planning Report: {project.name}", H2))
     story.append(Paragraph(f"Project type: {project.project_type.title()} | Units: {project.units}", BODY))
     story.append(Paragraph(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}", BODY))

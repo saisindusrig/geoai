@@ -1,0 +1,203 @@
+[
+  {
+    "width": 1280,
+    "route": "/",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 161.140625,
+        "height": 48
+      },
+      {
+        "src": "/brand/main-dark.svg",
+        "loaded": true,
+        "width": 208,
+        "height": 142.3125
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "/dashboard",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 120.84375,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "/login",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 188,
+        "height": 56
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "/settings",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 120.84375,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1600,
+    "route": "/",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 161.140625,
+        "height": 48
+      },
+      {
+        "src": "/brand/main-dark.svg",
+        "loaded": true,
+        "width": 208,
+        "height": 142.3125
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1600,
+    "route": "/dashboard",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 120.84375,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1600,
+    "route": "/login",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 188,
+        "height": 56
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1600,
+    "route": "/settings",
+    "logos": [
+      {
+        "src": "/brand/secondary-dark.svg",
+        "loaded": true,
+        "width": 120.84375,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "logos": [
+      {
+        "src": "/brand/simplified-dark.svg",
+        "loaded": true,
+        "width": 130.90625,
+        "height": 40
+      },
+      {
+        "src": "/brand/main-dark.svg",
+        "loaded": true,
+        "width": 208,
+        "height": 142.3125
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/dashboard",
+    "logos": [
+      {
+        "src": "/brand/simplified-dark.svg",
+        "loaded": true,
+        "width": 117.8125,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/login",
+    "logos": [
+      {
+        "src": "/brand/simplified-dark.svg",
+        "loaded": true,
+        "width": 183.265625,
+        "height": 56
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/settings",
+    "logos": [
+      {
+        "src": "/brand/simplified-dark.svg",
+        "loaded": true,
+        "width": 117.8125,
+        "height": 36
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "animated": {
+      "reduced": true,
+      "animations": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ]
+    }
+  }
+]

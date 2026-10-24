@@ -359,6 +359,7 @@ export interface GeometrySpecObject {
   size?: [number, number, number];
   center?: [number, number, number];
   rotation_z_deg?: number;
+  rotation_deg?: [number,number,number];
   start?: [number, number, number];
   end?: [number, number, number];
   radius_m?: number;

@@ -1,0 +1,17 @@
+
+ RUN  v3.2.7 D:/layout project/frontend
+
+ ✓ hooks/useEditableModelEditor.test.tsx (18 tests) 2096ms
+   ✓ local sandbox editor > autosaves and restores the layout and view without backend calls  925ms
+ ✓ components/model-editor/PropertiesPanel.test.tsx (3 tests) 797ms
+   ✓ staged inspector edits > previews without committing, then applies all fields once  374ms
+   ✓ staged inspector edits > blocks a partial Apply with invalid fields and Cancel resets those fields  300ms
+ ✓ components/model-editor/ConnectionInputNavigation.test.tsx (1 test) 179ms
+ ✓ components/model-editor/ComponentIdentity.test.tsx (2 tests) 37ms
+ ✓ hooks/usePointerResize.test.tsx (1 test) 20ms
+
+ Test Files  5 passed (5)
+      Tests  25 passed (25)
+   Start at  11:12:00
+   Duration  9.73s (transform 574ms, setup 333ms, collect 1.33s, tests 3.13s, environment 3.88s, prepare 328ms)
+

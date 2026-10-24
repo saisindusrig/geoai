@@ -1,0 +1,263 @@
+{
+  "results": [
+    {
+      "name": "real JWT login through website",
+      "status": "PASS",
+      "detail": {
+        "authentication": "real isolated JWT",
+        "credentials": "disposable seeded account"
+      }
+    },
+    {
+      "name": "create disposable project through website",
+      "status": "PASS",
+      "detail": {
+        "projectId": 2,
+        "uiProjectId": 1,
+        "typedCreation": "existing API contract; neutral UI projects intentionally cannot change type"
+      }
+    },
+    {
+      "name": "save synthetic location, boundary and alignment through actual API; reload workspace",
+      "status": "PASS",
+      "detail": {
+        "source": "synthetic coordinates saved by API, frontend reloaded actual persisted project",
+        "pointerDrawing": "NOT VERIFIED"
+      }
+    },
+    {
+      "name": "real non-billable generation job completes and persists design/BOQ/model",
+      "status": "PASS",
+      "detail": {
+        "jobId": "438ffd378c924ee480a21b688a724fbb",
+        "scenarioId": 1,
+        "observedStages": [
+          "completed"
+        ],
+        "provider": "deterministic template, external network blocked",
+        "submissions": 1,
+        "boqItems": 6
+      }
+    },
+    {
+      "name": "actual site-analysis API persists computed metrics and explicit unknown terrain",
+      "status": "PASS",
+      "detail": {
+        "area": 48188.1,
+        "elevation": null,
+        "classification": "Actual API computation with assumed/unknown external terrain; not structural solver verification"
+      }
+    },
+    {
+      "name": "protected PDF CSV JSON and GLB bytes, MIME, filenames and CORS metadata",
+      "status": "PASS",
+      "detail": {
+        "files": 4,
+        "formalGlb": 409,
+        "approval": "not enabled"
+      }
+    },
+    {
+      "name": "missing invalid expired JWT and foreign project are rejected",
+      "status": "PASS",
+      "detail": {
+        "missing": 401,
+        "invalid": 401,
+        "expired": 401,
+        "foreignProject": 404,
+        "unscopedFile": 403
+      }
+    },
+    {
+      "name": "website downloads authenticated real report, BOQ and model; PDF preview uses Blob",
+      "status": "PASS",
+      "detail": {
+        "pdf": "report_project_2.pdf",
+        "csv": "boq_project_2.csv",
+        "formalGlb": "409 approval refusal visibly announced; no approval granted"
+      }
+    },
+    {
+      "name": "gizmo pointer and keyboard targets are nonoverlapping at three desktop widths",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 1280,
+          "boxes": [
+            {
+              "x": 1120,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive X axis view"
+            },
+            {
+              "x": 1154.65625,
+              "y": 217,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Positive Y axis view"
+            },
+            {
+              "x": 1189.328125,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive Z axis view"
+            },
+            {
+              "x": 1120,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative X axis view"
+            },
+            {
+              "x": 1154.65625,
+              "y": 249,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Negative Y axis view"
+            },
+            {
+              "x": 1189.328125,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative Z axis view"
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "boxes": [
+            {
+              "x": 1274,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive X axis view"
+            },
+            {
+              "x": 1308.65625,
+              "y": 217,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Positive Y axis view"
+            },
+            {
+              "x": 1343.328125,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive Z axis view"
+            },
+            {
+              "x": 1274,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative X axis view"
+            },
+            {
+              "x": 1308.65625,
+              "y": 249,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Negative Y axis view"
+            },
+            {
+              "x": 1343.328125,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative Z axis view"
+            }
+          ]
+        },
+        {
+          "width": 1920,
+          "boxes": [
+            {
+              "x": 1754,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive X axis view"
+            },
+            {
+              "x": 1788.65625,
+              "y": 217,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Positive Y axis view"
+            },
+            {
+              "x": 1823.328125,
+              "y": 217,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Positive Z axis view"
+            },
+            {
+              "x": 1754,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative X axis view"
+            },
+            {
+              "x": 1788.65625,
+              "y": 249,
+              "w": 30.671875,
+              "h": 28,
+              "name": "Negative Y axis view"
+            },
+            {
+              "x": 1823.328125,
+              "y": 249,
+              "w": 30.65625,
+              "h": 28,
+              "name": "Negative Z axis view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "expired session download follows existing login redirect policy",
+      "status": "PASS"
+    }
+  ],
+  "integrity": [
+    {
+      "kind": "pdf",
+      "mime": "application/pdf",
+      "filename": "attachment; filename=report_project_2.pdf",
+      "bytes": 9710,
+      "sha256": "976e601b22ce9a76a860d3ae72f0a898126dbad20f09b5ddaa69adf1f822b9fe"
+    },
+    {
+      "kind": "csv",
+      "mime": "text/csv; charset=utf-8",
+      "filename": "attachment; filename=boq_project_2.csv",
+      "bytes": 1077,
+      "sha256": "e231891aeab1592df450f0033b9bbc8ca28a083830f049e9904190dc3d1412f4"
+    },
+    {
+      "kind": "json",
+      "mime": "application/json",
+      "filename": "attachment; filename=project_2.json",
+      "bytes": 33739,
+      "sha256": "40714da2343c86cb25a840393ea2081dc3b9786cb51e1433127f6742de9abbad"
+    },
+    {
+      "kind": "owned generated GLB artifact (not approved formal export)",
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 21936,
+      "sha256": "e1598e7f025fa684476854019bc15b7a6b5acfaadfbaf7eea1de5118a8aba9e7"
+    }
+  ],
+  "projectId": 2,
+  "scenarioId": 1
+}

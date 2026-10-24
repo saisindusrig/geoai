@@ -1,0 +1,119 @@
+PAGE 1
+GeoAI   /   ENGINEERING PRACTICE SET
+MAINTENANCE PLATFORM - GENERAL ARRANGEMENT
+NOT FOR CONSTRUCTION
+SHEET 1 OF 2     |     GEOAI-DEMO-001
+Reference sample aligned with GeoAI conceptual model: plan 6000 x 4000; local deck top +3600
+01   DECK PLAN
+SCHEMATIC / DIMENSIONS GOVERN
+02   ELEVATION - LOOKING NORTH
+SCHEMATIC / LOCAL HEIGHTS
+STAIR *
+SL-01 / DECK
+6000 x 4000 x 200
+conceptual solid slab
+6000
+4000
+C-01 (x4)
+B-01 / B-02
+* Stair is concept-only; stair loading excluded.
+6000
++3600
+DECK TOP +3.600 m
+FOUR CONCEPTUAL COLUMNS
+Datum 0.000 = local model datum, NOT surveyed elevation
+03   CONCEPTUAL MEMBER SCHEDULE
+NOT A MATERIAL TAKEOFF
+04   BASIS AND EXCLUSIONS
+READ BEFORE IMPORT OR ANALYSIS
+ID
+QTY
+DESCRIPTION / NOMINAL SIZE (mm)
+SL-01
+1
+Deck solid: 6000 x 4000 x 200
+B-01
+2
+Long perimeter beams: 6000 x 200 x 300
+B-02
+2
+Transverse beams: 4000 x 200 x 300
+C-01
+4
+Solid columns: 300 x 300 x 3200
+BP-01
+4
+Base plate: 650 x 650 x 25 (concept)
+F-01
+4
+Footing box: 1200 x 1200 x 450 (concept)
+1. All dimensions are nominal exercise geometry, in millimetres.
+2. Steel sections, grades, welds and anchors are NOT designed.
+3. No approved structural loading or surveyed site datum supplied.
+4. Deck/slab and beams are only conceptual solids here.
+5. Foundation boxes have no validated rebar, soil or capacity.
+6. Physical connection stiffness and load paths are unknown.
+7. Drawing is for GeoAI import/extraction and UI testing only.
+PROJECT   GEOAI sample maintenance platform
+STATUS   SYNTHETIC TRAINING GEOMETRY - UNSURVEYED / UNVERIFIED
+UNITS   millimetres unless noted
+ISSUE   P01 - 12 OCT 2026
+DRAWING   S-001
+DO NOT USE FOR FABRICATION OR CONSTRUCTION
+
+
+PAGE 2
+GeoAI   /   ENGINEERING PRACTICE SET
+COLUMN BASE - SCHEMATIC DETAIL
+NOT FOR CONSTRUCTION
+SHEET 2 OF 2     |     GEOAI-DEMO-001
+For geometry recognition and engineering input collection. Not a fabrication, anchor, rebar or foundation design.
+05   BASE PLATE AND FOOTING PLAN
+ANCHORS DECLARED - NOT PHYSICAL BOLTS
+06   BASE CONNECTION SECTION
+SCHEMATIC / ALL CAPACITIES UNVERIFIED
+1200 FOOTING BOX
+650 PLATE
+KEY
+Footing: gray     Plate: light blue     Column: steel blue     Declared anchor: amber
+Anchor c/c: 480 x 480 mm (declared layout only).
+Anchor positions, diameter and embedment are NOT VERIFIED.
+450
+300 *
+C-01
+300 x 300
+BP-01
+650 x 650 x 25
+F-01 / 1200 x 1200 x 450
+* Embedment is a SYNTHETIC declared example; not verified design.
+07   INPUTS TO COLLECT BEFORE ENGINEERING
+DO NOT BACKFILL FROM THIS DRAWING
+08   ENGINEERING STATUS / TEST LIMITS
+NO SAFETY OR CODE APPROVAL
+01
+Anchor bolt type, manufacturer, steel grade and real as-built layout
+02
+Anchor effective embedment, edge distances and concrete condition
+03
+Plate steel specification, weld detailing and verified connection model
+04
+Declared N, V, M design load cases and correct reference planes
+05
+Concrete grade, reinforcement details and footing structural model
+06
+Soil investigation, groundwater, bearing parameters and settlement
+07
+Design jurisdiction and exact IS / AISC / ACI / ASCE editions
+PLAN AND DIMENSIONS: nominal geometry only
+ANCHOR LOCATIONS: synthetic declarations
+PLATE BENDING: NOT VERIFIED
+ANCHOR TENSION / SHEAR: NOT VERIFIED
+CONCRETE BREAKOUT: NOT VERIFIED
+REINFORCEMENT / SOIL: NOT VERIFIED
+IS / US CODE COMPLIANCE: NOT VERIFIED
+PROJECT   GEOAI sample maintenance platform
+STATUS   SYNTHETIC TRAINING GEOMETRY - UNSURVEYED / UNVERIFIED
+UNITS   millimetres unless noted
+ISSUE   P01 - 12 OCT 2026
+DRAWING   S-002
+DO NOT USE FOR FABRICATION OR CONSTRUCTION

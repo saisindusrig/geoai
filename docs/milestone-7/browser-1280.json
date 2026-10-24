@@ -1,0 +1,51 @@
+{
+  "width": 1280,
+  "height": 900,
+  "mockedTurns": 3,
+  "paidInferenceRequests": 0,
+  "validatedReads": 10,
+  "outcomes": [
+    {
+      "task_id": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "action_id": "a34abd65cae5846c2ed51afcffcd602e5e78b29b2501f1527149af40c8e1c387",
+      "ok": true,
+      "message": "Selected CAD column SW.",
+      "taskId": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "actionId": "a34abd65cae5846c2ed51afcffcd602e5e78b29b2501f1527149af40c8e1c387"
+    },
+    {
+      "task_id": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "action_id": "049038a574d09e2d9ad4a916bad67f0b9f3ac597ae22dd854f30faf28a443418",
+      "ok": true,
+      "message": "Camera focused on the requested saved geometry.",
+      "taskId": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "actionId": "049038a574d09e2d9ad4a916bad67f0b9f3ac597ae22dd854f30faf28a443418"
+    },
+    {
+      "task_id": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "action_id": "ea1bb54c5906ef86301d2cea78774a4ea2c5ad270d8622d2b86c676726005652",
+      "ok": true,
+      "message": "Displayed saved result #421 · frame · Horizontal · forces. No calculation was run.",
+      "taskId": "ba5c275d-325b-4ef1-8c88-5abf8ba5c2bd",
+      "actionId": "ea1bb54c5906ef86301d2cea78774a4ea2c5ad270d8622d2b86c676726005652"
+    },
+    {
+      "task_id": "bafd51c0-82d9-4112-9596-8869ea5ae148",
+      "action_id": "1f83b390267c9ed730606f637496caba0a970c6fdba4de7afda9bdb8ad8b642c",
+      "ok": true,
+      "message": "Displayed saved result #421 · frame · Horizontal · deformation. No calculation was run.",
+      "taskId": "bafd51c0-82d9-4112-9596-8869ea5ae148",
+      "actionId": "1f83b390267c9ed730606f637496caba0a970c6fdba4de7afda9bdb8ad8b642c"
+    },
+    {
+      "task_id": "1fd3b8fe-c2e3-4cb1-bbf0-f222c3cdd49a",
+      "action_id": "755b2f9367c49f95c41a813ac58b73cd2c651e975b4ec971f041a468fb811311",
+      "ok": true,
+      "message": "Opened RC footing nominal flexure — synthetic review · saved revision 124.",
+      "taskId": "1fd3b8fe-c2e3-4cb1-bbf0-f222c3cdd49a",
+      "actionId": "755b2f9367c49f95c41a813ac58b73cd2c651e975b4ec971f041a468fb811311"
+    }
+  ],
+  "errors": [],
+  "forbiddenWrites": []
+}

@@ -1,0 +1,26 @@
+{
+  "existing_changed": {},
+  "added": {
+    "cachecontrol": "0.14.4",
+    "firebase-admin": "7.7.0",
+    "googleapis-common-protos": "1.76.0",
+    "google-api-core": "2.43.0",
+    "google-auth": "2.62.0",
+    "google-cloud-core": "2.8.0",
+    "google-cloud-firestore": "2.34.1",
+    "google-cloud-storage": "3.17.1",
+    "google-crc32c": "1.9.0",
+    "google-resumable-media": "2.11.0",
+    "grpcio": "1.84.1",
+    "grpcio-status": "1.84.1",
+    "h2": "4.4.1",
+    "hpack": "4.2.0",
+    "hyperframe": "6.1.0",
+    "msgpack": "1.2.3",
+    "opentelemetry-api": "1.45.1",
+    "protobuf": "7.36.2",
+    "proto-plus": "1.29.0",
+    "pyasn1-modules": "0.4.2",
+    "requests": "2.34.2"
+  }
+}

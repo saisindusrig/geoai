@@ -1,0 +1,8 @@
+{
+  "existing_isolated_rows_unchanged": true,
+  "isolated_rows": 10500,
+  "appended_rows": 0,
+  "spatial_solver_files_unchanged": true,
+  "spatial_solver_files": 635,
+  "read_only": true
+}

@@ -1,5 +1,11 @@
 import { authRequired, getAuthToken } from "@/lib/api";
 
+/** Accept only same-origin absolute paths after authentication. */
+export function safeAuthReturnPath(value: string | null): string {
+  if (!value || !value.startsWith("/") || value.startsWith("//") || /[\\\u0000-\u0020\u007f]/.test(value)) return "/dashboard";
+  return value;
+}
+
 /** Login URL with optional post-auth redirect target. */
 export function loginPath(next = "/dashboard"): string {
   return `/login?next=${encodeURIComponent(next)}`;

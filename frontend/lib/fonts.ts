@@ -1,16 +1,7 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
-
-export const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+// Offline builds retain the existing variables using installed system fonts.
+export const inter = { variable: "geoai-system-sans" };
 
 /** @deprecated use `inter` — kept for imports that still reference publicSans */
 export const publicSans = inter;
 
-export const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
+export const jetbrainsMono = { variable: "geoai-system-mono" };

@@ -1,0 +1,9 @@
+{
+  "cause": "Pre-existing server occupied standard ports; isolated launch was refused and browser replay reached original server",
+  "test_writes_preserved_in": ".cleanup-backups/before-browser-recovery.db",
+  "baseline_source": ".cleanup-backups/20261015-132113/databases/backend/dev.db",
+  "concurrent_change_check": "all live rows matched pre-recovery snapshot before restore",
+  "recovery": "SQLite online backup restored verified pre-task snapshot; no files deleted",
+  "test_row_classification": "Added user messages all matched Local UX verification/Recovery verification; assistant events linked to those runs; added model revisions/generated files/audit events were project 801; engineering additions were explicit replay types in projects 796/802/803",
+  "final_validation": "See database-preservation.json"
+}

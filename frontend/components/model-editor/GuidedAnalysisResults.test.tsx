@@ -1,0 +1,13 @@
+import {render,screen,cleanup,waitFor} from '@testing-library/react';
+import {afterEach,it,expect,vi} from 'vitest';
+import GuidedAnalysisResults from './GuidedAnalysisResults';
+import type {EditableModelEditor} from '@/hooks/useEditableModelEditor';
+import type {AnalysisRow} from '@/lib/analysis-workflow';
+const {selectEvidence,build}=vi.hoisted(()=>({selectEvidence:vi.fn(),build:vi.fn()}));
+vi.mock('@/lib/structural-visual',()=>({savedStructuralEvidence:selectEvidence,structuralCases:()=>['Gravity'],buildStructuralOverlay:build}));
+const editor={baseRevision:{id:2},selectedIds:[],document:{components:[]},selectMany:vi.fn(),dirty:false} as unknown as EditableModelEditor;
+const row:AnalysisRow={id:10,status:'VERIFIED',model_revision_id:2,result:{}};
+const props={editor,method:'frame' as const,row,frameRows:[row,{...row,id:11}],slabRows:[],mode:'loads',setMode:vi.fn(),caseName:'Gravity',setCase:vi.fn(),download:vi.fn()};
+afterEach(()=>{cleanup();vi.clearAllMocks();});
+it('projects only the explicitly selected saved result rather than the first history result',()=>{selectEvidence.mockReturnValue({frames:[],recordIds:[10]});build.mockReturnValue({mode:'structural-visual'});render(<GuidedAnalysisResults {...props}/>);expect(selectEvidence).toHaveBeenCalledWith([row],[],2);expect(build).toHaveBeenCalled();});
+it('clears instead of silently substituting a missing load case',async()=>{selectEvidence.mockReturnValue({frames:[],recordIds:[10]});const receive=vi.fn();window.addEventListener('geoai:elastic-results',receive);render(<GuidedAnalysisResults {...props} caseName="Missing wind case"/>);await screen.findByRole('alert');expect(build).not.toHaveBeenCalled();await waitFor(()=>expect(receive).toHaveBeenCalled());expect(receive.mock.calls.some(([e])=>e.detail?.clearMode==='structural-visual')).toBe(true);window.removeEventListener('geoai:elastic-results',receive);});

@@ -7,7 +7,7 @@ import { useWorkspacePanel } from "@/hooks/useWorkspacePanel";
 
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Compass, Crosshair, Globe, LocateFixed, PanelLeft, Bot, ScanEye, SlidersHorizontal } from "lucide-react";
+import { Compass, Crosshair, Globe, LocateFixed, PanelLeft, ScanEye, SlidersHorizontal } from "lucide-react";
 import SiteSuggestionsPanel from "@/components/map/SiteSuggestionsPanel";
 import MapToolbarExtended from "@/components/map/MapToolbarExtended";
 import Scene3DOverlay from "@/components/map/Scene3DOverlay";
@@ -96,7 +96,7 @@ export default function MapViewerArea({
     mapRef,
     mapCursor,
   } = useProjectStore();
-  const { focusMode, toolsOpen, copilotOpen, onOpenTools, onOpenCopilot } = useWorkspaceMap();
+  const { focusMode, toolsOpen, onOpenTools } = useWorkspaceMap();
 
   if (projectLocationKey !== locationSyncKey) {
     setLocationSyncKey(projectLocationKey);
@@ -333,6 +333,7 @@ export default function MapViewerArea({
                 onChange={(e) => setSearchDraft(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && doSearch()}
                 placeholder="Search location…"
+                aria-label="Search location"
                 className="h-8 min-w-0 flex-1 border-0 bg-transparent text-xs text-foreground focus:ring-0"
               />
               <button
@@ -344,7 +345,7 @@ export default function MapViewerArea({
                 <Crosshair className="h-3.5 w-3.5" />
                 Center
               </button>
-              <Button size="sm" className="h-8 shrink-0 px-2" onClick={doSearch} disabled={searching}>
+              <Button size="sm" className="h-8 shrink-0 px-2" onClick={doSearch} disabled={searching} aria-label={searching ? "Searching locations" : "Search locations"} aria-busy={searching}>
                 <Globe className="h-3.5 w-3.5" />
               </Button>
               {results.length > 0 && (
@@ -490,21 +491,6 @@ export default function MapViewerArea({
         </div>
       )}
 
-      {focusMode && !copilotOpen && (
-        <div className="absolute bottom-20 right-3 z-20 pointer-events-auto">
-          <Button
-            size="sm"
-            className="h-auto min-w-[2.75rem] flex-col gap-0.5 py-2 px-1.5 panel-glass border-primary/30 shadow-md"
-            title="AI Copilot"
-            onClick={onOpenCopilot}
-            aria-label="Open AI Copilot"
-          >
-            <Bot className="h-4 w-4 text-primary" />
-            <span className="text-[8px] font-semibold leading-none">Copilot</span>
-          </Button>
-        </div>
-      )}
-
       {false && <ElevationProfileChart project={project} />}
       {view === "3d" && <Scene3DOverlay />}
       <DrawHud onConfirmSave={() => window.dispatchEvent(new CustomEvent("geoai:save-project"))} />
@@ -547,16 +533,7 @@ export default function MapViewerArea({
         )}
       </div>
 
-      {view === "3d" && !modelUrl && !excavationUrl && !editableModel && !drawnAlignment && !project.alignment_geojson && (
-        <div className="pointer-events-none absolute inset-x-4 bottom-24 z-10 flex justify-center">
-          <div className="max-w-md rounded-2xl border border-border bg-[rgba(5,7,10,0.72)] px-4 py-3 text-center shadow-lg backdrop-blur-xl">
-            <p className="text-sm font-semibold text-foreground">Draw an alignment or generate a concept</p>
-            <p className="mt-1 text-[12px] leading-snug text-muted-foreground">
-              AI model layers appear here after design generation completes.
-            </p>
-          </div>
-        </div>
-      )}
+
 
 
     </div>

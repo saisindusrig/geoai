@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "repeat": 1,
+      "selectionReceiptMs": 112.19999999925494,
+      "focusReceipt": {
+        "actionId": "synthetic-focus-1",
+        "ok": true,
+        "message": "Camera focused on the requested saved geometry.",
+        "latencyMs": 352.59999999962747
+      }
+    },
+    {
+      "repeat": 2,
+      "selectionReceiptMs": 30.59999999962747,
+      "focusReceipt": {
+        "actionId": "synthetic-focus-2",
+        "ok": true,
+        "message": "Camera focused on the requested saved geometry.",
+        "latencyMs": 360.2999999988824
+      }
+    },
+    {
+      "repeat": 3,
+      "selectionReceiptMs": 26.40000000037253,
+      "focusReceipt": {
+        "actionId": "synthetic-focus-3",
+        "ok": true,
+        "message": "Camera focused on the requested saved geometry.",
+        "latencyMs": 360.30000000074506
+      }
+    },
+    {
+      "syntheticOverlayRendered": true
+    },
+    {
+      "kind": "column",
+      "rendererReceipt": true,
+      "explicitApplyEnabledAfterReceipt": true,
+      "cancelRemovedPreview": true,
+      "applyOrSaveInvoked": false
+    },
+    {
+      "kind": "beam",
+      "rendererReceipt": true,
+      "explicitApplyEnabledAfterReceipt": true,
+      "cancelRemovedPreview": true,
+      "applyOrSaveInvoked": false
+    }
+  ],
+  "errors": [],
+  "blocked": [],
+  "downloads": [],
+  "mockedValidationOnly": true,
+  "savedResultQualification": "synthetic overlay rendering only; exact saved-result authority covered by focused unit tests, no solver or engineering result fabricated"
+}

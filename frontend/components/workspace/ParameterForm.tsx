@@ -344,8 +344,8 @@ function SupportedParameterForm({
           variant="secondary"
           size="sm"
           className={cn(
-            "h-8 gap-1.5 rounded-lg border-border bg-background-secondary/90 px-2 text-[11px] text-foreground-secondary hover:border-[rgba(34,211,238,0.35)] hover:bg-[rgba(34,211,238,0.1)] hover:text-foreground",
-            paramsOpen && "border-[rgba(34,211,238,0.38)] bg-[rgba(34,211,238,0.12)] text-[#A5F3FC]",
+            "h-8 gap-1.5 rounded-lg border-border bg-background-secondary/90 px-2 text-[11px] text-foreground-secondary hover:border-[rgba(35,123,99,0.35)] hover:bg-[rgba(35,123,99,0.1)] hover:text-foreground",
+            paramsOpen && "border-[rgba(35,123,99,0.38)] bg-[rgba(35,123,99,0.12)] text-[#B7C3AA]",
           )}
           onClick={() => {
             setParamsOpen((v) => {
@@ -380,7 +380,7 @@ function SupportedParameterForm({
               <div
                 role="dialog"
                 aria-label="Design parameters"
-                className="fixed inset-x-3 bottom-3 z-[101] max-h-[calc(100vh-5rem)] overflow-hidden rounded-2xl border border-border bg-[rgba(11,17,28,0.98)] shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-auto md:w-[min(100vw-2rem,440px)]"
+                className="fixed inset-x-3 bottom-3 z-[101] max-h-[calc(100vh-5rem)] overflow-hidden rounded-2xl border border-border bg-[rgba(8,12,8,0.98)] shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-auto md:w-[min(100vw-2rem,440px)]"
                 style={isMobile ? undefined : { top: panelPos.top, right: panelPos.right }}
               >
                 <div className="flex max-h-[inherit] flex-col overflow-hidden">
@@ -394,7 +394,7 @@ function SupportedParameterForm({
                           Preliminary AI concept values for the active infrastructure scenario.
                         </p>
                       </div>
-                      <span className="rounded-full border border-[var(--primary)] bg-[rgba(59,130,246,0.12)] px-2 py-1 text-[10px] text-foreground-secondary">
+                      <span className="rounded-full border border-[var(--primary)] bg-[rgba(35,123,99,0.12)] px-2 py-1 text-[10px] text-foreground-secondary">
                         {family}
                       </span>
                     </div>

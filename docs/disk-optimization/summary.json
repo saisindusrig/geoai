@@ -1,0 +1,23 @@
+{
+  "before_bytes": 16456896975,
+  "after_bytes": 9481066916,
+  "net_reclaimed_bytes": 6975830059,
+  "before_GB": 16.456896975,
+  "after_GB": 9.481066916,
+  "net_reclaimed_GB": 6.975830059,
+  "target_below_10GB": true,
+  "direct_generated_cleanup": {
+    "inactive": {
+      "files": 6855,
+      "bytes": 5963648721
+    },
+    "stopped-frontend-cache": {
+      "files": 3370,
+      "bytes": 833306341
+    },
+    "wheel-fragments": {
+      "files": 686,
+      "bytes": 215143784
+    }
+  }
+}

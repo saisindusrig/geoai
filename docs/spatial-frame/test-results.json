@@ -1,0 +1,78 @@
+{
+  "frontend_tests": 366,
+  "backend_tests": 262,
+  "spatial_backend_tests": 26,
+  "browser_workflows": 8,
+  "typescript": "PASS",
+  "scoped_eslint": "PASS",
+  "visual_acceptance": [
+    {
+      "project": 822,
+      "width": 1280,
+      "modes": 7,
+      "force_components": 6,
+      "load_cases": 3,
+      "floor_filter": true,
+      "member_and_slab_inspection": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 822,
+      "width": 1600,
+      "modes": 7,
+      "force_components": 6,
+      "load_cases": 3,
+      "floor_filter": true,
+      "member_and_slab_inspection": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 823,
+      "width": 1280,
+      "modes": 7,
+      "force_components": 6,
+      "load_cases": 3,
+      "floor_filter": true,
+      "member_and_slab_inspection": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "project": 823,
+      "width": 1600,
+      "modes": 7,
+      "force_components": 6,
+      "load_cases": 3,
+      "floor_filter": true,
+      "member_and_slab_inspection": true,
+      "writes": [],
+      "errors": []
+    }
+  ],
+  "authorization": {
+    "project": 827,
+    "reviewed": true,
+    "authorized_exact_hash": true,
+    "writes": [
+      "http://127.0.0.1:18001/api/projects/827/engineering/spatial-frame/review",
+      "http://127.0.0.1:18001/api/projects/827/engineering/spatial-frame/authorize-run"
+    ],
+    "errors": []
+  },
+  "preservation": {
+    "all_rows_and_schemas_exactly_unchanged": true,
+    "rows": 10245
+  },
+  "original_storage_files": 55296,
+  "original_cad_proof_files": 2090,
+  "database_schemas_checked": 264,
+  "video": {
+    "duration_seconds": 81.28,
+    "width": 1600,
+    "height": 1000
+  },
+  "implementation_manifest_verified": true,
+  "engineering_approval": "DISABLED"
+}

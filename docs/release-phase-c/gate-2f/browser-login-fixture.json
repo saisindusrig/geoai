@@ -1,0 +1,101 @@
+[
+  {
+    "width": 1280,
+    "checks": [
+      {
+        "outcome": "cancel",
+        "rejected": true
+      },
+      {
+        "outcome": "blocked",
+        "rejected": true
+      },
+      {
+        "outcome": "collision",
+        "rejected": true
+      },
+      {
+        "outcome": "signup",
+        "rejected": true
+      },
+      {
+        "outcome": "unlinked",
+        "rejected": true
+      }
+    ],
+    "bothProviders": true,
+    "registrationHidden": true,
+    "persistentTokens": [],
+    "errors": [],
+    "external": [],
+    "writes": [],
+    "downloads": [],
+    "realFirebase": false
+  },
+  {
+    "width": 1600,
+    "checks": [
+      {
+        "outcome": "cancel",
+        "rejected": true
+      },
+      {
+        "outcome": "blocked",
+        "rejected": true
+      },
+      {
+        "outcome": "collision",
+        "rejected": true
+      },
+      {
+        "outcome": "signup",
+        "rejected": true
+      },
+      {
+        "outcome": "unlinked",
+        "rejected": true
+      }
+    ],
+    "bothProviders": true,
+    "registrationHidden": true,
+    "persistentTokens": [],
+    "errors": [],
+    "external": [],
+    "writes": [],
+    "downloads": [],
+    "realFirebase": false
+  },
+  {
+    "width": 390,
+    "checks": [
+      {
+        "outcome": "cancel",
+        "rejected": true
+      },
+      {
+        "outcome": "blocked",
+        "rejected": true
+      },
+      {
+        "outcome": "collision",
+        "rejected": true
+      },
+      {
+        "outcome": "signup",
+        "rejected": true
+      },
+      {
+        "outcome": "unlinked",
+        "rejected": true
+      }
+    ],
+    "bothProviders": true,
+    "registrationHidden": true,
+    "persistentTokens": [],
+    "errors": [],
+    "external": [],
+    "writes": [],
+    "downloads": [],
+    "realFirebase": false
+  }
+]

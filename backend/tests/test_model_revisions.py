@@ -108,3 +108,14 @@ def test_saved_revision_preserves_accepted_anchor_and_stales_analyses(client, db
     db_session.expire_all()
     analysis = db_session.query(EngineeringAnalysis).one()
     assert analysis.status == "STALE" and analysis.result_json == {"clearance_m": 5}
+
+
+def test_visual_geometry_is_exported_but_excluded_from_quantities(db_session):
+    project, scenario = _seed(db_session)
+    document = geometry_spec_to_document(project, scenario, _spec())
+    for component in document["components"]:
+        component["quantity"] = {"included": False}
+    assert document_to_geometry_spec(document)["objects"]
+    impact = calculate_revision_impact(document)
+    assert impact["quantities"]["concrete_m3"] == 0
+    assert impact["total_cost_estimate"] == 0

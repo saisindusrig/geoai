@@ -1,0 +1,122 @@
+{
+  "kind": "workspace_action",
+  "actionId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "operation": "prepare_beam_preview",
+  "projectId": 7,
+  "projectName": "Synthetic fixture",
+  "revisionId": 1,
+  "documentHash": "fixture-hash",
+  "componentIds": [],
+  "candidate": {
+    "id": "assistant-beam:bbbbbbbbbbbbbbbbbbbbbbbb",
+    "parent_id": null,
+    "name": "Beam proposal",
+    "category": "beam",
+    "visible": true,
+    "locked": false,
+    "geometry": {
+      "kind": "box",
+      "size": [
+        4.58257569495584,
+        0.3,
+        0.45
+      ]
+    },
+    "transform": {
+      "position": [
+        2.0,
+        1.0,
+        3.5
+      ],
+      "rotation_deg": [
+        5.710593137499642,
+        -11.255239732662094,
+        27.128220911916994
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "material": {
+      "name": "Conceptual geometry only",
+      "color": "#E879F9",
+      "roughness": 0.75,
+      "metalness": 0
+    },
+    "quantity": {
+      "included": false
+    },
+    "metadata": {
+      "source": "assistant_supervised_primitive",
+      "provenance": "user_dimensions_conceptual",
+      "base_revision_id": 1,
+      "engineering": "UNVERIFIED_GEOMETRY_ONLY",
+      "beam": {
+        "size": [
+          4.58257569495584,
+          0.3,
+          0.45
+        ],
+        "position": [
+          2.0,
+          1.0,
+          3.5
+        ],
+        "rotation_deg": [
+          5.710593137499642,
+          -11.255239732662094,
+          27.128220911916994
+        ],
+        "endpoints_enu_m": [
+          [
+            0.0,
+            0.0,
+            3.0
+          ],
+          [
+            4.0,
+            2.0,
+            4.0
+          ]
+        ],
+        "length_m": 4.58257569495584,
+        "direction_enu": [
+          0.8728715609439696,
+          0.4364357804719848,
+          0.2182178902359924
+        ],
+        "orientation_convention": "Local X runs A to B; section depth follows projected ENU Up. Near-vertical beams use North as reference. No connection declaration."
+      }
+    }
+  },
+  "validation": {
+    "name": "prepare_beam_preview",
+    "arguments": {
+      "project_id": 7,
+      "revision_id": 1,
+      "primitive": "beam",
+      "name": "Beam proposal",
+      "units": "m",
+      "endpoints": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          4,
+          2,
+          4
+        ]
+      ],
+      "width": 0.3,
+      "depth": 0.45,
+      "position_reference": "local_enu",
+      "point_source": "user_explicit_enu",
+      "parent_id": null,
+      "provenance": "user_dimensions_conceptual"
+    }
+  }
+}

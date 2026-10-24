@@ -6,33 +6,78 @@ import {
   type ParsedApiError,
 } from "@/lib/api-errors";
 import { reportClientError } from "@/lib/observability";
+import { assertSession, firebaseIdToken, firebaseMode, firebaseSignOut, invalidateSession, sessionRevision, sessionSignal } from "./firebase-auth";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
 const AUTH_KEY = "geoai_access_token";
 
 export function getAuthToken(): string | null {
+  if (firebaseMode()) return null;
   if (typeof window === "undefined") return null;
   return localStorage.getItem(AUTH_KEY);
 }
 
 export function setAuthToken(token: string) {
+  if (firebaseMode()) throw new Error("Legacy tokens are not accepted in Firebase mode.");
+  invalidateSession();
   localStorage.setItem(AUTH_KEY, token);
 }
 
 export function clearAuthToken() {
   localStorage.removeItem(AUTH_KEY);
+  invalidateSession();
 }
 
 export function authRequired(): boolean {
-  return process.env.NEXT_PUBLIC_AUTH_REQUIRE_JWT === "true";
+  return firebaseMode() || process.env.NEXT_PUBLIC_AUTH_REQUIRE_JWT === "true";
 }
 
 function handleUnauthorized() {
   if (typeof window === "undefined" || !authRequired()) return;
   clearAuthToken();
   if (!window.location.pathname.startsWith("/login")) {
-    window.location.href = `/login?next=${encodeURIComponent(window.location.pathname)}`;
+    const destination = new URL(`/login?next=${encodeURIComponent(window.location.pathname)}`, window.location.origin);
+    window.location.assign(destination.href);
   }
+}
+
+/** One bearer boundary for JSON, protected files, uploads and assistant streams. */
+export async function authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  const origin = typeof window === "undefined" ? "http://localhost" : window.location.origin;
+  const base = new URL(API_URL, origin);
+  const target = new URL(url, origin);
+  const prefix = base.pathname.replace(/\/$/, "");
+  if (target.origin !== base.origin || !["/api/", "/files/"].some(path => target.pathname.startsWith(prefix + path))) {
+    throw new Error("Request destination is outside the configured API.");
+  }
+  const publicConfiguration = url.endsWith("/api/auth/config");
+  const expected = sessionRevision();
+  const signal = sessionSignal();
+  const token = publicConfiguration ? null : firebaseMode() ? await firebaseIdToken() : getAuthToken();
+  assertSession(expected);
+  const headers = new Headers(options.headers);
+  headers.delete("Authorization");
+  if (token) headers.set("Authorization", `Bearer ${token}`);
+  const response = await fetch(url, { ...options, headers, redirect: "error", cache: "no-store", credentials: "omit",
+    signal: options.signal ? AbortSignal.any([options.signal, signal]) : signal });
+  assertSession(expected);
+  if (response.status === 401 && firebaseMode()) {
+    // Never refresh/replay a rejected request or fall back to a legacy token.
+    void firebaseSignOut().catch(() => undefined);
+  }
+  if (response.status === 401) handleUnauthorized();
+  const bodyRevision = sessionRevision();
+  // Check again after asynchronous body reads, not only response headers.
+  return new Proxy(response, { get(target, property) {
+    if (["json", "text", "blob", "arrayBuffer"].includes(String(property))) {
+      return async () => {
+        const result = await (target[property as "json"] as () => Promise<unknown>).call(target);
+        assertSession(bodyRevision); return result;
+      };
+    }
+    const value = Reflect.get(target, property, target);
+    return typeof value === "function" ? value.bind(target) : value;
+  } });
 }
 
 export class ApiError extends Error {
@@ -82,6 +127,9 @@ async function parseErrorResponse(res: Response): Promise<ApiError> {
     body = null;
   }
   const parsed = parseApiErrorPayload(res.status, body, headerRequestId);
+  if(API_URL==="/local-api" && res.status>=500 && body===null){
+    parsed.message="The local API connection was interrupted. Check that the offline backend is running, then Retry. Your draft and saved conversation are retained.";
+  }
   const apiError = new ApiError(parsed.status, parsed.message, parsed.detail, parsed.requestId, parsed.code);
   reportClientError(apiError, { path: res.url, status: res.status, requestId: parsed.requestId });
   return apiError;
@@ -93,7 +141,8 @@ export async function streamChat(
   onChunk: (chunk: string) => void,
 ): Promise<CopilotStreamResult> {
   const token = getAuthToken();
-  const res = await fetch(`${API_URL}/api/projects/${projectId}/ai/chat/stream`, {
+  const expectedSession = sessionRevision();
+  const res = await authenticatedFetch(`${API_URL}/api/projects/${projectId}/ai/chat/stream`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -102,7 +151,6 @@ export async function streamChat(
     body: JSON.stringify({ message }),
   });
   if (!res.ok || !res.body) {
-    if (res.status === 401) handleUnauthorized();
     throw await parseErrorResponse(res);
   }
   const reader = res.body.getReader();
@@ -111,6 +159,7 @@ export async function streamChat(
   let result: CopilotStreamResult = { actions: [], warnings: [] };
   while (true) {
     const { done, value } = await reader.read();
+    assertSession(expectedSession);
     if (done) break;
     buffer += decoder.decode(value, { stream: true });
     const lines = buffer.split("\n");
@@ -143,18 +192,27 @@ export async function streamChat(
   return result;
 }
 
+/** Surface transport failures once; the caller owns explicit recovery. */
+async function fetchRead(url: string, options: RequestInit): Promise<Response> {
+  try { return await authenticatedFetch(url, options); }
+  catch(error) {
+    if(!(error instanceof TypeError) || options.signal?.aborted)throw error;
+    reportClientError(error,{path:url,phase:"transport",method:options.method ?? "GET"});
+    throw new Error("Cannot reach the local API. Check that the backend is running, then Retry. Your draft has been kept; no request was automatically repeated.");
+  }
+}
+
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const token = getAuthToken();
-  const res = await fetch(`${API_URL}${path}`, {
+  const res = await fetchRead(`${API_URL}${path}`, {
     ...options,
     headers: {
-      "Content-Type": "application/json",
+      ...(options.body ? {"Content-Type": "application/json"} : {}),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options.headers,
     },
   });
   if (!res.ok) {
-    if (res.status === 401) handleUnauthorized();
     throw await parseErrorResponse(res);
   }
   if (res.status === 204) return undefined as T;
@@ -167,15 +225,13 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 /** GET optional resource — returns null when missing (404 or JSON null). */
 async function getOptional<T>(path: string): Promise<T | null> {
   const token = getAuthToken();
-  const res = await fetch(`${API_URL}${path}`, {
+  const res = await fetchRead(`${API_URL}${path}`, {
     headers: {
-      "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
   });
   if (res.status === 404) return null;
   if (!res.ok) {
-    if (res.status === 401) handleUnauthorized();
     throw await parseErrorResponse(res);
   }
   const text = await res.text();
@@ -184,7 +240,7 @@ async function getOptional<T>(path: string): Promise<T | null> {
 }
 
 export const api = {
-  get: <T>(path: string) => request<T>(path),
+  get: <T>(path: string, signal?: AbortSignal) => request<T>(path, {signal}),
   getOptional: <T>(path: string) => getOptional<T>(path),
   post: <T>(path: string, body?: unknown) =>
     request<T>(path, { method: "POST", body: body ? JSON.stringify(body) : undefined }),
@@ -198,22 +254,57 @@ export async function uploadSurveyFile<T>(
   file: File,
   fields: Record<string, string>,
 ): Promise<T> {
-  const token = getAuthToken();
   const form = new FormData();
   form.append("file", file);
   for (const [k, v] of Object.entries(fields)) form.append(k, v);
-  const res = await fetch(`${API_URL}/api/projects/${projectId}/survey/import`, {
+  return uploadForm<T>(`/api/projects/${projectId}/survey/import`, form);
+}
+
+export const apiUrl = (path: string) => `${API_URL}${path}`;
+
+/** Binary reads use the same bearer/session/error contract as JSON reads. */
+export function isApiFileUrl(path: string): boolean {
+  const base = new URL(API_URL, window.location.origin);
+  const target = new URL(path.startsWith("/api/") || path.startsWith("/files/") ? apiUrl(path) : path, window.location.origin);
+  const prefix = base.pathname.replace(/\/$/, "");
+  return target.origin === base.origin && (target.pathname.startsWith(`${prefix}/api/`) || target.pathname.startsWith(`${prefix}/files/`));
+}
+
+export async function fetchBinary(path: string, signal?: AbortSignal): Promise<Response> {
+  const target = new URL(path.startsWith("/api/") || path.startsWith("/files/") ? apiUrl(path) : path, window.location.origin);
+  if (!isApiFileUrl(path)) {
+    throw new Error("Download destination is outside the configured API.");
+  }
+  const token = getAuthToken();
+  const response = await fetchRead(target.href, {
+    signal,
+    redirect: "error",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  if (!response.ok) {
+    throw await parseErrorResponse(response);
+  }
+  return response;
+}
+
+export async function uploadDrawingReference<T>(projectId:number,file:File,fields:Record<string,string>):Promise<T>{
+  const form=new FormData();form.append('file',file);
+  for(const [key,value] of Object.entries(fields))form.append(key,value);
+  return uploadForm<T>(`/api/projects/${projectId}/engineering/study/drawings/import`, form);
+}
+
+/** Shared multipart transport keeps authentication and error recovery consistent. */
+async function uploadForm<T>(path: string, form: FormData): Promise<T> {
+  const token = getAuthToken();
+  const res = await fetchRead(`${API_URL}${path}`, {
     method: "POST",
     headers: token ? { Authorization: `Bearer ${token}` } : {},
     body: form,
   });
   if (!res.ok) {
-    if (res.status === 401) handleUnauthorized();
     throw await parseErrorResponse(res);
   }
   return res.json();
 }
-
-export const apiUrl = (path: string) => `${API_URL}${path}`;
 
 export type { ParsedApiError };

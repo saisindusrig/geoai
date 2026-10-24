@@ -1,0 +1,2 @@
+const {chromium}=require('../../frontend/node_modules/@playwright/test');const fs=require('fs');
+(async()=>{const b=await chromium.launch({channel:'chrome',args:['--use-angle=swiftshader']});const p=await b.newPage({viewport:{width:1200,height:630}});await p.setContent('<style>body{margin:0}</style>'+fs.readFileSync('frontend/public/brand-social.svg','utf8'));await p.screenshot({path:'frontend/public/brand-social.png'});await b.close()})().catch(e=>{console.error(e);process.exit(1)});

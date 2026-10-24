@@ -1,0 +1,28 @@
+{
+  "previous_coupled_analysis": 693,
+  "previous_coupled_native_files_verified": 21,
+  "files": [
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\beams.tsv",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\model.tcl",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\nodes.tsv",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\reactions.tsv",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\shells.tsv",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\stderr.txt",
+    "docs\\coupled-floor\\solver-evidence\\15fd2652-f38f-42f6-8b57-ac786d08356b\\stdout.txt",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\beams.tsv",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\model.tcl",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\nodes.tsv",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\reactions.tsv",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\shells.tsv",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\stderr.txt",
+    "docs\\coupled-floor\\solver-evidence\\d3affc96-cb36-41e9-a1ed-aae8c6bb50b1\\stdout.txt",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\beams.tsv",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\model.tcl",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\nodes.tsv",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\reactions.tsv",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\shells.tsv",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\stderr.txt",
+    "docs\\coupled-floor\\solver-evidence\\bc866a9e-b594-43b8-9164-8768a95029f6\\stdout.txt"
+  ],
+  "no_restore_or_modify": true
+}

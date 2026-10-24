@@ -1,0 +1,807 @@
+[
+  {
+    "path": "docs/ui-audit/final-isolated-tests.sqlite",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/first_party_sets.db",
+    "bytes": 49152,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/first_party_sets.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/GPUPersistentCache/DawnGraphiteCache/MEWXC45O3P3R4TOUNO3XIW6SYETDRVMU/cache.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/GPUPersistentCache/DawnGraphiteCache/MEWXC45O3P3R4TOUNO3XIW6SYETDRVMU/cache.db-wal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/Default/declarative_performance_observer.db",
+    "bytes": 32768,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/ui-audit/zoom-test-profile/Default/declarative_performance_observer.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/isolated-1792686222.sqlite",
+    "bytes": 475136,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/isolated-1792686722.sqlite",
+    "bytes": 430080,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/isolated-1792687162.sqlite",
+    "bytes": 1212416,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/regressions.sqlite",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/first_party_sets.db",
+    "bytes": 49152,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/first_party_sets.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/GPUPersistentCache/DawnGraphiteCache/MEWXC45O3P3R4TOUNO3XIW6SYETDRVMU/cache.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/GPUPersistentCache/DawnGraphiteCache/MEWXC45O3P3R4TOUNO3XIW6SYETDRVMU/cache.db-wal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/Default/declarative_performance_observer.db",
+    "bytes": 32768,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/release/a11y-test-profile/Default/declarative_performance_observer.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/milestone-9/isolated/assistant-history.db",
+    "bytes": 12288,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/milestone-9/isolated/beam-review.db",
+    "bytes": 1167360,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/milestone-8/isolated/primitive-review.db",
+    "bytes": 1175552,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "docs/foundation-system/isolated/foundation.db",
+    "bytes": 65261568,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.test-stage1-regression.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/assistant-history.db",
+    "bytes": 77824,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/dev.db",
+    "bytes": 53878784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/planning.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/stage1-pre-migration-20261008-015346.db",
+    "bytes": 1445888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/stage45-pre-migration-20261008-151702.db",
+    "bytes": 1552384,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.venv-civicspan/Lib/site-packages/pyproj/proj_dir/share/proj/proj.db",
+    "bytes": 10207232,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/rasterio/proj_data/proj.db",
+    "bytes": 9601024,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/pyproj/proj_dir/share/proj/proj.db",
+    "bytes": 9261056,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/pyogrio/proj_data/proj.db",
+    "bytes": 10207232,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.venv/Lib/site-packages/fiona/proj_data/proj.db",
+    "bytes": 8642560,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/3b2b-final-regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/3b2b-full-regression.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/3b2b-seeded-regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4a-full-regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4b-focused-seeded.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4b-full-regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4cr-full-regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-cumulative-budget.sqlite",
+    "bytes": 24576,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/boundary-selection.sqlite",
+    "bytes": 3231744,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/issue-3-journey.sqlite",
+    "bytes": 1146880,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/platform-demo.sqlite",
+    "bytes": 1961984,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-1.db",
+    "bytes": 1388544,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-2.db",
+    "bytes": 1425408,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-3.db",
+    "bytes": 1425408,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-4.db",
+    "bytes": 1425408,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-5.db",
+    "bytes": 1425408,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/workspace-acceptance/workspace.db",
+    "bytes": 1216512,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship1/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship0/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship1/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship0/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_007_upgrade_pres0/legacy.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_downgrade_refuses_history0/downgrade.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_concurrent_messages_are_o0/concurrent.db",
+    "bytes": 1122304,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-final/test_009_upgrade_preserves_fou0/existing009.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship1/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship0/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_007_upgrade_pres0/legacy.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_downgrade_refuses_history0/downgrade.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_concurrent_messages_are_o0/concurrent.db",
+    "bytes": 1122304,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_alembic_upgrade_head_sqli0/migration_test.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_009_upgrade_preserves_fou0/existing009.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship1/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship0/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_007_upgrade_pres0/legacy.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_downgrade_refuses_history0/downgrade.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_concurrent_messages_are_o0/concurrent.db",
+    "bytes": 1122304,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_009_upgrade_preserves_fou0/existing009.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship1/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship0/existing010.db",
+    "bytes": 1150976,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_007_upgrade_pres0/legacy.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_downgrade_refuses_history0/downgrade.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_concurrent_messages_are_o0/concurrent.db",
+    "bytes": 1122304,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+    "bytes": 1142784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/pytest-3b1-full/test_009_upgrade_preserves_fou0/existing009.db",
+    "bytes": 1138688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-platform-bc0f597787fb4d828e3c040914d132cd/acceptance.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-platform-b0a6b1d53cf24b28bf914fa19b21db74/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-platform-4005c5d4343f4c81a2e21497f1a2f2c7/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-mixed-d07b1a07216449f2be00983374e27ebe/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-mixed-cd1c0ac81a464aa188be8feb993d192f/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-bridge-d83a10ceb5484174a06edba4c6e84783/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4d-bridge-39f073205971470a9829fd0a9789c693/acceptance.db",
+    "bytes": 1163264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4ch2-mock-a1315005348340efaafc748ef42fff45/acceptance.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4ch-regression-651c5dabec8a4d8997f44db9836509e0/regression.db",
+    "bytes": 1155072,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4ch-diagnosis/read-copy.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4c-understand-canary-e6fe966847524ba189e05ee7745fc680/acceptance.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4c-understand-canary-981cd96192534cfebc42a739366700b5/acceptance.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4c-controlled-live/acceptance-first-prepare.db",
+    "bytes": 1122304,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": "backend/.cad-proof-output/4c-controlled-live/acceptance.db",
+    "bytes": 1171456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db-wal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/Default/declarative_performance_observer.db",
+    "bytes": 32768,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/Default/declarative_performance_observer.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/Default/heavy_ad_intervention_opt_out.db",
+    "bytes": 16384,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-zoRpK5/Default/heavy_ad_intervention_opt_out.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db-wal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/Default/declarative_performance_observer.db",
+    "bytes": 32768,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/Default/declarative_performance_observer.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/Default/heavy_ad_intervention_opt_out.db",
+    "bytes": 16384,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-bi6Mxo/Default/heavy_ad_intervention_opt_out.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/GPUPersistentCache/DawnGraphiteCache/NR2GNA44OGQUBFRRNDBXIX2VC7JXKYAS/cache.db-wal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/Default/declarative_performance_observer.db",
+    "bytes": 32768,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/Default/declarative_performance_observer.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/Default/heavy_ad_intervention_opt_out.db",
+    "bytes": 16384,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".local-tooling/node-24.22.1-validation/work/temp/playwright_chromiumdev_profile-3H2jcg/Default/heavy_ad_intervention_opt_out.db-journal",
+    "bytes": 0,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/workspace-quality/dev-before.db",
+    "bytes": 51548160,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/unequal-gravity/dev-before.db",
+    "bytes": 43126784,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/unequal-frame/dev-before.db",
+    "bytes": 41746432,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/soil-profile/dev-before.db",
+    "bytes": 49266688,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/soil-contact/dev-before.db",
+    "bytes": 48685056,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/slab-transfer/dev-before.db",
+    "bytes": 33357824,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/rectangular-bearing/dev-before.db",
+    "bytes": 51548160,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/rc-flexure/dev-before.db",
+    "bytes": 53100544,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/website/validation.db",
+    "bytes": 60162048,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/verified-regression/tests.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/validation-final/tests.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/release-final/tests.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/regression-selector/tests.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/full-regression/tests.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/final-targeted/tests.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/final-regression/tests.db",
+    "bytes": 421888,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/beta-focused/tests.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/production-beta/backend-tests/tests.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/plate-contact/dev-before.db",
+    "bytes": 35028992,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/physical-column/dev-before.db",
+    "bytes": 19812352,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/phase2/dev-before.db",
+    "bytes": 18771968,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/phase1/dev.db",
+    "bytes": 15634432,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/phase1/planning.db",
+    "bytes": 4096,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/phase1/test.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/opensees-milestone/dev-before.db",
+    "bytes": 19271680,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/nebius-agent/dev-before.db",
+    "bytes": 20922368,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/model-visualization/dev-before.db",
+    "bytes": 51548160,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/milestone2/dev-before.db",
+    "bytes": 18989056,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/milestone2/tests.db",
+    "bytes": 405504,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/live-nebius/dev-before.db",
+    "bytes": 21131264,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/gravity/dev-before.db",
+    "bytes": 30527488,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/foundation-interface/dev-before.db",
+    "bytes": 34738176,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/footing-transport/dev-before.db",
+    "bytes": 47329280,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/footing-flexure/dev-before.db",
+    "bytes": 52617216,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/engineering-inputs/dev-before.db",
+    "bytes": 38723584,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/eccentric/dev-before.db",
+    "bytes": 25235456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/drawing-strength/dev-before.db",
+    "bytes": 39157760,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/copilot-m2-verification/dev-before.db",
+    "bytes": 51044352,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/component-inspection/dev-before.db",
+    "bytes": 51548160,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/cad-soil-path/dev-before.db",
+    "bytes": 47063040,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/cad-slab-path/dev-before.db",
+    "bytes": 45658112,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/cad-frame/dev-before.db",
+    "bytes": 40648704,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/cad-drawing-3d/dev-before.db",
+    "bytes": 39604224,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/bearing-capacity/dev-before.db",
+    "bytes": 49704960,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/beam-frame/dev-before.db",
+    "bytes": 22167552,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/assembly/dev-before.db",
+    "bytes": 22814720,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/anchor-contact-3d/dev-before.db",
+    "bytes": 35364864,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/anchor-contact/dev-before.db",
+    "bytes": 35139584,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  },
+  {
+    "path": ".cache/analysis-workspace/dev-before.db",
+    "bytes": 25235456,
+    "classification": "NEVER DELETE AUTOMATICALLY"
+  }
+]

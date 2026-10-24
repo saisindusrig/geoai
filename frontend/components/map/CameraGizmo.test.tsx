@@ -1,0 +1,23 @@
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, expect, it, vi } from "vitest";
+import * as Cesium from "cesium";
+import Gizmo from "./CameraGizmo";
+import { useProjectStore } from "@/stores/projectStore";
+afterEach(() => { cleanup(); useProjectStore.setState({ undergroundView: false }); });
+it("offers six stable, named targets and preserves exact orientation events", () => {
+  const remove = vi.fn();
+  const viewer = { isDestroyed: () => false, canvas: { dataset: { navigationMode: 'model' } }, camera: { heading: 0, pitch: -.5, roll: 0, rightWC: Cesium.Cartesian3.UNIT_X, upWC: Cesium.Cartesian3.UNIT_Z, directionWC: Cesium.Cartesian3.UNIT_Y }, scene: { postRender: { addEventListener: () => remove } } };
+  const events: unknown[] = [];
+  const capture = (event: Event) => events.push((event as CustomEvent).detail);
+  window.addEventListener('geoai:orient-view', capture);
+  const view = render(<Gizmo viewer={viewer as unknown as Cesium.Viewer} Cesium={Cesium} longitude={77} latitude={12} />);
+  expect(screen.getAllByRole('button')).toHaveLength(6);
+  expect(events).toHaveLength(0);
+  fireEvent.click(screen.getByRole('button', { name: 'Positive Z axis view' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Positive Y axis view' }));
+  expect(events).toEqual([{ heading: 0, pitch: -90 }, { heading: 180, pitch: -5 }]);
+  expect(screen.getByRole('button', { name: 'Negative Z axis view' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Positive Z axis view' }).className).toContain('min-h-7');
+  view.unmount(); expect(remove).toHaveBeenCalledOnce();
+  window.removeEventListener('geoai:orient-view', capture);
+});

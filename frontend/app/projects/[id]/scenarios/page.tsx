@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { ArrowLeft, GitCompare, Pin } from "lucide-react";
 import {
   Bar,
@@ -25,6 +25,7 @@ import ScenarioComparePanel from "@/components/workspace/ScenarioComparePanel";
 import { useProjectData } from "@/hooks/useProjectData";
 import { api } from "@/lib/api";
 import { formatDateTime } from "@/lib/format-display";
+import { scenarioChartData } from "@/lib/scenario-chart-data";
 import { CHART } from "@/lib/chart-theme";
 import { formatCurrency } from "@/lib/utils";
 import type { ScenarioCompareResult, ScenarioSummary } from "@/lib/types";
@@ -42,6 +43,8 @@ export default function ScenarioComparePage() {
   const [filter, setFilter] = useState<Filter>("completed");
   const [selectedCompare, setSelectedCompare] = useState<number[]>([]);
   const [compareResult, setCompareResult] = useState<ScenarioCompareResult | null>(null);
+  const comparingRef = useRef(false);
+  const [compareError, setCompareError] = useState("");
   const [comparing, setComparing] = useState(false);
   const [pinVersion, setPinVersion] = useState(0);
 
@@ -65,22 +68,11 @@ export default function ScenarioComparePage() {
     [scenarioSummaries],
   );
 
-  const chartData = useMemo(() => {
-    const durationById = new Map(
-      (compareResult?.rows ?? []).map((r) => [r.scenario_id, r.duration_months ?? 0]),
-    );
-    return completed.map((s) => ({
-      name: s.name.length > 14 ? `${s.name.slice(0, 12)}…` : s.name,
-      cost: s.cost_total ?? 0,
-      cement: s.materials_summary?.concrete_m3 ?? 0,
-      steel: (s.materials_summary?.steel_kg ?? 0) / 1000,
-      duration: durationById.get(s.scenario_id) ?? s.duration_months ?? 0,
-    }));
-  }, [completed, compareResult]);
+  const chartData = useMemo(() => scenarioChartData(completed, compareResult), [completed, compareResult]);
 
   const bestCost = useMemo(() => {
     if (chartData.length === 0) return null;
-    const costs = chartData.map((d) => d.cost).filter((c) => c > 0);
+    const costs = chartData.map((d) => d.cost).filter((c): c is number => c !== null && c >= 0);
     return costs.length ? Math.min(...costs) : null;
   }, [chartData]);
 
@@ -100,7 +92,9 @@ export default function ScenarioComparePage() {
   };
 
   const runCompare = useCallback(async () => {
-    if (selectedCompare.length < 2) return;
+    if (selectedCompare.length < 2 || comparingRef.current) return;
+    comparingRef.current = true;
+    setCompareError("");
     setComparing(true);
     try {
       const result = await api.post<ScenarioCompareResult>(
@@ -108,7 +102,10 @@ export default function ScenarioComparePage() {
         { scenario_ids: selectedCompare },
       );
       setCompareResult(result);
+    } catch (error) {
+      setCompareError(error instanceof Error ? error.message : "Comparison could not be loaded. Please retry.");
     } finally {
+      comparingRef.current = false;
       setComparing(false);
     }
   }, [projectId, selectedCompare]);
@@ -118,6 +115,7 @@ export default function ScenarioComparePage() {
 
   return (
     <ProjectResultShell projectId={projectId} stats={summaryStats} maxWidth="max-w-[1400px]">
+      {compareError && <p role="alert" className="text-sm text-destructive">{compareError} Your selected scenarios are retained; retry Compare.</p>}
       <ResultPageHeader
         title="Scenario Comparison"
         subtitle="Compare cost, validation, geometry modes, and warnings across design runs."
@@ -187,16 +185,18 @@ export default function ScenarioComparePage() {
               { title: "Steel (tonnes)", key: "steel" as const, format: (v: number) => v.toFixed(1) },
               { title: "Duration (mo)", key: "duration" as const, format: (v: number) => v.toFixed(1) },
             ].map(({ title, key, format }) => (
-              <ChartCard key={key} title={title} height="h-44 sm:h-48">
+              <ChartCard key={key} title={title} subtitle={`${chartData.filter(row => row[key] !== null).length}/${chartData.length} scenarios have recorded values. Missing values are omitted; recorded zero is retained.`} height="h-44 sm:h-48">
+                {chartData.some(row => row[key] !== null) ? (
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" stroke={CHART.grid} vertical={false} />
                     <XAxis dataKey="name" tick={{ fontSize: 9, fill: CHART.tick }} axisLine={false} tickLine={false} />
                     <YAxis tick={{ fontSize: 9, fill: CHART.tick }} axisLine={false} tickLine={false} />
-                    <Tooltip formatter={(v) => format(Number(v))} contentStyle={CHART.tooltip} />
+                    <Tooltip formatter={(v) => v == null ? "Not available" : format(Number(v))} contentStyle={CHART.tooltip} />
                     <Bar dataKey={key} fill={CHART.accent} radius={[4, 4, 0, 0]} maxBarSize={36} />
                   </BarChart>
                 </ResponsiveContainer>
+                ) : <p className="text-sm text-muted-foreground">No recorded values available for this metric.</p>}
               </ChartCard>
             ))}
           </div>
@@ -259,8 +259,8 @@ export default function ScenarioComparePage() {
                     },
                     {
                       label: "Warnings",
-                      get: (s: ScenarioSummary) => s.warning_count ?? 0,
-                      format: (v: number) => String(v),
+                      get: (s: ScenarioSummary) => s.warning_count,
+                      format: (v: number | undefined) => v == null ? "—" : String(v),
                       best: "min" as const,
                     },
                   ].map((row) => {
@@ -351,7 +351,7 @@ export default function ScenarioComparePage() {
                   </div>
                   <div>
                     <dt className="text-muted-foreground">Warnings</dt>
-                    <dd className="font-data text-foreground-secondary">{s.warning_count ?? 0}</dd>
+                    <dd className="font-data text-foreground-secondary">{s.warning_count ?? "—"}</dd>
                   </div>
                 </dl>
                 <p className="text-[11px] text-muted-foreground line-clamp-2 mb-3">

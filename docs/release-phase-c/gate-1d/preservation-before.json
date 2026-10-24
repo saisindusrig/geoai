@@ -1,0 +1,20 @@
+{
+  "dev.db": {
+    "baseline_match": true,
+    "rows": 10283
+  },
+  "assistant-history.db": {
+    "baseline_match": true,
+    "rows": 3
+  },
+  "hashes": {
+    "backend/requirements.txt": "ebf0a05e337874751ff3ab1eb2d335d32c9e2299ba8f4ed6c07492a7e03280d1",
+    "frontend/package.json": "8e0eee78520e349a5e865be2ab68982cdcfdce66d2b84f5ea50d5502d50b2ba6",
+    "frontend/package-lock.json": "e605d53157e892817a7d06837f33547a4202982ed5afd2b8c7b0373d07c98416",
+    "run-website.bat": "b85f42397d9855a411e8dd1e7988ea974f1ef113f29c48700f6d992178b89cf9",
+    "start-copilot-review.ps1": "4acd7258ff072929f9cf6f4b1eb94fdcf40d281fc90a233a8c3d44d4da1cf255",
+    "scripts/verify-local-node.cjs": "0d7e713b5da122a31b8e31d4c8c0cca8f706e6b94129b9a0fd2030b5ee09875b",
+    "backend/app/core/firebase_auth.py": "2ff4deb5749853bb709882c39fe61ac87710ceac8c479a7b152026a142295572",
+    "backend/app/core/config.py": "0c90b39c80125cace38c3ed596632f9292e7b3018dc2db2ba526ee7ad563fee4"
+  }
+}

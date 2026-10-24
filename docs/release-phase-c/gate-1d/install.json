@@ -1,0 +1,1382 @@
+{
+  "version": "1",
+  "pip_version": "25.2",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/e3/d3/fe159efc61e57acccabc582d6072be77db1534303d823642cccfd0cf51f6/firebase_admin-7.7.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=0a341ebbd1f80301fa11034f5e86ab0d0f00dde19253d2ee50cf98be2a7a2f33",
+          "hashes": {
+            "sha256": "0a341ebbd1f80301fa11034f5e86ab0d0f00dde19253d2ee50cf98be2a7a2f33"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "firebase_admin",
+        "version": "7.7.0",
+        "dynamic": [
+          "author",
+          "classifier",
+          "description",
+          "home-page",
+          "keywords",
+          "license",
+          "license-file",
+          "project-url",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "Firebase Admin Python SDK",
+        "description": "The Firebase Admin Python SDK enables server-side (backend) Python developers to integrate Firebase into their services and applications.\n",
+        "keywords": [
+          "firebase",
+          "cloud",
+          "development"
+        ],
+        "home_page": "https://firebase.google.com/docs/admin/setup/",
+        "author": "Firebase",
+        "license": "Apache License 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Build Tools",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "License :: OSI Approved :: Apache Software License"
+        ],
+        "requires_dist": [
+          "cachecontrol>=0.14.3",
+          "google-api-core[grpc]<3.0.0dev,>=2.25.1; platform_python_implementation != \"PyPy\"",
+          "google-cloud-firestore>=2.21.0; platform_python_implementation != \"PyPy\"",
+          "google-cloud-storage>=3.1.1",
+          "pyjwt[crypto]>=2.10.1",
+          "cryptography<44.0.0; platform_python_implementation == \"PyPy\" and python_version < \"3.11\"",
+          "httpx[http2]==0.28.1"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Release Notes, https://firebase.google.com/support/release-notes/admin/python",
+          "Source, https://github.com/firebase/firebase-admin-python"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/63/5e/ea85dbdb29e05a1dab94be7e4c07e5099b7048074f9ededf7d39636a878a/google_api_core-2.43.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=dd588ae9de5e372be89b87c68b1e1555fe89add1809d623182b773d14f96859a",
+          "hashes": {
+            "sha256": "dd588ae9de5e372be89b87c68b1e1555fe89add1809d623182b773d14f96859a"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-api-core",
+        "version": "2.43.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Google API client core library",
+        "description": "Core Library for Google Client Libraries\n========================================\n\n|pypi| |versions|\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers used by all Google API clients. For more information, see the\n`documentation`_.\n\n.. |pypi| image:: https://img.shields.io/pypi/v/google-api_core.svg\n   :target: https://pypi.org/project/google-api_core/\n.. |versions| image:: https://img.shields.io/pypi/pyversions/google-api_core.svg\n   :target: https://pypi.org/project/google-api_core/\n.. _documentation: https://googleapis.dev/python/google-api-core/latest\n\n\nSupported Python Versions\n-------------------------\nPython >= 3.10\n\n\nUnsupported Python Versions\n---------------------------\nPython <= 3.9\n\nThe last version of this library compatible with Python 2.7 and 3.5 is\n`google-api-core==1.31.1`.\n\nThe last version of this library compatible with Python 3.6 is\n`google-api-core==2.8.2`.\n\nThe last version of this library compatible with Python 3.7 and 3.8 is\n`google-api-core==2.29.0`.\n\nThe last version of this library compatible with Python 3.9 is\n`google-api-core==2.30.3`.\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Google LLC <googleapis-packages@google.com>",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "googleapis-common-protos<2.0.0,>=1.69.2",
+          "protobuf<8.0.0,>=6.33.5",
+          "proto-plus<2.0.0,>=1.26.1",
+          "google-auth<3.0.0,>=2.14.1",
+          "requests<3.0.0,>=2.33.0",
+          "opentelemetry-api<2.0.0,>=1.44.0",
+          "google-auth[aiohttp]<3.0.0,>=2.14.1; extra == \"async-rest\"",
+          "aiohttp>=3.13.4; extra == \"async-rest\"",
+          "grpcio<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\"",
+          "opentelemetry-instrumentation-grpc<1.0.0,>=0.65b0; extra == \"tracing\"",
+          "opentelemetry-sdk<2.0.0,>=1.44.0; extra == \"testing\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/googleapis/google-cloud-python/tree/main/packages/google-api-core",
+          "Documentation, https://googleapis.dev/python/google-api-core/latest/",
+          "Repository, https://github.com/googleapis/google-cloud-python"
+        ],
+        "provides_extra": [
+          "async-rest",
+          "grpc",
+          "tracing",
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/eb/a3/87fe9b7203ec2e56ea6a57c75e6d632eaf9487c7f7978cdad1d801bee0af/google_auth-2.62.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=4ff4319aeb4ad128409759d397a9fcafad126d0031d241cc0dd6b9a00b43e3f3",
+          "hashes": {
+            "sha256": "4ff4319aeb4ad128409759d397a9fcafad126d0031d241cc0dd6b9a00b43e3f3"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-auth",
+        "version": "2.62.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "keywords",
+          "license",
+          "license-file",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "Google Authentication Library",
+        "description": "Google Auth Python Library\n==========================\n\n|pypi|\n\nThis library simplifies using Google's various server-to-server authentication\nmechanisms to access Google APIs.\n\n.. |pypi| image:: https://img.shields.io/pypi/v/google-auth.svg\n   :target: https://pypi.python.org/pypi/google-auth\n\nInstalling\n----------\n\nYou can install using `pip`_::\n\n    $ pip install google-auth\n\n.. _pip: https://pip.pypa.io/en/stable/\n\nFor more information on setting up your Python development environment, please refer to `Python Development Environment Setup Guide`_ for Google Cloud Platform.\n\n.. _`Python Development Environment Setup Guide`: https://cloud.google.com/python/docs/setup\n\nExtras\n------\n\ngoogle-auth has few extras that you can install. For example::\n\n    $ pip install google-auth[pyopenssl]\n\nNote that the extras pyopenssl and enterprise_cert should not be used together because they use conflicting versions of `cryptography`_.\n\n.. _`cryptography`: https://cryptography.io/en/latest/\n\nSupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^\nPython >= 3.10\n\n\n\nDocumentation\n-------------\n\nGoogle Auth Python Library has usage and reference documentation at https://googleapis.dev/python/google-auth/latest/index.html.\n\nCurrent Maintainers\n-------------------\n- googleapis-auth@google.com\n\nAuthors\n-------\n\n- `@theacodes <https://github.com/theacodes>`_ (Thea Flowers)\n- `@dhermes <https://github.com/dhermes>`_ (Danny Hermes)\n- `@lukesneeringer <https://github.com/lukesneeringer>`_ (Luke Sneeringer)\n- `@busunkim96 <https://github.com/busunkim96>`_ (Bu Sun Kim)\n\nContributing\n------------\n\nContributions to this library are always welcome and highly encouraged.\n\nSee `CONTRIBUTING.rst`_ for more information on how to get started.\n\n.. _CONTRIBUTING.rst: https://github.com/googleapis/google-auth-library-python/blob/main/CONTRIBUTING.rst\n\nLicense\n-------\n\nApache 2.0 - See `the LICENSE`_ for more information.\n\n.. _the LICENSE: https://github.com/googleapis/google-auth-library-python/blob/main/LICENSE\n",
+        "keywords": [
+          "google",
+          "auth",
+          "oauth",
+          "client"
+        ],
+        "home_page": "https://github.com/googleapis/google-cloud-python/tree/main/packages/google-auth",
+        "author": "Google Cloud Platform",
+        "author_email": "googleapis-packages@google.com",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Operating System :: POSIX",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: OS Independent",
+          "Topic :: Internet :: WWW/HTTP"
+        ],
+        "requires_dist": [
+          "pyasn1-modules>=0.2.1",
+          "cryptography>=38.0.3; python_version < \"3.14\"",
+          "cryptography>=41.0.5; python_version >= \"3.14\"",
+          "cryptography>=38.0.3; python_version < \"3.14\" and extra == \"cryptography\"",
+          "cryptography>=41.0.5; python_version >= \"3.14\" and extra == \"cryptography\"",
+          "cryptography>=38.0.3; python_version < \"3.14\" and extra == \"pyopenssl\"",
+          "cryptography>=41.0.5; python_version >= \"3.14\" and extra == \"pyopenssl\"",
+          "aiohttp<4.0.0,>=3.8.0; python_version < \"3.14\" and extra == \"aiohttp\"",
+          "aiohttp<4.0.0,>=3.9.0; python_version >= \"3.14\" and extra == \"aiohttp\"",
+          "requests<3.0.0,>=2.30.0; extra == \"aiohttp\"",
+          "cryptography>=38.0.3; python_version < \"3.14\" and extra == \"enterprise-cert\"",
+          "cryptography>=41.0.5; python_version >= \"3.14\" and extra == \"enterprise-cert\"",
+          "pyjwt>=2.0; extra == \"pyjwt\"",
+          "pyu2f>=0.1.5; extra == \"reauth\"",
+          "requests<3.0.0,>=2.30.0; extra == \"requests\"",
+          "grpcio<2.0.0,>=1.59.0; python_version < \"3.14\" and extra == \"testing\"",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"testing\"",
+          "flask; extra == \"testing\"",
+          "freezegun; extra == \"testing\"",
+          "pyjwt>=2.0; extra == \"testing\"",
+          "pytest; extra == \"testing\"",
+          "pytest-cov; extra == \"testing\"",
+          "pytest-localserver; extra == \"testing\"",
+          "pyu2f>=0.1.5; extra == \"testing\"",
+          "responses; extra == \"testing\"",
+          "urllib3<3.0.0,>=1.26.15; extra == \"testing\"",
+          "packaging>=20.0; extra == \"testing\"",
+          "aiohttp<4.0.0,>=3.8.0; python_version < \"3.14\" and extra == \"testing\"",
+          "aiohttp<4.0.0,>=3.9.0; python_version >= \"3.14\" and extra == \"testing\"",
+          "requests<3.0.0,>=2.30.0; extra == \"testing\"",
+          "aioresponses; extra == \"testing\"",
+          "pytest-asyncio; extra == \"testing\"",
+          "urllib3<3.0.0,>=1.26.15; extra == \"urllib3\"",
+          "packaging>=20.0; extra == \"urllib3\"",
+          "grpcio<2.0.0,>=1.59.0; python_version < \"3.14\" and extra == \"grpc\"",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\""
+        ],
+        "requires_python": ">=3.10",
+        "provides_extra": [
+          "cryptography",
+          "pyopenssl",
+          "aiohttp",
+          "enterprise-cert",
+          "pyjwt",
+          "reauth",
+          "requests",
+          "testing",
+          "urllib3",
+          "rsa",
+          "grpc"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/05/6d/78dc67a9e779e594b49bf62604034d3a6aa428a55afc729cafda4b7333e1/googleapis_common_protos-1.76.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=59e13344a9f3651aa201a03e2bee815a3bf43a4baf1f9ff8a9b62a840ce25fac",
+          "hashes": {
+            "sha256": "59e13344a9f3651aa201a03e2bee815a3bf43a4baf1f9ff8a9b62a840ce25fac"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "googleapis-common-protos",
+        "version": "1.76.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Common protobufs used in Google APIs",
+        "description": "Python Client for Service Config\n================================\n\n|stable| |pypi| |versions|\n\n- `Client Library Documentation`_\n\n.. |stable| image:: https://img.shields.io/badge/support-stable-gold.svg\n   :target: https://github.com/googleapis/google-cloud-python/blob/main/README.rst#stability-levels\n.. |pypi| image:: https://img.shields.io/pypi/v/googleapis-common-protos.svg\n   :target: https://pypi.org/project/googleapis-common-protos/\n.. |versions| image:: https://img.shields.io/pypi/pyversions/googleapis-common-protos.svg\n   :target: https://pypi.org/project/googleapis-common-protos/\n.. _Client Library Documentation: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos/summary_overview\n\nQuick Start\n-----------\n\nIn order to use this library, you first need to go through the following steps:\n\n1. `Select or create a Cloud Platform project.`_\n2. `Enable billing for your project.`_\n3. `Set up Authentication.`_\n\n.. _Select or create a Cloud Platform project.: https://console.cloud.google.com/project\n.. _Enable billing for your project.: https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project\n.. _Set up Authentication.: https://googleapis.dev/python/google-api-core/latest/auth.html\n\nInstallation\n~~~~~~~~~~~~\n\nInstall this library in a virtual environment using `venv`_. `venv`_ is a tool that\ncreates isolated Python environments. These isolated environments can have separate\nversions of Python packages, which allows you to isolate one project's dependencies\nfrom the dependencies of other projects.\n\nWith `venv`_, it's possible to install this library without needing system\ninstall permissions, and without clashing with the installed system\ndependencies.\n\n.. _`venv`: https://docs.python.org/3/library/venv.html\n\n\nCode samples and snippets\n~~~~~~~~~~~~~~~~~~~~~~~~~\n\nCode samples and snippets live in the `samples/`_ folder.\n\n.. _samples/: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos/samples\n\n\nSupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^\nOur client libraries are compatible with all current `active`_ and `maintenance`_ versions of\nPython.\n\nPython >= 3.10, including 3.14\n\n.. _active: https://devguide.python.org/devcycle/#in-development-main-branch\n.. _maintenance: https://devguide.python.org/devcycle/#maintenance-branches\n\nUnsupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPython <= 3.9\n\n\nIf you are using an `end-of-life`_\nversion of Python, we recommend that you update as soon as possible to an actively supported version.\n\n.. _end-of-life: https://devguide.python.org/devcycle/#end-of-life-branches\n\nMac/Linux\n^^^^^^^^^\n\n.. code-block:: console\n\n    python3 -m venv <your-env>\n    source <your-env>/bin/activate\n    pip install googleapis-common-protos\n\n\nWindows\n^^^^^^^\n\n.. code-block:: console\n\n    py -m venv <your-env>\n    .\\<your-env>\\Scripts\\activate\n    pip install googleapis-common-protos\n\nNext Steps\n~~~~~~~~~~\n\n-  Read the `Client Library Documentation`_ for Service Config\n   to see other available methods on the client.\n-  View this `README`_ to see the full list of Cloud\n   APIs that we cover.\n\n.. _README: https://github.com/googleapis/google-cloud-python/blob/main/README.rst\n\nLogging\n-------\n\nThis library uses the standard Python :code:`logging` functionality to log some RPC events that could be of interest for debugging and monitoring purposes.\nNote the following:\n\n#. Logs may contain sensitive information. Take care to **restrict access to the logs** if they are saved, whether it be on local storage or on Google Cloud Logging.\n#. Google may refine the occurrence, level, and content of various log messages in this library without flagging such changes as breaking. **Do not depend on immutability of the logging events**.\n#. By default, the logging events from this library are not handled. You must **explicitly configure log handling** using one of the mechanisms below.\n\nSimple, environment-based configuration\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nTo enable logging for this library without any changes in your code, set the :code:`GOOGLE_SDK_PYTHON_LOGGING_SCOPE` environment variable to a valid Google\nlogging scope. This configures handling of logging events (at level :code:`logging.DEBUG` or higher) from this library in a default manner, emitting the logged\nmessages in a structured format. It does not currently allow customizing the logging levels captured nor the handlers, formatters, etc. used for any logging\nevent.\n\nA logging scope is a period-separated namespace that begins with :code:`google`, identifying the Python module or package to log.\n\n- Valid logging scopes: :code:`google`, :code:`google.cloud.asset.v1`, :code:`google.api`, :code:`google.auth`, etc.\n- Invalid logging scopes: :code:`foo`, :code:`123`, etc.\n\n**NOTE**: If the logging scope is invalid, the library does not set up any logging handlers.\n\nEnvironment-Based Examples\n^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n- Enabling the default handler for all Google-based loggers\n\n.. code-block:: console\n\n    export GOOGLE_SDK_PYTHON_LOGGING_SCOPE=google\n\n- Enabling the default handler for a specific Google module (for a client library called :code:`library_v1`):\n\n.. code-block:: console\n\n    export GOOGLE_SDK_PYTHON_LOGGING_SCOPE=google.cloud.library_v1\n\n\nAdvanced, code-based configuration\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nYou can also configure a valid logging scope using Python's standard `logging` mechanism.\n\nCode-Based Examples\n^^^^^^^^^^^^^^^^^^^\n\n- Configuring a handler for all Google-based loggers\n\n.. code-block:: python\n\n    import logging\n    \n    from google.cloud import library_v1\n    \n    base_logger = logging.getLogger(\"google\")\n    base_logger.addHandler(logging.StreamHandler())\n    base_logger.setLevel(logging.DEBUG)\n\n- Configuring a handler for a specific Google module (for a client library called :code:`library_v1`):\n\n.. code-block:: python\n\n    import logging\n    \n    from google.cloud import library_v1\n    \n    base_logger = logging.getLogger(\"google.cloud.library_v1\")\n    base_logger.addHandler(logging.StreamHandler())\n    base_logger.setLevel(logging.DEBUG)\n\nLogging details\n~~~~~~~~~~~~~~~\n\n#. Regardless of which of the mechanisms above you use to configure logging for this library, by default logging events are not propagated up to the root\n   logger from the `google`-level logger. If you need the events to be propagated to the root logger, you must explicitly set\n   :code:`logging.getLogger(\"google\").propagate = True` in your code.\n#. You can mix the different logging configurations above for different Google modules. For example, you may want use a code-based logging configuration for\n   one library, but decide you need to also set up environment-based logging configuration for another library.\n\n   #. If you attempt to use both code-based and environment-based configuration for the same module, the environment-based configuration will be ineffectual\n      if the code -based configuration gets applied first.\n\n#. The Google-specific logging configurations (default handlers for environment-based configuration; not propagating logging events to the root logger) get\n   executed the first time *any* client library is instantiated in your application, and only if the affected loggers have not been previously configured.\n   (This is the reason for 2.i. above.)\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Google LLC <googleapis-packages@google.com>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "protobuf<8.0.0,>=6.33.5",
+          "grpcio<2.0.0,>=1.59.0; extra == \"grpc\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Repository, https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos"
+        ],
+        "provides_extra": [
+          "grpc"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/68/25/5c315847ab3bd6d3b9f3caad178596eb1affd5aafd02374813b27bddf708/grpcio-1.84.1-cp313-cp313-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=b7452ccc592e40e4167adec46195d85387c8036f0aadf6f96ab6ed931205d0ce",
+          "hashes": {
+            "sha256": "b7452ccc592e40e4167adec46195d85387c8036f0aadf6f96ab6ed931205d0ce"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "grpcio",
+        "version": "1.84.1",
+        "dynamic": [
+          "classifier",
+          "license-file",
+          "provides-extra",
+          "requires-dist",
+          "requires-python"
+        ],
+        "summary": "HTTP/2-based RPC framework",
+        "description": "gRPC Python\r\n===========\r\n\r\nPackage for gRPC Python.\r\n\r\n\r\nInstallation\r\n------------\r\n\r\ngRPC Python is available for Linux, macOS, and Windows.\r\n\r\nInstalling From PyPI\r\n~~~~~~~~~~~~~~~~~~~~\r\n\r\nIf you are installing locally...\r\n\r\n::\r\n\r\n  $ pip install grpcio\r\n\r\nElse system wide (on Ubuntu)...\r\n\r\n::\r\n\r\n  $ sudo pip install grpcio\r\n\r\nIf you're on Windows make sure that you installed the :code:`pip.exe` component\r\nwhen you installed Python (if not go back and install it!) then invoke:\r\n\r\n::\r\n\r\n  $ pip.exe install grpcio\r\n\r\nWindows users may need to invoke :code:`pip.exe` from a command line ran as\r\nadministrator.\r\n\r\nn.b. On Windows and on Mac OS X one *must* have a recent release of :code:`pip`\r\nto retrieve the proper wheel from PyPI. Be sure to upgrade to the latest\r\nversion!\r\n\r\nInstalling From Source\r\n~~~~~~~~~~~~~~~~~~~~~~\r\n\r\nBuilding from source requires that you have the Python headers (usually a\r\npackage named :code:`python-dev`).\r\n\r\n::\r\n\r\n  $ export REPO_ROOT=grpc  # REPO_ROOT can be any directory of your choice\r\n  $ git clone -b RELEASE_TAG_HERE https://github.com/grpc/grpc $REPO_ROOT\r\n  $ cd $REPO_ROOT\r\n  $ git submodule update --init\r\n\r\n  # To include systemd socket-activation feature in the build,\r\n  # first install the `libsystemd-dev` package, then :\r\n  $ export GRPC_PYTHON_BUILD_WITH_SYSTEMD=1\r\n\r\n  # For the next two commands do `sudo pip install` if you get permission-denied errors\r\n  $ pip install -r requirements.txt\r\n  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .\r\n\r\nYou cannot currently install Python from source on Windows. Things might work\r\nout for you in MSYS2 (follow the Linux instructions), but it isn't officially\r\nsupported at the moment.\r\n\r\nTroubleshooting\r\n~~~~~~~~~~~~~~~\r\n\r\nHelp, I ...\r\n\r\n* **... see the following error on some platforms**\r\n\r\n  ::\r\n\r\n    /tmp/pip-build-U8pSsr/cython/Cython/Plex/Scanners.c:4:20: fatal error: Python.h: No such file or directory\r\n    #include \"Python.h\"\r\n                    ^\r\n    compilation terminated.\r\n\r\n  You can fix it by installing `python-dev` package. i.e\r\n\r\n  ::\r\n\r\n    sudo apt-get install python-dev\r\n\r\n\r\nVersioning\r\n~~~~~~~~~~\r\n\r\ngRPC Python is developed in a monorepo shared with implementations of gRPC in\r\nother programming languages. While the minor versions are released in\r\nlock-step with other languages in the repo (e.g. 1.63.0 is guaranteed to exist\r\nfor all languages), patch versions may be specific to only a single\r\nlanguage. For example, if 1.63.1 is a C++-specific patch, 1.63.1 may not be\r\nuploaded to PyPi. As a result, it is __not__ a good assumption that the latest\r\npatch for a given minor version on Github is also the latest patch for that\r\nsame minor version on PyPi.\r\n\r\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "The gRPC Authors <grpc-io@googlegroups.com>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15"
+        ],
+        "requires_dist": [
+          "typing-extensions~=4.12",
+          "grpcio-tools>=1.84.1; extra == \"protobuf\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://grpc.io",
+          "Source Code, https://github.com/grpc/grpc",
+          "Bug Tracker, https://github.com/grpc/grpc/issues",
+          "Documentation, https://grpc.github.io/grpc/python"
+        ],
+        "provides_extra": [
+          "protobuf"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/c7/e2/b9a35118c6c231a3710a0b4f2174da87f2c09045e743c1edc221b4659900/grpcio_status-1.84.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=5a1455bf5b39fe2a3d09d71661e59c97622c73888ad11f13109ce82220b88218",
+          "hashes": {
+            "sha256": "5a1455bf5b39fe2a3d09d71661e59c97622c73888ad11f13109ce82220b88218"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "grpcio-status",
+        "version": "1.84.1",
+        "dynamic": [
+          "classifier",
+          "license-file",
+          "requires-dist",
+          "requires-python"
+        ],
+        "summary": "Status proto mapping for gRPC",
+        "description": "gRPC Python Status Proto\n===========================\n\nReference package for GRPC Python status proto mapping.\n\n\nDependencies\n------------\n\nDepends on the `grpcio` package, available from PyPI via `pip install grpcio`.\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "The gRPC Authors <grpc-io@googlegroups.com>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15"
+        ],
+        "requires_dist": [
+          "protobuf<8.0.0,>=6.33.5",
+          "grpcio>=1.84.1",
+          "googleapis-common-protos>=1.5.5"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://grpc.io",
+          "Documentation, https://grpc.github.io/grpc/python/grpc_status.html"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/7e/22/e85faf23bd72a92d1921e37d674ca56eb298a3c8be31fdecef0ff2b3aaac/h2-4.4.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=0e25f1462b23c9cb82d9eb02e28bc706dac2a68cb457c6a0d74d63c8a2a5d0e6",
+          "hashes": {
+            "sha256": "0e25f1462b23c9cb82d9eb02e28bc706dac2a68cb457c6a0d74d63c8a2a5d0e6"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "h2",
+        "version": "4.4.1",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Pure-Python HTTP/2 protocol implementation",
+        "description": "=========================\nh2: HTTP/2 Protocol Stack\n=========================\n\n.. image:: https://github.com/python-hyper/h2/workflows/CI/badge.svg\n    :target: https://github.com/python-hyper/h2/actions\n    :alt: Build Status\n.. image:: https://codecov.io/gh/python-hyper/h2/branch/master/graph/badge.svg\n    :target: https://codecov.io/gh/python-hyper/h2\n    :alt: Code Coverage\n.. image:: https://readthedocs.org/projects/h2/badge/?version=latest\n    :target: https://h2.readthedocs.io/en/latest/\n    :alt: Documentation Status\n.. image:: https://img.shields.io/badge/chat-join_now-brightgreen.svg\n    :target: https://gitter.im/python-hyper/community\n    :alt: Chat community\n\n.. image:: https://raw.github.com/python-hyper/documentation/master/source/logo/hyper-black-bg-white.png\n\nThis repository contains a pure-Python implementation of a HTTP/2 protocol\nstack. It's written from the ground up to be embeddable in whatever program you\nchoose to use, ensuring that you can speak HTTP/2 regardless of your\nprogramming paradigm.\n\nYou use it like this:\n\n.. code-block:: python\n\n    import h2.connection\n    import h2.config\n\n    config = h2.config.H2Configuration()\n    conn = h2.connection.H2Connection(config=config)\n    conn.send_headers(stream_id=stream_id, headers=headers)\n    conn.send_data(stream_id, data)\n    socket.sendall(conn.data_to_send())\n    events = conn.receive_data(socket_data)\n\nThis repository does not provide a parsing layer, a network layer, or any rules\nabout concurrency. Instead, it's a purely in-memory solution, defined in terms\nof data actions and HTTP/2 frames. This is one building block of a full Python\nHTTP implementation.\n\nTo install it, just run:\n\n.. code-block:: console\n\n    $ python -m pip install h2\n\nDocumentation\n=============\n\nDocumentation is available at https://h2.readthedocs.io .\n\nContributing\n============\n\n``h2`` welcomes contributions from anyone! Unlike many other projects we\nare happy to accept cosmetic contributions and small contributions, in addition\nto large feature requests and changes.\n\nBefore you contribute (either by opening an issue or filing a pull request),\nplease `read the contribution guidelines`_.\n\n.. _read the contribution guidelines: https://python-hyper.org/en/latest/contributing.html\n\nLicense\n=======\n\n``h2`` is made available under the MIT License. For more details, see the\n``LICENSE`` file in the repository.\n\nAuthors\n=======\n\n``h2`` was authored by Cory Benfield and is maintained\nby the members of `python-hyper <https://github.com/orgs/python-hyper/people>`_.\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Cory Benfield <cory@lukasa.co.uk>",
+        "maintainer_email": "Thomas Kriechbaumer <thomas@kriechbaumer.name>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython"
+        ],
+        "requires_dist": [
+          "hyperframe<7,>=6.1",
+          "hpack<5,>=4.2"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/python-hyper/h2/",
+          "Bug Reports, https://github.com/python-hyper/h2/issues",
+          "Source, https://github.com/python-hyper/h2/",
+          "Documentation, https://python-hyper.org/"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/71/b4/4a9fcfb2aef6ba44d9073ecd301443aa00b3dac95de5619f2a7de7ec8a91/hpack-4.2.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=858ac0b02280fa582b5080d68db0899c62a80375e0e5413a74970c5e518b6986",
+          "hashes": {
+            "sha256": "858ac0b02280fa582b5080d68db0899c62a80375e0e5413a74970c5e518b6986"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "hpack",
+        "version": "4.2.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Pure-Python HPACK header encoding",
+        "description": "========================================\nhpack: HTTP/2 Header Encoding for Python\n========================================\n\n.. image:: https://github.com/python-hyper/hpack/workflows/CI/badge.svg\n    :target: https://github.com/python-hyper/hpack/actions\n    :alt: Build Status\n.. image:: https://codecov.io/gh/python-hyper/hpack/branch/master/graph/badge.svg\n    :target: https://codecov.io/gh/python-hyper/hpack\n    :alt: Code Coverage\n.. image:: https://readthedocs.org/projects/hpack/badge/?version=latest\n    :target: https://hpack.readthedocs.io/en/latest/\n    :alt: Documentation Status\n.. image:: https://img.shields.io/badge/chat-join_now-brightgreen.svg\n    :target: https://gitter.im/python-hyper/community\n    :alt: Chat community\n\n.. image:: https://raw.github.com/python-hyper/documentation/master/source/logo/hyper-black-bg-white.png\n\nThis module contains a pure-Python HTTP/2 header encoding (HPACK) logic for use\nin Python programs that implement HTTP/2.\n\nDocumentation\n=============\n\nDocumentation is available at https://hpack.readthedocs.io .\n\nQuickstart:\n\n.. code-block:: python\n\n    from hpack import Encoder, Decoder\n\n    headers = [\n        (':method', 'GET'),\n        (':path', '/jimiscool/'),\n        ('X-Some-Header', 'some_value'),\n    ]\n\n    e = Encoder()\n    encoded_bytes = e.encode(headers)\n\n    d = Decoder()\n    decoded_headers = d.decode(encoded_bytes)\n\n\nContributing\n============\n\n``hpack`` welcomes contributions from anyone! Unlike many other projects we are\nhappy to accept cosmetic contributions and small contributions, in addition to\nlarge feature requests and changes.\n\nBefore you contribute (either by opening an issue or filing a pull request),\nplease `read the contribution guidelines`_.\n\n.. _read the contribution guidelines: http://hyper.readthedocs.org/en/development/contributing.html\n\nLicense\n=======\n\n``hpack`` is made available under the MIT License. For more details, see the\n``LICENSE`` file in the repository.\n\nAuthors\n=======\n\n``hpack`` is maintained by Cory Benfield, with contributions from others. For\nmore details about the contributors, please see ``CONTRIBUTORS.rst``.\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Cory Benfield <cory@lukasa.co.uk>",
+        "maintainer_email": "Thomas Kriechbaumer <thomas@kriechbaumer.name>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/python-hyper/hpack/",
+          "Bug Reports, https://github.com/python-hyper/hpack/issues",
+          "Source, https://github.com/python-hyper/hpack/",
+          "Documentation, https://python-hyper.org/"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/48/30/47d0bf6072f7252e6521f3447ccfa40b421b6824517f82854703d0f5a98b/hyperframe-6.1.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=b03380493a519fce58ea5af42e4a42317bf9bd425596f7a0835ffce80f1a42e5",
+          "hashes": {
+            "sha256": "b03380493a519fce58ea5af42e4a42317bf9bd425596f7a0835ffce80f1a42e5"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.2",
+        "name": "hyperframe",
+        "version": "6.1.0",
+        "summary": "Pure-Python HTTP/2 framing",
+        "description": "======================================\nhyperframe: Pure-Python HTTP/2 framing\n======================================\n\n.. image:: https://github.com/python-hyper/hyperframe/workflows/CI/badge.svg\n    :target: https://github.com/python-hyper/hyperframe/actions\n    :alt: Build Status\n.. image:: https://codecov.io/gh/python-hyper/hyperframe/branch/master/graph/badge.svg\n    :target: https://codecov.io/gh/python-hyper/hyperframe\n    :alt: Code Coverage\n.. image:: https://readthedocs.org/projects/hyperframe/badge/?version=latest\n    :target: https://hyperframe.readthedocs.io/en/latest/\n    :alt: Documentation Status\n.. image:: https://img.shields.io/badge/chat-join_now-brightgreen.svg\n    :target: https://gitter.im/python-hyper/community\n    :alt: Chat community\n\nThis library contains the HTTP/2 framing code used in the `hyper`_ project. It\nprovides a pure-Python codebase that is capable of decoding a binary stream\ninto HTTP/2 frames.\n\nThis library is used directly by `hyper`_ and a number of other projects to\nprovide HTTP/2 frame decoding logic.\n\nContributing\n============\n\nhyperframe welcomes contributions from anyone! Unlike many other projects we\nare happy to accept cosmetic contributions and small contributions, in addition\nto large feature requests and changes.\n\nBefore you contribute (either by opening an issue or filing a pull request),\nplease `read the contribution guidelines`_.\n\n.. _read the contribution guidelines: http://hyper.readthedocs.org/en/development/contributing.html\n\nLicense\n=======\n\nhyperframe is made available under the MIT License. For more details, see the\n``LICENSE`` file in the repository.\n\nAuthors\n=======\n\nhyperframe is maintained by Cory Benfield, with contributions from others. For\nmore details about the contributors, please see ``CONTRIBUTORS.rst``.\n\n.. _hyper: http://python-hyper.org/\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Cory Benfield <cory@lukasa.co.uk>",
+        "maintainer_email": "Thomas Kriechbaumer <thomas@kriechbaumer.name>",
+        "license": "The MIT License (MIT)\n\nCopyright (c) 2014 Cory Benfield\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Homepage, https://github.com/python-hyper/hyperframe/",
+          "Bug Reports, https://github.com/python-hyper/hyperframe/issues",
+          "Source, https://github.com/python-hyper/hyperframe/",
+          "Documentation, https://python-hyper.org/"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/1e/41/f7dcf80b81ee8e71c1a2b59f14208bc723edbd89ed027a73b175abf6348e/opentelemetry_api-1.45.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb",
+          "hashes": {
+            "sha256": "b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.5",
+        "name": "opentelemetry-api",
+        "version": "1.45.1",
+        "summary": "OpenTelemetry Python API",
+        "description": "OpenTelemetry Python API\n============================================================================\n\n|pypi|\n\n.. |pypi| image:: https://badge.fury.io/py/opentelemetry-api.svg\n   :target: https://pypi.org/project/opentelemetry-api/\n\nInstallation\n------------\n\n::\n\n    pip install opentelemetry-api\n\nReferences\n----------\n\n* `OpenTelemetry Project <https://opentelemetry.io/>`_\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "OpenTelemetry Authors <cncf-opentelemetry-contributors@lists.cncf.io>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Framework :: OpenTelemetry",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "typing-extensions>=4.5.0"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api",
+          "Repository, https://github.com/open-telemetry/opentelemetry-python"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/b1/05/a3ef5b1161498e7b5a2a60288a9cf41b9149e94555423a43ec536737ac1a/proto_plus-1.29.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=8acd070469a7aaf43f440b022ef9757c8cac1a9f866e933f59ae98669ddc6c8b",
+          "hashes": {
+            "sha256": "8acd070469a7aaf43f440b022ef9757c8cac1a9f866e933f59ae98669ddc6c8b"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "proto-plus",
+        "version": "1.29.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Beautiful, Pythonic protocol buffers",
+        "description": "Proto Plus for Python\n=====================\n\n|pypi| |release level|\n\n    Beautiful, Pythonic protocol buffers.\n\nThis is a wrapper around `protocol buffers`_. Protocol buffers is a\nspecification format for APIs, such as those inside Google.\nThis library provides protocol buffer message classes and objects that\nlargely behave like native Python types.\n\n.. _protocol buffers: https://developers.google.com/protocol-buffers/\n\n\nDocumentation\n-------------\n\n`API Documentation`_ is available on Read the Docs.\n\n.. _API Documentation: https://googleapis.dev/python/proto-plus/latest/\n\n.. |pypi| image:: https://img.shields.io/pypi/v/proto-plus.svg\n   :target: https://pypi.org/project/proto-plus\n.. |release level| image:: https://img.shields.io/badge/release%20level-ga-gold.svg?style&#x3D;flat\n  :target: https://cloud.google.com/terms/launch-stages\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Google LLC <googleapis-packages@google.com>",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Software Development :: Code Generators",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "protobuf<8.0.0,>=6.33.5",
+          "google-api-core>=2.25.0; extra == \"testing\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Documentation, https://googleapis.dev/python/proto-plus/latest/",
+          "Repository, https://github.com/googleapis/google-cloud-python",
+          "Homepage, https://github.com/googleapis/google-cloud-python/tree/main/packages/proto-plus"
+        ],
+        "provides_extra": [
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/8a/55/b77bda4e5e5f5971fb51b07663694690e9afdb9402136c16a522bd621cad/protobuf-7.36.2-cp310-abi3-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=a300819d441e078a5608c0d3c709796bb548136058fda017ae51d425b44fd353",
+          "hashes": {
+            "sha256": "a300819d441e078a5608c0d3c709796bb548136058fda017ae51d425b44fd353"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "protobuf",
+        "version": "7.36.2",
+        "description": "UNKNOWN\n",
+        "home_page": "https://developers.google.com/protocol-buffers/",
+        "author": "protobuf@googlegroups.com",
+        "author_email": "protobuf@googlegroups.com",
+        "license": "3-Clause BSD License",
+        "classifier": [
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_python": ">=3.10"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+          "hashes": {
+            "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "requests",
+        "version": "2.34.2",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Python HTTP for Humans.",
+        "description": "# Requests\n\n[![Version](https://img.shields.io/pypi/v/requests.svg?maxAge=86400)](https://pypi.org/project/requests/)\n[![Supported Versions](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests)\n[![Downloads](https://static.pepy.tech/badge/requests/month)](https://pepy.tech/project/requests)\n[![Contributors](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)\n[![Documentation](https://readthedocs.org/projects/requests/badge/?version=latest)](https://requests.readthedocs.io)\n\n**Requests** is a simple, yet elegant, HTTP library.\n\n```python\n>>> import requests\n>>> r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'application/json; charset=utf8'\n>>> r.encoding\n'utf-8'\n>>> r.text\n'{\"authenticated\": true, ...'\n>>> r.json()\n{'authenticated': True, ...}\n```\n\nRequests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — but nowadays, just use the `json` method!\n\nRequests is one of the most downloaded Python packages today, pulling in around `300M downloads / week` — according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `4,000,000+` repositories.\n\n## Installing Requests and Supported Versions\n\nRequests is available on PyPI:\n\n```console\n$ python -m pip install requests\n```\n\nRequests officially supports Python 3.10+.\n\n## Supported Features & Best–Practices\n\nRequests is ready for the demands of building robust and reliable HTTP–speaking applications, for the needs of today.\n\n- Keep-Alive & Connection Pooling\n- International Domains and URLs\n- Sessions with Cookie Persistence\n- Browser-style TLS/SSL Verification\n- Basic & Digest Authentication\n- Familiar `dict`–like Cookies\n- Automatic Content Decompression and Decoding\n- Multi-part File Uploads\n- SOCKS Proxy Support\n- Connection Timeouts\n- Streaming Downloads\n- Automatic honoring of `.netrc`\n- Chunked HTTP Requests\n\n## Cloning the repository\n\nWhen cloning the Requests repository, you may need to add the `-c\nfetch.fsck.badTimezone=ignore` flag to avoid an error about a bad commit timestamp (see\n[this issue](https://github.com/psf/requests/issues/2690) for more background):\n\n```shell\ngit clone -c fetch.fsck.badTimezone=ignore https://github.com/psf/requests.git\n```\n\nYou can also apply this setting to your global Git config:\n\n```shell\ngit config --global fetch.fsck.badTimezone ignore\n```\n\n---\n\n[![Kenneth Reitz](https://raw.githubusercontent.com/psf/requests/main/ext/kr.png)](https://kennethreitz.org) [![Python Software Foundation](https://raw.githubusercontent.com/psf/requests/main/ext/psf.png)](https://www.python.org/psf)\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Kenneth Reitz <me@kennethreitz.org>",
+        "maintainer_email": "Ian Stapleton Cordasco <graffatcolmingov@gmail.com>, Nate Prewitt <nate.prewitt@gmail.com>",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Free Threading :: 2 - Beta",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Software Development :: Libraries"
+        ],
+        "requires_dist": [
+          "charset_normalizer<4,>=2",
+          "idna<4,>=2.5",
+          "urllib3<3,>=1.26",
+          "certifi>=2023.5.7",
+          "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+          "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Documentation, https://requests.readthedocs.io",
+          "Source, https://github.com/psf/requests"
+        ],
+        "provides_extra": [
+          "security",
+          "socks",
+          "use-chardet-on-py3"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/ef/79/c45f2d53efe6ada1110cf6f9fca095e4ff47a0454444aefdde6ac4789179/cachecontrol-0.14.4-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=b7ac014ff72ee199b5f8af1de29d60239954f223e948196fa3d84adaffc71d2b",
+          "hashes": {
+            "sha256": "b7ac014ff72ee199b5f8af1de29d60239954f223e948196fa3d84adaffc71d2b"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "CacheControl",
+        "version": "0.14.4",
+        "summary": "httplib2 caching for requests",
+        "description": "..\n  SPDX-FileCopyrightText: SPDX-FileCopyrightText: 2015 Eric Larson\n\n  SPDX-License-Identifier: Apache-2.0\n\n==============\n CacheControl\n==============\n\n.. image:: https://img.shields.io/pypi/v/cachecontrol.svg\n    :target: https://pypi.python.org/pypi/cachecontrol\n    :alt: Latest Version\n\n.. image:: https://github.com/psf/cachecontrol/actions/workflows/tests.yml/badge.svg\n  :target: https://github.com/psf/cachecontrol/actions/workflows/tests.yml\n\nCacheControl is a port of the caching algorithms in httplib2_ for use with\nrequests_ session object.\n\nIt was written because httplib2's better support for caching is often\nmitigated by its lack of thread safety. The same is true of requests in\nterms of caching.\n\n\nQuickstart\n==========\n\n.. code-block:: python\n\n  import requests\n\n  from cachecontrol import CacheControl\n\n\n  sess = requests.session()\n  cached_sess = CacheControl(sess)\n\n  response = cached_sess.get('https://google.com')\n\nIf the URL contains any caching based headers, it will cache the\nresult in a simple dictionary.\n\nFor more info, check out the docs_\n\n.. _docs: http://cachecontrol.readthedocs.org/en/latest/\n.. _httplib2: https://github.com/httplib2/httplib2\n.. _requests: http://docs.python-requests.org/\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "requests",
+          "http",
+          "caching",
+          "web"
+        ],
+        "author": "Eric Larson, Frost Ming, William Woodruff",
+        "author_email": "Eric Larson <ericlarson@ionrock.com>, Frost Ming <me@frostming.com>, William Woodruff <william@yossarian.net>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Environment :: Web Environment",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Internet :: WWW/HTTP"
+        ],
+        "requires_dist": [
+          "requests>=2.16.0",
+          "msgpack>=0.5.2,<2.0.0",
+          "cachecontrol[filecache,redis] ; extra == 'dev'",
+          "cherrypy ; extra == 'dev'",
+          "cheroot>=11.1.2 ; extra == 'dev'",
+          "codespell ; extra == 'dev'",
+          "furo ; extra == 'dev'",
+          "mypy ; extra == 'dev'",
+          "pytest ; extra == 'dev'",
+          "pytest-cov ; extra == 'dev'",
+          "ruff ; extra == 'dev'",
+          "sphinx ; extra == 'dev'",
+          "sphinx-copybutton ; extra == 'dev'",
+          "types-redis ; extra == 'dev'",
+          "types-requests ; extra == 'dev'",
+          "filelock>=3.8.0 ; extra == 'filecache'",
+          "redis>=2.10.5 ; extra == 'redis'"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://pypi.org/project/CacheControl/",
+          "Issues, https://github.com/psf/cachecontrol/issues",
+          "Source, https://github.com/psf/cachecontrol"
+        ],
+        "provides_extra": [
+          "dev",
+          "filecache",
+          "redis"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/51/06/c3def9bc4db283103c5901b302ee2a4305cb1e69729244f94d9bd8f8e8e7/msgpack-1.2.3-cp313-cp313-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=bb89b5dc30469c84bbf8684826eb851d82412ca95690e111b9ac5e8fb343961a",
+          "hashes": {
+            "sha256": "bb89b5dc30469c84bbf8684826eb851d82412ca95690e111b9ac5e8fb343961a"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "msgpack",
+        "version": "1.2.3",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "MessagePack serializer",
+        "description": "# MessagePack for Python\r\n\r\n[![Build Status](https://github.com/msgpack/msgpack-python/actions/workflows/wheel.yml/badge.svg)](https://github.com/msgpack/msgpack-python/actions/workflows/wheel.yml)\r\n[![Documentation Status](https://readthedocs.org/projects/msgpack-python/badge/?version=latest)](https://msgpack-python.readthedocs.io/en/latest/?badge=latest)\r\n\r\n## What is this?\r\n\r\n[MessagePack](https://msgpack.org/) is an efficient binary serialization format.\r\nIt lets you exchange data among multiple languages like JSON.\r\nBut it's faster and smaller.\r\nThis package provides CPython bindings for reading and writing MessagePack data.\r\n\r\n## Install\r\n\r\n```\r\n$ pip install msgpack\r\n```\r\n\r\n### Pure Python implementation\r\n\r\nThe extension module in msgpack (`msgpack._cmsgpack`) does not support PyPy.\r\n\r\nBut msgpack provides a pure Python implementation (`msgpack.fallback`) for PyPy.\r\n\r\n\r\n### Windows\r\n\r\nIf you can't use a binary distribution, you need to install Visual Studio\r\nor the Windows SDK on Windows.\r\nWithout the extension, the pure Python implementation on CPython runs slowly.\r\n\r\n\r\n## How to use\r\n\r\n### One-shot pack & unpack\r\n\r\nUse `packb` for packing and `unpackb` for unpacking.\r\nmsgpack provides `dumps` and `loads` as aliases for compatibility with\r\n`json` and `pickle`.\r\n\r\n`pack` and `dump` pack to a file-like object.\r\n`unpack` and `load` unpack from a file-like object.\r\n\r\n```pycon\r\n>>> import msgpack\r\n>>> msgpack.packb([1, 2, 3])\r\n'\\x93\\x01\\x02\\x03'\r\n>>> msgpack.unpackb(_)\r\n[1, 2, 3]\r\n```\r\n\r\nRead the docstring for options.\r\n\r\n\r\n### Streaming unpacking\r\n\r\n`Unpacker` is a \"streaming unpacker\". It unpacks multiple objects from one\r\nstream (or from bytes provided through its `feed` method).\r\n\r\n```py\r\nimport msgpack\r\nfrom io import BytesIO\r\n\r\nbuf = BytesIO()\r\nfor i in range(100):\r\n   buf.write(msgpack.packb(i))\r\n\r\nbuf.seek(0)\r\n\r\nunpacker = msgpack.Unpacker(buf)\r\nfor unpacked in unpacker:\r\n    print(unpacked)\r\n```\r\n\r\n> [!IMPORTANT]\r\n> If `Unpacker.unpack()` stops with an exception other than `OutOfData`, that `Unpacker` cannot be reused.\r\n> Create a new `Unpacker` when reading another stream.\r\n\r\n\r\n### Packing/unpacking of custom data types\r\n\r\nIt is also possible to pack/unpack custom data types. Here is an example for\r\n`datetime.datetime`.\r\n\r\n```py\r\nimport datetime\r\nimport msgpack\r\n\r\nuseful_dict = {\r\n    \"id\": 1,\r\n    \"created\": datetime.datetime.now(),\r\n}\r\n\r\ndef decode_datetime(obj):\r\n    if '__datetime__' in obj:\r\n        obj = datetime.datetime.strptime(obj[\"as_str\"], \"%Y%m%dT%H:%M:%S.%f\")\r\n    return obj\r\n\r\ndef encode_datetime(obj):\r\n    if isinstance(obj, datetime.datetime):\r\n        return {'__datetime__': True, 'as_str': obj.strftime(\"%Y%m%dT%H:%M:%S.%f\")}\r\n    return obj\r\n\r\n\r\npacked_dict = msgpack.packb(useful_dict, default=encode_datetime)\r\nthis_dict_again = msgpack.unpackb(packed_dict, object_hook=decode_datetime)\r\n```\r\n\r\n`Unpacker`'s `object_hook` callback receives a dict; the\r\n`object_pairs_hook` callback may instead be used to receive a list of\r\nkey-value pairs.\r\n\r\nNOTE: msgpack can encode datetime with tzinfo into standard ext type for now.\r\nSee `datetime` option in `Packer` docstring.\r\n\r\n\r\n### Extended types\r\n\r\nIt is also possible to pack/unpack custom data types using the **ext** type.\r\n\r\n```pycon\r\n>>> import msgpack\r\n>>> import array\r\n>>> def default(obj):\r\n...     if isinstance(obj, array.array) and obj.typecode == 'd':\r\n...         return msgpack.ExtType(42, obj.tobytes())\r\n...     raise TypeError(\"Unknown type: %r\" % (obj,))\r\n...\r\n>>> def ext_hook(code, data):\r\n...     if code == 42:\r\n...         a = array.array('d')\r\n...         a.frombytes(data)\r\n...         return a\r\n...     return msgpack.ExtType(code, data)\r\n...\r\n>>> data = array.array('d', [1.2, 3.4])\r\n>>> packed = msgpack.packb(data, default=default)\r\n>>> unpacked = msgpack.unpackb(packed, ext_hook=ext_hook)\r\n>>> data == unpacked\r\nTrue\r\n```\r\n\r\n\r\n### Advanced unpacking control\r\n\r\nAs an alternative to iteration, `Unpacker` objects provide `unpack`,\r\n`skip`, `read_array_header`, and `read_map_header` methods. The former two\r\nread an entire message from the stream, respectively deserializing and returning\r\nthe result, or ignoring it. The latter two methods return the number of elements\r\nin the upcoming container, so that each element in an array, or key-value pair\r\nin a map, can be unpacked or skipped individually.\r\n\r\n\r\n## Notes\r\n\r\n### String and binary types in the old MessagePack spec\r\n\r\nEarly versions of msgpack didn't distinguish string and binary types.\r\nThe type for representing both string and binary types was named **raw**.\r\n\r\nYou can pack into and unpack from this old spec using `use_bin_type=False`\r\nand `raw=True` options.\r\n\r\n```pycon\r\n>>> import msgpack\r\n>>> msgpack.unpackb(msgpack.packb([b'spam', 'eggs'], use_bin_type=False), raw=True)\r\n[b'spam', b'eggs']\r\n>>> msgpack.unpackb(msgpack.packb([b'spam', 'eggs'], use_bin_type=True), raw=False)\r\n[b'spam', 'eggs']\r\n```\r\n\r\n### ext type\r\n\r\nTo use the **ext** type, pass a `msgpack.ExtType` object to the packer.\r\n\r\n```pycon\r\n>>> import msgpack\r\n>>> packed = msgpack.packb(msgpack.ExtType(42, b'xyzzy'))\r\n>>> msgpack.unpackb(packed)\r\nExtType(code=42, data='xyzzy')\r\n```\r\n\r\nYou can use it with `default` and `ext_hook`. See below.\r\n\r\n\r\n### Security\r\n\r\nWhen unpacking data received from an unreliable source, msgpack provides\r\ntwo security options.\r\n\r\n`max_buffer_size` (default: `100*1024*1024`) limits the internal buffer size.\r\nIt is also used to limit preallocated list sizes.\r\n\r\n`strict_map_key` (default: `True`) limits the type of map keys to bytes and str.\r\nWhile the MessagePack spec doesn't limit map key types,\r\nthere is a risk of a hash DoS.\r\nIf you need to support other types for map keys, use `strict_map_key=False`.\r\n\r\n\r\n### Performance tips\r\n\r\nCPython's GC starts when the number of allocated objects grows.\r\nThis means unpacking may trigger unnecessary GC.\r\nYou can use `gc.disable()` when unpacking a large message.\r\n\r\nA list is the default sequence type in Python.\r\nHowever, a tuple is lighter than a list.\r\nYou can use `use_list=False` while unpacking when performance is important.\r\n\r\n\r\n## Major breaking changes in the history\r\n\r\n### msgpack 0.5\r\n\r\nThe package name on PyPI was changed from `msgpack-python` to `msgpack` in 0.5.\r\n\r\nWhen upgrading from msgpack-0.4 or earlier, do `pip uninstall msgpack-python` before\r\n`pip install -U msgpack`.\r\n\r\n\r\n### msgpack 1.0\r\n\r\n* Python 2 support\r\n\r\n  * The extension module no longer supports Python 2.\r\n    The pure Python implementation (`msgpack.fallback`) is used for Python 2.\r\n\r\n  * msgpack 1.0.6 drops official support of Python 2.7, as pip and\r\n    GitHub Action \"setup-python\" no longer supports Python 2.7.\r\n\r\n* Packer\r\n\r\n  * Packer uses `use_bin_type=True` by default.\r\n    Bytes are encoded in the bin type in MessagePack.\r\n  * The `encoding` option is removed. UTF-8 is always used.\r\n\r\n* Unpacker\r\n\r\n  * Unpacker uses `raw=False` by default. It assumes str values are valid UTF-8 strings\r\n    and decodes them to Python str (Unicode) objects.\r\n  * `encoding` option is removed.  You can use `raw=True` to support old format (e.g. unpack into bytes, not str).\r\n  * The default value of `max_buffer_size` is changed from 0 to 100 MiB to avoid DoS attacks.\r\n    You need to pass `max_buffer_size=0` if you have large but safe data.\r\n  * The default value of `strict_map_key` is changed to True to avoid hash DoS.\r\n    You need to pass `strict_map_key=False` if you have data that contain map keys\r\n    whose type is neither bytes nor str.\r\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "msgpack",
+          "messagepack",
+          "serializer",
+          "serialization",
+          "binary"
+        ],
+        "author_email": "Inada Naoki <songofacandy@gmail.com>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "COPYING"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Operating System :: OS Independent",
+          "Topic :: File Formats",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://msgpack.org/",
+          "Documentation, https://msgpack-python.readthedocs.io/",
+          "Repository, https://github.com/msgpack/msgpack-python/",
+          "Tracker, https://github.com/msgpack/msgpack-python/issues",
+          "Changelog, https://github.com/msgpack/msgpack-python/blob/main/CHANGELOG.md"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/e1/88/e064d77571324edaa78f0523620ad7076a74e5848c05d671fe440f665b67/google_cloud_firestore-2.34.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=6279f049336e49181e8c1d2dbf14e9c0cfb75ddf03c70971adc88fb272cdae29",
+          "hashes": {
+            "sha256": "6279f049336e49181e8c1d2dbf14e9c0cfb75ddf03c70971adc88fb272cdae29"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-cloud-firestore",
+        "version": "2.34.1",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "Posix; MacOS X; Windows"
+        ],
+        "summary": "Google Cloud Firestore API client library",
+        "description": "Python Client for Cloud Firestore\n=================================\n\n|stable| |pypi| |versions|\n\n`Cloud Firestore`_: Accesses the NoSQL document database built for automatic scaling, high\nperformance, and ease of application development.\n\n- `Client Library Documentation`_\n- `Product Documentation`_\n\n.. |stable| image:: https://img.shields.io/badge/support-stable-gold.svg\n   :target: https://github.com/googleapis/google-cloud-python/blob/main/README.rst#stability-levels\n.. |pypi| image:: https://img.shields.io/pypi/v/google-cloud-firestore.svg\n   :target: https://pypi.org/project/google-cloud-firestore/\n.. |versions| image:: https://img.shields.io/pypi/pyversions/google-cloud-firestore.svg\n   :target: https://pypi.org/project/google-cloud-firestore/\n.. _Cloud Firestore: https://cloud.google.com/firestore\n.. _Client Library Documentation: https://cloud.google.com/python/docs/reference/firestore/latest/summary_overview\n.. _Product Documentation:  https://cloud.google.com/firestore\n\nQuick Start\n-----------\n\nIn order to use this library, you first need to go through the following steps:\n\n1. `Select or create a Cloud Platform project.`_\n2. `Enable billing for your project.`_\n3. `Enable the Cloud Firestore.`_\n4. `Set up Authentication.`_\n\n.. _Select or create a Cloud Platform project.: https://console.cloud.google.com/project\n.. _Enable billing for your project.: https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project\n.. _Enable the Cloud Firestore.:  https://cloud.google.com/firestore\n.. _Set up Authentication.: https://googleapis.dev/python/google-api-core/latest/auth.html\n\nInstallation\n~~~~~~~~~~~~\n\nInstall this library in a virtual environment using `venv`_. `venv`_ is a tool that\ncreates isolated Python environments. These isolated environments can have separate\nversions of Python packages, which allows you to isolate one project's dependencies\nfrom the dependencies of other projects.\n\nWith `venv`_, it's possible to install this library without needing system\ninstall permissions, and without clashing with the installed system\ndependencies.\n\n.. _`venv`: https://docs.python.org/3/library/venv.html\n\n\nCode samples and snippets\n~~~~~~~~~~~~~~~~~~~~~~~~~\n\nCode samples and snippets live in the `python-docs-samples`_ repo.\n\n.. _`python-docs-samples`: https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/firestore\n\n\nSupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^\nOur client libraries are compatible with all current `active`_ and `maintenance`_ versions of\nPython.\n\nPython >= 3.10, including 3.14\n\n.. _active: https://devguide.python.org/devcycle/#in-development-main-branch\n.. _maintenance: https://devguide.python.org/devcycle/#maintenance-branches\n\nUnsupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPython <= 3.9\n\n\nIf you are using an `end-of-life`_\nversion of Python, we recommend that you update as soon as possible to an actively supported version.\n\n.. _end-of-life: https://devguide.python.org/devcycle/#end-of-life-branches\n\nMac/Linux\n^^^^^^^^^\n\n.. code-block:: console\n\n    python3 -m venv <your-env>\n    source <your-env>/bin/activate\n    pip install google-cloud-firestore\n\n\nWindows\n^^^^^^^\n\n.. code-block:: console\n\n    py -m venv <your-env>\n    .\\<your-env>\\Scripts\\activate\n    pip install google-cloud-firestore\n\nNext Steps\n~~~~~~~~~~\n\n-  Read the `Client Library Documentation`_ for Cloud Firestore\n   to see other available methods on the client.\n-  Read the `Cloud Firestore Product documentation`_ to learn\n   more about the product and see How-to Guides.\n-  View this `README`_ to see the full list of Cloud\n   APIs that we cover.\n\n.. _Cloud Firestore Product documentation:  https://cloud.google.com/firestore\n.. _README: https://github.com/googleapis/google-cloud-python/blob/main/README.rst\n\nLogging\n-------\n\nThis library uses the standard Python :code:`logging` functionality to log some RPC events that could be of interest for debugging and monitoring purposes.\nNote the following:\n\n#. Logs may contain sensitive information. Take care to **restrict access to the logs** if they are saved, whether it be on local storage or on Google Cloud Logging.\n#. Google may refine the occurrence, level, and content of various log messages in this library without flagging such changes as breaking. **Do not depend on immutability of the logging events**.\n#. By default, the logging events from this library are not handled. You must **explicitly configure log handling** using one of the mechanisms below.\n\nSimple, environment-based configuration\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nTo enable logging for this library without any changes in your code, set the :code:`GOOGLE_SDK_PYTHON_LOGGING_SCOPE` environment variable to a valid Google\nlogging scope. This configures handling of logging events (at level :code:`logging.DEBUG` or higher) from this library in a default manner, emitting the logged\nmessages in a structured format. It does not currently allow customizing the logging levels captured nor the handlers, formatters, etc. used for any logging\nevent.\n\nA logging scope is a period-separated namespace that begins with :code:`google`, identifying the Python module or package to log.\n\n- Valid logging scopes: :code:`google`, :code:`google.cloud.asset.v1`, :code:`google.api`, :code:`google.auth`, etc.\n- Invalid logging scopes: :code:`foo`, :code:`123`, etc.\n\n**NOTE**: If the logging scope is invalid, the library does not set up any logging handlers.\n\nEnvironment-Based Examples\n^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n- Enabling the default handler for all Google-based loggers\n\n.. code-block:: console\n\n    export GOOGLE_SDK_PYTHON_LOGGING_SCOPE=google\n\n- Enabling the default handler for a specific Google module (for a client library called :code:`library_v1`):\n\n.. code-block:: console\n\n    export GOOGLE_SDK_PYTHON_LOGGING_SCOPE=google.cloud.library_v1\n\n\nAdvanced, code-based configuration\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nYou can also configure a valid logging scope using Python's standard `logging` mechanism.\n\nCode-Based Examples\n^^^^^^^^^^^^^^^^^^^\n\n- Configuring a handler for all Google-based loggers\n\n.. code-block:: python\n\n    import logging\n    \n    from google.cloud import library_v1\n    \n    base_logger = logging.getLogger(\"google\")\n    base_logger.addHandler(logging.StreamHandler())\n    base_logger.setLevel(logging.DEBUG)\n\n- Configuring a handler for a specific Google module (for a client library called :code:`library_v1`):\n\n.. code-block:: python\n\n    import logging\n    \n    from google.cloud import library_v1\n    \n    base_logger = logging.getLogger(\"google.cloud.library_v1\")\n    base_logger.addHandler(logging.StreamHandler())\n    base_logger.setLevel(logging.DEBUG)\n\nLogging details\n~~~~~~~~~~~~~~~\n\n#. Regardless of which of the mechanisms above you use to configure logging for this library, by default logging events are not propagated up to the root\n   logger from the `google`-level logger. If you need the events to be propagated to the root logger, you must explicitly set\n   :code:`logging.getLogger(\"google\").propagate = True` in your code.\n#. You can mix the different logging configurations above for different Google modules. For example, you may want use a code-based logging configuration for\n   one library, but decide you need to also set up environment-based logging configuration for another library.\n\n   #. If you attempt to use both code-based and environment-based configuration for the same module, the environment-based configuration will be ineffectual\n      if the code -based configuration gets applied first.\n\n#. The Google-specific logging configurations (default handlers for environment-based configuration; not propagating logging events to the root logger) get\n   executed the first time *any* client library is instantiated in your application, and only if the affected loggers have not been previously configured.\n   (This is the reason for 2.i. above.)\n",
+        "home_page": "https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-firestore",
+        "author": "Google LLC",
+        "author_email": "googleapis-packages@google.com",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "google-api-core[grpc]<3.0.0,>=2.28.0",
+          "google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1",
+          "google-cloud-core<3.0.0,>=2.0.0",
+          "grpcio<2.0.0,>=1.59.0",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\"",
+          "proto-plus<2.0.0,>=1.26.1",
+          "protobuf<8.0.0,>=6.33.5"
+        ],
+        "requires_python": ">=3.10"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/12/ed/1b09640a565e5d34d4e517463f65a67a11f9dcdeb6b6e8220f2d06aaf489/google_cloud_core-2.8.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=e235b0952f7ffe7b9c71a4cf96b506d9cfb557e22557c412f0df9b7068b5d007",
+          "hashes": {
+            "sha256": "e235b0952f7ffe7b9c71a4cf96b506d9cfb557e22557c412f0df9b7068b5d007"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-cloud-core",
+        "version": "2.8.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "Posix; MacOS X; Windows"
+        ],
+        "summary": "Google Cloud API client core library",
+        "description": "Core Helpers for Google Cloud Python Client Library\n===================================================\n\n|pypi| |versions|\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers (e.g. base ``Client`` classes) used by all of the\n``google-cloud-*`` packages.\n\n\n-  `Documentation`_\n\n.. |pypi| image:: https://img.shields.io/pypi/v/google-cloud-core.svg\n   :target: https://pypi.org/project/google-cloud-core/\n.. |versions| image:: https://img.shields.io/pypi/pyversions/google-cloud-core.svg\n   :target: https://pypi.org/project/google-cloud-core/\n.. _Documentation: https://cloud.google.com/python/docs/reference/google-cloud-core/latest\n\nQuick Start\n-----------\n\n.. code-block:: console\n\n    $ pip install --upgrade google-cloud-core\n\nFor more information on setting up your Python development environment,\nsuch as installing ``pip`` and ``virtualenv`` on your system, please refer\nto `Python Development Environment Setup Guide`_ for Google Cloud Platform.\n\n.. _Python Development Environment Setup Guide: https://cloud.google.com/python/setup\n\n\nSupported Python Versions\n-------------------------\nPython >= 3.10\n\nUnsupported Python Versions\n---------------------------\nPython <= 3.9\n",
+        "home_page": "https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-core",
+        "author": "Google LLC",
+        "author_email": "googleapis-packages@google.com",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "google-api-core<3.0.0,>=2.28.0",
+          "google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1",
+          "grpcio<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\""
+        ],
+        "requires_python": ">=3.10",
+        "provides_extra": [
+          "grpc"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/09/77/4376bb26f24966008a9522c61bae025d7030baabf443f20c4b795fb58308/google_cloud_storage-3.17.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=287c7919d7bcda710eae6f6b60c756e89140475d9a4daec01b6174e737488ca8",
+          "hashes": {
+            "sha256": "287c7919d7bcda710eae6f6b60c756e89140475d9a4daec01b6174e737488ca8"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-cloud-storage",
+        "version": "3.17.1",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "Posix; MacOS X; Windows"
+        ],
+        "summary": "Google Cloud Storage API client library",
+        "description": "Python Client for Cloud Storage\n===============================\n\n|stable| |pypi| |versions|\n\n`Google Cloud Storage`_ is a managed service for storing unstructured data. Cloud Storage\nallows worldwide storage and retrieval of any amount of data at any time. You can use\nCloud Storage for a range of scenarios including serving website content, storing data\nfor archival and disaster recovery, or distributing large data objects to users via direct download.\n\n**NOTE**: `3.0 Major Version Notes`_ are available. Feedback welcome.\n\nA comprehensive list of changes in each version may be found in the `CHANGELOG`_.\n\n- `Product Documentation`_\n- `Client Library Documentation`_\n- `github.com/googleapis/google-cloud-python`_\n\nCertain control plane and long-running operations for Cloud Storage (including Folder\nand Managed Folder operations) are supported via the `Storage Control Client`_.\nThe `Storage Control API`_ creates one space to perform metadata-specific, control plane,\nand long-running operations apart from the Storage API.\n\nRead more about the client libraries for Cloud APIs, including the older\nGoogle APIs Client Libraries, in `Client Libraries Explained`_.\n\n.. |stable| image:: https://img.shields.io/badge/support-stable-gold.svg\n   :target: https://github.com/googleapis/google-cloud-python/blob/main/README.rst#stability-levels\n.. |pypi| image:: https://img.shields.io/pypi/v/google-cloud-storage.svg\n   :target: https://pypi.org/project/google-cloud-storage/\n.. |versions| image:: https://img.shields.io/pypi/pyversions/google-cloud-storage.svg\n   :target: https://pypi.org/project/google-cloud-storage/\n.. _Google Cloud Storage: https://cloud.google.com/storage\n.. _Client Library Documentation: https://cloud.google.com/python/docs/reference/storage/latest/summary_overview\n.. _Product Documentation:  https://cloud.google.com/storage\n.. _CHANGELOG:  https://github.com/googleapis/google-cloud-python/blob/main/CHANGELOG.md\n.. _github.com/googleapis/google-cloud-python: https://github.com/googleapis/google-cloud-python\n.. _Storage Control Client: https://cloud.google.com/python/docs/reference/google-cloud-storage-control/latest\n.. _Storage Control API: https://cloud.google.com/storage/docs/reference/rpc/google.storage.control.v2\n.. _Client Libraries Explained: https://cloud.google.com/apis/docs/client-libraries-explained\n\n\nQuick Start\n-----------\n\nTo use this library, you first need to follow these steps.\nA step-by-step guide may also be found in `Get Started with Client Libraries`_.\n\n1. `Select or create a Cloud Platform project.`_\n2. `Enable billing for your project.`_\n3. `Enable the Google Cloud Storage API.`_\n4. `Set up Authentication.`_\n\n.. _Get Started with Client Libraries: https://cloud.google.com/storage/docs/reference/libraries#client-libraries-install-python\n.. _Select or create a Cloud Platform project.: https://console.cloud.google.com/project\n.. _Enable billing for your project.: https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project\n.. _Enable the Google Cloud Storage API.:  https://console.cloud.google.com/flows/enableapi?apiid=storage-api.googleapis.com\n.. _Set up Authentication.: https://cloud.google.com/docs/authentication/client-libraries\n\nInstallation\n~~~~~~~~~~~~\n\nInstall this library in a virtual environment using `venv`_. `venv`_ is a tool that\ncreates isolated Python environments. These isolated environments can have separate\nversions of Python packages, which allows you to isolate one project's dependencies\nfrom the dependencies of other projects.\n\nWith `venv`_, it's possible to install this library without needing system\ninstall permissions, and without clashing with the installed system\ndependencies.\n\n.. _`venv`: https://docs.python.org/3/library/venv.html\n\n\nCode samples and snippets\n~~~~~~~~~~~~~~~~~~~~~~~~~\n\nCode samples and snippets live in the `samples/`_ folder.\n\n.. _`samples/`: https://github.com/googleapis/google-cloud-python/tree/main/samples\n\n\nSupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^\nOur client libraries are compatible with all current `active`_ and `maintenance`_ versions of\nPython.\n\nPython >= 3.7\n\n.. _active: https://devguide.python.org/devcycle/#in-development-main-branch\n.. _maintenance: https://devguide.python.org/devcycle/#maintenance-branches\n\nUnsupported Python Versions\n^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPython <= 3.6\n\nIf you are using an `end-of-life`_\nversion of Python, we recommend that you update as soon as possible to an actively supported version.\n\n.. _end-of-life: https://devguide.python.org/devcycle/#end-of-life-branches\n\nMac/Linux\n^^^^^^^^^\n\n.. code-block:: console\n\n    python3 -m venv <your-env>\n    source <your-env>/bin/activate\n    pip install google-cloud-storage\n\n\nWindows\n^^^^^^^\n\n.. code-block:: console\n\n    py -m venv <your-env>\n    .\\<your-env>\\Scripts\\activate\n    pip install google-cloud-storage\n\n\nExample Usage\n~~~~~~~~~~~~~\n\n.. code-block:: python\n\n    # Imports the Google Cloud client library\n    from google.cloud import storage\n\n    # Instantiates a client\n    storage_client = storage.Client()\n\n    # The name for the new bucket\n    bucket_name = \"my-new-bucket\"\n\n    # Creates the new bucket\n    bucket = storage_client.create_bucket(bucket_name)\n\n    print(f\"Bucket {bucket.name} created.\")\n\n\nTracing With OpenTelemetry\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nThis is a PREVIEW FEATURE: Coverage and functionality are still in development and subject to change.\n\nThis library can be configured to use `OpenTelemetry`_ to generate traces on calls to Google Cloud Storage.\nFor information on the benefits and utility of tracing, read the `Cloud Trace Overview <https://cloud.google.com/trace/docs/overview>`_.\n\nTo enable OpenTelemetry tracing in the Cloud Storage client, first install OpenTelemetry:\n\n.. code-block:: console\n\n    pip install google-cloud-storage[tracing]\n\nSet the ``ENABLE_GCS_PYTHON_CLIENT_OTEL_TRACES`` environment variable to opt in selectively to tracing for the Cloud Storage client:\n\n.. code-block:: console\n\n    export ENABLE_GCS_PYTHON_CLIENT_OTEL_TRACES=True\n\nYou will also need to tell OpenTelemetry which exporter to use. An example to export traces to Google Cloud Trace can be found below.\n\n.. code-block:: console\n\n    # Install the Google Cloud Trace exporter and propagator, however you can use any exporter of your choice.\n    pip install opentelemetry-exporter-gcp-trace opentelemetry-propagator-gcp\n\n    # [Optional] Install the OpenTelemetry Requests Instrumentation to trace the underlying HTTP requests.\n    pip install opentelemetry-instrumentation-requests\n\n.. code-block:: python\n\n    from opentelemetry import trace\n    from opentelemetry.sdk.trace import TracerProvider\n    from opentelemetry.sdk.trace.export import BatchSpanProcessor\n    from opentelemetry.exporter.cloud_trace import CloudTraceSpanExporter\n\n    tracer_provider = TracerProvider()\n    tracer_provider.add_span_processor(BatchSpanProcessor(CloudTraceSpanExporter()))\n    trace.set_tracer_provider(tracer_provider)\n\n    # Optional yet recommended to instrument the requests HTTP library\n    from opentelemetry.instrumentation.requests import RequestsInstrumentor\n    RequestsInstrumentor().instrument(tracer_provider=tracer_provider)\n\nIn this example, tracing data will be published to the `Google Cloud Trace`_ console.\nTracing is most effective when many libraries are instrumented to provide insight over the entire lifespan of a request.\nFor a list of libraries that can be instrumented, refer to the `OpenTelemetry Registry`_.\n\n.. _OpenTelemetry: https://opentelemetry.io\n.. _OpenTelemetry Registry: https://opentelemetry.io/ecosystem/registry\n.. _Google Cloud Trace: https://cloud.google.com/trace\n\n\n3.0 Major Version Notes\n-----------------------\n\nFeedback Welcome\n~~~~~~~~~~~~~~~~\n\nIf you experience any break in backwards compatibility for your application\nwith this major version release, please let us know through the GitHub issues\nsystem. While some breaks of backwards compatibility may be unavoidable due to\nnew features in the major version release, we will do our best to minimize\nthem. Thank you.\n\nException Handling\n~~~~~~~~~~~~~~~~~~\n\nIn Python Storage 3.0, the dependency ``google-resumable-media`` was integrated.\nThe ``google-resumable-media`` dependency included exceptions\n``google.resumable_media.common.InvalidResponse`` and\n``google.resumable_media.common.DataCorruption``, which were often imported\ndirectly in user application code. The replacements for these exceptions are\n``google.cloud.storage.exceptions.InvalidResponse`` and\n``google.cloud.storage.exceptions.DataCorruption``. Please update application code\nto import and use these exceptions instead.\n\nFor backwards compatibility, if ``google-resumable-media`` is installed, the new\nexceptions will be defined as subclasses of the old exceptions, so applications\nshould continue to work without modification. This backwards compatibility\nfeature may be removed in a future major version update.\n\nSome users may be using the original exception classes from the\n``google-resumable-media`` library without explicitly installing that library. So\nas not to break user applications following this pattern,\n``google-resumable-media`` is still in the list of dependencies in this package's\nsetup.py file. Applications that do not import directly from\n``google-resumable-media`` can safely disregard this dependency.\nThis backwards compatibility feature **will be removed** in a future major\nversion update. Please migrate to using the ``google.cloud.storage.exceptions``\nclasses as above.\n\nChecksum Defaults\n~~~~~~~~~~~~~~~~~\n\nIn Python Storage 3.0, uploads and downloads now have a default of \"auto\" where\napplicable. \"Auto\" will use crc32c checksums, except for unusual cases where the\nfast (C extension) crc32c implementation is not available, in which case it will\nuse md5 instead. Before Python Storage 3.0, the default was md5 for most\ndownloads and None for most uploads. Note that ranged downloads (\"start\" or\n\"end\" set) still do not support any checksumming, and some features in\n``transfer_manager.py`` still support crc32c only.\n\nNote: The method ``Blob.upload_from_file()`` requires a file in bytes mode, but\nwhen checksum is set to None, as was the previous default, it would not throw an\nerror if passed a file in string mode under some circumstances. With the new\ndefaults, it will now raise a TypeError. Please use a file opened in bytes\nreading mode as required.\n\nMiscellaneous\n~~~~~~~~~~~~~\n\n- The ``BlobWriter`` class now attempts to terminate an ongoing resumable upload if\n  the writer exits with an exception.\n- Retry behavior is now identical between media operations (uploads and\n  downloads) and other operations, and custom predicates are now supported for\n  media operations as well.\n- ``Blob.download_as_filename()`` will now delete the empty file if it results in a\n  google.cloud.exceptions.NotFound exception (HTTP 404).\n- Previously, object upload, metadata update, and delete methods had retries\n  disabled by default unless the generation or metageneration was specified in\n  the request. This has now changed so that retries are enabled by default.\n\n\nNext Steps\n~~~~~~~~~~\n\n-  Read the `Google Cloud Storage Product documentation`_ to learn\n   more about the product and see How-to Guides.\n-  Read the `Client Library Documentation`_ for Google Cloud Storage API\n   to see other available methods on the client.\n-  View this `README`_ to see the full list of Cloud\n   APIs that we cover.\n\n.. _Google Cloud Storage Product documentation:  https://cloud.google.com/storage\n.. _README: https://github.com/googleapis/google-cloud-python/blob/main/README.rst\n",
+        "home_page": "https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-storage",
+        "author": "Google LLC",
+        "author_email": "googleapis-packages@google.com",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Operating System :: OS Independent",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "google-auth<3.0.0,>=2.26.1",
+          "google-api-core<3.0.0,>=2.27.0",
+          "google-cloud-core<3.0.0,>=2.4.2",
+          "google-resumable-media<3.0.0,>=2.7.2",
+          "requests<3.0.0,>=2.22.0",
+          "google-crc32c<2.0.0,>=1.6.0",
+          "google-api-core[grpc]<3.0.0,>=2.27.0; extra == \"grpc\"",
+          "grpcio<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.59.0; extra == \"grpc\"",
+          "grpcio-status<2.0.0,>=1.75.1; python_version >= \"3.14\" and extra == \"grpc\"",
+          "proto-plus<2.0.0,>=1.26.1; extra == \"grpc\"",
+          "protobuf<8.0.0,>=6.33.5; extra == \"grpc\"",
+          "grpc-google-iam-v1<1.0.0,>=0.14.2; extra == \"grpc\"",
+          "protobuf<8.0.0,>=6.33.5; extra == \"protobuf\"",
+          "opentelemetry-api<2.0.0,>=1.1.0; extra == \"tracing\"",
+          "google-cloud-testutils; extra == \"testing\"",
+          "numpy; extra == \"testing\"",
+          "psutil; extra == \"testing\"",
+          "py-cpuinfo; extra == \"testing\"",
+          "pytest-benchmark; extra == \"testing\"",
+          "PyYAML; extra == \"testing\"",
+          "mock; extra == \"testing\"",
+          "pytest; extra == \"testing\"",
+          "pytest-cov; extra == \"testing\"",
+          "pytest-asyncio; extra == \"testing\"",
+          "pytest-rerunfailures; extra == \"testing\"",
+          "pytest-xdist; extra == \"testing\"",
+          "google-cloud-testutils; extra == \"testing\"",
+          "google-cloud-iam; extra == \"testing\"",
+          "google-cloud-pubsub; extra == \"testing\"",
+          "google-cloud-kms; extra == \"testing\"",
+          "brotli; extra == \"testing\"",
+          "coverage; extra == \"testing\"",
+          "pyopenssl; extra == \"testing\"",
+          "opentelemetry-sdk; extra == \"testing\"",
+          "flake8; extra == \"testing\"",
+          "black; extra == \"testing\""
+        ],
+        "requires_python": ">=3.10",
+        "provides_extra": [
+          "grpc",
+          "protobuf",
+          "tracing",
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/87/34/165542bfa99dfef91a76471cc48cce74b8ff4e295722896087ab2b8e8611/google_crc32c-1.9.0-cp313-cp313-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=8583ec21d56b565d68ab2963cc7e21b3b271247c29b04286068255ef65f221bd",
+          "hashes": {
+            "sha256": "8583ec21d56b565d68ab2963cc7e21b3b271247c29b04286068255ef65f221bd"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-crc32c",
+        "version": "1.9.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "platform": [
+          "Posix",
+          "MacOS X",
+          "Windows"
+        ],
+        "summary": "A python wrapper of the C library 'Google CRC32C'",
+        "description": "# `google-crc32c`\r\n![GA](https://img.shields.io/badge/support-GA-gold.svg) [<img src=\"https://img.shields.io/pypi/v/google-crc32c.svg\">](https://pypi.org/project/google-crc32c) ![Python Versions](https://img.shields.io/pypi/pyversions/google-crc32c)\r\n\r\nThis package wraps the [`google/crc32c`](https://github.com/google/crc32c)\r\nhardware-based implementation of the CRC32C hashing algorithm. Multiple wheels\r\nare distributed as well as source. If a wheel is not published for the python\r\nversion and platform you are using, you will need to compile crc32c using a\r\nC toolchain.\r\n\r\n# Currently Published Wheels\r\n\r\nWheels are currently published for CPython 3.10, 3.11, 3.12, 3.13, 3.14 and 3.15\r\nfor multiple architectures.\r\nFor information on building your own wheels please view [BUILDING.md](BUILDING.md).\r\n\r\n\r\n## Linux\r\n\r\nWheels are published for the following platforms / architectures:\r\n\r\n- `manylinux2010` platform, `x86_64` and `1686` architectures\r\n- `manylinux2014` platform, `aarch64` architecture\r\n\r\n### Unsupported Platforms\r\n\r\n- `manylinux1` platform, `x86_64` architecture support has ended.\r\n\r\nSee https://github.com/pypa/manylinux/issues/994.\r\n\r\n## Mac OS\r\n\r\nWheels are published for `x86_64` and `arm64` architectures.\r\n\r\n\r\n## Windows\r\n\r\nWheels are published for the `win_amd64` architecture.\r\n",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/googleapis/python-crc32c",
+        "author": "Google LLC",
+        "author_email": "googleapis-packages@google.com",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15"
+        ],
+        "requires_python": ">=3.10"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/5e/2e/4f0a152f2e576e496f31ba1c3c62ed174a8878d06008916a7edc58b1bb28/google_resumable_media-2.11.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=f43d15e6a7f818f762eaead0f369c551f8275a4179c9d6225d0d259f49b87b5d",
+          "hashes": {
+            "sha256": "f43d15e6a7f818f762eaead0f369c551f8275a4179c9d6225d0d259f49b87b5d"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "google-resumable-media",
+        "version": "2.11.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "Posix; MacOS X; Windows"
+        ],
+        "summary": "Utilities for Google Media Downloads and Resumable Uploads",
+        "description": "``google-resumable-media``\n==========================\n\n\nUtilities for Google Media Downloads and Resumable Uploads\n\n\nSee the `docs`_ for examples and usage.\n\n.. _docs: https://googleapis.dev/python/google-resumable-media/latest/index.html\n\nExperimental `asyncio` Support\n------------------------------\nWhile still in development and subject to change, this library has `asyncio`\nsupport at `google._async_resumable_media`. \n\nSupported Python Versions\n-------------------------\nPython >= 3.10\n\nUnsupported Python Versions\n---------------------------\n\nPython <= 3.9\n\n\nLicense\n-------\n\nApache 2.0 - See `the LICENSE`_ for more information.\n\n.. _the LICENSE: https://github.com/googleapis/google-resumable-media-python/blob/main/LICENSE\n",
+        "home_page": "https://github.com/googleapis/google-cloud-python/tree/main/packages/google-resumable-media",
+        "author": "Google Cloud Platform",
+        "author_email": "googleapis-publisher@google.com",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Topic :: Internet"
+        ],
+        "requires_dist": [
+          "google-crc32c<2.0.0,>=1.0.0",
+          "requests<3.0.0,>=2.18.0; extra == \"requests\"",
+          "aiohttp<4.0.0,>=3.6.2; extra == \"aiohttp\"",
+          "google-auth<3.0.0,>=2.14.1; extra == \"aiohttp\""
+        ],
+        "requires_python": ">= 3.10",
+        "provides_extra": [
+          "requests",
+          "aiohttp"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a",
+          "hashes": {
+            "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
+          }
+        }
+      },
+      "is_direct": true,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pyasn1_modules",
+        "version": "0.4.2",
+        "dynamic": [
+          "license-file"
+        ],
+        "platform": [
+          "any"
+        ],
+        "summary": "A collection of ASN.1-based protocols modules",
+        "description": "\nASN.1 modules for Python\n------------------------\n[![PyPI](https://img.shields.io/pypi/v/pyasn1-modules.svg?maxAge=2592000)](https://pypi.org/project/pyasn1-modules)\n[![Python Versions](https://img.shields.io/pypi/pyversions/pyasn1-modules.svg)](https://pypi.org/project/pyasn1-modules/)\n[![Build status](https://github.com/pyasn1/pyasn1-modules/actions/workflows/main.yml/badge.svg)](https://github.com/pyasn1/pyasn1-modules/actions/workflows/main.yml)\n[![Coverage Status](https://img.shields.io/codecov/c/github/pyasn1/pyasn1-modules.svg)](https://codecov.io/github/pyasn1/pyasn1-modules)\n[![GitHub license](https://img.shields.io/badge/license-BSD-blue.svg)](https://raw.githubusercontent.com/pyasn1/pyasn1-modules/master/LICENSE.txt)\n\nThe `pyasn1-modules` package contains a collection of\n[ASN.1](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-X.208-198811-W!!PDF-E&type=items)\ndata structures expressed as Python classes based on [pyasn1](https://github.com/pyasn1/pyasn1)\ndata model.\n\nIf ASN.1 module you need is not present in this collection, try using\n[Asn1ate](https://github.com/kimgr/asn1ate) tool that compiles ASN.1 documents\ninto pyasn1 code.\n\n**NOTE:** The package is now maintained by *Christian Heimes* and\n*Simon Pichugin* in project https://github.com/pyasn1/pyasn1-modules.\n\nFeedback\n--------\n\nIf something does not work as expected, \n[open an issue](https://github.com/pyasn1/pyasn1-modules/issues) at GitHub\nor post your question [on Stack Overflow](https://stackoverflow.com/questions/ask)\n \nNew modules contributions are welcome via GitHub pull requests.\n\nCopyright (c) 2005-2020, [Ilya Etingof](mailto:etingof@gmail.com).\nAll rights reserved.\n",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/pyasn1/pyasn1-modules",
+        "author": "Ilya Etingof",
+        "author_email": "etingof@gmail.com",
+        "maintainer": "pyasn1 maintenance organization",
+        "maintainer_email": "Christian Heimes <christian@python.org>",
+        "license": "BSD",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Education",
+          "Intended Audience :: Information Technology",
+          "Intended Audience :: System Administrators",
+          "Intended Audience :: Telecommunications Industry",
+          "License :: OSI Approved :: BSD License",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Communications",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "pyasn1<0.7.0,>=0.6.1"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Source, https://github.com/pyasn1/pyasn1-modules",
+          "Issues, https://github.com/pyasn1/pyasn1-modules/issues",
+          "Changelog, https://github.com/pyasn1/pyasn1-modules/blob/master/CHANGES.txt"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.13.6",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26340",
+    "python_full_version": "3.13.6",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.13",
+    "sys_platform": "win32"
+  }
+}

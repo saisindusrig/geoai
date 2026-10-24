@@ -1,0 +1,156 @@
+--- before/run-website.bat
++++ run-website.bat
+@@ -2,23 +2,20 @@
+ setlocal EnableExtensions DisableDelayedExpansion
+ cd /d "%~dp0"
+ if /i "%~1"=="--help" goto help
+-if not "%~1"=="" if /i not "%~1"=="backend" if /i not "%~1"=="frontend" goto help
++if not "%~1"=="" if /i not "%~1"=="backend" if /i not "%~1"=="frontend" if /i not "%~1"=="--check-runtime" goto help
+ if /i "%~1"=="backend" goto backend
+-where node >nul 2>&1
+-if errorlevel 1 (
+-  echo Node.js is missing from PATH. Install Node.js 20.9 or newer.
++rem Pin the entire local frontend process tree; never alter system PATH.
++set "STRUVOCIVIL_NODE_DIR=%~dp0.local-tooling\node-24.22.1-validation\runtime\node-v24.22.1-win-x64"
++set "STRUVOCIVIL_NODE=%STRUVOCIVIL_NODE_DIR%\node.exe"
++set "STRUVOCIVIL_NPM_CLI=%STRUVOCIVIL_NODE_DIR%\node_modules\npm\bin\npm-cli.js"
++if not exist "%STRUVOCIVIL_NODE%" (
++  echo The verified project-local Node.js 24.22.1 runtime is missing. No fallback was selected.
+   goto failed
+ )
+-where npm >nul 2>&1
+-if errorlevel 1 (
+-  echo npm is missing from PATH. Reinstall Node.js with npm included.
+-  goto failed
+-)
+-node -e "const [major, minor] = process.versions.node.split('.').map(Number); process.exit(major < 20 || (major === 20 && minor < 9) ? 1 : 0)"
+-if errorlevel 1 (
+-  echo This Next.js website requires Node.js 20.9 or newer.
+-  goto failed
+-)
++set "PATH=%STRUVOCIVIL_NODE_DIR%;%PATH%"
++"%STRUVOCIVIL_NODE%" "%~dp0scripts\verify-local-node.cjs"
++if errorlevel 1 goto failed
++if /i "%~1"=="--check-runtime" exit /b 0
+ if /i "%~1"=="frontend" goto checkFrontend
+ if not exist "backend\.venv\Scripts\python.exe" goto missing
+ if /i "%~1"=="backend" goto backend
+@@ -28,7 +25,7 @@
+ if not exist "backend\scripts\serve_copilot_review_local.py" goto missing
+ rem Run the website's predev lifecycle even when the PowerShell launcher invokes Next directly.
+ pushd "%~dp0frontend"
+-call npm run predev
++"%STRUVOCIVIL_NODE%" "%STRUVOCIVIL_NPM_CLI%" run predev
+ if errorlevel 1 (
+   popd
+   goto failed
+@@ -55,7 +52,7 @@
+ cd frontend
+ set "GEOAI_LOCAL_REVIEW=true"
+ set "NEXT_PUBLIC_API_URL=/local-api"
+-call npm run dev --ignore-scripts
++"%STRUVOCIVIL_NODE%" "%STRUVOCIVIL_NPM_CLI%" run dev --ignore-scripts
+ exit /b %errorlevel%
+ 
+ :missing
+@@ -66,7 +63,8 @@
+ goto failed
+ 
+ :help
+-echo Usage: run-website.bat [backend^|frontend^|--help]
++echo Usage: run-website.bat [backend^|frontend^|--check-runtime^|--help]
++echo --check-runtime: verify Node/npm/child selection without starting services.
+ echo Without arguments: start or reuse the local API and website.
+ echo Website: http://localhost:3001
+ echo API docs: http://localhost:8001/docs
+--- before/start-copilot-review.ps1
++++ start-copilot-review.ps1
+@@ -1,4 +1,18 @@
++param([switch]$CheckRuntime)
+ $ErrorActionPreference = 'Stop'
++$geoaiRoot = $PSScriptRoot
++$geoaiOriginalPath = $env:PATH
++$geoaiNodeDir = Join-Path $geoaiRoot '.local-tooling/node-24.22.1-validation/runtime/node-v24.22.1-win-x64'
++$geoaiNode = Join-Path $geoaiNodeDir 'node.exe'
++if (-not (Test-Path -LiteralPath $geoaiNode -PathType Leaf)) {
++    throw 'The verified project-local Node.js 24.22.1 runtime is missing. No fallback was selected.'
++}
++$env:PATH = "$geoaiNodeDir;$geoaiOriginalPath"
++try {
++& $geoaiNode (Join-Path $geoaiRoot 'scripts/verify-local-node.cjs')
++if ($LASTEXITCODE -ne 0) { throw 'Local runtime preflight failed. No backend or frontend was started.' }
++if ($CheckRuntime) { return }
++
+ $geoaiMutex = [System.Threading.Mutex]::new($false, 'Local\GeoAI-Local-Development-Launcher')
+ if (-not $geoaiMutex.WaitOne(0)) {
+     $geoaiMutex.Dispose()
+@@ -11,7 +25,6 @@
+     catch { throw "Port $Port is occupied but its GeoAI health check failed. No duplicate server was started." }
+     finally { $geoaiProbe.Stop() }
+ }
+-$geoaiRoot = $PSScriptRoot
+ $geoaiLogs = Join-Path $geoaiRoot 'docs/copilot-milestone-2'
+ New-Item -ItemType Directory -Force -Path $geoaiLogs | Out-Null
+ 
+@@ -46,8 +59,12 @@
+ Write-Host 'Local review: http://localhost:3001/projects/793/workspace'
+ Write-Host 'Nebius Assistant available; inference remains disabled until explicit budget approval.'
+ Push-Location (Join-Path $geoaiRoot 'frontend')
+-try { & node node_modules/next/dist/bin/next dev -p 3001 -H 127.0.0.1 } finally { Pop-Location }
++try { & $geoaiNode node_modules/next/dist/bin/next dev -p 3001 -H 127.0.0.1 } finally { Pop-Location }
+ } finally {
+     $geoaiMutex.ReleaseMutex()
+     $geoaiMutex.Dispose()
+ }
++
++} finally {
++    $env:PATH = $geoaiOriginalPath
++}
+--- /dev/null
++++ scripts/verify-local-node.cjs
+@@ -0,0 +1,45 @@
++// Local launcher preflight only. No application, credential or network imports.
++const fs = require('node:fs');
++const path = require('node:path');
++const crypto = require('node:crypto');
++const { execFileSync } = require('node:child_process');
++const root = path.resolve(__dirname, '..');
++const runtime = path.join(root, '.local-tooling/node-24.22.1-validation/runtime/node-v24.22.1-win-x64');
++const expected = {
++  "node.exe": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
++  "node_modules/npm/bin/npm-cli.js": "3ce7cba6f5128dd5f54c98b6a5036b0f850496878cc2e21044b675fe3c594e3e",
++  "node_modules/npm/package.json": "d5b859b88af16e893fbc2d28819db601a8543b241f8c80459f70898be2777c12",
++  "npm.cmd": "21b46c69ad6e2f231f02a9e120f4ba6c8e75fef5a45637103002eab99f888ab8",
++  "npm": "13372aa943f8eb32c9a8b6f946ed6a49118edd60051321953288b1f35611aefb",
++  "npm.ps1": "e8aedc8c76d6cb9423b70ede071228f7cb1644094c114b8721ae6d121100d4fe"
++};
++const canonical = file => fs.realpathSync(file).toLowerCase();
++try {
++  if (process.platform !== 'win32' || process.arch !== 'x64' || process.version !== 'v24.22.1') {
++    throw new Error('The local frontend requires the verified Windows x64 Node.js 24.22.1 (Firebase requires >=24.12.0).');
++  }
++  const node = path.join(runtime, 'node.exe');
++  if (canonical(process.execPath) !== canonical(node)) throw new Error('The launcher did not select the retained project-local Node executable.');
++  for (const [relative, sha256] of Object.entries(expected)) {
++    const file = path.join(runtime, relative);
++    if (crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex') !== sha256) {
++      throw new Error(`Retained runtime file does not match the validated archive: ${relative}`);
++    }
++  }
++  const child = JSON.parse(execFileSync('node', ['-e', 'console.log(JSON.stringify({version:process.version,execPath:process.execPath,arch:process.arch}))'], { encoding: 'utf8', windowsHide: true }));
++  if (child.version !== 'v24.22.1' || child.arch !== 'x64' || canonical(child.execPath) !== canonical(node)) {
++    throw new Error('A PATH-selected Node child would use a different runtime. No frontend was started.');
++  }
++  const npmCandidates = execFileSync('where.exe', ['npm'], { encoding: 'utf8', windowsHide: true }).trim().split(/\r?\n/);
++  if (![ 'npm', 'npm.cmd', 'npm.ps1' ].some(name => canonical(npmCandidates[0]) === canonical(path.join(runtime, name))) || !npmCandidates.some(file => canonical(file) === canonical(path.join(runtime, 'npm.cmd')))) {
++    throw new Error('PATH-selected npm is not the verified portable npm.');
++  }
++  const npm = JSON.parse(fs.readFileSync(path.join(runtime, 'node_modules/npm/package.json'), 'utf8'));
++  if (npm.version !== '11.19.1') throw new Error('The matching portable npm 11.19.1 is required.');
++  const report = { node: process.version, execPath: process.execPath, child, npm: npm.version, npmCli: path.join(runtime, 'node_modules/npm/bin/npm-cli.js'), archiveFilesVerified: Object.keys(expected).length };
++  console.log(process.argv.includes('--json') ? JSON.stringify(report) : 'StruvoCivil local runtime: Node 24.22.1, npm 11.19.1; main and PATH child verified.');
++} catch (error) {
++  console.error(`StruvoCivil runtime preflight failed: ${error.message}`);
++  console.error('Restore the retained verified portable runtime; no automatic installation or Node 22 fallback is performed.');
++  process.exitCode = 1;
++}

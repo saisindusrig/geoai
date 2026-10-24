@@ -1,8 +1,9 @@
 "use client";
+import { downloadFile } from "@/lib/download";
 
 import { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { api, apiUrl } from "@/lib/api";
+import { api } from "@/lib/api";
 import { useProjectStore } from "@/stores/projectStore";
 import { assistantActionBoundary } from "@/lib/assistant-boundary";
 
@@ -58,7 +59,7 @@ export default function AssistantPanel({
       } else if (action?.type === "show_layer" && action.layer === "excavation" && !layers.excavation) {
         toggleLayer("excavation");
       } else if (action?.type === "download" && action.export) {
-        window.open(apiUrl(`/api/projects/${projectId}/exports/${action.export}`), "_blank");
+        await downloadFile(`/api/projects/${projectId}/exports/${encodeURIComponent(String(action.export))}`, `project-export.${String(action.export)}`).catch(() => {});
       }
     } catch (e) {
       setHistory((h) => [...h, { role: "assistant", text: `Error: ${e instanceof Error ? e.message : e}` }]);

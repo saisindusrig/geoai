@@ -1,0 +1,5 @@
+{
+  "allowedExactOwnedWorker": 1,
+  "deniedCases": 11,
+  "noNetworkRequests": true
+}

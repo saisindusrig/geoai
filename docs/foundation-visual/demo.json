@@ -1,0 +1,17 @@
+{
+  "attestation": {
+    "mode": "foundation-isolated-20261015",
+    "database": "D:\\layout project\\docs\\foundation-system\\isolated\\foundation.db",
+    "paid_inference": false,
+    "port": 18001
+  },
+  "study": {
+    "project_id": 814,
+    "scenario_id": 602,
+    "model_revision_id": 138,
+    "source_project_id": 804,
+    "engineering_approval": "DISABLED"
+  },
+  "result_id": 640,
+  "computed_sha256": "bb488a45c797aca2e0a526bc255f5b390c9b475aa6fc0558fd06a651e4239297"
+}

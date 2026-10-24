@@ -212,7 +212,7 @@ export default function BottomSummaryBar({
 
           return (
             <div key={key} className="flex items-center shrink-0">
-              {editor ? <button onClick={() => setExpanded(true)} title={`Expand ${label} analysis`}>{chip}</button> : href ? <Link href={href}>{chip}</Link> : chip}
+              {editor ? <button onClick={() => setExpanded(true)} title={`Expand ${label} analysis`}>{chip}</button> : href ? <Link href={href} aria-label={`${label}: ${value}`}>{chip}</Link> : chip}
             </div>
           );
         })}

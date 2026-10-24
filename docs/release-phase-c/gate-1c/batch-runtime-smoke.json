@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/local-api/api/health",
+    "status": 200,
+    "synthetic_marker": "gpu-phase",
+    "normal_port_used": false
+  },
+  {
+    "path": "/",
+    "status": 200,
+    "synthetic_marker": null,
+    "normal_port_used": false
+  }
+]

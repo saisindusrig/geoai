@@ -49,7 +49,7 @@ export default function CTASection() {
                 href={appEntryPath("/projects/new")}
                 className={cn(buttonVariants({ variant: "marketing", size: "lg" }), "mt-8 gap-2 font-semibold")}
               >
-                Launch sitegeoai
+                Launch StruvoCivil
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <p className="mt-6 text-xs text-muted-foreground">

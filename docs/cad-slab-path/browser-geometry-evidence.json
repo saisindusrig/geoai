@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "project_id": 794,
+    "scenario_id": 582,
+    "revision_id": 104,
+    "source_reference_id": 423,
+    "review_record_id": 424,
+    "component_ids": [
+      "drawing-cad:614f117ae2a74794:9C",
+      "drawing-cad:614f117ae2a74794:96",
+      "drawing-cad:614f117ae2a74794:AE"
+    ],
+    "saved_revision_id": 105
+  },
+  "initial_revision": 104,
+  "saved_revision": 105,
+  "original_components_unchanged": true,
+  "added_source_handles": [
+    "97",
+    "A5",
+    "B7"
+  ],
+  "geometry_synthetic_not_inferred": true,
+  "errors": []
+}

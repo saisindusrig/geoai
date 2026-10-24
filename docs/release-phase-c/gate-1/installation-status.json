@@ -1,0 +1,626 @@
+{
+  "decision": "STOPPED_NODE_ENGINE_APPROVAL_REQUIRED",
+  "browser_firebase_installed": "13.1.0",
+  "existing_node": "22.18.0",
+  "required_node_for_resolved_firebase_packages": ">=24.12.0",
+  "changed_existing_locked_versions": [],
+  "new_packages": [
+    {
+      "path": "node_modules/@firebase/ai",
+      "version": "3.0.0",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/analytics",
+      "version": "0.10.25",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/analytics-compat",
+      "version": "0.2.31",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/analytics-types",
+      "version": "0.8.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app",
+      "version": "0.16.4",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-check",
+      "version": "0.13.1",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-check-compat",
+      "version": "0.4.7",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-check-interop-types",
+      "version": "0.3.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-check-types",
+      "version": "0.5.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-compat",
+      "version": "0.5.20",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-types",
+      "version": "0.9.6",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat",
+      "version": "0.6.13",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-interop-types",
+      "version": "0.2.6",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-types",
+      "version": "0.13.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/component",
+      "version": "0.7.5",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/data-connect",
+      "version": "0.7.4",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/database",
+      "version": "1.1.5",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/database-compat",
+      "version": "2.1.7",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/database-types",
+      "version": "1.0.22",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore",
+      "version": "4.19.0",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore-compat",
+      "version": "0.4.16",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore-types",
+      "version": "3.0.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/functions",
+      "version": "0.14.0",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/functions-compat",
+      "version": "0.5.0",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/functions-types",
+      "version": "0.6.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/installations",
+      "version": "0.6.24",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/installations-compat",
+      "version": "0.2.24",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/installations-types",
+      "version": "0.5.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/logger",
+      "version": "0.5.2",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/messaging",
+      "version": "0.13.3",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/messaging-compat",
+      "version": "0.2.30",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/messaging-interop-types",
+      "version": "0.2.6",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/performance",
+      "version": "0.7.14",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/performance-compat",
+      "version": "0.2.27",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/performance-types",
+      "version": "0.2.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/remote-config",
+      "version": "0.9.3",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/remote-config-compat",
+      "version": "0.2.30",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/remote-config-types",
+      "version": "0.5.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/storage",
+      "version": "0.14.6",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/storage-compat",
+      "version": "0.4.6",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/storage-types",
+      "version": "0.8.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/util",
+      "version": "1.15.3",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/webchannel-wrapper",
+      "version": "1.0.7",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@grpc/grpc-js",
+      "version": "1.9.16",
+      "engines": {
+        "node": "^8.13.0 || >=10.10.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@grpc/proto-loader",
+      "version": "0.7.15",
+      "engines": {
+        "node": ">=6"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@grpc/proto-loader/node_modules/protobufjs",
+      "version": "7.6.6",
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/aspromise",
+      "version": "1.1.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/base64",
+      "version": "1.1.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/codegen",
+      "version": "2.0.5",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/eventemitter",
+      "version": "1.1.1",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/fetch",
+      "version": "1.1.1",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/float",
+      "version": "1.0.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/path",
+      "version": "1.1.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/pool",
+      "version": "1.1.0",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@protobufjs/utf8",
+      "version": "1.1.2",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/cliui",
+      "version": "8.0.1",
+      "engines": {
+        "node": ">=12"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/faye-websocket",
+      "version": "0.11.4",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/firebase",
+      "version": "13.1.0",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/firebase/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/get-caller-file",
+      "version": "2.0.5",
+      "engines": {
+        "node": "6.* || 8.* || >= 10.*"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/http-parser-js",
+      "version": "0.5.10",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/idb",
+      "version": "7.1.1",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/is-fullwidth-code-point",
+      "version": "3.0.0",
+      "engines": {
+        "node": ">=8"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/re2js",
+      "version": "2.9.0",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/require-directory",
+      "version": "2.1.1",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/string-width",
+      "version": "4.2.3",
+      "engines": {
+        "node": ">=8"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/string-width/node_modules/emoji-regex",
+      "version": "8.0.0",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/strip-ansi",
+      "version": "6.0.1",
+      "engines": {
+        "node": ">=8"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/web-vitals",
+      "version": "4.2.4",
+      "engines": null,
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/websocket-driver",
+      "version": "0.7.5",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/websocket-extensions",
+      "version": "0.1.4",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/wrap-ansi",
+      "version": "7.0.0",
+      "engines": {
+        "node": ">=10"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/y18n",
+      "version": "5.0.8",
+      "engines": {
+        "node": ">=10"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/yargs",
+      "version": "17.7.3",
+      "engines": {
+        "node": ">=12"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/yargs-parser",
+      "version": "21.1.1",
+      "engines": {
+        "node": ">=12"
+      },
+      "installed_metadata_present": true
+    }
+  ],
+  "engine_conflicts": [
+    {
+      "path": "node_modules/@firebase/ai",
+      "version": "3.0.0",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app",
+      "version": "0.16.4",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/app-compat",
+      "version": "0.5.20",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat",
+      "version": "0.6.13",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/auth-compat/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore",
+      "version": "4.19.0",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/firestore-compat",
+      "version": "0.4.16",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/storage",
+      "version": "0.14.6",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/@firebase/storage-compat",
+      "version": "0.4.6",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    },
+    {
+      "path": "node_modules/firebase/node_modules/@firebase/auth",
+      "version": "1.13.8",
+      "engines": {
+        "node": ">=24.12.0"
+      },
+      "installed_metadata_present": true
+    }
+  ],
+  "backend_installation_started": false,
+  "backend_dry_run_stopped": true,
+  "firebase_enabled": false,
+  "credentials_accessed": false,
+  "live_service_calls": false,
+  "node_upgraded": false,
+  "sdk_downgraded": false
+}

@@ -1,0 +1,11 @@
+{
+  "before": {
+    "run-website.bat": "d9c5cbbb0d74b805b2ce4a1af91f62fe61829826ca250bfed54856c865b2fd65",
+    "start-copilot-review.ps1": "36acca56dba7eba129c166935c1f6afe438a4fbece56e68d2b83dcdfae66ee8b"
+  },
+  "after": {
+    "run-website.bat": "b85f42397d9855a411e8dd1e7988ea974f1ef113f29c48700f6d992178b89cf9",
+    "start-copilot-review.ps1": "4acd7258ff072929f9cf6f4b1eb94fdcf40d281fc90a233a8c3d44d4da1cf255"
+  },
+  "new_helper_sha256": "0d7e713b5da122a31b8e31d4c8c0cca8f706e6b94129b9a0fd2030b5ee09875b"
+}

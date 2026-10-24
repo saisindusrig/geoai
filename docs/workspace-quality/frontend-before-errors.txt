@@ -1,0 +1,49 @@
+ DEPRECATED  "environmentMatchGlobs" is deprecated. Use `test.projects` to define different configurations instead.
+stderr | components/map/WorkspaceMouseControls.test.tsx > workspace gesture ownership > waits to open the inspector until a double click has fitted the original target
+TypeError: Cannot read properties of undefined (reading 'fovy')
+    at focus (D:\layout project\frontend\components\map\WorkspaceMouseControls.tsx:51:468)
+    at HTMLCanvasElement.double (D:\layout project\frontend\components\map\WorkspaceMouseControls.tsx:134:366)
+    at HTMLCanvasElement.callTheUserObjectsOperation (D:\layout project\frontend\node_modules\jsdom\lib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (D:\layout project\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:360:16)
+    at invokeEventListeners (D:\layout project\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:296:3)
+    at HTMLCanvasElementImpl._dispatch (D:\layout project\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:227:9)
+    at HTMLCanvasElementImpl.dispatchEvent (D:\layout project\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:114:17)
+    at HTMLCanvasElement.dispatchEvent (D:\layout project\frontend\node_modules\jsdom\lib\generated\idl\EventTarget.js:241:34)
+    at D:\layout project\frontend\node_modules\@testing-library\dom\dist\events.js:19:20
+    at D:\layout project\frontend\node_modules\@testing-library\react\dist\pure.js:113:18
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  components/map/WorkspaceMouseControls.test.tsx > workspace gesture ownership > waits to open the inspector until a double click has fitted the original target
+AssertionError: expected "spy" to be called once, but got 0 times
+ ❯ components/map/WorkspaceMouseControls.test.tsx:30:202
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: Cannot read properties of undefined (reading 'fovy')
+ ❯ focus components/map/WorkspaceMouseControls.tsx:51:468
+
+ ❯ HTMLCanvasElement.double components/map/WorkspaceMouseControls.tsx:134:366
+ ❯ HTMLCanvasElement.callTheUserObjectsOperation node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:360:16
+ ❯ invokeEventListeners node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:296:3
+ ❯ HTMLCanvasElementImpl._dispatch node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:227:9
+ ❯ HTMLCanvasElementImpl.dispatchEvent node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:114:17
+ ❯ HTMLCanvasElement.dispatchEvent node_modules/jsdom/lib/generated/idl/EventTarget.js:241:34
+ ❯ node_modules/@testing-library/dom/dist/events.js:19:20
+ ❯ node_modules/@testing-library/react/dist/pure.js:113:18
+
+This error originated in "components/map/WorkspaceMouseControls.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "waits to open the inspector until a double click has fitted the original target". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+

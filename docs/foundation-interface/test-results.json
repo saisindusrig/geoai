@@ -1,0 +1,28 @@
+{
+  "backend": {
+    "passed": 117,
+    "foundation_interface_tests": 33,
+    "prior_solver_tests": 84,
+    "final_interface_recheck_passed": 33,
+    "warning": "Existing Starlette/httpx deprecation only"
+  },
+  "browser": {
+    "passed": 4,
+    "tests": [
+      "foundation-interface.spec.ts",
+      "foundation-review.spec.ts",
+      "foundation-legacy.spec.ts",
+      "foundation-slab-regression.spec.ts"
+    ],
+    "final_saved_review_recheck": "PASS (20.5 seconds)"
+  },
+  "typescript": "PASS",
+  "targeted_eslint": "PASS",
+  "local_url": "http://localhost:3001/projects/785/workspace",
+  "analysis_id": 309,
+  "revision_id": 88,
+  "source_analysis_id": 301,
+  "source_revision_id": 86,
+  "engineering_approval": "DISABLED",
+  "paid_inference_calls": 0
+}

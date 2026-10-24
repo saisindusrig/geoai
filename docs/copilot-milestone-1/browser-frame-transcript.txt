@@ -1,0 +1,153 @@
+You
+What loads have been applied?
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2).
+
+Saved OPENSEES_PHYSICAL_FRAME record 421 · VERIFIED numerical evidence only.
+Case Horizontal: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [10000.0, 0.0, 0.0] [N, N, N·m].
+  Node 3: [Fx, Fy, M] = [10000.0, 0.0, 0.0] [N, N, N·m].
+  drawing-cad:614f117ae2a74794:9C: uniform load [0.0, 0.0] N/m.
+  drawing-cad:614f117ae2a74794:96: uniform load [0.0, 0.0] N/m.
+  drawing-cad:614f117ae2a74794:AE: uniform load [0.0, 0.0] N/m.
+Case Gravity: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [0.0, -1000.0, 0.0] [N, N, N·m].
+  Node 3: [Fx, Fy, M] = [0.0, -1000.0, 0.0] [N, N, N·m].
+  drawing-cad:614f117ae2a74794:9C: uniform load [0.0, 0.0] N/m.
+  drawing-cad:614f117ae2a74794:96: uniform load [0.0, -2000.0] N/m.
+  drawing-cad:614f117ae2a74794:AE: uniform load [0.0, 0.0] N/m.
+Case Self weight: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [0.0, 0.0, 0.0] [N, N, N·m].
+  Node 3: [Fx, Fy, M] = [0.0, 0.0, 0.0] [N, N, N·m].
+  drawing-cad:614f117ae2a74794:9C: uniform load [0.0, -6930.765] N/m.
+  drawing-cad:614f117ae2a74794:96: uniform load [0.0, -4620.51] N/m.
+  drawing-cad:614f117ae2a74794:AE: uniform load [0.0, -6930.765] N/m.
+Expand Technical evidence for case values, declared self-weight sources and exclusions.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3-Flash
+
+Technical evidence and source references
+Inspect component
+Review engineering inputs
+Open saved results
+You
+Show the beam bending moment.
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2).
+
+Saved analysis 421 · VERIFIED · OpenSees 3.8.0.
+Stored bending-moment samples: min -28.809726, max 24.756664 kN·m.
+Open Bending moment to display the existing saved diagram. Display scaling is visual; no new solve or safety approval.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3-Flash
+
+Technical evidence and source references
+Show bending moment
+Open saved results
+Review engineering inputs
+You
+Explain this column.
+Captured selection · 3 components · revision 103
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2).
+
+CAD column SW · column.
+Geometry dimensions [0.3, 0.3, 3.26] m (local size before scale); scale [1, 1, 1].
+Position East/North/Up [0.15, 0.15, 1.63] m; rotation X/Y/Z [0, 0, 0] degrees.
+Appearance: Explicit synthetic material identity; no grade/E/fy. Engineering status: SYNTHETIC_UNVERIFIED_ENVELOPE.
+Saved declared section: E 200000000000.0 Pa; A 0.09 m²; I 0.0006749999999999998 m⁴. Material Synthetic solid rectangular steel; source: Explicit synthetic 200 GPa elastic assumption, not manufacturer/project data. Declaration is not material certification. Strength, connection capacity and design approval are not established by this explanation.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3-Flash
+
+Technical evidence and source references
+Inspect component
+Review engineering inputs
+Open saved results
+Captured selection · 3 components · revision 103
+You
+What loads have been applied?
+Captured selection · 3 components · revision 103
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2).
+
+Saved analysis 421 · VERIFIED numerical evidence only. Analytical axes: +X East, +Y Up.
+Case Horizontal: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [10.0, 0.0, 0.0] [kN, kN, kN·m].
+  Node 3: [Fx, Fy, M] = [10.0, 0.0, 0.0] [kN, kN, kN·m].
+Case Gravity: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [0.0, -1.0, 0.0] [kN, kN, kN·m].
+  Node 3: [Fx, Fy, M] = [0.0, -1.0, 0.0] [kN, kN, kN·m].
+  CAD beam South: uniform load [0.0, -2.0] kN/m.
+Case Self weight: Synthetic verification inputs only, not measured engineering properties.
+  Node 2: [Fx, Fy, M] = [0.0, 0.0, 0.0] [kN, kN, kN·m].
+  Node 3: [Fx, Fy, M] = [0.0, 0.0, 0.0] [kN, kN, kN·m].
+  CAD column SW: uniform load [0.0, -6.930765] kN/m.
+  CAD beam South: uniform load [0.0, -4.62051] kN/m.
+  CAD column SE: uniform load [0.0, -6.930765] kN/m.
+Expand Technical evidence for case values, declared self-weight sources and exclusions.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3
+
+Technical evidence and source references
+Inspect component
+Review engineering inputs
+Open saved results
+Captured selection · 3 components · revision 103
+You
+Show the beam bending moment.
+Captured selection · 3 components · revision 103
+
+Sent with unsaved editor changes; references point to the saved revision.
+
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2). STALE context: unsaved edits or a newer revision exist. These are saved values; save/reselect before preparing or authorizing a solve.
+
+No current verified saved result matches this selection. Select an analyzed member and inspect Results; stale diagrams must not be treated as current calculations.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3-Flash
+
+Historical saved evidence · context is stale for the current draft.
+
+Technical evidence and source references
+Inspect component
+Review engineering inputs
+Open saved results
+Captured selection · 3 components · revision 103
+
+Sent with unsaved editor changes; references point to the saved revision.
+
+You
+Show the beam bending moment.
+Captured selection · 3 components · revision 103
+Saved evidence response complete · offline, no inference
+GeoAI
+Project 793 · saved revision 103 (v2).
+
+Saved analysis 421 · VERIFIED · OpenSees 3.8.0.
+Stored bending-moment samples: min -28.809726, max 24.756664 kN·m.
+Open Bending moment to display the existing saved diagram. Display scaling is visual; no new solve or safety approval.
+
+Engineering approval remains disabled; supported numerical evidence never certifies the whole structure.
+
+Produced by: Deterministic offline fixture · saved evidence adapter · actual model: none · requested: zai-org/GLM-5.3-Flash
+
+Technical evidence and source references
+Show bending moment
+Open saved results
+Review engineering inputs
+Captured selection · 3 components · revision 103

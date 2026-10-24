@@ -1,0 +1,355 @@
+{
+  "original_project_id": 768,
+  "original_revision_id": 59,
+  "component_count": 45,
+  "graph": {
+    "beam_offsets_m": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        0.14999999999999947,
+        0.10000000000000009
+      ]
+    ],
+    "connection_offsets": [
+      {
+        "column_id": "industrial-platform-5x3:column-nw",
+        "beam_id": "industrial-platform-5x3:beam-north",
+        "beam_endpoint": "left",
+        "retained_node_id": 2,
+        "offset_m": [
+          -0.1499999999999999,
+          0.10000000000000009
+        ],
+        "offset_length_m": 0.18027756377319945,
+        "column_top_m": [
+          0,
+          3.1999999999999997
+        ],
+        "beam_end_m": [
+          -0.1499999999999999,
+          3.3
+        ]
+      },
+      {
+        "column_id": "industrial-platform-5x3:column-ne",
+        "beam_id": "industrial-platform-5x3:beam-north",
+        "beam_endpoint": "right",
+        "retained_node_id": 3,
+        "offset_m": [
+          0.14999999999999947,
+          0.10000000000000009
+        ],
+        "offset_length_m": 0.18027756377319906,
+        "column_top_m": [
+          5.7,
+          3.1999999999999997
+        ],
+        "beam_end_m": [
+          5.85,
+          3.3
+        ]
+      }
+    ],
+    "kind": "physical_assembly",
+    "length_m": 5.7,
+    "height_m": 3.1999999999999997,
+    "origin_enu_m": [
+      -2.8500000033479043,
+      1.8500115220427484,
+      0.0
+    ],
+    "coordinate_mapping": "Analytical X = saved East - origin.E; Y = saved Up - origin.U; rotation about -North; physical North constant",
+    "members": [
+      {
+        "component_id": "industrial-platform-5x3:column-nw",
+        "name": "column-nw",
+        "position_enu_m": [
+          -2.8500000033479043,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "size_m": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ],
+        "axis": "Up",
+        "length_m": 3.1999999999999997,
+        "centerline_endpoints_m": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3.1999999999999997
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.09,
+        "solid_rectangle_inertia_m4": 0.0006749999999999998,
+        "node_ids": [
+          1,
+          2
+        ]
+      },
+      {
+        "component_id": "industrial-platform-5x3:beam-north",
+        "name": "beam-north",
+        "position_enu_m": [
+          -3.3479041727241276e-09,
+          1.8500115220427484,
+          3.3
+        ],
+        "size_m": [
+          6,
+          0.3,
+          0.2
+        ],
+        "axis": "East",
+        "length_m": 6,
+        "centerline_endpoints_m": [
+          [
+            -0.1499999999999999,
+            3.3
+          ],
+          [
+            5.85,
+            3.3
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.06,
+        "solid_rectangle_inertia_m4": 0.00020000000000000006,
+        "node_ids": [
+          2,
+          3
+        ]
+      },
+      {
+        "component_id": "industrial-platform-5x3:column-ne",
+        "name": "column-ne",
+        "position_enu_m": [
+          2.849999996652096,
+          1.8500115220427484,
+          1.5999999999999999
+        ],
+        "size_m": [
+          0.3,
+          0.3,
+          3.1999999999999997
+        ],
+        "axis": "Up",
+        "length_m": 3.1999999999999997,
+        "centerline_endpoints_m": [
+          [
+            5.7,
+            0
+          ],
+          [
+            5.7,
+            3.1999999999999997
+          ]
+        ],
+        "solid_rectangle_area_m2": 0.09,
+        "solid_rectangle_inertia_m4": 0.0006749999999999998,
+        "node_ids": [
+          4,
+          3
+        ]
+      }
+    ],
+    "component_ids": [
+      "industrial-platform-5x3:column-nw",
+      "industrial-platform-5x3:beam-north",
+      "industrial-platform-5x3:column-ne"
+    ],
+    "candidate_joints": [
+      {
+        "column_id": "industrial-platform-5x3:column-nw",
+        "beam_id": "industrial-platform-5x3:beam-north",
+        "column_endpoint": "top",
+        "beam_endpoint": "left"
+      },
+      {
+        "column_id": "industrial-platform-5x3:column-ne",
+        "beam_id": "industrial-platform-5x3:beam-north",
+        "column_endpoint": "top",
+        "beam_endpoint": "right"
+      }
+    ],
+    "note": "Coincident endpoints are geometry facts only. Explicit joint declarations required before shared analytical nodes exist."
+  },
+  "geometry_unchanged": true,
+  "all_platform_beam_end_offsets": [
+    {
+      "beam_id": "industrial-platform-5x3:beam-east",
+      "column_id": "industrial-platform-5x3:column-se",
+      "physical_end_enu_m": [
+        2.849999996652096,
+        -1.6999884779572518,
+        3.3
+      ],
+      "column_top_enu_m": [
+        2.849999996652096,
+        -1.8499884779572517,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.0,
+        0.1499999999999999,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": false
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-east",
+      "column_id": "industrial-platform-5x3:column-ne",
+      "physical_end_enu_m": [
+        2.849999996652096,
+        1.7000115220427485,
+        3.3
+      ],
+      "column_top_enu_m": [
+        2.849999996652096,
+        1.8500115220427484,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.0,
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": false
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-north",
+      "column_id": "industrial-platform-5x3:column-nw",
+      "physical_end_enu_m": [
+        -3.000000003347904,
+        1.8500115220427484,
+        3.3
+      ],
+      "column_top_enu_m": [
+        -2.8500000033479043,
+        1.8500115220427484,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        -0.1499999999999999,
+        0.0,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": true
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-north",
+      "column_id": "industrial-platform-5x3:column-ne",
+      "physical_end_enu_m": [
+        2.999999996652096,
+        1.8500115220427484,
+        3.3
+      ],
+      "column_top_enu_m": [
+        2.849999996652096,
+        1.8500115220427484,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.1499999999999999,
+        0.0,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": true
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-south",
+      "column_id": "industrial-platform-5x3:column-sw",
+      "physical_end_enu_m": [
+        -3.000000003347904,
+        -1.8499884779572517,
+        3.3
+      ],
+      "column_top_enu_m": [
+        -2.8500000033479043,
+        -1.8499884779572517,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        -0.1499999999999999,
+        0.0,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": true
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-south",
+      "column_id": "industrial-platform-5x3:column-se",
+      "physical_end_enu_m": [
+        2.999999996652096,
+        -1.8499884779572517,
+        3.3
+      ],
+      "column_top_enu_m": [
+        2.849999996652096,
+        -1.8499884779572517,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.1499999999999999,
+        0.0,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": true
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-west",
+      "column_id": "industrial-platform-5x3:column-sw",
+      "physical_end_enu_m": [
+        -2.8500000033479043,
+        -1.6999884779572518,
+        3.3
+      ],
+      "column_top_enu_m": [
+        -2.8500000033479043,
+        -1.8499884779572517,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.0,
+        0.1499999999999999,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": false
+    },
+    {
+      "beam_id": "industrial-platform-5x3:beam-west",
+      "column_id": "industrial-platform-5x3:column-nw",
+      "physical_end_enu_m": [
+        -2.8500000033479043,
+        1.7000115220427485,
+        3.3
+      ],
+      "column_top_enu_m": [
+        -2.8500000033479043,
+        1.8500115220427484,
+        3.1999999999999997
+      ],
+      "offset_enu_m": [
+        0.0,
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      "offset_length_m": 0.18027756377319945,
+      "supported_in_current_xz_orientation": false
+    }
+  ]
+}

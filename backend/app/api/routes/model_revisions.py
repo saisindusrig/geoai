@@ -147,6 +147,8 @@ def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True,
         from app.experimental.cad_revision import validate_references
         validate_references(db, project_id=project_id, user_id=user.id, document=payload.document, base=latest, publication=cad_publication)
     layout_validation = validate_layout(payload.document)
+    from app.api.routes.drawing_cad import validate_save
+    validate_save(project_id, latest, payload.document, db, user.id)
     if not layout_validation["passed"]:
         raise HTTPException(422, detail={"message": "Structural layout rule validation failed", "violations": layout_validation["violations"]})
     payload.document = deepcopy(payload.document)
@@ -199,7 +201,7 @@ def persist_revision(project_id, scenario_id, payload, db, user, *, commit=True,
             db.add(ModelPlacement(model_revision_id=revision.id, **fields))
         # Preserve immutable result payloads; only their current applicability
         # changes when a new model revision supersedes the analysed geometry.
-        db.query(EngineeringAnalysis).filter_by(project_id=project_id, model_revision_id=latest.id).update({"status": "STALE"}, synchronize_session=False)
+        db.query(EngineeringAnalysis).filter_by(project_id=project_id, model_revision_id=latest.id).filter(~EngineeringAnalysis.analysis_type.in_(['DRAWING_REFERENCE','DRAWING_REVIEW','CAD_GEOMETRY_PROPOSAL','CAD_GEOMETRY_AUTHORIZATION'])).update({"status": "STALE"}, synchronize_session=False)
     db.add(EngineeringAuditEvent(project_id=project_id, actor_user_id=user.id, action="model.revision.created",
         before_json={"model_revision_id": latest_id}, after_json={"model_revision_id": revision.id, "source": payload.source}))
 

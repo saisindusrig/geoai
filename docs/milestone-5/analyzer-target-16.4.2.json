@@ -1,0 +1,6 @@
+{
+  "version": "16.4.2",
+  "dependencies": {
+    "webpack-bundle-analyzer": "4.10.1"
+  }
+}

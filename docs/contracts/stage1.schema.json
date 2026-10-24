@@ -4321,6 +4321,24 @@
         },
         "context": {
           "$ref": "#/$defs/SubmitContext"
+        },
+        "assistantMode": {
+          "default": "EXISTING",
+          "enum": [
+            "EXISTING",
+            "ENGINEERING_OFFLINE"
+          ],
+          "title": "Assistantmode",
+          "type": "string"
+        },
+        "requestedModel": {
+          "default": "zai-org/GLM-5.3-Flash",
+          "enum": [
+            "zai-org/GLM-5.3-Flash",
+            "zai-org/GLM-5.3"
+          ],
+          "title": "Requestedmodel",
+          "type": "string"
         }
       },
       "required": [

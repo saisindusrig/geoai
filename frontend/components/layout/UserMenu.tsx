@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { loginPath } from "@/lib/auth-routes";
 import { authRequired, clearAuthToken, getAuthToken } from "@/lib/api";
 import { useAuthUser } from "@/lib/useAuthUser";
+import { firebaseMode, firebaseSignedIn, firebaseSignOut } from "@/lib/firebase-auth";
 
 export default function UserMenu({ pathname }: { pathname: string | null }) {
   const { user, loading } = useAuthUser();
 
-  function logout() {
+  async function logout() {
+    if (firebaseMode()) { try { await firebaseSignOut(); } finally { window.location.href = loginPath(pathname ?? "/dashboard"); } return; }
     clearAuthToken();
     window.location.href = authRequired() ? loginPath(pathname ?? "/dashboard") : "/dashboard";
   }
@@ -19,7 +21,7 @@ export default function UserMenu({ pathname }: { pathname: string | null }) {
     return <div className="h-8 w-20 rounded-md bg-muted/40 animate-pulse" aria-hidden />;
   }
 
-  if (!user || (authRequired() && !getAuthToken())) {
+  if (!user || (authRequired() && !getAuthToken() && !firebaseSignedIn())) {
     return (
       <Link href={loginPath(pathname ?? "/dashboard")}>
         <Button variant="outline" size="sm" className="h-8 gap-1.5 text-xs">

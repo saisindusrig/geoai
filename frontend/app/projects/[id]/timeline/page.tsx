@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
-import { CheckCircle2, Circle, Clock, Download } from "lucide-react";
+import { Circle, Clock, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectError, ProjectLoading } from "@/components/layout/ProjectHeader";
 import MetricCard from "@/components/project-results/MetricCard";
@@ -23,6 +23,7 @@ export default function TimelinePage() {
     () => design?.construction_sequence ?? [],
     [design?.construction_sequence],
   );
+  const permissions = Array.isArray(design?.required_permissions) ? design.required_permissions : null;
   const timeline = calc?.timeline;
   const months = timeline?.estimated_months_medium as number | undefined;
   const timelineNote = typeof timeline?.note === "string" ? timeline.note : null;
@@ -96,6 +97,7 @@ export default function TimelinePage() {
 
             <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
               <div className="space-y-0">
+                {sequence.length === 0 && <p className="text-sm text-muted-foreground">Construction sequence has not been supplied.</p>}
                 {sequence.map((step, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="flex flex-col items-center">
@@ -108,7 +110,7 @@ export default function TimelinePage() {
                         )}
                       >
                         {i < sequence.length - 1 ? (
-                          <CheckCircle2 className="h-4 w-4" />
+                          <Circle className="h-4 w-4" />
                         ) : (
                           <Circle className="h-4 w-4" />
                         )}
@@ -128,7 +130,7 @@ export default function TimelinePage() {
                 ))}
               </div>
 
-              <div className="hidden lg:block rounded-lg border border-border bg-background-secondary/80 p-4">
+              {sequence.length > 0 && <div className="hidden lg:block rounded-lg border border-border bg-background-secondary/80 p-4">
                 <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground mb-3">Gantt preview</p>
                 <div className="space-y-2">
                   {sequence.map((step, i) => {
@@ -149,17 +151,18 @@ export default function TimelinePage() {
                     );
                   })}
                 </div>
-              </div>
+              </div>}
             </div>
           </GlassCard>
 
-          {design.required_permissions.length > 0 && (
+          {permissions === null && <p role="status" className="text-sm text-warning-text">Required permissions and surveys have not been supplied. Professional review is required.</p>}
+          {permissions !== null && permissions.length > 0 && (
             <GlassCard className="p-4 sm:p-5">
               <h3 className="text-sm font-semibold text-foreground mb-3">Required permissions & surveys</h3>
               <ul className="space-y-2">
-                {design.required_permissions.map((p, i) => (
+                {permissions.map((p, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-accent mt-0.5" />
+                    <Circle aria-hidden="true" className="h-4 w-4 shrink-0 text-accent mt-0.5" />
                     {p}
                   </li>
                 ))}

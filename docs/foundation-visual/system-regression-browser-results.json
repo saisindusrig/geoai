@@ -1,0 +1,24 @@
+{
+  "attestation": {
+    "mode": "foundation-isolated-20261015",
+    "database": "D:\\layout project\\docs\\foundation-system\\isolated\\foundation.db",
+    "paid_inference": false,
+    "port": 18001
+  },
+  "copy": {
+    "project_id": 820,
+    "scenario_id": 608,
+    "model_revision_id": 146,
+    "source_project_id": 804,
+    "engineering_approval": "DISABLED"
+  },
+  "proposal_id": 671,
+  "result_id": 672,
+  "two_mats": true,
+  "download": true,
+  "alternatives": true,
+  "offline_copilot": true,
+  "stale_edit_clears_overlay": true,
+  "reload": true,
+  "page_errors": []
+}

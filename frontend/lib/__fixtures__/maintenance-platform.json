@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "project_id": 1,
+  "scenario_id": 1,
+  "project_type": "unclassified",
+  "units": "metric",
+  "origin": {
+    "lng": 77.59516745544197,
+    "lat": 12.970659741605996,
+    "heading_deg": 0,
+    "elevation_m": null
+  },
+  "generator_parameters": {},
+  "components": [
+    {
+      "id": "industrial-platform-5x3:beam-east",
+      "parent_id": null,
+      "name": "beam-east",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          2.4,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.1522042748281695e-05,
+          2.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-north",
+      "parent_id": null,
+      "name": "beam-north",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.3500115220427484,
+          2.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-south",
+      "parent_id": null,
+      "name": "beam-south",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5,
+          0.3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          -1.3499884779572517,
+          2.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:beam-west",
+      "parent_id": null,
+      "name": "beam-west",
+      "category": "beam",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          2.4,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.1522042748281695e-05,
+          2.7
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Concept beam",
+        "color": "#8EACC7",
+        "roughness": 0.8,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-ne",
+      "parent_id": null,
+      "name": "column-ne",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.6
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          1.3500115220427484,
+          1.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-nw",
+      "parent_id": null,
+      "name": "column-nw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.6
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          1.3500115220427484,
+          1.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-se",
+      "parent_id": null,
+      "name": "column-se",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.6
+        ]
+      },
+      "transform": {
+        "position": [
+          2.349999996652096,
+          -1.3499884779572517,
+          1.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:column-sw",
+      "parent_id": null,
+      "name": "column-sw",
+      "category": "column",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          0.3,
+          0.3,
+          2.6
+        ]
+      },
+      "transform": {
+        "position": [
+          -2.3500000033479043,
+          -1.3499884779572517,
+          1.3
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    },
+    {
+      "id": "industrial-platform-5x3:platform-deck",
+      "parent_id": null,
+      "name": "platform-deck",
+      "category": "slab",
+      "visible": true,
+      "locked": false,
+      "geometry": {
+        "kind": "box",
+        "size": [
+          5.5,
+          3,
+          0.2
+        ]
+      },
+      "transform": {
+        "position": [
+          -3.3479041727241276e-09,
+          1.1522042748281695e-05,
+          2.9
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "material": {
+        "name": "Generated material",
+        "color": "#94A3B8",
+        "roughness": 0.75,
+        "metalness": 0
+      },
+      "quantity": {
+        "included": false
+      }
+    }
+  ],
+  "metadata": {
+    "source": "ai_generate",
+    "frame": "local_enu_meters",
+    "ai3dProposalVersionId": "fcabf4b8-836b-5893-91f2-8eee6182560e",
+    "ai3dDesignId": "industrial-platform-5x3",
+    "ai3dValidation": {
+      "status": "DESIGN_VALID",
+      "geometryStatus": "GEOMETRY_VALID",
+      "engineeringStatus": "UNVALIDATED",
+      "issues": [],
+      "constraintChecks": [
+        {
+          "id": "platform-within-site",
+          "kind": "WITHIN_AREA",
+          "status": "SATISFIED"
+        }
+      ],
+      "componentCount": 9,
+      "relationshipStatus": "RECORDED_NOT_ENGINEERING_VALIDATED"
+    },
+    "referencePlane": "LOCAL_VISUAL_REFERENCE",
+    "generatedAt": "2026-10-11T12:17:34.270131+00:00",
+    "elevation_known": false,
+    "placementProvenance": {
+      "project_id": 727,
+      "anchor_longitude": 77.59516745544197,
+      "anchor_latitude": 12.970659741605996,
+      "anchor_elevation": null,
+      "anchor_heading_deg": 0,
+      "elevation_offset": 0,
+      "placement_mode": "GROUND_RELATIVE",
+      "height_reference": "TERRAIN",
+      "elevation_resolution": "UNKNOWN",
+      "anchor_locked": true,
+      "legacy_placement": false,
+      "local_transform_json": {},
+      "elevation_provenance_json": {
+        "source": "UNKNOWN",
+        "anchorSource": "SELECTED_GEOMETRY_CENTROID",
+        "selectionVersionId": "00b0d73a-c205-5b02-b819-0be84de0a8c2"
+      },
+      "placement_state": "REVIEW_REQUIRED"
+    },
+    "ai3dRelationships": []
+  },
+  "structural_layout": {
+    "rule_preset": {},
+    "assumptions": [
+      "Preliminary geometry; no engineering validation."
+    ]
+  }
+}

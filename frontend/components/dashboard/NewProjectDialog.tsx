@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { InlineSpinner } from "@/components/ui/loading-feedback";
 import { api } from "@/lib/api";
 import type { Project } from "@/lib/types";
 
@@ -51,7 +52,7 @@ export default function NewProjectDialog({ onClose, returnFocus }: { onClose: ()
       {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
       <div className="mt-6 flex justify-end gap-3">
         <button type="button" disabled={busy} onClick={onClose} className="rounded-xl border border-border px-4 py-2 text-sm">Cancel</button>
-        <button type="submit" disabled={busy || !name.trim()} className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-50">{busy ? "Creating…" : "Create Project"}</button>
+        <button type="submit" disabled={busy || !name.trim()} className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-50">{busy && <InlineSpinner />} {busy ? "Creating…" : "Create Project"}</button>
       </div>
     </form>
   </div>;

@@ -1,0 +1,187 @@
+[
+  {
+    "width": 1280,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/login",
+        "title": "Login | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/model",
+        "title": "Model | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/analysis",
+        "title": "Analysis | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/report",
+        "title": "Report | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [
+      {
+        "message": "YA",
+        "stack": "",
+        "route": "http://127.0.0.1:3001/projects/991600/model"
+      },
+      {
+        "message": "YA",
+        "stack": "",
+        "route": "http://127.0.0.1:3001/projects/991600/model"
+      }
+    ],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "width": 1600,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/settings",
+        "title": "Settings | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/diagnostics",
+        "title": "Diagnostics | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/login",
+        "title": "Login | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/model",
+        "title": "Model | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/analysis",
+        "title": "Analysis | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/report",
+        "title": "Report | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/projects/991600/workspace",
+        "title": "3D workspace | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [
+      {
+        "message": "YA",
+        "stack": "",
+        "route": "http://127.0.0.1:3001/projects/991600/model"
+      },
+      {
+        "message": "YA",
+        "stack": "",
+        "route": "http://127.0.0.1:3001/projects/991600/model"
+      }
+    ],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "width": 390,
+    "screens": [
+      {
+        "route": "/dashboard",
+        "title": "Dashboard | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/login",
+        "title": "Login | Struvo Civil",
+        "legacyVisible": false,
+        "horizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "blockedWrites": [],
+    "downloads": []
+  },
+  {
+    "manifest": {
+      "name": "Struvo Civil",
+      "short_name": "Struvo Civil",
+      "description": "Struvo Civil — Model. Analyze. Design. A 3D civil and structural engineering workspace for modeling, analysis and design review. Engineering outputs require professional verification.",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#080C08",
+      "theme_color": "#080C08",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/brand/app-icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    }
+  }
+]

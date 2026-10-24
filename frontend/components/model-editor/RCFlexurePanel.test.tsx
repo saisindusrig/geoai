@@ -1,0 +1,16 @@
+import {cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
+import {afterEach,expect,it,vi} from 'vitest';
+import Panel from './RCFlexurePanel';
+import fixture from './rc-flexure-fixture.json';
+import {api} from '@/lib/api';
+import type {EditableModelEditor} from '@/hooks/useEditableModelEditor';
+vi.mock('@/lib/api',()=>({api:{get:vi.fn(),post:vi.fn()},formatApiErrorMessage:(e:Error)=>e.message}));
+afterEach(()=>{cleanup();vi.clearAllMocks();});
+const geometry={center_east_north_m:[.15,.15],footing_size_m:[1.2,1.2,.45],column_id:'c',column_face_up_m:0};
+it('keeps actual materials blank and requires explicit synthetic review, without writing the model',async()=>{
+ vi.mocked(api.get).mockResolvedValue({records:[],geometry,source_demand:{id:563,unfactored_full_cut_knm:12.15}});vi.mocked(api.post).mockImplementation(()=>new Promise(()=>{}));render(<Panel projectId={804} editor={{baseRevision:{id:124},dirty:false} as EditableModelEditor}/>);
+ const load=screen.getByRole('button',{name:'Load synthetic nominal flexure inputs'});await waitFor(()=>expect(load).toBeEnabled());expect(screen.getByLabelText('Actual concrete strength')).toHaveValue('');fireEvent.click(load);expect(screen.getByLabelText('Actual steel yield strength')).toHaveValue('');const preview=screen.getByRole('button',{name:'Preview nominal reinforcement proposal'});expect(preview).toBeDisabled();fireEvent.click(screen.getByLabelText('Review synthetic RC assumptions'));fireEvent.click(preview);await waitFor(()=>expect(screen.getByLabelText('Synthetic cylinder strength MPa')).toBeDisabled());expect(api.post).toHaveBeenCalledWith(expect.stringContaining('/rc-flexure/preview'),expect.objectContaining({benchmark:expect.objectContaining({declared_action_knm:250,comparison_basis:'NOMINAL_EQUILIBRIUM_TARGET_ONLY_NO_STRENGTH_FACTOR'})}));
+});
+it('invalidates diagrams and authorization on an action change',async()=>{
+ const inputs={model_revision_id:124,benchmark:fixture};const part={steel_area_mm2:2513.274,neutral_axis_c_mm:58,block_depth_a_mm:49.3,tension_strain:.0159,compression_N:1256637,tension_N:1256637,force_residual_N:0,nominal_moment_knm:427.7};vi.mocked(api.get).mockResolvedValue({geometry,source_demand:{id:563,unfactored_full_cut_knm:12.15},records:[{id:2,type:'RC_FLEXURE_RESULT',status:'VERIFIED_SYNTHETIC_NOMINAL_ONLY',result:{inputs,geometry,computed:{provided:part,required_nominal_equilibrium:part,spacing_mm:147,declared_action_knm:250}}},{id:1,type:'RC_FLEXURE_PROPOSAL',status:'AWAITING_AUTHORIZATION',result:{inputs,geometry,proposal_sha256:'a'.repeat(64)}}]});render(<Panel projectId={804} editor={{baseRevision:{id:124},dirty:false} as EditableModelEditor}/>);await screen.findByText(/Provided As/);fireEvent.click(screen.getByLabelText('Authorize exact RC nominal calculation'));fireEvent.change(screen.getByLabelText('Independent nominal-equilibrium target kN·m'),{target:{value:'300'}});expect(screen.getByRole('article',{name:'RC nominal results'})).toHaveTextContent('STALE');expect(screen.getByLabelText('Authorize exact RC nominal calculation')).not.toBeChecked();expect(screen.getByRole('button',{name:'Show synthetic bars, cover and effective depth'})).toBeDisabled();
+});

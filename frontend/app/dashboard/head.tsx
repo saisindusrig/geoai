@@ -1,3 +1,3 @@
 export default function Head() {
-  return <><title>Dashboard | GeoAI</title></>;
+  return <><title>Dashboard | StruvoCivil</title></>;
 }

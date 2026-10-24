@@ -1,0 +1,3090 @@
+{
+  "drawing_project": 789,
+  "strength_project": 790,
+  "source": {
+    "id": 357,
+    "model_revision_id": 96,
+    "status": "REFERENCE_IMPORTED_NOT_ANALYTICAL_MODEL",
+    "result": {
+      "filename": "GeoAI_Practice_Platform_Plan_mm.dxf",
+      "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+      "dxf_version": "AC1024",
+      "unit_code": 4,
+      "source_units": "mm",
+      "scale_to_m": 0.001,
+      "classification": "SYNTHETIC_VERIFICATION",
+      "entities": [
+        {
+          "id": "dxf:614f117ae2a74794:95",
+          "handle": "95",
+          "layer": "SLAB",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              6000,
+              0,
+              0
+            ],
+            [
+              6000,
+              4000,
+              0
+            ],
+            [
+              0,
+              4000,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            0,
+            6,
+            4
+          ],
+          "plan_dimensions_m": [
+            6,
+            4
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:96",
+          "handle": "96",
+          "layer": "BEAMS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              50,
+              0
+            ],
+            [
+              6000,
+              50,
+              0
+            ],
+            [
+              6000,
+              250,
+              0
+            ],
+            [
+              0,
+              250,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0,
+              0.05,
+              0
+            ],
+            [
+              6,
+              0.05,
+              0
+            ],
+            [
+              6,
+              0.25,
+              0
+            ],
+            [
+              0,
+              0.25,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            0.05,
+            6,
+            0.25
+          ],
+          "plan_dimensions_m": [
+            6,
+            0.2
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:97",
+          "handle": "97",
+          "layer": "BEAMS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              3750,
+              0
+            ],
+            [
+              6000,
+              3750,
+              0
+            ],
+            [
+              6000,
+              3950,
+              0
+            ],
+            [
+              0,
+              3950,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0,
+              3.75,
+              0
+            ],
+            [
+              6,
+              3.75,
+              0
+            ],
+            [
+              6,
+              3.95,
+              0
+            ],
+            [
+              0,
+              3.95,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            3.75,
+            6,
+            3.95
+          ],
+          "plan_dimensions_m": [
+            6,
+            0.20000000000000018
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:98",
+          "handle": "98",
+          "layer": "BEAMS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              50,
+              0,
+              0
+            ],
+            [
+              250,
+              0,
+              0
+            ],
+            [
+              250,
+              4000,
+              0
+            ],
+            [
+              50,
+              4000,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0.05,
+              0,
+              0
+            ],
+            [
+              0.25,
+              0,
+              0
+            ],
+            [
+              0.25,
+              4,
+              0
+            ],
+            [
+              0.05,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0.05,
+            0,
+            0.25,
+            4
+          ],
+          "plan_dimensions_m": [
+            0.2,
+            4
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:99",
+          "handle": "99",
+          "layer": "BEAMS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5750,
+              0,
+              0
+            ],
+            [
+              5950,
+              0,
+              0
+            ],
+            [
+              5950,
+              4000,
+              0
+            ],
+            [
+              5750,
+              4000,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.75,
+              0,
+              0
+            ],
+            [
+              5.95,
+              0,
+              0
+            ],
+            [
+              5.95,
+              4,
+              0
+            ],
+            [
+              5.75,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.75,
+            0,
+            5.95,
+            4
+          ],
+          "plan_dimensions_m": [
+            0.20000000000000018,
+            4
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9A",
+          "handle": "9A",
+          "layer": "FOOTINGS_CONCEPT",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -450,
+              -450,
+              0
+            ],
+            [
+              750,
+              -450,
+              0
+            ],
+            [
+              750,
+              750,
+              0
+            ],
+            [
+              -450,
+              750,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              -0.45,
+              -0.45,
+              0
+            ],
+            [
+              0.75,
+              -0.45,
+              0
+            ],
+            [
+              0.75,
+              0.75,
+              0
+            ],
+            [
+              -0.45,
+              0.75,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.45,
+            -0.45,
+            0.75,
+            0.75
+          ],
+          "plan_dimensions_m": [
+            1.2,
+            1.2
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9B",
+          "handle": "9B",
+          "layer": "BASE_PLATES",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -175,
+              -175,
+              0
+            ],
+            [
+              475,
+              -175,
+              0
+            ],
+            [
+              475,
+              475,
+              0
+            ],
+            [
+              -175,
+              475,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              -0.17500000000000002,
+              -0.17500000000000002,
+              0
+            ],
+            [
+              0.47500000000000003,
+              -0.17500000000000002,
+              0
+            ],
+            [
+              0.47500000000000003,
+              0.47500000000000003,
+              0
+            ],
+            [
+              -0.17500000000000002,
+              0.47500000000000003,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.17500000000000002,
+            -0.17500000000000002,
+            0.47500000000000003,
+            0.47500000000000003
+          ],
+          "plan_dimensions_m": [
+            0.65,
+            0.65
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9C",
+          "handle": "9C",
+          "layer": "COLUMNS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              300,
+              0,
+              0
+            ],
+            [
+              300,
+              300,
+              0
+            ],
+            [
+              0,
+              300,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0.3,
+              0,
+              0
+            ],
+            [
+              0.3,
+              0.3,
+              0
+            ],
+            [
+              0,
+              0.3,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            0,
+            0.3,
+            0.3
+          ],
+          "plan_dimensions_m": [
+            0.3,
+            0.3
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9D",
+          "handle": "9D",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            -90,
+            -90,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9E",
+          "handle": "9E",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            -90,
+            390,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:9F",
+          "handle": "9F",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            390,
+            -90,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A0",
+          "handle": "A0",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            390,
+            390,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A1",
+          "handle": "A1",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -200,
+              150,
+              0
+            ],
+            [
+              500,
+              150,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.2,
+              0.15,
+              0
+            ],
+            [
+              0.5,
+              0.15,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.2,
+            0.15,
+            0.5,
+            0.15
+          ],
+          "plan_dimensions_m": [
+            0.7,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A2",
+          "handle": "A2",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              150,
+              -200,
+              0
+            ],
+            [
+              150,
+              500,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              0.15,
+              -0.2,
+              0
+            ],
+            [
+              0.15,
+              0.5,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0.15,
+            -0.2,
+            0.15,
+            0.5
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.7
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A3",
+          "handle": "A3",
+          "layer": "FOOTINGS_CONCEPT",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -450,
+              3250,
+              0
+            ],
+            [
+              750,
+              3250,
+              0
+            ],
+            [
+              750,
+              4450,
+              0
+            ],
+            [
+              -450,
+              4450,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              -0.45,
+              3.25,
+              0
+            ],
+            [
+              0.75,
+              3.25,
+              0
+            ],
+            [
+              0.75,
+              4.45,
+              0
+            ],
+            [
+              -0.45,
+              4.45,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.45,
+            3.25,
+            0.75,
+            4.45
+          ],
+          "plan_dimensions_m": [
+            1.2,
+            1.2000000000000002
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A4",
+          "handle": "A4",
+          "layer": "BASE_PLATES",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -175,
+              3525,
+              0
+            ],
+            [
+              475,
+              3525,
+              0
+            ],
+            [
+              475,
+              4175,
+              0
+            ],
+            [
+              -175,
+              4175,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              -0.17500000000000002,
+              3.525,
+              0
+            ],
+            [
+              0.47500000000000003,
+              3.525,
+              0
+            ],
+            [
+              0.47500000000000003,
+              4.175,
+              0
+            ],
+            [
+              -0.17500000000000002,
+              4.175,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.17500000000000002,
+            3.525,
+            0.47500000000000003,
+            4.175
+          ],
+          "plan_dimensions_m": [
+            0.65,
+            0.6499999999999999
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A5",
+          "handle": "A5",
+          "layer": "COLUMNS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              3700,
+              0
+            ],
+            [
+              300,
+              3700,
+              0
+            ],
+            [
+              300,
+              4000,
+              0
+            ],
+            [
+              0,
+              4000,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              0,
+              3.7,
+              0
+            ],
+            [
+              0.3,
+              3.7,
+              0
+            ],
+            [
+              0.3,
+              4,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            3.7,
+            0.3,
+            4
+          ],
+          "plan_dimensions_m": [
+            0.3,
+            0.2999999999999998
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A6",
+          "handle": "A6",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            -90,
+            3610,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A7",
+          "handle": "A7",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            -90,
+            4090,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A8",
+          "handle": "A8",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            390,
+            3610,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:A9",
+          "handle": "A9",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            390,
+            4090,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AA",
+          "handle": "AA",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -200,
+              3850,
+              0
+            ],
+            [
+              500,
+              3850,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.2,
+              3.85,
+              0
+            ],
+            [
+              0.5,
+              3.85,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.2,
+            3.85,
+            0.5,
+            3.85
+          ],
+          "plan_dimensions_m": [
+            0.7,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AB",
+          "handle": "AB",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              150,
+              3500,
+              0
+            ],
+            [
+              150,
+              4200,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              0.15,
+              3.5,
+              0
+            ],
+            [
+              0.15,
+              4.2,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0.15,
+            3.5,
+            0.15,
+            4.2
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.7000000000000002
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AC",
+          "handle": "AC",
+          "layer": "FOOTINGS_CONCEPT",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5250,
+              -450,
+              0
+            ],
+            [
+              6450,
+              -450,
+              0
+            ],
+            [
+              6450,
+              750,
+              0
+            ],
+            [
+              5250,
+              750,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.25,
+              -0.45,
+              0
+            ],
+            [
+              6.45,
+              -0.45,
+              0
+            ],
+            [
+              6.45,
+              0.75,
+              0
+            ],
+            [
+              5.25,
+              0.75,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.25,
+            -0.45,
+            6.45,
+            0.75
+          ],
+          "plan_dimensions_m": [
+            1.2000000000000002,
+            1.2
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AD",
+          "handle": "AD",
+          "layer": "BASE_PLATES",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5525,
+              -175,
+              0
+            ],
+            [
+              6175,
+              -175,
+              0
+            ],
+            [
+              6175,
+              475,
+              0
+            ],
+            [
+              5525,
+              475,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.525,
+              -0.17500000000000002,
+              0
+            ],
+            [
+              6.175,
+              -0.17500000000000002,
+              0
+            ],
+            [
+              6.175,
+              0.47500000000000003,
+              0
+            ],
+            [
+              5.525,
+              0.47500000000000003,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.525,
+            -0.17500000000000002,
+            6.175,
+            0.47500000000000003
+          ],
+          "plan_dimensions_m": [
+            0.6499999999999995,
+            0.65
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AE",
+          "handle": "AE",
+          "layer": "COLUMNS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5700,
+              0,
+              0
+            ],
+            [
+              6000,
+              0,
+              0
+            ],
+            [
+              6000,
+              300,
+              0
+            ],
+            [
+              5700,
+              300,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.7,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              6,
+              0.3,
+              0
+            ],
+            [
+              5.7,
+              0.3,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.7,
+            0,
+            6,
+            0.3
+          ],
+          "plan_dimensions_m": [
+            0.2999999999999998,
+            0.3
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:AF",
+          "handle": "AF",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            5610,
+            -90,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B0",
+          "handle": "B0",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            5610,
+            390,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B1",
+          "handle": "B1",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            6090,
+            -90,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B2",
+          "handle": "B2",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            6090,
+            390,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B3",
+          "handle": "B3",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5500,
+              150,
+              0
+            ],
+            [
+              6200,
+              150,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              5.5,
+              0.15,
+              0
+            ],
+            [
+              6.2,
+              0.15,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.5,
+            0.15,
+            6.2,
+            0.15
+          ],
+          "plan_dimensions_m": [
+            0.7000000000000002,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B4",
+          "handle": "B4",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5850,
+              -200,
+              0
+            ],
+            [
+              5850,
+              500,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              5.8500000000000005,
+              -0.2,
+              0
+            ],
+            [
+              5.8500000000000005,
+              0.5,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.8500000000000005,
+            -0.2,
+            5.8500000000000005,
+            0.5
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.7
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B5",
+          "handle": "B5",
+          "layer": "FOOTINGS_CONCEPT",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5250,
+              3250,
+              0
+            ],
+            [
+              6450,
+              3250,
+              0
+            ],
+            [
+              6450,
+              4450,
+              0
+            ],
+            [
+              5250,
+              4450,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.25,
+              3.25,
+              0
+            ],
+            [
+              6.45,
+              3.25,
+              0
+            ],
+            [
+              6.45,
+              4.45,
+              0
+            ],
+            [
+              5.25,
+              4.45,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.25,
+            3.25,
+            6.45,
+            4.45
+          ],
+          "plan_dimensions_m": [
+            1.2000000000000002,
+            1.2000000000000002
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B6",
+          "handle": "B6",
+          "layer": "BASE_PLATES",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5525,
+              3525,
+              0
+            ],
+            [
+              6175,
+              3525,
+              0
+            ],
+            [
+              6175,
+              4175,
+              0
+            ],
+            [
+              5525,
+              4175,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.525,
+              3.525,
+              0
+            ],
+            [
+              6.175,
+              3.525,
+              0
+            ],
+            [
+              6.175,
+              4.175,
+              0
+            ],
+            [
+              5.525,
+              4.175,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.525,
+            3.525,
+            6.175,
+            4.175
+          ],
+          "plan_dimensions_m": [
+            0.6499999999999995,
+            0.6499999999999999
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B7",
+          "handle": "B7",
+          "layer": "COLUMNS",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5700,
+              3700,
+              0
+            ],
+            [
+              6000,
+              3700,
+              0
+            ],
+            [
+              6000,
+              4000,
+              0
+            ],
+            [
+              5700,
+              4000,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              5.7,
+              3.7,
+              0
+            ],
+            [
+              6,
+              3.7,
+              0
+            ],
+            [
+              6,
+              4,
+              0
+            ],
+            [
+              5.7,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.7,
+            3.7,
+            6,
+            4
+          ],
+          "plan_dimensions_m": [
+            0.2999999999999998,
+            0.2999999999999998
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B8",
+          "handle": "B8",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            5610,
+            3610,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:B9",
+          "handle": "B9",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            5610,
+            4090,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BA",
+          "handle": "BA",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            6090,
+            3610,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BB",
+          "handle": "BB",
+          "layer": "ANCHORS_DECLARED",
+          "kind": "CIRCLE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "center_native": [
+            6090,
+            4090,
+            0
+          ],
+          "radius_native": 10,
+          "interpretation": "REFERENCE_CIRCLE_ONLY_NOT_PHYSICAL_ANCHOR"
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BC",
+          "handle": "BC",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5500,
+              3850,
+              0
+            ],
+            [
+              6200,
+              3850,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              5.5,
+              3.85,
+              0
+            ],
+            [
+              6.2,
+              3.85,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.5,
+            3.85,
+            6.2,
+            3.85
+          ],
+          "plan_dimensions_m": [
+            0.7000000000000002,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BD",
+          "handle": "BD",
+          "layer": "CENTRELINES",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5850,
+              3500,
+              0
+            ],
+            [
+              5850,
+              4200,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              5.8500000000000005,
+              3.5,
+              0
+            ],
+            [
+              5.8500000000000005,
+              4.2,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.8500000000000005,
+            3.5,
+            5.8500000000000005,
+            4.2
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.7000000000000002
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BE",
+          "handle": "BE",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LWPOLYLINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2400,
+              -1900,
+              0
+            ],
+            [
+              3600,
+              -1900,
+              0
+            ],
+            [
+              3600,
+              0,
+              0
+            ],
+            [
+              2400,
+              0,
+              0
+            ]
+          ],
+          "closed": true,
+          "points_m": [
+            [
+              2.4,
+              -1.9000000000000001,
+              0
+            ],
+            [
+              3.6,
+              -1.9000000000000001,
+              0
+            ],
+            [
+              3.6,
+              0,
+              0
+            ],
+            [
+              2.4,
+              0,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4,
+            -1.9000000000000001,
+            3.6,
+            0
+          ],
+          "plan_dimensions_m": [
+            1.2000000000000002,
+            1.9000000000000001
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:BF",
+          "handle": "BF",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1750,
+              0
+            ],
+            [
+              3575,
+              -1750,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1.75,
+              0
+            ],
+            [
+              3.575,
+              -1.75,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1.75,
+            3.575,
+            -1.75
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C0",
+          "handle": "C0",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1600,
+              0
+            ],
+            [
+              3575,
+              -1600,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1.6,
+              0
+            ],
+            [
+              3.575,
+              -1.6,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1.6,
+            3.575,
+            -1.6
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C1",
+          "handle": "C1",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1450,
+              0
+            ],
+            [
+              3575,
+              -1450,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1.45,
+              0
+            ],
+            [
+              3.575,
+              -1.45,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1.45,
+            3.575,
+            -1.45
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C2",
+          "handle": "C2",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1300,
+              0
+            ],
+            [
+              3575,
+              -1300,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1.3,
+              0
+            ],
+            [
+              3.575,
+              -1.3,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1.3,
+            3.575,
+            -1.3
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C3",
+          "handle": "C3",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1150,
+              0
+            ],
+            [
+              3575,
+              -1150,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1.1500000000000001,
+              0
+            ],
+            [
+              3.575,
+              -1.1500000000000001,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1.1500000000000001,
+            3.575,
+            -1.1500000000000001
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C4",
+          "handle": "C4",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -1000,
+              0
+            ],
+            [
+              3575,
+              -1000,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -1,
+              0
+            ],
+            [
+              3.575,
+              -1,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -1,
+            3.575,
+            -1
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C5",
+          "handle": "C5",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -850,
+              0
+            ],
+            [
+              3575,
+              -850,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.85,
+              0
+            ],
+            [
+              3.575,
+              -0.85,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.85,
+            3.575,
+            -0.85
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C6",
+          "handle": "C6",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -700,
+              0
+            ],
+            [
+              3575,
+              -700,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.7000000000000001,
+              0
+            ],
+            [
+              3.575,
+              -0.7000000000000001,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.7000000000000001,
+            3.575,
+            -0.7000000000000001
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C7",
+          "handle": "C7",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -550,
+              0
+            ],
+            [
+              3575,
+              -550,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.55,
+              0
+            ],
+            [
+              3.575,
+              -0.55,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.55,
+            3.575,
+            -0.55
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C8",
+          "handle": "C8",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -400,
+              0
+            ],
+            [
+              3575,
+              -400,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.4,
+              0
+            ],
+            [
+              3.575,
+              -0.4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.4,
+            3.575,
+            -0.4
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:C9",
+          "handle": "C9",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -250,
+              0
+            ],
+            [
+              3575,
+              -250,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.25,
+              0
+            ],
+            [
+              3.575,
+              -0.25,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.25,
+            3.575,
+            -0.25
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CA",
+          "handle": "CA",
+          "layer": "STAIR_CONCEPT",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              2425,
+              -100,
+              0
+            ],
+            [
+              3575,
+              -100,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              2.4250000000000003,
+              -0.1,
+              0
+            ],
+            [
+              3.575,
+              -0.1,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            2.4250000000000003,
+            -0.1,
+            3.575,
+            -0.1
+          ],
+          "plan_dimensions_m": [
+            1.15,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CB",
+          "handle": "CB",
+          "layer": "WARNINGS",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "ACCESS STAIR: GEOMETRY PLACEHOLDER ONLY",
+          "position_native": [
+            2000,
+            -2220,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CC",
+          "handle": "CC",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              4070,
+              0
+            ],
+            [
+              0,
+              4530,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              0,
+              4.07,
+              0
+            ],
+            [
+              0,
+              4.53,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            4.07,
+            0,
+            4.53
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.45999999999999996
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CD",
+          "handle": "CD",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              6000,
+              4070,
+              0
+            ],
+            [
+              6000,
+              4530,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              6,
+              4.07,
+              0
+            ],
+            [
+              6,
+              4.53,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            6,
+            4.07,
+            6,
+            4.53
+          ],
+          "plan_dimensions_m": [
+            0,
+            0.45999999999999996
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CE",
+          "handle": "CE",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              0,
+              4420,
+              0
+            ],
+            [
+              6000,
+              4420,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              0,
+              4.42,
+              0
+            ],
+            [
+              6,
+              4.42,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            0,
+            4.42,
+            6,
+            4.42
+          ],
+          "plan_dimensions_m": [
+            6,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:CF",
+          "handle": "CF",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -55,
+              4365,
+              0
+            ],
+            [
+              55,
+              4475,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.055,
+              4.365,
+              0
+            ],
+            [
+              0.055,
+              4.4750000000000005,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.055,
+            4.365,
+            0.055,
+            4.4750000000000005
+          ],
+          "plan_dimensions_m": [
+            0.11,
+            0.11000000000000032
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D0",
+          "handle": "D0",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              5945,
+              4365,
+              0
+            ],
+            [
+              6055,
+              4475,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              5.945,
+              4.365,
+              0
+            ],
+            [
+              6.055,
+              4.4750000000000005,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            5.945,
+            4.365,
+            6.055,
+            4.4750000000000005
+          ],
+          "plan_dimensions_m": [
+            0.10999999999999943,
+            0.11000000000000032
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D1",
+          "handle": "D1",
+          "layer": "DIMENSIONS",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "6000 mm",
+          "position_native": [
+            2640,
+            4490,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D2",
+          "handle": "D2",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -85,
+              0,
+              0
+            ],
+            [
+              -530,
+              0,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.085,
+              0,
+              0
+            ],
+            [
+              -0.53,
+              0,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.53,
+            0,
+            -0.085,
+            0
+          ],
+          "plan_dimensions_m": [
+            0.445,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D3",
+          "handle": "D3",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -85,
+              4000,
+              0
+            ],
+            [
+              -530,
+              4000,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.085,
+              4,
+              0
+            ],
+            [
+              -0.53,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.53,
+            4,
+            -0.085,
+            4
+          ],
+          "plan_dimensions_m": [
+            0.445,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D4",
+          "handle": "D4",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -420,
+              0,
+              0
+            ],
+            [
+              -420,
+              4000,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.42,
+              0,
+              0
+            ],
+            [
+              -0.42,
+              4,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.42,
+            0,
+            -0.42,
+            4
+          ],
+          "plan_dimensions_m": [
+            0,
+            4
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D5",
+          "handle": "D5",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -475,
+              -55,
+              0
+            ],
+            [
+              -365,
+              55,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.47500000000000003,
+              -0.055,
+              0
+            ],
+            [
+              -0.365,
+              0.055,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.47500000000000003,
+            -0.055,
+            -0.365,
+            0.055
+          ],
+          "plan_dimensions_m": [
+            0.11000000000000004,
+            0.11
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D6",
+          "handle": "D6",
+          "layer": "DIMENSIONS",
+          "kind": "LINE",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "points_native": [
+            [
+              -475,
+              3945,
+              0
+            ],
+            [
+              -365,
+              4055,
+              0
+            ]
+          ],
+          "closed": false,
+          "points_m": [
+            [
+              -0.47500000000000003,
+              3.9450000000000003,
+              0
+            ],
+            [
+              -0.365,
+              4.055,
+              0
+            ]
+          ],
+          "plan_bounds_m": [
+            -0.47500000000000003,
+            3.9450000000000003,
+            -0.365,
+            4.055
+          ],
+          "plan_dimensions_m": [
+            0.11000000000000004,
+            0.10999999999999943
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D7",
+          "handle": "D7",
+          "layer": "DIMENSIONS",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "4000 mm",
+          "position_native": [
+            -1000,
+            2100,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D8",
+          "handle": "D8",
+          "layer": "NOTES",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "GEOAI - SYNTHETIC 6m x 4m PLATFORM PLAN",
+          "position_native": [
+            0,
+            5050,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:D9",
+          "handle": "D9",
+          "layer": "NOTES",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "MILLIMETRES | X = LOCAL EAST, Y = LOCAL NORTH | NOT GEOREFERENCED",
+          "position_native": [
+            0,
+            4770,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:DA",
+          "handle": "DA",
+          "layer": "NOTES",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "SLAB 6000x4000x200 | COLUMNS 4 x 300x300 | LONG BEAMS 2 x 6000x200x300",
+          "position_native": [
+            0,
+            -2600,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:DB",
+          "handle": "DB",
+          "layer": "NOTES",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "TRANSVERSE BEAMS 2 x 4000x200x300 | PLATES 650x650 | FOOTING BOXES 1200x1200",
+          "position_native": [
+            0,
+            -2790,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:DC",
+          "handle": "DC",
+          "layer": "WARNINGS",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "SYNTHETIC EXERCISE ONLY - NOT FOR CONSTRUCTION / ENGINEERING APPROVAL",
+          "position_native": [
+            0,
+            -3150,
+            0
+          ]
+        },
+        {
+          "id": "dxf:614f117ae2a74794:DD",
+          "handle": "DD",
+          "layer": "WARNINGS",
+          "kind": "TEXT",
+          "material": null,
+          "engineering_status": "UNVERIFIED",
+          "source_geometry": true,
+          "text": "ANCHOR POINTS ARE DECLARED LOCATIONS ONLY; NOT SAVED PHYSICAL BOLTS",
+          "position_native": [
+            0,
+            -3350,
+            0
+          ]
+        }
+      ],
+      "entity_counts": {
+        "LWPOLYLINE": 18,
+        "CIRCLE": 16,
+        "LINE": 30,
+        "TEXT": 9
+      },
+      "unsupported_entities": [],
+      "notes": [
+        "ACCESS STAIR: GEOMETRY PLACEHOLDER ONLY",
+        "6000 mm",
+        "4000 mm",
+        "GEOAI - SYNTHETIC 6m x 4m PLATFORM PLAN",
+        "MILLIMETRES | X = LOCAL EAST, Y = LOCAL NORTH | NOT GEOREFERENCED",
+        "SLAB 6000x4000x200 | COLUMNS 4 x 300x300 | LONG BEAMS 2 x 6000x200x300",
+        "TRANSVERSE BEAMS 2 x 4000x200x300 | PLATES 650x650 | FOOTING BOXES 1200x1200",
+        "SYNTHETIC EXERCISE ONLY - NOT FOR CONSTRUCTION / ENGINEERING APPROVAL",
+        "ANCHOR POINTS ARE DECLARED LOCATIONS ONLY; NOT SAVED PHYSICAL BOLTS"
+      ],
+      "frame": "LOCAL_XY_REFERENCE_NOT_GEOREFERENCED; displayed Z=0 is drawing plane, not a structural elevation",
+      "engineering_approval": "DISABLED",
+      "analytical_model_status": "BLOCKED",
+      "missing_engineering_inputs": [
+        "Reviewed member elevations, section orientation and physical-to-analytical mapping",
+        "Explicit elastic material properties and structural section A/I (nominal drawing boxes are not designed sections)",
+        "Engineer-supplied load cases and load reference planes",
+        "Declared supports and joint behavior; touching plan outlines do not establish connections",
+        "Reinforcement, weld/anchor details and foundation behavior",
+        "Geotechnical data and surveyed datum",
+        "Jurisdiction, adopted code edition and authenticated engineering source evidence"
+      ],
+      "scenario_id": 577,
+      "model_document_sha256": "e249de1ded3a098b3482b846fbaa1769e8082843b6a6f3d6ce2db7454807b70f"
+    }
+  },
+  "reviewed": {
+    "analysis_type": "DRAWING_REVIEW",
+    "id": 365,
+    "model_revision_id": 96,
+    "status": "REVIEWED_REFERENCE_ANALYSIS_BLOCKED",
+    "result": {
+      "inputs": {
+        "corrections": [
+          {
+            "entity_id": "dxf:614f117ae2a74794:95",
+            "label": "SL-01 \u2014 nominal source deck review",
+            "role": "SLAB",
+            "reviewed_dimensions_mm": [
+              6000.0,
+              4000.0
+            ],
+            "material": "",
+            "property_classification": "SYNTHETIC_VERIFICATION",
+            "source_reference": "GeoAI practice S-001 schedule / DXF handle 95; nominal synthetic geometry",
+            "correction_reason": "Reviewed dimensions only; material, load cases and analytical elevations unavailable; source review attribution updated",
+            "matched_saved_component_id": "industrial-platform-5x3:platform-deck"
+          }
+        ],
+        "reviewed_by": "Local synthetic review tester",
+        "acknowledge_missing_engineering_inputs": true
+      },
+      "classification": "SYNTHETIC_VERIFICATION",
+      "source_sha256": "614f117ae2a74794b128ea983f99f10ed9898a069882666bcdb60ee1a2934e18",
+      "analytical_model": {
+        "status": "BLOCKED_MISSING_SUPPORTED_3D_ENGINEERING_INPUTS",
+        "nodes": [],
+        "members": [],
+        "reviewed_source_candidates": [
+          {
+            "source_entity_id": "dxf:614f117ae2a74794:95",
+            "declared_role": "SLAB",
+            "matched_saved_component_id": "industrial-platform-5x3:platform-deck"
+          }
+        ],
+        "missing": [
+          "Reviewed member elevations, section orientation and physical-to-analytical mapping",
+          "Explicit elastic material properties and structural section A/I (nominal drawing boxes are not designed sections)",
+          "Engineer-supplied load cases and load reference planes",
+          "Declared supports and joint behavior; touching plan outlines do not establish connections",
+          "Reinforcement, weld/anchor details and foundation behavior",
+          "Geotechnical data and surveyed datum",
+          "Jurisdiction, adopted code edition and authenticated engineering source evidence"
+        ],
+        "reason": "Plan reference and nominal boxes do not supply a complete analytical graph. No invented elevations, materials, loads or joint connections."
+      },
+      "engineering_approval": "DISABLED",
+      "source_reference_id": 357,
+      "scenario_id": 577,
+      "model_document_sha256": "e249de1ded3a098b3482b846fbaa1769e8082843b6a6f3d6ce2db7454807b70f",
+      "input_sha256": "6360e27a552e4b7901bde1c64a392b1fd4321e6ea61c5a6013677924af7538c5"
+    }
+  },
+  "final_strength": {
+    "id": 369,
+    "model_revision_id": 95,
+    "status": "VERIFIED_NOMINAL_STEEL_TERM_ONLY",
+    "result": {
+      "status": "VERIFIED_NOMINAL_STEEL_TERM_ONLY",
+      "inputs": {
+        "method_id": "US/ACI318-19-INLB/anchor-steel-nominal-tension@1",
+        "country": "US",
+        "jurisdiction": "Synthetic verification only; no actual code adoption claimed",
+        "code_edition": "ACI 318-19 IN-LB",
+        "input_classification": "SYNTHETIC_VERIFICATION",
+        "anchor_reference": "Synthetic single steel anchor tensile section; not actual project bolt",
+        "linked_drawing_reference_id": 357,
+        "linked_drawing_entity_id": "dxf:614f117ae2a74794:9D",
+        "effective_tensile_area_mm2": 245.0,
+        "yield_strength_mpa": 400.0,
+        "ultimate_strength_mpa": 600.0,
+        "area_source": "Explicit synthetic tensile area 245 mm2, not derived from nominal circle or diameter",
+        "material_source": "Explicit synthetic fy 400 MPa / fu 600 MPa; no actual manufacturer certificate",
+        "code_source_reference": "https://www.ocf.berkeley.edu/~chiep/wp-content/uploads/2024/01/CE-123-ACI-318-19.pdf ; section 17.6.1.2, IN-LB edition",
+        "applicability_source": "Synthetic single steel tensile section, pure axial nominal term only; no phi, concrete or connection capacity claims",
+        "input_reviewed_by": "Local synthetic reviewer \u2014 renewed source",
+        "pure_axial_single_steel_element": true,
+        "nominal_term_only_no_design_approval": true
+      },
+      "method": {
+        "id": "US/ACI318-19-INLB/anchor-steel-nominal-tension@1",
+        "country": "US",
+        "standard": "ACI 318",
+        "edition": "2019 IN-LB",
+        "method_version": "1.0.0",
+        "clause": "17.6.1.2",
+        "status": "BENCHMARK_VERIFIED_NOMINAL_TERM_ONLY",
+        "source": "https://www.ocf.berkeley.edu/~chiep/wp-content/uploads/2024/01/CE-123-ACI-318-19.pdf",
+        "formula": "Nsa = Ase,N \u00d7 min(fu, 1.9 fy, 125000 psi)",
+        "units": "SI input/output; original IN-LB edition strength cap converted exactly",
+        "benchmark_id": "anchor-steel-tension-known-answer/v1",
+        "excluded": [
+          "Strength reduction factor phi and factored demand check",
+          "Concrete breakout, pullout, side-face blowout, bond, shear and interaction",
+          "Anchor assembly, plate bending, welds, footing/soil and full ACI compliance"
+        ]
+      },
+      "nominal_strength_n": 147000.0,
+      "nominal_strength_kn": 147.0,
+      "effective_area_m2": 0.000245,
+      "fy_pa": 400000000.0,
+      "reported_fu_mpa": 600.0,
+      "used_fu_mpa": 600.0,
+      "edition_cap_mpa": 861.8446616460451,
+      "governing_strength_limit": "reported fu",
+      "formula": "Nsa [N] = Ase,N [mm\u00b2] \u00d7 futa_used [N/mm\u00b2]",
+      "substitution": "245.0 mm\u00b2 \u00d7 600.0 MPa = 147000.0 N",
+      "independent_inlb": {
+        "area_in2": "0.3797507595015190030380060760",
+        "used_fu_psi": "87022.64263812553334251247400",
+        "nominal_strength_n": "147000.0000000000071791117354",
+        "error_n": 0.0
+      },
+      "design_strength_phi_n": null,
+      "demand_capacity_status": "NOT_EVALUATED",
+      "physical_connection_capacity": "NOT_VERIFIED",
+      "engineering_approval": "DISABLED",
+      "evidence_status": "USER_SUPPLIED_SOURCE_DECLARATIONS_NOT_AUTHENTICATED",
+      "limitations": [
+        "Strength reduction factor phi and factored demand check",
+        "Concrete breakout, pullout, side-face blowout, bond, shear and interaction",
+        "Anchor assembly, plate bending, welds, footing/soil and full ACI compliance"
+      ],
+      "input_record_id": 368,
+      "input_sha256": "40ef9a81af8a32947217f29e52164dc19d57832507232cd8ed625f23ad2d32f8",
+      "linked_drawing": {
+        "id": 357,
+        "project_id": 789,
+        "entity_id": "dxf:614f117ae2a74794:9D",
+        "classification": "SYNTHETIC_VERIFICATION",
+        "source_record_sha256": "f8f4cd140ed21faa83a8f1605fba89d5cb6718b61b5824b22125fe307111e299",
+        "review_id": 365,
+        "notice": "Traceable drawing reference only. Effective tensile area and steel properties must be independently supplied; not inferred from a circle."
+      },
+      "independent_benchmark": {
+        "status": "VERIFIED",
+        "benchmark_id": "anchor-steel-tension-known-answer/v1",
+        "hand": {
+          "formula": "245 mm\u00b2 \u00d7 600 N/mm\u00b2",
+          "expected_n": "147000",
+          "expected_kn": "147"
+        },
+        "computed_n": 147000.0,
+        "independent_inlb": {
+          "area_in2": "0.3797507595015190030380060760",
+          "used_fu_psi": "87022.64263812553334251247400",
+          "nominal_strength_n": "147000.0000000000071791117354",
+          "error_n": 0.0
+        },
+        "classification": "SYNTHETIC_VERIFICATION"
+      },
+      "authorization": {
+        "actor_user_id": 1,
+        "time": "2026-10-12T08:34:12.117368+00:00",
+        "scope": "Nominal steel tensile term only"
+      },
+      "scenario_id": 578,
+      "model_document_sha256": "9203b52e3287720cb4ea55fe735406e3ea871e32c1df7b1e1ae495b34af18633",
+      "method_provenance": {
+        "method_id": "US/ACI318-19-INLB/anchor-steel-nominal-tension@1",
+        "descriptor_sha256": "fe63774996d08e2f93c87a08d72f9e684ad410a93a99fea9baeba952fa7f53fd",
+        "implementation_sha256": "69d480e1eefa334bd335a177d31feb387c9a8683b4a1e0496eb3c4e4544d60b6"
+      }
+    }
+  },
+  "limited_strength": 116.375,
+  "forged_authorization": 409,
+  "unsupported_IS_status": 422,
+  "synthetic_promotion_rejection": 422,
+  "linked_staleness_rejection": 409,
+  "errors": []
+}

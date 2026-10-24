@@ -1,0 +1,247 @@
+[
+  {
+    "name": "DATABASE_URL",
+    "text_references_outside_definition": 15,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "REDIS_URL",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "S3_ENDPOINT",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "S3_BUCKET",
+    "text_references_outside_definition": 9,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "S3_ACCESS_KEY",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "S3_SECRET_KEY",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "S3_REGION",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "PUBLIC_API_URL",
+    "text_references_outside_definition": 3,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "GOOGLE_MAPS_API_KEY",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "CESIUM_ION_TOKEN",
+    "text_references_outside_definition": 0,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "CESIUM_ION_READ_TOKEN",
+    "text_references_outside_definition": 9,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "CESIUM_ION_WRITE_TOKEN",
+    "text_references_outside_definition": 0,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "MAPBOX_TOKEN",
+    "text_references_outside_definition": 10,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "AI_PROVIDER",
+    "text_references_outside_definition": 10,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "GEOAI_OFFLINE_PLATFORM_DEMO",
+    "text_references_outside_definition": 2,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "OPENAI_API_KEY",
+    "text_references_outside_definition": 10,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ANTHROPIC_API_KEY",
+    "text_references_outside_definition": 10,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "GEMINI_API_KEY",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_API_KEY",
+    "text_references_outside_definition": 25,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_BASE_URL",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_TOKEN_FACTORY_BASE_URL",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_TIMEOUT_SECONDS",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_PRIMARY_COMPLETION_TIMEOUT_SECONDS",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_CHAT_MODEL",
+    "text_references_outside_definition": 14,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_FAST_MODEL",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_PRIMARY_MODEL",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ENGINEERING_AI_MODE",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ENGINEERING_AI_BUDGET_APPROVED",
+    "text_references_outside_definition": 5,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ENGINEERING_AI_BUDGET_USD",
+    "text_references_outside_definition": 7,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEBIUS_ENFORCE_AGENT_BUDGET",
+    "text_references_outside_definition": 3,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "OLLAMA_BASE_URL",
+    "text_references_outside_definition": 2,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "OLLAMA_MODEL",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "OLLAMA_TIMEOUT_SECONDS",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "APP_SECRET",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "AUTH_REQUIRE_JWT",
+    "text_references_outside_definition": 17,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ACCESS_TOKEN_TTL_SECONDS",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "DEV_MOCK_USER_ROLE",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "ENVIRONMENT",
+    "text_references_outside_definition": 10,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "NEXT_PUBLIC_APP_URL",
+    "text_references_outside_definition": 3,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "CORS_ALLOWED_ORIGINS",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "CORS_ALLOW_NETLIFY",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "GENERATION_JOB_TIMEOUT_SECONDS",
+    "text_references_outside_definition": 8,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "USAGE_LIMITS_ENABLED",
+    "text_references_outside_definition": 4,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "RATE_LIMITING_ENABLED",
+    "text_references_outside_definition": 2,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "USE_ARQ_WORKER",
+    "text_references_outside_definition": 6,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "SENTRY_DSN",
+    "text_references_outside_definition": 7,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "SENTRY_ENVIRONMENT",
+    "text_references_outside_definition": 2,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "SENTRY_TRACES_SAMPLE_RATE",
+    "text_references_outside_definition": 1,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  },
+  {
+    "name": "LOCAL_STORAGE_DIR",
+    "text_references_outside_definition": 16,
+    "decision": "retain; environment, external tooling and dynamic getattr consumers require review"
+  }
+]

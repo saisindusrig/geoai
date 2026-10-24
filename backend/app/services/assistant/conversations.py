@@ -130,7 +130,7 @@ class ConversationService:
             role="USER",parts=parts,context=context,client_request_id=request.client_request_id)
         insert(db,"assistant_runs",id=run_id,project_id=project_id,conversation_id=conversation_id,message_id=mid,
             status="QUEUED" if orchestrate else "WAITING_FOR_INPUT",error_code=None if orchestrate else "ORCHESTRATION_NOT_ENABLED",
-            context_snapshot={"context":context,"requestHash":request_hash,**({"queuedAt":now(),"actorId":actor_id} if orchestrate else {})})
+            context_snapshot={"context":context,"requestHash":request_hash,"assistantMode":request.assistant_mode,"requestedModel":request.requested_model,**({"queuedAt":now(),"actorId":actor_id} if orchestrate else {})})
         insert(db,"assistant_run_events",id=identity(run_id,1),project_id=project_id,run_id=run_id,sequence=1,
             payload={"state":"QUEUED" if orchestrate else "WAITING_FOR_INPUT","label":"Message saved; preparing assistant…" if orchestrate else "Message saved. AI processing is not enabled in this stage.","errorCode":None if orchestrate else "ORCHESTRATION_NOT_ENABLED"})
         update(db,"project_conversations",project_id,conversation_id,next_sequence=conversation["next_sequence"]+1)
@@ -151,7 +151,8 @@ class ConversationService:
         runs={r["message_id"]:r for r in candidates if r["id"] not in replaced}
         return {"messages":[{"id":r["id"],"conversationId":conversation_id,"sequence":r["sequence"],"role":r["role"],"parts":r["parts"],
             "context":r["context"],"createdAt":utc_timestamp(r["created_at"]),"clientRequestId":r["client_request_id"],"status":"COMPLETE",
-            "run":self.run_output(runs[r["id"]]) if r["id"] in runs else None} for r in reversed(result)],
+            "run":self.run_output(runs[r["id"]]) if r["id"] in runs else None,
+            "engineering":next((candidate["context_snapshot"].get("engineeringGuidance") for candidate in candidates if r["id"]==identity(candidate["id"],"reply")),None)} for r in reversed(result)],
             "nextBefore":result[-1]["sequence"] if more else None}
 
     def run_output(self,row):

@@ -1,0 +1,3658 @@
+{
+  "categories": {
+    "A": "Essential application source and tests",
+    "B": "User data / immutable evidence",
+    "C": "Required runtime dependencies",
+    "D": "Regenerable build/cache",
+    "E": "Historical test artifacts",
+    "F": "Potential duplicate/unused environment",
+    "G": "Uncertain or permission required"
+  },
+  "groups": [
+    {
+      "path": ".cleanup-backup-path",
+      "files": 1,
+      "bytes": 50,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 50,
+      "after_files": 1
+    },
+    {
+      "path": ".env",
+      "files": 1,
+      "bytes": 1782,
+      "category": "A/protected",
+      "decision": "Credentials/configuration retained untouched; values not copied into reports",
+      "after_bytes": 1782,
+      "after_files": 1
+    },
+    {
+      "path": ".env.example",
+      "files": 1,
+      "bytes": 4150,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4150,
+      "after_files": 1
+    },
+    {
+      "path": ".gitignore",
+      "files": 1,
+      "bytes": 1357,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1357,
+      "after_files": 1
+    },
+    {
+      "path": "AI_BUILDING_ASSISTANT.md",
+      "files": 1,
+      "bytes": 3298,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3298,
+      "after_files": 1
+    },
+    {
+      "path": "ASSET_CATALOGUE.md",
+      "files": 1,
+      "bytes": 1330,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1330,
+      "after_files": 1
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "files": 1,
+      "bytes": 11115,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 11115,
+      "after_files": 1
+    },
+    {
+      "path": "DISK_AUDIT.md",
+      "files": 1,
+      "bytes": 33747,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 33747,
+      "after_files": 1
+    },
+    {
+      "path": "docker-compose.yml",
+      "files": 1,
+      "bytes": 864,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 864,
+      "after_files": 1
+    },
+    {
+      "path": "ENGINEERING_WORKSPACE.md",
+      "files": 1,
+      "bytes": 8323,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 8323,
+      "after_files": 1
+    },
+    {
+      "path": "github-update.bat",
+      "files": 1,
+      "bytes": 1283,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1283,
+      "after_files": 1
+    },
+    {
+      "path": "LOCAL_SETUP.md",
+      "files": 1,
+      "bytes": 6981,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 6981,
+      "after_files": 1
+    },
+    {
+      "path": "MANUAL_QA.md",
+      "files": 1,
+      "bytes": 5690,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 5690,
+      "after_files": 1
+    },
+    {
+      "path": "PROFILE_README_DRAFT.md",
+      "files": 1,
+      "bytes": 648,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 648,
+      "after_files": 1
+    },
+    {
+      "path": "README.md",
+      "files": 1,
+      "bytes": 8875,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 8875,
+      "after_files": 1
+    },
+    {
+      "path": "run-website.bat",
+      "files": 1,
+      "bytes": 1158,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 1158,
+      "after_files": 1
+    },
+    {
+      "path": "STAGING_CHECKLIST.md",
+      "files": 1,
+      "bytes": 5238,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 5238,
+      "after_files": 1
+    },
+    {
+      "path": "start-copilot-review.ps1",
+      "files": 1,
+      "bytes": 2889,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 2889,
+      "after_files": 1
+    },
+    {
+      "path": "STORAGE_SETUP.md",
+      "files": 1,
+      "bytes": 5572,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 5572,
+      "after_files": 1
+    },
+    {
+      "path": ".cache",
+      "files": 5964,
+      "bytes": 1441213843,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1441213843,
+      "after_files": 5964
+    },
+    {
+      "path": ".cache/analysis-workspace",
+      "files": 2,
+      "bytes": 25237322,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 25237322,
+      "after_files": 2
+    },
+    {
+      "path": ".cache/anchor-contact",
+      "files": 5,
+      "bytes": 35146434,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 35146434,
+      "after_files": 5
+    },
+    {
+      "path": ".cache/anchor-contact-3d",
+      "files": 5,
+      "bytes": 35372750,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 35372750,
+      "after_files": 5
+    },
+    {
+      "path": ".cache/assembly",
+      "files": 1580,
+      "bytes": 24519407,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 24519407,
+      "after_files": 1580
+    },
+    {
+      "path": ".cache/beam-frame",
+      "files": 635,
+      "bytes": 22903502,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 22903502,
+      "after_files": 635
+    },
+    {
+      "path": ".cache/bearing-capacity",
+      "files": 325,
+      "bytes": 50411031,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 50411031,
+      "after_files": 325
+    },
+    {
+      "path": ".cache/cad-drawing-3d",
+      "files": 12,
+      "bytes": 40006083,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 40006083,
+      "after_files": 12
+    },
+    {
+      "path": ".cache/cad-frame",
+      "files": 14,
+      "bytes": 41218716,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 41218716,
+      "after_files": 14
+    },
+    {
+      "path": ".cache/cad-slab-path",
+      "files": 20,
+      "bytes": 46621244,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 46621244,
+      "after_files": 20
+    },
+    {
+      "path": ".cache/cad-soil-path",
+      "files": 24,
+      "bytes": 47601924,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 47601924,
+      "after_files": 24
+    },
+    {
+      "path": ".cache/component-inspection",
+      "files": 2,
+      "bytes": 51550913,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 51550913,
+      "after_files": 2
+    },
+    {
+      "path": ".cache/copilot-m2-verification",
+      "files": 8,
+      "bytes": 51046978,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 51046978,
+      "after_files": 8
+    },
+    {
+      "path": ".cache/drawing-strength",
+      "files": 7,
+      "bytes": 39503891,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 39503891,
+      "after_files": 7
+    },
+    {
+      "path": ".cache/eccentric",
+      "files": 6,
+      "bytes": 25443342,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 25443342,
+      "after_files": 6
+    },
+    {
+      "path": ".cache/engineering-inputs",
+      "files": 5,
+      "bytes": 38731994,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 38731994,
+      "after_files": 5
+    },
+    {
+      "path": ".cache/footing-flexure",
+      "files": 5,
+      "bytes": 52625901,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 52625901,
+      "after_files": 5
+    },
+    {
+      "path": ".cache/footing-transport",
+      "files": 19,
+      "bytes": 48157360,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 48157360,
+      "after_files": 19
+    },
+    {
+      "path": ".cache/foundation-interface",
+      "files": 7,
+      "bytes": 34761403,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 34761403,
+      "after_files": 7
+    },
+    {
+      "path": ".cache/gravity",
+      "files": 11,
+      "bytes": 30695319,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 30695319,
+      "after_files": 11
+    },
+    {
+      "path": ".cache/live-nebius",
+      "files": 949,
+      "bytes": 22157879,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 22157879,
+      "after_files": 949
+    },
+    {
+      "path": ".cache/milestone2",
+      "files": 18,
+      "bytes": 19684786,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 19684786,
+      "after_files": 18
+    },
+    {
+      "path": ".cache/model-visualization",
+      "files": 1,
+      "bytes": 51548160,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 51548160,
+      "after_files": 1
+    },
+    {
+      "path": ".cache/nebius-agent",
+      "files": 637,
+      "bytes": 21606007,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 21606007,
+      "after_files": 637
+    },
+    {
+      "path": ".cache/opensees",
+      "files": 6,
+      "bytes": 99134327,
+      "category": "C/B",
+      "decision": "Retain active OpenSees executable, provenance and distribution files",
+      "after_bytes": 99134327,
+      "after_files": 6
+    },
+    {
+      "path": ".cache/opensees-milestone",
+      "files": 609,
+      "bytes": 19811610,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 19811610,
+      "after_files": 609
+    },
+    {
+      "path": ".cache/phase1",
+      "files": 25,
+      "bytes": 16278442,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 16278442,
+      "after_files": 25
+    },
+    {
+      "path": ".cache/phase2",
+      "files": 8,
+      "bytes": 18988844,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 18988844,
+      "after_files": 8
+    },
+    {
+      "path": ".cache/physical-column",
+      "files": 319,
+      "bytes": 20154940,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 20154940,
+      "after_files": 319
+    },
+    {
+      "path": ".cache/plate-contact",
+      "files": 4,
+      "bytes": 35067869,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 35067869,
+      "after_files": 4
+    },
+    {
+      "path": ".cache/rc-flexure",
+      "files": 4,
+      "bytes": 53107664,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 53107664,
+      "after_files": 4
+    },
+    {
+      "path": ".cache/rectangular-bearing",
+      "files": 6,
+      "bytes": 51559534,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 51559534,
+      "after_files": 6
+    },
+    {
+      "path": ".cache/slab-transfer",
+      "files": 7,
+      "bytes": 33365962,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 33365962,
+      "after_files": 7
+    },
+    {
+      "path": ".cache/soil-contact",
+      "files": 325,
+      "bytes": 49538533,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 49538533,
+      "after_files": 325
+    },
+    {
+      "path": ".cache/soil-profile",
+      "files": 323,
+      "bytes": 49925313,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 49925313,
+      "after_files": 323
+    },
+    {
+      "path": ".cache/unequal-frame",
+      "files": 15,
+      "bytes": 42248534,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 42248534,
+      "after_files": 15
+    },
+    {
+      "path": ".cache/unequal-gravity",
+      "files": 15,
+      "bytes": 43931765,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 43931765,
+      "after_files": 15
+    },
+    {
+      "path": ".cache/workspace-quality",
+      "files": 1,
+      "bytes": 51548160,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 51548160,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups",
+      "files": 56389,
+      "bytes": 1481117225,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1481117225,
+      "after_files": 56389
+    },
+    {
+      "path": ".cleanup-backups/acceptance-server.err.log",
+      "files": 1,
+      "bytes": 1927,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1927,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/acceptance-server.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/acceptance.db",
+      "files": 1,
+      "bytes": 53628928,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 53628928,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/attested-cad-soil-path.log",
+      "files": 1,
+      "bytes": 9507,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 9507,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/attested-rc-flexure.log",
+      "files": 1,
+      "bytes": 395,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 395,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-after.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-baseline.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-diagnostic.log",
+      "files": 1,
+      "bytes": 9366,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 9366,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-final.db",
+      "files": 1,
+      "bytes": 421888,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 421888,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-final.log",
+      "files": 1,
+      "bytes": 21099,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 21099,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-seeded.db",
+      "files": 1,
+      "bytes": 53620736,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 53620736,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/backend-seeded.log",
+      "files": 1,
+      "bytes": 169640,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 169640,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/before-browser-recovery.db",
+      "files": 1,
+      "bytes": 54288384,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 54288384,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/browser-cad-soil-path-final.log",
+      "files": 1,
+      "bytes": 9301,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 9301,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/browser-drawing-cad-final.log",
+      "files": 1,
+      "bytes": 4880,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 4880,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/browser-rc-flexure-final.log",
+      "files": 1,
+      "bytes": 9126,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 9126,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/browser-rectangular-bearing-final.log",
+      "files": 1,
+      "bytes": 410,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 410,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/browser-tests.log",
+      "files": 1,
+      "bytes": 31914,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 31914,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/build-final.log",
+      "files": 1,
+      "bytes": 1451,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1451,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/build.log",
+      "files": 1,
+      "bytes": 344,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 344,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/changed-lint.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/collection.log",
+      "files": 1,
+      "bytes": 122752,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 122752,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/contract-drift.log",
+      "files": 1,
+      "bytes": 2598,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 2598,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/contracts-final.log",
+      "files": 1,
+      "bytes": 1328,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1328,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/diagnostic.db",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/engineering-tests.log",
+      "files": 1,
+      "bytes": 9899,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 9899,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/frontend-after.log",
+      "files": 1,
+      "bytes": 1104,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1104,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/frontend-baseline.log",
+      "files": 1,
+      "bytes": 1599,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1599,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/frontend-final.log",
+      "files": 1,
+      "bytes": 1107,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1107,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/frontend-server.err.log",
+      "files": 1,
+      "bytes": 286,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 286,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/frontend-server.log",
+      "files": 1,
+      "bytes": 7,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 7,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/lint-final.log",
+      "files": 1,
+      "bytes": 88,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 88,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/lint.log",
+      "files": 1,
+      "bytes": 11611,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 11611,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/metadata-regression.log",
+      "files": 1,
+      "bytes": 578,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 578,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/polling-performance.log",
+      "files": 1,
+      "bytes": 733,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 733,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/regression-after.db",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/regression.db",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/representative-browser.log",
+      "files": 1,
+      "bytes": 1155,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 1155,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/reset_acceptance.py",
+      "files": 1,
+      "bytes": 627,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 627,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/serve_acceptance.py",
+      "files": 1,
+      "bytes": 692,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 692,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/typecheck-final.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/typecheck.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".cleanup-backups/20261015-132113",
+      "files": 268,
+      "bytes": 642742686,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 642742686,
+      "after_files": 268
+    },
+    {
+      "path": ".cleanup-backups/acceptance-storage-copy",
+      "files": 55296,
+      "bytes": 663471213,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 663471213,
+      "after_files": 55296
+    },
+    {
+      "path": ".cleanup-backups/engineering-temp",
+      "files": 120,
+      "bytes": 87127,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 87127,
+      "after_files": 120
+    },
+    {
+      "path": ".cleanup-backups/pytest-seeded",
+      "files": 657,
+      "bytes": 12319519,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 12319519,
+      "after_files": 657
+    },
+    {
+      "path": ".cleanup-backups/regression-storage",
+      "files": 6,
+      "bytes": 111220,
+      "category": "G",
+      "decision": "retain; protected recovery backups; permission required for any deletion/relocation",
+      "after_bytes": 111220,
+      "after_files": 6
+    },
+    {
+      "path": ".git",
+      "files": 2122,
+      "bytes": 1639815208,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 1639815208,
+      "after_files": 2122
+    },
+    {
+      "path": ".git/COMMIT_EDITMSG",
+      "files": 1,
+      "bytes": 21,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 21,
+      "after_files": 1
+    },
+    {
+      "path": ".git/config",
+      "files": 1,
+      "bytes": 1731,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 1731,
+      "after_files": 1
+    },
+    {
+      "path": ".git/description",
+      "files": 1,
+      "bytes": 73,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 73,
+      "after_files": 1
+    },
+    {
+      "path": ".git/FETCH_HEAD",
+      "files": 1,
+      "bytes": 97,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 97,
+      "after_files": 1
+    },
+    {
+      "path": ".git/HEAD",
+      "files": 1,
+      "bytes": 49,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 49,
+      "after_files": 1
+    },
+    {
+      "path": ".git/index",
+      "files": 1,
+      "bytes": 1275266,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 1275266,
+      "after_files": 1
+    },
+    {
+      "path": ".git/index.lock",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": ".git/ORIG_HEAD",
+      "files": 1,
+      "bytes": 41,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 41,
+      "after_files": 1
+    },
+    {
+      "path": ".git/packed-refs",
+      "files": 1,
+      "bytes": 4884,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 4884,
+      "after_files": 1
+    },
+    {
+      "path": ".git/cursor",
+      "files": 3,
+      "bytes": 2917052,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 2917052,
+      "after_files": 3
+    },
+    {
+      "path": ".git/gk",
+      "files": 1,
+      "bytes": 214,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 214,
+      "after_files": 1
+    },
+    {
+      "path": ".git/hooks",
+      "files": 14,
+      "bytes": 25827,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 25827,
+      "after_files": 14
+    },
+    {
+      "path": ".git/info",
+      "files": 2,
+      "bytes": 5336,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 5336,
+      "after_files": 2
+    },
+    {
+      "path": ".git/logs",
+      "files": 27,
+      "bytes": 34849,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 34849,
+      "after_files": 27
+    },
+    {
+      "path": ".git/objects",
+      "files": 2046,
+      "bytes": 1635418517,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 1635418517,
+      "after_files": 2046
+    },
+    {
+      "path": ".git/refs",
+      "files": 2,
+      "bytes": 71,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 71,
+      "after_files": 2
+    },
+    {
+      "path": ".git/worktrees",
+      "files": 18,
+      "bytes": 131180,
+      "category": "G",
+      "decision": "retain; metadata measured only; Git operations prohibited",
+      "after_bytes": 131180,
+      "after_files": 18
+    },
+    {
+      "path": ".github",
+      "files": 3,
+      "bytes": 7786,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 7786,
+      "after_files": 3
+    },
+    {
+      "path": ".github/workflows",
+      "files": 3,
+      "bytes": 7786,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 7786,
+      "after_files": 3
+    },
+    {
+      "path": ".pytest_cache",
+      "files": 3,
+      "bytes": 540,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 540,
+      "after_files": 3
+    },
+    {
+      "path": ".pytest_cache/.gitignore",
+      "files": 1,
+      "bytes": 39,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 39,
+      "after_files": 1
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "files": 1,
+      "bytes": 191,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 191,
+      "after_files": 1
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "files": 1,
+      "bytes": 310,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 310,
+      "after_files": 1
+    },
+    {
+      "path": "backend",
+      "files": 98450,
+      "bytes": 7491871565,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3296746893,
+      "after_files": 96139
+    },
+    {
+      "path": "backend/.env",
+      "files": 1,
+      "bytes": 251,
+      "category": "A/protected",
+      "decision": "Credentials/configuration retained untouched; values not copied into reports",
+      "after_bytes": 251,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-stage1-regression.db",
+      "files": 1,
+      "bytes": 421888,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 421888,
+      "after_files": 1
+    },
+    {
+      "path": "backend/alembic.ini",
+      "files": 1,
+      "bytes": 552,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 552,
+      "after_files": 1
+    },
+    {
+      "path": "backend/auth-server-error.log",
+      "files": 1,
+      "bytes": 50816,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 50816,
+      "after_files": 1
+    },
+    {
+      "path": "backend/auth-server.log",
+      "files": 1,
+      "bytes": 19816,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 19816,
+      "after_files": 1
+    },
+    {
+      "path": "backend/civicspan_app.py",
+      "files": 1,
+      "bytes": 2400,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 2400,
+      "after_files": 1
+    },
+    {
+      "path": "backend/dev.db",
+      "files": 1,
+      "bytes": 53600256,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 53600256,
+      "after_files": 1
+    },
+    {
+      "path": "backend/Dockerfile.cad-worker",
+      "files": 1,
+      "bytes": 2036,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2036,
+      "after_files": 1
+    },
+    {
+      "path": "backend/Dockerfile.cad-worker.dockerignore",
+      "files": 1,
+      "bytes": 562,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 562,
+      "after_files": 1
+    },
+    {
+      "path": "backend/hardening-focused-final.log",
+      "files": 1,
+      "bytes": 742,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 742,
+      "after_files": 1
+    },
+    {
+      "path": "backend/hardening-focused.log",
+      "files": 1,
+      "bytes": 742,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 742,
+      "after_files": 1
+    },
+    {
+      "path": "backend/hardening-server-error.log",
+      "files": 1,
+      "bytes": 187175,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 187175,
+      "after_files": 1
+    },
+    {
+      "path": "backend/hardening-server.log",
+      "files": 1,
+      "bytes": 77666,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 77666,
+      "after_files": 1
+    },
+    {
+      "path": "backend/package-lock.json",
+      "files": 1,
+      "bytes": 86,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 86,
+      "after_files": 1
+    },
+    {
+      "path": "backend/planning.db",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "backend/pytest.ini",
+      "files": 1,
+      "bytes": 27,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 27,
+      "after_files": 1
+    },
+    {
+      "path": "backend/requirements-cad-proof.txt",
+      "files": 1,
+      "bytes": 102,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 102,
+      "after_files": 1
+    },
+    {
+      "path": "backend/requirements-cad-worker.txt",
+      "files": 1,
+      "bytes": 256,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 256,
+      "after_files": 1
+    },
+    {
+      "path": "backend/requirements-civicspan.txt",
+      "files": 1,
+      "bytes": 147,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 147,
+      "after_files": 1
+    },
+    {
+      "path": "backend/requirements.txt",
+      "files": 1,
+      "bytes": 512,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 512,
+      "after_files": 1
+    },
+    {
+      "path": "backend/runtime-hardening-final.log",
+      "files": 1,
+      "bytes": 2162,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2162,
+      "after_files": 1
+    },
+    {
+      "path": "backend/runtime-hardening-full.log",
+      "files": 1,
+      "bytes": 622,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 622,
+      "after_files": 1
+    },
+    {
+      "path": "backend/runtime.txt",
+      "files": 1,
+      "bytes": 14,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 14,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-backend-final.log",
+      "files": 1,
+      "bytes": 2162,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2162,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-backend-verified.log",
+      "files": 1,
+      "bytes": 2162,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2162,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-backend.log",
+      "files": 1,
+      "bytes": 3603,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3603,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-focus-verified.log",
+      "files": 1,
+      "bytes": 823,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 823,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-focused-final.log",
+      "files": 1,
+      "bytes": 823,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 823,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stabilization-focused.log",
+      "files": 1,
+      "bytes": 823,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 823,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stage1-pre-migration-20261008-015346.db",
+      "files": 1,
+      "bytes": 1445888,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1445888,
+      "after_files": 1
+    },
+    {
+      "path": "backend/stage45-pre-migration-20261008-151702.db",
+      "files": 1,
+      "bytes": 1552384,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1552384,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-baseline.log",
+      "files": 1,
+      "bytes": 3311,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3311,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-core.log",
+      "files": 1,
+      "bytes": 578,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 578,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-fixture.log",
+      "files": 1,
+      "bytes": 550,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 550,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-focused.log",
+      "files": 1,
+      "bytes": 6595,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 6595,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-full-final.log",
+      "files": 1,
+      "bytes": 2081,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2081,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-full.log",
+      "files": 1,
+      "bytes": 2081,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2081,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-geometry.log",
+      "files": 1,
+      "bytes": 579,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 579,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-preserve.log",
+      "files": 1,
+      "bytes": 660,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 660,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-server-error.log",
+      "files": 1,
+      "bytes": 183648,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 183648,
+      "after_files": 1
+    },
+    {
+      "path": "backend/universal-server.log",
+      "files": 1,
+      "bytes": 89113,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 89113,
+      "after_files": 1
+    },
+    {
+      "path": "backend/uvicorn-live.err.log",
+      "files": 1,
+      "bytes": 10439,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 10439,
+      "after_files": 1
+    },
+    {
+      "path": "backend/uvicorn-live.out.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "backend/uvicorn.err.log",
+      "files": 1,
+      "bytes": 3327,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3327,
+      "after_files": 1
+    },
+    {
+      "path": "backend/uvicorn.out.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.cad-proof-deps",
+      "files": 2094,
+      "bytes": 848405505,
+      "category": "C",
+      "decision": "retain active/verified runtime; only byte-proven wheel fragments removed",
+      "after_bytes": 633261721,
+      "after_files": 1408
+    },
+    {
+      "path": "backend/.cad-proof-output",
+      "files": 3584,
+      "bytes": 4186831536,
+      "category": "B/D/E",
+      "decision": "removed only two verified generated .next trees; historical source, CAD models, databases, manifests and reports retained",
+      "after_bytes": 204743630,
+      "after_files": 1744
+    },
+    {
+      "path": "backend/.pytest_cache",
+      "files": 130,
+      "bytes": 32604713,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 32615679,
+      "after_files": 131
+    },
+    {
+      "path": "backend/.test-4cr-final-projections",
+      "files": 91,
+      "bytes": 1844318,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1844318,
+      "after_files": 91
+    },
+    {
+      "path": "backend/.test-4cr-focused",
+      "files": 198,
+      "bytes": 2653030,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2653030,
+      "after_files": 198
+    },
+    {
+      "path": "backend/.test-4cr-focused-final",
+      "files": 198,
+      "bytes": 2653030,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2653030,
+      "after_files": 198
+    },
+    {
+      "path": "backend/.test-4cr-full",
+      "files": 266,
+      "bytes": 11243380,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 11243380,
+      "after_files": 266
+    },
+    {
+      "path": "backend/.test-4cr-initial",
+      "files": 91,
+      "bytes": 1844318,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1844318,
+      "after_files": 91
+    },
+    {
+      "path": "backend/.test-4ct",
+      "files": 2,
+      "bytes": 1156,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1156,
+      "after_files": 2
+    },
+    {
+      "path": "backend/.test-4ct-verified",
+      "files": 120,
+      "bytes": 1971099,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1971099,
+      "after_files": 120
+    },
+    {
+      "path": "backend/.test-4d",
+      "files": 123,
+      "bytes": 1972323,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1972323,
+      "after_files": 123
+    },
+    {
+      "path": "backend/.test-4d-budget",
+      "files": 134,
+      "bytes": 2227512,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2227512,
+      "after_files": 134
+    },
+    {
+      "path": "backend/.test-4d-budget-final",
+      "files": 12,
+      "bytes": 294912,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 294912,
+      "after_files": 12
+    },
+    {
+      "path": "backend/.test-4d-live-prepare",
+      "files": 167,
+      "bytes": 2443343,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2443343,
+      "after_files": 167
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final",
+      "files": 164,
+      "bytes": 2439379,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2439379,
+      "after_files": 164
+    },
+    {
+      "path": "backend/.test-auth-restoration",
+      "files": 4,
+      "bytes": 187,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 187,
+      "after_files": 4
+    },
+    {
+      "path": "backend/.test-auth-restoration-final",
+      "files": 5,
+      "bytes": 228,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 228,
+      "after_files": 5
+    },
+    {
+      "path": "backend/.test-bim-4b-current",
+      "files": 89,
+      "bytes": 1818830,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1818830,
+      "after_files": 89
+    },
+    {
+      "path": "backend/.test-bim-4b-final-unit",
+      "files": 91,
+      "bytes": 1844318,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1844318,
+      "after_files": 91
+    },
+    {
+      "path": "backend/.test-bim-4b-first",
+      "files": 74,
+      "bytes": 1611391,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1611391,
+      "after_files": 74
+    },
+    {
+      "path": "backend/.test-bim-4b-focused-final",
+      "files": 201,
+      "bytes": 2602657,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2602657,
+      "after_files": 201
+    },
+    {
+      "path": "backend/.test-bim-4b-focused-seeded",
+      "files": 205,
+      "bytes": 2654912,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2654912,
+      "after_files": 205
+    },
+    {
+      "path": "backend/.test-bim-4b-full",
+      "files": 266,
+      "bytes": 11243391,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 11243391,
+      "after_files": 266
+    },
+    {
+      "path": "backend/.test-bim-4b-second",
+      "files": 84,
+      "bytes": 1753186,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1753186,
+      "after_files": 84
+    },
+    {
+      "path": "backend/.test-bim-authoring-4a-fixed",
+      "files": 1,
+      "bytes": 39394,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 39394,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-bim-authoring-full",
+      "files": 175,
+      "bytes": 9399102,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 9399102,
+      "after_files": 175
+    },
+    {
+      "path": "backend/.test-bim-authoring-regressions",
+      "files": 115,
+      "bytes": 817654,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 817654,
+      "after_files": 115
+    },
+    {
+      "path": "backend/.test-cad-proof-canonical",
+      "files": 1,
+      "bytes": 7061,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 7061,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-cad-proof-focused-final",
+      "files": 1,
+      "bytes": 7061,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 7061,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-cad-proof-full",
+      "files": 53,
+      "bytes": 8189435,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8189435,
+      "after_files": 53
+    },
+    {
+      "path": "backend/.test-cad-proof-native",
+      "files": 1,
+      "bytes": 7061,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 7061,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-cad-proof-native-final",
+      "files": 1,
+      "bytes": 7061,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 7061,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-cad-proof-pilot-default",
+      "files": 7,
+      "bytes": 391964,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 391964,
+      "after_files": 7
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified",
+      "files": 175,
+      "bytes": 9359426,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 9359426,
+      "after_files": 175
+    },
+    {
+      "path": "backend/.test-cad-workspace",
+      "files": 2,
+      "bytes": 35282,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 35282,
+      "after_files": 2
+    },
+    {
+      "path": "backend/.test-cad-workspace-accept",
+      "files": 24,
+      "bytes": 175669,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 175669,
+      "after_files": 24
+    },
+    {
+      "path": "backend/.test-cad-workspace-expanded",
+      "files": 73,
+      "bytes": 529637,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 529637,
+      "after_files": 73
+    },
+    {
+      "path": "backend/.test-cad-workspace-expanded2",
+      "files": 74,
+      "bytes": 530865,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 530865,
+      "after_files": 74
+    },
+    {
+      "path": "backend/.test-cad-workspace-expanded3",
+      "files": 81,
+      "bytes": 592095,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 592095,
+      "after_files": 81
+    },
+    {
+      "path": "backend/.test-cad-workspace-final",
+      "files": 106,
+      "bytes": 768992,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 768992,
+      "after_files": 106
+    },
+    {
+      "path": "backend/.test-cad-workspace-final2",
+      "files": 106,
+      "bytes": 768992,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 768992,
+      "after_files": 106
+    },
+    {
+      "path": "backend/.test-cad-workspace-full",
+      "files": 150,
+      "bytes": 9182486,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 9182486,
+      "after_files": 150
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2",
+      "files": 150,
+      "bytes": 9182490,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 9182490,
+      "after_files": 150
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3",
+      "files": 150,
+      "bytes": 9182491,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 9182491,
+      "after_files": 150
+    },
+    {
+      "path": "backend/.test-cad-workspace-report",
+      "files": 105,
+      "bytes": 768986,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 768986,
+      "after_files": 105
+    },
+    {
+      "path": "backend/.test-cad-workspace-verified",
+      "files": 106,
+      "bytes": 768992,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 768992,
+      "after_files": 106
+    },
+    {
+      "path": "backend/.test-canary-4ch",
+      "files": 26,
+      "bytes": 84820,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 84820,
+      "after_files": 26
+    },
+    {
+      "path": "backend/.test-canary-4ch-final",
+      "files": 226,
+      "bytes": 2740088,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2740088,
+      "after_files": 226
+    },
+    {
+      "path": "backend/.test-canary-4ch-full",
+      "files": 292,
+      "bytes": 11328519,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 11328519,
+      "after_files": 292
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded",
+      "files": 292,
+      "bytes": 11328527,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 11328527,
+      "after_files": 292
+    },
+    {
+      "path": "backend/.test-hardening-extra",
+      "files": 2,
+      "bytes": 1407,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1407,
+      "after_files": 2
+    },
+    {
+      "path": "backend/.test-hardening-focused",
+      "files": 1,
+      "bytes": 97,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 97,
+      "after_files": 1
+    },
+    {
+      "path": "backend/.test-hardening-focused-final",
+      "files": 3,
+      "bytes": 1504,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1504,
+      "after_files": 3
+    },
+    {
+      "path": "backend/.test-live-authenticated-preflight",
+      "files": 6,
+      "bytes": 1538,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1538,
+      "after_files": 6
+    },
+    {
+      "path": "backend/.test-live-capture-final",
+      "files": 2,
+      "bytes": 1407,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1407,
+      "after_files": 2
+    },
+    {
+      "path": "backend/.test-live-postflight",
+      "files": 2,
+      "bytes": 1265,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1265,
+      "after_files": 2
+    },
+    {
+      "path": "backend/.test-platform-demo",
+      "files": 131,
+      "bytes": 2226288,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2226288,
+      "after_files": 131
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final",
+      "files": 59,
+      "bytes": 8577206,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8577206,
+      "after_files": 59
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full",
+      "files": 53,
+      "bytes": 4022362,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 4022362,
+      "after_files": 53
+    },
+    {
+      "path": "backend/.test-stabilize-focus-verified",
+      "files": 4,
+      "bytes": 3006,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 3006,
+      "after_files": 4
+    },
+    {
+      "path": "backend/.test-stabilize-focused",
+      "files": 4,
+      "bytes": 2916,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2916,
+      "after_files": 4
+    },
+    {
+      "path": "backend/.test-stabilize-focused-final",
+      "files": 4,
+      "bytes": 3006,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 3006,
+      "after_files": 4
+    },
+    {
+      "path": "backend/.test-stabilize-regression",
+      "files": 60,
+      "bytes": 8581368,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8581368,
+      "after_files": 60
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final",
+      "files": 60,
+      "bytes": 8581390,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8581390,
+      "after_files": 60
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified",
+      "files": 60,
+      "bytes": 8581494,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8581494,
+      "after_files": 60
+    },
+    {
+      "path": "backend/.test-universal-baseline",
+      "files": 53,
+      "bytes": 8569088,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8569088,
+      "after_files": 53
+    },
+    {
+      "path": "backend/.test-universal-full",
+      "files": 53,
+      "bytes": 8575632,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8575632,
+      "after_files": 53
+    },
+    {
+      "path": "backend/.test-universal-full-final",
+      "files": 53,
+      "bytes": 8575654,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 8575654,
+      "after_files": 53
+    },
+    {
+      "path": "backend/.test-v2-capture-final",
+      "files": 3,
+      "bytes": 2819,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 2819,
+      "after_files": 3
+    },
+    {
+      "path": "backend/.test-v2-preflight",
+      "files": 3,
+      "bytes": 1991,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1991,
+      "after_files": 3
+    },
+    {
+      "path": "backend/.venv",
+      "files": 21504,
+      "bytes": 1253868028,
+      "category": "C",
+      "decision": "retain active/verified runtime; only byte-proven wheel fragments removed",
+      "after_bytes": 1253868028,
+      "after_files": 21504
+    },
+    {
+      "path": "backend/.venv-civicspan",
+      "files": 7613,
+      "bytes": 210085660,
+      "category": "F/G",
+      "decision": "retain; no active process uses it, but 35 package versions differ and opentelemetry-api is absent from base runtime",
+      "after_bytes": 210085660,
+      "after_files": 7613
+    },
+    {
+      "path": "backend/alembic",
+      "files": 25,
+      "bytes": 81072,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 81072,
+      "after_files": 25
+    },
+    {
+      "path": "backend/app",
+      "files": 263,
+      "bytes": 1749090,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 3828761,
+      "after_files": 472
+    },
+    {
+      "path": "backend/cad-notices",
+      "files": 5,
+      "bytes": 41873,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 41873,
+      "after_files": 5
+    },
+    {
+      "path": "backend/civicspan_tests",
+      "files": 2,
+      "bytes": 2359,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2359,
+      "after_files": 2
+    },
+    {
+      "path": "backend/evals",
+      "files": 118,
+      "bytes": 1943383,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 1943383,
+      "after_files": 118
+    },
+    {
+      "path": "backend/live-results",
+      "files": 20,
+      "bytes": 1383633,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 1383633,
+      "after_files": 20
+    },
+    {
+      "path": "backend/scripts",
+      "files": 44,
+      "bytes": 184321,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 200702,
+      "after_files": 49
+    },
+    {
+      "path": "backend/storage",
+      "files": 57195,
+      "bytes": 688665262,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 688665262,
+      "after_files": 57195
+    },
+    {
+      "path": "backend/tests",
+      "files": 113,
+      "bytes": 718896,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 718896,
+      "after_files": 113
+    },
+    {
+      "path": "backend/__pycache__",
+      "files": 1,
+      "bytes": 3286,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3286,
+      "after_files": 1
+    },
+    {
+      "path": "docs",
+      "files": 902,
+      "bytes": 130467717,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 147106770,
+      "after_files": 940
+    },
+    {
+      "path": "docs/assistant-chat-scene.md",
+      "files": 1,
+      "bytes": 6442,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 6442,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_ASSEMBLY_AUTHORING_4A.md",
+      "files": 1,
+      "bytes": 13111,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 13111,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_AUTHORING_ORCHESTRATION_4B.md",
+      "files": 1,
+      "bytes": 14213,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 14213,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_AUTHORING_TRUNCATION_DIAGNOSIS_4CR.md",
+      "files": 1,
+      "bytes": 12527,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 12527,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_BILLING_VERIFICATION_4DB1.md",
+      "files": 1,
+      "bytes": 9447,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 9447,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_CANARY_HARNESS_DIAGNOSIS_4CH.md",
+      "files": 1,
+      "bytes": 3529,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3529,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_FIRST_COMPARISON_PREPARATION_4D.md",
+      "files": 1,
+      "bytes": 5550,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5550,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_FOUNDATION_V1.md",
+      "files": 1,
+      "bytes": 7818,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 7818,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_FRESH_CANARY_PREPARATION_4CH2.md",
+      "files": 1,
+      "bytes": 5437,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5437,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_MODEL_EVALUATION_4D.md",
+      "files": 1,
+      "bytes": 13850,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 13850,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_TESTING_BUDGET_4D.md",
+      "files": 1,
+      "bytes": 8806,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 8806,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_THINKING_STRUCTURED_OUTPUT_4CT.md",
+      "files": 1,
+      "bytes": 13241,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 13241,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_UNDERSTAND_CANARY_EXECUTION.md",
+      "files": 1,
+      "bytes": 1759,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1759,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_UNDERSTAND_CANARY_EXECUTION_4CH2.md",
+      "files": 1,
+      "bytes": 3449,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3449,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BIM_UNDERSTAND_CANARY_PREPARATION.md",
+      "files": 1,
+      "bytes": 3040,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3040,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BUILDING_PATCH_V1.md",
+      "files": 1,
+      "bytes": 6658,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 6658,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BUILDING_SPECIALIST_V1.md",
+      "files": 1,
+      "bytes": 9498,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 9498,
+      "after_files": 1
+    },
+    {
+      "path": "docs/BUILDING_WORKSPACE_ACCEPTANCE.md",
+      "files": 1,
+      "bytes": 5951,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5951,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_INTEGRATION_FOUNDATION_3B1.md",
+      "files": 1,
+      "bytes": 14477,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 14477,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_KERNEL_PROOF_3A.md",
+      "files": 1,
+      "bytes": 18018,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 18018,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_LINUX_ACCEPTANCE_FINAL_3B2A.md",
+      "files": 1,
+      "bytes": 10047,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 10047,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_LINUX_RUNTIME_INVENTORY_3B2A.json",
+      "files": 1,
+      "bytes": 2012933,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2012933,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_WINDOWS_RUNTIME_INVENTORY_3B2A.json",
+      "files": 1,
+      "bytes": 113466,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 113466,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_WORKER_DEPLOYMENT_3B2A.md",
+      "files": 1,
+      "bytes": 13019,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 13019,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CAD_WORKSPACE_ACCEPTANCE_3B2B.md",
+      "files": 1,
+      "bytes": 17546,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 17546,
+      "after_files": 1
+    },
+    {
+      "path": "docs/CORE_ASSISTANT_V1.md",
+      "files": 1,
+      "bytes": 7756,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 7756,
+      "after_files": 1
+    },
+    {
+      "path": "docs/GENERIC_3D_EXECUTOR_V1.md",
+      "files": 1,
+      "bytes": 17599,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 17599,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_AI3D_RUNTIME_HARDENING_V1.md",
+      "files": 1,
+      "bytes": 12547,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 12547,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.html",
+      "files": 1,
+      "bytes": 4813,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4813,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_BIM_AUTHORING_ACCEPTANCE_4C.md",
+      "files": 1,
+      "bytes": 7476,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 7476,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_GEOAI_3D_FLOW_V1.md",
+      "files": 1,
+      "bytes": 10683,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 10683,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_GEOAI_3D_FLOW_V1_AUTHENTICATED.md",
+      "files": 1,
+      "bytes": 17233,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 17233,
+      "after_files": 1
+    },
+    {
+      "path": "docs/LIVE_GEOAI_FLOW_STABILIZATION_V2.md",
+      "files": 1,
+      "bytes": 12257,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 12257,
+      "after_files": 1
+    },
+    {
+      "path": "docs/MODEL_SELECTION.md",
+      "files": 1,
+      "bytes": 4095,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4095,
+      "after_files": 1
+    },
+    {
+      "path": "docs/NEBIUS_AUTH_RESTORATION.md",
+      "files": 1,
+      "bytes": 5602,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5602,
+      "after_files": 1
+    },
+    {
+      "path": "docs/offline-platform-website.md",
+      "files": 1,
+      "bytes": 2530,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2530,
+      "after_files": 1
+    },
+    {
+      "path": "docs/pipeline.mmd",
+      "files": 1,
+      "bytes": 2605,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2605,
+      "after_files": 1
+    },
+    {
+      "path": "docs/PROJECT_CLEANUP_REPORT.md",
+      "files": 1,
+      "bytes": 16729,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 16729,
+      "after_files": 1
+    },
+    {
+      "path": "docs/REAL_LIVE_GEOAI_3D_ACCEPTANCE_V2.md",
+      "files": 1,
+      "bytes": 11606,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 11606,
+      "after_files": 1
+    },
+    {
+      "path": "docs/REPOSITORY_CLEANUP_AUDIT.md",
+      "files": 1,
+      "bytes": 15708,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 15708,
+      "after_files": 1
+    },
+    {
+      "path": "docs/STAGE_1_ARCHITECTURE.md",
+      "files": 1,
+      "bytes": 66654,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 66654,
+      "after_files": 1
+    },
+    {
+      "path": "docs/STAGE_1_ASSISTANT_RUNTIME.md",
+      "files": 1,
+      "bytes": 16166,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 16166,
+      "after_files": 1
+    },
+    {
+      "path": "docs/STAGE_1_FOUNDATION.md",
+      "files": 1,
+      "bytes": 6380,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 6380,
+      "after_files": 1
+    },
+    {
+      "path": "docs/STAGE_1_SITE_WORKSPACE.md",
+      "files": 1,
+      "bytes": 9864,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 9864,
+      "after_files": 1
+    },
+    {
+      "path": "docs/analysis-workspace",
+      "files": 10,
+      "bytes": 1368908,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1368908,
+      "after_files": 10
+    },
+    {
+      "path": "docs/anchor-contact",
+      "files": 12,
+      "bytes": 1660879,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1660879,
+      "after_files": 12
+    },
+    {
+      "path": "docs/anchor-contact-3d",
+      "files": 15,
+      "bytes": 5570979,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5570979,
+      "after_files": 15
+    },
+    {
+      "path": "docs/assembly",
+      "files": 14,
+      "bytes": 8052486,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 8052486,
+      "after_files": 14
+    },
+    {
+      "path": "docs/beam-frame",
+      "files": 13,
+      "bytes": 2582597,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2582597,
+      "after_files": 13
+    },
+    {
+      "path": "docs/bearing-capacity",
+      "files": 10,
+      "bytes": 882400,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 882400,
+      "after_files": 10
+    },
+    {
+      "path": "docs/cad-drawing-3d",
+      "files": 10,
+      "bytes": 1536120,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1536120,
+      "after_files": 10
+    },
+    {
+      "path": "docs/cad-frame",
+      "files": 19,
+      "bytes": 3567975,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3567975,
+      "after_files": 19
+    },
+    {
+      "path": "docs/cad-slab-path",
+      "files": 28,
+      "bytes": 4690072,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4690072,
+      "after_files": 28
+    },
+    {
+      "path": "docs/cad-soil-path",
+      "files": 10,
+      "bytes": 794750,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 794750,
+      "after_files": 10
+    },
+    {
+      "path": "docs/component-inspection",
+      "files": 16,
+      "bytes": 2986420,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2986420,
+      "after_files": 16
+    },
+    {
+      "path": "docs/contracts",
+      "files": 5,
+      "bytes": 297184,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 297184,
+      "after_files": 5
+    },
+    {
+      "path": "docs/copilot-m2-verification",
+      "files": 38,
+      "bytes": 3526318,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3526318,
+      "after_files": 38
+    },
+    {
+      "path": "docs/copilot-milestone-1",
+      "files": 35,
+      "bytes": 2644871,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2644871,
+      "after_files": 35
+    },
+    {
+      "path": "docs/copilot-milestone-2",
+      "files": 51,
+      "bytes": 5171867,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 5171867,
+      "after_files": 51
+    },
+    {
+      "path": "docs/drawing-strength",
+      "files": 15,
+      "bytes": 1144915,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1144915,
+      "after_files": 15
+    },
+    {
+      "path": "docs/eccentric",
+      "files": 12,
+      "bytes": 4746323,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4746323,
+      "after_files": 12
+    },
+    {
+      "path": "docs/engineering-analysis",
+      "files": 14,
+      "bytes": 914165,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 914165,
+      "after_files": 14
+    },
+    {
+      "path": "docs/engineering-inputs",
+      "files": 11,
+      "bytes": 1353603,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1353603,
+      "after_files": 11
+    },
+    {
+      "path": "docs/footing-flexure",
+      "files": 13,
+      "bytes": 1428859,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1428859,
+      "after_files": 13
+    },
+    {
+      "path": "docs/footing-transport",
+      "files": 15,
+      "bytes": 1777106,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1777106,
+      "after_files": 15
+    },
+    {
+      "path": "docs/foundation-interface",
+      "files": 22,
+      "bytes": 3800140,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3800140,
+      "after_files": 22
+    },
+    {
+      "path": "docs/gravity",
+      "files": 23,
+      "bytes": 7416273,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 7416273,
+      "after_files": 23
+    },
+    {
+      "path": "docs/live-nebius",
+      "files": 12,
+      "bytes": 1837547,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1837547,
+      "after_files": 12
+    },
+    {
+      "path": "docs/milestone2",
+      "files": 6,
+      "bytes": 770034,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 770034,
+      "after_files": 6
+    },
+    {
+      "path": "docs/minimal-ui",
+      "files": 42,
+      "bytes": 3215701,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3215701,
+      "after_files": 42
+    },
+    {
+      "path": "docs/model-visualization",
+      "files": 53,
+      "bytes": 12449179,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 12449179,
+      "after_files": 53
+    },
+    {
+      "path": "docs/mouse-milestone",
+      "files": 14,
+      "bytes": 993576,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 993576,
+      "after_files": 14
+    },
+    {
+      "path": "docs/nebius-agent",
+      "files": 9,
+      "bytes": 1733137,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1733137,
+      "after_files": 9
+    },
+    {
+      "path": "docs/phase1",
+      "files": 5,
+      "bytes": 625939,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 625939,
+      "after_files": 5
+    },
+    {
+      "path": "docs/phase2",
+      "files": 4,
+      "bytes": 435149,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 435149,
+      "after_files": 4
+    },
+    {
+      "path": "docs/physical-column",
+      "files": 6,
+      "bytes": 938970,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 938970,
+      "after_files": 6
+    },
+    {
+      "path": "docs/plate-contact",
+      "files": 19,
+      "bytes": 2769961,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2769961,
+      "after_files": 19
+    },
+    {
+      "path": "docs/project-cleanup",
+      "files": 91,
+      "bytes": 8868149,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 8868149,
+      "after_files": 91
+    },
+    {
+      "path": "docs/rc-flexure",
+      "files": 10,
+      "bytes": 2333349,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2335417,
+      "after_files": 10
+    },
+    {
+      "path": "docs/rectangular-bearing",
+      "files": 13,
+      "bytes": 1343255,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1343255,
+      "after_files": 13
+    },
+    {
+      "path": "docs/slab-transfer",
+      "files": 20,
+      "bytes": 4392269,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4392269,
+      "after_files": 20
+    },
+    {
+      "path": "docs/soil-contact",
+      "files": 12,
+      "bytes": 1689461,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1689461,
+      "after_files": 12
+    },
+    {
+      "path": "docs/soil-profile",
+      "files": 10,
+      "bytes": 1104102,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1104102,
+      "after_files": 10
+    },
+    {
+      "path": "docs/unequal-frame",
+      "files": 19,
+      "bytes": 3246468,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 3246468,
+      "after_files": 19
+    },
+    {
+      "path": "docs/unequal-gravity",
+      "files": 20,
+      "bytes": 4529021,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 4529021,
+      "after_files": 20
+    },
+    {
+      "path": "docs/ux-milestone",
+      "files": 22,
+      "bytes": 2216084,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2216084,
+      "after_files": 22
+    },
+    {
+      "path": "docs/ux-milestone-2",
+      "files": 32,
+      "bytes": 1946301,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 1946301,
+      "after_files": 32
+    },
+    {
+      "path": "docs/workspace-quality",
+      "files": 28,
+      "bytes": 2522720,
+      "category": "B",
+      "decision": "retain; user data, evidence, reports or recovery snapshots",
+      "after_bytes": 2522720,
+      "after_files": 28
+    },
+    {
+      "path": "frontend",
+      "files": 68439,
+      "bytes": 4272298741,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1474954301,
+      "after_files": 60067
+    },
+    {
+      "path": "frontend/.env.local",
+      "files": 1,
+      "bytes": 80,
+      "category": "A/protected",
+      "decision": "Credentials/configuration retained untouched; values not copied into reports",
+      "after_bytes": 80,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/.gitignore",
+      "files": 1,
+      "bytes": 480,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 480,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/AGENTS.md",
+      "files": 1,
+      "bytes": 327,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 327,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/CLAUDE.md",
+      "files": 1,
+      "bytes": 11,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 11,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "files": 1,
+      "bytes": 644,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 644,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/hardening-build.log",
+      "files": 1,
+      "bytes": 1451,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1451,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/hardening-frontend.log",
+      "files": 1,
+      "bytes": 4624,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4624,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/hardening-lint.log",
+      "files": 1,
+      "bytes": 88,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 88,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/hardening-review.log",
+      "files": 1,
+      "bytes": 422,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 422,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/hardening-ts.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-dev-3001.err.log",
+      "files": 1,
+      "bytes": 384,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 384,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-dev-3001.out.log",
+      "files": 1,
+      "bytes": 654,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 654,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-dev.err.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-dev.out.log",
+      "files": 1,
+      "bytes": 2513,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 2513,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-env.d.ts",
+      "files": 1,
+      "bytes": 258,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 258,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-start-ui.err.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next-start-ui.out.log",
+      "files": 1,
+      "bytes": 116,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 116,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "files": 1,
+      "bytes": 1020,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 1222,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "files": 1,
+      "bytes": 419454,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 419454,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/package.json",
+      "files": 1,
+      "bytes": 2115,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 2115,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/playwright.config.ts",
+      "files": 1,
+      "bytes": 1001,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 1001,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/postcss.config.mjs",
+      "files": 1,
+      "bytes": 94,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 94,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/README.md",
+      "files": 1,
+      "bytes": 1017,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1017,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-build-verified.log",
+      "files": 1,
+      "bytes": 1451,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1451,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-build.log",
+      "files": 1,
+      "bytes": 1451,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1451,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-lint-verified.log",
+      "files": 1,
+      "bytes": 88,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 88,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-lint.log",
+      "files": 1,
+      "bytes": 88,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 88,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-tests-verified.log",
+      "files": 1,
+      "bytes": 4351,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4351,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-tests.log",
+      "files": 1,
+      "bytes": 4629,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4629,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-ts-verified.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/stabilization-ts.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "files": 1,
+      "bytes": 787,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 787,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/tsconfig.tsbuildinfo",
+      "files": 1,
+      "bytes": 638926,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 614088,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-build-final.log",
+      "files": 1,
+      "bytes": 1450,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 1450,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-e2e.log",
+      "files": 1,
+      "bytes": 371,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 371,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-frontend-final.log",
+      "files": 1,
+      "bytes": 4015,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4015,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-frontend.log",
+      "files": 1,
+      "bytes": 4254,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 4254,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-lint-final.log",
+      "files": 1,
+      "bytes": 88,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 88,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-lint.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-server-error.log",
+      "files": 1,
+      "bytes": 167163,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 167163,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-server.log",
+      "files": 1,
+      "bytes": 21211,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 21211,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-ts-final.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/universal-ts.log",
+      "files": 1,
+      "bytes": 0,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 0,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/vitest.config.ts",
+      "files": 1,
+      "bytes": 527,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 527,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/vitest.setup.ts",
+      "files": 1,
+      "bytes": 43,
+      "category": "A",
+      "decision": "Retain source/build/test/dependency configuration",
+      "after_bytes": 43,
+      "after_files": 1
+    },
+    {
+      "path": "frontend/.cache",
+      "files": 7,
+      "bytes": 3196840,
+      "category": "G",
+      "decision": "retain; mixed or uncertain contents",
+      "after_bytes": 3196840,
+      "after_files": 7
+    },
+    {
+      "path": "frontend/.next",
+      "files": 5015,
+      "bytes": 1981560815,
+      "category": "D",
+      "decision": "remove inactive build or stopped compiler cache; active runtime output retained",
+      "after_bytes": 0,
+      "after_files": 0
+    },
+    {
+      "path": "frontend/.next-phase1",
+      "files": 4832,
+      "bytes": 1135730449,
+      "category": "D",
+      "decision": "remove inactive build or stopped compiler cache; active runtime output retained",
+      "after_bytes": 319971460,
+      "after_files": 1475
+    },
+    {
+      "path": "frontend/app",
+      "files": 37,
+      "bytes": 217290,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 217290,
+      "after_files": 37
+    },
+    {
+      "path": "frontend/components",
+      "files": 223,
+      "bytes": 1745494,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 1745494,
+      "after_files": 223
+    },
+    {
+      "path": "frontend/e2e",
+      "files": 85,
+      "bytes": 477328,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 477328,
+      "after_files": 85
+    },
+    {
+      "path": "frontend/hooks",
+      "files": 9,
+      "bytes": 72930,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 72930,
+      "after_files": 9
+    },
+    {
+      "path": "frontend/lib",
+      "files": 116,
+      "bytes": 587630,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 587630,
+      "after_files": 116
+    },
+    {
+      "path": "frontend/node_modules",
+      "files": 57653,
+      "bytes": 1041376049,
+      "category": "C",
+      "decision": "retain active/verified runtime; only byte-proven wheel fragments removed",
+      "after_bytes": 1041376049,
+      "after_files": 57653
+    },
+    {
+      "path": "frontend/public",
+      "files": 408,
+      "bytes": 105709286,
+      "category": "B/C",
+      "decision": "Retain model assets and required Cesium/browser static runtime assets",
+      "after_bytes": 105709286,
+      "after_files": 408
+    },
+    {
+      "path": "frontend/scripts",
+      "files": 4,
+      "bytes": 4810,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 4810,
+      "after_files": 4
+    },
+    {
+      "path": "frontend/stores",
+      "files": 2,
+      "bytes": 18101,
+      "category": "A",
+      "decision": "retain application/source/configuration and required tests",
+      "after_bytes": 18101,
+      "after_files": 2
+    },
+    {
+      "path": "frontend/test-results",
+      "files": 3,
+      "bytes": 314073,
+      "category": "E/B",
+      "decision": "retain; historical test databases and unique verification evidence",
+      "after_bytes": 314073,
+      "after_files": 3
+    }
+  ]
+}

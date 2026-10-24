@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "timeout": false,
+  "elapsed_seconds": 35.07,
+  "standard_npm_build": true,
+  "environment_from_copied_transitioned_launcher": true,
+  "normal_ports_untouched": true
+}

@@ -269,6 +269,8 @@ class MessageInput(Contract):
     client_request_id: Id
     parts: Annotated[list[MessagePart], Field(min_length=1, max_length=20)]
     context: SubmitContext
+    assistant_mode: Literal["EXISTING", "ENGINEERING_OFFLINE"] = "EXISTING"
+    requested_model: Literal["zai-org/GLM-5.3-Flash", "zai-org/GLM-5.3"] = "zai-org/GLM-5.3-Flash"
 
 
 class ConversationInput(Contract):

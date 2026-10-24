@@ -1,0 +1,23 @@
+{
+  "project": 830,
+  "viewport": [
+    1600,
+    1000
+  ],
+  "steps": [
+    "SELECT",
+    "INPUTS",
+    "ANALYZE",
+    "RESULTS"
+  ],
+  "real_browser_recording": true,
+  "explicit_authorization": true,
+  "reopen_writes": 0,
+  "advanced_access": true,
+  "restored_model": true,
+  "writes": [
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/proposals",
+    "http://127.0.0.1:18001/api/projects/830/engineering/assembly/authorize-run"
+  ],
+  "errors": []
+}

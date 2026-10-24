@@ -1,0 +1,216 @@
+{
+  "slab_id": "drawing-cad:614f117ae2a74794:95",
+  "beam_ids": [
+    "drawing-cad:614f117ae2a74794:96",
+    "drawing-cad:614f117ae2a74794:97"
+  ],
+  "excluded_context_component_ids": [
+    "industrial-platform-5x3:beam-east",
+    "industrial-platform-5x3:beam-north",
+    "industrial-platform-5x3:beam-south",
+    "industrial-platform-5x3:beam-west",
+    "industrial-platform-5x3:column-ne",
+    "industrial-platform-5x3:column-nw",
+    "industrial-platform-5x3:column-se",
+    "industrial-platform-5x3:column-sw",
+    "industrial-platform-5x3:platform-deck",
+    "platform-addon:c9e0e256-1608-4be2-b1ab-adafa10424c0:body",
+    "platform-addon:44d566cb-7ca0-4c95-bf4d-1d574f788df0:body",
+    "platform-addon:149f0f5d-b98f-4260-a428-b2fc50959cf2:joint",
+    "platform-addon:b1ad97d4-faca-46e7-87c9-f5eebb37575f:body",
+    "platform-addon:d9a7247f-b6fa-4e50-a3de-7a8c243f3dc3:body",
+    "platform-addon:13ff4b82-88f8-4c41-9613-ad85bf72054b:joint",
+    "platform-addon:9c6c5059-9557-4c35-887a-a66e95606df4:body",
+    "platform-addon:2054528e-2362-4a24-843c-01988b6c8fea:body",
+    "platform-addon:a1f8b089-a278-4474-8596-ff0dade18975:joint",
+    "platform-addon:850c983b-9d8c-416d-8785-eb7106e068bb:body",
+    "platform-addon:b5d32b14-a981-4478-888f-42d19034592d:body",
+    "platform-addon:ed0730b0-c13b-47ba-9753-b63f1e86d4ac:joint",
+    "platform-addon:b95d6eda-29f0-4b03-90ec-2c5b59199b8d:diagonal",
+    "platform-addon:63a1eab7-ac09-4ceb-aaea-75c0427821e7:diagonal",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-1",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-2",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-3",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-4",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-5",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-6",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-7",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-8",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-9",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-10",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-11",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-12",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-13",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-14",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-15",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-16",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-17",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-18",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-19",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:tread-20",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer--1",
+    "platform-addon:664f80f7-3591-4b78-aecf-33ba6bc2fe5e:stringer-1"
+  ],
+  "context_exclusion_source": "Legacy 45-component platform is separate preserved context; only reviewed CAD members participate",
+  "context_exclusion_approved": true,
+  "tributary_widths_m": [
+    2,
+    2
+  ],
+  "tributary_width_source": "Reviewed 4 m CAD slab: 3.7 m support spacing/2 plus 0.15 m equal edge = 2 m each",
+  "intensity_kn_m2": 5,
+  "source": "Synthetic imposed pressure only; slab/member self-weight excluded",
+  "direction": "local_enu_negative_up",
+  "method": "one_way_symmetric_tributary_area",
+  "support_assumption": "Synthetic one-way North span onto north/south CAD beams; simple vertical slab support lines, no slab moments or torsion. Transverse outlines unmodeled; legacy platform excluded.",
+  "excluded_beam_ids": [],
+  "excluded_attachment_ids": [],
+  "no_openings_confirmed": true,
+  "symmetric_edge_overhang_approved": true,
+  "one_way_idealization_approved": true,
+  "purpose": "SYNTHETIC_VERIFICATION_ONLY",
+  "frames": [
+    {
+      "component_ids": [
+        "drawing-cad:614f117ae2a74794:9C",
+        "drawing-cad:614f117ae2a74794:96",
+        "drawing-cad:614f117ae2a74794:AE"
+      ],
+      "sections": [
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:9C",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        },
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:96",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.06,
+          "inertia_m4": 0.00044999999999999993,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        },
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:AE",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        }
+      ],
+      "connections": [
+        {
+          "column_id": "drawing-cad:614f117ae2a74794:9C",
+          "beam_id": "drawing-cad:614f117ae2a74794:96",
+          "column_endpoint": "top",
+          "beam_endpoint": "left",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            -0.15,
+            -0.009999999999999787
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic individually reviewed massless rigid arm; no capacity verification"
+        },
+        {
+          "column_id": "drawing-cad:614f117ae2a74794:AE",
+          "beam_id": "drawing-cad:614f117ae2a74794:96",
+          "column_endpoint": "top",
+          "beam_endpoint": "right",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            0.15000000000000036,
+            0.04999999999999982
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic individually reviewed massless rigid arm; no capacity verification"
+        }
+      ],
+      "supports": "both_column_bases_fixed",
+      "support_source": "Synthetic fixed support boundary; no footing or soil model",
+      "elements_per_member": 2,
+      "units": "SI"
+    },
+    {
+      "component_ids": [
+        "drawing-cad:614f117ae2a74794:A5",
+        "drawing-cad:614f117ae2a74794:97",
+        "drawing-cad:614f117ae2a74794:B7"
+      ],
+      "sections": [
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:A5",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        },
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:97",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.06,
+          "inertia_m4": 0.00044999999999999993,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        },
+        {
+          "component_id": "drawing-cad:614f117ae2a74794:B7",
+          "shape": "solid_rectangle",
+          "elastic_modulus_pa": 200000000000.0,
+          "area_m2": 0.09,
+          "inertia_m4": 0.0006749999999999998,
+          "material_name": "Synthetic solid rectangular steel",
+          "material_source": "Synthetic E=200 GPa verification only",
+          "section_source": "Explicit saved solid rectangular synthetic section, not rolled steel"
+        }
+      ],
+      "connections": [
+        {
+          "column_id": "drawing-cad:614f117ae2a74794:A5",
+          "beam_id": "drawing-cad:614f117ae2a74794:97",
+          "column_endpoint": "top",
+          "beam_endpoint": "left",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            -0.15,
+            -0.009999999999999787
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic individually reviewed massless rigid arm; no capacity verification"
+        },
+        {
+          "column_id": "drawing-cad:614f117ae2a74794:B7",
+          "beam_id": "drawing-cad:614f117ae2a74794:97",
+          "column_endpoint": "top",
+          "beam_endpoint": "right",
+          "behavior": "rigid_offset",
+          "offset_m": [
+            0.15000000000000036,
+            0.04999999999999982
+          ],
+          "idealization_approved": true,
+          "source": "Synthetic individually reviewed massless rigid arm; no capacity verification"
+        }
+      ],
+      "supports": "both_column_bases_fixed",
+      "support_source": "Synthetic fixed support boundary; no footing or soil model",
+      "elements_per_member": 2,
+      "units": "SI"
+    }
+  ]
+}

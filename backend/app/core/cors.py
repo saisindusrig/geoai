@@ -14,7 +14,7 @@ _NETLIFY_ORIGIN_REGEX = r"https://[\w-]+(?:--[\w-]+)?\.netlify\.app"
 
 
 def build_cors_origins() -> list[str]:
-    origins: set[str] = set(_LOCAL_ORIGINS)
+    origins: set[str] = set() if settings.ENVIRONMENT.lower() in ('production', 'prod') else set(_LOCAL_ORIGINS)
     if settings.NEXT_PUBLIC_APP_URL:
         origins.add(settings.NEXT_PUBLIC_APP_URL.rstrip("/"))
     for raw in settings.CORS_ALLOWED_ORIGINS.split(","):

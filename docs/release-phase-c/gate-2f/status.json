@@ -1,0 +1,33 @@
+{
+  "phase": "Gate 2F",
+  "frontend_tests": 63,
+  "backend_tests": 71,
+  "typescript": true,
+  "scoped_eslint": true,
+  "default_turbopack_build": true,
+  "additional_offline_sdk_fixture_build": true,
+  "browser_widths": [
+    1280,
+    1600,
+    390
+  ],
+  "firebase_disabled_by_default": true,
+  "backend_adc_unchanged": true,
+  "real_auth_tests": false,
+  "owner_configuration_live_verified": false,
+  "changed_prior_inputs": [
+    "frontend/app/login/LoginPageInner.tsx",
+    "frontend/components/auth/SessionBoundary.test.tsx",
+    "frontend/components/auth/SessionBoundary.tsx",
+    "frontend/lib/firebase-auth.ts",
+    "frontend/lib/firebase-session.test.tsx"
+  ],
+  "unchanged_prior_inputs": 25,
+  "verified_frontend_sources": 6,
+  "package_distributions_unchanged": 106,
+  "application_rows": 10283,
+  "assistant_history_rows": 3,
+  "isolated_ports_stopped": true,
+  "test_alias_config_restored": true,
+  "public_launch": "BLOCKED"
+}

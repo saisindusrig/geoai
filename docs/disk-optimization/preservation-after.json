@@ -1,0 +1,1328 @@
+{
+  "databases": [
+    {
+      "path": "backend/.test-stage1-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/dev.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/stage1-pre-migration-20261008-015346.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/stage45-pre-migration-20261008-151702.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-final-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-full-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/3b2b-seeded-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4a-full-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4b-focused-seeded.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4b-full-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4cr-full-regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-cumulative-budget.sqlite",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/boundary-selection.sqlite",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/issue-3-journey.sqlite",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/platform-demo.sqlite",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-controlled-live/acceptance-first-prepare.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-controlled-live/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-understand-canary-981cd96192534cfebc42a739366700b5/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4c-understand-canary-e6fe966847524ba189e05ee7745fc680/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch-diagnosis/read-copy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch-regression-651c5dabec8a4d8997f44db9836509e0/regression.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4ch2-mock-a1315005348340efaafc748ef42fff45/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-bridge-39f073205971470a9829fd0a9789c693/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-bridge-d83a10ceb5484174a06edba4c6e84783/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-mixed-cd1c0ac81a464aa188be8feb993d192f/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-mixed-d07b1a07216449f2be00983374e27ebe/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-4005c5d4343f4c81a2e21497f1a2f2c7/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-b0a6b1d53cf24b28bf914fa19b21db74/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/4d-platform-bc0f597787fb4d828e3c040914d132cd/acceptance.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b1-full-final/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-accepted/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-final/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/pytest-3b2a-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-1.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-2.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-3.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-4.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/browser-final-5.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.cad-proof-output/workspace-acceptance/workspace.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4cr-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_concurrent_and_crash_rese0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_cumulative_across_models_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_expired_contract0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_round_up_no_float_and_unk0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_uncertain_or_unaccounted_2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unknown_opening_and_unaut0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unknown_opening_and_unaut0/other/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget/test_unverified_contract_block2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_concurrent_and_crash_rese0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_cumulative_across_models_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_expired_contract0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_round_up_no_float_and_unk0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_uncertain_or_unaccounted_2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unknown_opening_and_unaut0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unknown_opening_and_unaut0/other/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-budget-final/test_unverified_contract_block2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_concurrent_and_crash_rese0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_cumulative_across_models_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_expired_contract0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_inva0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_miss0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_prov0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_stal0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_trun0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_failures_never_retry_unce0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_five_sequential_paths_and0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_round_up_no_float_and_unk0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_uncertain_or_unaccounted_2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unknown_opening_and_unaut0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unknown_opening_and_unaut0/other/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_billing_zero_d0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare/test_unverified_contract_block2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_concurrent_and_crash_rese0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_cumulative_across_models_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_expired_contract0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_inva0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_miss0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_prov0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_stal0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_trun0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_failures_never_retry_unce0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_five_sequential_paths_and0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_round_up_no_float_and_unk0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_uncertain_or_unaccounted_2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unknown_opening_and_unaut0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unknown_opening_and_unaut0/other/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_billing_zero_d0/money.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-4d-live-prepare-final/test_unverified_contract_block2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-4b-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-bim-authoring-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-proof-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-regression-final-verified/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full2/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-cad-workspace-full3/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-canary-4ch-seeded/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_concurrent_and_crash_rese0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_cumulative_across_models_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_expired_contract0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_round_up_no_float_and_unk0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_uncertain_or_unaccounted_2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unknown_opening_and_unaut0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unknown_opening_and_unaut0/other/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block0/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block1/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-platform-demo/test_unverified_contract_block2/budget.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-final/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-runtime-hardening-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-final/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-stabilize-regression-verified/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-baseline/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_009_upgrade_preserves_fou0/existing009.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_alembic_upgrade_head_sqli0/migration_test.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_concurrent_messages_are_o0/concurrent.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_downgrade_refuses_history0/downgrade.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_007_upgrade_pres0/legacy.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_010_relationship0/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    },
+    {
+      "path": "backend/.test-universal-full-final/test_existing_010_relationship1/existing010.db",
+      "rows_unchanged": true,
+      "schema_unchanged": true
+    }
+  ],
+  "original_storage_files": 55296,
+  "changed_storage_files": [],
+  "original_CAD_proof_files": 2090,
+  "changed_CAD_proof_files": []
+}

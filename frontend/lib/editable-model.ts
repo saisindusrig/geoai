@@ -52,7 +52,7 @@ export function documentFromGeometrySpec(
           },
       transform: {
         position: isBox ? vec3(object.center, [0, 0, 0]) : [0, 0, 0],
-        rotation_deg: [0, 0, Number(object.rotation_z_deg ?? 0)],
+        rotation_deg: vec3(object.rotation_deg,[0, 0, Number(object.rotation_z_deg ?? 0)]),
         scale: [1, 1, 1],
       },
       material: {
@@ -85,6 +85,9 @@ export function documentFromGeometrySpec(
 
 export function estimateDocument(document: EditableModelDocument | null): ModelImpact | null {
   if (!document) return null;
+  // Visual-only concepts exclude every member from quantities. Zero would
+  // imply a measured absence of material or cost, rather than unavailable data.
+  if (document.components.length && document.components.every(component => component.quantity?.included === false)) return null;
   let concrete = 0;
   let asphalt = 0;
   let excavation = 0;

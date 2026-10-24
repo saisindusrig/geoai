@@ -1,0 +1,125 @@
+{
+  "diaphragm": {
+    "status": "BENCHMARK_VERIFIED",
+    "run_folder": "docs\\floor-system\\mechanics-evidence\\bf280c9d-e9bf-4573-a007-af990dad85d7",
+    "condensed_stiffness": [
+      [
+        3000000.0,
+        0.0,
+        -2000000.0
+      ],
+      [
+        0.0,
+        6000000.0,
+        0.0
+      ],
+      [
+        -2000000.0,
+        0.0,
+        20000000.0
+      ]
+    ],
+    "expected": [
+      [
+        0.0003678571428571429,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        0.0001869047619047619,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        -2.0238095238095247e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.00026428571428571435,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ]
+    ],
+    "actual": [
+      [
+        0.0003678571428571429,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        0.0001869047619047619,
+        5.178571428571429e-05
+      ],
+      [
+        0.0003678571428571429,
+        -2.023809523809525e-05,
+        5.178571428571429e-05
+      ],
+      [
+        0.00026428571428571435,
+        8.333333333333333e-05,
+        5.178571428571429e-05
+      ]
+    ],
+    "max_abs_error": 3.3881317890172014e-21,
+    "production_enabled": false,
+    "scope": "Small-rotation rigid-plane kinematics with prescribed linear springs; not actual slab rigidity/capacity."
+  },
+  "plate": {
+    "status": "BENCHMARK_VERIFIED",
+    "meshes": [
+      {
+        "mesh": 4,
+        "run_folder": "docs\\floor-system\\mechanics-evidence\\fb3b3287-c1ba-46b1-9968-4c4437f8cd53",
+        "center_displacement_m": -0.0005784361591188164,
+        "navier_center_m": -0.0005914785475665477,
+        "relative_error": 0.02205048433521395,
+        "total_reaction_n": 1600.0,
+        "expected_reaction_n": 1600,
+        "production_enabled": false
+      },
+      {
+        "mesh": 8,
+        "run_folder": "docs\\floor-system\\mechanics-evidence\\882e480e-54b6-4634-8a1f-8ea2df0b8b0b",
+        "center_displacement_m": -0.0005891789932508807,
+        "navier_center_m": -0.0005914785475665477,
+        "relative_error": 0.003887806793885784,
+        "total_reaction_n": 1600.0,
+        "expected_reaction_n": 1600,
+        "production_enabled": false
+      },
+      {
+        "mesh": 16,
+        "run_folder": "docs\\floor-system\\mechanics-evidence\\10647981-3071-4cd6-9dfd-12d5cf9b8423",
+        "center_displacement_m": -0.0005919079685246392,
+        "navier_center_m": -0.0005914785475665477,
+        "relative_error": 0.0007260127351333967,
+        "total_reaction_n": 1600.0,
+        "expected_reaction_n": 1600,
+        "production_enabled": false
+      }
+    ],
+    "navier_series_101_vs_201_m": 1.6660121632955383e-13,
+    "scope": "Linear pure bending only; all in-plane/drilling DOFs restrained. No membrane verification, beam-shell coupling, real floor boundary or connection validation.",
+    "production_enabled": false
+  },
+  "solver": {
+    "name": "OpenSees",
+    "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+    "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+  },
+  "integration_status": "DISABLED",
+  "blockers": [
+    "Saved frame inputs contain LOAD-ONLY slabs without reviewed shell mesh, slab material/section properties or edge restraints.",
+    "No reviewed rigid-diaphragm assumption or master/slave DOF mapping in saved source.",
+    "Beam-shell compatibility, joint offsets, reaction/stiffness coupling, irregular floors/openings and mesh sensitivity remain unvalidated."
+  ],
+  "references": [
+    "https://opensees.github.io/OpenSeesDocumentation/user/manual/model/mp_constraint/rigidDiaphragm.html",
+    "https://opensees.berkeley.edu/OpenSees/manuals/usermanual/231.htm",
+    "https://opensees.berkeley.edu/OpenSees/manuals/ExamplesManual/HTML/876.htm",
+    "https://ntrs.nasa.gov/api/citations/19880019811/downloads/19880019811.pdf"
+  ]
+}

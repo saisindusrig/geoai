@@ -1,0 +1,3363 @@
+[
+  {
+    "route": "/",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 176,
+      "cls": 0,
+      "longTasks": [
+        52,
+        88,
+        296,
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 53500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 19300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 368,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 156,
+      "cls": 0,
+      "longTasks": [
+        63,
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 35100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 56,
+      "cls": 0.013457230769230768,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 128,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 20500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0.4798769230769231,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 31200000,
+    "overflow": [
+      {
+        "tag": "TABLE",
+        "cls": "data-table w-full min-w-[640px] text-sm",
+        "text": "CodeItemUnitRateCurrencyFIX-0Synthetic long rate name Synthe"
+      },
+      {
+        "tag": "THEAD",
+        "cls": "sticky top-0 bg-background-secondary z-10",
+        "text": "CodeItemUnitRateCurrency"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "CodeItemUnitRateCurrency"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": "Rate"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": "Currency"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-left px-3 py-2 font-medium text-xs text-muted-foreground",
+        "text": ""
+      },
+      {
+        "tag": "TBODY",
+        "cls": "",
+        "text": "FIX-0Synthetic long rate name Synthetic long rate name Synth"
+      },
+      {
+        "tag": "TR",
+        "cls": "border-t border-border",
+        "text": "FIX-0Synthetic long rate name Synthetic long rate name Synth"
+      }
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 52,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 72,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 33100000,
+    "overflow": [
+      {
+        "tag": "TABLE",
+        "cls": "data-table w-full min-w-[640px]",
+        "text": "TimeUserProjectEventUnits10/22/2026, 5:30:00 AM1999998fixtur"
+      },
+      {
+        "tag": "THEAD",
+        "cls": "",
+        "text": "TimeUserProjectEventUnits"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "TimeUserProjectEventUnits"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Project"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Event"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Units"
+      },
+      {
+        "tag": "TBODY",
+        "cls": "",
+        "text": "10/22/2026, 5:30:00 AM1999998fixture_read010/22/2026, 5:30:0"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "10/22/2026, 5:30:00 AM1999998fixture_read0"
+      }
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 80,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 23100000,
+    "overflow": [
+      {
+        "tag": "TABLE",
+        "cls": "data-table w-full min-w-[720px]",
+        "text": "TimeUserActionEntityProjectIP10/22/2026, 5:30:00 AM1fixture."
+      },
+      {
+        "tag": "THEAD",
+        "cls": "",
+        "text": "TimeUserActionEntityProjectIP"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "TimeUserActionEntityProjectIP"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Action"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Entity"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Project"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "IP"
+      },
+      {
+        "tag": "TBODY",
+        "cls": "",
+        "text": "10/22/2026, 5:30:00 AM1fixture.readproject #999998999998—10/"
+      }
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0.0020982604166666667,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 37300000,
+    "overflow": [
+      {
+        "tag": "DIV",
+        "cls": "flex gap-0 border-b border-border bg-background-secondary min-w-max",
+        "text": "All PhasesFoundationStructureRoadPipelineFinishing"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "rounded-none font-medium transition-colors duration-150 flex-1 px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-surface-hover border-b-2 border-transparent",
+        "text": "Finishing"
+      },
+      {
+        "tag": "TABLE",
+        "cls": "data-table w-full min-w-[640px]",
+        "text": "ItemCategoryQtyRateAmountSynthetic item 0 — Long item descri"
+      },
+      {
+        "tag": "THEAD",
+        "cls": "",
+        "text": "ItemCategoryQtyRateAmount"
+      },
+      {
+        "tag": "TR",
+        "cls": "",
+        "text": "ItemCategoryQtyRateAmount"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Item"
+      },
+      {
+        "tag": "TH",
+        "cls": "",
+        "text": "Category"
+      },
+      {
+        "tag": "TH",
+        "cls": "text-right",
+        "text": "Qty"
+      }
+    ],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 52,
+      "cls": 0.0020982604166666667,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 180,
+      "cls": 0.015892598878205128,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 31200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 246279,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 104,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 246334,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 104,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 246236,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 116,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 246237,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 152,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 482841,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 390,
+    "scrollWidth": 384,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0.01611076923076923,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 482182,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 192,
+      "cls": 0,
+      "longTasks": [
+        85,
+        275,
+        53,
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 56800000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 19300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 372,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 4,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 212,
+      "cls": 0,
+      "longTasks": [
+        51,
+        52,
+        208,
+        87
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0.05426399999999999,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 267881,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 200,
+      "cls": 0,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 20500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 148,
+      "cls": 0,
+      "longTasks": [
+        102
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 368,
+      "cls": 0,
+      "longTasks": [
+        82
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 56,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 76,
+      "cls": 0,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 23100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 52,
+      "cls": 0.004076534423828125,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 184,
+      "cls": 0.004076534423828125,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 208,
+      "cls": 0.024090846923828128,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 100,
+      "cls": 0.00836,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 246279,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0.00836,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 246334,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.00836,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 246236,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.00836,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 246237,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0.00836,
+      "longTasks": [
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 482841,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 768,
+    "scrollWidth": 762,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0.00836,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 482182,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 760,
+      "cls": 0,
+      "longTasks": [
+        85,
+        282,
+        72,
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 42100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 4,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 152,
+      "cls": 0,
+      "longTasks": [
+        190,
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 267881,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 380,
+      "cls": 0,
+      "longTasks": [
+        85
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 52,
+      "cls": 0,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 224,
+      "cls": 0.00298574298620224,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 196,
+      "cls": 0.00298574298620224,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 196,
+      "cls": 0.02290052264928818,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 246279,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": []
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 100,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 246334,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 104,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 246236,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 100,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 246237,
+    "heap": 17100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 482841,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 1024,
+    "scrollWidth": 1018,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": true,
+    "metrics": {
+      "lcp": 140,
+      "cls": 0.0061230468750000005,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 482182,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 828,
+      "cls": 0,
+      "longTasks": [
+        86,
+        295,
+        60,
+        52,
+        53,
+        54,
+        56,
+        55,
+        55,
+        53,
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 50400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 672,
+      "cls": 0,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 160,
+      "cls": 0,
+      "longTasks": [
+        189,
+        96,
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 44700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0.04264015625,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 267881,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 148,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 56,
+      "cls": 0,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 224,
+      "cls": 0.0019108755111694336,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 31200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 136,
+      "cls": 0.0019108755111694336,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 204,
+      "cls": 0.016417047386169434,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 35100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0.2718518098068237,
+      "longTasks": [
+        214,
+        107,
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 2765313,
+    "heap": 64000000,
+    "overflow": [],
+    "axe": {
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "nodes": [
+            {
+              "target": [
+                "button[title=\"+Z view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 7.8px instead of at least 24px."
+            },
+            {
+              "target": [
+                "button[title=\"+Y view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 3.8px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 72,
+      "cls": 0.019337179527282717,
+      "longTasks": [
+        213,
+        86,
+        54,
+        207,
+        193,
+        78,
+        77,
+        76,
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 2351085,
+    "heap": 68000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.005829625511169434,
+      "longTasks": [
+        80
+      ],
+      "events": []
+    },
+    "jsBytes": 377743,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 76,
+      "cls": 0.0023729238510131834,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 660651,
+    "heap": 29400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast",
+        "link-in-text-block"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 252,
+      "cls": 0.0019108755111694336,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 497350,
+    "heap": 39600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 1280,
+    "scrollWidth": 1274,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.00391875,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 496691,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 840,
+      "cls": 0,
+      "longTasks": [
+        89,
+        302,
+        62,
+        50,
+        54,
+        51,
+        51,
+        52,
+        51,
+        51,
+        50,
+        77,
+        55
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 53500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 368,
+      "cls": 0,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 160,
+      "cls": 0,
+      "longTasks": [
+        189,
+        101,
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 60,
+      "cls": 0.03381530864197531,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 267881,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 21700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0,
+      "longTasks": [
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 56,
+      "cls": 0,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 80,
+      "cls": 0,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 232,
+      "cls": 0.001509827564380787,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 31200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 144,
+      "cls": 0.001509827564380787,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 208,
+      "cls": 0.012971494231047454,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 35100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.24133992727020642,
+      "longTasks": [
+        209,
+        96,
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 2765313,
+    "heap": 72200000,
+    "overflow": [],
+    "axe": {
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "nodes": [
+            {
+              "target": [
+                "button[title=\"+Z view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 7.8px instead of at least 24px."
+            },
+            {
+              "target": [
+                "button[title=\"+Y view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 3.8px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 44,
+      "cls": 0.013386869182822147,
+      "longTasks": [
+        197,
+        83,
+        112,
+        73,
+        132,
+        81,
+        81
+      ],
+      "events": []
+    },
+    "jsBytes": 2351085,
+    "heap": 72200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.001509827564380787,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 377743,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.0018867430736400463,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 660651,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast",
+        "link-in-text-block"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 244,
+      "cls": 0.001509827564380787,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 497350,
+    "heap": 39600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 1440,
+    "scrollWidth": 1434,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 48,
+      "cls": 0.001509827564380787,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 496691,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 208,
+      "cls": 0,
+      "longTasks": [
+        87,
+        314,
+        76,
+        58,
+        66,
+        61,
+        62,
+        65,
+        71,
+        68,
+        66,
+        61,
+        53,
+        55,
+        60,
+        58,
+        60,
+        59,
+        79,
+        61,
+        58,
+        54
+      ],
+      "events": []
+    },
+    "jsBytes": 485170,
+    "heap": 44700000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/login",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 255577,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 376,
+      "cls": 0,
+      "longTasks": [
+        72
+      ],
+      "events": []
+    },
+    "jsBytes": 258411,
+    "heap": 24500000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/dashboard",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 6,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 168,
+      "cls": 0,
+      "longTasks": [
+        184,
+        100,
+        76
+      ],
+      "events": []
+    },
+    "jsBytes": 516810,
+    "heap": 50400000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 88,
+      "cls": 0.01902111111111111,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 267881,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/settings/api-keys",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 261977,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/rates",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 160,
+      "cls": 0.35888333333333333,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 261625,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/templates",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 112,
+      "cls": 0,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 261101,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/usage",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 84,
+      "cls": 0,
+      "longTasks": [
+        79
+      ],
+      "events": []
+    },
+    "jsBytes": 261602,
+    "heap": 33100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/admin/audit",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 64,
+      "cls": 0,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 261653,
+    "heap": 37300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/cost",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 244,
+      "cls": 0.0008492780049641927,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 506275,
+    "heap": 31200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/timeline",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 212,
+      "cls": 0.0008492780049641927,
+      "longTasks": [
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 375716,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/report",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 212,
+      "cls": 0.007296465504964192,
+      "longTasks": [
+        75
+      ],
+      "events": []
+    },
+    "jsBytes": 380234,
+    "heap": 35100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/workspace",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 488,
+      "cls": 0.18054630349053277,
+      "longTasks": [
+        210,
+        123,
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 2765313,
+    "heap": 76600000,
+    "overflow": [],
+    "axe": {
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "nodes": [
+            {
+              "target": [
+                "button[title=\"+Z view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 7.8px instead of at least 24px."
+            },
+            {
+              "target": [
+                "button[title=\"+Y view\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (20px by 20px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 3.8px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/map",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 496,
+      "cls": 0.008613564164903428,
+      "longTasks": [
+        223,
+        107,
+        58,
+        74
+      ],
+      "events": []
+    },
+    "jsBytes": 2351085,
+    "heap": 60300000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/model",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 512,
+      "cls": 0.002590944671630859,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 377743,
+    "heap": 26000000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/analysis",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 1,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 464,
+      "cls": 0.001061292978922526,
+      "longTasks": [
+        77
+      ],
+      "events": []
+    },
+    "jsBytes": 660651,
+    "heap": 31200000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast",
+        "link-in-text-block"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/estimate",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 172,
+      "cls": 0.0008492780049641927,
+      "longTasks": [
+        78
+      ],
+      "events": []
+    },
+    "jsBytes": 497350,
+    "heap": 42100000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  },
+  {
+    "route": "/projects/999998/scenarios",
+    "width": 1920,
+    "scrollWidth": 1914,
+    "main": 1,
+    "canvas": 0,
+    "desktopRequired": false,
+    "metrics": {
+      "lcp": 228,
+      "cls": 0.0008492780049641927,
+      "longTasks": [
+        73
+      ],
+      "events": []
+    },
+    "jsBytes": 496691,
+    "heap": 27600000,
+    "overflow": [],
+    "axe": {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    "errors": []
+  }
+]

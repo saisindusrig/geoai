@@ -1,0 +1,40 @@
+{
+  "method": "Sequential warm loopback GETs, first sample discarded; no concurrency/load or field performance claim.",
+  "results": {
+    "health": {
+      "samples": 10,
+      "status": 200,
+      "median_ms": 12.83,
+      "p95_nearest_rank_ms": 27.82,
+      "response_bytes": 466
+    },
+    "project_list": {
+      "samples": 10,
+      "status": 200,
+      "median_ms": 16.93,
+      "p95_nearest_rank_ms": 31.24,
+      "response_bytes": 150149
+    },
+    "saved_frame_compact": {
+      "samples": 10,
+      "status": 200,
+      "median_ms": 110.71,
+      "p95_nearest_rank_ms": 226.3,
+      "response_bytes": 482860
+    },
+    "engineering_context": {
+      "samples": 10,
+      "status": 200,
+      "median_ms": 91.19,
+      "p95_nearest_rank_ms": 208.34,
+      "response_bytes": 35438
+    },
+    "production_dashboard": {
+      "samples": 10,
+      "status": 200,
+      "median_ms": 2.18,
+      "p95_nearest_rank_ms": 24.51,
+      "response_bytes": 23000
+    }
+  }
+}

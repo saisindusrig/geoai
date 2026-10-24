@@ -1,0 +1,20 @@
+{
+  "phase": "Gate 2A",
+  "disposition": "LOCAL_IMPLEMENTATION_VERIFIED",
+  "firebase_enabled": false,
+  "genuine_authentication_qualified": false,
+  "public_launch": "BLOCKED",
+  "frontend_tests": 62,
+  "backend_tests": 62,
+  "typecheck": true,
+  "scoped_lint": true,
+  "default_turbopack_build": true,
+  "browser_widths": [
+    1280,
+    1600,
+    390
+  ],
+  "tested_source_files_identical": 18,
+  "original_row_schema_and_manifest_hashes_unchanged": true,
+  "isolated_test_servers_stopped": true
+}

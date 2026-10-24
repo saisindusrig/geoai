@@ -1,0 +1,17 @@
+{
+  "result_id": 384,
+  "revision_id": 100,
+  "model_tcl_sha256": "0b43415d0cbdfb35f6c643e6e86946b55daf5ed4e1004528029e5035acb77d32",
+  "source_inspection": true,
+  "computed_diagrams": [
+    "deformation",
+    "axial",
+    "shear",
+    "moment",
+    "reactions"
+  ],
+  "unsaved_geometry_stale": true,
+  "cancel_preserves_saved_results": true,
+  "responsive": true,
+  "errors": []
+}

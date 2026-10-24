@@ -1,0 +1,24 @@
+{
+  "services": {
+    "postgresql": {
+      "loopback_port": 5432,
+      "tcp_reachable": false
+    },
+    "redis": {
+      "loopback_port": 6379,
+      "tcp_reachable": false
+    },
+    "minio": {
+      "loopback_port": 9000,
+      "tcp_reachable": false
+    }
+  },
+  "sdks": {
+    "google.cloud.storage": false,
+    "firebase_admin": false,
+    "psycopg2": true,
+    "redis": true,
+    "boto3": true
+  },
+  "qualification": "Only loopback reachability and installed modules; no cloud requests or credentials used."
+}

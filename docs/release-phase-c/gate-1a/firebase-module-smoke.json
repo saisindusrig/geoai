@@ -1,0 +1,10 @@
+{
+  "node": "v24.22.1",
+  "sdkVersion": "13.1.0",
+  "initializedApps": 0,
+  "signInExport": "function",
+  "logoutExport": "function",
+  "refreshObserverExport": "function",
+  "recoveryExport": "function",
+  "blockedNetworkAttempts": 0
+}

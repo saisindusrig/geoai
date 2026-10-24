@@ -56,12 +56,15 @@ it("generates only an approved eligible building and reports its saved revision"
     ...(fixture as { content: object }).content,
     assetProposals: [{ assetRequestId: "A01", displayName: "Office", assetFamily: "BUILDING", proposalState: "CONCEPT_REVIEW", generationEligible: true, blockers: [] }],
   } });
-  vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "9" });
+  vi.mocked(api.post).mockResolvedValue({ modelRevisionId: "9", scenarioId: 12 });
+  const refreshed = vi.fn();
+  window.addEventListener("geoai:concept-built", refreshed, { once: true });
   render(<ProposalReview projectId={1} versionId="pv" />);
   fireEvent.click(await screen.findByRole("button", { name: "Review proposal" }));
   fireEvent.click(screen.getByRole("button", { name: "Generate building concept" }));
   await waitFor(() => expect(api.post).toHaveBeenCalledWith("/api/projects/1/proposals/versions/pv/build", {}));
   expect(await screen.findByRole("status")).toHaveTextContent("revision 9");
+  expect(refreshed).toHaveBeenCalledWith(expect.objectContaining({ detail: { projectId: 1, scenarioId: 12 } }));
 });
 
 it("summarizes a typed opening patch and blocks application with unsaved edits", async () => {

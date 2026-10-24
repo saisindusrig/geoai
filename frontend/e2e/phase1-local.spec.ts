@@ -1,0 +1,25 @@
+import { expect, test } from "@playwright/test";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8001";
+test.use({ trace: "off" });
+test("site import validates geometry, saves and survives reload", async ({ page }) => {
+  await page.route("**/api/geocode/map-runtime-config", route => route.fulfill({ json: { cesium_ion_token: null, google_maps_api_key: null } }));
+  const response = await page.request.post(`${api}/api/projects`, { data: { name: `Phase 1 import ${Date.now()}`, center_lng: 77, center_lat: 12 } });
+  expect(response.ok()).toBeTruthy(); const project = await response.json();
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(`/projects/${project.id}/workspace`);
+  await page.getByLabel("Import site geometry").click();
+  const file = page.locator('input[title="Import GeoJSON / KML"]');
+  const invalid = { type: "Polygon", coordinates: [[[77,12],[77.002,12.002],[77,12.002],[77.002,12],[77,12]]] };
+  await file.setInputFiles({ name: "invalid.geojson", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(invalid)) });
+  await expect(page.getByText("Import failed", { exact: true })).toBeVisible();
+  expect((await (await page.request.get(`${api}/api/projects/${project.id}`)).json()).boundary_geojson).toBeNull();
+  const boundary = { type: "Polygon", coordinates: [[[77,12],[77.002,12],[77.002,12.002],[77,12.002],[77,12]]] };
+  await file.setInputFiles({ name: "site.geojson", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(boundary)) });
+  await expect(page.getByText("Boundary imported", { exact: true })).toBeVisible();
+  await page.reload();
+  expect((await (await page.request.get(`${api}/api/projects/${project.id}`)).json()).boundary_geojson).toEqual(boundary);
+  const geojson = await page.request.get(`${api}/api/projects/${project.id}/exports/geojson`);
+  expect(geojson.ok()).toBeTruthy(); expect((await geojson.json()).type).toBe("FeatureCollection");
+  const dxf = await page.request.get(`${api}/api/projects/${project.id}/exports/dxf`);
+  expect(dxf.status()).toBe(501);
+});

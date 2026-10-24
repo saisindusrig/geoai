@@ -1,0 +1,271 @@
+[
+  {
+    "project_id": 779,
+    "analysis_id": 197,
+    "revision_id": 75,
+    "solver_version": "3.8.0",
+    "run_id": "79b044db-e994-49a8-b317-4e6d3e73ec3e",
+    "nodes": [
+      {
+        "id": 1,
+        "position_m": [
+          0,
+          0
+        ],
+        "displacement_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "position_m": [
+          3.0,
+          0
+        ],
+        "displacement_m": [
+          0.0,
+          -0.005625000000000001,
+          -0.0028125000000000003
+        ]
+      },
+      {
+        "id": 3,
+        "position_m": [
+          1.5,
+          0.0
+        ],
+        "displacement_m": [
+          0.0,
+          -0.0017578125000000003,
+          -0.002109375
+        ]
+      }
+    ],
+    "reactions": [
+      {
+        "node": 1,
+        "fx_n": 0.0,
+        "fy_n": 1000.0000000000009,
+        "moment_nm": 3000.0000000000005
+      }
+    ],
+    "equilibrium_residual_si": [
+      0.0,
+      9.094947017729282e-13,
+      4.547473508864641e-13
+    ],
+    "comparisons": {
+      "nodes": {
+        "max_absolute_error": 1.8214596497756474e-17,
+        "passed": true
+      },
+      "reactions": {
+        "max_absolute_error": 1.1823431123048067e-11,
+        "passed": true
+      },
+      "forces": {
+        "max_absolute_error": 1.0913936421275139e-11,
+        "passed": true
+      },
+      "closed_form_tip": {
+        "computed": -0.005625000000000001,
+        "reference": -0.005625,
+        "passed": true
+      }
+    },
+    "inputs": {
+      "kind": "cantilever",
+      "length_m": 3.0,
+      "height_m": 3.0,
+      "elastic_modulus_pa": 200000000000.0,
+      "area_m2": 0.01,
+      "inertia_m4": 8e-06,
+      "load_n": 1000.0,
+      "material_source": "Explicit synthetic verification elastic material",
+      "section_source": "Explicit synthetic A and Iz; not project design",
+      "load_source": "Explicit synthetic verification load",
+      "joints": "rigid",
+      "restraints": "fixed_base",
+      "purpose": "VERIFICATION_ONLY",
+      "elements_per_member": 2,
+      "units": "SI"
+    },
+    "suite_case_count": 5,
+    "suite_status": "VERIFIED",
+    "solver": {
+      "name": "OpenSees",
+      "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+      "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+    },
+    "artifact_sha256": {
+      "model.tcl": "b79705615a0f615d4efe048cfe136ce9ad3ac7661c26c475f9131f3378dc4096",
+      "nodes.tsv": "10bb5bad05ecffa87f9bece4bcffc91fab69f287dad135c6c278a7f8c0f1162a",
+      "forces.tsv": "4b4c005bc9b9cb705010af765f628ef2f54ac9fdd82d1a0f8fc78a848c241194",
+      "reactions.tsv": "8a85eba023fdc4e002da5956bf72d2392933e8c5410cf373b4bbc2a8c11d92e9",
+      "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+      "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+    }
+  },
+  {
+    "project_id": 780,
+    "analysis_id": 202,
+    "revision_id": 76,
+    "solver_version": "3.8.0",
+    "run_id": "9ff9f1aa-f77c-4d6f-82b1-41c2c6b6569a",
+    "nodes": [
+      {
+        "id": 1,
+        "position_m": [
+          0,
+          0
+        ],
+        "displacement_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "position_m": [
+          0,
+          3.0
+        ],
+        "displacement_m": [
+          0.0021761172676900576,
+          4.59851030974654e-06,
+          -0.000513244845126711
+        ]
+      },
+      {
+        "id": 3,
+        "position_m": [
+          4.0,
+          3.0
+        ],
+        "displacement_m": [
+          0.002176117267690058,
+          -4.59851030974654e-06,
+          -0.0005132448451267112
+        ]
+      },
+      {
+        "id": 4,
+        "position_m": [
+          4.0,
+          0
+        ],
+        "displacement_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": 5,
+        "position_m": [
+          0.0,
+          1.5
+        ],
+        "displacement_m": [
+          0.0008955918169225121,
+          2.29925515487327e-06,
+          -0.0009597474225633509
+        ]
+      },
+      {
+        "id": 6,
+        "position_m": [
+          2.0,
+          3.0
+        ],
+        "displacement_m": [
+          0.0021761172676900576,
+          7e-20,
+          0.0002531735398310455
+        ]
+      },
+      {
+        "id": 7,
+        "position_m": [
+          4.0,
+          1.5
+        ],
+        "displacement_m": [
+          0.000895591816922512,
+          -2.29925515487327e-06,
+          -0.0009597474225633509
+        ]
+      }
+    ],
+    "reactions": [
+      {
+        "node": 1,
+        "fx_n": -9999.999999999942,
+        "fy_n": -6131.347079662059,
+        "moment_nm": 17737.3058406757
+      },
+      {
+        "node": 4,
+        "fx_n": -9999.999999999929,
+        "fy_n": 6131.347079662053,
+        "moment_nm": 17737.30584067569
+      }
+    ],
+    "equilibrium_residual_si": [
+      1.3096723705530167e-10,
+      -5.4569682106375694e-12,
+      -3.92901711165905e-10
+    ],
+    "comparisons": {
+      "nodes": {
+        "max_absolute_error": 1.6046192152785466e-17,
+        "passed": true
+      },
+      "reactions": {
+        "max_absolute_error": 1.4551915228366852e-10,
+        "passed": true
+      },
+      "forces": {
+        "max_absolute_error": 1.4551915228366852e-10,
+        "passed": true
+      }
+    },
+    "inputs": {
+      "kind": "portal",
+      "length_m": 4.0,
+      "height_m": 3.0,
+      "elastic_modulus_pa": 200000000000.0,
+      "area_m2": 0.02,
+      "inertia_m4": 8e-05,
+      "load_n": 20000.0,
+      "material_source": "Explicit synthetic verification elastic material",
+      "section_source": "Explicit synthetic A and Iz; not project design",
+      "load_source": "Explicit synthetic verification load",
+      "joints": "rigid",
+      "restraints": "fixed_base",
+      "purpose": "VERIFICATION_ONLY",
+      "elements_per_member": 2,
+      "units": "SI"
+    },
+    "suite_case_count": 8,
+    "suite_status": "VERIFIED",
+    "solver": {
+      "name": "OpenSees",
+      "executable": "D:\\layout project\\.cache\\opensees\\OpenSees3.8.0\\bin\\OpenSees.exe",
+      "executable_sha256": "5aa4e9c80c410c510ca62ac3b2f1d64a8e50679f0238e140b5bebcd6d5ddbe6d"
+    },
+    "artifact_sha256": {
+      "model.tcl": "827c66adf3aad84f0384a741254fda8d6f4588b068fd4512cf39ca8117edc7c2",
+      "nodes.tsv": "9dab10181d53169f314d428a5f042ce6d0bdd2046fc4debcd22f3c9fa4a8a649",
+      "forces.tsv": "ebfd5e8cd3b6cb067e3b1fe316c602d9dc4eebd6efea9a589d6dd7ff9a18a1ae",
+      "reactions.tsv": "9a0d0563ebf53097c414036063d026a7f6ec5cc8a3d7ded276b6dba222142d59",
+      "summary.tsv": "ab147769b52c0b698ea4b32323ca303e972c4bad51c37d0b3215037ff90b2203",
+      "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr.txt": "2d4fec5b839ccfe3568c86f450bfe591c191ed7112cd3a9c4ba3081401d3cb48"
+    }
+  }
+]

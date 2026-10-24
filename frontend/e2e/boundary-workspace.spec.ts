@@ -22,7 +22,15 @@ for (const width of [1440,1920]) test(`boundary drawing, validation, retry and r
   await drawing.getByRole("button",{name:"Undo vertex"}).click();
   await expect(drawing).toContainText("3 vertices");
   await page.screenshot({path:`test-results/boundary-drawing-${width}.png`});
-  await drawing.getByRole("button",{name:"Finish drawing"}).click();
+  // Closing at the first point must not append a duplicate vertex.
+  await expect.poll(async()=>JSON.parse(await canvas.getAttribute("data-boundary-handles")||"[]").length).toBe(3);
+  const start=JSON.parse((await canvas.getAttribute("data-boundary-handles"))!)[0], bounds=(await canvas.boundingBox())!;
+  await page.mouse.move(bounds.x+start.x,bounds.y+start.y);
+  await expect(canvas).toHaveAttribute("data-boundary-close-ready","true");
+  // Ground-clamped perimeter primitives finish rendering asynchronously.
+  await page.waitForTimeout(750);
+  await page.screenshot({path:`test-results/boundary-close-${width}.png`});
+  await page.mouse.click(bounds.x+start.x,bounds.y+start.y);
   const save=page.getByRole("button",{name:"Save boundary",exact:true});
   await expect(save).toBeVisible();
   await page.route(`**/api/projects/${project.id}`, async route => {
@@ -63,6 +71,13 @@ for (const width of [1440,1920]) test(`boundary drawing, validation, retry and r
   await click(.45,.48); await click(.65,.48);
   const b=(await canvas.boundingBox())!; await page.mouse.dblclick(b.x+b.width*.65,b.y+b.height*.70);
   await expect(save).toBeVisible(); await page.getByRole("button",{name:"Discard draft"}).click();
+  expect(await readBoundary()).toEqual(changed);
+  // Rectangle is a two-corner tool, not an endlessly growing polyline.
+  await page.getByRole("button",{name:"Draw rectangular boundary",exact:true}).click();
+  await click(.45,.48); await click(.65,.70);
+  await expect(save).toBeVisible();
+  await expect(canvas).not.toHaveAttribute("data-boundary-handles",/.+/);
+  await page.getByRole("button",{name:"Discard draft"}).click();
   expect(await readBoundary()).toEqual(changed);
   await page.screenshot({path:`test-results/boundary-saved-${width}.png`});
   expect(errors).toEqual([]); await expect(page.locator(".cesium-widget-errorPanel")).toHaveCount(0);

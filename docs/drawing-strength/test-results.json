@@ -1,0 +1,34 @@
+{
+  "backend": {
+    "unique_passed": 250,
+    "new_drawing_steel_tests": 37,
+    "preserved_engineering_regression_tests": 213,
+    "validation": "Full 248-test suite passed, then final 37-test source/method suite including two additional geometry cases passed; numerical FEA methods unchanged",
+    "warning": "Existing Starlette httpx deprecation; no dependency changes"
+  },
+  "browser": {
+    "passed_workflows": 3,
+    "files": [
+      "frontend/e2e/drawing-strength.spec.ts",
+      "frontend/e2e/drawing-strength-review.spec.ts",
+      "frontend/e2e/study-regression.spec.ts"
+    ],
+    "base_url": "http://localhost:3001",
+    "runtime_errors": [],
+    "viewports": [
+      "1600x1000",
+      "1280x820"
+    ]
+  },
+  "static": {
+    "typescript": "PASS",
+    "eslint": "PASS"
+  },
+  "scope": {
+    "engineering_approval": "DISABLED",
+    "source_drawing": "SYNTHETIC_VERIFICATION",
+    "genuine_construction_project_test": "NOT POSSIBLE \u2014 no real source drawing supplied",
+    "analytical_model": "BLOCKED \u2014 nodes and members not fabricated",
+    "paid_inference_calls": 0
+  }
+}

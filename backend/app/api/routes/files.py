@@ -28,7 +28,7 @@ def _safe_local_path(file_path: str) -> Path:
         raise HTTPException(400, "Invalid file path")
     root = Path(settings.LOCAL_STORAGE_DIR).resolve()
     target = (root / file_path).resolve()
-    if not str(target).startswith(str(root)):
+    if not target.is_relative_to(root):
         raise HTTPException(400, "Invalid file path")
     if not target.is_file():
         raise HTTPException(404, "File not found")

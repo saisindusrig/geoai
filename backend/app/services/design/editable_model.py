@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from math import prod, cos, sin, radians
+from math import prod, cos, sin, radians, isfinite
 import re
 from typing import Any
 from uuid import uuid4
@@ -107,11 +107,18 @@ def geometry_spec_to_document(project: Any, scenario: Any, geometry_spec: dict[s
 
 def validate_document(document: dict[str, Any], *, project_id: int, scenario_id: int, project_type: str) -> list[str]:
     errors: list[str] = []
+    def vector(value, *, positive=False, upper=None):
+        return (isinstance(value, list) and len(value)==3 and
+                all(isinstance(v,(int,float)) and not isinstance(v,bool) and isfinite(v)
+                    and (not positive or v>0) and (upper is None or v<=upper) for v in value))
+    def identity(value, expected):
+        try:return int(value or 0)==expected
+        except (TypeError,ValueError,OverflowError):return False
     if document.get("schema_version") != 1:
         errors.append("schema_version must be 1")
-    if int(document.get("project_id") or 0) != project_id:
+    if not identity(document.get("project_id"), project_id):
         errors.append("document project_id does not match the route")
-    if int(document.get("scenario_id") or 0) != scenario_id:
+    if not identity(document.get("scenario_id"), scenario_id):
         errors.append("document scenario_id does not match the route")
     if document.get("project_type") != project_type:
         errors.append("document project_type does not match the project")
@@ -122,6 +129,9 @@ def validate_document(document: dict[str, Any], *, project_id: int, scenario_id:
     ids: set[str] = set()
     for index, component in enumerate(components):
         label = f"components[{index}]"
+        if not isinstance(component,dict):
+            errors.append(f'{label} must be an object')
+            continue
         component_id = str(component.get("id") or "")
         if not component_id:
             errors.append(f"{label}.id is required")
@@ -129,26 +139,44 @@ def validate_document(document: dict[str, Any], *, project_id: int, scenario_id:
             errors.append(f"duplicate component id: {component_id}")
         ids.add(component_id)
         geometry = component.get("geometry") or {}
+        if not isinstance(geometry,dict):
+            errors.append(f'{label}.geometry must be an object')
+            continue
         kind = geometry.get("kind")
         if kind not in SUPPORTED_KINDS:
             errors.append(f"{label}.geometry.kind is unsupported")
         if kind == "box":
             size = geometry.get("size")
-            if not isinstance(size, list) or len(size) != 3 or any(float(v) <= 0 for v in size):
-                errors.append(f"{label}.geometry.size must contain three positive values")
-        if kind == "cylinder" and float(geometry.get("radius_m") or 0) <= 0:
-            errors.append(f"{label}.geometry.radius_m must be positive")
+            if not vector(size,positive=True):
+                errors.append(f"{label}.geometry.size must contain three finite positive values")
+        if kind == "cylinder":
+            radius=geometry.get('radius_m')
+            if not isinstance(radius,(int,float)) or isinstance(radius,bool) or not isfinite(radius) or radius<=0:
+                errors.append(f"{label}.geometry.radius_m must be finite and positive")
         transform = component.get("transform") or {}
+        if not isinstance(transform,dict):
+            errors.append(f'{label}.transform must be an object')
+            continue
+        for key in ('position','rotation_deg'):
+            if not vector(transform.get(key,[0,0,0])):
+                errors.append(f'{label}.transform.{key} must contain three finite numbers')
         scale = transform.get("scale", [1, 1, 1])
-        if not isinstance(scale, list) or len(scale) != 3 or any(float(v) <= 0 or float(v) > 100 for v in scale):
+        if not vector(scale,positive=True,upper=100):
             errors.append(f"{label}.transform.scale must contain values in (0, 100]")
-        color = str((component.get("material") or {}).get("color") or "")
+        material=component.get('material') or {}
+        if not isinstance(material,dict):
+            errors.append(f'{label}.material must be an object')
+            continue
+        color = str(material.get("color") or "")
         if color and not re.fullmatch(r"#[0-9a-fA-F]{6}", color):
             errors.append(f"{label}.material.color must be a six-digit hex color")
     for component in components:
+        if not isinstance(component,dict):continue
         parent_id = component.get("parent_id")
         if parent_id and parent_id not in ids:
             errors.append(f"component {component.get('id')} references an unknown parent")
+    from app.services.design.platform_attachments import validate_platform_attachments
+    if not errors:errors.extend(validate_platform_attachments(document))
     return errors
 
 
@@ -167,7 +195,10 @@ def document_to_geometry_spec(document: dict[str, Any]) -> dict[str, Any]:
         if kind in {"box", "extrusion"}:
             base_size = geometry.get("size") or geometry.get("dimensions") or [1, 1, 1]
             size = [float(base_size[i]) * scale[i] for i in range(3)]
-            objects.append({**common, "kind": "box", "size": size, "center": position, "rotation_z_deg": rotation[2]})
+            obj={**common, "kind": "box", "size": size, "center": position, "rotation_z_deg": rotation[2]}
+            # Preserve the editor XYZ Euler transform; yaw-only specs stay unchanged.
+            if rotation[0] or rotation[1]:obj['rotation_deg']=rotation
+            objects.append(obj)
         elif kind in {"cylinder", "sweep"}:
             start = _vec3(geometry.get("start"), [0, 0, 0])
             end = _vec3(geometry.get("end"), [0, 0, 1])
@@ -191,7 +222,8 @@ def document_to_geometry_spec(document: dict[str, Any]) -> dict[str, Any]:
 
 
 def calculate_revision_impact(document: dict[str, Any]) -> dict[str, Any]:
-    spec = document_to_geometry_spec(document)
+    quantity_document = {**document, "components": [component for component in document.get("components", []) if (component.get("quantity") or {}).get("included", True)]}
+    spec = document_to_geometry_spec(quantity_document)
     concrete = asphalt = excavation = steel = pipe_length = 0.0
     for obj in spec["objects"]:
         layer = str(obj.get("layer") or "").lower()

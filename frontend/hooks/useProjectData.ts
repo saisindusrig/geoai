@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api, ApiError } from "@/lib/api";
+import { assertSession, sessionRevision } from "@/lib/firebase-auth";
 import { logModelViewerState } from "@/lib/model-viewer-debug";
 import {
   hasCompletedGlbModel,
@@ -42,6 +43,7 @@ export function useProjectData(
     localSandbox?: boolean;
   },
 ) {
+  const identityRevision = useRef(sessionRevision());
   const [project, setProject] = useState<Project | null>(null);
   const [scenarioSummaries, setScenarioSummaries] = useState<ScenarioSummary[]>([]);
   const [scenario, setScenario] = useState<DesignScenario | null>(null);
@@ -66,6 +68,7 @@ export function useProjectData(
   }, []);
 
   const applyScenarioDetail = useCallback((detail: Record<string, unknown>) => {
+    assertSession(identityRevision.current);
     const mapped = detailToDesignScenario(detail);
     setScenario(mapped);
     setScenarioDetailFiles(extractGeneratedFilesFromDetail(detail));
@@ -79,6 +82,7 @@ export function useProjectData(
 
   const loadScenarioDetail = useCallback(
     async (summary: ScenarioSummary, legacy?: Map<number, DesignScenario>) => {
+      assertSession(identityRevision.current);
       const legacyScenario = legacy?.get(summary.scenario_id);
       if (legacyScenario?.design_output_json) {
         setScenario(legacyScenario);
@@ -124,6 +128,7 @@ export function useProjectData(
     }
     setError("");
     try {
+      assertSession(identityRevision.current);
       if (localSandbox) {
         const sandboxProject = localSandboxProject();
         setProject(sandboxProject);
@@ -162,6 +167,7 @@ export function useProjectData(
         ),
         api.get<GeneratedFileInfo[]>(`/api/projects/${projectId}/exports/files`),
       ]);
+      assertSession(identityRevision.current);
       setProject(p);
       useProjectStore.getState().setProject(p);
       const legacyScenarios = extractLegacyScenarios(scenarioRes);
@@ -207,6 +213,17 @@ export function useProjectData(
       }
     }
   }, [projectId, pickSummary, loadScenarioDetail, publicDemo, localSandbox]);
+
+  useEffect(() => {
+    const refreshConcept = (event: Event) => {
+      const detail = (event as CustomEvent<{ projectId: number; scenarioId?: number }>).detail;
+      if (detail?.projectId !== projectId || publicDemo || localSandbox) return;
+      if (detail.scenarioId) localStorage.setItem(scenarioStorageKey(projectId), String(detail.scenarioId));
+      void load({ silent: true });
+    };
+    window.addEventListener("geoai:concept-built", refreshConcept);
+    return () => window.removeEventListener("geoai:concept-built", refreshConcept);
+  }, [projectId, publicDemo, localSandbox, load]);
 
   useEffect(() => {
     let cancelled = false;

@@ -32,10 +32,9 @@ export default function ConstructionPreview({
     }
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
+        // Gallery previews are decorative. Release their renderer when scrolled
+        // away so a large library does not retain one WebGL context per card.
+        setVisible(entry.isIntersecting);
       },
       { rootMargin: "160px 0px" },
     );

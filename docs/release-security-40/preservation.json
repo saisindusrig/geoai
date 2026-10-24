@@ -1,0 +1,10 @@
+{
+  "matches_milestone_12_entry": true,
+  "rows": {
+    "dev.db": 10283,
+    "assistant-history.db": 3
+  },
+  "original_database_writes": 0,
+  "deletions": 0,
+  "application_startup_imported": false
+}

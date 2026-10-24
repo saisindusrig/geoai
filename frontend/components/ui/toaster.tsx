@@ -15,6 +15,8 @@ export default function Toaster() {
       {toasts.map((t) => (
         <div
           key={t.id}
+          role={t.variant === "error" ? "alert" : "status"}
+          aria-atomic="true"
           className={cn(
             "pointer-events-auto panel-glass border px-4 py-3 shadow-lg animate-in fade-in slide-in-from-bottom-2 duration-200",
             t.variant === "success" && "border-success/30",

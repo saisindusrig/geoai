@@ -1,0 +1,10 @@
+{
+  "remaining_old_spellings": [
+    {
+      "path": "backend\\app\\services\\assistant\\runtime.py",
+      "line": 205,
+      "text": "                if re.search(r\"\\b(?:I|we|GeoAI|Struvo Civil|Struvo Assistant|StruvoCivil|StruvoCivil Assistant) (?:have |has |successfully )?(?:moved|generated|deleted|modified|translated|built)\\b(?!\\s+(?:a |the )?(?:proposal|plan|concept)\\b)\",text,re.I):"
+    }
+  ],
+  "exception": "Historical claim-guard aliases only; stored history and technical identifiers retained."
+}

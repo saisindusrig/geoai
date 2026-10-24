@@ -16,6 +16,7 @@ from sqlalchemy.orm import Session
 from app.db.models import EngineeringLayer, GroundControlPoint, SurveyDataset
 from app.services.geospatial.crs import reproject_geojson, wgs84_to_project
 from app.services.storage import save_file
+from app.services.upload_limits import validate_archive, validate_geojson_input
 from app.services.survey.constants import DATASET_KINDS, ENGINEERING_LAYER_TYPES, GCP_SOURCES
 from app.services.survey.project_helpers import ensure_project_crs, sync_layer_postgis
 
@@ -98,7 +99,11 @@ def ingest_geojson_file(
     name: str,
     **kwargs: Any,
 ) -> EngineeringLayer:
-    data = json.loads(content.decode("utf-8"))
+    try:
+        data = json.loads(content.decode("utf-8"))
+    except (UnicodeError, RecursionError) as exc:
+        raise ValueError('Invalid GeoJSON encoding or nesting') from exc
+    validate_geojson_input(data)
     if data.get("type") == "FeatureCollection":
         features = data.get("features") or []
         if not features:
@@ -126,6 +131,7 @@ def ingest_shapefile_zip(
         zpath = Path(tmp) / "upload.zip"
         zpath.write_bytes(content)
         with zipfile.ZipFile(zpath) as zf:
+            validate_archive(zf)
             zf.extractall(tmp)
         shps = list(Path(tmp).rglob("*.shp"))
         if not shps:

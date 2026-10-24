@@ -1,0 +1,13 @@
+{
+  "gate": "Phase C Gate1C",
+  "local_runtime_transition": "GO for new launcher process trees",
+  "runtime": "Node24.22.1 / npm11.19.1",
+  "normal_existing_instances_restarted": false,
+  "global_node": "22.18.0 unchanged",
+  "default_turbopack_build": "PASS",
+  "frontend_tests": 109,
+  "negative_runtime_scenarios": 8,
+  "original_data_preserved": true,
+  "firebase": "disabled",
+  "public_launch": "BLOCKED"
+}

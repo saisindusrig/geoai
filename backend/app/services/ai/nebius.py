@@ -1,6 +1,8 @@
 """Server-only Token Factory client; never silently substitutes a mock response."""
 import json
 import re
+from contextvars import ContextVar
+AGENT_BUDGET_RESERVED=ContextVar('nebius_agent_budget_reserved',default=False)
 from urllib.parse import urlsplit
 
 import httpx
@@ -51,7 +53,7 @@ from app.services.ai.provider import AssistantProviderError
 LAST_ASSISTANT_RESULT = None
 
 
-def sanitized(value):
+def sanitized(value, *, max_length=300):
     text = str(value or "")
     for name, secret in settings.model_dump().items():
         if any(s in name for s in ("KEY", "TOKEN", "SECRET", "DATABASE_URL", "REDIS_URL")) and isinstance(secret,str) and len(secret)>=6:
@@ -59,7 +61,7 @@ def sanitized(value):
     text = re.sub(r"(?i)bearer\s+\S+", "Bearer [REDACTED]", text)
     text = re.sub(r"\b(?:v1\.[A-Za-z0-9_.-]{20,}|sk-[A-Za-z0-9_-]{8,})", "[REDACTED]", text)
     text = re.sub(r"https?://[^\s/@]+:[^\s/@]+@", "https://[REDACTED]@", text)
-    return " ".join(text.split())[:300]
+    return " ".join(text.split())[:max_length]
 
 
 def assistant_diagnostics(model=None):
@@ -89,6 +91,8 @@ def assistant_configuration(model=None):
 
 async def _request(method, endpoint, *, model=None, timeout=None, payload=None, limit=100000):
     diagnostics=assistant_diagnostics(model)
+    if method=='POST' and settings.NEBIUS_ENFORCE_AGENT_BUDGET and not AGENT_BUDGET_RESERVED.get():
+        fail('BUDGET_REQUIRED',diagnostics)
     try:
         config=resolve(model=model,timeout=timeout)
         if not config.api_key or endpoint!='models' and not config.model:

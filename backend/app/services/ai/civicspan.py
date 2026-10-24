@@ -185,7 +185,7 @@ async def plan_bridge(request: str, site: SiteContext, current: BridgeSpec | Non
             json={
                 "model": settings.NEBIUS_CHAT_MODEL,
                 "messages": [
-                    {"role": "system", "content": "You are GeoAI's constrained infrastructure concept planner. Return valid JSON only."},
+                    {"role": "system", "content": "You are StruvoCivil's constrained infrastructure concept planner. Return valid JSON only."},
                     {"role": "user", "content": json.dumps(prompt)},
                 ],
                 "temperature": 0.2,

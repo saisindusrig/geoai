@@ -13,6 +13,7 @@ interface Props {
   selectedId: number | null;
   onSelect: (scenario: DesignScenario) => void;
   compact?: boolean;
+  disabled?: boolean;
 }
 
 export default function ScenarioSelector({
@@ -21,6 +22,7 @@ export default function ScenarioSelector({
   selectedId,
   onSelect,
   compact,
+  disabled,
 }: Props) {
   if (!scenarios.length) {
     return (
@@ -44,6 +46,7 @@ export default function ScenarioSelector({
         )}
       </div>
       <select
+        disabled={disabled}
         title="Select a design scenario"
         value={selectedId ?? ""}
         onChange={(e) => {
